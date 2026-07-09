@@ -1,0 +1,184 @@
+{
+  "@@locale": "en",
+  "appTitle": "iReminder",
+
+  "navToday": "Today",
+  "navCalendar": "Calendar",
+  "navLoans": "Loans",
+  "navCategories": "Categories",
+  "navSettings": "Settings",
+
+  "onboardingTitle1": "Never forget what matters",
+  "onboardingBody1": "Track device maintenance, vehicle service, anniversaries and more — all in one place.",
+  "onboardingTitle2": "Recurring made simple",
+  "onboardingBody2": "Daily, weekly, monthly, yearly, or even by lunar calendar — set it once and iReminder keeps track.",
+  "onboardingTitle3": "100% private, 100% offline",
+  "onboardingBody3": "No account, no cloud, no login. Everything stays on your phone.",
+  "onboardingSkip": "Skip",
+  "onboardingNext": "Next",
+  "onboardingGetStarted": "Get started",
+
+  "notificationPermissionTitle": "Stay on time",
+  "notificationPermissionBody": "iReminder needs permission to send you notifications when something is due.",
+  "notificationPermissionAllow": "Allow notifications",
+  "notificationPermissionLater": "Not now",
+
+  "homeSectionOverdue": "Overdue",
+  "homeSectionToday": "Today",
+  "homeSectionThisWeek": "This week",
+  "homeSectionUpcoming": "Upcoming",
+  "homeEmptyTitle": "Nothing here yet",
+  "homeEmptyBody": "Tap + to add your first reminder or installment loan.",
+
+  "fabAddReminder": "Reminder",
+  "fabAddLoan": "Installment loan",
+
+  "actionDone": "Done",
+  "actionSnooze": "Snooze",
+  "actionEdit": "Edit",
+  "actionDelete": "Delete",
+  "actionSave": "Save",
+  "actionCancel": "Cancel",
+  "actionConfirm": "Confirm",
+  "actionYes": "Yes",
+  "actionNo": "No",
+  "actionOk": "OK",
+  "actionAdd": "Add",
+  "actionClose": "Close",
+
+  "reminderFormTitleNew": "New reminder",
+  "reminderFormTitleEdit": "Edit reminder",
+  "reminderFieldTitle": "Title",
+  "reminderFieldTitleRequired": "Title is required",
+  "reminderFieldDescription": "Description (optional)",
+  "reminderFieldCategory": "Category",
+  "reminderFieldRecurrence": "Repeats",
+  "reminderFieldStartDate": "Start date",
+  "reminderFieldTime": "Reminder time",
+  "reminderFieldAdvanceNotice": "Notify N days early",
+  "reminderFieldRecurrenceDay": "Day of month",
+  "reminderFieldRecurrenceMonth": "Month",
+  "reminderFieldRecurrenceWeekday": "Day of week",
+  "reminderFieldIntervalDays": "Every N days",
+  "reminderFieldLunarDay": "Lunar day",
+  "reminderFieldLunarMonth": "Lunar month",
+  "reminderDeleteConfirmTitle": "Delete this reminder?",
+  "reminderDeleteConfirmBody": "This cannot be undone.",
+
+  "recurrenceNone": "Once",
+  "recurrenceDaily": "Daily",
+  "recurrenceWeekly": "Weekly",
+  "recurrenceMonthly": "Monthly",
+  "recurrenceYearly": "Yearly",
+  "recurrenceCustomIntervalDays": "Every N days",
+  "recurrenceLunarYearly": "Yearly (lunar calendar)",
+
+  "weekdayMonday": "Monday",
+  "weekdayTuesday": "Tuesday",
+  "weekdayWednesday": "Wednesday",
+  "weekdayThursday": "Thursday",
+  "weekdayFriday": "Friday",
+  "weekdaySaturday": "Saturday",
+  "weekdaySunday": "Sunday",
+
+  "loanListTitle": "Loans & installments",
+  "loanFormTitleNew": "New installment loan",
+  "loanFormTitleEdit": "Edit loan",
+  "loanFieldName": "Name",
+  "loanFieldCategory": "Category",
+  "loanFieldTotalAmount": "Total amount (optional)",
+  "loanFieldInstallmentAmount": "Amount per installment",
+  "loanFieldTotalInstallments": "Number of installments",
+  "loanFieldFrequency": "Frequency",
+  "loanFieldDueDayOfMonth": "Due day of month",
+  "loanFieldStartDate": "Start date",
+  "loanFieldReminderAdvanceDays": "Remind N days before due",
+  "loanFieldNotes": "Notes (optional)",
+  "loanFrequencyMonthly": "Monthly",
+  "loanFrequencyWeekly": "Weekly",
+  "loanFrequencyBiweekly": "Biweekly",
+  "loanProgress": "{paid} / {total} paid",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "loanMarkPaid": "Mark as paid",
+  "loanMarkPaidBatch": "Mark {count} installments as paid",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "loanStatusPending": "Pending",
+  "loanStatusPaid": "Paid",
+  "loanStatusOverdue": "Overdue",
+  "loanInstallmentNumber": "Installment #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {"type": "int"}
+    }
+  },
+  "loanDeleteConfirmTitle": "Delete this loan?",
+  "loanDeleteConfirmBody": "All {count} installments will be removed too.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "categoryManagerTitle": "Categories",
+  "categoryFormTitleNew": "New category",
+  "categoryFormTitleEdit": "Edit category",
+  "categoryFieldName": "Name",
+  "categoryFieldNameRequired": "Name is required",
+  "categoryFieldIcon": "Icon",
+  "categoryFieldColor": "Color",
+  "categoryDefaultBadge": "Default",
+  "categoryDeleteSimpleTitle": "Delete this category?",
+  "categoryDeleteSimpleBody": "This category has no reminders in it.",
+  "categoryDeleteHasRemindersTitle": "This category still has reminders",
+  "categoryDeleteHasRemindersBody": "{count} reminders use this category. Choose what to do with them.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "categoryDeleteReassign": "Move to another category",
+  "categoryDeleteReassignTarget": "Move to",
+  "categoryDeleteRemoveAll": "Delete all {count} reminders",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "This will permanently delete {count} reminders. This cannot be undone.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "categoryReorderHint": "Drag to reorder",
+
+  "settingsTitle": "Settings",
+  "settingsLanguage": "Language",
+  "settingsDefaultReminderTime": "Default reminder time",
+  "settingsTheme": "Theme",
+  "settingsThemeSystem": "System",
+  "settingsThemeLight": "Light",
+  "settingsThemeDark": "Dark",
+  "settingsBackupRestore": "Backup & restore",
+  "settingsExport": "Export backup",
+  "settingsImport": "Restore from backup",
+  "settingsExportSuccess": "Backup saved",
+  "settingsImportSuccess": "Backup restored",
+  "settingsImportConfirmTitle": "Restore backup?",
+  "settingsImportConfirmBody": "This replaces all current data with the contents of the backup file.",
+  "settingsAbout": "About",
+  "settingsBatteryOptimizationTitle": "Notifications not firing on time?",
+  "settingsBatteryOptimizationBody": "Some phone makers (Samsung, Xiaomi, Oppo...) aggressively restrict background apps. Turn off battery optimization for iReminder in your phone's Settings > Battery to make sure reminders always arrive on time.",
+
+  "errorGeneric": "Something went wrong. Please try again.",
+  "errorLoadFailed": "Couldn't load data."
+}
