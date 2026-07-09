@@ -6,7 +6,8 @@ plugins {
 
 android {
     namespace = "com.ireminder.ireminder"
-    compileSdk = flutter.compileSdkVersion
+    // file_picker's AAR requires compiling against API 36+.
+    compileSdk = maxOf(36, flutter.compileSdkVersion)
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -23,7 +24,7 @@ android {
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         // flutter_local_notifications' exact-alarm scheduling needs API 23+.
         minSdk = maxOf(23, flutter.minSdkVersion)
-        targetSdk = flutter.targetSdkVersion
+        targetSdk = maxOf(36, flutter.targetSdkVersion)
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
