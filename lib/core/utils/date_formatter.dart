@@ -16,11 +16,8 @@ class DateFormatter {
   }
 
   static String formatCurrency(double amount, String locale) {
-    final symbol = locale.startsWith('vi') ? 'đ' : '\$';
-    return NumberFormat.currency(
-      locale: locale,
-      symbol: symbol,
-      decimalDigits: locale.startsWith('vi') ? 0 : 2,
-    ).format(amount);
+    // No currency picker in Settings (not in scope), so fall back to each
+    // locale's own default currency via CLDR data rather than assuming USD.
+    return NumberFormat.currency(locale: locale).format(amount);
   }
 }

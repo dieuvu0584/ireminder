@@ -15,6 +15,11 @@ class SupportedLocale {
 const List<SupportedLocale> kSupportedLocales = [
   SupportedLocale('en', 'English'),
   SupportedLocale('vi', 'Tiếng Việt'),
+  SupportedLocale('zh', '简体中文'),
+  SupportedLocale('hi', 'हिन्दी'),
+  SupportedLocale('de', 'Deutsch'),
+  SupportedLocale('fr', 'Français'),
+  SupportedLocale('es', 'Español'),
 ];
 
 /// Detects the system locale at first launch and picks the closest

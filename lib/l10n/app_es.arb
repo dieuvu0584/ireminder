@@ -1,0 +1,184 @@
+{
+  "@@locale": "es",
+  "appTitle": "iReminder",
+
+  "navToday": "Hoy",
+  "navCalendar": "Calendario",
+  "navLoans": "Cuotas",
+  "navCategories": "Categorías",
+  "navSettings": "Ajustes",
+
+  "onboardingTitle1": "Nunca olvides lo importante",
+  "onboardingBody1": "Controla el mantenimiento de electrodomésticos, revisiones del vehículo, aniversarios y mucho más, todo en un solo lugar.",
+  "onboardingTitle2": "Recurrencia muy sencilla",
+  "onboardingBody2": "Diaria, semanal, mensual, anual, o incluso según el calendario lunar: configúralo una vez y iReminder se encarga del resto.",
+  "onboardingTitle3": "100% privado, 100% sin conexión",
+  "onboardingBody3": "Sin cuentas, sin nube, sin inicio de sesión. Todo permanece en tu teléfono.",
+  "onboardingSkip": "Omitir",
+  "onboardingNext": "Siguiente",
+  "onboardingGetStarted": "Empezar",
+
+  "notificationPermissionTitle": "No te pierdas nada",
+  "notificationPermissionBody": "iReminder necesita permiso para enviarte notificaciones cuando algo esté por vencer.",
+  "notificationPermissionAllow": "Permitir notificaciones",
+  "notificationPermissionLater": "Ahora no",
+
+  "homeSectionOverdue": "Atrasado",
+  "homeSectionToday": "Hoy",
+  "homeSectionThisWeek": "Esta semana",
+  "homeSectionUpcoming": "Próximamente",
+  "homeEmptyTitle": "Todavía no hay nada aquí",
+  "homeEmptyBody": "Toca + para agregar tu primer recordatorio o plan de cuotas.",
+
+  "fabAddReminder": "Recordatorio",
+  "fabAddLoan": "Plan de cuotas",
+
+  "actionDone": "Hecho",
+  "actionSnooze": "Posponer",
+  "actionEdit": "Editar",
+  "actionDelete": "Eliminar",
+  "actionSave": "Guardar",
+  "actionCancel": "Cancelar",
+  "actionConfirm": "Confirmar",
+  "actionYes": "Sí",
+  "actionNo": "No",
+  "actionOk": "Aceptar",
+  "actionAdd": "Agregar",
+  "actionClose": "Cerrar",
+
+  "reminderFormTitleNew": "Nuevo recordatorio",
+  "reminderFormTitleEdit": "Editar recordatorio",
+  "reminderFieldTitle": "Título",
+  "reminderFieldTitleRequired": "El título es obligatorio",
+  "reminderFieldDescription": "Descripción (opcional)",
+  "reminderFieldCategory": "Categoría",
+  "reminderFieldRecurrence": "Repetición",
+  "reminderFieldStartDate": "Fecha de inicio",
+  "reminderFieldTime": "Hora del recordatorio",
+  "reminderFieldAdvanceNotice": "Avisar N días antes",
+  "reminderFieldRecurrenceDay": "Día del mes",
+  "reminderFieldRecurrenceMonth": "Mes",
+  "reminderFieldRecurrenceWeekday": "Día de la semana",
+  "reminderFieldIntervalDays": "Cada N días",
+  "reminderFieldLunarDay": "Día lunar",
+  "reminderFieldLunarMonth": "Mes lunar",
+  "reminderDeleteConfirmTitle": "¿Eliminar este recordatorio?",
+  "reminderDeleteConfirmBody": "Esta acción no se puede deshacer.",
+
+  "recurrenceNone": "Una vez",
+  "recurrenceDaily": "Diario",
+  "recurrenceWeekly": "Semanal",
+  "recurrenceMonthly": "Mensual",
+  "recurrenceYearly": "Anual",
+  "recurrenceCustomIntervalDays": "Cada N días",
+  "recurrenceLunarYearly": "Anual (calendario lunar)",
+
+  "weekdayMonday": "Lunes",
+  "weekdayTuesday": "Martes",
+  "weekdayWednesday": "Miércoles",
+  "weekdayThursday": "Jueves",
+  "weekdayFriday": "Viernes",
+  "weekdaySaturday": "Sábado",
+  "weekdaySunday": "Domingo",
+
+  "loanListTitle": "Cuotas y préstamos",
+  "loanFormTitleNew": "Nuevo plan de cuotas",
+  "loanFormTitleEdit": "Editar plan de cuotas",
+  "loanFieldName": "Nombre",
+  "loanFieldCategory": "Categoría",
+  "loanFieldTotalAmount": "Monto total (opcional)",
+  "loanFieldInstallmentAmount": "Monto por cuota",
+  "loanFieldTotalInstallments": "Número de cuotas",
+  "loanFieldFrequency": "Frecuencia",
+  "loanFieldDueDayOfMonth": "Día de vencimiento del mes",
+  "loanFieldStartDate": "Fecha de inicio",
+  "loanFieldReminderAdvanceDays": "Avisar N días antes del vencimiento",
+  "loanFieldNotes": "Notas (opcional)",
+  "loanFrequencyMonthly": "Mensual",
+  "loanFrequencyWeekly": "Semanal",
+  "loanFrequencyBiweekly": "Quincenal",
+  "loanProgress": "{paid} / {total} cuotas pagadas",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "loanMarkPaid": "Marcar como pagada",
+  "loanMarkPaidBatch": "Marcar {count} cuotas como pagadas",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "loanStatusPending": "Pendiente",
+  "loanStatusPaid": "Pagada",
+  "loanStatusOverdue": "Atrasada",
+  "loanInstallmentNumber": "Cuota n.º {number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {"type": "int"}
+    }
+  },
+  "loanDeleteConfirmTitle": "¿Eliminar este plan de cuotas?",
+  "loanDeleteConfirmBody": "Las {count} cuotas también se eliminarán.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "categoryManagerTitle": "Categorías",
+  "categoryFormTitleNew": "Nueva categoría",
+  "categoryFormTitleEdit": "Editar categoría",
+  "categoryFieldName": "Nombre",
+  "categoryFieldNameRequired": "El nombre es obligatorio",
+  "categoryFieldIcon": "Ícono",
+  "categoryFieldColor": "Color",
+  "categoryDefaultBadge": "Predeterminada",
+  "categoryDeleteSimpleTitle": "¿Eliminar esta categoría?",
+  "categoryDeleteSimpleBody": "Esta categoría no tiene recordatorios.",
+  "categoryDeleteHasRemindersTitle": "Esta categoría todavía tiene recordatorios",
+  "categoryDeleteHasRemindersBody": "{count} recordatorios usan esta categoría. Elige cómo proceder.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "categoryDeleteReassign": "Mover a otra categoría",
+  "categoryDeleteReassignTarget": "Mover a",
+  "categoryDeleteRemoveAll": "Eliminar los {count} recordatorios",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Esto eliminará permanentemente {count} recordatorios. Esta acción no se puede deshacer.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "categoryReorderHint": "Arrastra para reordenar",
+
+  "settingsTitle": "Ajustes",
+  "settingsLanguage": "Idioma",
+  "settingsDefaultReminderTime": "Hora de recordatorio predeterminada",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "Sistema",
+  "settingsThemeLight": "Claro",
+  "settingsThemeDark": "Oscuro",
+  "settingsBackupRestore": "Copia de seguridad y restauración",
+  "settingsExport": "Exportar copia de seguridad",
+  "settingsImport": "Restaurar desde copia de seguridad",
+  "settingsExportSuccess": "Copia de seguridad guardada",
+  "settingsImportSuccess": "Copia de seguridad restaurada",
+  "settingsImportConfirmTitle": "¿Restaurar copia de seguridad?",
+  "settingsImportConfirmBody": "Esto reemplazará todos los datos actuales con el contenido del archivo de copia de seguridad.",
+  "settingsAbout": "Acerca de",
+  "settingsBatteryOptimizationTitle": "¿Las notificaciones no llegan a tiempo?",
+  "settingsBatteryOptimizationBody": "Algunos fabricantes (Samsung, Xiaomi, Oppo...) restringen bastante las apps en segundo plano. Desactiva la optimización de batería para iReminder en Ajustes > Batería para asegurarte de que los recordatorios siempre lleguen a tiempo.",
+
+  "errorGeneric": "Algo salió mal. Inténtalo de nuevo.",
+  "errorLoadFailed": "No se pudieron cargar los datos."
+}
