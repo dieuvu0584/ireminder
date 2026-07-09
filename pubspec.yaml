@@ -40,10 +40,6 @@ dependencies:
 
   # Backup/restore
   file_picker: ^8.1.6
-  share_plus: ^10.1.4
-
-  # Utility
-  uuid: ^4.5.1
 
   # Phase 7 (optional AI assistant, BYOK) — API key storage only,
   # per PROMPT.md §9.5. No general-purpose HTTP package is added; provider
