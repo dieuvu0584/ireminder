@@ -46,6 +46,8 @@ class BackupService {
     final loans = await _db.select(_db.loans).get();
     final loanInstallments = await _db.select(_db.loanInstallments).get();
     final settings = await _db.select(_db.appSettings).getSingle();
+    final aiSettings = await _db.select(_db.aiSettings).getSingle();
+    final aiChatHistory = await _db.select(_db.aiChatHistory).get();
 
     return {
       'formatVersion': kBackupFormatVersion,
@@ -56,6 +58,10 @@ class BackupService {
       'loans': loans.map((l) => l.toJson()).toList(),
       'loanInstallments': loanInstallments.map((i) => i.toJson()).toList(),
       'appSettings': settings.toJson(),
+      // Provider/model/allowed-category choices only — the API key itself
+      // lives in secure storage and is never written into this file.
+      'aiSettings': aiSettings.toJson(),
+      'aiChatHistory': aiChatHistory.map((h) => h.toJson()).toList(),
     };
   }
 
@@ -79,6 +85,7 @@ class BackupService {
 
   Future<void> _restoreFromPayload(Map<String, dynamic> json) async {
     await _db.transaction(() async {
+      await _db.delete(_db.aiChatHistory).go();
       await _db.delete(_db.loanInstallments).go();
       await _db.delete(_db.reminderLogs).go();
       await _db.delete(_db.loans).go();
@@ -122,6 +129,24 @@ class BackupService {
               settings,
               mode: drift.InsertMode.insertOrReplace,
             );
+      }
+      // Both absent in backups made before Phase 7 — restoring one of
+      // those must not crash, just leave the AI tables at their defaults.
+      if (json['aiSettings'] != null) {
+        final aiSettings =
+            AiSetting.fromJson(json['aiSettings'] as Map<String, dynamic>);
+        await _db.into(_db.aiSettings).insert(
+              aiSettings,
+              mode: drift.InsertMode.insertOrReplace,
+            );
+      }
+      if (json['aiChatHistory'] != null) {
+        for (final row in (json['aiChatHistory'] as List)) {
+          await _db.into(_db.aiChatHistory).insert(
+                AiChatHistoryData.fromJson(row as Map<String, dynamic>),
+                mode: drift.InsertMode.insertOrReplace,
+              );
+        }
       }
     });
   }
