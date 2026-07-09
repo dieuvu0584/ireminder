@@ -38,9 +38,6 @@ dependencies:
   # Theming
   dynamic_color: ^1.7.0
 
-  # Backup/restore
-  file_picker: ^11.0.2
-
   # Phase 7 (optional AI assistant, BYOK) — API key storage only,
   # per PROMPT.md §9.5. No general-purpose HTTP package is added; provider
   # calls use dart:io's built-in HttpClient since they're plain JSON POSTs.

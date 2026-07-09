@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -119,6 +121,7 @@ class SettingsScreen extends ConsumerWidget {
             ListTile(
               leading: const Icon(Icons.upload_outlined),
               title: Text(l10n.settingsExport),
+              subtitle: Text(l10n.settingsExportLocationHint),
               onTap: () async {
                 final messenger = ScaffoldMessenger.of(context);
                 await ref.read(backupServiceProvider).exportBackup();
@@ -131,6 +134,31 @@ class SettingsScreen extends ConsumerWidget {
               leading: const Icon(Icons.download_outlined),
               title: Text(l10n.settingsImport),
               onTap: () async {
+                final backups =
+                    await ref.read(backupServiceProvider).listBackups();
+                if (!context.mounted) return;
+                if (backups.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l10n.settingsImportNoneFound)),
+                  );
+                  return;
+                }
+                final chosen = await showDialog<File>(
+                  context: context,
+                  builder: (ctx) => SimpleDialog(
+                    title: Text(l10n.settingsImportPickFile),
+                    children: backups
+                        .map(
+                          (f) => SimpleDialogOption(
+                            onPressed: () => Navigator.of(ctx).pop(f),
+                            child: Text(f.path.split('/').last),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                );
+                if (chosen == null || !context.mounted) return;
+
                 final confirmed = await showDialog<bool>(
                   context: context,
                   builder: (ctx) => AlertDialog(
@@ -150,8 +178,9 @@ class SettingsScreen extends ConsumerWidget {
                 );
                 if (confirmed != true || !context.mounted) return;
                 final messenger = ScaffoldMessenger.of(context);
-                final result =
-                    await ref.read(backupServiceProvider).importBackup();
+                final result = await ref
+                    .read(backupServiceProvider)
+                    .importBackup(chosen);
                 if (result == BackupImportResult.success) {
                   await ref
                       .read(alarmSchedulerServiceProvider)

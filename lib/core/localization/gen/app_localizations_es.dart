@@ -404,7 +404,17 @@ class AppLocalizationsEs extends AppLocalizations {
   String get settingsImport => 'Restaurar desde copia de seguridad';
 
   @override
+  String get settingsExportLocationHint =>
+      'Saved to Android/data/com.ireminder.ireminder/files/backups';
+
+  @override
   String get settingsExportSuccess => 'Copia de seguridad guardada';
+
+  @override
+  String get settingsImportNoneFound => 'No backup files found';
+
+  @override
+  String get settingsImportPickFile => 'Choose a backup';
 
   @override
   String get settingsImportSuccess => 'Copia de seguridad restaurada';

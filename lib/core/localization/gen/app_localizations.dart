@@ -852,11 +852,29 @@ abstract class AppLocalizations {
   /// **'Restore from backup'**
   String get settingsImport;
 
+  /// No description provided for @settingsExportLocationHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to Android/data/com.ireminder.ireminder/files/backups'**
+  String get settingsExportLocationHint;
+
   /// No description provided for @settingsExportSuccess.
   ///
   /// In en, this message translates to:
   /// **'Backup saved'**
   String get settingsExportSuccess;
+
+  /// No description provided for @settingsImportNoneFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No backup files found'**
+  String get settingsImportNoneFound;
+
+  /// No description provided for @settingsImportPickFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a backup'**
+  String get settingsImportPickFile;
 
   /// No description provided for @settingsImportSuccess.
   ///

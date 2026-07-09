@@ -401,7 +401,17 @@ class AppLocalizationsVi extends AppLocalizations {
   String get settingsImport => 'Phục hồi từ file sao lưu';
 
   @override
+  String get settingsExportLocationHint =>
+      'Lưu tại Android/data/com.ireminder.ireminder/files/backups';
+
+  @override
   String get settingsExportSuccess => 'Đã lưu file sao lưu';
+
+  @override
+  String get settingsImportNoneFound => 'Không tìm thấy file sao lưu nào';
+
+  @override
+  String get settingsImportPickFile => 'Chọn file sao lưu';
 
   @override
   String get settingsImportSuccess => 'Đã phục hồi dữ liệu';

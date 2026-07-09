@@ -402,7 +402,17 @@ class AppLocalizationsHi extends AppLocalizations {
   String get settingsImport => 'बैकअप से पुनर्स्थापित करें';
 
   @override
+  String get settingsExportLocationHint =>
+      'Saved to Android/data/com.ireminder.ireminder/files/backups';
+
+  @override
   String get settingsExportSuccess => 'बैकअप सहेजा गया';
+
+  @override
+  String get settingsImportNoneFound => 'No backup files found';
+
+  @override
+  String get settingsImportPickFile => 'Choose a backup';
 
   @override
   String get settingsImportSuccess => 'बैकअप पुनर्स्थापित किया गया';

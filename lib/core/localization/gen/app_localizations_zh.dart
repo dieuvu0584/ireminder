@@ -395,7 +395,17 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsImport => '从备份恢复';
 
   @override
+  String get settingsExportLocationHint =>
+      'Saved to Android/data/com.ireminder.ireminder/files/backups';
+
+  @override
   String get settingsExportSuccess => '备份已保存';
+
+  @override
+  String get settingsImportNoneFound => 'No backup files found';
+
+  @override
+  String get settingsImportPickFile => 'Choose a backup';
 
   @override
   String get settingsImportSuccess => '已恢复备份';
