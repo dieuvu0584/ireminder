@@ -8,6 +8,9 @@ on:
       - "**.md"
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -50,3 +53,21 @@ jobs:
           name: ireminder-release-apk-unsigned
           path: build/app/outputs/flutter-apk/app-release.apk
           retention-days: 30
+
+      # Workflow artifacts are served from Azure Blob Storage, which isn't
+      # reachable from every environment that might need the APK. Also
+      # publish both files to a dedicated branch via plain git push, since
+      # git itself is reachable everywhere GitHub is.
+      - name: Publish APKs to apk-artifacts branch
+        run: |
+          set -e
+          cp build/app/outputs/flutter-apk/app-debug.apk /tmp/ireminder-debug.apk
+          cp build/app/outputs/flutter-apk/app-release.apk /tmp/ireminder-release-unsigned.apk
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan apk-artifacts
+          git rm -rf . > /dev/null 2>&1 || true
+          cp /tmp/ireminder-debug.apk /tmp/ireminder-release-unsigned.apk .
+          git add ireminder-debug.apk ireminder-release-unsigned.apk
+          git commit -m "Build APKs from ${{ github.sha }}"
+          git push -f origin apk-artifacts
