@@ -23,7 +23,7 @@ class BackupService {
     final fileName =
         'ireminder_backup_${DateTime.now().toIso8601String().split('T').first}.json';
 
-    final path = await FilePicker.platform.saveFile(
+    final path = await FilePicker.saveFile(
       fileName: fileName,
       bytes: bytes,
       type: FileType.custom,
@@ -66,7 +66,7 @@ class BackupService {
   }
 
   Future<BackupImportResult> importBackup() async {
-    final result = await FilePicker.platform.pickFiles(
+    final result = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['json'],
     );
