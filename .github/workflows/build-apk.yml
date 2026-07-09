@@ -56,18 +56,21 @@ jobs:
 
       # Workflow artifacts are served from Azure Blob Storage, which isn't
       # reachable from every environment that might need the APK. Also
-      # publish both files to a dedicated branch via plain git push, since
-      # git itself is reachable everywhere GitHub is.
-      - name: Publish APKs to apk-artifacts branch
+      # publish the release APK to a dedicated branch via plain git push,
+      # since git itself is reachable everywhere GitHub is. The debug APK
+      # (~159MB uncompressed, bundles a full unstripped Flutter debug
+      # engine) is over GitHub's 100MB git push limit, so only the release
+      # build (~63MB) goes this route — it's also the more representative
+      # one to actually install.
+      - name: Publish release APK to apk-artifacts branch
         run: |
           set -e
-          cp build/app/outputs/flutter-apk/app-debug.apk /tmp/ireminder-debug.apk
           cp build/app/outputs/flutter-apk/app-release.apk /tmp/ireminder-release-unsigned.apk
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout --orphan apk-artifacts
           git rm -rf . > /dev/null 2>&1 || true
-          cp /tmp/ireminder-debug.apk /tmp/ireminder-release-unsigned.apk .
-          git add ireminder-debug.apk ireminder-release-unsigned.apk
-          git commit -m "Build APKs from ${{ github.sha }}"
+          cp /tmp/ireminder-release-unsigned.apk .
+          git add ireminder-release-unsigned.apk
+          git commit -m "Build release APK from ${{ github.sha }}"
           git push -f origin apk-artifacts
