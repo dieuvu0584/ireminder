@@ -27,6 +27,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get navSettings => '设置';
 
   @override
+  String get navAssistant => 'Assistant';
+
+  @override
   String get onboardingTitle1 => '重要的事永不遗忘';
 
   @override
@@ -418,4 +421,74 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get errorLoadFailed => '数据加载失败。';
+
+  @override
+  String get settingsAiSectionTitle => 'AI Assistant';
+
+  @override
+  String get settingsAiEnable => 'Enable AI Assistant';
+
+  @override
+  String get settingsAiProvider => 'AI provider';
+
+  @override
+  String get settingsAiModel => 'Model';
+
+  @override
+  String get settingsAiApiKey => 'API key';
+
+  @override
+  String get settingsAiApiKeyHint => 'Paste your API key';
+
+  @override
+  String get settingsAiApiKeyHelp => 'Where do I get a key?';
+
+  @override
+  String get settingsAiApiKeySaved => 'API key saved';
+
+  @override
+  String get settingsAiAllowedCategories => 'Categories the assistant can read';
+
+  @override
+  String get settingsAiAllowedCategoriesHint =>
+      'Off by default. Turn on only the categories you want the assistant to see — nothing else is ever sent.';
+
+  @override
+  String get settingsAiClearHistory => 'Clear chat history';
+
+  @override
+  String get settingsAiClearHistoryConfirmTitle => 'Clear chat history?';
+
+  @override
+  String get settingsAiClearHistoryConfirmBody =>
+      'This deletes every question and answer stored on this device. This cannot be undone.';
+
+  @override
+  String get assistantTitle => 'Assistant';
+
+  @override
+  String get assistantEmptyTitle => 'Ask me anything';
+
+  @override
+  String get assistantEmptyBody =>
+      'Try \"What do I need to do this week?\" or \"How many installments are left on my motorcycle loan?\"';
+
+  @override
+  String get assistantInputHint => 'Ask something…';
+
+  @override
+  String get assistantSend => 'Send';
+
+  @override
+  String get assistantDisabledTitle => 'Assistant is turned off';
+
+  @override
+  String get assistantDisabledBody =>
+      'Enable it in Settings and pick an AI provider to start chatting.';
+
+  @override
+  String get assistantOpenSettings => 'Open Settings';
+
+  @override
+  String get assistantThinking => 'Thinking…';
 }

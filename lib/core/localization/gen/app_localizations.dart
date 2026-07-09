@@ -144,6 +144,12 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get navSettings;
 
+  /// No description provided for @navAssistant.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant'**
+  String get navAssistant;
+
   /// No description provided for @onboardingTitle1.
   ///
   /// In en, this message translates to:
@@ -899,6 +905,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn\'t load data.'**
   String get errorLoadFailed;
+
+  /// No description provided for @settingsAiSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Assistant'**
+  String get settingsAiSectionTitle;
+
+  /// No description provided for @settingsAiEnable.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable AI Assistant'**
+  String get settingsAiEnable;
+
+  /// No description provided for @settingsAiProvider.
+  ///
+  /// In en, this message translates to:
+  /// **'AI provider'**
+  String get settingsAiProvider;
+
+  /// No description provided for @settingsAiModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Model'**
+  String get settingsAiModel;
+
+  /// No description provided for @settingsAiApiKey.
+  ///
+  /// In en, this message translates to:
+  /// **'API key'**
+  String get settingsAiApiKey;
+
+  /// No description provided for @settingsAiApiKeyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste your API key'**
+  String get settingsAiApiKeyHint;
+
+  /// No description provided for @settingsAiApiKeyHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Where do I get a key?'**
+  String get settingsAiApiKeyHelp;
+
+  /// No description provided for @settingsAiApiKeySaved.
+  ///
+  /// In en, this message translates to:
+  /// **'API key saved'**
+  String get settingsAiApiKeySaved;
+
+  /// No description provided for @settingsAiAllowedCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories the assistant can read'**
+  String get settingsAiAllowedCategories;
+
+  /// No description provided for @settingsAiAllowedCategoriesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Off by default. Turn on only the categories you want the assistant to see — nothing else is ever sent.'**
+  String get settingsAiAllowedCategoriesHint;
+
+  /// No description provided for @settingsAiClearHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear chat history'**
+  String get settingsAiClearHistory;
+
+  /// No description provided for @settingsAiClearHistoryConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear chat history?'**
+  String get settingsAiClearHistoryConfirmTitle;
+
+  /// No description provided for @settingsAiClearHistoryConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This deletes every question and answer stored on this device. This cannot be undone.'**
+  String get settingsAiClearHistoryConfirmBody;
+
+  /// No description provided for @assistantTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant'**
+  String get assistantTitle;
+
+  /// No description provided for @assistantEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask me anything'**
+  String get assistantEmptyTitle;
+
+  /// No description provided for @assistantEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Try \"What do I need to do this week?\" or \"How many installments are left on my motorcycle loan?\"'**
+  String get assistantEmptyBody;
+
+  /// No description provided for @assistantInputHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask something…'**
+  String get assistantInputHint;
+
+  /// No description provided for @assistantSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get assistantSend;
+
+  /// No description provided for @assistantDisabledTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant is turned off'**
+  String get assistantDisabledTitle;
+
+  /// No description provided for @assistantDisabledBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable it in Settings and pick an AI provider to start chatting.'**
+  String get assistantDisabledBody;
+
+  /// No description provided for @assistantOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get assistantOpenSettings;
+
+  /// No description provided for @assistantThinking.
+  ///
+  /// In en, this message translates to:
+  /// **'Thinking…'**
+  String get assistantThinking;
 }
 
 class _AppLocalizationsDelegate

@@ -11,6 +11,8 @@ import 'tables/reminder_logs_table.dart';
 import 'tables/loans_table.dart';
 import 'tables/loan_installments_table.dart';
 import 'tables/app_settings_table.dart';
+import 'tables/ai_settings_table.dart';
+import 'tables/ai_chat_history_table.dart';
 
 part 'app_database.g.dart';
 
@@ -32,13 +34,15 @@ const List<(String name, String icon, String color)> kDefaultCategories = [
     Loans,
     LoanInstallments,
     AppSettings,
+    AiSettings,
+    AiChatHistory,
   ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -46,10 +50,17 @@ class AppDatabase extends _$AppDatabase {
           await m.createAll();
           await _seedDefaultCategories();
           await into(appSettings).insert(const AppSettingsCompanion());
+          await into(aiSettings).insert(const AiSettingsCompanion());
         },
-        // Future schema changes must bump schemaVersion and add an
-        // onUpgrade step here. Never edit an already-shipped table
-        // definition without a matching migration.
+        onUpgrade: (Migrator m, int from, int to) async {
+          if (from < 2) {
+            // Phase 7: optional AI assistant, added post-launch. Existing
+            // installs get the two new tables with no data loss elsewhere.
+            await m.createTable(aiSettings);
+            await m.createTable(aiChatHistory);
+            await into(aiSettings).insert(const AiSettingsCompanion());
+          }
+        },
       );
 
   Future<void> _seedDefaultCategories() async {
