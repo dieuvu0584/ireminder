@@ -57,7 +57,13 @@ class NotificationService {
     tz_data.initializeTimeZones();
     tz.setLocalLocation(_deviceLocation());
 
-    const androidInit = AndroidInitializationSettings('@mipmap/ic_launcher');
+    // Deliberately a dedicated drawable, not @mipmap/ic_launcher — that now
+    // resolves to an adaptive icon (background + foreground layers), and
+    // Android notification small icons must be a plain white-on-transparent
+    // silhouette. Some OEM notification renderers silently fail to show
+    // the notification at all (no error surfaced anywhere) rather than
+    // render a broken icon when given an adaptive icon here.
+    const androidInit = AndroidInitializationSettings('@drawable/ic_notification');
     const initSettings = InitializationSettings(android: androidInit);
 
     await _plugin.initialize(
