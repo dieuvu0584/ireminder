@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../providers/ai_providers.dart';
+import '../../providers/calendar_providers.dart';
 import '../assistant/assistant_screen.dart';
 import '../categories/category_manager_screen.dart';
 import '../loans/loan_form_screen.dart';
@@ -46,8 +47,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
     );
     if (choice == 'reminder' && context.mounted) {
+      // Pre-fills whichever day is currently selected on the Calendar
+      // sub-tab (defaults to today if the user hasn't picked one), so
+      // adding a reminder while browsing a future/past day doesn't
+      // silently ignore it in favor of today.
+      final initialStartDate = ref.read(selectedCalendarDayProvider);
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (_) => const ReminderFormScreen()),
+        MaterialPageRoute(
+          builder: (_) =>
+              ReminderFormScreen(initialStartDate: initialStartDate),
+        ),
       );
     } else if (choice == 'loan' && context.mounted) {
       Navigator.of(context).push(

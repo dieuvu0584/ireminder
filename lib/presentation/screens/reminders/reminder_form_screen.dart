@@ -12,8 +12,14 @@ import '../../widgets/save_action_button.dart';
 class ReminderFormScreen extends ConsumerStatefulWidget {
   final Reminder? existing;
   final int? initialCategoryId;
+  final DateTime? initialStartDate;
 
-  const ReminderFormScreen({super.key, this.existing, this.initialCategoryId});
+  const ReminderFormScreen({
+    super.key,
+    this.existing,
+    this.initialCategoryId,
+    this.initialStartDate,
+  });
 
   @override
   ConsumerState<ReminderFormScreen> createState() => _ReminderFormScreenState();
@@ -30,7 +36,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
   int? _recurrenceMonth;
   int? _recurrenceWeekday;
   int? _intervalDays;
-  DateTime _startDate = DateTime.now();
+  late DateTime _startDate;
   TimeOfDay _time = const TimeOfDay(hour: 9, minute: 0);
   int _advanceNoticeDays = 0;
   bool _saving = false;
@@ -42,6 +48,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     _titleCtrl = TextEditingController(text: r?.title ?? '');
     _descCtrl = TextEditingController(text: r?.description ?? '');
     _categoryId = r?.categoryId ?? widget.initialCategoryId;
+    _startDate = widget.initialStartDate ?? DateTime.now();
     if (r != null) {
       _recurrenceType = RecurrenceType.fromDbValue(r.recurrenceType);
       _recurrenceDay = r.recurrenceDay;

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../../data/database/app_database.dart';
+import '../../providers/calendar_providers.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../widgets/color_picker.dart';
@@ -19,14 +20,12 @@ class CalendarView extends ConsumerStatefulWidget {
 
 class _CalendarViewState extends ConsumerState<CalendarView> {
   late DateTime _visibleMonth;
-  DateTime? _selectedDay;
 
   @override
   void initState() {
     super.initState();
     final now = DateTime.now();
     _visibleMonth = DateTime(now.year, now.month);
-    _selectedDay = DateTime(now.year, now.month, now.day);
   }
 
   @override
@@ -34,6 +33,10 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     final l10n = AppLocalizations.of(context);
     final remindersAsync = ref.watch(activeRemindersStreamProvider);
     final categoriesAsync = ref.watch(categoriesStreamProvider);
+    // Shared with HomeScreen's "+" FAB, so creating a reminder while
+    // browsing a different day here pre-fills that day as the reminder's
+    // start date instead of always defaulting to today.
+    final selectedDay = ref.watch(selectedCalendarDayProvider);
 
     return remindersAsync.when(
       data: (reminders) {
@@ -47,9 +50,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
           byDay.putIfAbsent(key, () => []).add(r);
         }
 
-        final selectedReminders = _selectedDay == null
-            ? const <Reminder>[]
-            : (byDay[_selectedDay!] ?? const <Reminder>[]);
+        final selectedReminders = byDay[selectedDay] ?? const <Reminder>[];
 
         return Column(
           children: [
@@ -66,10 +67,11 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
             ),
             _MonthGrid(
               month: _visibleMonth,
-              selectedDay: _selectedDay,
+              selectedDay: selectedDay,
               remindersByDay: byDay,
               categoriesById: byId,
-              onSelectDay: (d) => setState(() => _selectedDay = d),
+              onSelectDay: (d) =>
+                  ref.read(selectedCalendarDayProvider.notifier).state = d,
             ),
             const Divider(height: 1),
             Expanded(
