@@ -22,8 +22,9 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final locale = Localizations.localeOf(context).toString();
-    final installmentsAsync =
-        ref.watch(loanInstallmentsStreamProvider(widget.loan.id));
+    final installmentsAsync = ref.watch(
+      loanInstallmentsStreamProvider(widget.loan.id),
+    );
     final today = DateTime.now();
     final todayOnly = DateTime(today.year, today.month, today.day);
 
@@ -38,9 +39,9 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
                 context: context,
                 builder: (ctx) => AlertDialog(
                   title: Text(l10n.loanDeleteConfirmTitle),
-                  content: Text(l10n.loanDeleteConfirmBody(
-                    widget.loan.totalInstallments,
-                  )),
+                  content: Text(
+                    l10n.loanDeleteConfirmBody(widget.loan.totalInstallments),
+                  ),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.of(ctx).pop(false),
@@ -61,55 +62,59 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
           ),
         ],
       ),
-      body: installmentsAsync.when(
-        data: (installments) {
-          return ListView.builder(
-            itemCount: installments.length,
-            itemBuilder: (context, index) {
-              final installment = installments[index];
-              final isOverdue = installment.status == 'pending' &&
-                  installment.dueDate.isBefore(todayOnly);
-              final isPaid = installment.status == 'paid';
-              return CheckboxListTile(
-                value: _selected.contains(installment.id),
-                onChanged: isPaid
-                    ? null
-                    : (checked) {
-                        setState(() {
-                          if (checked == true) {
-                            _selected.add(installment.id);
-                          } else {
-                            _selected.remove(installment.id);
-                          }
-                        });
-                      },
-                title: Text(l10n.loanInstallmentNumber(
-                  installment.installmentNumber,
-                )),
-                subtitle: Text(
-                  '${DateFormatter.formatDate(installment.dueDate, locale)} · '
-                  '${DateFormatter.formatCurrency(installment.amount, locale)}',
-                ),
-                secondary: Chip(
-                  label: Text(
-                    isPaid
-                        ? l10n.loanStatusPaid
-                        : isOverdue
-                            ? l10n.loanStatusOverdue
-                            : l10n.loanStatusPending,
+      body: SafeArea(
+        child: installmentsAsync.when(
+          data: (installments) {
+            return ListView.builder(
+              padding: const EdgeInsets.only(bottom: 88),
+              itemCount: installments.length,
+              itemBuilder: (context, index) {
+                final installment = installments[index];
+                final isOverdue =
+                    installment.status == 'pending' &&
+                    installment.dueDate.isBefore(todayOnly);
+                final isPaid = installment.status == 'paid';
+                return CheckboxListTile(
+                  value: _selected.contains(installment.id),
+                  onChanged: isPaid
+                      ? null
+                      : (checked) {
+                          setState(() {
+                            if (checked == true) {
+                              _selected.add(installment.id);
+                            } else {
+                              _selected.remove(installment.id);
+                            }
+                          });
+                        },
+                  title: Text(
+                    l10n.loanInstallmentNumber(installment.installmentNumber),
                   ),
-                  backgroundColor: isPaid
-                      ? Colors.green.withValues(alpha: 0.15)
-                      : isOverdue
-                          ? Colors.red.withValues(alpha: 0.15)
-                          : null,
-                ),
-              );
-            },
-          );
-        },
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, st) => Center(child: Text(l10n.errorLoadFailed)),
+                  subtitle: Text(
+                    '${DateFormatter.formatDate(installment.dueDate, locale)} · '
+                    '${DateFormatter.formatCurrency(installment.amount, locale)}',
+                  ),
+                  secondary: Chip(
+                    label: Text(
+                      isPaid
+                          ? l10n.loanStatusPaid
+                          : isOverdue
+                          ? l10n.loanStatusOverdue
+                          : l10n.loanStatusPending,
+                    ),
+                    backgroundColor: isPaid
+                        ? Colors.green.withValues(alpha: 0.15)
+                        : isOverdue
+                        ? Colors.red.withValues(alpha: 0.15)
+                        : null,
+                  ),
+                );
+              },
+            );
+          },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, st) => Center(child: Text(l10n.errorLoadFailed)),
+        ),
       ),
       floatingActionButton: _selected.isEmpty
           ? null
@@ -119,7 +124,9 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
               onPressed: () async {
                 final messenger = ScaffoldMessenger.of(context);
                 try {
-                  await ref.read(loanActionsProvider).markPaid(
+                  await ref
+                      .read(loanActionsProvider)
+                      .markPaid(
                         loanId: widget.loan.id,
                         installmentIds: _selected.toList(),
                         paidDate: DateTime.now(),
