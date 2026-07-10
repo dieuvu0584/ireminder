@@ -108,6 +108,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         );
       }
       if (mounted) Navigator.of(context).pop();
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(AppLocalizations.of(context).errorGeneric)),
+        );
+      }
     } finally {
       if (mounted) setState(() => _saving = false);
     }

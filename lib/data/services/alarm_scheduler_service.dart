@@ -1,4 +1,5 @@
 import 'package:drift/drift.dart';
+import 'package:flutter/foundation.dart';
 
 import '../database/app_database.dart';
 import 'notification_service.dart';
@@ -18,6 +19,13 @@ DateTime _combine(DateTime date, String hhmm) {
 /// [NotificationService] (the OS-level scheduling mechanism). Always
 /// cancels before scheduling so a reminder/installment never ends up with
 /// two live notifications.
+///
+/// Scheduling is best-effort: the OS can refuse an exact alarm (missing
+/// permission, OEM restrictions, ...) for reasons entirely outside this
+/// app's control. The Drift DB stays the source of truth regardless, so
+/// every public method here swallows scheduling failures rather than
+/// letting them propagate — a notification that fails to schedule must
+/// never block saving a reminder or starting the app.
 class AlarmSchedulerService {
   final AppDatabase _db;
   final NotificationService _notifications;
@@ -25,39 +33,49 @@ class AlarmSchedulerService {
   AlarmSchedulerService(this._db, this._notifications);
 
   Future<void> scheduleForReminder(Reminder reminder) async {
-    if (!reminder.isActive) {
-      await _notifications.cancelReminder(reminder.id);
-      return;
-    }
-    final dueDate = reminder.snoozeUntil ?? reminder.nextDueDate;
-    final fireDate = reminder.snoozeUntil != null
-        ? reminder.snoozeUntil!
-        : dueDate.subtract(Duration(days: reminder.advanceNoticeDays));
-    final fireAt = reminder.snoozeUntil != null
-        ? reminder.snoozeUntil!
-        : _combine(fireDate, reminder.reminderTime);
+    try {
+      if (!reminder.isActive) {
+        await _notifications.cancelReminder(reminder.id);
+        return;
+      }
+      final dueDate = reminder.snoozeUntil ?? reminder.nextDueDate;
+      final fireDate = reminder.snoozeUntil != null
+          ? reminder.snoozeUntil!
+          : dueDate.subtract(Duration(days: reminder.advanceNoticeDays));
+      final fireAt = reminder.snoozeUntil != null
+          ? reminder.snoozeUntil!
+          : _combine(fireDate, reminder.reminderTime);
 
-    if (fireAt.isBefore(DateTime.now())) {
-      // Past due: still show it, but immediately rather than in the past.
+      if (fireAt.isBefore(DateTime.now())) {
+        // Past due: still show it, but immediately rather than in the past.
+        await _notifications.scheduleReminder(
+          reminderId: reminder.id,
+          fireAt: DateTime.now().add(const Duration(seconds: 5)),
+          title: reminder.title,
+          body: reminder.description ?? '',
+        );
+        return;
+      }
+
       await _notifications.scheduleReminder(
         reminderId: reminder.id,
-        fireAt: DateTime.now().add(const Duration(seconds: 5)),
+        fireAt: fireAt,
         title: reminder.title,
         body: reminder.description ?? '',
       );
-      return;
+    } catch (e) {
+      debugPrint('AlarmSchedulerService: failed to schedule reminder '
+          '${reminder.id}: $e');
     }
-
-    await _notifications.scheduleReminder(
-      reminderId: reminder.id,
-      fireAt: fireAt,
-      title: reminder.title,
-      body: reminder.description ?? '',
-    );
   }
 
-  Future<void> cancelForReminder(int reminderId) {
-    return _notifications.cancelReminder(reminderId);
+  Future<void> cancelForReminder(int reminderId) async {
+    try {
+      await _notifications.cancelReminder(reminderId);
+    } catch (e) {
+      debugPrint('AlarmSchedulerService: failed to cancel reminder '
+          '$reminderId: $e');
+    }
   }
 
   Future<void> scheduleForInstallment(
@@ -65,25 +83,35 @@ class AlarmSchedulerService {
     Loan loan,
     String defaultReminderTime,
   ) async {
-    if (installment.status != 'pending') {
-      await _notifications.cancelInstallment(installment.id);
-      return;
-    }
-    final fireDate = installment.dueDate
-        .subtract(Duration(days: loan.reminderAdvanceDays));
-    final fireAt = _combine(fireDate, defaultReminderTime);
-    if (fireAt.isBefore(DateTime.now())) return;
+    try {
+      if (installment.status != 'pending') {
+        await _notifications.cancelInstallment(installment.id);
+        return;
+      }
+      final fireDate = installment.dueDate
+          .subtract(Duration(days: loan.reminderAdvanceDays));
+      final fireAt = _combine(fireDate, defaultReminderTime);
+      if (fireAt.isBefore(DateTime.now())) return;
 
-    await _notifications.scheduleInstallment(
-      installmentId: installment.id,
-      fireAt: fireAt,
-      title: 'Installment #${installment.installmentNumber} due',
-      body: '${loan.name} — ${installment.amount}',
-    );
+      await _notifications.scheduleInstallment(
+        installmentId: installment.id,
+        fireAt: fireAt,
+        title: 'Installment #${installment.installmentNumber} due',
+        body: '${loan.name} — ${installment.amount}',
+      );
+    } catch (e) {
+      debugPrint('AlarmSchedulerService: failed to schedule installment '
+          '${installment.id}: $e');
+    }
   }
 
-  Future<void> cancelForInstallment(int installmentId) {
-    return _notifications.cancelInstallment(installmentId);
+  Future<void> cancelForInstallment(int installmentId) async {
+    try {
+      await _notifications.cancelInstallment(installmentId);
+    } catch (e) {
+      debugPrint('AlarmSchedulerService: failed to cancel installment '
+          '$installmentId: $e');
+    }
   }
 
   /// Re-derives every active alarm straight from the DB. Called on app

@@ -55,9 +55,7 @@ class NotificationService {
 
   Future<void> init() async {
     tz_data.initializeTimeZones();
-    tz.setLocalLocation(tz.getLocation(DateTime.now().timeZoneName == 'UTC'
-        ? 'UTC'
-        : tz.local.name));
+    tz.setLocalLocation(_deviceLocation());
 
     const androidInit = AndroidInitializationSettings('@mipmap/ic_launcher');
     const initSettings = InitializationSettings(android: androidInit);
@@ -72,6 +70,27 @@ class NotificationService {
         AndroidFlutterLocalNotificationsPlugin>();
     await androidPlugin?.createNotificationChannel(_reminderChannel);
     await androidPlugin?.createNotificationChannel(_loanChannel);
+  }
+
+  /// The `timezone` package needs an IANA zone name (e.g.
+  /// "Asia/Ho_Chi_Minh"), which isn't available without a platform-channel
+  /// plugin. Approximates it with a fixed-offset Etc/GMT zone matching the
+  /// device's current UTC offset instead of always defaulting to UTC.
+  /// Correct everywhere that doesn't observe DST (including Vietnam, this
+  /// app's primary market); off by up to an hour during a DST transition
+  /// elsewhere, which is still far better than being off by the full
+  /// offset.
+  static tz.Location _deviceLocation() {
+    final offsetHours =
+        (DateTime.now().timeZoneOffset.inMinutes / 60).round().clamp(-12, 14);
+    if (offsetHours == 0) return tz.UTC;
+    // Etc/GMT uses POSIX sign convention: Etc/GMT-7 means UTC+7.
+    final name = 'Etc/GMT${offsetHours > 0 ? '-' : '+'}${offsetHours.abs()}';
+    try {
+      return tz.getLocation(name);
+    } catch (_) {
+      return tz.UTC;
+    }
   }
 
   void _handleResponse(NotificationResponse response) {

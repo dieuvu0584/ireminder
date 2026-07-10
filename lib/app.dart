@@ -45,7 +45,16 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
       }
     }
   };
-  await notificationService.init();
+  // Notification setup and alarm scheduling touch the OS (permissions,
+  // OEM restrictions, plugin channels) in ways this app can't fully
+  // control. Neither may ever prevent the app itself from opening — a
+  // reminder that fails to schedule is recoverable, an app stuck on a
+  // splash screen forever is not.
+  try {
+    await notificationService.init();
+  } catch (e) {
+    debugPrint('appBootstrap: notification init failed: $e');
+  }
 
   final settingsRepo = ref.read(settingsRepositoryProvider);
   final settings = await settingsRepo.get();
@@ -55,9 +64,13 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
     await settingsRepo.setLocale(resolved.languageCode);
   }
 
-  await ref
-      .read(alarmSchedulerServiceProvider)
-      .rescheduleAllFromDatabase();
+  try {
+    await ref
+        .read(alarmSchedulerServiceProvider)
+        .rescheduleAllFromDatabase();
+  } catch (e) {
+    debugPrint('appBootstrap: rescheduleAllFromDatabase failed: $e');
+  }
 });
 
 class IReminderApp extends ConsumerWidget {
