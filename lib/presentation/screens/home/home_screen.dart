@@ -66,22 +66,29 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ref.watch(aiSettingsStreamProvider).valueOrNull?.isEnabled ?? false;
 
     final tabs = <Widget>[
-      DefaultTabController(
-        length: 2,
-        child: Column(
-          children: [
-            TabBar(
-              tabs: [
-                Tab(text: l10n.navToday),
-                Tab(text: l10n.navCalendar),
-              ],
-            ),
-            const Expanded(
-              child: TabBarView(
-                children: [TimelineView(), CalendarView()],
+      // Unlike the other tabs, this one has no Scaffold/AppBar of its own
+      // to provide top status-bar inset, so without an explicit SafeArea
+      // its TabBar renders directly under (and gets visually overlapped
+      // by) the system status bar icons/clock.
+      SafeArea(
+        bottom: false,
+        child: DefaultTabController(
+          length: 2,
+          child: Column(
+            children: [
+              TabBar(
+                tabs: [
+                  Tab(text: l10n.navToday),
+                  Tab(text: l10n.navCalendar),
+                ],
               ),
-            ),
-          ],
+              const Expanded(
+                child: TabBarView(
+                  children: [TimelineView(), CalendarView()],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       const LoanListScreen(),
