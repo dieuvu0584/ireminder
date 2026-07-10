@@ -6,6 +6,7 @@ import '../../../data/database/app_database.dart';
 import '../../providers/category_providers.dart';
 import '../../widgets/color_picker.dart';
 import '../../widgets/icon_picker.dart';
+import '../../widgets/save_action_button.dart';
 
 class CategoryFormScreen extends ConsumerStatefulWidget {
   final Category? existing;
@@ -13,8 +14,7 @@ class CategoryFormScreen extends ConsumerStatefulWidget {
   const CategoryFormScreen({super.key, this.existing});
 
   @override
-  ConsumerState<CategoryFormScreen> createState() =>
-      _CategoryFormScreenState();
+  ConsumerState<CategoryFormScreen> createState() => _CategoryFormScreenState();
 }
 
 class _CategoryFormScreenState extends ConsumerState<CategoryFormScreen> {
@@ -76,41 +76,47 @@ class _CategoryFormScreenState extends ConsumerState<CategoryFormScreen> {
               : l10n.categoryFormTitleEdit,
         ),
         actions: [
-          TextButton(
+          SaveActionButton(
+            label: l10n.actionSave,
             onPressed: _saving ? null : _submit,
-            child: Text(l10n.actionSave),
           ),
         ],
       ),
-      body: Form(
-        key: _formKey,
-        child: ListView(
-          padding: const EdgeInsets.all(16),
-          children: [
-            TextFormField(
-              controller: _nameCtrl,
-              decoration: InputDecoration(labelText: l10n.categoryFieldName),
-              validator: (v) => (v == null || v.trim().isEmpty)
-                  ? l10n.categoryFieldNameRequired
-                  : null,
-            ),
-            const SizedBox(height: 20),
-            Text(l10n.categoryFieldColor,
-                style: Theme.of(context).textTheme.labelLarge),
-            const SizedBox(height: 8),
-            ColorPicker(
-              selectedHex: _color,
-              onSelected: (hex) => setState(() => _color = hex),
-            ),
-            const SizedBox(height: 20),
-            Text(l10n.categoryFieldIcon,
-                style: Theme.of(context).textTheme.labelLarge),
-            const SizedBox(height: 8),
-            IconPicker(
-              selectedKey: _icon,
-              onSelected: (key) => setState(() => _icon = key),
-            ),
-          ],
+      body: SafeArea(
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
+              TextFormField(
+                controller: _nameCtrl,
+                decoration: InputDecoration(labelText: l10n.categoryFieldName),
+                validator: (v) => (v == null || v.trim().isEmpty)
+                    ? l10n.categoryFieldNameRequired
+                    : null,
+              ),
+              const SizedBox(height: 20),
+              Text(
+                l10n.categoryFieldColor,
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              const SizedBox(height: 8),
+              ColorPicker(
+                selectedHex: _color,
+                onSelected: (hex) => setState(() => _color = hex),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                l10n.categoryFieldIcon,
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              const SizedBox(height: 8),
+              IconPicker(
+                selectedKey: _icon,
+                onSelected: (key) => setState(() => _icon = key),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -7,6 +7,7 @@ import '../../../data/database/app_database.dart';
 import '../../../domain/enums/recurrence_type.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
+import '../../widgets/save_action_button.dart';
 
 class ReminderFormScreen extends ConsumerStatefulWidget {
   final Reminder? existing;
@@ -15,8 +16,7 @@ class ReminderFormScreen extends ConsumerStatefulWidget {
   const ReminderFormScreen({super.key, this.existing, this.initialCategoryId});
 
   @override
-  ConsumerState<ReminderFormScreen> createState() =>
-      _ReminderFormScreenState();
+  ConsumerState<ReminderFormScreen> createState() => _ReminderFormScreenState();
 }
 
 class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
@@ -74,8 +74,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       if (widget.existing == null) {
         await actions.create(
           title: _titleCtrl.text.trim(),
-          description:
-              _descCtrl.text.trim().isEmpty ? null : _descCtrl.text.trim(),
+          description: _descCtrl.text.trim().isEmpty
+              ? null
+              : _descCtrl.text.trim(),
           categoryId: _categoryId!,
           recurrenceType: _recurrenceType,
           recurrenceInterval: _intervalDays,
@@ -180,106 +181,116 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               : l10n.reminderFormTitleEdit,
         ),
         actions: [
-          TextButton(
+          SaveActionButton(
+            label: l10n.actionSave,
             onPressed: _saving ? null : _submit,
-            child: Text(l10n.actionSave),
           ),
         ],
       ),
-      body: Form(
-        key: _formKey,
-        child: ListView(
-          padding: const EdgeInsets.all(16),
-          children: [
-            TextFormField(
-              controller: _titleCtrl,
-              decoration: InputDecoration(labelText: l10n.reminderFieldTitle),
-              validator: (v) =>
-                  (v == null || v.trim().isEmpty)
-                      ? l10n.reminderFieldTitleRequired
-                      : null,
-            ),
-            const SizedBox(height: 12),
-            TextFormField(
-              controller: _descCtrl,
-              decoration:
-                  InputDecoration(labelText: l10n.reminderFieldDescription),
-              maxLines: 3,
-            ),
-            const SizedBox(height: 12),
-            categoriesAsync.when(
-              data: (categories) => DropdownButtonFormField<int>(
-                initialValue: _categoryId,
-                isExpanded: true,
-                decoration:
-                    InputDecoration(labelText: l10n.reminderFieldCategory),
-                items: categories
-                    .map((c) => DropdownMenuItem(
+      body: SafeArea(
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
+              TextFormField(
+                controller: _titleCtrl,
+                decoration: InputDecoration(labelText: l10n.reminderFieldTitle),
+                validator: (v) => (v == null || v.trim().isEmpty)
+                    ? l10n.reminderFieldTitleRequired
+                    : null,
+              ),
+              const SizedBox(height: 12),
+              TextFormField(
+                controller: _descCtrl,
+                decoration: InputDecoration(
+                  labelText: l10n.reminderFieldDescription,
+                ),
+                maxLines: 3,
+              ),
+              const SizedBox(height: 12),
+              categoriesAsync.when(
+                data: (categories) => DropdownButtonFormField<int>(
+                  initialValue: _categoryId,
+                  isExpanded: true,
+                  decoration: InputDecoration(
+                    labelText: l10n.reminderFieldCategory,
+                  ),
+                  items: categories
+                      .map(
+                        (c) => DropdownMenuItem(
                           value: c.id,
                           child: Text(c.name, overflow: TextOverflow.ellipsis),
-                        ))
-                    .toList(),
-                onChanged: (v) => setState(() => _categoryId = v),
-                validator: (v) => v == null ? l10n.validationRequired : null,
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (v) => setState(() => _categoryId = v),
+                  validator: (v) => v == null ? l10n.validationRequired : null,
+                ),
+                loading: () => const LinearProgressIndicator(),
+                error: (e, st) => Text(l10n.errorLoadFailed),
               ),
-              loading: () => const LinearProgressIndicator(),
-              error: (e, st) => Text(l10n.errorLoadFailed),
-            ),
-            const SizedBox(height: 12),
-            DropdownButtonFormField<RecurrenceType>(
-              initialValue: _recurrenceType,
-              decoration:
-                  InputDecoration(labelText: l10n.reminderFieldRecurrence),
-              items: RecurrenceType.values
-                  .map((t) => DropdownMenuItem(
+              const SizedBox(height: 12),
+              DropdownButtonFormField<RecurrenceType>(
+                initialValue: _recurrenceType,
+                decoration: InputDecoration(
+                  labelText: l10n.reminderFieldRecurrence,
+                ),
+                items: RecurrenceType.values
+                    .map(
+                      (t) => DropdownMenuItem(
                         value: t,
                         child: Text(_recurrenceLabel(l10n, t)),
-                      ))
-                  .toList(),
-              onChanged: (v) => setState(() => _recurrenceType = v!),
-            ),
-            const SizedBox(height: 12),
-            ..._buildRecurrenceFields(l10n),
-            const SizedBox(height: 12),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(l10n.reminderFieldStartDate),
-              subtitle: Text(
-                '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
+                      ),
+                    )
+                    .toList(),
+                onChanged: (v) => setState(() => _recurrenceType = v!),
               ),
-              trailing: const Icon(Icons.calendar_today),
-              onTap: () async {
-                final picked = await showDatePicker(
-                  context: context,
-                  initialDate: _startDate,
-                  firstDate: DateTime(2000),
-                  lastDate: DateTime(2100),
-                );
-                if (picked != null) setState(() => _startDate = picked);
-              },
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(l10n.reminderFieldTime),
-              subtitle: Text(_timeString),
-              trailing: const Icon(Icons.access_time),
-              onTap: () async {
-                final picked =
-                    await showTimePicker(context: context, initialTime: _time);
-                if (picked != null) setState(() => _time = picked);
-              },
-            ),
-            const SizedBox(height: 12),
-            TextFormField(
-              initialValue: _advanceNoticeDays.toString(),
-              decoration:
-                  InputDecoration(labelText: l10n.reminderFieldAdvanceNotice),
-              keyboardType: TextInputType.number,
-              onChanged: (v) =>
-                  _advanceNoticeDays = int.tryParse(v) ?? 0,
-            ),
-            const SizedBox(height: 24),
-          ],
+              const SizedBox(height: 12),
+              ..._buildRecurrenceFields(l10n),
+              const SizedBox(height: 12),
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(l10n.reminderFieldStartDate),
+                subtitle: Text(
+                  '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
+                ),
+                trailing: const Icon(Icons.calendar_today),
+                onTap: () async {
+                  final picked = await showDatePicker(
+                    context: context,
+                    initialDate: _startDate,
+                    firstDate: DateTime(2000),
+                    lastDate: DateTime(2100),
+                  );
+                  if (picked != null) setState(() => _startDate = picked);
+                },
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(l10n.reminderFieldTime),
+                subtitle: Text(_timeString),
+                trailing: const Icon(Icons.access_time),
+                onTap: () async {
+                  final picked = await showTimePicker(
+                    context: context,
+                    initialTime: _time,
+                  );
+                  if (picked != null) setState(() => _time = picked);
+                },
+              ),
+              const SizedBox(height: 12),
+              TextFormField(
+                initialValue: _advanceNoticeDays.toString(),
+                decoration: InputDecoration(
+                  labelText: l10n.reminderFieldAdvanceNotice,
+                ),
+                keyboardType: TextInputType.number,
+                onChanged: (v) => _advanceNoticeDays = int.tryParse(v) ?? 0,
+              ),
+              const SizedBox(height: 24),
+            ],
+          ),
         ),
       ),
     );
@@ -312,8 +323,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         return [
           DropdownButtonFormField<int>(
             initialValue: _recurrenceWeekday,
-            decoration:
-                InputDecoration(labelText: l10n.reminderFieldRecurrenceWeekday),
+            decoration: InputDecoration(
+              labelText: l10n.reminderFieldRecurrenceWeekday,
+            ),
             items: List.generate(
               7,
               (i) => DropdownMenuItem(
@@ -329,8 +341,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         return [
           TextFormField(
             initialValue: _recurrenceDay?.toString() ?? '',
-            decoration:
-                InputDecoration(labelText: l10n.reminderFieldRecurrenceDay),
+            decoration: InputDecoration(
+              labelText: l10n.reminderFieldRecurrenceDay,
+            ),
             keyboardType: TextInputType.number,
             onChanged: (v) => _recurrenceDay = int.tryParse(v),
             validator: (v) => _validateDayOfMonth(l10n, v),
@@ -344,7 +357,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 child: TextFormField(
                   initialValue: _recurrenceDay?.toString() ?? '',
                   decoration: InputDecoration(
-                      labelText: l10n.reminderFieldRecurrenceDay),
+                    labelText: l10n.reminderFieldRecurrenceDay,
+                  ),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceDay = int.tryParse(v),
                   validator: (v) => _validateDayOfMonth(l10n, v),
@@ -355,7 +369,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 child: TextFormField(
                   initialValue: _recurrenceMonth?.toString() ?? '',
                   decoration: InputDecoration(
-                      labelText: l10n.reminderFieldRecurrenceMonth),
+                    labelText: l10n.reminderFieldRecurrenceMonth,
+                  ),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceMonth = int.tryParse(v),
                   validator: (v) => _validateMonth(l10n, v),
@@ -368,8 +383,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         return [
           TextFormField(
             initialValue: _intervalDays?.toString() ?? '',
-            decoration:
-                InputDecoration(labelText: l10n.reminderFieldIntervalDays),
+            decoration: InputDecoration(
+              labelText: l10n.reminderFieldIntervalDays,
+            ),
             keyboardType: TextInputType.number,
             onChanged: (v) => _intervalDays = int.tryParse(v),
             validator: (v) => _validatePositiveInterval(l10n, v),
@@ -383,7 +399,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 child: TextFormField(
                   initialValue: _recurrenceDay?.toString() ?? '',
                   decoration: InputDecoration(
-                      labelText: l10n.reminderFieldLunarDay),
+                    labelText: l10n.reminderFieldLunarDay,
+                  ),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceDay = int.tryParse(v),
                   validator: (v) => _validateDayOfMonth(l10n, v),
@@ -394,7 +411,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 child: TextFormField(
                   initialValue: _recurrenceMonth?.toString() ?? '',
                   decoration: InputDecoration(
-                      labelText: l10n.reminderFieldLunarMonth),
+                    labelText: l10n.reminderFieldLunarMonth,
+                  ),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceMonth = int.tryParse(v),
                   validator: (v) => _validateMonth(l10n, v),
