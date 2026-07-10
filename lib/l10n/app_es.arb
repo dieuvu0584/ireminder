@@ -1,13 +1,11 @@
 {
   "@@locale": "es",
   "appTitle": "iReminder",
-
   "navToday": "Hoy",
   "navCalendar": "Calendario",
   "navLoans": "Cuotas",
   "navCategories": "Categorías",
   "navSettings": "Ajustes",
-
   "onboardingTitle1": "Nunca olvides lo importante",
   "onboardingBody1": "Controla el mantenimiento de electrodomésticos, revisiones del vehículo, aniversarios y mucho más, todo en un solo lugar.",
   "onboardingTitle2": "Recurrencia muy sencilla",
@@ -17,22 +15,18 @@
   "onboardingSkip": "Omitir",
   "onboardingNext": "Siguiente",
   "onboardingGetStarted": "Empezar",
-
   "notificationPermissionTitle": "No te pierdas nada",
   "notificationPermissionBody": "iReminder necesita permiso para enviarte notificaciones cuando algo esté por vencer.",
   "notificationPermissionAllow": "Permitir notificaciones",
   "notificationPermissionLater": "Ahora no",
-
   "homeSectionOverdue": "Atrasado",
   "homeSectionToday": "Hoy",
   "homeSectionThisWeek": "Esta semana",
   "homeSectionUpcoming": "Próximamente",
   "homeEmptyTitle": "Todavía no hay nada aquí",
   "homeEmptyBody": "Toca + para agregar tu primer recordatorio o plan de cuotas.",
-
   "fabAddReminder": "Recordatorio",
   "fabAddLoan": "Plan de cuotas",
-
   "actionDone": "Hecho",
   "actionSnooze": "Posponer",
   "actionEdit": "Editar",
@@ -45,7 +39,6 @@
   "actionOk": "Aceptar",
   "actionAdd": "Agregar",
   "actionClose": "Cerrar",
-
   "reminderFormTitleNew": "Nuevo recordatorio",
   "reminderFormTitleEdit": "Editar recordatorio",
   "reminderFieldTitle": "Título",
@@ -64,7 +57,6 @@
   "reminderFieldLunarMonth": "Mes lunar",
   "reminderDeleteConfirmTitle": "¿Eliminar este recordatorio?",
   "reminderDeleteConfirmBody": "Esta acción no se puede deshacer.",
-
   "recurrenceNone": "Una vez",
   "recurrenceDaily": "Diario",
   "recurrenceWeekly": "Semanal",
@@ -72,7 +64,6 @@
   "recurrenceYearly": "Anual",
   "recurrenceCustomIntervalDays": "Cada N días",
   "recurrenceLunarYearly": "Anual (calendario lunar)",
-
   "weekdayMonday": "Lunes",
   "weekdayTuesday": "Martes",
   "weekdayWednesday": "Miércoles",
@@ -80,7 +71,6 @@
   "weekdayFriday": "Viernes",
   "weekdaySaturday": "Sábado",
   "weekdaySunday": "Domingo",
-
   "loanListTitle": "Cuotas y préstamos",
   "loanFormTitleNew": "Nuevo plan de cuotas",
   "loanFormTitleEdit": "Editar plan de cuotas",
@@ -100,15 +90,21 @@
   "loanProgress": "{paid} / {total} cuotas pagadas",
   "@loanProgress": {
     "placeholders": {
-      "paid": {"type": "int"},
-      "total": {"type": "int"}
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "loanMarkPaid": "Marcar como pagada",
   "loanMarkPaidBatch": "Marcar {count} cuotas como pagadas",
   "@loanMarkPaidBatch": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "loanStatusPending": "Pendiente",
@@ -117,17 +113,20 @@
   "loanInstallmentNumber": "Cuota n.º {number}",
   "@loanInstallmentNumber": {
     "placeholders": {
-      "number": {"type": "int"}
+      "number": {
+        "type": "int"
+      }
     }
   },
   "loanDeleteConfirmTitle": "¿Eliminar este plan de cuotas?",
   "loanDeleteConfirmBody": "Las {count} cuotas también se eliminarán.",
   "@loanDeleteConfirmBody": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
-
   "categoryManagerTitle": "Categorías",
   "categoryFormTitleNew": "Nueva categoría",
   "categoryFormTitleEdit": "Editar categoría",
@@ -142,7 +141,9 @@
   "categoryDeleteHasRemindersBody": "{count} recordatorios usan esta categoría. Elige cómo proceder.",
   "@categoryDeleteHasRemindersBody": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryDeleteReassign": "Mover a otra categoría",
@@ -150,17 +151,20 @@
   "categoryDeleteRemoveAll": "Eliminar los {count} recordatorios",
   "@categoryDeleteRemoveAll": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryDeleteRemoveAllConfirm": "Esto eliminará permanentemente {count} recordatorios. Esta acción no se puede deshacer.",
   "@categoryDeleteRemoveAllConfirm": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryReorderHint": "Arrastra para reordenar",
-
   "settingsTitle": "Ajustes",
   "settingsLanguage": "Idioma",
   "settingsDefaultReminderTime": "Hora de recordatorio predeterminada",
@@ -178,7 +182,46 @@
   "settingsAbout": "Acerca de",
   "settingsBatteryOptimizationTitle": "¿Las notificaciones no llegan a tiempo?",
   "settingsBatteryOptimizationBody": "Algunos fabricantes (Samsung, Xiaomi, Oppo...) restringen bastante las apps en segundo plano. Desactiva la optimización de batería para iReminder en Ajustes > Batería para asegurarte de que los recordatorios siempre lleguen a tiempo.",
-
   "errorGeneric": "Algo salió mal. Inténtalo de nuevo.",
-  "errorLoadFailed": "No se pudieron cargar los datos."
+  "errorLoadFailed": "No se pudieron cargar los datos.",
+  "navAssistant": "Asistente",
+  "settingsExportLocationHint": "Guardado en Android/data/com.ireminder.ireminder/files/backups",
+  "settingsImportNoneFound": "No se encontraron copias de seguridad",
+  "settingsImportPickFile": "Elegir una copia de seguridad",
+  "settingsAiSectionTitle": "Asistente de IA",
+  "settingsAiEnable": "Activar Asistente de IA",
+  "settingsAiProvider": "Proveedor de IA",
+  "settingsAiModel": "Modelo",
+  "settingsAiApiKey": "Clave API",
+  "settingsAiApiKeyHint": "Pega tu clave API",
+  "settingsAiApiKeyHelp": "¿Dónde consigo una clave?",
+  "settingsAiApiKeySaved": "Clave API guardada",
+  "settingsAiAllowedCategories": "Categorías que el asistente puede leer",
+  "settingsAiAllowedCategoriesHint": "Desactivado por defecto. Activa solo las categorías que quieras que el asistente vea — no se envía nada más.",
+  "settingsAiClearHistory": "Borrar historial de chat",
+  "settingsAiClearHistoryConfirmTitle": "¿Borrar historial de chat?",
+  "settingsAiClearHistoryConfirmBody": "Se eliminarán todas las preguntas y respuestas guardadas en este dispositivo. Esta acción no se puede deshacer.",
+  "assistantTitle": "Asistente",
+  "assistantEmptyTitle": "Pregúntame lo que sea",
+  "assistantEmptyBody": "Prueba «¿Qué tengo que hacer esta semana?» o «¿Cuántas cuotas quedan del préstamo de mi moto?»",
+  "assistantInputHint": "Escribe algo…",
+  "assistantSend": "Enviar",
+  "assistantDisabledTitle": "El asistente está desactivado",
+  "assistantDisabledBody": "Actívalo en Ajustes y elige un proveedor de IA para empezar a chatear.",
+  "assistantOpenSettings": "Abrir ajustes",
+  "assistantThinking": "Pensando…",
+  "validationRequired": "Obligatorio",
+  "validationDayOfMonth": "Introduce un día del 1 al 31",
+  "validationMonth": "Introduce un mes del 1 al 12",
+  "validationPositiveNumber": "Introduce un número mayor que 0",
+  "validationPositiveInteger": "Introduce un número entero mayor que 0",
+  "settingsPermissionsSectionTitle": "Notificaciones y alarmas",
+  "settingsPermissionsNotificationLabel": "Permiso de notificaciones",
+  "settingsPermissionsExactAlarmLabel": "Permiso de alarmas exactas",
+  "settingsPermissionsGranted": "Concedido",
+  "settingsPermissionsDenied": "No concedido — los recordatorios podrían no sonar a tiempo",
+  "settingsPermissionsGrantAction": "Conceder",
+  "settingsPermissionsOpenSettingsAction": "Abrir ajustes",
+  "onboardingExactAlarmRationaleTitle": "Un permiso más",
+  "onboardingExactAlarmRationaleBody": "En la siguiente pantalla, permite que iReminder programe alarmas exactas para que los recordatorios suenen justo a la hora indicada."
 }

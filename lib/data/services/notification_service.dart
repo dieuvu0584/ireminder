@@ -117,6 +117,38 @@ class NotificationService {
     return notifGranted;
   }
 
+  Future<bool> requestNotificationsOnly() async {
+    if (!Platform.isAndroid) return true;
+    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    return await androidPlugin?.requestNotificationsPermission() ?? false;
+  }
+
+  Future<bool> requestExactAlarmsOnly() async {
+    if (!Platform.isAndroid) return true;
+    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    return await androidPlugin?.requestExactAlarmsPermission() ?? false;
+  }
+
+  /// Current permission status, so Settings can show the user whether
+  /// reminders are actually able to fire — and offer a way to fix it,
+  /// unlike onboarding which only ever asks once and moves on regardless
+  /// of the outcome.
+  Future<bool> areNotificationsEnabled() async {
+    if (!Platform.isAndroid) return true;
+    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    return await androidPlugin?.areNotificationsEnabled() ?? false;
+  }
+
+  Future<bool> canScheduleExactAlarms() async {
+    if (!Platform.isAndroid) return true;
+    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    return await androidPlugin?.canScheduleExactNotifications() ?? false;
+  }
+
   Future<void> scheduleReminder({
     required int reminderId,
     required DateTime fireAt,

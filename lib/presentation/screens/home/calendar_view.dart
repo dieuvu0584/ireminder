@@ -6,6 +6,7 @@ import '../../../data/database/app_database.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../widgets/color_picker.dart';
+import '../../widgets/guarded_action.dart';
 import '../reminders/reminder_detail_screen.dart';
 import '../../widgets/reminder_card.dart';
 
@@ -91,15 +92,22 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                                       ReminderDetailScreen(reminder: r),
                                 ),
                               ),
-                              onComplete: () => ref
-                                  .read(reminderActionsProvider)
-                                  .complete(r.id),
-                              onSnooze: () =>
-                                  ref.read(reminderActionsProvider).snooze(
-                                        r.id,
-                                        DateTime.now()
-                                            .add(const Duration(hours: 1)),
-                                      ),
+                              onComplete: () => runGuarded(
+                                context,
+                                () => ref
+                                    .read(reminderActionsProvider)
+                                    .complete(r.id),
+                              ),
+                              onSnooze: () => runGuarded(
+                                context,
+                                () => ref
+                                    .read(reminderActionsProvider)
+                                    .snooze(
+                                      r.id,
+                                      DateTime.now()
+                                          .add(const Duration(hours: 1)),
+                                    ),
+                              ),
                             ),
                           )
                           .toList(),
@@ -211,17 +219,29 @@ class _MonthGrid extends StatelessWidget {
                 if (dayReminders.isNotEmpty)
                   Wrap(
                     spacing: 2,
-                    children: dayReminders.take(4).map((r) {
-                      final cat = categoriesById[r.categoryId];
-                      final color =
-                          cat != null ? parseHexColor(cat.color) : Colors.grey;
-                      return Container(
-                        width: 5,
-                        height: 5,
-                        decoration:
-                            BoxDecoration(color: color, shape: BoxShape.circle),
-                      );
-                    }).toList(),
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      ...dayReminders.take(3).map((r) {
+                        final cat = categoriesById[r.categoryId];
+                        final color = cat != null
+                            ? parseHexColor(cat.color)
+                            : Colors.grey;
+                        return Container(
+                          width: 5,
+                          height: 5,
+                          decoration: BoxDecoration(
+                              color: color, shape: BoxShape.circle),
+                        );
+                      }),
+                      if (dayReminders.length > 3)
+                        Text(
+                          '+${dayReminders.length - 3}',
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelSmall
+                              ?.copyWith(fontSize: 8),
+                        ),
+                    ],
                   ),
               ],
             ),

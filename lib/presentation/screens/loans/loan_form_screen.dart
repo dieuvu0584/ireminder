@@ -96,18 +96,22 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
             TextFormField(
               controller: _nameCtrl,
               decoration: InputDecoration(labelText: l10n.loanFieldName),
-              validator: (v) =>
-                  (v == null || v.trim().isEmpty) ? '' : null,
+              validator: (v) => (v == null || v.trim().isEmpty)
+                  ? l10n.validationRequired
+                  : null,
             ),
             const SizedBox(height: 12),
             categoriesAsync.when(
               data: (categories) => DropdownButtonFormField<int>(
                 initialValue: _categoryId,
+                isExpanded: true,
                 decoration:
                     InputDecoration(labelText: l10n.loanFieldCategory),
                 items: categories
-                    .map((c) =>
-                        DropdownMenuItem(value: c.id, child: Text(c.name)))
+                    .map((c) => DropdownMenuItem(
+                          value: c.id,
+                          child: Text(c.name, overflow: TextOverflow.ellipsis),
+                        ))
                     .toList(),
                 onChanged: (v) => setState(() => _categoryId = v),
               ),
@@ -120,6 +124,13 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
               decoration:
                   InputDecoration(labelText: l10n.loanFieldTotalAmount),
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              validator: (v) {
+                if (v == null || v.trim().isEmpty) return null;
+                final n = double.tryParse(v);
+                return (n == null || n <= 0)
+                    ? l10n.validationPositiveNumber
+                    : null;
+              },
             ),
             const SizedBox(height: 12),
             TextFormField(
@@ -127,8 +138,12 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
               decoration: InputDecoration(
                   labelText: l10n.loanFieldInstallmentAmount),
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
-              validator: (v) =>
-                  (double.tryParse(v ?? '') == null) ? '' : null,
+              validator: (v) {
+                final n = double.tryParse(v ?? '');
+                return (n == null || n <= 0)
+                    ? l10n.validationPositiveNumber
+                    : null;
+              },
             ),
             const SizedBox(height: 12),
             TextFormField(
@@ -136,7 +151,12 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
               decoration: InputDecoration(
                   labelText: l10n.loanFieldTotalInstallments),
               keyboardType: TextInputType.number,
-              validator: (v) => (int.tryParse(v ?? '') == null) ? '' : null,
+              validator: (v) {
+                final n = int.tryParse(v ?? '');
+                return (n == null || n <= 0)
+                    ? l10n.validationPositiveInteger
+                    : null;
+              },
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<LoanFrequency>(
@@ -165,6 +185,13 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
                 decoration:
                     InputDecoration(labelText: l10n.loanFieldDueDayOfMonth),
                 keyboardType: TextInputType.number,
+                validator: (v) {
+                  if (v == null || v.trim().isEmpty) return null;
+                  final n = int.tryParse(v);
+                  return (n == null || n < 1 || n > 31)
+                      ? l10n.validationDayOfMonth
+                      : null;
+                },
               ),
             ],
             const SizedBox(height: 12),

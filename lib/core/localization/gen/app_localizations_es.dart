@@ -27,7 +27,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get navSettings => 'Ajustes';
 
   @override
-  String get navAssistant => 'Assistant';
+  String get navAssistant => 'Asistente';
 
   @override
   String get onboardingTitle1 => 'Nunca olvides lo importante';
@@ -405,16 +405,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsExportLocationHint =>
-      'Saved to Android/data/com.ireminder.ireminder/files/backups';
+      'Guardado en Android/data/com.ireminder.ireminder/files/backups';
 
   @override
   String get settingsExportSuccess => 'Copia de seguridad guardada';
 
   @override
-  String get settingsImportNoneFound => 'No backup files found';
+  String get settingsImportNoneFound => 'No se encontraron copias de seguridad';
 
   @override
-  String get settingsImportPickFile => 'Choose a backup';
+  String get settingsImportPickFile => 'Elegir una copia de seguridad';
 
   @override
   String get settingsImportSuccess => 'Copia de seguridad restaurada';
@@ -444,72 +444,119 @@ class AppLocalizationsEs extends AppLocalizations {
   String get errorLoadFailed => 'No se pudieron cargar los datos.';
 
   @override
-  String get settingsAiSectionTitle => 'AI Assistant';
+  String get settingsAiSectionTitle => 'Asistente de IA';
 
   @override
-  String get settingsAiEnable => 'Enable AI Assistant';
+  String get settingsAiEnable => 'Activar Asistente de IA';
 
   @override
-  String get settingsAiProvider => 'AI provider';
+  String get settingsAiProvider => 'Proveedor de IA';
 
   @override
-  String get settingsAiModel => 'Model';
+  String get settingsAiModel => 'Modelo';
 
   @override
-  String get settingsAiApiKey => 'API key';
+  String get settingsAiApiKey => 'Clave API';
 
   @override
-  String get settingsAiApiKeyHint => 'Paste your API key';
+  String get settingsAiApiKeyHint => 'Pega tu clave API';
 
   @override
-  String get settingsAiApiKeyHelp => 'Where do I get a key?';
+  String get settingsAiApiKeyHelp => '¿Dónde consigo una clave?';
 
   @override
-  String get settingsAiApiKeySaved => 'API key saved';
+  String get settingsAiApiKeySaved => 'Clave API guardada';
 
   @override
-  String get settingsAiAllowedCategories => 'Categories the assistant can read';
+  String get settingsAiAllowedCategories =>
+      'Categorías que el asistente puede leer';
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Off by default. Turn on only the categories you want the assistant to see — nothing else is ever sent.';
+      'Desactivado por defecto. Activa solo las categorías que quieras que el asistente vea — no se envía nada más.';
 
   @override
-  String get settingsAiClearHistory => 'Clear chat history';
+  String get settingsAiClearHistory => 'Borrar historial de chat';
 
   @override
-  String get settingsAiClearHistoryConfirmTitle => 'Clear chat history?';
+  String get settingsAiClearHistoryConfirmTitle => '¿Borrar historial de chat?';
 
   @override
   String get settingsAiClearHistoryConfirmBody =>
-      'This deletes every question and answer stored on this device. This cannot be undone.';
+      'Se eliminarán todas las preguntas y respuestas guardadas en este dispositivo. Esta acción no se puede deshacer.';
 
   @override
-  String get assistantTitle => 'Assistant';
+  String get assistantTitle => 'Asistente';
 
   @override
-  String get assistantEmptyTitle => 'Ask me anything';
+  String get assistantEmptyTitle => 'Pregúntame lo que sea';
 
   @override
   String get assistantEmptyBody =>
-      'Try \"What do I need to do this week?\" or \"How many installments are left on my motorcycle loan?\"';
+      'Prueba «¿Qué tengo que hacer esta semana?» o «¿Cuántas cuotas quedan del préstamo de mi moto?»';
 
   @override
-  String get assistantInputHint => 'Ask something…';
+  String get assistantInputHint => 'Escribe algo…';
 
   @override
-  String get assistantSend => 'Send';
+  String get assistantSend => 'Enviar';
 
   @override
-  String get assistantDisabledTitle => 'Assistant is turned off';
+  String get assistantDisabledTitle => 'El asistente está desactivado';
 
   @override
   String get assistantDisabledBody =>
-      'Enable it in Settings and pick an AI provider to start chatting.';
+      'Actívalo en Ajustes y elige un proveedor de IA para empezar a chatear.';
 
   @override
-  String get assistantOpenSettings => 'Open Settings';
+  String get assistantOpenSettings => 'Abrir ajustes';
 
   @override
-  String get assistantThinking => 'Thinking…';
+  String get assistantThinking => 'Pensando…';
+
+  @override
+  String get validationRequired => 'Obligatorio';
+
+  @override
+  String get validationDayOfMonth => 'Introduce un día del 1 al 31';
+
+  @override
+  String get validationMonth => 'Introduce un mes del 1 al 12';
+
+  @override
+  String get validationPositiveNumber => 'Introduce un número mayor que 0';
+
+  @override
+  String get validationPositiveInteger =>
+      'Introduce un número entero mayor que 0';
+
+  @override
+  String get settingsPermissionsSectionTitle => 'Notificaciones y alarmas';
+
+  @override
+  String get settingsPermissionsNotificationLabel =>
+      'Permiso de notificaciones';
+
+  @override
+  String get settingsPermissionsExactAlarmLabel => 'Permiso de alarmas exactas';
+
+  @override
+  String get settingsPermissionsGranted => 'Concedido';
+
+  @override
+  String get settingsPermissionsDenied =>
+      'No concedido — los recordatorios podrían no sonar a tiempo';
+
+  @override
+  String get settingsPermissionsGrantAction => 'Conceder';
+
+  @override
+  String get settingsPermissionsOpenSettingsAction => 'Abrir ajustes';
+
+  @override
+  String get onboardingExactAlarmRationaleTitle => 'Un permiso más';
+
+  @override
+  String get onboardingExactAlarmRationaleBody =>
+      'En la siguiente pantalla, permite que iReminder programe alarmas exactas para que los recordatorios suenen justo a la hora indicada.';
 }

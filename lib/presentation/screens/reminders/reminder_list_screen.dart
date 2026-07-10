@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/database/app_database.dart';
 import '../../providers/reminder_providers.dart';
+import '../../widgets/guarded_action.dart';
 import '../../widgets/reminder_card.dart';
 import 'reminder_detail_screen.dart';
 
@@ -37,12 +38,17 @@ class ReminderListScreen extends ConsumerWidget {
                     builder: (_) => ReminderDetailScreen(reminder: reminder),
                   ),
                 ),
-                onComplete: () =>
-                    ref.read(reminderActionsProvider).complete(reminder.id),
-                onSnooze: () => ref.read(reminderActionsProvider).snooze(
-                      reminder.id,
-                      DateTime.now().add(const Duration(hours: 1)),
-                    ),
+                onComplete: () => runGuarded(
+                  context,
+                  () => ref.read(reminderActionsProvider).complete(reminder.id),
+                ),
+                onSnooze: () => runGuarded(
+                  context,
+                  () => ref.read(reminderActionsProvider).snooze(
+                        reminder.id,
+                        DateTime.now().add(const Duration(hours: 1)),
+                      ),
+                ),
               );
             },
           );

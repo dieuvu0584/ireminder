@@ -210,14 +210,17 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
             categoriesAsync.when(
               data: (categories) => DropdownButtonFormField<int>(
                 initialValue: _categoryId,
+                isExpanded: true,
                 decoration:
                     InputDecoration(labelText: l10n.reminderFieldCategory),
                 items: categories
-                    .map((c) =>
-                        DropdownMenuItem(value: c.id, child: Text(c.name)))
+                    .map((c) => DropdownMenuItem(
+                          value: c.id,
+                          child: Text(c.name, overflow: TextOverflow.ellipsis),
+                        ))
                     .toList(),
                 onChanged: (v) => setState(() => _categoryId = v),
-                validator: (v) => v == null ? '' : null,
+                validator: (v) => v == null ? l10n.validationRequired : null,
               ),
               loading: () => const LinearProgressIndicator(),
               error: (e, st) => Text(l10n.errorLoadFailed),
@@ -282,6 +285,24 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     );
   }
 
+  String? _validateDayOfMonth(AppLocalizations l10n, String? v) {
+    final n = int.tryParse(v ?? '');
+    if (n == null || n < 1 || n > 31) return l10n.validationDayOfMonth;
+    return null;
+  }
+
+  String? _validateMonth(AppLocalizations l10n, String? v) {
+    final n = int.tryParse(v ?? '');
+    if (n == null || n < 1 || n > 12) return l10n.validationMonth;
+    return null;
+  }
+
+  String? _validatePositiveInterval(AppLocalizations l10n, String? v) {
+    final n = int.tryParse(v ?? '');
+    if (n == null || n < 1) return l10n.validationPositiveInteger;
+    return null;
+  }
+
   List<Widget> _buildRecurrenceFields(AppLocalizations l10n) {
     switch (_recurrenceType) {
       case RecurrenceType.none:
@@ -301,6 +322,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               ),
             ),
             onChanged: (v) => setState(() => _recurrenceWeekday = v),
+            validator: (v) => v == null ? l10n.validationRequired : null,
           ),
         ];
       case RecurrenceType.monthly:
@@ -311,6 +333,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 InputDecoration(labelText: l10n.reminderFieldRecurrenceDay),
             keyboardType: TextInputType.number,
             onChanged: (v) => _recurrenceDay = int.tryParse(v),
+            validator: (v) => _validateDayOfMonth(l10n, v),
           ),
         ];
       case RecurrenceType.yearly:
@@ -324,6 +347,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                       labelText: l10n.reminderFieldRecurrenceDay),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceDay = int.tryParse(v),
+                  validator: (v) => _validateDayOfMonth(l10n, v),
                 ),
               ),
               const SizedBox(width: 12),
@@ -334,6 +358,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                       labelText: l10n.reminderFieldRecurrenceMonth),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceMonth = int.tryParse(v),
+                  validator: (v) => _validateMonth(l10n, v),
                 ),
               ),
             ],
@@ -347,6 +372,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 InputDecoration(labelText: l10n.reminderFieldIntervalDays),
             keyboardType: TextInputType.number,
             onChanged: (v) => _intervalDays = int.tryParse(v),
+            validator: (v) => _validatePositiveInterval(l10n, v),
           ),
         ];
       case RecurrenceType.lunarYearly:
@@ -360,6 +386,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                       labelText: l10n.reminderFieldLunarDay),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceDay = int.tryParse(v),
+                  validator: (v) => _validateDayOfMonth(l10n, v),
                 ),
               ),
               const SizedBox(width: 12),
@@ -370,6 +397,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                       labelText: l10n.reminderFieldLunarMonth),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceMonth = int.tryParse(v),
+                  validator: (v) => _validateMonth(l10n, v),
                 ),
               ),
             ],

@@ -29,6 +29,11 @@ class ReminderRepository {
         .getSingleOrNull();
   }
 
+  Stream<Reminder?> watchById(int id) {
+    return (_db.select(_db.reminders)..where((r) => r.id.equals(id)))
+        .watchSingleOrNull();
+  }
+
   RecurrenceParams paramsOf(Reminder r) {
     return RecurrenceParams(
       type: RecurrenceType.fromDbValue(r.recurrenceType),
@@ -37,6 +42,15 @@ class ReminderRepository {
       month: r.recurrenceMonth,
       weekday: r.recurrenceWeekday,
     );
+  }
+
+  /// First occurrence is [startDate] itself unless it already passed for a
+  /// repeating rule, in which case roll forward once.
+  DateTime _firstOccurrence(RecurrenceParams params, DateTime startDate) {
+    if (params.type == RecurrenceType.none) return startDate;
+    final alreadyPassed =
+        startDate.isBefore(DateTime.now().subtract(const Duration(days: 1)));
+    return alreadyPassed ? calculateNextDueDate(params, startDate) : startDate;
   }
 
   Future<int> create({
@@ -61,13 +75,7 @@ class ReminderRepository {
       month: recurrenceMonth,
       weekday: recurrenceWeekday,
     );
-    // First occurrence is start_date itself unless it already passed for a
-    // repeating rule, in which case roll forward once.
-    final nextDue = recurrenceType == RecurrenceType.none
-        ? startDate
-        : (startDate.isAfter(DateTime.now().subtract(const Duration(days: 1)))
-            ? startDate
-            : calculateNextDueDate(params, startDate));
+    final nextDue = _firstOccurrence(params, startDate);
 
     return _db.into(_db.reminders).insert(
           RemindersCompanion.insert(
@@ -90,10 +98,31 @@ class ReminderRepository {
         );
   }
 
-  Future<void> update(Reminder reminder) {
-    return _db.update(_db.reminders).replace(
-          reminder.copyWith(updatedAt: DateTime.now()),
-        );
+  /// Recomputes `next_due_date` whenever the edit changed a
+  /// recurrence-affecting field (type/interval/day/month/weekday/start
+  /// date). Otherwise leaves it untouched — a reminder that's already
+  /// progressed through several cycles must not have its schedule rewound
+  /// just because the user edited its title.
+  Future<void> update(Reminder reminder) async {
+    final existing = await getById(reminder.id);
+    if (existing == null) {
+      throw ArgumentError('Reminder ${reminder.id} not found');
+    }
+    final recurrenceChanged = existing.recurrenceType != reminder.recurrenceType ||
+        existing.recurrenceInterval != reminder.recurrenceInterval ||
+        existing.recurrenceDay != reminder.recurrenceDay ||
+        existing.recurrenceMonth != reminder.recurrenceMonth ||
+        existing.recurrenceWeekday != reminder.recurrenceWeekday ||
+        existing.startDate != reminder.startDate;
+
+    final toSave = recurrenceChanged
+        ? reminder.copyWith(
+            nextDueDate: _firstOccurrence(paramsOf(reminder), reminder.startDate),
+            updatedAt: DateTime.now(),
+          )
+        : reminder.copyWith(updatedAt: DateTime.now());
+
+    await _db.update(_db.reminders).replace(toSave);
   }
 
   Future<void> delete(int id) {

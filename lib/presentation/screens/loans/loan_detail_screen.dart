@@ -29,7 +29,7 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.loan.name),
+        title: Text(widget.loan.name, overflow: TextOverflow.ellipsis),
         actions: [
           IconButton(
             icon: const Icon(Icons.delete_outline),
@@ -117,12 +117,21 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
               icon: const Icon(Icons.check),
               label: Text(l10n.loanMarkPaidBatch(_selected.length)),
               onPressed: () async {
-                await ref.read(loanActionsProvider).markPaid(
-                      loanId: widget.loan.id,
-                      installmentIds: _selected.toList(),
-                      paidDate: DateTime.now(),
+                final messenger = ScaffoldMessenger.of(context);
+                try {
+                  await ref.read(loanActionsProvider).markPaid(
+                        loanId: widget.loan.id,
+                        installmentIds: _selected.toList(),
+                        paidDate: DateTime.now(),
+                      );
+                  if (mounted) setState(_selected.clear);
+                } catch (_) {
+                  if (mounted) {
+                    messenger.showSnackBar(
+                      SnackBar(content: Text(l10n.errorGeneric)),
                     );
-                setState(_selected.clear);
+                  }
+                }
               },
             ),
     );

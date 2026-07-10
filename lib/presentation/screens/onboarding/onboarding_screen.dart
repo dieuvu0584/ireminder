@@ -37,8 +37,30 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
       ),
     );
     if (proceed == true) {
-      await ref.read(notificationServiceProvider).requestPermissions();
+      await ref.read(notificationServiceProvider).requestNotificationsOnly();
+      if (mounted) {
+        // Exact-alarm permission redirects straight to a system Settings
+        // page with no dialog of its own — explain why before the app
+        // suddenly loses focus, rather than leaving it unexplained.
+        await showDialog<void>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(l10n.onboardingExactAlarmRationaleTitle),
+            content: Text(l10n.onboardingExactAlarmRationaleBody),
+            actions: [
+              FilledButton(
+                onPressed: () => Navigator.of(ctx).pop(),
+                child: Text(l10n.actionOk),
+              ),
+            ],
+          ),
+        );
+      }
+      if (mounted) {
+        await ref.read(notificationServiceProvider).requestExactAlarmsOnly();
+      }
     }
+    if (!mounted) return;
     await ref.read(settingsActionsProvider).setOnboardingCompleted(true);
     if (mounted) {
       Navigator.of(context).pushReplacement(
@@ -74,25 +96,32 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 onPageChanged: (i) => setState(() => _page = i),
                 itemBuilder: (context, index) {
                   final s = slides[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(32),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(s.emoji, style: const TextStyle(fontSize: 72)),
-                        const SizedBox(height: 24),
-                        Text(
-                          s.title,
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.headlineSmall,
+                  return LayoutBuilder(
+                    builder: (context, constraints) => SingleChildScrollView(
+                      padding: const EdgeInsets.all(32),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minHeight: constraints.maxHeight,
                         ),
-                        const SizedBox(height: 12),
-                        Text(
-                          s.body,
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyLarge,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(s.emoji, style: const TextStyle(fontSize: 72)),
+                            const SizedBox(height: 24),
+                            Text(
+                              s.title,
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.headlineSmall,
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              s.body,
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   );
                 },

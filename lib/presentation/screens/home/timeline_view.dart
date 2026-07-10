@@ -5,6 +5,7 @@ import '../../../core/localization/gen/app_localizations.dart';
 import '../../../data/database/app_database.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
+import '../../widgets/guarded_action.dart';
 import '../../widgets/reminder_card.dart';
 import '../reminders/reminder_detail_screen.dart';
 
@@ -115,11 +116,17 @@ class _Section extends ConsumerWidget {
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => ReminderDetailScreen(reminder: r)),
             ),
-            onComplete: () => ref.read(reminderActionsProvider).complete(r.id),
-            onSnooze: () => ref.read(reminderActionsProvider).snooze(
-                  r.id,
-                  DateTime.now().add(const Duration(hours: 1)),
-                ),
+            onComplete: () => runGuarded(
+              context,
+              () => ref.read(reminderActionsProvider).complete(r.id),
+            ),
+            onSnooze: () => runGuarded(
+              context,
+              () => ref.read(reminderActionsProvider).snooze(
+                    r.id,
+                    DateTime.now().add(const Duration(hours: 1)),
+                  ),
+            ),
           ),
         ),
       ],

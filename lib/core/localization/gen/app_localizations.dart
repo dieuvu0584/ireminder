@@ -1055,6 +1055,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Thinking…'**
   String get assistantThinking;
+
+  /// No description provided for @validationRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get validationRequired;
+
+  /// No description provided for @validationDayOfMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a day from 1–31'**
+  String get validationDayOfMonth;
+
+  /// No description provided for @validationMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a month from 1–12'**
+  String get validationMonth;
+
+  /// No description provided for @validationPositiveNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a number greater than 0'**
+  String get validationPositiveNumber;
+
+  /// No description provided for @validationPositiveInteger.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a whole number greater than 0'**
+  String get validationPositiveInteger;
+
+  /// No description provided for @settingsPermissionsSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications & Alarms'**
+  String get settingsPermissionsSectionTitle;
+
+  /// No description provided for @settingsPermissionsNotificationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification permission'**
+  String get settingsPermissionsNotificationLabel;
+
+  /// No description provided for @settingsPermissionsExactAlarmLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Exact alarm permission'**
+  String get settingsPermissionsExactAlarmLabel;
+
+  /// No description provided for @settingsPermissionsGranted.
+  ///
+  /// In en, this message translates to:
+  /// **'Granted'**
+  String get settingsPermissionsGranted;
+
+  /// No description provided for @settingsPermissionsDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Not granted — reminders may not fire on time'**
+  String get settingsPermissionsDenied;
+
+  /// No description provided for @settingsPermissionsGrantAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Grant'**
+  String get settingsPermissionsGrantAction;
+
+  /// No description provided for @settingsPermissionsOpenSettingsAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get settingsPermissionsOpenSettingsAction;
+
+  /// No description provided for @onboardingExactAlarmRationaleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'One more permission'**
+  String get onboardingExactAlarmRationaleTitle;
+
+  /// No description provided for @onboardingExactAlarmRationaleBody.
+  ///
+  /// In en, this message translates to:
+  /// **'On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set.'**
+  String get onboardingExactAlarmRationaleBody;
 }
 
 class _AppLocalizationsDelegate

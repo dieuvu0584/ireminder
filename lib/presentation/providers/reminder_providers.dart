@@ -14,6 +14,11 @@ final remindersByCategoryStreamProvider =
   return ref.watch(reminderRepositoryProvider).watchByCategory(categoryId);
 });
 
+final reminderByIdStreamProvider =
+    StreamProvider.family<Reminder?, int>((ref, id) {
+  return ref.watch(reminderRepositoryProvider).watchById(id);
+});
+
 final reminderActionsProvider = Provider<ReminderActions>((ref) {
   return ReminderActions(ref);
 });

@@ -510,4 +510,48 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get assistantThinking => 'Thinking…';
+
+  @override
+  String get validationRequired => 'Required';
+
+  @override
+  String get validationDayOfMonth => 'Enter a day from 1–31';
+
+  @override
+  String get validationMonth => 'Enter a month from 1–12';
+
+  @override
+  String get validationPositiveNumber => 'Enter a number greater than 0';
+
+  @override
+  String get validationPositiveInteger => 'Enter a whole number greater than 0';
+
+  @override
+  String get settingsPermissionsSectionTitle => 'Notifications & Alarms';
+
+  @override
+  String get settingsPermissionsNotificationLabel => 'Notification permission';
+
+  @override
+  String get settingsPermissionsExactAlarmLabel => 'Exact alarm permission';
+
+  @override
+  String get settingsPermissionsGranted => 'Granted';
+
+  @override
+  String get settingsPermissionsDenied =>
+      'Not granted — reminders may not fire on time';
+
+  @override
+  String get settingsPermissionsGrantAction => 'Grant';
+
+  @override
+  String get settingsPermissionsOpenSettingsAction => 'Open settings';
+
+  @override
+  String get onboardingExactAlarmRationaleTitle => 'One more permission';
+
+  @override
+  String get onboardingExactAlarmRationaleBody =>
+      'On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set.';
 }

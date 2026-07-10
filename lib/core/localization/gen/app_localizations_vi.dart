@@ -509,4 +509,48 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get assistantThinking => 'Đang suy nghĩ…';
+
+  @override
+  String get validationRequired => 'Bắt buộc';
+
+  @override
+  String get validationDayOfMonth => 'Nhập ngày từ 1–31';
+
+  @override
+  String get validationMonth => 'Nhập tháng từ 1–12';
+
+  @override
+  String get validationPositiveNumber => 'Nhập số lớn hơn 0';
+
+  @override
+  String get validationPositiveInteger => 'Nhập số nguyên lớn hơn 0';
+
+  @override
+  String get settingsPermissionsSectionTitle => 'Thông báo & Báo thức';
+
+  @override
+  String get settingsPermissionsNotificationLabel => 'Quyền thông báo';
+
+  @override
+  String get settingsPermissionsExactAlarmLabel => 'Quyền báo thức chính xác';
+
+  @override
+  String get settingsPermissionsGranted => 'Đã cấp quyền';
+
+  @override
+  String get settingsPermissionsDenied =>
+      'Chưa được cấp — nhắc nhở có thể không hiện đúng giờ';
+
+  @override
+  String get settingsPermissionsGrantAction => 'Cấp quyền';
+
+  @override
+  String get settingsPermissionsOpenSettingsAction => 'Mở cài đặt';
+
+  @override
+  String get onboardingExactAlarmRationaleTitle => 'Thêm một quyền nữa';
+
+  @override
+  String get onboardingExactAlarmRationaleBody =>
+      'Ở màn hình tiếp theo, hãy cho phép iReminder đặt báo thức chính xác để nhắc nhở hiện đúng giờ bạn đã chọn.';
 }

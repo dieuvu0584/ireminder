@@ -151,7 +151,16 @@ class LoanRepository {
         .get();
   }
 
+  /// Deletes installments explicitly rather than relying on the schema's
+  /// `onDelete: cascade` — SQLite only honors that when `PRAGMA foreign_keys
+  /// = ON` has been executed on the connection, which this app doesn't do,
+  /// so leaving it to the FK constraint alone orphans every installment row.
   Future<void> delete(int loanId) {
-    return (_db.delete(_db.loans)..where((l) => l.id.equals(loanId))).go();
+    return _db.transaction(() async {
+      await (_db.delete(_db.loanInstallments)
+            ..where((i) => i.loanId.equals(loanId)))
+          .go();
+      await (_db.delete(_db.loans)..where((l) => l.id.equals(loanId))).go();
+    });
   }
 }

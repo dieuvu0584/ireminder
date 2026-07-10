@@ -91,8 +91,12 @@ class CategoryManagerScreen extends ConsumerWidget {
               child: ReorderableListView.builder(
                 itemCount: categories.length,
                 onReorderItem: (oldIndex, newIndex) {
+                  // onReorderItem already reports a removal-adjusted
+                  // newIndex (unlike the deprecated onReorder callback), so
+                  // no manual index compensation is needed here — doing so
+                  // double-adjusted downward drags and landed items one
+                  // slot early.
                   final ids = categories.map((c) => c.id).toList();
-                  if (newIndex > oldIndex) newIndex -= 1;
                   final moved = ids.removeAt(oldIndex);
                   ids.insert(newIndex, moved);
                   ref.read(categoryActionsProvider).reorder(ids);
@@ -242,11 +246,14 @@ class _CategoryDeleteDecisionDialogState
             const SizedBox(height: 8),
             DropdownButtonFormField<int>(
               initialValue: _target,
+              isExpanded: true,
               decoration:
                   InputDecoration(labelText: l10n.categoryDeleteReassignTarget),
               items: widget.otherCategories
-                  .map((c) =>
-                      DropdownMenuItem(value: c.id, child: Text(c.name)))
+                  .map((c) => DropdownMenuItem(
+                        value: c.id,
+                        child: Text(c.name, overflow: TextOverflow.ellipsis),
+                      ))
                   .toList(),
               onChanged: (v) => setState(() => _target = v),
             ),
@@ -258,8 +265,19 @@ class _CategoryDeleteDecisionDialogState
                     ? null
                     : () async {
                         setState(() => _busy = true);
-                        await widget.onReassign(_target!);
-                        if (context.mounted) Navigator.of(context).pop();
+                        final messenger = ScaffoldMessenger.of(context);
+                        final navigator = Navigator.of(context);
+                        try {
+                          await widget.onReassign(_target!);
+                          navigator.pop();
+                        } catch (_) {
+                          if (mounted) {
+                            setState(() => _busy = false);
+                            messenger.showSnackBar(
+                              SnackBar(content: Text(l10n.errorGeneric)),
+                            );
+                          }
+                        }
                       },
                 child: Text(l10n.categoryDeleteReassign),
               ),
@@ -293,10 +311,20 @@ class _CategoryDeleteDecisionDialogState
                           ],
                         ),
                       );
-                      if (confirmed == true) {
-                        setState(() => _busy = true);
+                      if (confirmed != true || !context.mounted) return;
+                      setState(() => _busy = true);
+                      final messenger = ScaffoldMessenger.of(context);
+                      final navigator = Navigator.of(context);
+                      try {
                         await widget.onDeleteAll();
-                        if (context.mounted) Navigator.of(context).pop();
+                        navigator.pop();
+                      } catch (_) {
+                        if (mounted) {
+                          setState(() => _busy = false);
+                          messenger.showSnackBar(
+                            SnackBar(content: Text(l10n.errorGeneric)),
+                          );
+                        }
                       }
                     },
               child: Text(l10n.categoryDeleteRemoveAll(widget.reminderCount)),

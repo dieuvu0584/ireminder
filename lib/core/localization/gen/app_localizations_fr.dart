@@ -404,16 +404,16 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsExportLocationHint =>
-      'Saved to Android/data/com.ireminder.ireminder/files/backups';
+      'Enregistré dans Android/data/com.ireminder.ireminder/files/backups';
 
   @override
   String get settingsExportSuccess => 'Sauvegarde enregistrée';
 
   @override
-  String get settingsImportNoneFound => 'No backup files found';
+  String get settingsImportNoneFound => 'Aucune sauvegarde trouvée';
 
   @override
-  String get settingsImportPickFile => 'Choose a backup';
+  String get settingsImportPickFile => 'Choisir une sauvegarde';
 
   @override
   String get settingsImportSuccess => 'Sauvegarde restaurée';
@@ -443,72 +443,120 @@ class AppLocalizationsFr extends AppLocalizations {
   String get errorLoadFailed => 'Impossible de charger les données.';
 
   @override
-  String get settingsAiSectionTitle => 'AI Assistant';
+  String get settingsAiSectionTitle => 'Assistant IA';
 
   @override
-  String get settingsAiEnable => 'Enable AI Assistant';
+  String get settingsAiEnable => 'Activer l\'assistant IA';
 
   @override
-  String get settingsAiProvider => 'AI provider';
+  String get settingsAiProvider => 'Fournisseur d\'IA';
 
   @override
-  String get settingsAiModel => 'Model';
+  String get settingsAiModel => 'Modèle';
 
   @override
-  String get settingsAiApiKey => 'API key';
+  String get settingsAiApiKey => 'Clé API';
 
   @override
-  String get settingsAiApiKeyHint => 'Paste your API key';
+  String get settingsAiApiKeyHint => 'Collez votre clé API';
 
   @override
-  String get settingsAiApiKeyHelp => 'Where do I get a key?';
+  String get settingsAiApiKeyHelp => 'Où obtenir une clé ?';
 
   @override
-  String get settingsAiApiKeySaved => 'API key saved';
+  String get settingsAiApiKeySaved => 'Clé API enregistrée';
 
   @override
-  String get settingsAiAllowedCategories => 'Categories the assistant can read';
+  String get settingsAiAllowedCategories =>
+      'Catégories que l\'assistant peut lire';
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Off by default. Turn on only the categories you want the assistant to see — nothing else is ever sent.';
+      'Désactivé par défaut. N\'activez que les catégories que l\'assistant doit voir — rien d\'autre n\'est jamais envoyé.';
 
   @override
-  String get settingsAiClearHistory => 'Clear chat history';
+  String get settingsAiClearHistory => 'Effacer l\'historique du chat';
 
   @override
-  String get settingsAiClearHistoryConfirmTitle => 'Clear chat history?';
+  String get settingsAiClearHistoryConfirmTitle =>
+      'Effacer l\'historique du chat ?';
 
   @override
   String get settingsAiClearHistoryConfirmBody =>
-      'This deletes every question and answer stored on this device. This cannot be undone.';
+      'Toutes les questions et réponses stockées sur cet appareil seront supprimées. Cette action est irréversible.';
 
   @override
   String get assistantTitle => 'Assistant';
 
   @override
-  String get assistantEmptyTitle => 'Ask me anything';
+  String get assistantEmptyTitle => 'Posez-moi une question';
 
   @override
   String get assistantEmptyBody =>
-      'Try \"What do I need to do this week?\" or \"How many installments are left on my motorcycle loan?\"';
+      'Essayez « Que dois-je faire cette semaine ? » ou « Combien de mensualités reste-t-il sur mon crédit moto ? »';
 
   @override
-  String get assistantInputHint => 'Ask something…';
+  String get assistantInputHint => 'Posez une question…';
 
   @override
-  String get assistantSend => 'Send';
+  String get assistantSend => 'Envoyer';
 
   @override
-  String get assistantDisabledTitle => 'Assistant is turned off';
+  String get assistantDisabledTitle => 'L\'assistant est désactivé';
 
   @override
   String get assistantDisabledBody =>
-      'Enable it in Settings and pick an AI provider to start chatting.';
+      'Activez-le dans les Réglages et choisissez un fournisseur d\'IA pour commencer à discuter.';
 
   @override
-  String get assistantOpenSettings => 'Open Settings';
+  String get assistantOpenSettings => 'Ouvrir les réglages';
 
   @override
-  String get assistantThinking => 'Thinking…';
+  String get assistantThinking => 'Réflexion…';
+
+  @override
+  String get validationRequired => 'Champ requis';
+
+  @override
+  String get validationDayOfMonth => 'Entrez un jour de 1 à 31';
+
+  @override
+  String get validationMonth => 'Entrez un mois de 1 à 12';
+
+  @override
+  String get validationPositiveNumber => 'Entrez un nombre supérieur à 0';
+
+  @override
+  String get validationPositiveInteger => 'Entrez un entier supérieur à 0';
+
+  @override
+  String get settingsPermissionsSectionTitle => 'Notifications et alarmes';
+
+  @override
+  String get settingsPermissionsNotificationLabel =>
+      'Autorisation de notification';
+
+  @override
+  String get settingsPermissionsExactAlarmLabel =>
+      'Autorisation d\'alarme exacte';
+
+  @override
+  String get settingsPermissionsGranted => 'Accordée';
+
+  @override
+  String get settingsPermissionsDenied =>
+      'Non accordée — les rappels risquent de ne pas sonner à l\'heure';
+
+  @override
+  String get settingsPermissionsGrantAction => 'Autoriser';
+
+  @override
+  String get settingsPermissionsOpenSettingsAction => 'Ouvrir les réglages';
+
+  @override
+  String get onboardingExactAlarmRationaleTitle => 'Encore une autorisation';
+
+  @override
+  String get onboardingExactAlarmRationaleBody =>
+      'Sur l\'écran suivant, autorisez iReminder à planifier des alarmes exactes afin que les rappels sonnent précisément à l\'heure choisie.';
 }

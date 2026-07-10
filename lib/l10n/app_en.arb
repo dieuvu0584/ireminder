@@ -1,14 +1,12 @@
 {
   "@@locale": "en",
   "appTitle": "iReminder",
-
   "navToday": "Today",
   "navCalendar": "Calendar",
   "navLoans": "Loans",
   "navCategories": "Categories",
   "navSettings": "Settings",
   "navAssistant": "Assistant",
-
   "onboardingTitle1": "Never forget what matters",
   "onboardingBody1": "Track device maintenance, vehicle service, anniversaries and more — all in one place.",
   "onboardingTitle2": "Recurring made simple",
@@ -18,22 +16,18 @@
   "onboardingSkip": "Skip",
   "onboardingNext": "Next",
   "onboardingGetStarted": "Get started",
-
   "notificationPermissionTitle": "Stay on time",
   "notificationPermissionBody": "iReminder needs permission to send you notifications when something is due.",
   "notificationPermissionAllow": "Allow notifications",
   "notificationPermissionLater": "Not now",
-
   "homeSectionOverdue": "Overdue",
   "homeSectionToday": "Today",
   "homeSectionThisWeek": "This week",
   "homeSectionUpcoming": "Upcoming",
   "homeEmptyTitle": "Nothing here yet",
   "homeEmptyBody": "Tap + to add your first reminder or installment loan.",
-
   "fabAddReminder": "Reminder",
   "fabAddLoan": "Installment loan",
-
   "actionDone": "Done",
   "actionSnooze": "Snooze",
   "actionEdit": "Edit",
@@ -46,7 +40,6 @@
   "actionOk": "OK",
   "actionAdd": "Add",
   "actionClose": "Close",
-
   "reminderFormTitleNew": "New reminder",
   "reminderFormTitleEdit": "Edit reminder",
   "reminderFieldTitle": "Title",
@@ -65,7 +58,6 @@
   "reminderFieldLunarMonth": "Lunar month",
   "reminderDeleteConfirmTitle": "Delete this reminder?",
   "reminderDeleteConfirmBody": "This cannot be undone.",
-
   "recurrenceNone": "Once",
   "recurrenceDaily": "Daily",
   "recurrenceWeekly": "Weekly",
@@ -73,7 +65,6 @@
   "recurrenceYearly": "Yearly",
   "recurrenceCustomIntervalDays": "Every N days",
   "recurrenceLunarYearly": "Yearly (lunar calendar)",
-
   "weekdayMonday": "Monday",
   "weekdayTuesday": "Tuesday",
   "weekdayWednesday": "Wednesday",
@@ -81,7 +72,6 @@
   "weekdayFriday": "Friday",
   "weekdaySaturday": "Saturday",
   "weekdaySunday": "Sunday",
-
   "loanListTitle": "Loans & installments",
   "loanFormTitleNew": "New installment loan",
   "loanFormTitleEdit": "Edit loan",
@@ -101,15 +91,21 @@
   "loanProgress": "{paid} / {total} paid",
   "@loanProgress": {
     "placeholders": {
-      "paid": {"type": "int"},
-      "total": {"type": "int"}
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "loanMarkPaid": "Mark as paid",
   "loanMarkPaidBatch": "Mark {count} installments as paid",
   "@loanMarkPaidBatch": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "loanStatusPending": "Pending",
@@ -118,17 +114,20 @@
   "loanInstallmentNumber": "Installment #{number}",
   "@loanInstallmentNumber": {
     "placeholders": {
-      "number": {"type": "int"}
+      "number": {
+        "type": "int"
+      }
     }
   },
   "loanDeleteConfirmTitle": "Delete this loan?",
   "loanDeleteConfirmBody": "All {count} installments will be removed too.",
   "@loanDeleteConfirmBody": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
-
   "categoryManagerTitle": "Categories",
   "categoryFormTitleNew": "New category",
   "categoryFormTitleEdit": "Edit category",
@@ -143,7 +142,9 @@
   "categoryDeleteHasRemindersBody": "{count} reminders use this category. Choose what to do with them.",
   "@categoryDeleteHasRemindersBody": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryDeleteReassign": "Move to another category",
@@ -151,17 +152,20 @@
   "categoryDeleteRemoveAll": "Delete all {count} reminders",
   "@categoryDeleteRemoveAll": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryDeleteRemoveAllConfirm": "This will permanently delete {count} reminders. This cannot be undone.",
   "@categoryDeleteRemoveAllConfirm": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryReorderHint": "Drag to reorder",
-
   "settingsTitle": "Settings",
   "settingsLanguage": "Language",
   "settingsDefaultReminderTime": "Default reminder time",
@@ -182,10 +186,8 @@
   "settingsAbout": "About",
   "settingsBatteryOptimizationTitle": "Notifications not firing on time?",
   "settingsBatteryOptimizationBody": "Some phone makers (Samsung, Xiaomi, Oppo...) aggressively restrict background apps. Turn off battery optimization for iReminder in your phone's Settings > Battery to make sure reminders always arrive on time.",
-
   "errorGeneric": "Something went wrong. Please try again.",
   "errorLoadFailed": "Couldn't load data.",
-
   "settingsAiSectionTitle": "AI Assistant",
   "settingsAiEnable": "Enable AI Assistant",
   "settingsAiProvider": "AI provider",
@@ -199,7 +201,6 @@
   "settingsAiClearHistory": "Clear chat history",
   "settingsAiClearHistoryConfirmTitle": "Clear chat history?",
   "settingsAiClearHistoryConfirmBody": "This deletes every question and answer stored on this device. This cannot be undone.",
-
   "assistantTitle": "Assistant",
   "assistantEmptyTitle": "Ask me anything",
   "assistantEmptyBody": "Try \"What do I need to do this week?\" or \"How many installments are left on my motorcycle loan?\"",
@@ -208,5 +209,19 @@
   "assistantDisabledTitle": "Assistant is turned off",
   "assistantDisabledBody": "Enable it in Settings and pick an AI provider to start chatting.",
   "assistantOpenSettings": "Open Settings",
-  "assistantThinking": "Thinking…"
+  "assistantThinking": "Thinking…",
+  "validationRequired": "Required",
+  "validationDayOfMonth": "Enter a day from 1–31",
+  "validationMonth": "Enter a month from 1–12",
+  "validationPositiveNumber": "Enter a number greater than 0",
+  "validationPositiveInteger": "Enter a whole number greater than 0",
+  "settingsPermissionsSectionTitle": "Notifications & Alarms",
+  "settingsPermissionsNotificationLabel": "Notification permission",
+  "settingsPermissionsExactAlarmLabel": "Exact alarm permission",
+  "settingsPermissionsGranted": "Granted",
+  "settingsPermissionsDenied": "Not granted — reminders may not fire on time",
+  "settingsPermissionsGrantAction": "Grant",
+  "settingsPermissionsOpenSettingsAction": "Open settings",
+  "onboardingExactAlarmRationaleTitle": "One more permission",
+  "onboardingExactAlarmRationaleBody": "On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set."
 }

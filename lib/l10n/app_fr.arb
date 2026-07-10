@@ -1,13 +1,11 @@
 {
   "@@locale": "fr",
   "appTitle": "iReminder",
-
   "navToday": "Aujourd'hui",
   "navCalendar": "Calendrier",
   "navLoans": "Échéances",
   "navCategories": "Catégories",
   "navSettings": "Paramètres",
-
   "onboardingTitle1": "N'oubliez plus jamais l'essentiel",
   "onboardingBody1": "Suivez l'entretien des appareils, la révision du véhicule, les anniversaires et bien plus encore, le tout au même endroit.",
   "onboardingTitle2": "La récurrence en toute simplicité",
@@ -17,22 +15,18 @@
   "onboardingSkip": "Passer",
   "onboardingNext": "Suivant",
   "onboardingGetStarted": "Commencer",
-
   "notificationPermissionTitle": "Ne manquez rien",
   "notificationPermissionBody": "iReminder a besoin de l'autorisation d'envoyer des notifications pour vous prévenir à temps.",
   "notificationPermissionAllow": "Autoriser les notifications",
   "notificationPermissionLater": "Plus tard",
-
   "homeSectionOverdue": "En retard",
   "homeSectionToday": "Aujourd'hui",
   "homeSectionThisWeek": "Cette semaine",
   "homeSectionUpcoming": "À venir",
   "homeEmptyTitle": "Rien pour l'instant",
   "homeEmptyBody": "Appuyez sur + pour ajouter votre premier rappel ou échéancier.",
-
   "fabAddReminder": "Rappel",
   "fabAddLoan": "Échéancier",
-
   "actionDone": "Terminé",
   "actionSnooze": "Reporter",
   "actionEdit": "Modifier",
@@ -45,7 +39,6 @@
   "actionOk": "OK",
   "actionAdd": "Ajouter",
   "actionClose": "Fermer",
-
   "reminderFormTitleNew": "Nouveau rappel",
   "reminderFormTitleEdit": "Modifier le rappel",
   "reminderFieldTitle": "Titre",
@@ -64,7 +57,6 @@
   "reminderFieldLunarMonth": "Mois lunaire",
   "reminderDeleteConfirmTitle": "Supprimer ce rappel ?",
   "reminderDeleteConfirmBody": "Cette action est irréversible.",
-
   "recurrenceNone": "Une seule fois",
   "recurrenceDaily": "Quotidien",
   "recurrenceWeekly": "Hebdomadaire",
@@ -72,7 +64,6 @@
   "recurrenceYearly": "Annuel",
   "recurrenceCustomIntervalDays": "Tous les N jours",
   "recurrenceLunarYearly": "Annuel (calendrier lunaire)",
-
   "weekdayMonday": "Lundi",
   "weekdayTuesday": "Mardi",
   "weekdayWednesday": "Mercredi",
@@ -80,7 +71,6 @@
   "weekdayFriday": "Vendredi",
   "weekdaySaturday": "Samedi",
   "weekdaySunday": "Dimanche",
-
   "loanListTitle": "Échéances & emprunts",
   "loanFormTitleNew": "Nouvel échéancier",
   "loanFormTitleEdit": "Modifier l'échéancier",
@@ -100,15 +90,21 @@
   "loanProgress": "{paid} / {total} échéances payées",
   "@loanProgress": {
     "placeholders": {
-      "paid": {"type": "int"},
-      "total": {"type": "int"}
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "loanMarkPaid": "Marquer comme payé",
   "loanMarkPaidBatch": "Marquer {count} échéances comme payées",
   "@loanMarkPaidBatch": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "loanStatusPending": "En attente",
@@ -117,17 +113,20 @@
   "loanInstallmentNumber": "Échéance n° {number}",
   "@loanInstallmentNumber": {
     "placeholders": {
-      "number": {"type": "int"}
+      "number": {
+        "type": "int"
+      }
     }
   },
   "loanDeleteConfirmTitle": "Supprimer cet échéancier ?",
   "loanDeleteConfirmBody": "Les {count} échéances seront également supprimées.",
   "@loanDeleteConfirmBody": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
-
   "categoryManagerTitle": "Catégories",
   "categoryFormTitleNew": "Nouvelle catégorie",
   "categoryFormTitleEdit": "Modifier la catégorie",
@@ -142,7 +141,9 @@
   "categoryDeleteHasRemindersBody": "{count} rappels utilisent cette catégorie. Choisissez comment procéder.",
   "@categoryDeleteHasRemindersBody": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryDeleteReassign": "Déplacer vers une autre catégorie",
@@ -150,17 +151,20 @@
   "categoryDeleteRemoveAll": "Supprimer les {count} rappels",
   "@categoryDeleteRemoveAll": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryDeleteRemoveAllConfirm": "Cela supprimera définitivement {count} rappels. Cette action est irréversible.",
   "@categoryDeleteRemoveAllConfirm": {
     "placeholders": {
-      "count": {"type": "int"}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "categoryReorderHint": "Glisser pour réorganiser",
-
   "settingsTitle": "Paramètres",
   "settingsLanguage": "Langue",
   "settingsDefaultReminderTime": "Heure de rappel par défaut",
@@ -178,7 +182,46 @@
   "settingsAbout": "À propos",
   "settingsBatteryOptimizationTitle": "Les notifications n'arrivent pas à l'heure ?",
   "settingsBatteryOptimizationBody": "Certains fabricants (Samsung, Xiaomi, Oppo…) limitent fortement les applications en arrière-plan. Désactivez l'optimisation de la batterie pour iReminder dans Paramètres > Batterie afin que les rappels arrivent toujours à l'heure.",
-
   "errorGeneric": "Une erreur est survenue. Veuillez réessayer.",
-  "errorLoadFailed": "Impossible de charger les données."
+  "errorLoadFailed": "Impossible de charger les données.",
+  "navAssistant": "Assistant",
+  "settingsExportLocationHint": "Enregistré dans Android/data/com.ireminder.ireminder/files/backups",
+  "settingsImportNoneFound": "Aucune sauvegarde trouvée",
+  "settingsImportPickFile": "Choisir une sauvegarde",
+  "settingsAiSectionTitle": "Assistant IA",
+  "settingsAiEnable": "Activer l'assistant IA",
+  "settingsAiProvider": "Fournisseur d'IA",
+  "settingsAiModel": "Modèle",
+  "settingsAiApiKey": "Clé API",
+  "settingsAiApiKeyHint": "Collez votre clé API",
+  "settingsAiApiKeyHelp": "Où obtenir une clé ?",
+  "settingsAiApiKeySaved": "Clé API enregistrée",
+  "settingsAiAllowedCategories": "Catégories que l'assistant peut lire",
+  "settingsAiAllowedCategoriesHint": "Désactivé par défaut. N'activez que les catégories que l'assistant doit voir — rien d'autre n'est jamais envoyé.",
+  "settingsAiClearHistory": "Effacer l'historique du chat",
+  "settingsAiClearHistoryConfirmTitle": "Effacer l'historique du chat ?",
+  "settingsAiClearHistoryConfirmBody": "Toutes les questions et réponses stockées sur cet appareil seront supprimées. Cette action est irréversible.",
+  "assistantTitle": "Assistant",
+  "assistantEmptyTitle": "Posez-moi une question",
+  "assistantEmptyBody": "Essayez « Que dois-je faire cette semaine ? » ou « Combien de mensualités reste-t-il sur mon crédit moto ? »",
+  "assistantInputHint": "Posez une question…",
+  "assistantSend": "Envoyer",
+  "assistantDisabledTitle": "L'assistant est désactivé",
+  "assistantDisabledBody": "Activez-le dans les Réglages et choisissez un fournisseur d'IA pour commencer à discuter.",
+  "assistantOpenSettings": "Ouvrir les réglages",
+  "assistantThinking": "Réflexion…",
+  "validationRequired": "Champ requis",
+  "validationDayOfMonth": "Entrez un jour de 1 à 31",
+  "validationMonth": "Entrez un mois de 1 à 12",
+  "validationPositiveNumber": "Entrez un nombre supérieur à 0",
+  "validationPositiveInteger": "Entrez un entier supérieur à 0",
+  "settingsPermissionsSectionTitle": "Notifications et alarmes",
+  "settingsPermissionsNotificationLabel": "Autorisation de notification",
+  "settingsPermissionsExactAlarmLabel": "Autorisation d'alarme exacte",
+  "settingsPermissionsGranted": "Accordée",
+  "settingsPermissionsDenied": "Non accordée — les rappels risquent de ne pas sonner à l'heure",
+  "settingsPermissionsGrantAction": "Autoriser",
+  "settingsPermissionsOpenSettingsAction": "Ouvrir les réglages",
+  "onboardingExactAlarmRationaleTitle": "Encore une autorisation",
+  "onboardingExactAlarmRationaleBody": "Sur l'écran suivant, autorisez iReminder à planifier des alarmes exactes afin que les rappels sonnent précisément à l'heure choisie."
 }

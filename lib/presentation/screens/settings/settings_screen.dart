@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:permission_handler/permission_handler.dart' as ph;
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../../core/localization/supported_locales.dart';
@@ -109,6 +111,8 @@ class SettingsScreen extends ConsumerWidget {
               },
             ),
             const Divider(),
+            const _PermissionsSection(),
+            const Divider(),
             const _AiAssistantSection(),
             const Divider(),
             Padding(
@@ -124,10 +128,16 @@ class SettingsScreen extends ConsumerWidget {
               subtitle: Text(l10n.settingsExportLocationHint),
               onTap: () async {
                 final messenger = ScaffoldMessenger.of(context);
-                await ref.read(backupServiceProvider).exportBackup();
-                messenger.showSnackBar(
-                  SnackBar(content: Text(l10n.settingsExportSuccess)),
-                );
+                try {
+                  await ref.read(backupServiceProvider).exportBackup();
+                  messenger.showSnackBar(
+                    SnackBar(content: Text(l10n.settingsExportSuccess)),
+                  );
+                } catch (_) {
+                  messenger.showSnackBar(
+                    SnackBar(content: Text(l10n.errorGeneric)),
+                  );
+                }
               },
             ),
             ListTile(
@@ -236,6 +246,143 @@ class SettingsScreen extends ConsumerWidget {
   }
 }
 
+/// Onboarding only ever asks for these permissions once and moves on
+/// regardless of the outcome, so a denial there previously left the user
+/// with no way to ever grant them again. This section shows live status
+/// and lets them grant/open system settings at any time. Re-checks status
+/// on every app resume since there's no OS-level permission-change
+/// listener — the user may have toggled it from system Settings directly.
+class _PermissionsSection extends ConsumerStatefulWidget {
+  const _PermissionsSection();
+
+  @override
+  ConsumerState<_PermissionsSection> createState() =>
+      _PermissionsSectionState();
+}
+
+class _PermissionsSectionState extends ConsumerState<_PermissionsSection>
+    with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      ref.invalidate(permissionStatusProvider);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final statusAsync = ref.watch(permissionStatusProvider);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+          child: Text(
+            l10n.settingsPermissionsSectionTitle,
+            style: Theme.of(context).textTheme.labelLarge,
+          ),
+        ),
+        statusAsync.when(
+          data: (status) => Column(
+            children: [
+              _PermissionRow(
+                label: l10n.settingsPermissionsNotificationLabel,
+                granted: status.notificationsEnabled,
+                l10n: l10n,
+                onGrant: () async {
+                  await ref
+                      .read(notificationServiceProvider)
+                      .requestNotificationsOnly();
+                  ref.invalidate(permissionStatusProvider);
+                },
+              ),
+              _PermissionRow(
+                label: l10n.settingsPermissionsExactAlarmLabel,
+                granted: status.exactAlarmsEnabled,
+                l10n: l10n,
+                onGrant: () async {
+                  await ref
+                      .read(notificationServiceProvider)
+                      .requestExactAlarmsOnly();
+                  ref.invalidate(permissionStatusProvider);
+                },
+              ),
+            ],
+          ),
+          loading: () => const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: LinearProgressIndicator(),
+          ),
+          error: (e, st) => const SizedBox.shrink(),
+        ),
+      ],
+    );
+  }
+}
+
+class _PermissionRow extends StatelessWidget {
+  final String label;
+  final bool granted;
+  final AppLocalizations l10n;
+  final Future<void> Function() onGrant;
+
+  const _PermissionRow({
+    required this.label,
+    required this.granted,
+    required this.l10n,
+    required this.onGrant,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return ListTile(
+      leading: Icon(
+        granted ? Icons.check_circle : Icons.error_outline,
+        color: granted ? Colors.green : scheme.error,
+      ),
+      title: Text(label),
+      subtitle: Text(
+        granted
+            ? l10n.settingsPermissionsGranted
+            : l10n.settingsPermissionsDenied,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+      ),
+      trailing: granted
+          ? null
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextButton(
+                  onPressed: onGrant,
+                  child: Text(l10n.settingsPermissionsGrantAction),
+                ),
+                IconButton(
+                  tooltip: l10n.settingsPermissionsOpenSettingsAction,
+                  icon: const Icon(Icons.settings_outlined),
+                  onPressed: () => ph.openAppSettings(),
+                ),
+              ],
+            ),
+    );
+  }
+}
+
 class _AiAssistantSection extends ConsumerStatefulWidget {
   const _AiAssistantSection();
 
@@ -260,9 +407,19 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
   Future<void> _loadKeyFor(String providerId) async {
     if (_loadedForProviderId == providerId) return;
     _loadedForProviderId = providerId;
-    final key = await ref.read(aiSettingsActionsProvider).getApiKey(providerId);
-    if (mounted && _loadedForProviderId == providerId) {
-      _apiKeyCtrl.text = key ?? '';
+    try {
+      final key =
+          await ref.read(aiSettingsActionsProvider).getApiKey(providerId);
+      if (mounted && _loadedForProviderId == providerId) {
+        _apiKeyCtrl.text = key ?? '';
+      }
+    } catch (_) {
+      // Secure storage can fail (e.g. Android Keystore key invalidated by a
+      // lock-screen/biometric change) — leave the field blank rather than
+      // crash; the user can re-enter and re-save the key.
+      if (mounted && _loadedForProviderId == providerId) {
+        _apiKeyCtrl.text = '';
+      }
     }
   }
 
@@ -298,6 +455,16 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: DropdownButtonFormField<String>(
+                  // Keyed on provider id so this widget is rebuilt fresh
+                  // (picking up the new `initialValue`) if providerId
+                  // changes from outside this screen's own onChanged —
+                  // e.g. a backup restore. DropdownButtonFormField only
+                  // applies `initialValue` once per widget instance, so
+                  // without this key it would keep showing the old
+                  // provider while the API key field below it (which
+                  // reacts to `provider.id` directly) already swapped to
+                  // the new provider's key — a mismatched pairing.
+                  key: ValueKey(provider?.id),
                   initialValue: provider?.id,
                   decoration:
                       InputDecoration(labelText: l10n.settingsAiProvider),
@@ -349,15 +516,22 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
                             icon: const Icon(Icons.check),
                             onPressed: () async {
                               final messenger = ScaffoldMessenger.of(context);
-                              await actions.setApiKey(
-                                provider.id,
-                                _apiKeyCtrl.text.trim(),
-                              );
-                              messenger.showSnackBar(
-                                SnackBar(
-                                  content: Text(l10n.settingsAiApiKeySaved),
-                                ),
-                              );
+                              try {
+                                await actions.setApiKey(
+                                  provider.id,
+                                  _apiKeyCtrl.text.trim(),
+                                );
+                                messenger.showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text(l10n.settingsAiApiKeySaved),
+                                  ),
+                                );
+                              } catch (_) {
+                                messenger.showSnackBar(
+                                  SnackBar(content: Text(l10n.errorGeneric)),
+                                );
+                              }
                             },
                           ),
                         ],
@@ -368,7 +542,10 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () => launchUrl(
+                      Uri.parse(provider.apiKeyHelpUrl),
+                      mode: LaunchMode.externalApplication,
+                    ),
                     child: Text(
                       l10n.settingsAiApiKeyHelp,
                       style: TextStyle(

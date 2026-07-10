@@ -27,7 +27,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get navSettings => '设置';
 
   @override
-  String get navAssistant => 'Assistant';
+  String get navAssistant => '助手';
 
   @override
   String get onboardingTitle1 => '重要的事永不遗忘';
@@ -396,16 +396,16 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsExportLocationHint =>
-      'Saved to Android/data/com.ireminder.ireminder/files/backups';
+      '保存至 Android/data/com.ireminder.ireminder/files/backups';
 
   @override
   String get settingsExportSuccess => '备份已保存';
 
   @override
-  String get settingsImportNoneFound => 'No backup files found';
+  String get settingsImportNoneFound => '未找到备份文件';
 
   @override
-  String get settingsImportPickFile => 'Choose a backup';
+  String get settingsImportPickFile => '选择备份';
 
   @override
   String get settingsImportSuccess => '已恢复备份';
@@ -433,72 +433,112 @@ class AppLocalizationsZh extends AppLocalizations {
   String get errorLoadFailed => '数据加载失败。';
 
   @override
-  String get settingsAiSectionTitle => 'AI Assistant';
+  String get settingsAiSectionTitle => 'AI 助手';
 
   @override
-  String get settingsAiEnable => 'Enable AI Assistant';
+  String get settingsAiEnable => '启用 AI 助手';
 
   @override
-  String get settingsAiProvider => 'AI provider';
+  String get settingsAiProvider => 'AI 提供商';
 
   @override
-  String get settingsAiModel => 'Model';
+  String get settingsAiModel => '模型';
 
   @override
-  String get settingsAiApiKey => 'API key';
+  String get settingsAiApiKey => 'API 密钥';
 
   @override
-  String get settingsAiApiKeyHint => 'Paste your API key';
+  String get settingsAiApiKeyHint => '粘贴你的 API 密钥';
 
   @override
-  String get settingsAiApiKeyHelp => 'Where do I get a key?';
+  String get settingsAiApiKeyHelp => '去哪里获取密钥？';
 
   @override
-  String get settingsAiApiKeySaved => 'API key saved';
+  String get settingsAiApiKeySaved => 'API 密钥已保存';
 
   @override
-  String get settingsAiAllowedCategories => 'Categories the assistant can read';
+  String get settingsAiAllowedCategories => '允许助手读取的分类';
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Off by default. Turn on only the categories you want the assistant to see — nothing else is ever sent.';
+      '默认全部关闭。仅开启你希望助手看到的分类——不会发送其他任何内容。';
 
   @override
-  String get settingsAiClearHistory => 'Clear chat history';
+  String get settingsAiClearHistory => '清除聊天记录';
 
   @override
-  String get settingsAiClearHistoryConfirmTitle => 'Clear chat history?';
+  String get settingsAiClearHistoryConfirmTitle => '清除聊天记录？';
 
   @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'This deletes every question and answer stored on this device. This cannot be undone.';
+  String get settingsAiClearHistoryConfirmBody => '此设备上保存的所有问题和回答都将被删除，且无法恢复。';
 
   @override
-  String get assistantTitle => 'Assistant';
+  String get assistantTitle => '助手';
 
   @override
-  String get assistantEmptyTitle => 'Ask me anything';
+  String get assistantEmptyTitle => '问我任何问题';
 
   @override
-  String get assistantEmptyBody =>
-      'Try \"What do I need to do this week?\" or \"How many installments are left on my motorcycle loan?\"';
+  String get assistantEmptyBody => '试试问「这周我需要做什么？」或「我的摩托车贷款还剩几期？」';
 
   @override
-  String get assistantInputHint => 'Ask something…';
+  String get assistantInputHint => '输入问题…';
 
   @override
-  String get assistantSend => 'Send';
+  String get assistantSend => '发送';
 
   @override
-  String get assistantDisabledTitle => 'Assistant is turned off';
+  String get assistantDisabledTitle => '助手已关闭';
 
   @override
-  String get assistantDisabledBody =>
-      'Enable it in Settings and pick an AI provider to start chatting.';
+  String get assistantDisabledBody => '请在设置中启用并选择一个 AI 提供商以开始聊天。';
 
   @override
-  String get assistantOpenSettings => 'Open Settings';
+  String get assistantOpenSettings => '打开设置';
 
   @override
-  String get assistantThinking => 'Thinking…';
+  String get assistantThinking => '思考中…';
+
+  @override
+  String get validationRequired => '必填';
+
+  @override
+  String get validationDayOfMonth => '请输入 1–31 之间的日期';
+
+  @override
+  String get validationMonth => '请输入 1–12 之间的月份';
+
+  @override
+  String get validationPositiveNumber => '请输入大于 0 的数字';
+
+  @override
+  String get validationPositiveInteger => '请输入大于 0 的整数';
+
+  @override
+  String get settingsPermissionsSectionTitle => '通知与闹钟';
+
+  @override
+  String get settingsPermissionsNotificationLabel => '通知权限';
+
+  @override
+  String get settingsPermissionsExactAlarmLabel => '精确闹钟权限';
+
+  @override
+  String get settingsPermissionsGranted => '已授权';
+
+  @override
+  String get settingsPermissionsDenied => '未授权——提醒可能无法准时提醒';
+
+  @override
+  String get settingsPermissionsGrantAction => '授权';
+
+  @override
+  String get settingsPermissionsOpenSettingsAction => '打开设置';
+
+  @override
+  String get onboardingExactAlarmRationaleTitle => '还需要一项权限';
+
+  @override
+  String get onboardingExactAlarmRationaleBody =>
+      '在下一屏，请允许 iReminder 安排精确闹钟，这样提醒才能准时在你设定的时间响起。';
 }

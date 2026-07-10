@@ -38,6 +38,14 @@ class _AssistantScreenState extends ConsumerState<AssistantScreen> {
           SnackBar(content: Text(e.userMessage)),
         );
       }
+    } catch (_) {
+      // Non-provider failures (e.g. secure storage read for the API key
+      // failing) must still surface — otherwise Send silently does nothing.
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(AppLocalizations.of(context).errorGeneric)),
+        );
+      }
     } finally {
       if (mounted) setState(() => _sending = false);
     }
