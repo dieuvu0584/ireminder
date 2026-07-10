@@ -44,7 +44,7 @@ class AppLocalizationsVi extends AppLocalizations {
       'Hàng ngày, hàng tuần, hàng tháng, hàng năm, hay theo âm lịch — chỉ cần cài đặt một lần, iReminder sẽ tự nhắc bạn.';
 
   @override
-  String get onboardingTitle3 => 'Riêng tư 100%, chạy offline 100%';
+  String get onboardingTitle3 => 'Riêng tư 100%, offline 100%';
 
   @override
   String get onboardingBody3 =>
