@@ -73,7 +73,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final slides = [
-      (title: l10n.onboardingTitle1, body: l10n.onboardingBody1, emoji: '🔧'),
+      (title: l10n.onboardingTitle1, body: l10n.onboardingBody1, emoji: '🔔'),
       (title: l10n.onboardingTitle2, body: l10n.onboardingBody2, emoji: '🔁'),
       (title: l10n.onboardingTitle3, body: l10n.onboardingBody3, emoji: '🔒'),
     ];
@@ -137,9 +137,13 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                   height: 8,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
+                    // surfaceContainerHighest for the inactive dots was
+                    // barely distinguishable from the page background in
+                    // the light theme, making it look like there was only
+                    // one dot instead of one per slide.
                     color: i == _page
                         ? Theme.of(context).colorScheme.primary
-                        : Theme.of(context).colorScheme.surfaceContainerHighest,
+                        : Theme.of(context).colorScheme.outlineVariant,
                   ),
                 ),
               ),
