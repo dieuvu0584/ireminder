@@ -1,0 +1,549 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Korean (`ko`).
+class AppLocalizationsKo extends AppLocalizations {
+  AppLocalizationsKo([String locale = 'ko']) : super(locale);
+
+  @override
+  String get appTitle => 'iReminder';
+
+  @override
+  String get navToday => '오늘';
+
+  @override
+  String get navCalendar => '캘린더';
+
+  @override
+  String get navLoans => '할부';
+
+  @override
+  String get navCategories => '카테고리';
+
+  @override
+  String get navSettings => '설정';
+
+  @override
+  String get navAssistant => '어시스턴트';
+
+  @override
+  String get onboardingTitle1 => '중요한 일을 절대 잊지 마세요';
+
+  @override
+  String get onboardingBody1 => '기기 관리, 자동차 점검, 기념일 등을 한곳에서 관리하세요.';
+
+  @override
+  String get onboardingTitle2 => '반복 설정도 간단하게';
+
+  @override
+  String get onboardingBody2 =>
+      '매일, 매주, 매월, 매년, 심지어 음력까지 — 한 번만 설정하면 iReminder가 알아서 챙겨드려요.';
+
+  @override
+  String get onboardingTitle3 => '100% 비공개, 100% 오프라인';
+
+  @override
+  String get onboardingBody3 =>
+      '계정도, 클라우드도, 로그인도 필요 없어요. 모든 데이터는 내 휴대폰에만 저장됩니다.';
+
+  @override
+  String get onboardingSkip => '건너뛰기';
+
+  @override
+  String get onboardingNext => '다음';
+
+  @override
+  String get onboardingGetStarted => '시작하기';
+
+  @override
+  String get notificationPermissionTitle => '일정을 놓치지 마세요';
+
+  @override
+  String get notificationPermissionBody =>
+      '마감일이 다가올 때 알려드리려면 iReminder에 알림 권한이 필요해요.';
+
+  @override
+  String get notificationPermissionAllow => '알림 허용';
+
+  @override
+  String get notificationPermissionLater => '나중에';
+
+  @override
+  String get homeSectionOverdue => '기한 지남';
+
+  @override
+  String get homeSectionToday => '오늘';
+
+  @override
+  String get homeSectionThisWeek => '이번 주';
+
+  @override
+  String get homeSectionUpcoming => '예정';
+
+  @override
+  String get homeEmptyTitle => '아직 아무것도 없어요';
+
+  @override
+  String get homeEmptyBody => '＋를 눌러 첫 리마인더나 할부를 추가해 보세요.';
+
+  @override
+  String get fabAddReminder => '리마인더';
+
+  @override
+  String get fabAddLoan => '할부';
+
+  @override
+  String get actionDone => '완료';
+
+  @override
+  String get actionSnooze => '다시 알림';
+
+  @override
+  String get actionEdit => '수정';
+
+  @override
+  String get actionDelete => '삭제';
+
+  @override
+  String get actionSave => '저장';
+
+  @override
+  String get actionCancel => '취소';
+
+  @override
+  String get actionConfirm => '확인';
+
+  @override
+  String get actionYes => '예';
+
+  @override
+  String get actionNo => '아니요';
+
+  @override
+  String get actionOk => '확인';
+
+  @override
+  String get actionAdd => '추가';
+
+  @override
+  String get actionClose => '닫기';
+
+  @override
+  String get reminderFormTitleNew => '새 리마인더';
+
+  @override
+  String get reminderFormTitleEdit => '리마인더 수정';
+
+  @override
+  String get reminderFieldTitle => '제목';
+
+  @override
+  String get reminderFieldTitleRequired => '제목을 입력해 주세요';
+
+  @override
+  String get reminderFieldDescription => '설명 (선택 사항)';
+
+  @override
+  String get reminderFieldCategory => '카테고리';
+
+  @override
+  String get reminderFieldRecurrence => '반복';
+
+  @override
+  String get reminderFieldStartDate => '시작일';
+
+  @override
+  String get reminderFieldTime => '알림 시간';
+
+  @override
+  String get reminderFieldAdvanceNotice => 'N일 전에 알림';
+
+  @override
+  String get reminderFieldRecurrenceDay => '매월 날짜';
+
+  @override
+  String get reminderFieldRecurrenceMonth => '월';
+
+  @override
+  String get reminderFieldRecurrenceWeekday => '요일';
+
+  @override
+  String get reminderFieldIntervalDays => 'N일마다';
+
+  @override
+  String get reminderFieldLunarDay => '음력 날짜';
+
+  @override
+  String get reminderFieldLunarMonth => '음력 월';
+
+  @override
+  String get reminderDeleteConfirmTitle => '이 리마인더를 삭제할까요?';
+
+  @override
+  String get reminderDeleteConfirmBody => '삭제하면 되돌릴 수 없어요.';
+
+  @override
+  String get recurrenceNone => '한 번만';
+
+  @override
+  String get recurrenceDaily => '매일';
+
+  @override
+  String get recurrenceWeekly => '매주';
+
+  @override
+  String get recurrenceMonthly => '매월';
+
+  @override
+  String get recurrenceYearly => '매년';
+
+  @override
+  String get recurrenceCustomIntervalDays => 'N일마다';
+
+  @override
+  String get recurrenceLunarYearly => '매년 (음력)';
+
+  @override
+  String get weekdayMonday => '월요일';
+
+  @override
+  String get weekdayTuesday => '화요일';
+
+  @override
+  String get weekdayWednesday => '수요일';
+
+  @override
+  String get weekdayThursday => '목요일';
+
+  @override
+  String get weekdayFriday => '금요일';
+
+  @override
+  String get weekdaySaturday => '토요일';
+
+  @override
+  String get weekdaySunday => '일요일';
+
+  @override
+  String get loanListTitle => '대출 및 할부';
+
+  @override
+  String get loanFormTitleNew => '새 할부';
+
+  @override
+  String get loanFormTitleEdit => '할부 수정';
+
+  @override
+  String get loanFieldName => '이름';
+
+  @override
+  String get loanFieldCategory => '카테고리';
+
+  @override
+  String get loanFieldTotalAmount => '총액 (선택 사항)';
+
+  @override
+  String get loanFieldInstallmentAmount => '회당 납부액';
+
+  @override
+  String get loanFieldTotalInstallments => '총 납부 횟수';
+
+  @override
+  String get loanFieldFrequency => '납부 주기';
+
+  @override
+  String get loanFieldDueDayOfMonth => '매월 납부일';
+
+  @override
+  String get loanFieldStartDate => '시작일';
+
+  @override
+  String get loanFieldReminderAdvanceDays => '납부일 N일 전에 알림';
+
+  @override
+  String get loanFieldNotes => '메모 (선택 사항)';
+
+  @override
+  String get loanFrequencyMonthly => '매월';
+
+  @override
+  String get loanFrequencyWeekly => '매주';
+
+  @override
+  String get loanFrequencyBiweekly => '격주';
+
+  @override
+  String loanProgress(int paid, int total) {
+    return '$total회 중 $paid회 납부';
+  }
+
+  @override
+  String get loanMarkPaid => '납부 완료로 표시';
+
+  @override
+  String loanMarkPaidBatch(int count) {
+    return '$count회를 납부 완료로 표시';
+  }
+
+  @override
+  String get loanStatusPending => '대기 중';
+
+  @override
+  String get loanStatusPaid => '납부 완료';
+
+  @override
+  String get loanStatusOverdue => '연체';
+
+  @override
+  String loanInstallmentNumber(int number) {
+    return '$number회차';
+  }
+
+  @override
+  String get loanDeleteConfirmTitle => '이 할부를 삭제할까요?';
+
+  @override
+  String loanDeleteConfirmBody(int count) {
+    return '전체 $count회 납부 내역도 함께 삭제됩니다.';
+  }
+
+  @override
+  String get categoryManagerTitle => '카테고리';
+
+  @override
+  String get categoryFormTitleNew => '새 카테고리';
+
+  @override
+  String get categoryFormTitleEdit => '카테고리 수정';
+
+  @override
+  String get categoryFieldName => '이름';
+
+  @override
+  String get categoryFieldNameRequired => '이름을 입력해 주세요';
+
+  @override
+  String get categoryFieldIcon => '아이콘';
+
+  @override
+  String get categoryFieldColor => '색상';
+
+  @override
+  String get categoryDeleteSimpleTitle => '이 카테고리를 삭제할까요?';
+
+  @override
+  String get categoryDeleteSimpleBody => '이 카테고리에는 리마인더가 없어요.';
+
+  @override
+  String get categoryDeleteHasRemindersTitle => '이 카테고리에는 아직 리마인더가 있어요';
+
+  @override
+  String categoryDeleteHasRemindersBody(int count) {
+    return '$count개의 리마인더가 이 카테고리를 사용 중이에요. 처리 방법을 선택해 주세요.';
+  }
+
+  @override
+  String get categoryDeleteReassign => '다른 카테고리로 이동';
+
+  @override
+  String get categoryDeleteReassignTarget => '이동할 카테고리';
+
+  @override
+  String categoryDeleteRemoveAll(int count) {
+    return '$count개 리마인더 모두 삭제';
+  }
+
+  @override
+  String categoryDeleteRemoveAllConfirm(int count) {
+    return '$count개의 리마인더가 영구적으로 삭제됩니다. 이 작업은 되돌릴 수 없어요.';
+  }
+
+  @override
+  String get categoryReorderHint => '드래그하여 순서 변경';
+
+  @override
+  String get settingsTitle => '설정';
+
+  @override
+  String get settingsLanguage => '언어';
+
+  @override
+  String get settingsDefaultReminderTime => '기본 알림 시간';
+
+  @override
+  String get settingsTheme => '테마';
+
+  @override
+  String get settingsThemeSystem => '시스템 설정';
+
+  @override
+  String get settingsThemeLight => '라이트';
+
+  @override
+  String get settingsThemeDark => '다크';
+
+  @override
+  String get settingsBackupRestore => '백업 및 복원';
+
+  @override
+  String get settingsExport => '백업 내보내기';
+
+  @override
+  String get settingsImport => '백업에서 복원';
+
+  @override
+  String get settingsExportLocationHint =>
+      'Android/data/com.ireminder.ireminder/files/backups 에 저장됩니다';
+
+  @override
+  String get settingsExportSuccess => '백업이 저장되었어요';
+
+  @override
+  String get settingsImportNoneFound => '백업 파일을 찾을 수 없어요';
+
+  @override
+  String get settingsImportPickFile => '백업 선택';
+
+  @override
+  String get settingsImportSuccess => '백업이 복원되었어요';
+
+  @override
+  String get settingsImportConfirmTitle => '백업을 복원할까요?';
+
+  @override
+  String get settingsImportConfirmBody => '현재 데이터가 모두 백업 파일의 내용으로 대체됩니다.';
+
+  @override
+  String get settingsAbout => '정보';
+
+  @override
+  String get settingsBatteryOptimizationTitle => '알림이 제때 오지 않나요?';
+
+  @override
+  String get settingsBatteryOptimizationBody =>
+      '일부 제조사(삼성, 샤오미, 오포 등)는 백그라운드 앱을 강하게 제한해요. 휴대폰의 설정 > 배터리에서 iReminder의 배터리 최적화를 꺼서 알림이 항상 제때 오도록 해주세요.';
+
+  @override
+  String get errorGeneric => '문제가 발생했어요. 다시 시도해 주세요.';
+
+  @override
+  String get errorLoadFailed => '데이터를 불러오지 못했어요.';
+
+  @override
+  String get settingsAiSectionTitle => 'AI 어시스턴트';
+
+  @override
+  String get settingsAiEnable => 'AI 어시스턴트 사용';
+
+  @override
+  String get settingsAiProvider => 'AI 제공업체';
+
+  @override
+  String get settingsAiModel => '모델';
+
+  @override
+  String get settingsAiApiKey => 'API 키';
+
+  @override
+  String get settingsAiApiKeyHint => 'API 키를 붙여넣으세요';
+
+  @override
+  String get settingsAiApiKeyHelp => '키는 어디서 받나요?';
+
+  @override
+  String get settingsAiApiKeySaved => 'API 키가 저장되었어요';
+
+  @override
+  String get settingsAiAllowedCategories => '어시스턴트가 볼 수 있는 카테고리';
+
+  @override
+  String get settingsAiAllowedCategoriesHint =>
+      '기본적으로 모두 꺼져 있어요. 어시스턴트에게 보여주고 싶은 카테고리만 켜세요 — 그 외에는 아무것도 전송되지 않아요.';
+
+  @override
+  String get settingsAiClearHistory => '대화 기록 삭제';
+
+  @override
+  String get settingsAiClearHistoryConfirmTitle => '대화 기록을 삭제할까요?';
+
+  @override
+  String get settingsAiClearHistoryConfirmBody =>
+      '이 기기에 저장된 모든 질문과 답변이 삭제됩니다. 이 작업은 되돌릴 수 없어요.';
+
+  @override
+  String get assistantTitle => '어시스턴트';
+
+  @override
+  String get assistantEmptyTitle => '무엇이든 물어보세요';
+
+  @override
+  String get assistantEmptyBody =>
+      '\"이번 주에 뭐 해야 해?\" 또는 \"오토바이 할부 몇 회 남았어?\" 같이 물어보세요.';
+
+  @override
+  String get assistantInputHint => '질문을 입력하세요…';
+
+  @override
+  String get assistantSend => '보내기';
+
+  @override
+  String get assistantDisabledTitle => '어시스턴트가 꺼져 있어요';
+
+  @override
+  String get assistantDisabledBody => '설정에서 켜고 AI 제공업체를 선택하면 대화를 시작할 수 있어요.';
+
+  @override
+  String get assistantOpenSettings => '설정 열기';
+
+  @override
+  String get assistantThinking => '생각하는 중…';
+
+  @override
+  String get validationRequired => '필수 입력 항목이에요';
+
+  @override
+  String get validationDayOfMonth => '1~31 사이의 날짜를 입력해 주세요';
+
+  @override
+  String get validationMonth => '1~12 사이의 월을 입력해 주세요';
+
+  @override
+  String get validationPositiveNumber => '0보다 큰 숫자를 입력해 주세요';
+
+  @override
+  String get validationPositiveInteger => '0보다 큰 정수를 입력해 주세요';
+
+  @override
+  String get settingsPermissionsSectionTitle => '알림 및 알람';
+
+  @override
+  String get settingsPermissionsNotificationLabel => '알림 권한';
+
+  @override
+  String get settingsPermissionsExactAlarmLabel => '정확한 알람 권한';
+
+  @override
+  String get settingsPermissionsGranted => '허용됨';
+
+  @override
+  String get settingsPermissionsDenied => '허용되지 않음 — 리마인더가 제때 울리지 않을 수 있어요';
+
+  @override
+  String get settingsPermissionsGrantAction => '허용';
+
+  @override
+  String get settingsPermissionsOpenSettingsAction => '설정 열기';
+
+  @override
+  String get onboardingExactAlarmRationaleTitle => '권한이 하나 더 필요해요';
+
+  @override
+  String get onboardingExactAlarmRationaleBody =>
+      '다음 화면에서 iReminder가 정확한 알람을 예약할 수 있도록 허용해 주세요. 그래야 설정한 시간에 정확히 알림이 울려요.';
+
+  @override
+  String get loanMarkPaidSuccess => '납부 완료로 표시했어요';
+}

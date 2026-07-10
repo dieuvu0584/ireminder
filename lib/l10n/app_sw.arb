@@ -1,0 +1,227 @@
+{
+  "@@locale": "sw",
+  "appTitle": "iReminder",
+  "navToday": "Leo",
+  "navCalendar": "Kalenda",
+  "navLoans": "Mikopo",
+  "navCategories": "Jamii",
+  "navSettings": "Mipangilio",
+  "navAssistant": "Msaidizi",
+  "onboardingTitle1": "Usisahau tena mambo muhimu",
+  "onboardingBody1": "Fuatilia matengenezo ya vifaa, huduma za gari, kumbukumbu za maadhimisho, na mengine mengi — yote mahali pamoja.",
+  "onboardingTitle2": "Urudiaji uliorahisishwa",
+  "onboardingBody2": "Kila siku, kila wiki, kila mwezi, kila mwaka, au hata kwa kalenda ya mwezi — weka mara moja na iReminder itakukumbusha.",
+  "onboardingTitle3": "Faragha 100%, bila mtandao 100%",
+  "onboardingBody3": "Hakuna akaunti, hakuna wingu, hakuna kuingia. Kila kitu kinabaki kwenye simu yako.",
+  "onboardingSkip": "Ruka",
+  "onboardingNext": "Endelea",
+  "onboardingGetStarted": "Anza",
+  "notificationPermissionTitle": "Usichelewe",
+  "notificationPermissionBody": "iReminder inahitaji ruhusa ya kukutumia arifa wakati kitu kinapokaribia muda wake.",
+  "notificationPermissionAllow": "Ruhusu arifa",
+  "notificationPermissionLater": "Si sasa",
+  "homeSectionOverdue": "Zilizochelewa",
+  "homeSectionToday": "Leo",
+  "homeSectionThisWeek": "Wiki hii",
+  "homeSectionUpcoming": "Zinazokuja",
+  "homeEmptyTitle": "Bado hakuna kitu hapa",
+  "homeEmptyBody": "Gusa + kuongeza kikumbusho chako cha kwanza au mkopo wa awamu.",
+  "fabAddReminder": "Kikumbusho",
+  "fabAddLoan": "Mkopo wa awamu",
+  "actionDone": "Imekamilika",
+  "actionSnooze": "Ahirisha",
+  "actionEdit": "Hariri",
+  "actionDelete": "Futa",
+  "actionSave": "Hifadhi",
+  "actionCancel": "Ghairi",
+  "actionConfirm": "Thibitisha",
+  "actionYes": "Ndiyo",
+  "actionNo": "Hapana",
+  "actionOk": "Sawa",
+  "actionAdd": "Ongeza",
+  "actionClose": "Funga",
+  "reminderFormTitleNew": "Kikumbusho kipya",
+  "reminderFormTitleEdit": "Hariri kikumbusho",
+  "reminderFieldTitle": "Kichwa",
+  "reminderFieldTitleRequired": "Kichwa kinahitajika",
+  "reminderFieldDescription": "Maelezo (hiari)",
+  "reminderFieldCategory": "Jamii",
+  "reminderFieldRecurrence": "Marudio",
+  "reminderFieldStartDate": "Tarehe ya kuanza",
+  "reminderFieldTime": "Muda wa kikumbusho",
+  "reminderFieldAdvanceNotice": "Arifu siku N mapema",
+  "reminderFieldRecurrenceDay": "Siku ya mwezi",
+  "reminderFieldRecurrenceMonth": "Mwezi",
+  "reminderFieldRecurrenceWeekday": "Siku ya wiki",
+  "reminderFieldIntervalDays": "Kila siku N",
+  "reminderFieldLunarDay": "Siku ya kalenda ya mwezi",
+  "reminderFieldLunarMonth": "Mwezi wa kalenda ya mwezi",
+  "reminderDeleteConfirmTitle": "Futa kikumbusho hiki?",
+  "reminderDeleteConfirmBody": "Hatua hii haiwezi kutenduliwa.",
+  "recurrenceNone": "Mara moja",
+  "recurrenceDaily": "Kila siku",
+  "recurrenceWeekly": "Kila wiki",
+  "recurrenceMonthly": "Kila mwezi",
+  "recurrenceYearly": "Kila mwaka",
+  "recurrenceCustomIntervalDays": "Kila siku N",
+  "recurrenceLunarYearly": "Kila mwaka (kalenda ya mwezi)",
+  "weekdayMonday": "Jumatatu",
+  "weekdayTuesday": "Jumanne",
+  "weekdayWednesday": "Jumatano",
+  "weekdayThursday": "Alhamisi",
+  "weekdayFriday": "Ijumaa",
+  "weekdaySaturday": "Jumamosi",
+  "weekdaySunday": "Jumapili",
+  "loanListTitle": "Mikopo na awamu",
+  "loanFormTitleNew": "Mkopo mpya wa awamu",
+  "loanFormTitleEdit": "Hariri mkopo",
+  "loanFieldName": "Jina",
+  "loanFieldCategory": "Jamii",
+  "loanFieldTotalAmount": "Kiasi cha jumla (hiari)",
+  "loanFieldInstallmentAmount": "Kiasi kwa kila awamu",
+  "loanFieldTotalInstallments": "Idadi ya awamu",
+  "loanFieldFrequency": "Marudio",
+  "loanFieldDueDayOfMonth": "Siku ya malipo kwa mwezi",
+  "loanFieldStartDate": "Tarehe ya kuanza",
+  "loanFieldReminderAdvanceDays": "Kumbusha siku N kabla ya malipo",
+  "loanFieldNotes": "Vidokezo (hiari)",
+  "loanFrequencyMonthly": "Kila mwezi",
+  "loanFrequencyWeekly": "Kila wiki",
+  "loanFrequencyBiweekly": "Kila baada ya wiki mbili",
+  "loanProgress": "{paid} / {total} zimelipwa",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Weka alama kuwa imelipwa",
+  "loanMarkPaidBatch": "Weka alama kwa awamu {count} kuwa zimelipwa",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Inasubiri",
+  "loanStatusPaid": "Imelipwa",
+  "loanStatusOverdue": "Imechelewa",
+  "loanInstallmentNumber": "Awamu #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Futa mkopo huu?",
+  "loanDeleteConfirmBody": "Awamu zote {count} pia zitaondolewa.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Jamii",
+  "categoryFormTitleNew": "Jamii mpya",
+  "categoryFormTitleEdit": "Hariri jamii",
+  "categoryFieldName": "Jina",
+  "categoryFieldNameRequired": "Jina linahitajika",
+  "categoryFieldIcon": "Aikoni",
+  "categoryFieldColor": "Rangi",
+  "categoryDeleteSimpleTitle": "Futa jamii hii?",
+  "categoryDeleteSimpleBody": "Jamii hii haina vikumbusho vyovyote.",
+  "categoryDeleteHasRemindersTitle": "Jamii hii bado ina vikumbusho",
+  "categoryDeleteHasRemindersBody": "Vikumbusho {count} vinatumia jamii hii. Chagua utakalofanya navyo.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Hamishia jamii nyingine",
+  "categoryDeleteReassignTarget": "Hamishia",
+  "categoryDeleteRemoveAll": "Futa vikumbusho vyote {count}",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Hatua hii itafuta kabisa vikumbusho {count}. Haiwezi kutenduliwa.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Buruta ili kupanga upya",
+  "settingsTitle": "Mipangilio",
+  "settingsLanguage": "Lugha",
+  "settingsDefaultReminderTime": "Muda chaguo-msingi wa kikumbusho",
+  "settingsTheme": "Mandhari",
+  "settingsThemeSystem": "Mfumo",
+  "settingsThemeLight": "Nyepesi",
+  "settingsThemeDark": "Giza",
+  "settingsBackupRestore": "Hifadhi nakala na urejeshe",
+  "settingsExport": "Hamisha nakala rudufu",
+  "settingsImport": "Rejesha kutoka nakala rudufu",
+  "settingsExportLocationHint": "Imehifadhiwa katika Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Nakala rudufu imehifadhiwa",
+  "settingsImportNoneFound": "Hakuna faili za nakala rudufu zilizopatikana",
+  "settingsImportPickFile": "Chagua nakala rudufu",
+  "settingsImportSuccess": "Nakala rudufu imerejeshwa",
+  "settingsImportConfirmTitle": "Rejesha nakala rudufu?",
+  "settingsImportConfirmBody": "Hii itabadilisha data zote za sasa na maudhui ya faili la nakala rudufu.",
+  "settingsAbout": "Kuhusu",
+  "settingsBatteryOptimizationTitle": "Arifa hazifiki kwa wakati?",
+  "settingsBatteryOptimizationBody": "Watengenezaji wa simu wengine (Samsung, Xiaomi, Oppo...) huzuia sana programu zinazoendesha nyuma. Zima uboreshaji wa betri kwa iReminder katika Mipangilio ya simu yako > Betri ili kuhakikisha vikumbusho vinafika kwa wakati kila mara.",
+  "errorGeneric": "Hitilafu imetokea. Tafadhali jaribu tena.",
+  "errorLoadFailed": "Imeshindwa kupakia data.",
+  "settingsAiSectionTitle": "Msaidizi wa AI",
+  "settingsAiEnable": "Washa Msaidizi wa AI",
+  "settingsAiProvider": "Mtoa huduma wa AI",
+  "settingsAiModel": "Modeli",
+  "settingsAiApiKey": "Ufunguo wa API",
+  "settingsAiApiKeyHint": "Bandika ufunguo wako wa API",
+  "settingsAiApiKeyHelp": "Nitapata wapi ufunguo?",
+  "settingsAiApiKeySaved": "Ufunguo wa API umehifadhiwa",
+  "settingsAiAllowedCategories": "Jamii ambazo msaidizi anaweza kusoma",
+  "settingsAiAllowedCategoriesHint": "Zimezimwa kwa chaguo-msingi. Washa tu jamii unazotaka msaidizi aone — hakuna kingine kinachotumwa.",
+  "settingsAiClearHistory": "Futa historia ya mazungumzo",
+  "settingsAiClearHistoryConfirmTitle": "Futa historia ya mazungumzo?",
+  "settingsAiClearHistoryConfirmBody": "Hii itafuta kila swali na jibu lililohifadhiwa kwenye kifaa hiki. Haiwezi kutenduliwa.",
+  "assistantTitle": "Msaidizi",
+  "assistantEmptyTitle": "Niulize chochote",
+  "assistantEmptyBody": "Jaribu \"Nina nini cha kufanya wiki hii?\" au \"Ni awamu ngapi zimebaki kwenye mkopo wangu wa pikipiki?\"",
+  "assistantInputHint": "Uliza kitu…",
+  "assistantSend": "Tuma",
+  "assistantDisabledTitle": "Msaidizi amezimwa",
+  "assistantDisabledBody": "Iwashe katika Mipangilio na uchague mtoa huduma wa AI ili kuanza mazungumzo.",
+  "assistantOpenSettings": "Fungua Mipangilio",
+  "assistantThinking": "Anafikiri…",
+  "validationRequired": "Inahitajika",
+  "validationDayOfMonth": "Weka siku kutoka 1–31",
+  "validationMonth": "Weka mwezi kutoka 1–12",
+  "validationPositiveNumber": "Weka namba kubwa kuliko 0",
+  "validationPositiveInteger": "Weka namba kamili kubwa kuliko 0",
+  "settingsPermissionsSectionTitle": "Arifa na Kengele",
+  "settingsPermissionsNotificationLabel": "Ruhusa ya arifa",
+  "settingsPermissionsExactAlarmLabel": "Ruhusa ya kengele sahihi",
+  "settingsPermissionsGranted": "Imeruhusiwa",
+  "settingsPermissionsDenied": "Haijaruhusiwa — vikumbusho vinaweza visifike kwa wakati",
+  "settingsPermissionsGrantAction": "Ruhusu",
+  "settingsPermissionsOpenSettingsAction": "Fungua mipangilio",
+  "onboardingExactAlarmRationaleTitle": "Ruhusa moja zaidi",
+  "onboardingExactAlarmRationaleBody": "Kwenye skrini inayofuata, ruhusu iReminder kupanga kengele sahihi ili vikumbusho vifike kwa wakati hasa ulioweka.",
+  "loanMarkPaidSuccess": "Imewekwa alama kuwa imelipwa"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "pl",
+  "appTitle": "iReminder",
+  "navToday": "Dziś",
+  "navCalendar": "Kalendarz",
+  "navLoans": "Raty",
+  "navCategories": "Kategorie",
+  "navSettings": "Ustawienia",
+  "navAssistant": "Asystent",
+  "onboardingTitle1": "Nigdy nie zapomnij o ważnych sprawach",
+  "onboardingBody1": "Śledź konserwację urządzeń, przeglądy samochodu, rocznice i wiele więcej — wszystko w jednym miejscu.",
+  "onboardingTitle2": "Powtarzanie w prosty sposób",
+  "onboardingBody2": "Codziennie, co tydzień, co miesiąc, co rok, a nawet według kalendarza księżycowego — ustaw raz, a iReminder zapamięta za Ciebie.",
+  "onboardingTitle3": "100% prywatności, 100% offline",
+  "onboardingBody3": "Bez konta, bez chmury, bez logowania. Wszystko zostaje na Twoim telefonie.",
+  "onboardingSkip": "Pomiń",
+  "onboardingNext": "Dalej",
+  "onboardingGetStarted": "Zaczynajmy",
+  "notificationPermissionTitle": "Nie przegap terminu",
+  "notificationPermissionBody": "iReminder potrzebuje zgody na wysyłanie powiadomień, gdy zbliża się termin.",
+  "notificationPermissionAllow": "Zezwól na powiadomienia",
+  "notificationPermissionLater": "Nie teraz",
+  "homeSectionOverdue": "Zaległe",
+  "homeSectionToday": "Dziś",
+  "homeSectionThisWeek": "W tym tygodniu",
+  "homeSectionUpcoming": "Nadchodzące",
+  "homeEmptyTitle": "Nic tu jeszcze nie ma",
+  "homeEmptyBody": "Stuknij +, aby dodać pierwsze przypomnienie lub ratę.",
+  "fabAddReminder": "Przypomnienie",
+  "fabAddLoan": "Rata",
+  "actionDone": "Gotowe",
+  "actionSnooze": "Przełóż",
+  "actionEdit": "Edytuj",
+  "actionDelete": "Usuń",
+  "actionSave": "Zapisz",
+  "actionCancel": "Anuluj",
+  "actionConfirm": "Potwierdź",
+  "actionYes": "Tak",
+  "actionNo": "Nie",
+  "actionOk": "OK",
+  "actionAdd": "Dodaj",
+  "actionClose": "Zamknij",
+  "reminderFormTitleNew": "Nowe przypomnienie",
+  "reminderFormTitleEdit": "Edytuj przypomnienie",
+  "reminderFieldTitle": "Tytuł",
+  "reminderFieldTitleRequired": "Tytuł jest wymagany",
+  "reminderFieldDescription": "Opis (opcjonalnie)",
+  "reminderFieldCategory": "Kategoria",
+  "reminderFieldRecurrence": "Powtarzanie",
+  "reminderFieldStartDate": "Data rozpoczęcia",
+  "reminderFieldTime": "Godzina przypomnienia",
+  "reminderFieldAdvanceNotice": "Powiadom N dni wcześniej",
+  "reminderFieldRecurrenceDay": "Dzień miesiąca",
+  "reminderFieldRecurrenceMonth": "Miesiąc",
+  "reminderFieldRecurrenceWeekday": "Dzień tygodnia",
+  "reminderFieldIntervalDays": "Co N dni",
+  "reminderFieldLunarDay": "Dzień księżycowy",
+  "reminderFieldLunarMonth": "Miesiąc księżycowy",
+  "reminderDeleteConfirmTitle": "Usunąć to przypomnienie?",
+  "reminderDeleteConfirmBody": "Tej operacji nie można cofnąć.",
+  "recurrenceNone": "Jednorazowo",
+  "recurrenceDaily": "Codziennie",
+  "recurrenceWeekly": "Co tydzień",
+  "recurrenceMonthly": "Co miesiąc",
+  "recurrenceYearly": "Co rok",
+  "recurrenceCustomIntervalDays": "Co N dni",
+  "recurrenceLunarYearly": "Co rok (kalendarz księżycowy)",
+  "weekdayMonday": "Poniedziałek",
+  "weekdayTuesday": "Wtorek",
+  "weekdayWednesday": "Środa",
+  "weekdayThursday": "Czwartek",
+  "weekdayFriday": "Piątek",
+  "weekdaySaturday": "Sobota",
+  "weekdaySunday": "Niedziela",
+  "loanListTitle": "Raty i pożyczki",
+  "loanFormTitleNew": "Nowa rata",
+  "loanFormTitleEdit": "Edytuj ratę",
+  "loanFieldName": "Nazwa",
+  "loanFieldCategory": "Kategoria",
+  "loanFieldTotalAmount": "Kwota całkowita (opcjonalnie)",
+  "loanFieldInstallmentAmount": "Kwota jednej raty",
+  "loanFieldTotalInstallments": "Liczba rat",
+  "loanFieldFrequency": "Częstotliwość",
+  "loanFieldDueDayOfMonth": "Dzień płatności w miesiącu",
+  "loanFieldStartDate": "Data rozpoczęcia",
+  "loanFieldReminderAdvanceDays": "Przypomnij N dni przed terminem",
+  "loanFieldNotes": "Notatki (opcjonalnie)",
+  "loanFrequencyMonthly": "Co miesiąc",
+  "loanFrequencyWeekly": "Co tydzień",
+  "loanFrequencyBiweekly": "Co dwa tygodnie",
+  "loanProgress": "Spłacono {paid} / {total}",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Oznacz jako spłacone",
+  "loanMarkPaidBatch": "Oznacz {count} rat jako spłacone",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Oczekująca",
+  "loanStatusPaid": "Spłacona",
+  "loanStatusOverdue": "Zaległa",
+  "loanInstallmentNumber": "Rata nr {number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Usunąć tę ratę?",
+  "loanDeleteConfirmBody": "Wszystkie {count} rat zostaną również usunięte.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategorie",
+  "categoryFormTitleNew": "Nowa kategoria",
+  "categoryFormTitleEdit": "Edytuj kategorię",
+  "categoryFieldName": "Nazwa",
+  "categoryFieldNameRequired": "Nazwa jest wymagana",
+  "categoryFieldIcon": "Ikona",
+  "categoryFieldColor": "Kolor",
+  "categoryDeleteSimpleTitle": "Usunąć tę kategorię?",
+  "categoryDeleteSimpleBody": "Ta kategoria nie zawiera żadnych przypomnień.",
+  "categoryDeleteHasRemindersTitle": "Ta kategoria wciąż zawiera przypomnienia",
+  "categoryDeleteHasRemindersBody": "Ta kategoria jest używana przez {count} przypomnień. Wybierz, co z nimi zrobić.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Przenieś do innej kategorii",
+  "categoryDeleteReassignTarget": "Przenieś do",
+  "categoryDeleteRemoveAll": "Usuń wszystkie {count} przypomnień",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Ta operacja trwale usunie {count} przypomnień. Nie można jej cofnąć.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Przeciągnij, aby zmienić kolejność",
+  "settingsTitle": "Ustawienia",
+  "settingsLanguage": "Język",
+  "settingsDefaultReminderTime": "Domyślna godzina przypomnienia",
+  "settingsTheme": "Motyw",
+  "settingsThemeSystem": "Systemowy",
+  "settingsThemeLight": "Jasny",
+  "settingsThemeDark": "Ciemny",
+  "settingsBackupRestore": "Kopia zapasowa i przywracanie",
+  "settingsExport": "Eksportuj kopię zapasową",
+  "settingsImport": "Przywróć z kopii zapasowej",
+  "settingsExportLocationHint": "Zapisano w Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Kopia zapasowa zapisana",
+  "settingsImportNoneFound": "Nie znaleziono plików kopii zapasowej",
+  "settingsImportPickFile": "Wybierz kopię zapasową",
+  "settingsImportSuccess": "Kopia zapasowa przywrócona",
+  "settingsImportConfirmTitle": "Przywrócić kopię zapasową?",
+  "settingsImportConfirmBody": "Spowoduje to zastąpienie wszystkich bieżących danych zawartością pliku kopii zapasowej.",
+  "settingsAbout": "O aplikacji",
+  "settingsBatteryOptimizationTitle": "Powiadomienia nie przychodzą na czas?",
+  "settingsBatteryOptimizationBody": "Niektórzy producenci telefonów (Samsung, Xiaomi, Oppo...) mocno ograniczają działanie aplikacji w tle. Wyłącz optymalizację baterii dla iReminder w Ustawieniach telefonu > Bateria, aby przypomnienia zawsze docierały na czas.",
+  "errorGeneric": "Coś poszło nie tak. Spróbuj ponownie.",
+  "errorLoadFailed": "Nie udało się wczytać danych.",
+  "settingsAiSectionTitle": "Asystent AI",
+  "settingsAiEnable": "Włącz Asystenta AI",
+  "settingsAiProvider": "Dostawca AI",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "Klucz API",
+  "settingsAiApiKeyHint": "Wklej swój klucz API",
+  "settingsAiApiKeyHelp": "Skąd wziąć klucz?",
+  "settingsAiApiKeySaved": "Klucz API zapisany",
+  "settingsAiAllowedCategories": "Kategorie widoczne dla asystenta",
+  "settingsAiAllowedCategoriesHint": "Domyślnie wyłączone. Włącz tylko te kategorie, które asystent ma widzieć — nic innego nie jest wysyłane.",
+  "settingsAiClearHistory": "Wyczyść historię czatu",
+  "settingsAiClearHistoryConfirmTitle": "Wyczyścić historię czatu?",
+  "settingsAiClearHistoryConfirmBody": "Spowoduje to usunięcie wszystkich pytań i odpowiedzi zapisanych na tym urządzeniu. Nie można tego cofnąć.",
+  "assistantTitle": "Asystent",
+  "assistantEmptyTitle": "Zapytaj mnie o cokolwiek",
+  "assistantEmptyBody": "Spróbuj zapytać „Co muszę zrobić w tym tygodniu?” albo „Ile rat zostało do spłaty za motocykl?”",
+  "assistantInputHint": "Zapytaj o coś…",
+  "assistantSend": "Wyślij",
+  "assistantDisabledTitle": "Asystent jest wyłączony",
+  "assistantDisabledBody": "Włącz go w Ustawieniach i wybierz dostawcę AI, aby zacząć rozmowę.",
+  "assistantOpenSettings": "Otwórz Ustawienia",
+  "assistantThinking": "Myślę…",
+  "validationRequired": "Wymagane",
+  "validationDayOfMonth": "Podaj dzień od 1 do 31",
+  "validationMonth": "Podaj miesiąc od 1 do 12",
+  "validationPositiveNumber": "Podaj liczbę większą od 0",
+  "validationPositiveInteger": "Podaj liczbę całkowitą większą od 0",
+  "settingsPermissionsSectionTitle": "Powiadomienia i alarmy",
+  "settingsPermissionsNotificationLabel": "Zgoda na powiadomienia",
+  "settingsPermissionsExactAlarmLabel": "Zgoda na precyzyjne alarmy",
+  "settingsPermissionsGranted": "Przyznano",
+  "settingsPermissionsDenied": "Brak zgody — przypomnienia mogą nie pojawiać się na czas",
+  "settingsPermissionsGrantAction": "Przyznaj",
+  "settingsPermissionsOpenSettingsAction": "Otwórz ustawienia",
+  "onboardingExactAlarmRationaleTitle": "Jeszcze jedna zgoda",
+  "onboardingExactAlarmRationaleBody": "Na następnym ekranie zezwól iReminder na ustawianie precyzyjnych alarmów, aby przypomnienia pojawiały się dokładnie o ustawionej godzinie.",
+  "loanMarkPaidSuccess": "Oznaczono jako spłacone"
+}

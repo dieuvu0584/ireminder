@@ -1,0 +1,227 @@
+{
+  "@@locale": "hu",
+  "appTitle": "iReminder",
+  "navToday": "Ma",
+  "navCalendar": "Naptár",
+  "navLoans": "Részletek",
+  "navCategories": "Kategóriák",
+  "navSettings": "Beállítások",
+  "navAssistant": "Asszisztens",
+  "onboardingTitle1": "Soha ne felejtsd el, ami fontos",
+  "onboardingBody1": "Kövesd nyomon a készülékek karbantartását, az autó szervizét, az évfordulókat és még sok mást — mindezt egy helyen.",
+  "onboardingTitle2": "Az ismétlődés egyszerűvé vált",
+  "onboardingBody2": "Naponta, hetente, havonta, évente, vagy akár holdnaptár szerint — állítsd be egyszer, és az iReminder emlékezni fog rá.",
+  "onboardingTitle3": "100% privát, 100% offline",
+  "onboardingBody3": "Nincs fiók, nincs felhő, nincs bejelentkezés. Minden a telefonodon marad.",
+  "onboardingSkip": "Kihagyás",
+  "onboardingNext": "Tovább",
+  "onboardingGetStarted": "Kezdjük",
+  "notificationPermissionTitle": "Ne csússz le semmiről",
+  "notificationPermissionBody": "Az iReminder engedélyt kér, hogy értesítést küldhessen, amikor valami esedékessé válik.",
+  "notificationPermissionAllow": "Értesítések engedélyezése",
+  "notificationPermissionLater": "Most nem",
+  "homeSectionOverdue": "Lejárt",
+  "homeSectionToday": "Ma",
+  "homeSectionThisWeek": "Ezen a héten",
+  "homeSectionUpcoming": "Közelgő",
+  "homeEmptyTitle": "Még nincs itt semmi",
+  "homeEmptyBody": "Koppints a + gombra az első emlékeztető vagy részletfizetés hozzáadásához.",
+  "fabAddReminder": "Emlékeztető",
+  "fabAddLoan": "Részletfizetés",
+  "actionDone": "Kész",
+  "actionSnooze": "Szundi",
+  "actionEdit": "Szerkesztés",
+  "actionDelete": "Törlés",
+  "actionSave": "Mentés",
+  "actionCancel": "Mégse",
+  "actionConfirm": "Megerősítés",
+  "actionYes": "Igen",
+  "actionNo": "Nem",
+  "actionOk": "OK",
+  "actionAdd": "Hozzáadás",
+  "actionClose": "Bezárás",
+  "reminderFormTitleNew": "Új emlékeztető",
+  "reminderFormTitleEdit": "Emlékeztető szerkesztése",
+  "reminderFieldTitle": "Cím",
+  "reminderFieldTitleRequired": "A cím megadása kötelező",
+  "reminderFieldDescription": "Leírás (opcionális)",
+  "reminderFieldCategory": "Kategória",
+  "reminderFieldRecurrence": "Ismétlődés",
+  "reminderFieldStartDate": "Kezdő dátum",
+  "reminderFieldTime": "Emlékeztető ideje",
+  "reminderFieldAdvanceNotice": "Értesítés N nappal korábban",
+  "reminderFieldRecurrenceDay": "Hónap napja",
+  "reminderFieldRecurrenceMonth": "Hónap",
+  "reminderFieldRecurrenceWeekday": "Hét napja",
+  "reminderFieldIntervalDays": "Minden N. napon",
+  "reminderFieldLunarDay": "Holdnaptári nap",
+  "reminderFieldLunarMonth": "Holdnaptári hónap",
+  "reminderDeleteConfirmTitle": "Törlöd ezt az emlékeztetőt?",
+  "reminderDeleteConfirmBody": "Ez a művelet nem vonható vissza.",
+  "recurrenceNone": "Egyszeri",
+  "recurrenceDaily": "Naponta",
+  "recurrenceWeekly": "Hetente",
+  "recurrenceMonthly": "Havonta",
+  "recurrenceYearly": "Évente",
+  "recurrenceCustomIntervalDays": "Minden N. napon",
+  "recurrenceLunarYearly": "Évente (holdnaptár szerint)",
+  "weekdayMonday": "Hétfő",
+  "weekdayTuesday": "Kedd",
+  "weekdayWednesday": "Szerda",
+  "weekdayThursday": "Csütörtök",
+  "weekdayFriday": "Péntek",
+  "weekdaySaturday": "Szombat",
+  "weekdaySunday": "Vasárnap",
+  "loanListTitle": "Hitelek és részletfizetések",
+  "loanFormTitleNew": "Új részletfizetés",
+  "loanFormTitleEdit": "Hitel szerkesztése",
+  "loanFieldName": "Név",
+  "loanFieldCategory": "Kategória",
+  "loanFieldTotalAmount": "Teljes összeg (opcionális)",
+  "loanFieldInstallmentAmount": "Részlet összege",
+  "loanFieldTotalInstallments": "Részletek száma",
+  "loanFieldFrequency": "Gyakoriság",
+  "loanFieldDueDayOfMonth": "Esedékesség napja a hónapban",
+  "loanFieldStartDate": "Kezdő dátum",
+  "loanFieldReminderAdvanceDays": "Emlékeztetés N nappal a fizetési határidő előtt",
+  "loanFieldNotes": "Megjegyzések (opcionális)",
+  "loanFrequencyMonthly": "Havonta",
+  "loanFrequencyWeekly": "Hetente",
+  "loanFrequencyBiweekly": "Kéthetente",
+  "loanProgress": "{paid} / {total} részlet kifizetve",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Megjelölés kifizetettként",
+  "loanMarkPaidBatch": "{count} részlet megjelölése kifizetettként",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Függőben",
+  "loanStatusPaid": "Kifizetve",
+  "loanStatusOverdue": "Lejárt",
+  "loanInstallmentNumber": "{number}. részlet",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Törlöd ezt a hitelt?",
+  "loanDeleteConfirmBody": "Mind a(z) {count} részlet is törlésre kerül.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategóriák",
+  "categoryFormTitleNew": "Új kategória",
+  "categoryFormTitleEdit": "Kategória szerkesztése",
+  "categoryFieldName": "Név",
+  "categoryFieldNameRequired": "A név megadása kötelező",
+  "categoryFieldIcon": "Ikon",
+  "categoryFieldColor": "Szín",
+  "categoryDeleteSimpleTitle": "Törlöd ezt a kategóriát?",
+  "categoryDeleteSimpleBody": "Ebben a kategóriában nincs egyetlen emlékeztető sem.",
+  "categoryDeleteHasRemindersTitle": "Ez a kategória még tartalmaz emlékeztetőket",
+  "categoryDeleteHasRemindersBody": "{count} emlékeztető használja ezt a kategóriát. Válaszd ki, mit szeretnél tenni velük.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Áthelyezés másik kategóriába",
+  "categoryDeleteReassignTarget": "Áthelyezés ide",
+  "categoryDeleteRemoveAll": "Mind a(z) {count} emlékeztető törlése",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Ez véglegesen törli {count} emlékeztetőt. Ez a művelet nem vonható vissza.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Húzással rendezheted át",
+  "settingsTitle": "Beállítások",
+  "settingsLanguage": "Nyelv",
+  "settingsDefaultReminderTime": "Alapértelmezett emlékeztető időpont",
+  "settingsTheme": "Téma",
+  "settingsThemeSystem": "Rendszer",
+  "settingsThemeLight": "Világos",
+  "settingsThemeDark": "Sötét",
+  "settingsBackupRestore": "Biztonsági mentés és visszaállítás",
+  "settingsExport": "Biztonsági mentés exportálása",
+  "settingsImport": "Visszaállítás biztonsági mentésből",
+  "settingsExportLocationHint": "Mentve ide: Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "A biztonsági mentés elkészült",
+  "settingsImportNoneFound": "Nem található biztonsági mentés fájl",
+  "settingsImportPickFile": "Válassz egy biztonsági mentést",
+  "settingsImportSuccess": "A biztonsági mentés visszaállítva",
+  "settingsImportConfirmTitle": "Visszaállítod a biztonsági mentést?",
+  "settingsImportConfirmBody": "Ez lecseréli az összes jelenlegi adatot a biztonsági mentés fájl tartalmára.",
+  "settingsAbout": "Névjegy",
+  "settingsBatteryOptimizationTitle": "Nem érkeznek időben az értesítések?",
+  "settingsBatteryOptimizationBody": "Egyes telefongyártók (Samsung, Xiaomi, Oppo...) agresszívan korlátozzák a háttérben futó alkalmazásokat. Kapcsold ki az akkumulátor-optimalizálást az iReminder számára a telefon Beállítások > Akkumulátor menüjében, hogy az emlékeztetők mindig időben megérkezzenek.",
+  "errorGeneric": "Valami hiba történt. Kérjük, próbáld újra.",
+  "errorLoadFailed": "Az adatok betöltése nem sikerült.",
+  "settingsAiSectionTitle": "AI asszisztens",
+  "settingsAiEnable": "AI asszisztens engedélyezése",
+  "settingsAiProvider": "AI szolgáltató",
+  "settingsAiModel": "Modell",
+  "settingsAiApiKey": "API kulcs",
+  "settingsAiApiKeyHint": "Illeszd be az API kulcsodat",
+  "settingsAiApiKeyHelp": "Honnan szerezhetek kulcsot?",
+  "settingsAiApiKeySaved": "Az API kulcs elmentve",
+  "settingsAiAllowedCategories": "Az asszisztens által olvasható kategóriák",
+  "settingsAiAllowedCategoriesHint": "Alapértelmezetten kikapcsolva. Csak azokat a kategóriákat kapcsold be, amelyeket szeretnél, hogy az asszisztens lásson — semmi más nem kerül elküldésre.",
+  "settingsAiClearHistory": "Beszélgetési előzmények törlése",
+  "settingsAiClearHistoryConfirmTitle": "Törlöd a beszélgetési előzményeket?",
+  "settingsAiClearHistoryConfirmBody": "Ez törli az összes ezen az eszközön tárolt kérdést és választ. Ez a művelet nem vonható vissza.",
+  "assistantTitle": "Asszisztens",
+  "assistantEmptyTitle": "Kérdezz bármit",
+  "assistantEmptyBody": "Próbáld ki: „Mit kell tennem ezen a héten?” vagy „Hány részlet van még hátra a motorhitelemből?”",
+  "assistantInputHint": "Kérdezz valamit…",
+  "assistantSend": "Küldés",
+  "assistantDisabledTitle": "Az asszisztens ki van kapcsolva",
+  "assistantDisabledBody": "Kapcsold be a Beállításokban, és válassz egy AI szolgáltatót a beszélgetés megkezdéséhez.",
+  "assistantOpenSettings": "Beállítások megnyitása",
+  "assistantThinking": "Gondolkodik…",
+  "validationRequired": "Kötelező",
+  "validationDayOfMonth": "Adj meg egy napot 1 és 31 között",
+  "validationMonth": "Adj meg egy hónapot 1 és 12 között",
+  "validationPositiveNumber": "Adj meg egy 0-nál nagyobb számot",
+  "validationPositiveInteger": "Adj meg egy 0-nál nagyobb egész számot",
+  "settingsPermissionsSectionTitle": "Értesítések és riasztások",
+  "settingsPermissionsNotificationLabel": "Értesítési engedély",
+  "settingsPermissionsExactAlarmLabel": "Pontos riasztás engedélye",
+  "settingsPermissionsGranted": "Megadva",
+  "settingsPermissionsDenied": "Nincs megadva — előfordulhat, hogy az emlékeztetők nem időben jelennek meg",
+  "settingsPermissionsGrantAction": "Engedélyezés",
+  "settingsPermissionsOpenSettingsAction": "Beállítások megnyitása",
+  "onboardingExactAlarmRationaleTitle": "Még egy engedély",
+  "onboardingExactAlarmRationaleBody": "A következő képernyőn engedélyezd, hogy az iReminder pontos riasztásokat ütemezzen, hogy az emlékeztetők pontosan a beállított időpontban jelenjenek meg.",
+  "loanMarkPaidSuccess": "Kifizetettként megjelölve"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "uk",
+  "appTitle": "iReminder",
+  "navToday": "Сьогодні",
+  "navCalendar": "Календар",
+  "navLoans": "Кредити",
+  "navCategories": "Категорії",
+  "navSettings": "Налаштування",
+  "navAssistant": "Асистент",
+  "onboardingTitle1": "Ніколи не забувайте важливе",
+  "onboardingBody1": "Відстежуйте обслуговування техніки, ТО автомобіля, річниці та багато іншого — усе в одному місці.",
+  "onboardingTitle2": "Повторення стали простими",
+  "onboardingBody2": "Щодня, щотижня, щомісяця, щороку або навіть за місячним календарем — налаштуйте один раз, і iReminder сам про все нагадає.",
+  "onboardingTitle3": "100% приватності, 100% офлайн",
+  "onboardingBody3": "Без акаунтів, без хмари, без входу в систему. Усе залишається лише на вашому телефоні.",
+  "onboardingSkip": "Пропустити",
+  "onboardingNext": "Далі",
+  "onboardingGetStarted": "Почати",
+  "notificationPermissionTitle": "Не спізнюйтесь",
+  "notificationPermissionBody": "iReminder потребує дозволу надсилати сповіщення, щоб нагадати вам, коли настане термін.",
+  "notificationPermissionAllow": "Дозволити сповіщення",
+  "notificationPermissionLater": "Не зараз",
+  "homeSectionOverdue": "Прострочено",
+  "homeSectionToday": "Сьогодні",
+  "homeSectionThisWeek": "Цього тижня",
+  "homeSectionUpcoming": "Найближчим часом",
+  "homeEmptyTitle": "Тут поки що нічого немає",
+  "homeEmptyBody": "Натисніть +, щоб додати перше нагадування або кредит на виплату.",
+  "fabAddReminder": "Нагадування",
+  "fabAddLoan": "Кредит на виплату",
+  "actionDone": "Готово",
+  "actionSnooze": "Відкласти",
+  "actionEdit": "Редагувати",
+  "actionDelete": "Видалити",
+  "actionSave": "Зберегти",
+  "actionCancel": "Скасувати",
+  "actionConfirm": "Підтвердити",
+  "actionYes": "Так",
+  "actionNo": "Ні",
+  "actionOk": "Гаразд",
+  "actionAdd": "Додати",
+  "actionClose": "Закрити",
+  "reminderFormTitleNew": "Нове нагадування",
+  "reminderFormTitleEdit": "Редагувати нагадування",
+  "reminderFieldTitle": "Назва",
+  "reminderFieldTitleRequired": "Назва обов'язкова",
+  "reminderFieldDescription": "Опис (необов'язково)",
+  "reminderFieldCategory": "Категорія",
+  "reminderFieldRecurrence": "Повторення",
+  "reminderFieldStartDate": "Дата початку",
+  "reminderFieldTime": "Час нагадування",
+  "reminderFieldAdvanceNotice": "Попередити за N днів",
+  "reminderFieldRecurrenceDay": "День місяця",
+  "reminderFieldRecurrenceMonth": "Місяць",
+  "reminderFieldRecurrenceWeekday": "День тижня",
+  "reminderFieldIntervalDays": "Кожні N днів",
+  "reminderFieldLunarDay": "Місячний день",
+  "reminderFieldLunarMonth": "Місячний місяць",
+  "reminderDeleteConfirmTitle": "Видалити це нагадування?",
+  "reminderDeleteConfirmBody": "Цю дію неможливо скасувати.",
+  "recurrenceNone": "Один раз",
+  "recurrenceDaily": "Щодня",
+  "recurrenceWeekly": "Щотижня",
+  "recurrenceMonthly": "Щомісяця",
+  "recurrenceYearly": "Щороку",
+  "recurrenceCustomIntervalDays": "Кожні N днів",
+  "recurrenceLunarYearly": "Щороку (за місячним календарем)",
+  "weekdayMonday": "Понеділок",
+  "weekdayTuesday": "Вівторок",
+  "weekdayWednesday": "Середа",
+  "weekdayThursday": "Четвер",
+  "weekdayFriday": "П'ятниця",
+  "weekdaySaturday": "Субота",
+  "weekdaySunday": "Неділя",
+  "loanListTitle": "Кредити та виплати",
+  "loanFormTitleNew": "Новий кредит на виплату",
+  "loanFormTitleEdit": "Редагувати кредит",
+  "loanFieldName": "Назва",
+  "loanFieldCategory": "Категорія",
+  "loanFieldTotalAmount": "Загальна сума (необов'язково)",
+  "loanFieldInstallmentAmount": "Сума одного платежу",
+  "loanFieldTotalInstallments": "Кількість платежів",
+  "loanFieldFrequency": "Періодичність",
+  "loanFieldDueDayOfMonth": "День місяця для оплати",
+  "loanFieldStartDate": "Дата початку",
+  "loanFieldReminderAdvanceDays": "Нагадати за N днів до сплати",
+  "loanFieldNotes": "Нотатки (необов'язково)",
+  "loanFrequencyMonthly": "Щомісяця",
+  "loanFrequencyWeekly": "Щотижня",
+  "loanFrequencyBiweekly": "Раз на два тижні",
+  "loanProgress": "Сплачено {paid} / {total}",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Позначити як сплачено",
+  "loanMarkPaidBatch": "Позначити {count} платежів як сплачені",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Очікується",
+  "loanStatusPaid": "Сплачено",
+  "loanStatusOverdue": "Прострочено",
+  "loanInstallmentNumber": "Платіж №{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Видалити цей кредит?",
+  "loanDeleteConfirmBody": "Усі {count} платежів також буде видалено.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Категорії",
+  "categoryFormTitleNew": "Нова категорія",
+  "categoryFormTitleEdit": "Редагувати категорію",
+  "categoryFieldName": "Назва",
+  "categoryFieldNameRequired": "Назва обов'язкова",
+  "categoryFieldIcon": "Значок",
+  "categoryFieldColor": "Колір",
+  "categoryDeleteSimpleTitle": "Видалити цю категорію?",
+  "categoryDeleteSimpleBody": "У цій категорії немає нагадувань.",
+  "categoryDeleteHasRemindersTitle": "У цій категорії ще є нагадування",
+  "categoryDeleteHasRemindersBody": "{count} нагадувань використовують цю категорію. Виберіть, що з ними зробити.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Перенести в іншу категорію",
+  "categoryDeleteReassignTarget": "Перенести до",
+  "categoryDeleteRemoveAll": "Видалити всі {count} нагадувань",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Це остаточно видалить {count} нагадувань. Цю дію неможливо скасувати.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Перетягніть, щоб змінити порядок",
+  "settingsTitle": "Налаштування",
+  "settingsLanguage": "Мова",
+  "settingsDefaultReminderTime": "Час нагадування за замовчуванням",
+  "settingsTheme": "Тема",
+  "settingsThemeSystem": "Системна",
+  "settingsThemeLight": "Світла",
+  "settingsThemeDark": "Темна",
+  "settingsBackupRestore": "Резервне копіювання та відновлення",
+  "settingsExport": "Експортувати резервну копію",
+  "settingsImport": "Відновити з резервної копії",
+  "settingsExportLocationHint": "Збережено в Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Резервну копію збережено",
+  "settingsImportNoneFound": "Файли резервних копій не знайдено",
+  "settingsImportPickFile": "Виберіть резервну копію",
+  "settingsImportSuccess": "Дані відновлено",
+  "settingsImportConfirmTitle": "Відновити резервну копію?",
+  "settingsImportConfirmBody": "Це замінить усі поточні дані вмістом файлу резервної копії.",
+  "settingsAbout": "Про застосунок",
+  "settingsBatteryOptimizationTitle": "Сповіщення не приходять вчасно?",
+  "settingsBatteryOptimizationBody": "Деякі виробники телефонів (Samsung, Xiaomi, Oppo тощо) агресивно обмежують фонові застосунки. Вимкніть оптимізацію батареї для iReminder в Налаштуваннях телефону > Батарея, щоб нагадування завжди приходили вчасно.",
+  "errorGeneric": "Щось пішло не так. Спробуйте ще раз.",
+  "errorLoadFailed": "Не вдалося завантажити дані.",
+  "settingsAiSectionTitle": "ШІ-асистент",
+  "settingsAiEnable": "Увімкнути ШІ-асистента",
+  "settingsAiProvider": "Постачальник ШІ",
+  "settingsAiModel": "Модель",
+  "settingsAiApiKey": "Ключ API",
+  "settingsAiApiKeyHint": "Вставте свій ключ API",
+  "settingsAiApiKeyHelp": "Де взяти ключ?",
+  "settingsAiApiKeySaved": "Ключ API збережено",
+  "settingsAiAllowedCategories": "Категорії, які асистент може бачити",
+  "settingsAiAllowedCategoriesHint": "Вимкнено за замовчуванням. Увімкніть лише ті категорії, які хочете показати асистенту — більше нічого не надсилається.",
+  "settingsAiClearHistory": "Очистити історію чату",
+  "settingsAiClearHistoryConfirmTitle": "Очистити історію чату?",
+  "settingsAiClearHistoryConfirmBody": "Це видалить усі запитання й відповіді, збережені на цьому пристрої. Цю дію неможливо скасувати.",
+  "assistantTitle": "Асистент",
+  "assistantEmptyTitle": "Запитайте про що завгодно",
+  "assistantEmptyBody": "Спробуйте: «Що мені потрібно зробити цього тижня?» або «Скільки платежів залишилось за кредитом на мотоцикл?»",
+  "assistantInputHint": "Задайте питання…",
+  "assistantSend": "Надіслати",
+  "assistantDisabledTitle": "Асистента вимкнено",
+  "assistantDisabledBody": "Увімкніть його в налаштуваннях і виберіть постачальника ШІ, щоб почати спілкування.",
+  "assistantOpenSettings": "Відкрити налаштування",
+  "assistantThinking": "Думаю…",
+  "validationRequired": "Обов'язкове поле",
+  "validationDayOfMonth": "Введіть день від 1 до 31",
+  "validationMonth": "Введіть місяць від 1 до 12",
+  "validationPositiveNumber": "Введіть число більше 0",
+  "validationPositiveInteger": "Введіть ціле число більше 0",
+  "settingsPermissionsSectionTitle": "Сповіщення та будильники",
+  "settingsPermissionsNotificationLabel": "Дозвіл на сповіщення",
+  "settingsPermissionsExactAlarmLabel": "Дозвіл на точні будильники",
+  "settingsPermissionsGranted": "Надано",
+  "settingsPermissionsDenied": "Не надано — нагадування можуть не спрацювати вчасно",
+  "settingsPermissionsGrantAction": "Надати",
+  "settingsPermissionsOpenSettingsAction": "Відкрити налаштування",
+  "onboardingExactAlarmRationaleTitle": "Ще один дозвіл",
+  "onboardingExactAlarmRationaleBody": "На наступному екрані дозвольте iReminder планувати точні будильники, щоб нагадування спрацьовували саме в той час, який ви вказали.",
+  "loanMarkPaidSuccess": "Позначено як сплачено"
+}

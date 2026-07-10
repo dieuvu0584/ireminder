@@ -1,0 +1,227 @@
+{
+  "@@locale": "tr",
+  "appTitle": "iReminder",
+  "navToday": "Bugün",
+  "navCalendar": "Takvim",
+  "navLoans": "Taksitler",
+  "navCategories": "Kategoriler",
+  "navSettings": "Ayarlar",
+  "navAssistant": "Asistan",
+  "onboardingTitle1": "Önemli olanı asla unutmayın",
+  "onboardingBody1": "Cihaz bakımını, araç servisini, yıl dönümlerini ve daha fazlasını tek bir yerden takip edin.",
+  "onboardingTitle2": "Tekrarlar artık çok kolay",
+  "onboardingBody2": "Günlük, haftalık, aylık, yıllık ya da hatta ay takvimine göre — bir kez ayarlayın, iReminder gerisini halletsin.",
+  "onboardingTitle3": "%100 gizli, %100 çevrimdışı",
+  "onboardingBody3": "Hesap yok, bulut yok, giriş yok. Her şey telefonunuzda kalır.",
+  "onboardingSkip": "Geç",
+  "onboardingNext": "İleri",
+  "onboardingGetStarted": "Başlayın",
+  "notificationPermissionTitle": "Zamanında haberdar olun",
+  "notificationPermissionBody": "Bir şeyin vakti geldiğinde size bildirim gönderebilmek için iReminder'ın izne ihtiyacı var.",
+  "notificationPermissionAllow": "Bildirimlere izin ver",
+  "notificationPermissionLater": "Şimdi değil",
+  "homeSectionOverdue": "Süresi geçti",
+  "homeSectionToday": "Bugün",
+  "homeSectionThisWeek": "Bu hafta",
+  "homeSectionUpcoming": "Yaklaşan",
+  "homeEmptyTitle": "Henüz bir şey yok",
+  "homeEmptyBody": "İlk hatırlatıcınızı veya taksitli ödemenizi eklemek için + simgesine dokunun.",
+  "fabAddReminder": "Hatırlatıcı",
+  "fabAddLoan": "Taksitli ödeme",
+  "actionDone": "Tamamlandı",
+  "actionSnooze": "Ertele",
+  "actionEdit": "Düzenle",
+  "actionDelete": "Sil",
+  "actionSave": "Kaydet",
+  "actionCancel": "İptal",
+  "actionConfirm": "Onayla",
+  "actionYes": "Evet",
+  "actionNo": "Hayır",
+  "actionOk": "Tamam",
+  "actionAdd": "Ekle",
+  "actionClose": "Kapat",
+  "reminderFormTitleNew": "Yeni hatırlatıcı",
+  "reminderFormTitleEdit": "Hatırlatıcıyı düzenle",
+  "reminderFieldTitle": "Başlık",
+  "reminderFieldTitleRequired": "Başlık gerekli",
+  "reminderFieldDescription": "Açıklama (isteğe bağlı)",
+  "reminderFieldCategory": "Kategori",
+  "reminderFieldRecurrence": "Tekrar",
+  "reminderFieldStartDate": "Başlangıç tarihi",
+  "reminderFieldTime": "Hatırlatma saati",
+  "reminderFieldAdvanceNotice": "N gün önceden bildir",
+  "reminderFieldRecurrenceDay": "Ayın günü",
+  "reminderFieldRecurrenceMonth": "Ay",
+  "reminderFieldRecurrenceWeekday": "Haftanın günü",
+  "reminderFieldIntervalDays": "Her N günde bir",
+  "reminderFieldLunarDay": "Ay takviminde gün",
+  "reminderFieldLunarMonth": "Ay takviminde ay",
+  "reminderDeleteConfirmTitle": "Bu hatırlatıcı silinsin mi?",
+  "reminderDeleteConfirmBody": "Bu işlem geri alınamaz.",
+  "recurrenceNone": "Bir kez",
+  "recurrenceDaily": "Günlük",
+  "recurrenceWeekly": "Haftalık",
+  "recurrenceMonthly": "Aylık",
+  "recurrenceYearly": "Yıllık",
+  "recurrenceCustomIntervalDays": "Her N günde bir",
+  "recurrenceLunarYearly": "Yıllık (ay takvimi)",
+  "weekdayMonday": "Pazartesi",
+  "weekdayTuesday": "Salı",
+  "weekdayWednesday": "Çarşamba",
+  "weekdayThursday": "Perşembe",
+  "weekdayFriday": "Cuma",
+  "weekdaySaturday": "Cumartesi",
+  "weekdaySunday": "Pazar",
+  "loanListTitle": "Taksitler ve krediler",
+  "loanFormTitleNew": "Yeni taksitli ödeme",
+  "loanFormTitleEdit": "Taksitli ödemeyi düzenle",
+  "loanFieldName": "Ad",
+  "loanFieldCategory": "Kategori",
+  "loanFieldTotalAmount": "Toplam tutar (isteğe bağlı)",
+  "loanFieldInstallmentAmount": "Taksit tutarı",
+  "loanFieldTotalInstallments": "Taksit sayısı",
+  "loanFieldFrequency": "Sıklık",
+  "loanFieldDueDayOfMonth": "Ayın vade günü",
+  "loanFieldStartDate": "Başlangıç tarihi",
+  "loanFieldReminderAdvanceDays": "Vadeden N gün önce hatırlat",
+  "loanFieldNotes": "Notlar (isteğe bağlı)",
+  "loanFrequencyMonthly": "Aylık",
+  "loanFrequencyWeekly": "Haftalık",
+  "loanFrequencyBiweekly": "İki haftada bir",
+  "loanProgress": "{paid} / {total} ödendi",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Ödendi olarak işaretle",
+  "loanMarkPaidBatch": "{count} taksiti ödendi olarak işaretle",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Beklemede",
+  "loanStatusPaid": "Ödendi",
+  "loanStatusOverdue": "Gecikti",
+  "loanInstallmentNumber": "{number}. taksit",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Bu taksitli ödeme silinsin mi?",
+  "loanDeleteConfirmBody": "{count} taksitin tamamı da silinecek.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategoriler",
+  "categoryFormTitleNew": "Yeni kategori",
+  "categoryFormTitleEdit": "Kategoriyi düzenle",
+  "categoryFieldName": "Ad",
+  "categoryFieldNameRequired": "Ad gerekli",
+  "categoryFieldIcon": "Simge",
+  "categoryFieldColor": "Renk",
+  "categoryDeleteSimpleTitle": "Bu kategori silinsin mi?",
+  "categoryDeleteSimpleBody": "Bu kategoride hiç hatırlatıcı yok.",
+  "categoryDeleteHasRemindersTitle": "Bu kategoride hâlâ hatırlatıcılar var",
+  "categoryDeleteHasRemindersBody": "Bu kategoriyi {count} hatırlatıcı kullanıyor. Ne yapmak istediğinizi seçin.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Başka bir kategoriye taşı",
+  "categoryDeleteReassignTarget": "Şuraya taşı",
+  "categoryDeleteRemoveAll": "{count} hatırlatıcının tamamını sil",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Bu işlem {count} hatırlatıcıyı kalıcı olarak silecek. Bu işlem geri alınamaz.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Yeniden sıralamak için sürükleyin",
+  "settingsTitle": "Ayarlar",
+  "settingsLanguage": "Dil",
+  "settingsDefaultReminderTime": "Varsayılan hatırlatma saati",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "Sistem",
+  "settingsThemeLight": "Açık",
+  "settingsThemeDark": "Koyu",
+  "settingsBackupRestore": "Yedekleme ve geri yükleme",
+  "settingsExport": "Yedeği dışa aktar",
+  "settingsImport": "Yedekten geri yükle",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups konumuna kaydedildi",
+  "settingsExportSuccess": "Yedek kaydedildi",
+  "settingsImportNoneFound": "Yedek dosyası bulunamadı",
+  "settingsImportPickFile": "Bir yedek seçin",
+  "settingsImportSuccess": "Yedek geri yüklendi",
+  "settingsImportConfirmTitle": "Yedek geri yüklensin mi?",
+  "settingsImportConfirmBody": "Bu işlem mevcut tüm verilerin yerine yedek dosyasındaki verileri koyar.",
+  "settingsAbout": "Hakkında",
+  "settingsBatteryOptimizationTitle": "Bildirimler zamanında gelmiyor mu?",
+  "settingsBatteryOptimizationBody": "Bazı telefon üreticileri (Samsung, Xiaomi, Oppo...) arka plan uygulamalarını agresif biçimde kısıtlar. Hatırlatıcıların her zaman zamanında gelmesi için telefonunuzun Ayarlar > Pil bölümünden iReminder için pil optimizasyonunu kapatın.",
+  "errorGeneric": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+  "errorLoadFailed": "Veriler yüklenemedi.",
+  "settingsAiSectionTitle": "Yapay Zeka Asistanı",
+  "settingsAiEnable": "Yapay Zeka Asistanını etkinleştir",
+  "settingsAiProvider": "Yapay zeka sağlayıcısı",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "API anahtarı",
+  "settingsAiApiKeyHint": "API anahtarınızı yapıştırın",
+  "settingsAiApiKeyHelp": "Anahtarı nereden alabilirim?",
+  "settingsAiApiKeySaved": "API anahtarı kaydedildi",
+  "settingsAiAllowedCategories": "Asistanın okuyabileceği kategoriler",
+  "settingsAiAllowedCategoriesHint": "Varsayılan olarak kapalıdır. Yalnızca asistanın görmesini istediğiniz kategorileri açın — başka hiçbir şey gönderilmez.",
+  "settingsAiClearHistory": "Sohbet geçmişini temizle",
+  "settingsAiClearHistoryConfirmTitle": "Sohbet geçmişi temizlensin mi?",
+  "settingsAiClearHistoryConfirmBody": "Bu cihazda saklanan tüm soru ve cevaplar silinir. Bu işlem geri alınamaz.",
+  "assistantTitle": "Asistan",
+  "assistantEmptyTitle": "Bana istediğinizi sorun",
+  "assistantEmptyBody": "\"Bu hafta ne yapmam gerekiyor?\" ya da \"Motosiklet kredimde kaç taksit kaldı?\" gibi bir şey deneyin.",
+  "assistantInputHint": "Bir şeyler sorun…",
+  "assistantSend": "Gönder",
+  "assistantDisabledTitle": "Asistan kapalı",
+  "assistantDisabledBody": "Sohbete başlamak için Ayarlar'dan etkinleştirin ve bir yapay zeka sağlayıcısı seçin.",
+  "assistantOpenSettings": "Ayarları aç",
+  "assistantThinking": "Düşünüyor…",
+  "validationRequired": "Zorunlu",
+  "validationDayOfMonth": "1-31 arasında bir gün girin",
+  "validationMonth": "1-12 arasında bir ay girin",
+  "validationPositiveNumber": "0'dan büyük bir sayı girin",
+  "validationPositiveInteger": "0'dan büyük bir tam sayı girin",
+  "settingsPermissionsSectionTitle": "Bildirimler ve Alarmlar",
+  "settingsPermissionsNotificationLabel": "Bildirim izni",
+  "settingsPermissionsExactAlarmLabel": "Tam zamanlı alarm izni",
+  "settingsPermissionsGranted": "Verildi",
+  "settingsPermissionsDenied": "Verilmedi — hatırlatıcılar zamanında çalışmayabilir",
+  "settingsPermissionsGrantAction": "İzin ver",
+  "settingsPermissionsOpenSettingsAction": "Ayarları aç",
+  "onboardingExactAlarmRationaleTitle": "Bir izin daha",
+  "onboardingExactAlarmRationaleBody": "Bir sonraki ekranda, hatırlatıcıların tam olarak ayarladığınız saatte çalması için iReminder'a tam zamanlı alarm kurma izni verin.",
+  "loanMarkPaidSuccess": "Ödendi olarak işaretlendi"
+}

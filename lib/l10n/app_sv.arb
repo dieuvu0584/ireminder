@@ -1,0 +1,227 @@
+{
+  "@@locale": "sv",
+  "appTitle": "iReminder",
+  "navToday": "Idag",
+  "navCalendar": "Kalender",
+  "navLoans": "Avbetalningar",
+  "navCategories": "Kategorier",
+  "navSettings": "Inställningar",
+  "navAssistant": "Assistent",
+  "onboardingTitle1": "Glöm aldrig det som spelar roll",
+  "onboardingBody1": "Håll koll på apparatunderhåll, bilservice, årsdagar och mycket mer — allt på ett ställe.",
+  "onboardingTitle2": "Återkommande händelser gjorda enkla",
+  "onboardingBody2": "Dagligen, veckovis, månadsvis, årligen eller till och med enligt månkalendern — ställ in det en gång så håller iReminder koll.",
+  "onboardingTitle3": "100 % privat, 100 % offline",
+  "onboardingBody3": "Inget konto, inget moln, ingen inloggning. Allt stannar på din telefon.",
+  "onboardingSkip": "Hoppa över",
+  "onboardingNext": "Nästa",
+  "onboardingGetStarted": "Kom igång",
+  "notificationPermissionTitle": "Missa aldrig något",
+  "notificationPermissionBody": "iReminder behöver tillstånd att skicka aviseringar när något förfaller.",
+  "notificationPermissionAllow": "Tillåt aviseringar",
+  "notificationPermissionLater": "Inte nu",
+  "homeSectionOverdue": "Försenat",
+  "homeSectionToday": "Idag",
+  "homeSectionThisWeek": "Denna vecka",
+  "homeSectionUpcoming": "Kommande",
+  "homeEmptyTitle": "Inget här än",
+  "homeEmptyBody": "Tryck på + för att lägga till din första påminnelse eller avbetalning.",
+  "fabAddReminder": "Påminnelse",
+  "fabAddLoan": "Avbetalningslån",
+  "actionDone": "Klar",
+  "actionSnooze": "Snooza",
+  "actionEdit": "Redigera",
+  "actionDelete": "Ta bort",
+  "actionSave": "Spara",
+  "actionCancel": "Avbryt",
+  "actionConfirm": "Bekräfta",
+  "actionYes": "Ja",
+  "actionNo": "Nej",
+  "actionOk": "OK",
+  "actionAdd": "Lägg till",
+  "actionClose": "Stäng",
+  "reminderFormTitleNew": "Ny påminnelse",
+  "reminderFormTitleEdit": "Redigera påminnelse",
+  "reminderFieldTitle": "Titel",
+  "reminderFieldTitleRequired": "Titel krävs",
+  "reminderFieldDescription": "Beskrivning (valfritt)",
+  "reminderFieldCategory": "Kategori",
+  "reminderFieldRecurrence": "Upprepas",
+  "reminderFieldStartDate": "Startdatum",
+  "reminderFieldTime": "Påminnelsetid",
+  "reminderFieldAdvanceNotice": "Notifiera N dagar i förväg",
+  "reminderFieldRecurrenceDay": "Dag i månaden",
+  "reminderFieldRecurrenceMonth": "Månad",
+  "reminderFieldRecurrenceWeekday": "Veckodag",
+  "reminderFieldIntervalDays": "Var N:e dag",
+  "reminderFieldLunarDay": "Dag i månkalendern",
+  "reminderFieldLunarMonth": "Månad i månkalendern",
+  "reminderDeleteConfirmTitle": "Ta bort denna påminnelse?",
+  "reminderDeleteConfirmBody": "Detta kan inte ångras.",
+  "recurrenceNone": "En gång",
+  "recurrenceDaily": "Dagligen",
+  "recurrenceWeekly": "Varje vecka",
+  "recurrenceMonthly": "Varje månad",
+  "recurrenceYearly": "Varje år",
+  "recurrenceCustomIntervalDays": "Var N:e dag",
+  "recurrenceLunarYearly": "Årligen (månkalender)",
+  "weekdayMonday": "Måndag",
+  "weekdayTuesday": "Tisdag",
+  "weekdayWednesday": "Onsdag",
+  "weekdayThursday": "Torsdag",
+  "weekdayFriday": "Fredag",
+  "weekdaySaturday": "Lördag",
+  "weekdaySunday": "Söndag",
+  "loanListTitle": "Lån och avbetalningar",
+  "loanFormTitleNew": "Nytt avbetalningslån",
+  "loanFormTitleEdit": "Redigera lån",
+  "loanFieldName": "Namn",
+  "loanFieldCategory": "Kategori",
+  "loanFieldTotalAmount": "Totalt belopp (valfritt)",
+  "loanFieldInstallmentAmount": "Belopp per avbetalning",
+  "loanFieldTotalInstallments": "Antal avbetalningar",
+  "loanFieldFrequency": "Frekvens",
+  "loanFieldDueDayOfMonth": "Förfallodag i månaden",
+  "loanFieldStartDate": "Startdatum",
+  "loanFieldReminderAdvanceDays": "Påminn N dagar innan förfallodagen",
+  "loanFieldNotes": "Anteckningar (valfritt)",
+  "loanFrequencyMonthly": "Varje månad",
+  "loanFrequencyWeekly": "Varje vecka",
+  "loanFrequencyBiweekly": "Varannan vecka",
+  "loanProgress": "{paid} / {total} betalda",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Markera som betald",
+  "loanMarkPaidBatch": "Markera {count} avbetalningar som betalda",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Väntande",
+  "loanStatusPaid": "Betald",
+  "loanStatusOverdue": "Försenad",
+  "loanInstallmentNumber": "Avbetalning nr {number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Ta bort detta lån?",
+  "loanDeleteConfirmBody": "Alla {count} avbetalningar tas också bort.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategorier",
+  "categoryFormTitleNew": "Ny kategori",
+  "categoryFormTitleEdit": "Redigera kategori",
+  "categoryFieldName": "Namn",
+  "categoryFieldNameRequired": "Namn krävs",
+  "categoryFieldIcon": "Ikon",
+  "categoryFieldColor": "Färg",
+  "categoryDeleteSimpleTitle": "Ta bort denna kategori?",
+  "categoryDeleteSimpleBody": "Den här kategorin har inga påminnelser i sig.",
+  "categoryDeleteHasRemindersTitle": "Den här kategorin har fortfarande påminnelser",
+  "categoryDeleteHasRemindersBody": "{count} påminnelser använder den här kategorin. Välj vad som ska hända med dem.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Flytta till en annan kategori",
+  "categoryDeleteReassignTarget": "Flytta till",
+  "categoryDeleteRemoveAll": "Ta bort alla {count} påminnelser",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Detta tar bort {count} påminnelser permanent. Detta kan inte ångras.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Dra för att ändra ordning",
+  "settingsTitle": "Inställningar",
+  "settingsLanguage": "Språk",
+  "settingsDefaultReminderTime": "Standardtid för påminnelser",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "System",
+  "settingsThemeLight": "Ljust",
+  "settingsThemeDark": "Mörkt",
+  "settingsBackupRestore": "Säkerhetskopiering och återställning",
+  "settingsExport": "Exportera säkerhetskopia",
+  "settingsImport": "Återställ från säkerhetskopia",
+  "settingsExportLocationHint": "Sparad i Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Säkerhetskopia sparad",
+  "settingsImportNoneFound": "Inga säkerhetskopior hittades",
+  "settingsImportPickFile": "Välj en säkerhetskopia",
+  "settingsImportSuccess": "Säkerhetskopia återställd",
+  "settingsImportConfirmTitle": "Återställa säkerhetskopia?",
+  "settingsImportConfirmBody": "Detta ersätter all aktuell data med innehållet i säkerhetskopian.",
+  "settingsAbout": "Om",
+  "settingsBatteryOptimizationTitle": "Kommer aviseringarna inte i tid?",
+  "settingsBatteryOptimizationBody": "Vissa telefontillverkare (Samsung, Xiaomi, Oppo...) begränsar bakgrundsappar aggressivt. Stäng av batterioptimering för iReminder under telefonens Inställningar > Batteri för att säkerställa att påminnelser alltid kommer i tid.",
+  "errorGeneric": "Något gick fel. Försök igen.",
+  "errorLoadFailed": "Det gick inte att läsa in data.",
+  "settingsAiSectionTitle": "AI-assistent",
+  "settingsAiEnable": "Aktivera AI-assistent",
+  "settingsAiProvider": "AI-leverantör",
+  "settingsAiModel": "Modell",
+  "settingsAiApiKey": "API-nyckel",
+  "settingsAiApiKeyHint": "Klistra in din API-nyckel",
+  "settingsAiApiKeyHelp": "Var hittar jag en nyckel?",
+  "settingsAiApiKeySaved": "API-nyckel sparad",
+  "settingsAiAllowedCategories": "Kategorier som assistenten får läsa",
+  "settingsAiAllowedCategoriesHint": "Avstängt som standard. Slå bara på de kategorier du vill att assistenten ska se — inget annat skickas någonsin.",
+  "settingsAiClearHistory": "Rensa chatthistorik",
+  "settingsAiClearHistoryConfirmTitle": "Rensa chatthistorik?",
+  "settingsAiClearHistoryConfirmBody": "Detta tar bort alla frågor och svar som är sparade på den här enheten. Detta kan inte ångras.",
+  "assistantTitle": "Assistent",
+  "assistantEmptyTitle": "Fråga mig vad som helst",
+  "assistantEmptyBody": "Prova ”Vad behöver jag göra den här veckan?” eller ”Hur många avbetalningar har jag kvar på mitt mc-lån?”",
+  "assistantInputHint": "Fråga något …",
+  "assistantSend": "Skicka",
+  "assistantDisabledTitle": "Assistenten är avstängd",
+  "assistantDisabledBody": "Aktivera den i Inställningar och välj en AI-leverantör för att börja chatta.",
+  "assistantOpenSettings": "Öppna Inställningar",
+  "assistantThinking": "Tänker …",
+  "validationRequired": "Obligatoriskt",
+  "validationDayOfMonth": "Ange en dag mellan 1 och 31",
+  "validationMonth": "Ange en månad mellan 1 och 12",
+  "validationPositiveNumber": "Ange ett tal större än 0",
+  "validationPositiveInteger": "Ange ett heltal större än 0",
+  "settingsPermissionsSectionTitle": "Aviseringar och alarm",
+  "settingsPermissionsNotificationLabel": "Aviseringstillstånd",
+  "settingsPermissionsExactAlarmLabel": "Tillstånd för exakta alarm",
+  "settingsPermissionsGranted": "Beviljat",
+  "settingsPermissionsDenied": "Inte beviljat — påminnelser kanske inte utlöses i tid",
+  "settingsPermissionsGrantAction": "Bevilja",
+  "settingsPermissionsOpenSettingsAction": "Öppna inställningar",
+  "onboardingExactAlarmRationaleTitle": "Ett tillstånd till",
+  "onboardingExactAlarmRationaleBody": "På nästa skärm, tillåt iReminder att schemalägga exakta alarm så att påminnelser utlöses exakt vid den tid du har angett.",
+  "loanMarkPaidSuccess": "Markerad som betald"
+}

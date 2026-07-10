@@ -1,0 +1,227 @@
+{
+  "@@locale": "pt",
+  "appTitle": "iReminder",
+  "navToday": "Hoje",
+  "navCalendar": "Calendário",
+  "navLoans": "Empréstimos",
+  "navCategories": "Categorias",
+  "navSettings": "Ajustes",
+  "navAssistant": "Assistente",
+  "onboardingTitle1": "Nunca mais esqueça o que importa",
+  "onboardingBody1": "Acompanhe manutenção de aparelhos, revisão do carro, aniversários e muito mais — tudo em um só lugar.",
+  "onboardingTitle2": "Repetição simples",
+  "onboardingBody2": "Diário, semanal, mensal, anual ou até pelo calendário lunar — configure uma vez e o iReminder cuida do resto.",
+  "onboardingTitle3": "100% privado, 100% offline",
+  "onboardingBody3": "Sem conta, sem nuvem, sem login. Tudo fica no seu celular.",
+  "onboardingSkip": "Pular",
+  "onboardingNext": "Avançar",
+  "onboardingGetStarted": "Começar",
+  "notificationPermissionTitle": "Fique em dia",
+  "notificationPermissionBody": "O iReminder precisa de permissão para enviar notificações quando algo estiver vencendo.",
+  "notificationPermissionAllow": "Permitir notificações",
+  "notificationPermissionLater": "Agora não",
+  "homeSectionOverdue": "Atrasados",
+  "homeSectionToday": "Hoje",
+  "homeSectionThisWeek": "Esta semana",
+  "homeSectionUpcoming": "Em breve",
+  "homeEmptyTitle": "Nada por aqui ainda",
+  "homeEmptyBody": "Toque em + para adicionar seu primeiro lembrete ou empréstimo parcelado.",
+  "fabAddReminder": "Lembrete",
+  "fabAddLoan": "Empréstimo parcelado",
+  "actionDone": "Concluído",
+  "actionSnooze": "Adiar",
+  "actionEdit": "Editar",
+  "actionDelete": "Excluir",
+  "actionSave": "Salvar",
+  "actionCancel": "Cancelar",
+  "actionConfirm": "Confirmar",
+  "actionYes": "Sim",
+  "actionNo": "Não",
+  "actionOk": "OK",
+  "actionAdd": "Adicionar",
+  "actionClose": "Fechar",
+  "reminderFormTitleNew": "Novo lembrete",
+  "reminderFormTitleEdit": "Editar lembrete",
+  "reminderFieldTitle": "Título",
+  "reminderFieldTitleRequired": "O título é obrigatório",
+  "reminderFieldDescription": "Descrição (opcional)",
+  "reminderFieldCategory": "Categoria",
+  "reminderFieldRecurrence": "Repetição",
+  "reminderFieldStartDate": "Data de início",
+  "reminderFieldTime": "Horário do lembrete",
+  "reminderFieldAdvanceNotice": "Avisar N dias antes",
+  "reminderFieldRecurrenceDay": "Dia do mês",
+  "reminderFieldRecurrenceMonth": "Mês",
+  "reminderFieldRecurrenceWeekday": "Dia da semana",
+  "reminderFieldIntervalDays": "A cada N dias",
+  "reminderFieldLunarDay": "Dia lunar",
+  "reminderFieldLunarMonth": "Mês lunar",
+  "reminderDeleteConfirmTitle": "Excluir este lembrete?",
+  "reminderDeleteConfirmBody": "Essa ação não pode ser desfeita.",
+  "recurrenceNone": "Uma vez",
+  "recurrenceDaily": "Diariamente",
+  "recurrenceWeekly": "Semanalmente",
+  "recurrenceMonthly": "Mensalmente",
+  "recurrenceYearly": "Anualmente",
+  "recurrenceCustomIntervalDays": "A cada N dias",
+  "recurrenceLunarYearly": "Anual (calendário lunar)",
+  "weekdayMonday": "Segunda-feira",
+  "weekdayTuesday": "Terça-feira",
+  "weekdayWednesday": "Quarta-feira",
+  "weekdayThursday": "Quinta-feira",
+  "weekdayFriday": "Sexta-feira",
+  "weekdaySaturday": "Sábado",
+  "weekdaySunday": "Domingo",
+  "loanListTitle": "Empréstimos e parcelamentos",
+  "loanFormTitleNew": "Novo empréstimo parcelado",
+  "loanFormTitleEdit": "Editar empréstimo",
+  "loanFieldName": "Nome",
+  "loanFieldCategory": "Categoria",
+  "loanFieldTotalAmount": "Valor total (opcional)",
+  "loanFieldInstallmentAmount": "Valor da parcela",
+  "loanFieldTotalInstallments": "Número de parcelas",
+  "loanFieldFrequency": "Frequência",
+  "loanFieldDueDayOfMonth": "Dia de vencimento no mês",
+  "loanFieldStartDate": "Data de início",
+  "loanFieldReminderAdvanceDays": "Avisar N dias antes do vencimento",
+  "loanFieldNotes": "Notas (opcional)",
+  "loanFrequencyMonthly": "Mensal",
+  "loanFrequencyWeekly": "Semanal",
+  "loanFrequencyBiweekly": "Quinzenal",
+  "loanProgress": "{paid} / {total} pagas",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Marcar como pago",
+  "loanMarkPaidBatch": "Marcar {count} parcelas como pagas",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Pendente",
+  "loanStatusPaid": "Pago",
+  "loanStatusOverdue": "Atrasado",
+  "loanInstallmentNumber": "Parcela nº {number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Excluir este empréstimo?",
+  "loanDeleteConfirmBody": "As {count} parcelas também serão removidas.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Categorias",
+  "categoryFormTitleNew": "Nova categoria",
+  "categoryFormTitleEdit": "Editar categoria",
+  "categoryFieldName": "Nome",
+  "categoryFieldNameRequired": "O nome é obrigatório",
+  "categoryFieldIcon": "Ícone",
+  "categoryFieldColor": "Cor",
+  "categoryDeleteSimpleTitle": "Excluir esta categoria?",
+  "categoryDeleteSimpleBody": "Esta categoria não tem lembretes.",
+  "categoryDeleteHasRemindersTitle": "Esta categoria ainda tem lembretes",
+  "categoryDeleteHasRemindersBody": "{count} lembretes usam esta categoria. Escolha o que fazer com eles.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Mover para outra categoria",
+  "categoryDeleteReassignTarget": "Mover para",
+  "categoryDeleteRemoveAll": "Excluir todos os {count} lembretes",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Isso excluirá permanentemente {count} lembretes. Essa ação não pode ser desfeita.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Arraste para reordenar",
+  "settingsTitle": "Ajustes",
+  "settingsLanguage": "Idioma",
+  "settingsDefaultReminderTime": "Horário padrão do lembrete",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "Sistema",
+  "settingsThemeLight": "Claro",
+  "settingsThemeDark": "Escuro",
+  "settingsBackupRestore": "Backup e restauração",
+  "settingsExport": "Exportar backup",
+  "settingsImport": "Restaurar backup",
+  "settingsExportLocationHint": "Salvo em Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Backup salvo",
+  "settingsImportNoneFound": "Nenhum arquivo de backup encontrado",
+  "settingsImportPickFile": "Escolher um backup",
+  "settingsImportSuccess": "Backup restaurado",
+  "settingsImportConfirmTitle": "Restaurar backup?",
+  "settingsImportConfirmBody": "Isso substitui todos os dados atuais pelo conteúdo do arquivo de backup.",
+  "settingsAbout": "Sobre",
+  "settingsBatteryOptimizationTitle": "As notificações não chegam na hora certa?",
+  "settingsBatteryOptimizationBody": "Alguns fabricantes (Samsung, Xiaomi, Oppo...) restringem bastante os apps em segundo plano. Desative a otimização de bateria do iReminder em Ajustes > Bateria do seu celular para garantir que os lembretes sempre cheguem na hora.",
+  "errorGeneric": "Algo deu errado. Tente novamente.",
+  "errorLoadFailed": "Não foi possível carregar os dados.",
+  "settingsAiSectionTitle": "Assistente de IA",
+  "settingsAiEnable": "Ativar Assistente de IA",
+  "settingsAiProvider": "Provedor de IA",
+  "settingsAiModel": "Modelo",
+  "settingsAiApiKey": "Chave de API",
+  "settingsAiApiKeyHint": "Cole sua chave de API",
+  "settingsAiApiKeyHelp": "Onde consigo uma chave?",
+  "settingsAiApiKeySaved": "Chave de API salva",
+  "settingsAiAllowedCategories": "Categorias que o assistente pode ler",
+  "settingsAiAllowedCategoriesHint": "Desativado por padrão. Ative apenas as categorias que quiser que o assistente veja — nada mais é enviado.",
+  "settingsAiClearHistory": "Limpar histórico de conversas",
+  "settingsAiClearHistoryConfirmTitle": "Limpar histórico de conversas?",
+  "settingsAiClearHistoryConfirmBody": "Isso apaga todas as perguntas e respostas salvas neste aparelho. Essa ação não pode ser desfeita.",
+  "assistantTitle": "Assistente",
+  "assistantEmptyTitle": "Pergunte qualquer coisa",
+  "assistantEmptyBody": "Tente \"O que preciso fazer esta semana?\" ou \"Quantas parcelas faltam no meu financiamento da moto?\"",
+  "assistantInputHint": "Digite uma pergunta…",
+  "assistantSend": "Enviar",
+  "assistantDisabledTitle": "O assistente está desativado",
+  "assistantDisabledBody": "Ative em Ajustes e escolha um provedor de IA para começar a conversar.",
+  "assistantOpenSettings": "Abrir Ajustes",
+  "assistantThinking": "Pensando…",
+  "validationRequired": "Obrigatório",
+  "validationDayOfMonth": "Digite um dia de 1 a 31",
+  "validationMonth": "Digite um mês de 1 a 12",
+  "validationPositiveNumber": "Digite um número maior que 0",
+  "validationPositiveInteger": "Digite um número inteiro maior que 0",
+  "settingsPermissionsSectionTitle": "Notificações e alarmes",
+  "settingsPermissionsNotificationLabel": "Permissão de notificação",
+  "settingsPermissionsExactAlarmLabel": "Permissão de alarme exato",
+  "settingsPermissionsGranted": "Concedida",
+  "settingsPermissionsDenied": "Não concedida — os lembretes podem não disparar na hora certa",
+  "settingsPermissionsGrantAction": "Conceder",
+  "settingsPermissionsOpenSettingsAction": "Abrir ajustes",
+  "onboardingExactAlarmRationaleTitle": "Mais uma permissão",
+  "onboardingExactAlarmRationaleBody": "Na próxima tela, permita que o iReminder agende alarmes exatos para que os lembretes disparem na hora certa.",
+  "loanMarkPaidSuccess": "Marcado como pago"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "pa",
+  "appTitle": "iReminder",
+  "navToday": "ਅੱਜ",
+  "navCalendar": "ਕੈਲੰਡਰ",
+  "navLoans": "ਕਰਜ਼ੇ",
+  "navCategories": "ਸ਼੍ਰੇਣੀਆਂ",
+  "navSettings": "ਸੈਟਿੰਗਾਂ",
+  "navAssistant": "ਸਹਾਇਕ",
+  "onboardingTitle1": "ਜ਼ਰੂਰੀ ਗੱਲਾਂ ਕਦੇ ਨਾ ਭੁੱਲੋ",
+  "onboardingBody1": "ਡਿਵਾਈਸ ਮੇਨਟੇਨੈਂਸ, ਵਾਹਨ ਸਰਵਿਸ, ਸਾਲਗਿਰ੍ਹਾਂ ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ — ਸਭ ਇੱਕੋ ਥਾਂ 'ਤੇ ਟਰੈਕ ਕਰੋ।",
+  "onboardingTitle2": "ਦੁਹਰਾਓ ਹੁਣ ਬਹੁਤ ਆਸਾਨ",
+  "onboardingBody2": "ਰੋਜ਼ਾਨਾ, ਹਫ਼ਤਾਵਾਰੀ, ਮਹੀਨਾਵਾਰ, ਸਾਲਾਨਾ, ਜਾਂ ਚੰਦਰ ਕੈਲੰਡਰ ਮੁਤਾਬਕ ਵੀ — ਇੱਕ ਵਾਰ ਸੈੱਟ ਕਰੋ, iReminder ਯਾਦ ਰੱਖੇਗਾ।",
+  "onboardingTitle3": "100% ਨਿੱਜੀ, 100% ਆਫਲਾਈਨ",
+  "onboardingBody3": "ਕੋਈ ਖਾਤਾ ਨਹੀਂ, ਕੋਈ ਕਲਾਊਡ ਨਹੀਂ, ਕੋਈ ਲਾਗਇਨ ਨਹੀਂ। ਸਭ ਕੁਝ ਤੁਹਾਡੇ ਫੋਨ 'ਤੇ ਹੀ ਰਹਿੰਦਾ ਹੈ।",
+  "onboardingSkip": "ਛੱਡੋ",
+  "onboardingNext": "ਅੱਗੇ",
+  "onboardingGetStarted": "ਸ਼ੁਰੂ ਕਰੋ",
+  "notificationPermissionTitle": "ਸਮੇਂ ਸਿਰ ਰਹੋ",
+  "notificationPermissionBody": "ਜਦੋਂ ਕੋਈ ਚੀਜ਼ ਬਾਕੀ ਹੋਵੇ ਤਾਂ ਤੁਹਾਨੂੰ ਸੂਚਨਾ ਭੇਜਣ ਲਈ iReminder ਨੂੰ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਹੈ।",
+  "notificationPermissionAllow": "ਸੂਚਨਾਵਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ",
+  "notificationPermissionLater": "ਹੁਣ ਨਹੀਂ",
+  "homeSectionOverdue": "ਮਿਆਦ ਖਤਮ",
+  "homeSectionToday": "ਅੱਜ",
+  "homeSectionThisWeek": "ਇਸ ਹਫ਼ਤੇ",
+  "homeSectionUpcoming": "ਆਉਣ ਵਾਲੇ",
+  "homeEmptyTitle": "ਇੱਥੇ ਅਜੇ ਕੁਝ ਨਹੀਂ",
+  "homeEmptyBody": "ਆਪਣੀ ਪਹਿਲੀ ਰਿਮਾਈਂਡਰ ਜਾਂ ਕਿਸ਼ਤ ਵਾਲਾ ਕਰਜ਼ਾ ਜੋੜਨ ਲਈ + ਨੂੰ ਟੈਪ ਕਰੋ।",
+  "fabAddReminder": "ਰਿਮਾਈਂਡਰ",
+  "fabAddLoan": "ਕਿਸ਼ਤ ਵਾਲਾ ਕਰਜ਼ਾ",
+  "actionDone": "ਹੋ ਗਿਆ",
+  "actionSnooze": "ਸਨੂਜ਼",
+  "actionEdit": "ਸੋਧੋ",
+  "actionDelete": "ਮਿਟਾਓ",
+  "actionSave": "ਸੰਭਾਲੋ",
+  "actionCancel": "ਰੱਦ ਕਰੋ",
+  "actionConfirm": "ਪੁਸ਼ਟੀ ਕਰੋ",
+  "actionYes": "ਹਾਂ",
+  "actionNo": "ਨਹੀਂ",
+  "actionOk": "ਠੀਕ ਹੈ",
+  "actionAdd": "ਜੋੜੋ",
+  "actionClose": "ਬੰਦ ਕਰੋ",
+  "reminderFormTitleNew": "ਨਵੀਂ ਰਿਮਾਈਂਡਰ",
+  "reminderFormTitleEdit": "ਰਿਮਾਈਂਡਰ ਸੋਧੋ",
+  "reminderFieldTitle": "ਸਿਰਲੇਖ",
+  "reminderFieldTitleRequired": "ਸਿਰਲੇਖ ਲਾਜ਼ਮੀ ਹੈ",
+  "reminderFieldDescription": "ਵੇਰਵਾ (ਵਿਕਲਪਿਕ)",
+  "reminderFieldCategory": "ਸ਼੍ਰੇਣੀ",
+  "reminderFieldRecurrence": "ਦੁਹਰਾਓ",
+  "reminderFieldStartDate": "ਸ਼ੁਰੂ ਹੋਣ ਦੀ ਮਿਤੀ",
+  "reminderFieldTime": "ਰਿਮਾਈਂਡਰ ਦਾ ਸਮਾਂ",
+  "reminderFieldAdvanceNotice": "N ਦਿਨ ਪਹਿਲਾਂ ਸੂਚਿਤ ਕਰੋ",
+  "reminderFieldRecurrenceDay": "ਮਹੀਨੇ ਦਾ ਦਿਨ",
+  "reminderFieldRecurrenceMonth": "ਮਹੀਨਾ",
+  "reminderFieldRecurrenceWeekday": "ਹਫ਼ਤੇ ਦਾ ਦਿਨ",
+  "reminderFieldIntervalDays": "ਹਰ N ਦਿਨਾਂ ਬਾਅਦ",
+  "reminderFieldLunarDay": "ਚੰਦਰ ਦਿਨ",
+  "reminderFieldLunarMonth": "ਚੰਦਰ ਮਹੀਨਾ",
+  "reminderDeleteConfirmTitle": "ਇਹ ਰਿਮਾਈਂਡਰ ਮਿਟਾਉਣਾ ਹੈ?",
+  "reminderDeleteConfirmBody": "ਇਹ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
+  "recurrenceNone": "ਇੱਕ ਵਾਰ",
+  "recurrenceDaily": "ਰੋਜ਼ਾਨਾ",
+  "recurrenceWeekly": "ਹਫ਼ਤਾਵਾਰੀ",
+  "recurrenceMonthly": "ਮਹੀਨਾਵਾਰੀ",
+  "recurrenceYearly": "ਸਾਲਾਨਾ",
+  "recurrenceCustomIntervalDays": "ਹਰ N ਦਿਨਾਂ ਬਾਅਦ",
+  "recurrenceLunarYearly": "ਸਾਲਾਨਾ (ਚੰਦਰ ਕੈਲੰਡਰ)",
+  "weekdayMonday": "ਸੋਮਵਾਰ",
+  "weekdayTuesday": "ਮੰਗਲਵਾਰ",
+  "weekdayWednesday": "ਬੁੱਧਵਾਰ",
+  "weekdayThursday": "ਵੀਰਵਾਰ",
+  "weekdayFriday": "ਸ਼ੁੱਕਰਵਾਰ",
+  "weekdaySaturday": "ਸ਼ਨੀਵਾਰ",
+  "weekdaySunday": "ਐਤਵਾਰ",
+  "loanListTitle": "ਕਰਜ਼ੇ ਅਤੇ ਕਿਸ਼ਤਾਂ",
+  "loanFormTitleNew": "ਨਵਾਂ ਕਿਸ਼ਤ ਵਾਲਾ ਕਰਜ਼ਾ",
+  "loanFormTitleEdit": "ਕਰਜ਼ਾ ਸੋਧੋ",
+  "loanFieldName": "ਨਾਮ",
+  "loanFieldCategory": "ਸ਼੍ਰੇਣੀ",
+  "loanFieldTotalAmount": "ਕੁੱਲ ਰਕਮ (ਵਿਕਲਪਿਕ)",
+  "loanFieldInstallmentAmount": "ਪ੍ਰਤੀ ਕਿਸ਼ਤ ਰਕਮ",
+  "loanFieldTotalInstallments": "ਕਿਸ਼ਤਾਂ ਦੀ ਗਿਣਤੀ",
+  "loanFieldFrequency": "ਵਾਰਵਾਰਤਾ",
+  "loanFieldDueDayOfMonth": "ਮਹੀਨੇ ਦਾ ਬਕਾਇਆ ਦਿਨ",
+  "loanFieldStartDate": "ਸ਼ੁਰੂ ਹੋਣ ਦੀ ਮਿਤੀ",
+  "loanFieldReminderAdvanceDays": "ਬਕਾਇਆ ਮਿਤੀ ਤੋਂ N ਦਿਨ ਪਹਿਲਾਂ ਯਾਦ ਕਰਾਓ",
+  "loanFieldNotes": "ਨੋਟਸ (ਵਿਕਲਪਿਕ)",
+  "loanFrequencyMonthly": "ਮਹੀਨਾਵਾਰੀ",
+  "loanFrequencyWeekly": "ਹਫ਼ਤਾਵਾਰੀ",
+  "loanFrequencyBiweekly": "ਹਰ ਦੋ ਹਫ਼ਤਿਆਂ ਬਾਅਦ",
+  "loanProgress": "{paid} / {total} ਅਦਾ ਕੀਤੀਆਂ",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "ਅਦਾ ਕੀਤੀ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਓ",
+  "loanMarkPaidBatch": "{count} ਕਿਸ਼ਤਾਂ ਨੂੰ ਅਦਾ ਕੀਤੀਆਂ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਓ",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "ਬਕਾਇਆ",
+  "loanStatusPaid": "ਅਦਾ ਕੀਤੀ",
+  "loanStatusOverdue": "ਮਿਆਦ ਖਤਮ",
+  "loanInstallmentNumber": "ਕਿਸ਼ਤ #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "ਇਹ ਕਰਜ਼ਾ ਮਿਟਾਉਣਾ ਹੈ?",
+  "loanDeleteConfirmBody": "ਸਾਰੀਆਂ {count} ਕਿਸ਼ਤਾਂ ਵੀ ਹਟਾ ਦਿੱਤੀਆਂ ਜਾਣਗੀਆਂ।",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "ਸ਼੍ਰੇਣੀਆਂ",
+  "categoryFormTitleNew": "ਨਵੀਂ ਸ਼੍ਰੇਣੀ",
+  "categoryFormTitleEdit": "ਸ਼੍ਰੇਣੀ ਸੋਧੋ",
+  "categoryFieldName": "ਨਾਮ",
+  "categoryFieldNameRequired": "ਨਾਮ ਲਾਜ਼ਮੀ ਹੈ",
+  "categoryFieldIcon": "ਆਈਕਾਨ",
+  "categoryFieldColor": "ਰੰਗ",
+  "categoryDeleteSimpleTitle": "ਇਹ ਸ਼੍ਰੇਣੀ ਮਿਟਾਉਣੀ ਹੈ?",
+  "categoryDeleteSimpleBody": "ਇਸ ਸ਼੍ਰੇਣੀ ਵਿੱਚ ਕੋਈ ਰਿਮਾਈਂਡਰ ਨਹੀਂ ਹੈ।",
+  "categoryDeleteHasRemindersTitle": "ਇਸ ਸ਼੍ਰੇਣੀ ਵਿੱਚ ਅਜੇ ਵੀ ਰਿਮਾਈਂਡਰ ਹਨ",
+  "categoryDeleteHasRemindersBody": "{count} ਰਿਮਾਈਂਡਰ ਇਸ ਸ਼੍ਰੇਣੀ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ। ਚੁਣੋ ਕਿ ਉਹਨਾਂ ਨਾਲ ਕੀ ਕਰਨਾ ਹੈ।",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "ਕਿਸੇ ਹੋਰ ਸ਼੍ਰੇਣੀ ਵਿੱਚ ਭੇਜੋ",
+  "categoryDeleteReassignTarget": "ਇੱਥੇ ਭੇਜੋ",
+  "categoryDeleteRemoveAll": "ਸਾਰੇ {count} ਰਿਮਾਈਂਡਰ ਮਿਟਾਓ",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "ਇਹ {count} ਰਿਮਾਈਂਡਰ ਸਥਾਈ ਤੌਰ 'ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ। ਇਹ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "ਕ੍ਰਮ ਬਦਲਣ ਲਈ ਖਿੱਚੋ",
+  "settingsTitle": "ਸੈਟਿੰਗਾਂ",
+  "settingsLanguage": "ਭਾਸ਼ਾ",
+  "settingsDefaultReminderTime": "ਮੂਲ ਰਿਮਾਈਂਡਰ ਸਮਾਂ",
+  "settingsTheme": "ਥੀਮ",
+  "settingsThemeSystem": "ਸਿਸਟਮ",
+  "settingsThemeLight": "ਹਲਕਾ",
+  "settingsThemeDark": "ਗੂੜ੍ਹਾ",
+  "settingsBackupRestore": "ਬੈਕਅੱਪ ਅਤੇ ਰੀਸਟੋਰ",
+  "settingsExport": "ਬੈਕਅੱਪ ਐਕਸਪੋਰਟ ਕਰੋ",
+  "settingsImport": "ਬੈਕਅੱਪ ਤੋਂ ਰੀਸਟੋਰ ਕਰੋ",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups ਵਿੱਚ ਸੰਭਾਲਿਆ ਗਿਆ",
+  "settingsExportSuccess": "ਬੈਕਅੱਪ ਸੰਭਾਲਿਆ ਗਿਆ",
+  "settingsImportNoneFound": "ਕੋਈ ਬੈਕਅੱਪ ਫਾਈਲ ਨਹੀਂ ਮਿਲੀ",
+  "settingsImportPickFile": "ਬੈਕਅੱਪ ਚੁਣੋ",
+  "settingsImportSuccess": "ਬੈਕਅੱਪ ਰੀਸਟੋਰ ਕੀਤਾ ਗਿਆ",
+  "settingsImportConfirmTitle": "ਬੈਕਅੱਪ ਰੀਸਟੋਰ ਕਰਨਾ ਹੈ?",
+  "settingsImportConfirmBody": "ਇਹ ਮੌਜੂਦਾ ਸਾਰਾ ਡਾਟਾ ਬੈਕਅੱਪ ਫਾਈਲ ਦੀ ਸਮੱਗਰੀ ਨਾਲ ਬਦਲ ਦੇਵੇਗਾ।",
+  "settingsAbout": "ਬਾਰੇ",
+  "settingsBatteryOptimizationTitle": "ਸੂਚਨਾਵਾਂ ਸਮੇਂ ਸਿਰ ਨਹੀਂ ਆ ਰਹੀਆਂ?",
+  "settingsBatteryOptimizationBody": "ਕੁਝ ਫੋਨ ਬਣਾਉਣ ਵਾਲੀਆਂ ਕੰਪਨੀਆਂ (Samsung, Xiaomi, Oppo...) ਬੈਕਗਰਾਊਂਡ ਐਪਸ ਨੂੰ ਸਖ਼ਤੀ ਨਾਲ ਸੀਮਤ ਕਰਦੀਆਂ ਹਨ। ਰਿਮਾਈਂਡਰ ਹਮੇਸ਼ਾ ਸਮੇਂ ਸਿਰ ਆਉਣ ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ, ਆਪਣੇ ਫੋਨ ਦੀਆਂ ਸੈਟਿੰਗਾਂ > ਬੈਟਰੀ ਵਿੱਚ ਜਾ ਕੇ iReminder ਲਈ ਬੈਟਰੀ ਓਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਬੰਦ ਕਰੋ।",
+  "errorGeneric": "ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+  "errorLoadFailed": "ਡਾਟਾ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕਿਆ।",
+  "settingsAiSectionTitle": "AI ਸਹਾਇਕ",
+  "settingsAiEnable": "AI ਸਹਾਇਕ ਚਾਲੂ ਕਰੋ",
+  "settingsAiProvider": "AI ਪ੍ਰਦਾਤਾ",
+  "settingsAiModel": "ਮਾਡਲ",
+  "settingsAiApiKey": "API ਕੁੰਜੀ",
+  "settingsAiApiKeyHint": "ਆਪਣੀ API ਕੁੰਜੀ ਪੇਸਟ ਕਰੋ",
+  "settingsAiApiKeyHelp": "ਕੁੰਜੀ ਕਿੱਥੋਂ ਮਿਲੇਗੀ?",
+  "settingsAiApiKeySaved": "API ਕੁੰਜੀ ਸੰਭਾਲੀ ਗਈ",
+  "settingsAiAllowedCategories": "ਸ਼੍ਰੇਣੀਆਂ ਜੋ ਸਹਾਇਕ ਪੜ੍ਹ ਸਕਦਾ ਹੈ",
+  "settingsAiAllowedCategoriesHint": "ਮੂਲ ਰੂਪ ਵਿੱਚ ਬੰਦ ਹੈ। ਸਿਰਫ਼ ਉਹ ਸ਼੍ਰੇਣੀਆਂ ਚਾਲੂ ਕਰੋ ਜੋ ਤੁਸੀਂ ਸਹਾਇਕ ਨੂੰ ਦਿਖਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ — ਹੋਰ ਕੁਝ ਵੀ ਕਦੇ ਨਹੀਂ ਭੇਜਿਆ ਜਾਂਦਾ।",
+  "settingsAiClearHistory": "ਚੈਟ ਇਤਿਹਾਸ ਸਾਫ਼ ਕਰੋ",
+  "settingsAiClearHistoryConfirmTitle": "ਚੈਟ ਇਤਿਹਾਸ ਸਾਫ਼ ਕਰਨਾ ਹੈ?",
+  "settingsAiClearHistoryConfirmBody": "ਇਹ ਇਸ ਡਿਵਾਈਸ 'ਤੇ ਸੰਭਾਲਿਆ ਹਰ ਸਵਾਲ ਅਤੇ ਜਵਾਬ ਮਿਟਾ ਦੇਵੇਗਾ। ਇਹ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
+  "assistantTitle": "ਸਹਾਇਕ",
+  "assistantEmptyTitle": "ਮੈਨੂੰ ਕੁਝ ਵੀ ਪੁੱਛੋ",
+  "assistantEmptyBody": "\"ਇਸ ਹਫ਼ਤੇ ਮੈਨੂੰ ਕੀ ਕਰਨ ਦੀ ਲੋੜ ਹੈ?\" ਜਾਂ \"ਮੇਰੇ ਮੋਟਰਸਾਈਕਲ ਕਰਜ਼ੇ ਦੀਆਂ ਕਿੰਨੀਆਂ ਕਿਸ਼ਤਾਂ ਬਾਕੀ ਹਨ?\" ਵਰਗਾ ਸਵਾਲ ਪੁੱਛ ਕੇ ਵੇਖੋ।",
+  "assistantInputHint": "ਕੁਝ ਪੁੱਛੋ…",
+  "assistantSend": "ਭੇਜੋ",
+  "assistantDisabledTitle": "ਸਹਾਇਕ ਬੰਦ ਹੈ",
+  "assistantDisabledBody": "ਗੱਲਬਾਤ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇਸਨੂੰ ਚਾਲੂ ਕਰੋ ਅਤੇ ਇੱਕ AI ਪ੍ਰਦਾਤਾ ਚੁਣੋ।",
+  "assistantOpenSettings": "ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ",
+  "assistantThinking": "ਸੋਚ ਰਿਹਾ ਹੈ…",
+  "validationRequired": "ਲਾਜ਼ਮੀ",
+  "validationDayOfMonth": "1–31 ਵਿਚਕਾਰ ਦਿਨ ਦਰਜ ਕਰੋ",
+  "validationMonth": "1–12 ਵਿਚਕਾਰ ਮਹੀਨਾ ਦਰਜ ਕਰੋ",
+  "validationPositiveNumber": "0 ਤੋਂ ਵੱਡਾ ਨੰਬਰ ਦਰਜ ਕਰੋ",
+  "validationPositiveInteger": "0 ਤੋਂ ਵੱਡਾ ਪੂਰਨ ਅੰਕ ਦਰਜ ਕਰੋ",
+  "settingsPermissionsSectionTitle": "ਸੂਚਨਾਵਾਂ ਅਤੇ ਅਲਾਰਮ",
+  "settingsPermissionsNotificationLabel": "ਸੂਚਨਾ ਇਜਾਜ਼ਤ",
+  "settingsPermissionsExactAlarmLabel": "ਸਟੀਕ ਅਲਾਰਮ ਇਜਾਜ਼ਤ",
+  "settingsPermissionsGranted": "ਦਿੱਤੀ ਗਈ",
+  "settingsPermissionsDenied": "ਨਹੀਂ ਦਿੱਤੀ ਗਈ — ਰਿਮਾਈਂਡਰ ਸਮੇਂ ਸਿਰ ਨਹੀਂ ਆ ਸਕਦੇ",
+  "settingsPermissionsGrantAction": "ਇਜਾਜ਼ਤ ਦਿਓ",
+  "settingsPermissionsOpenSettingsAction": "ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ",
+  "onboardingExactAlarmRationaleTitle": "ਇੱਕ ਹੋਰ ਇਜਾਜ਼ਤ",
+  "onboardingExactAlarmRationaleBody": "ਅਗਲੀ ਸਕ੍ਰੀਨ 'ਤੇ, iReminder ਨੂੰ ਸਟੀਕ ਅਲਾਰਮ ਸੈੱਟ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ ਤਾਂ ਜੋ ਰਿਮਾਈਂਡਰ ਤੁਹਾਡੇ ਵੱਲੋਂ ਸੈੱਟ ਕੀਤੇ ਸਹੀ ਸਮੇਂ 'ਤੇ ਆਉਣ।",
+  "loanMarkPaidSuccess": "ਅਦਾ ਕੀਤੀ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਇਆ ਗਿਆ"
+}

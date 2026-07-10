@@ -1,0 +1,227 @@
+{
+  "@@locale": "cs",
+  "appTitle": "iReminder",
+  "navToday": "Dnes",
+  "navCalendar": "Kalendář",
+  "navLoans": "Splátky",
+  "navCategories": "Kategorie",
+  "navSettings": "Nastavení",
+  "navAssistant": "Asistent",
+  "onboardingTitle1": "Nezapomeňte na to, co je důležité",
+  "onboardingBody1": "Sledujte údržbu spotřebičů, servis vozidla, výročí a mnoho dalšího — vše na jednom místě.",
+  "onboardingTitle2": "Opakování jednoduše",
+  "onboardingBody2": "Denně, týdně, měsíčně, ročně, nebo dokonce podle lunárního kalendáře — nastavíte jednou a iReminder si to pohlídá.",
+  "onboardingTitle3": "100% soukromé, 100% offline",
+  "onboardingBody3": "Žádný účet, žádný cloud, žádné přihlašování. Vše zůstává jen ve vašem telefonu.",
+  "onboardingSkip": "Přeskočit",
+  "onboardingNext": "Další",
+  "onboardingGetStarted": "Začít",
+  "notificationPermissionTitle": "Nic nezmeškejte",
+  "notificationPermissionBody": "iReminder potřebuje oprávnění k zasílání oznámení, když se něco blíží.",
+  "notificationPermissionAllow": "Povolit oznámení",
+  "notificationPermissionLater": "Teď ne",
+  "homeSectionOverdue": "Po termínu",
+  "homeSectionToday": "Dnes",
+  "homeSectionThisWeek": "Tento týden",
+  "homeSectionUpcoming": "Nadcházející",
+  "homeEmptyTitle": "Zatím tu nic není",
+  "homeEmptyBody": "Klepnutím na + přidáte první připomínku nebo splátkový úvěr.",
+  "fabAddReminder": "Připomínka",
+  "fabAddLoan": "Splátkový úvěr",
+  "actionDone": "Hotovo",
+  "actionSnooze": "Odložit",
+  "actionEdit": "Upravit",
+  "actionDelete": "Smazat",
+  "actionSave": "Uložit",
+  "actionCancel": "Zrušit",
+  "actionConfirm": "Potvrdit",
+  "actionYes": "Ano",
+  "actionNo": "Ne",
+  "actionOk": "OK",
+  "actionAdd": "Přidat",
+  "actionClose": "Zavřít",
+  "reminderFormTitleNew": "Nová připomínka",
+  "reminderFormTitleEdit": "Upravit připomínku",
+  "reminderFieldTitle": "Název",
+  "reminderFieldTitleRequired": "Název je povinný",
+  "reminderFieldDescription": "Popis (nepovinné)",
+  "reminderFieldCategory": "Kategorie",
+  "reminderFieldRecurrence": "Opakování",
+  "reminderFieldStartDate": "Datum zahájení",
+  "reminderFieldTime": "Čas připomínky",
+  "reminderFieldAdvanceNotice": "Upozornit N dní předem",
+  "reminderFieldRecurrenceDay": "Den v měsíci",
+  "reminderFieldRecurrenceMonth": "Měsíc",
+  "reminderFieldRecurrenceWeekday": "Den v týdnu",
+  "reminderFieldIntervalDays": "Každých N dní",
+  "reminderFieldLunarDay": "Lunární den",
+  "reminderFieldLunarMonth": "Lunární měsíc",
+  "reminderDeleteConfirmTitle": "Smazat tuto připomínku?",
+  "reminderDeleteConfirmBody": "Tuto akci nelze vzít zpět.",
+  "recurrenceNone": "Jednorázově",
+  "recurrenceDaily": "Denně",
+  "recurrenceWeekly": "Týdně",
+  "recurrenceMonthly": "Měsíčně",
+  "recurrenceYearly": "Ročně",
+  "recurrenceCustomIntervalDays": "Každých N dní",
+  "recurrenceLunarYearly": "Ročně (lunární kalendář)",
+  "weekdayMonday": "Pondělí",
+  "weekdayTuesday": "Úterý",
+  "weekdayWednesday": "Středa",
+  "weekdayThursday": "Čtvrtek",
+  "weekdayFriday": "Pátek",
+  "weekdaySaturday": "Sobota",
+  "weekdaySunday": "Neděle",
+  "loanListTitle": "Úvěry a splátky",
+  "loanFormTitleNew": "Nový splátkový úvěr",
+  "loanFormTitleEdit": "Upravit úvěr",
+  "loanFieldName": "Název",
+  "loanFieldCategory": "Kategorie",
+  "loanFieldTotalAmount": "Celková částka (nepovinné)",
+  "loanFieldInstallmentAmount": "Částka splátky",
+  "loanFieldTotalInstallments": "Počet splátek",
+  "loanFieldFrequency": "Frekvence",
+  "loanFieldDueDayOfMonth": "Den splatnosti v měsíci",
+  "loanFieldStartDate": "Datum zahájení",
+  "loanFieldReminderAdvanceDays": "Připomenout N dní před splatností",
+  "loanFieldNotes": "Poznámky (nepovinné)",
+  "loanFrequencyMonthly": "Měsíčně",
+  "loanFrequencyWeekly": "Týdně",
+  "loanFrequencyBiweekly": "Jednou za dva týdny",
+  "loanProgress": "Zaplaceno {paid} / {total}",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Označit jako zaplacené",
+  "loanMarkPaidBatch": "Označit {count} splátek jako zaplacené",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Čeká na úhradu",
+  "loanStatusPaid": "Zaplaceno",
+  "loanStatusOverdue": "Po splatnosti",
+  "loanInstallmentNumber": "Splátka č. {number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Smazat tento úvěr?",
+  "loanDeleteConfirmBody": "Odstraní se také všech {count} splátek.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategorie",
+  "categoryFormTitleNew": "Nová kategorie",
+  "categoryFormTitleEdit": "Upravit kategorii",
+  "categoryFieldName": "Název",
+  "categoryFieldNameRequired": "Název je povinný",
+  "categoryFieldIcon": "Ikona",
+  "categoryFieldColor": "Barva",
+  "categoryDeleteSimpleTitle": "Smazat tuto kategorii?",
+  "categoryDeleteSimpleBody": "Tato kategorie neobsahuje žádné připomínky.",
+  "categoryDeleteHasRemindersTitle": "Tato kategorie stále obsahuje připomínky",
+  "categoryDeleteHasRemindersBody": "Tuto kategorii používá {count} připomínek. Vyberte, co s nimi chcete udělat.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Přesunout do jiné kategorie",
+  "categoryDeleteReassignTarget": "Přesunout do",
+  "categoryDeleteRemoveAll": "Smazat všech {count} připomínek",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Tímto trvale smažete {count} připomínek. Tuto akci nelze vzít zpět.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Přetažením změníte pořadí",
+  "settingsTitle": "Nastavení",
+  "settingsLanguage": "Jazyk",
+  "settingsDefaultReminderTime": "Výchozí čas připomínky",
+  "settingsTheme": "Vzhled",
+  "settingsThemeSystem": "Podle systému",
+  "settingsThemeLight": "Světlý",
+  "settingsThemeDark": "Tmavý",
+  "settingsBackupRestore": "Záloha a obnovení",
+  "settingsExport": "Exportovat zálohu",
+  "settingsImport": "Obnovit ze zálohy",
+  "settingsExportLocationHint": "Uloženo do Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Záloha uložena",
+  "settingsImportNoneFound": "Nebyly nalezeny žádné soubory zálohy",
+  "settingsImportPickFile": "Vyberte zálohu",
+  "settingsImportSuccess": "Záloha obnovena",
+  "settingsImportConfirmTitle": "Obnovit zálohu?",
+  "settingsImportConfirmBody": "Tímto se nahradí všechna aktuální data obsahem záložního souboru.",
+  "settingsAbout": "O aplikaci",
+  "settingsBatteryOptimizationTitle": "Nepřicházejí oznámení včas?",
+  "settingsBatteryOptimizationBody": "Někteří výrobci telefonů (Samsung, Xiaomi, Oppo...) agresivně omezují aplikace běžící na pozadí. Vypněte optimalizaci baterie pro iReminder v Nastavení telefonu > Baterie, aby připomínky vždy dorazily včas.",
+  "errorGeneric": "Něco se pokazilo. Zkuste to prosím znovu.",
+  "errorLoadFailed": "Data se nepodařilo načíst.",
+  "settingsAiSectionTitle": "AI asistent",
+  "settingsAiEnable": "Povolit AI asistenta",
+  "settingsAiProvider": "Poskytovatel AI",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "API klíč",
+  "settingsAiApiKeyHint": "Vložte svůj API klíč",
+  "settingsAiApiKeyHelp": "Kde získám klíč?",
+  "settingsAiApiKeySaved": "API klíč byl uložen",
+  "settingsAiAllowedCategories": "Kategorie, které smí asistent číst",
+  "settingsAiAllowedCategoriesHint": "Ve výchozím nastavení vypnuto. Zapněte pouze kategorie, které chcete asistentovi zpřístupnit — nic jiného se nikdy neodesílá.",
+  "settingsAiClearHistory": "Vymazat historii konverzace",
+  "settingsAiClearHistoryConfirmTitle": "Vymazat historii konverzace?",
+  "settingsAiClearHistoryConfirmBody": "Tímto se smažou všechny otázky a odpovědi uložené v tomto zařízení. Tuto akci nelze vzít zpět.",
+  "assistantTitle": "Asistent",
+  "assistantEmptyTitle": "Zeptejte se mě na cokoliv",
+  "assistantEmptyBody": "Zkuste „Co musím tento týden udělat?“ nebo „Kolik splátek mi zbývá na úvěru na motorku?“",
+  "assistantInputHint": "Zeptejte se na něco…",
+  "assistantSend": "Odeslat",
+  "assistantDisabledTitle": "Asistent je vypnutý",
+  "assistantDisabledBody": "Zapněte ho v Nastavení a vyberte poskytovatele AI, abyste mohli začít konverzaci.",
+  "assistantOpenSettings": "Otevřít nastavení",
+  "assistantThinking": "Přemýšlí…",
+  "validationRequired": "Povinné",
+  "validationDayOfMonth": "Zadejte den od 1 do 31",
+  "validationMonth": "Zadejte měsíc od 1 do 12",
+  "validationPositiveNumber": "Zadejte číslo větší než 0",
+  "validationPositiveInteger": "Zadejte celé číslo větší než 0",
+  "settingsPermissionsSectionTitle": "Oznámení a budíky",
+  "settingsPermissionsNotificationLabel": "Oprávnění k oznámením",
+  "settingsPermissionsExactAlarmLabel": "Oprávnění k přesným budíkům",
+  "settingsPermissionsGranted": "Uděleno",
+  "settingsPermissionsDenied": "Neuděleno — připomínky se nemusí spustit včas",
+  "settingsPermissionsGrantAction": "Udělit",
+  "settingsPermissionsOpenSettingsAction": "Otevřít nastavení",
+  "onboardingExactAlarmRationaleTitle": "Ještě jedno oprávnění",
+  "onboardingExactAlarmRationaleBody": "Na další obrazovce povolte aplikaci iReminder plánovat přesné budíky, aby se připomínky spouštěly přesně v nastavený čas.",
+  "loanMarkPaidSuccess": "Označeno jako zaplaceno"
+}

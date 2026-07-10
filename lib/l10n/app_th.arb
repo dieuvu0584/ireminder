@@ -1,0 +1,227 @@
+{
+  "@@locale": "th",
+  "appTitle": "iReminder",
+  "navToday": "วันนี้",
+  "navCalendar": "ปฏิทิน",
+  "navLoans": "ผ่อนชำระ",
+  "navCategories": "หมวดหมู่",
+  "navSettings": "ตั้งค่า",
+  "navAssistant": "ผู้ช่วย",
+  "onboardingTitle1": "ไม่มีวันลืมเรื่องสำคัญ",
+  "onboardingBody1": "ติดตามการบำรุงรักษาอุปกรณ์ ตรวจเช็กรถ วันครบรอบ และอื่นๆ อีกมากมาย — ในที่เดียว",
+  "onboardingTitle2": "การแจ้งเตือนซ้ำที่ง่ายกว่าเดิม",
+  "onboardingBody2": "รายวัน รายสัปดาห์ รายเดือน รายปี หรือแม้แต่ตามปฏิทินจันทรคติ — ตั้งค่าครั้งเดียว แล้ว iReminder จะจำให้เอง",
+  "onboardingTitle3": "ส่วนตัว 100% ออฟไลน์ 100%",
+  "onboardingBody3": "ไม่มีบัญชี ไม่มีคลาวด์ ไม่ต้องเข้าสู่ระบบ ทุกอย่างอยู่ในมือถือของคุณเท่านั้น",
+  "onboardingSkip": "ข้าม",
+  "onboardingNext": "ถัดไป",
+  "onboardingGetStarted": "เริ่มต้นใช้งาน",
+  "notificationPermissionTitle": "ไม่พลาดทุกกำหนดการ",
+  "notificationPermissionBody": "iReminder ต้องการสิทธิ์ส่งการแจ้งเตือนเพื่อเตือนคุณเมื่อถึงกำหนด",
+  "notificationPermissionAllow": "อนุญาตการแจ้งเตือน",
+  "notificationPermissionLater": "ไว้ทีหลัง",
+  "homeSectionOverdue": "เลยกำหนด",
+  "homeSectionToday": "วันนี้",
+  "homeSectionThisWeek": "สัปดาห์นี้",
+  "homeSectionUpcoming": "กำลังจะถึง",
+  "homeEmptyTitle": "ยังไม่มีรายการ",
+  "homeEmptyBody": "แตะ + เพื่อเพิ่มรายการแจ้งเตือนหรือสินเชื่อผ่อนชำระรายการแรกของคุณ",
+  "fabAddReminder": "การแจ้งเตือน",
+  "fabAddLoan": "สินเชื่อผ่อนชำระ",
+  "actionDone": "เสร็จสิ้น",
+  "actionSnooze": "เลื่อนแจ้งเตือน",
+  "actionEdit": "แก้ไข",
+  "actionDelete": "ลบ",
+  "actionSave": "บันทึก",
+  "actionCancel": "ยกเลิก",
+  "actionConfirm": "ยืนยัน",
+  "actionYes": "ใช่",
+  "actionNo": "ไม่",
+  "actionOk": "ตกลง",
+  "actionAdd": "เพิ่ม",
+  "actionClose": "ปิด",
+  "reminderFormTitleNew": "การแจ้งเตือนใหม่",
+  "reminderFormTitleEdit": "แก้ไขการแจ้งเตือน",
+  "reminderFieldTitle": "ชื่อเรื่อง",
+  "reminderFieldTitleRequired": "กรุณากรอกชื่อเรื่อง",
+  "reminderFieldDescription": "รายละเอียด (ไม่บังคับ)",
+  "reminderFieldCategory": "หมวดหมู่",
+  "reminderFieldRecurrence": "ทำซ้ำ",
+  "reminderFieldStartDate": "วันที่เริ่มต้น",
+  "reminderFieldTime": "เวลาแจ้งเตือน",
+  "reminderFieldAdvanceNotice": "แจ้งล่วงหน้า N วัน",
+  "reminderFieldRecurrenceDay": "วันที่ในเดือน",
+  "reminderFieldRecurrenceMonth": "เดือน",
+  "reminderFieldRecurrenceWeekday": "วันในสัปดาห์",
+  "reminderFieldIntervalDays": "ทุก N วัน",
+  "reminderFieldLunarDay": "วันตามจันทรคติ",
+  "reminderFieldLunarMonth": "เดือนตามจันทรคติ",
+  "reminderDeleteConfirmTitle": "ลบการแจ้งเตือนนี้ใช่ไหม",
+  "reminderDeleteConfirmBody": "ไม่สามารถย้อนกลับได้หลังจากลบ",
+  "recurrenceNone": "ครั้งเดียว",
+  "recurrenceDaily": "ทุกวัน",
+  "recurrenceWeekly": "ทุกสัปดาห์",
+  "recurrenceMonthly": "ทุกเดือน",
+  "recurrenceYearly": "ทุกปี",
+  "recurrenceCustomIntervalDays": "ทุก N วัน",
+  "recurrenceLunarYearly": "ทุกปี (ตามจันทรคติ)",
+  "weekdayMonday": "วันจันทร์",
+  "weekdayTuesday": "วันอังคาร",
+  "weekdayWednesday": "วันพุธ",
+  "weekdayThursday": "วันพฤหัสบดี",
+  "weekdayFriday": "วันศุกร์",
+  "weekdaySaturday": "วันเสาร์",
+  "weekdaySunday": "วันอาทิตย์",
+  "loanListTitle": "สินเชื่อและผ่อนชำระ",
+  "loanFormTitleNew": "สินเชื่อผ่อนชำระใหม่",
+  "loanFormTitleEdit": "แก้ไขสินเชื่อ",
+  "loanFieldName": "ชื่อ",
+  "loanFieldCategory": "หมวดหมู่",
+  "loanFieldTotalAmount": "จำนวนเงินทั้งหมด (ไม่บังคับ)",
+  "loanFieldInstallmentAmount": "จำนวนเงินต่องวด",
+  "loanFieldTotalInstallments": "จำนวนงวดทั้งหมด",
+  "loanFieldFrequency": "ความถี่",
+  "loanFieldDueDayOfMonth": "วันครบกำหนดในแต่ละเดือน",
+  "loanFieldStartDate": "วันที่เริ่มต้น",
+  "loanFieldReminderAdvanceDays": "แจ้งเตือนล่วงหน้า N วันก่อนครบกำหนด",
+  "loanFieldNotes": "หมายเหตุ (ไม่บังคับ)",
+  "loanFrequencyMonthly": "รายเดือน",
+  "loanFrequencyWeekly": "รายสัปดาห์",
+  "loanFrequencyBiweekly": "ทุกสองสัปดาห์",
+  "loanProgress": "ชำระแล้ว {paid} / {total} งวด",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "ทำเครื่องหมายว่าชำระแล้ว",
+  "loanMarkPaidBatch": "ทำเครื่องหมาย {count} งวดว่าชำระแล้ว",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "รอชำระ",
+  "loanStatusPaid": "ชำระแล้ว",
+  "loanStatusOverdue": "เลยกำหนด",
+  "loanInstallmentNumber": "งวดที่ #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "ลบสินเชื่อนี้ใช่ไหม",
+  "loanDeleteConfirmBody": "งวดทั้งหมด {count} งวดจะถูกลบไปด้วย",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "หมวดหมู่",
+  "categoryFormTitleNew": "หมวดหมู่ใหม่",
+  "categoryFormTitleEdit": "แก้ไขหมวดหมู่",
+  "categoryFieldName": "ชื่อ",
+  "categoryFieldNameRequired": "กรุณากรอกชื่อ",
+  "categoryFieldIcon": "ไอคอน",
+  "categoryFieldColor": "สี",
+  "categoryDeleteSimpleTitle": "ลบหมวดหมู่นี้ใช่ไหม",
+  "categoryDeleteSimpleBody": "หมวดหมู่นี้ยังไม่มีการแจ้งเตือนใดๆ",
+  "categoryDeleteHasRemindersTitle": "หมวดหมู่นี้ยังมีการแจ้งเตือนอยู่",
+  "categoryDeleteHasRemindersBody": "มี {count} การแจ้งเตือนที่ใช้หมวดหมู่นี้ กรุณาเลือกวิธีจัดการ",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "ย้ายไปยังหมวดหมู่อื่น",
+  "categoryDeleteReassignTarget": "ย้ายไปยัง",
+  "categoryDeleteRemoveAll": "ลบการแจ้งเตือนทั้งหมด {count} รายการ",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "การดำเนินการนี้จะลบการแจ้งเตือน {count} รายการอย่างถาวร ไม่สามารถย้อนกลับได้",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "ลากเพื่อจัดเรียงใหม่",
+  "settingsTitle": "ตั้งค่า",
+  "settingsLanguage": "ภาษา",
+  "settingsDefaultReminderTime": "เวลาแจ้งเตือนเริ่มต้น",
+  "settingsTheme": "ธีม",
+  "settingsThemeSystem": "ตามระบบ",
+  "settingsThemeLight": "สว่าง",
+  "settingsThemeDark": "มืด",
+  "settingsBackupRestore": "สำรองข้อมูลและกู้คืน",
+  "settingsExport": "ส่งออกไฟล์สำรอง",
+  "settingsImport": "กู้คืนจากไฟล์สำรอง",
+  "settingsExportLocationHint": "บันทึกไว้ที่ Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "บันทึกไฟล์สำรองแล้ว",
+  "settingsImportNoneFound": "ไม่พบไฟล์สำรองข้อมูล",
+  "settingsImportPickFile": "เลือกไฟล์สำรอง",
+  "settingsImportSuccess": "กู้คืนข้อมูลเรียบร้อยแล้ว",
+  "settingsImportConfirmTitle": "กู้คืนข้อมูลจากไฟล์สำรองใช่ไหม",
+  "settingsImportConfirmBody": "การดำเนินการนี้จะแทนที่ข้อมูลปัจจุบันทั้งหมดด้วยเนื้อหาในไฟล์สำรอง",
+  "settingsAbout": "เกี่ยวกับแอป",
+  "settingsBatteryOptimizationTitle": "การแจ้งเตือนไม่มาตรงเวลาใช่ไหม",
+  "settingsBatteryOptimizationBody": "ผู้ผลิตมือถือบางราย (Samsung, Xiaomi, Oppo...) มีการจำกัดแอปที่ทำงานเบื้องหลังค่อนข้างเข้มงวด ให้ปิดการปรับแต่งแบตเตอรี่สำหรับ iReminder ที่การตั้งค่าโทรศัพท์ > แบตเตอรี่ เพื่อให้การแจ้งเตือนมาตรงเวลาเสมอ",
+  "errorGeneric": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง",
+  "errorLoadFailed": "ไม่สามารถโหลดข้อมูลได้",
+  "settingsAiSectionTitle": "ผู้ช่วย AI",
+  "settingsAiEnable": "เปิดใช้งานผู้ช่วย AI",
+  "settingsAiProvider": "ผู้ให้บริการ AI",
+  "settingsAiModel": "โมเดล",
+  "settingsAiApiKey": "API key",
+  "settingsAiApiKeyHint": "วาง API key ของคุณที่นี่",
+  "settingsAiApiKeyHelp": "จะรับ key ได้จากไหน",
+  "settingsAiApiKeySaved": "บันทึก API key แล้ว",
+  "settingsAiAllowedCategories": "หมวดหมู่ที่ผู้ช่วยสามารถเข้าถึงได้",
+  "settingsAiAllowedCategoriesHint": "ปิดไว้เป็นค่าเริ่มต้น เปิดเฉพาะหมวดหมู่ที่คุณต้องการให้ผู้ช่วยมองเห็น — จะไม่มีข้อมูลอื่นถูกส่งออกไป",
+  "settingsAiClearHistory": "ล้างประวัติการสนทนา",
+  "settingsAiClearHistoryConfirmTitle": "ล้างประวัติการสนทนาใช่ไหม",
+  "settingsAiClearHistoryConfirmBody": "การดำเนินการนี้จะลบคำถามและคำตอบทั้งหมดที่บันทึกไว้ในเครื่องนี้ ไม่สามารถย้อนกลับได้",
+  "assistantTitle": "ผู้ช่วย",
+  "assistantEmptyTitle": "ถามอะไรก็ได้",
+  "assistantEmptyBody": "ลองถามว่า \"สัปดาห์นี้ฉันต้องทำอะไรบ้าง\" หรือ \"สินเชื่อรถมอเตอร์ไซค์เหลืออีกกี่งวด\"",
+  "assistantInputHint": "พิมพ์คำถามของคุณ…",
+  "assistantSend": "ส่ง",
+  "assistantDisabledTitle": "ผู้ช่วยถูกปิดใช้งานอยู่",
+  "assistantDisabledBody": "เปิดใช้งานในตั้งค่าและเลือกผู้ให้บริการ AI เพื่อเริ่มสนทนา",
+  "assistantOpenSettings": "เปิดตั้งค่า",
+  "assistantThinking": "กำลังคิด…",
+  "validationRequired": "จำเป็นต้องกรอก",
+  "validationDayOfMonth": "กรอกวันที่ระหว่าง 1–31",
+  "validationMonth": "กรอกเดือนระหว่าง 1–12",
+  "validationPositiveNumber": "กรอกตัวเลขที่มากกว่า 0",
+  "validationPositiveInteger": "กรอกจำนวนเต็มที่มากกว่า 0",
+  "settingsPermissionsSectionTitle": "การแจ้งเตือนและปลุก",
+  "settingsPermissionsNotificationLabel": "สิทธิ์การแจ้งเตือน",
+  "settingsPermissionsExactAlarmLabel": "สิทธิ์การตั้งปลุกแบบตรงเวลา",
+  "settingsPermissionsGranted": "อนุญาตแล้ว",
+  "settingsPermissionsDenied": "ยังไม่ได้รับอนุญาต — การแจ้งเตือนอาจไม่มาตรงเวลา",
+  "settingsPermissionsGrantAction": "อนุญาต",
+  "settingsPermissionsOpenSettingsAction": "เปิดการตั้งค่า",
+  "onboardingExactAlarmRationaleTitle": "อีกหนึ่งสิทธิ์การใช้งาน",
+  "onboardingExactAlarmRationaleBody": "ในหน้าจอถัดไป กรุณาอนุญาตให้ iReminder ตั้งปลุกแบบตรงเวลา เพื่อให้การแจ้งเตือนมาตรงเวลาที่คุณตั้งไว้",
+  "loanMarkPaidSuccess": "ทำเครื่องหมายว่าชำระแล้ว"
+}

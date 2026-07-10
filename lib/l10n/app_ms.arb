@@ -1,0 +1,227 @@
+{
+  "@@locale": "ms",
+  "appTitle": "iReminder",
+  "navToday": "Hari Ini",
+  "navCalendar": "Kalendar",
+  "navLoans": "Pinjaman",
+  "navCategories": "Kategori",
+  "navSettings": "Tetapan",
+  "navAssistant": "Pembantu",
+  "onboardingTitle1": "Jangan sekali-kali lupa perkara penting",
+  "onboardingBody1": "Jejaki penyelenggaraan peranti, servis kenderaan, hari ulang tahun dan banyak lagi — semuanya di satu tempat.",
+  "onboardingTitle2": "Ulangan dipermudahkan",
+  "onboardingBody2": "Harian, mingguan, bulanan, tahunan, atau mengikut kalendar bulan — tetapkan sekali sahaja dan iReminder akan sentiasa memantaunya.",
+  "onboardingTitle3": "100% peribadi, 100% luar talian",
+  "onboardingBody3": "Tiada akaun, tiada awan, tiada log masuk. Semuanya kekal dalam telefon anda.",
+  "onboardingSkip": "Langkau",
+  "onboardingNext": "Seterusnya",
+  "onboardingGetStarted": "Mula sekarang",
+  "notificationPermissionTitle": "Sentiasa tepat masa",
+  "notificationPermissionBody": "iReminder memerlukan kebenaran untuk menghantar pemberitahuan kepada anda apabila sesuatu perkara akan tamat tempoh.",
+  "notificationPermissionAllow": "Benarkan pemberitahuan",
+  "notificationPermissionLater": "Bukan sekarang",
+  "homeSectionOverdue": "Tertunggak",
+  "homeSectionToday": "Hari Ini",
+  "homeSectionThisWeek": "Minggu Ini",
+  "homeSectionUpcoming": "Akan Datang",
+  "homeEmptyTitle": "Belum ada apa-apa di sini",
+  "homeEmptyBody": "Ketik + untuk menambah peringatan atau pinjaman ansuran pertama anda.",
+  "fabAddReminder": "Peringatan",
+  "fabAddLoan": "Pinjaman ansuran",
+  "actionDone": "Selesai",
+  "actionSnooze": "Tangguh",
+  "actionEdit": "Sunting",
+  "actionDelete": "Padam",
+  "actionSave": "Simpan",
+  "actionCancel": "Batal",
+  "actionConfirm": "Sahkan",
+  "actionYes": "Ya",
+  "actionNo": "Tidak",
+  "actionOk": "OK",
+  "actionAdd": "Tambah",
+  "actionClose": "Tutup",
+  "reminderFormTitleNew": "Peringatan baharu",
+  "reminderFormTitleEdit": "Sunting peringatan",
+  "reminderFieldTitle": "Tajuk",
+  "reminderFieldTitleRequired": "Tajuk diperlukan",
+  "reminderFieldDescription": "Keterangan (pilihan)",
+  "reminderFieldCategory": "Kategori",
+  "reminderFieldRecurrence": "Ulangan",
+  "reminderFieldStartDate": "Tarikh mula",
+  "reminderFieldTime": "Masa peringatan",
+  "reminderFieldAdvanceNotice": "Beritahu N hari lebih awal",
+  "reminderFieldRecurrenceDay": "Hari dalam bulan",
+  "reminderFieldRecurrenceMonth": "Bulan",
+  "reminderFieldRecurrenceWeekday": "Hari dalam minggu",
+  "reminderFieldIntervalDays": "Setiap N hari",
+  "reminderFieldLunarDay": "Hari kalendar bulan",
+  "reminderFieldLunarMonth": "Bulan kalendar bulan",
+  "reminderDeleteConfirmTitle": "Padam peringatan ini?",
+  "reminderDeleteConfirmBody": "Tindakan ini tidak boleh dibuat asal.",
+  "recurrenceNone": "Sekali sahaja",
+  "recurrenceDaily": "Harian",
+  "recurrenceWeekly": "Mingguan",
+  "recurrenceMonthly": "Bulanan",
+  "recurrenceYearly": "Tahunan",
+  "recurrenceCustomIntervalDays": "Setiap N hari",
+  "recurrenceLunarYearly": "Tahunan (kalendar bulan)",
+  "weekdayMonday": "Isnin",
+  "weekdayTuesday": "Selasa",
+  "weekdayWednesday": "Rabu",
+  "weekdayThursday": "Khamis",
+  "weekdayFriday": "Jumaat",
+  "weekdaySaturday": "Sabtu",
+  "weekdaySunday": "Ahad",
+  "loanListTitle": "Pinjaman & ansuran",
+  "loanFormTitleNew": "Pinjaman ansuran baharu",
+  "loanFormTitleEdit": "Sunting pinjaman",
+  "loanFieldName": "Nama",
+  "loanFieldCategory": "Kategori",
+  "loanFieldTotalAmount": "Jumlah keseluruhan (pilihan)",
+  "loanFieldInstallmentAmount": "Jumlah setiap ansuran",
+  "loanFieldTotalInstallments": "Bilangan ansuran",
+  "loanFieldFrequency": "Kekerapan",
+  "loanFieldDueDayOfMonth": "Hari tamat tempoh dalam bulan",
+  "loanFieldStartDate": "Tarikh mula",
+  "loanFieldReminderAdvanceDays": "Ingatkan N hari sebelum tamat tempoh",
+  "loanFieldNotes": "Nota (pilihan)",
+  "loanFrequencyMonthly": "Bulanan",
+  "loanFrequencyWeekly": "Mingguan",
+  "loanFrequencyBiweekly": "Dua mingguan",
+  "loanProgress": "{paid} / {total} telah dibayar",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Tandakan sebagai dibayar",
+  "loanMarkPaidBatch": "Tandakan {count} ansuran sebagai dibayar",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Belum tiba tempoh",
+  "loanStatusPaid": "Telah dibayar",
+  "loanStatusOverdue": "Tertunggak",
+  "loanInstallmentNumber": "Ansuran #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Padam pinjaman ini?",
+  "loanDeleteConfirmBody": "Kesemua {count} ansuran juga akan dialih keluar.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategori",
+  "categoryFormTitleNew": "Kategori baharu",
+  "categoryFormTitleEdit": "Sunting kategori",
+  "categoryFieldName": "Nama",
+  "categoryFieldNameRequired": "Nama diperlukan",
+  "categoryFieldIcon": "Ikon",
+  "categoryFieldColor": "Warna",
+  "categoryDeleteSimpleTitle": "Padam kategori ini?",
+  "categoryDeleteSimpleBody": "Kategori ini tiada peringatan.",
+  "categoryDeleteHasRemindersTitle": "Kategori ini masih mempunyai peringatan",
+  "categoryDeleteHasRemindersBody": "{count} peringatan menggunakan kategori ini. Pilih tindakan yang perlu diambil.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Pindahkan ke kategori lain",
+  "categoryDeleteReassignTarget": "Pindahkan ke",
+  "categoryDeleteRemoveAll": "Padam kesemua {count} peringatan",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Tindakan ini akan memadam {count} peringatan secara kekal. Tindakan ini tidak boleh dibuat asal.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Seret untuk susun semula",
+  "settingsTitle": "Tetapan",
+  "settingsLanguage": "Bahasa",
+  "settingsDefaultReminderTime": "Masa peringatan lalai",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "Sistem",
+  "settingsThemeLight": "Cerah",
+  "settingsThemeDark": "Gelap",
+  "settingsBackupRestore": "Sandaran & pemulihan",
+  "settingsExport": "Eksport sandaran",
+  "settingsImport": "Pulihkan daripada sandaran",
+  "settingsExportLocationHint": "Disimpan di Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Sandaran disimpan",
+  "settingsImportNoneFound": "Tiada fail sandaran ditemui",
+  "settingsImportPickFile": "Pilih sandaran",
+  "settingsImportSuccess": "Sandaran dipulihkan",
+  "settingsImportConfirmTitle": "Pulihkan sandaran?",
+  "settingsImportConfirmBody": "Tindakan ini akan menggantikan semua data semasa dengan kandungan fail sandaran.",
+  "settingsAbout": "Tentang",
+  "settingsBatteryOptimizationTitle": "Pemberitahuan tidak muncul tepat pada masanya?",
+  "settingsBatteryOptimizationBody": "Sesetengah pengeluar telefon (Samsung, Xiaomi, Oppo...) menyekat aplikasi latar belakang secara agresif. Matikan pengoptimuman bateri untuk iReminder dalam Tetapan telefon > Bateri untuk memastikan peringatan sentiasa tiba tepat pada masanya.",
+  "errorGeneric": "Sesuatu tidak kena. Sila cuba lagi.",
+  "errorLoadFailed": "Gagal memuatkan data.",
+  "settingsAiSectionTitle": "Pembantu AI",
+  "settingsAiEnable": "Dayakan Pembantu AI",
+  "settingsAiProvider": "Penyedia AI",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "Kunci API",
+  "settingsAiApiKeyHint": "Tampal kunci API anda",
+  "settingsAiApiKeyHelp": "Di mana saya boleh dapatkan kunci?",
+  "settingsAiApiKeySaved": "Kunci API disimpan",
+  "settingsAiAllowedCategories": "Kategori yang boleh dibaca oleh pembantu",
+  "settingsAiAllowedCategoriesHint": "Dimatikan secara lalai. Hidupkan hanya kategori yang anda mahu pembantu lihat — tiada apa-apa lagi yang dihantar.",
+  "settingsAiClearHistory": "Kosongkan sejarah sembang",
+  "settingsAiClearHistoryConfirmTitle": "Kosongkan sejarah sembang?",
+  "settingsAiClearHistoryConfirmBody": "Tindakan ini akan memadam setiap soalan dan jawapan yang disimpan pada peranti ini. Tindakan ini tidak boleh dibuat asal.",
+  "assistantTitle": "Pembantu",
+  "assistantEmptyTitle": "Tanya saya apa-apa sahaja",
+  "assistantEmptyBody": "Cuba tanya \"Apakah yang perlu saya lakukan minggu ini?\" atau \"Berapa banyak ansuran yang tinggal untuk pinjaman motosikal saya?\"",
+  "assistantInputHint": "Tanya sesuatu…",
+  "assistantSend": "Hantar",
+  "assistantDisabledTitle": "Pembantu dimatikan",
+  "assistantDisabledBody": "Dayakannya dalam Tetapan dan pilih penyedia AI untuk mula bersembang.",
+  "assistantOpenSettings": "Buka Tetapan",
+  "assistantThinking": "Sedang berfikir…",
+  "validationRequired": "Diperlukan",
+  "validationDayOfMonth": "Masukkan hari dari 1–31",
+  "validationMonth": "Masukkan bulan dari 1–12",
+  "validationPositiveNumber": "Masukkan nombor lebih besar daripada 0",
+  "validationPositiveInteger": "Masukkan nombor bulat lebih besar daripada 0",
+  "settingsPermissionsSectionTitle": "Pemberitahuan & Penggera",
+  "settingsPermissionsNotificationLabel": "Kebenaran pemberitahuan",
+  "settingsPermissionsExactAlarmLabel": "Kebenaran penggera tepat",
+  "settingsPermissionsGranted": "Diberikan",
+  "settingsPermissionsDenied": "Tidak diberikan — peringatan mungkin tidak muncul tepat pada masanya",
+  "settingsPermissionsGrantAction": "Berikan kebenaran",
+  "settingsPermissionsOpenSettingsAction": "Buka tetapan",
+  "onboardingExactAlarmRationaleTitle": "Satu lagi kebenaran",
+  "onboardingExactAlarmRationaleBody": "Pada skrin seterusnya, benarkan iReminder menjadualkan penggera tepat supaya peringatan muncul pada masa yang tepat seperti yang anda tetapkan.",
+  "loanMarkPaidSuccess": "Ditandakan sebagai dibayar"
+}

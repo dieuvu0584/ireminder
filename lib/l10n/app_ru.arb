@@ -1,0 +1,227 @@
+{
+  "@@locale": "ru",
+  "appTitle": "iReminder",
+  "navToday": "Сегодня",
+  "navCalendar": "Календарь",
+  "navLoans": "Кредиты",
+  "navCategories": "Категории",
+  "navSettings": "Настройки",
+  "navAssistant": "Ассистент",
+  "onboardingTitle1": "Никогда не забывайте важное",
+  "onboardingBody1": "Отслеживайте обслуживание техники, ТО автомобиля, годовщины и многое другое — всё в одном месте.",
+  "onboardingTitle2": "Повторение стало проще",
+  "onboardingBody2": "Ежедневно, еженедельно, ежемесячно, ежегодно или даже по лунному календарю — настройте один раз, и iReminder всё запомнит.",
+  "onboardingTitle3": "100% приватно, 100% офлайн",
+  "onboardingBody3": "Без аккаунта, без облака, без входа в систему. Всё остаётся на вашем телефоне.",
+  "onboardingSkip": "Пропустить",
+  "onboardingNext": "Далее",
+  "onboardingGetStarted": "Начать",
+  "notificationPermissionTitle": "Ничего не пропустите",
+  "notificationPermissionBody": "iReminder нужно разрешение на отправку уведомлений, когда наступает срок.",
+  "notificationPermissionAllow": "Разрешить уведомления",
+  "notificationPermissionLater": "Не сейчас",
+  "homeSectionOverdue": "Просрочено",
+  "homeSectionToday": "Сегодня",
+  "homeSectionThisWeek": "На этой неделе",
+  "homeSectionUpcoming": "Предстоящие",
+  "homeEmptyTitle": "Пока здесь пусто",
+  "homeEmptyBody": "Нажмите +, чтобы добавить первое напоминание или кредит с рассрочкой.",
+  "fabAddReminder": "Напоминание",
+  "fabAddLoan": "Кредит с рассрочкой",
+  "actionDone": "Готово",
+  "actionSnooze": "Отложить",
+  "actionEdit": "Изменить",
+  "actionDelete": "Удалить",
+  "actionSave": "Сохранить",
+  "actionCancel": "Отмена",
+  "actionConfirm": "Подтвердить",
+  "actionYes": "Да",
+  "actionNo": "Нет",
+  "actionOk": "ОК",
+  "actionAdd": "Добавить",
+  "actionClose": "Закрыть",
+  "reminderFormTitleNew": "Новое напоминание",
+  "reminderFormTitleEdit": "Изменить напоминание",
+  "reminderFieldTitle": "Название",
+  "reminderFieldTitleRequired": "Введите название",
+  "reminderFieldDescription": "Описание (необязательно)",
+  "reminderFieldCategory": "Категория",
+  "reminderFieldRecurrence": "Повтор",
+  "reminderFieldStartDate": "Дата начала",
+  "reminderFieldTime": "Время напоминания",
+  "reminderFieldAdvanceNotice": "Напомнить за N дней",
+  "reminderFieldRecurrenceDay": "День месяца",
+  "reminderFieldRecurrenceMonth": "Месяц",
+  "reminderFieldRecurrenceWeekday": "День недели",
+  "reminderFieldIntervalDays": "Каждые N дней",
+  "reminderFieldLunarDay": "Лунный день",
+  "reminderFieldLunarMonth": "Лунный месяц",
+  "reminderDeleteConfirmTitle": "Удалить это напоминание?",
+  "reminderDeleteConfirmBody": "Это действие нельзя отменить.",
+  "recurrenceNone": "Один раз",
+  "recurrenceDaily": "Ежедневно",
+  "recurrenceWeekly": "Еженедельно",
+  "recurrenceMonthly": "Ежемесячно",
+  "recurrenceYearly": "Ежегодно",
+  "recurrenceCustomIntervalDays": "Каждые N дней",
+  "recurrenceLunarYearly": "Ежегодно (по лунному календарю)",
+  "weekdayMonday": "Понедельник",
+  "weekdayTuesday": "Вторник",
+  "weekdayWednesday": "Среда",
+  "weekdayThursday": "Четверг",
+  "weekdayFriday": "Пятница",
+  "weekdaySaturday": "Суббота",
+  "weekdaySunday": "Воскресенье",
+  "loanListTitle": "Кредиты и рассрочки",
+  "loanFormTitleNew": "Новый кредит с рассрочкой",
+  "loanFormTitleEdit": "Изменить кредит",
+  "loanFieldName": "Название",
+  "loanFieldCategory": "Категория",
+  "loanFieldTotalAmount": "Общая сумма (необязательно)",
+  "loanFieldInstallmentAmount": "Сумма одного платежа",
+  "loanFieldTotalInstallments": "Количество платежей",
+  "loanFieldFrequency": "Периодичность",
+  "loanFieldDueDayOfMonth": "День платежа в месяце",
+  "loanFieldStartDate": "Дата начала",
+  "loanFieldReminderAdvanceDays": "Напомнить за N дней до платежа",
+  "loanFieldNotes": "Заметки (необязательно)",
+  "loanFrequencyMonthly": "Ежемесячно",
+  "loanFrequencyWeekly": "Еженедельно",
+  "loanFrequencyBiweekly": "Раз в две недели",
+  "loanProgress": "Оплачено {paid} из {total}",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Отметить как оплачено",
+  "loanMarkPaidBatch": "Отметить {count} платежей как оплаченные",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Ожидается",
+  "loanStatusPaid": "Оплачено",
+  "loanStatusOverdue": "Просрочено",
+  "loanInstallmentNumber": "Платёж №{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Удалить этот кредит?",
+  "loanDeleteConfirmBody": "Все {count} платежей также будут удалены.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Категории",
+  "categoryFormTitleNew": "Новая категория",
+  "categoryFormTitleEdit": "Изменить категорию",
+  "categoryFieldName": "Название",
+  "categoryFieldNameRequired": "Введите название",
+  "categoryFieldIcon": "Значок",
+  "categoryFieldColor": "Цвет",
+  "categoryDeleteSimpleTitle": "Удалить эту категорию?",
+  "categoryDeleteSimpleBody": "В этой категории нет напоминаний.",
+  "categoryDeleteHasRemindersTitle": "В этой категории ещё есть напоминания",
+  "categoryDeleteHasRemindersBody": "{count} напоминаний используют эту категорию. Выберите, что с ними делать.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Перенести в другую категорию",
+  "categoryDeleteReassignTarget": "Перенести в",
+  "categoryDeleteRemoveAll": "Удалить все {count} напоминаний",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Это навсегда удалит {count} напоминаний. Это действие нельзя отменить.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Перетащите, чтобы изменить порядок",
+  "settingsTitle": "Настройки",
+  "settingsLanguage": "Язык",
+  "settingsDefaultReminderTime": "Время напоминания по умолчанию",
+  "settingsTheme": "Тема",
+  "settingsThemeSystem": "Системная",
+  "settingsThemeLight": "Светлая",
+  "settingsThemeDark": "Тёмная",
+  "settingsBackupRestore": "Резервное копирование и восстановление",
+  "settingsExport": "Создать резервную копию",
+  "settingsImport": "Восстановить из резервной копии",
+  "settingsExportLocationHint": "Сохранено в Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Резервная копия сохранена",
+  "settingsImportNoneFound": "Резервные копии не найдены",
+  "settingsImportPickFile": "Выбрать резервную копию",
+  "settingsImportSuccess": "Данные восстановлены",
+  "settingsImportConfirmTitle": "Восстановить резервную копию?",
+  "settingsImportConfirmBody": "Все текущие данные будут заменены содержимым файла резервной копии.",
+  "settingsAbout": "О приложении",
+  "settingsBatteryOptimizationTitle": "Уведомления приходят не вовремя?",
+  "settingsBatteryOptimizationBody": "Некоторые производители (Samsung, Xiaomi, Oppo и др.) сильно ограничивают работу приложений в фоне. Отключите оптимизацию батареи для iReminder в настройках телефона (Батарея), чтобы напоминания всегда приходили вовремя.",
+  "errorGeneric": "Что-то пошло не так. Попробуйте ещё раз.",
+  "errorLoadFailed": "Не удалось загрузить данные.",
+  "settingsAiSectionTitle": "ИИ-ассистент",
+  "settingsAiEnable": "Включить ИИ-ассистента",
+  "settingsAiProvider": "Провайдер ИИ",
+  "settingsAiModel": "Модель",
+  "settingsAiApiKey": "API-ключ",
+  "settingsAiApiKeyHint": "Вставьте ваш API-ключ",
+  "settingsAiApiKeyHelp": "Где взять ключ?",
+  "settingsAiApiKeySaved": "API-ключ сохранён",
+  "settingsAiAllowedCategories": "Категории, доступные ассистенту",
+  "settingsAiAllowedCategoriesHint": "По умолчанию всё выключено. Включите только те категории, которые хотите показать ассистенту — больше ничего не передаётся.",
+  "settingsAiClearHistory": "Очистить историю чата",
+  "settingsAiClearHistoryConfirmTitle": "Очистить историю чата?",
+  "settingsAiClearHistoryConfirmBody": "Все вопросы и ответы, сохранённые на этом устройстве, будут удалены. Это действие нельзя отменить.",
+  "assistantTitle": "Ассистент",
+  "assistantEmptyTitle": "Спросите что угодно",
+  "assistantEmptyBody": "Попробуйте спросить «Что мне нужно сделать на этой неделе?» или «Сколько платежей осталось по кредиту на мотоцикл?»",
+  "assistantInputHint": "Введите вопрос…",
+  "assistantSend": "Отправить",
+  "assistantDisabledTitle": "Ассистент отключён",
+  "assistantDisabledBody": "Включите его в настройках и выберите провайдера ИИ, чтобы начать общение.",
+  "assistantOpenSettings": "Открыть настройки",
+  "assistantThinking": "Думаю…",
+  "validationRequired": "Обязательное поле",
+  "validationDayOfMonth": "Введите день от 1 до 31",
+  "validationMonth": "Введите месяц от 1 до 12",
+  "validationPositiveNumber": "Введите число больше 0",
+  "validationPositiveInteger": "Введите целое число больше 0",
+  "settingsPermissionsSectionTitle": "Уведомления и будильники",
+  "settingsPermissionsNotificationLabel": "Разрешение на уведомления",
+  "settingsPermissionsExactAlarmLabel": "Разрешение на точные будильники",
+  "settingsPermissionsGranted": "Предоставлено",
+  "settingsPermissionsDenied": "Не предоставлено — напоминания могут приходить не вовремя",
+  "settingsPermissionsGrantAction": "Предоставить",
+  "settingsPermissionsOpenSettingsAction": "Открыть настройки",
+  "onboardingExactAlarmRationaleTitle": "Ещё одно разрешение",
+  "onboardingExactAlarmRationaleBody": "На следующем экране разрешите iReminder планировать точные будильники, чтобы напоминания приходили точно в заданное время.",
+  "loanMarkPaidSuccess": "Отмечено как оплачено"
+}

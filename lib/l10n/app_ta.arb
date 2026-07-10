@@ -1,0 +1,227 @@
+{
+  "@@locale": "ta",
+  "appTitle": "iReminder",
+  "navToday": "இன்று",
+  "navCalendar": "நாட்காட்டி",
+  "navLoans": "கடன்கள்",
+  "navCategories": "வகைகள்",
+  "navSettings": "அமைப்புகள்",
+  "navAssistant": "உதவியாளர்",
+  "onboardingTitle1": "முக்கியமானதை மறவாதீர்கள்",
+  "onboardingBody1": "சாதன பராமரிப்பு, வாகன சர்வீஸ், நினைவு நாட்கள் மற்றும் இன்னும் பலவற்றை ஒரே இடத்தில் கண்காணிக்கவும்.",
+  "onboardingTitle2": "மீண்டும் நிகழ்வதை எளிதாக்குகிறோம்",
+  "onboardingBody2": "தினமும், வாரம் தோறும், மாதம் தோறும், ஆண்டுதோறும், அல்லது சந்திர நாட்காட்டியின்படி கூட — ஒருமுறை அமைத்துவிடுங்கள், iReminder நினைவூட்டிக்கொண்டே இருக்கும்.",
+  "onboardingTitle3": "100% தனியுரிமை, 100% ஆஃப்லைன்",
+  "onboardingBody3": "கணக்கு இல்லை, கிளவுட் இல்லை, லாகின் இல்லை. எல்லாமே உங்கள் மொபைலிலேயே இருக்கும்.",
+  "onboardingSkip": "தவிர்",
+  "onboardingNext": "அடுத்து",
+  "onboardingGetStarted": "தொடங்குவோம்",
+  "notificationPermissionTitle": "நேரம் தவறாமல் இருங்கள்",
+  "notificationPermissionBody": "ஏதேனும் நிலுவையில் இருக்கும்போது உங்களுக்கு அறிவிப்பு அனுப்ப iReminder-க்கு அனுமதி தேவை.",
+  "notificationPermissionAllow": "அறிவிப்புகளை அனுமதி",
+  "notificationPermissionLater": "இப்போது வேண்டாம்",
+  "homeSectionOverdue": "தவறிய தேதி",
+  "homeSectionToday": "இன்று",
+  "homeSectionThisWeek": "இந்த வாரம்",
+  "homeSectionUpcoming": "வரவிருக்கும்",
+  "homeEmptyTitle": "இதுவரை எதுவும் இல்லை",
+  "homeEmptyBody": "உங்கள் முதல் நினைவூட்டல் அல்லது தவணைக் கடனைச் சேர்க்க + ஐத் தட்டவும்.",
+  "fabAddReminder": "நினைவூட்டல்",
+  "fabAddLoan": "தவணைக் கடன்",
+  "actionDone": "முடிந்தது",
+  "actionSnooze": "பிற்படுத்து",
+  "actionEdit": "திருத்து",
+  "actionDelete": "நீக்கு",
+  "actionSave": "சேமி",
+  "actionCancel": "ரத்துசெய்",
+  "actionConfirm": "உறுதிசெய்",
+  "actionYes": "ஆம்",
+  "actionNo": "இல்லை",
+  "actionOk": "சரி",
+  "actionAdd": "சேர்",
+  "actionClose": "மூடு",
+  "reminderFormTitleNew": "புதிய நினைவூட்டல்",
+  "reminderFormTitleEdit": "நினைவூட்டலைத் திருத்து",
+  "reminderFieldTitle": "தலைப்பு",
+  "reminderFieldTitleRequired": "தலைப்பு அவசியம்",
+  "reminderFieldDescription": "விளக்கம் (விருப்பத்திற்குரியது)",
+  "reminderFieldCategory": "வகை",
+  "reminderFieldRecurrence": "மீண்டும் நிகழும்",
+  "reminderFieldStartDate": "தொடக்க தேதி",
+  "reminderFieldTime": "நினைவூட்டல் நேரம்",
+  "reminderFieldAdvanceNotice": "N நாட்கள் முன்பே தெரிவி",
+  "reminderFieldRecurrenceDay": "மாதத்தின் தேதி",
+  "reminderFieldRecurrenceMonth": "மாதம்",
+  "reminderFieldRecurrenceWeekday": "வாரத்தின் நாள்",
+  "reminderFieldIntervalDays": "ஒவ்வொரு N நாட்களுக்கும்",
+  "reminderFieldLunarDay": "சந்திர தேதி",
+  "reminderFieldLunarMonth": "சந்திர மாதம்",
+  "reminderDeleteConfirmTitle": "இந்த நினைவூட்டலை நீக்கவா?",
+  "reminderDeleteConfirmBody": "இதை மீண்டும் செயல்தவிர்க்க முடியாது.",
+  "recurrenceNone": "ஒருமுறை",
+  "recurrenceDaily": "தினமும்",
+  "recurrenceWeekly": "வாரந்தோறும்",
+  "recurrenceMonthly": "மாதந்தோறும்",
+  "recurrenceYearly": "ஆண்டுதோறும்",
+  "recurrenceCustomIntervalDays": "ஒவ்வொரு N நாட்களுக்கும்",
+  "recurrenceLunarYearly": "ஆண்டுதோறும் (சந்திர நாட்காட்டி)",
+  "weekdayMonday": "திங்கள்",
+  "weekdayTuesday": "செவ்வாய்",
+  "weekdayWednesday": "புதன்",
+  "weekdayThursday": "வியாழன்",
+  "weekdayFriday": "வெள்ளி",
+  "weekdaySaturday": "சனி",
+  "weekdaySunday": "ஞாயிறு",
+  "loanListTitle": "கடன்கள் & தவணைகள்",
+  "loanFormTitleNew": "புதிய தவணைக் கடன்",
+  "loanFormTitleEdit": "கடனைத் திருத்து",
+  "loanFieldName": "பெயர்",
+  "loanFieldCategory": "வகை",
+  "loanFieldTotalAmount": "மொத்த தொகை (விருப்பத்திற்குரியது)",
+  "loanFieldInstallmentAmount": "ஒரு தவணைக்கான தொகை",
+  "loanFieldTotalInstallments": "தவணைகளின் எண்ணிக்கை",
+  "loanFieldFrequency": "அதிர்வெண்",
+  "loanFieldDueDayOfMonth": "மாதத்தில் செலுத்த வேண்டிய தேதி",
+  "loanFieldStartDate": "தொடக்க தேதி",
+  "loanFieldReminderAdvanceDays": "செலுத்த வேண்டிய தேதிக்கு N நாட்கள் முன் நினைவூட்டு",
+  "loanFieldNotes": "குறிப்புகள் (விருப்பத்திற்குரியது)",
+  "loanFrequencyMonthly": "மாதந்தோறும்",
+  "loanFrequencyWeekly": "வாரந்தோறும்",
+  "loanFrequencyBiweekly": "இரு வாரத்திற்கு ஒருமுறை",
+  "loanProgress": "{paid} / {total} செலுத்தப்பட்டது",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "செலுத்தியதாக குறி",
+  "loanMarkPaidBatch": "{count} தவணைகளை செலுத்தியதாக குறி",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "நிலுவையில்",
+  "loanStatusPaid": "செலுத்தப்பட்டது",
+  "loanStatusOverdue": "தவறிய தேதி",
+  "loanInstallmentNumber": "தவணை #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "இந்தக் கடனை நீக்கவா?",
+  "loanDeleteConfirmBody": "அனைத்து {count} தவணைகளும் நீக்கப்படும்.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "வகைகள்",
+  "categoryFormTitleNew": "புதிய வகை",
+  "categoryFormTitleEdit": "வகையைத் திருத்து",
+  "categoryFieldName": "பெயர்",
+  "categoryFieldNameRequired": "பெயர் அவசியம்",
+  "categoryFieldIcon": "ஐகான்",
+  "categoryFieldColor": "நிறம்",
+  "categoryDeleteSimpleTitle": "இந்த வகையை நீக்கவா?",
+  "categoryDeleteSimpleBody": "இந்த வகையில் நினைவூட்டல்கள் எதுவும் இல்லை.",
+  "categoryDeleteHasRemindersTitle": "இந்த வகையில் இன்னும் நினைவூட்டல்கள் உள்ளன",
+  "categoryDeleteHasRemindersBody": "இந்த வகையை {count} நினைவூட்டல்கள் பயன்படுத்துகின்றன. அவற்றை என்ன செய்வதென்று தேர்ந்தெடுக்கவும்.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "வேறொரு வகைக்கு மாற்று",
+  "categoryDeleteReassignTarget": "இதற்கு மாற்று",
+  "categoryDeleteRemoveAll": "அனைத்து {count} நினைவூட்டல்களையும் நீக்கு",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "இது {count} நினைவூட்டல்களை நிரந்தரமாக நீக்கிவிடும். இதை மீண்டும் செயல்தவிர்க்க முடியாது.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "வரிசைப்படுத்த இழுக்கவும்",
+  "settingsTitle": "அமைப்புகள்",
+  "settingsLanguage": "மொழி",
+  "settingsDefaultReminderTime": "இயல்பான நினைவூட்டல் நேரம்",
+  "settingsTheme": "தீம்",
+  "settingsThemeSystem": "சிஸ்டம்",
+  "settingsThemeLight": "லைட்",
+  "settingsThemeDark": "டார்க்",
+  "settingsBackupRestore": "பேக்அப் & மீட்டமைப்பு",
+  "settingsExport": "பேக்அப்பை ஏற்றுமதி செய்",
+  "settingsImport": "பேக்அப்பிலிருந்து மீட்டமை",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups இல் சேமிக்கப்பட்டது",
+  "settingsExportSuccess": "பேக்அப் சேமிக்கப்பட்டது",
+  "settingsImportNoneFound": "பேக்அப் கோப்புகள் எதுவும் கிடைக்கவில்லை",
+  "settingsImportPickFile": "பேக்அப் ஒன்றைத் தேர்ந்தெடு",
+  "settingsImportSuccess": "பேக்அப் மீட்டமைக்கப்பட்டது",
+  "settingsImportConfirmTitle": "பேக்அப்பை மீட்டமைக்கவா?",
+  "settingsImportConfirmBody": "இது தற்போதைய தரவு அனைத்தையும் பேக்அப் கோப்பின் உள்ளடக்கத்துடன் மாற்றிவிடும்.",
+  "settingsAbout": "பற்றி",
+  "settingsBatteryOptimizationTitle": "அறிவிப்புகள் சரியான நேரத்தில் வரவில்லையா?",
+  "settingsBatteryOptimizationBody": "சில மொபைல் நிறுவனங்கள் (Samsung, Xiaomi, Oppo...) பின்னணி ஆப்ஸை கடுமையாகக் கட்டுப்படுத்துகின்றன. நினைவூட்டல்கள் எப்போதும் சரியான நேரத்தில் வருவதை உறுதி செய்ய, உங்கள் மொபைலின் அமைப்புகள் > பேட்டரி-யில் iReminder-க்கான பேட்டரி optimization-ஐ அணைக்கவும்.",
+  "errorGeneric": "ஏதோ தவறு நடந்துவிட்டது. மீண்டும் முயற்சிக்கவும்.",
+  "errorLoadFailed": "தரவை ஏற்ற முடியவில்லை.",
+  "settingsAiSectionTitle": "AI உதவியாளர்",
+  "settingsAiEnable": "AI உதவியாளரை இயக்கு",
+  "settingsAiProvider": "AI வழங்குநர்",
+  "settingsAiModel": "மாடல்",
+  "settingsAiApiKey": "API கீ",
+  "settingsAiApiKeyHint": "உங்கள் API கீயை ஒட்டவும்",
+  "settingsAiApiKeyHelp": "கீ எங்கே பெறுவது?",
+  "settingsAiApiKeySaved": "API கீ சேமிக்கப்பட்டது",
+  "settingsAiAllowedCategories": "உதவியாளர் படிக்கக்கூடிய வகைகள்",
+  "settingsAiAllowedCategoriesHint": "இயல்பாக அணைக்கப்பட்டுள்ளது. உதவியாளர் பார்க்க வேண்டும் என நீங்கள் விரும்பும் வகைகளை மட்டும் இயக்கவும் — வேறு எதுவும் அனுப்பப்படாது.",
+  "settingsAiClearHistory": "அரட்டை வரலாற்றை அழி",
+  "settingsAiClearHistoryConfirmTitle": "அரட்டை வரலாற்றை அழிக்கவா?",
+  "settingsAiClearHistoryConfirmBody": "இது இந்த சாதனத்தில் சேமிக்கப்பட்டுள்ள ஒவ்வொரு கேள்வியையும் பதிலையும் நீக்கிவிடும். இதை மீண்டும் செயல்தவிர்க்க முடியாது.",
+  "assistantTitle": "உதவியாளர்",
+  "assistantEmptyTitle": "எதைப் பற்றி வேண்டுமானாலும் கேளுங்கள்",
+  "assistantEmptyBody": "\"இந்த வாரம் நான் என்ன செய்ய வேண்டும்?\" அல்லது \"என் பைக் கடனில் எத்தனை தவணைகள் மீதம் உள்ளன?\" என்று கேட்டுப் பாருங்கள்.",
+  "assistantInputHint": "ஏதாவது கேளுங்கள்…",
+  "assistantSend": "அனுப்பு",
+  "assistantDisabledTitle": "உதவியாளர் அணைக்கப்பட்டுள்ளது",
+  "assistantDisabledBody": "அரட்டையைத் தொடங்க அமைப்புகளில் இதை இயக்கி, ஒரு AI வழங்குநரைத் தேர்ந்தெடுக்கவும்.",
+  "assistantOpenSettings": "அமைப்புகளைத் திற",
+  "assistantThinking": "யோசித்துக்கொண்டிருக்கிறது…",
+  "validationRequired": "அவசியம்",
+  "validationDayOfMonth": "1–31 வரையிலான தேதியை உள்ளிடவும்",
+  "validationMonth": "1–12 வரையிலான மாதத்தை உள்ளிடவும்",
+  "validationPositiveNumber": "0-க்கு அதிகமான எண்ணை உள்ளிடவும்",
+  "validationPositiveInteger": "0-க்கு அதிகமான முழு எண்ணை உள்ளிடவும்",
+  "settingsPermissionsSectionTitle": "அறிவிப்புகள் & அலாரங்கள்",
+  "settingsPermissionsNotificationLabel": "அறிவிப்பு அனுமதி",
+  "settingsPermissionsExactAlarmLabel": "துல்லியமான அலாரம் அனுமதி",
+  "settingsPermissionsGranted": "வழங்கப்பட்டது",
+  "settingsPermissionsDenied": "வழங்கப்படவில்லை — நினைவூட்டல்கள் சரியான நேரத்தில் வராமல் போகலாம்",
+  "settingsPermissionsGrantAction": "வழங்கு",
+  "settingsPermissionsOpenSettingsAction": "அமைப்புகளைத் திற",
+  "onboardingExactAlarmRationaleTitle": "இன்னொரு அனுமதி",
+  "onboardingExactAlarmRationaleBody": "அடுத்த திரையில், நீங்கள் அமைத்த சரியான நேரத்தில் நினைவூட்டல்கள் வர, iReminder துல்லியமான அலாரங்களை திட்டமிட அனுமதிக்கவும்.",
+  "loanMarkPaidSuccess": "செலுத்தியதாக குறிக்கப்பட்டது"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "te",
+  "appTitle": "iReminder",
+  "navToday": "ఈరోజు",
+  "navCalendar": "క్యాలెండర్",
+  "navLoans": "రుణాలు",
+  "navCategories": "వర్గాలు",
+  "navSettings": "సెట్టింగ్‌లు",
+  "navAssistant": "సహాయకుడు",
+  "onboardingTitle1": "ముఖ్యమైనవి ఎప్పుడూ మర్చిపోకండి",
+  "onboardingBody1": "పరికర నిర్వహణ, వాహన సర్వీసింగ్, వార్షికోత్సవాలు మరియు మరిన్నింటిని ఒకే చోట ట్రాక్ చేయండి.",
+  "onboardingTitle2": "పునరావృతం ఇప్పుడు చాలా సులభం",
+  "onboardingBody2": "ప్రతిరోజు, ప్రతి వారం, ప్రతి నెల, ప్రతి సంవత్సరం, లేదా చాంద్రమాన క్యాలెండర్ ప్రకారం కూడా — ఒక్కసారి సెట్ చేయండి, iReminder గుర్తుంచుకుంటుంది.",
+  "onboardingTitle3": "100% ప్రైవేట్, 100% ఆఫ్‌లైన్",
+  "onboardingBody3": "ఖాతా లేదు, క్లౌడ్ లేదు, లాగిన్ లేదు. ప్రతిదీ మీ ఫోన్‌లోనే ఉంటుంది.",
+  "onboardingSkip": "దాటవేయి",
+  "onboardingNext": "తదుపరి",
+  "onboardingGetStarted": "ప్రారంభించండి",
+  "notificationPermissionTitle": "సమయానికి ఉండండి",
+  "notificationPermissionBody": "ఏదైనా గడువు వచ్చినప్పుడు మీకు నోటిఫికేషన్ పంపడానికి iReminder కు అనుమతి అవసరం.",
+  "notificationPermissionAllow": "నోటిఫికేషన్‌లను అనుమతించండి",
+  "notificationPermissionLater": "ఇప్పుడు వద్దు",
+  "homeSectionOverdue": "గడువు మించినవి",
+  "homeSectionToday": "ఈరోజు",
+  "homeSectionThisWeek": "ఈ వారం",
+  "homeSectionUpcoming": "రాబోయేవి",
+  "homeEmptyTitle": "ఇక్కడ ఇంకా ఏమీ లేదు",
+  "homeEmptyBody": "మీ మొదటి రిమైండర్ లేదా వాయిదా రుణాన్ని జోడించడానికి + నొక్కండి.",
+  "fabAddReminder": "రిమైండర్",
+  "fabAddLoan": "వాయిదా రుణం",
+  "actionDone": "పూర్తయింది",
+  "actionSnooze": "స్నూజ్",
+  "actionEdit": "సవరించు",
+  "actionDelete": "తొలగించు",
+  "actionSave": "సేవ్ చేయి",
+  "actionCancel": "రద్దు చేయి",
+  "actionConfirm": "నిర్ధారించు",
+  "actionYes": "అవును",
+  "actionNo": "కాదు",
+  "actionOk": "సరే",
+  "actionAdd": "జోడించు",
+  "actionClose": "మూసివేయి",
+  "reminderFormTitleNew": "కొత్త రిమైండర్",
+  "reminderFormTitleEdit": "రిమైండర్‌ను సవరించండి",
+  "reminderFieldTitle": "శీర్షిక",
+  "reminderFieldTitleRequired": "శీర్షిక అవసరం",
+  "reminderFieldDescription": "వివరణ (ఐచ్ఛికం)",
+  "reminderFieldCategory": "వర్గం",
+  "reminderFieldRecurrence": "పునరావృతం",
+  "reminderFieldStartDate": "ప్రారంభ తేదీ",
+  "reminderFieldTime": "రిమైండర్ సమయం",
+  "reminderFieldAdvanceNotice": "N రోజుల ముందుగా తెలియజేయి",
+  "reminderFieldRecurrenceDay": "నెలలో రోజు",
+  "reminderFieldRecurrenceMonth": "నెల",
+  "reminderFieldRecurrenceWeekday": "వారంలో రోజు",
+  "reminderFieldIntervalDays": "ప్రతి N రోజులకు",
+  "reminderFieldLunarDay": "చాంద్రమాన రోజు",
+  "reminderFieldLunarMonth": "చాంద్రమాన నెల",
+  "reminderDeleteConfirmTitle": "ఈ రిమైండర్‌ను తొలగించాలా?",
+  "reminderDeleteConfirmBody": "దీన్ని తిరిగి పొందలేరు.",
+  "recurrenceNone": "ఒకసారి",
+  "recurrenceDaily": "ప్రతిరోజు",
+  "recurrenceWeekly": "ప్రతి వారం",
+  "recurrenceMonthly": "ప్రతి నెల",
+  "recurrenceYearly": "ప్రతి సంవత్సరం",
+  "recurrenceCustomIntervalDays": "ప్రతి N రోజులకు",
+  "recurrenceLunarYearly": "ప్రతి సంవత్సరం (చాంద్రమాన క్యాలెండర్)",
+  "weekdayMonday": "సోమవారం",
+  "weekdayTuesday": "మంగళవారం",
+  "weekdayWednesday": "బుధవారం",
+  "weekdayThursday": "గురువారం",
+  "weekdayFriday": "శుక్రవారం",
+  "weekdaySaturday": "శనివారం",
+  "weekdaySunday": "ఆదివారం",
+  "loanListTitle": "రుణాలు & వాయిదాలు",
+  "loanFormTitleNew": "కొత్త వాయిదా రుణం",
+  "loanFormTitleEdit": "రుణాన్ని సవరించండి",
+  "loanFieldName": "పేరు",
+  "loanFieldCategory": "వర్గం",
+  "loanFieldTotalAmount": "మొత్తం మొత్తం (ఐచ్ఛికం)",
+  "loanFieldInstallmentAmount": "ఒక్కో వాయిదాకు మొత్తం",
+  "loanFieldTotalInstallments": "వాయిదాల సంఖ్య",
+  "loanFieldFrequency": "ఫ్రీక్వెన్సీ",
+  "loanFieldDueDayOfMonth": "నెలలో గడువు రోజు",
+  "loanFieldStartDate": "ప్రారంభ తేదీ",
+  "loanFieldReminderAdvanceDays": "గడువుకు N రోజుల ముందు గుర్తు చేయి",
+  "loanFieldNotes": "గమనికలు (ఐచ్ఛికం)",
+  "loanFrequencyMonthly": "ప్రతి నెల",
+  "loanFrequencyWeekly": "ప్రతి వారం",
+  "loanFrequencyBiweekly": "ప్రతి రెండు వారాలకు",
+  "loanProgress": "{paid} / {total} చెల్లించారు",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "చెల్లించినట్లు గుర్తించు",
+  "loanMarkPaidBatch": "{count} వాయిదాలను చెల్లించినట్లు గుర్తించు",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "పెండింగ్‌లో ఉంది",
+  "loanStatusPaid": "చెల్లించారు",
+  "loanStatusOverdue": "గడువు మించింది",
+  "loanInstallmentNumber": "వాయిదా #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "ఈ రుణాన్ని తొలగించాలా?",
+  "loanDeleteConfirmBody": "అన్ని {count} వాయిదాలు కూడా తొలగించబడతాయి.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "వర్గాలు",
+  "categoryFormTitleNew": "కొత్త వర్గం",
+  "categoryFormTitleEdit": "వర్గాన్ని సవరించండి",
+  "categoryFieldName": "పేరు",
+  "categoryFieldNameRequired": "పేరు అవసరం",
+  "categoryFieldIcon": "ఐకాన్",
+  "categoryFieldColor": "రంగు",
+  "categoryDeleteSimpleTitle": "ఈ వర్గాన్ని తొలగించాలా?",
+  "categoryDeleteSimpleBody": "ఈ వర్గంలో రిమైండర్‌లు ఏవీ లేవు.",
+  "categoryDeleteHasRemindersTitle": "ఈ వర్గంలో ఇంకా రిమైండర్‌లు ఉన్నాయి",
+  "categoryDeleteHasRemindersBody": "{count} రిమైండర్‌లు ఈ వర్గాన్ని ఉపయోగిస్తున్నాయి. వాటిని ఏం చేయాలో ఎంచుకోండి.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "వేరే వర్గానికి తరలించు",
+  "categoryDeleteReassignTarget": "దీనికి తరలించు",
+  "categoryDeleteRemoveAll": "అన్ని {count} రిమైండర్‌లను తొలగించు",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "ఇది {count} రిమైండర్‌లను శాశ్వతంగా తొలగిస్తుంది. దీన్ని తిరిగి పొందలేరు.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "క్రమాన్ని మార్చడానికి లాగండి",
+  "settingsTitle": "సెట్టింగ్‌లు",
+  "settingsLanguage": "భాష",
+  "settingsDefaultReminderTime": "డిఫాల్ట్ రిమైండర్ సమయం",
+  "settingsTheme": "థీమ్",
+  "settingsThemeSystem": "సిస్టమ్",
+  "settingsThemeLight": "లైట్",
+  "settingsThemeDark": "డార్క్",
+  "settingsBackupRestore": "బ్యాకప్ & పునరుద్ధరణ",
+  "settingsExport": "బ్యాకప్‌ను ఎగుమతి చేయి",
+  "settingsImport": "బ్యాకప్ నుండి పునరుద్ధరించు",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups లో సేవ్ చేయబడింది",
+  "settingsExportSuccess": "బ్యాకప్ సేవ్ చేయబడింది",
+  "settingsImportNoneFound": "బ్యాకప్ ఫైల్‌లు ఏవీ కనుగొనబడలేదు",
+  "settingsImportPickFile": "బ్యాకప్‌ను ఎంచుకోండి",
+  "settingsImportSuccess": "బ్యాకప్ పునరుద్ధరించబడింది",
+  "settingsImportConfirmTitle": "బ్యాకప్‌ను పునరుద్ధరించాలా?",
+  "settingsImportConfirmBody": "ఇది ప్రస్తుత డేటా మొత్తాన్ని బ్యాకప్ ఫైల్‌లోని కంటెంట్‌తో భర్తీ చేస్తుంది.",
+  "settingsAbout": "గురించి",
+  "settingsBatteryOptimizationTitle": "నోటిఫికేషన్‌లు సమయానికి రావడం లేదా?",
+  "settingsBatteryOptimizationBody": "కొన్ని ఫోన్ తయారీదారులు (Samsung, Xiaomi, Oppo...) బ్యాక్‌గ్రౌండ్ యాప్‌లను తీవ్రంగా నియంత్రిస్తారు. రిమైండర్‌లు ఎల్లప్పుడూ సమయానికి వచ్చేలా చూసుకోవడానికి మీ ఫోన్ సెట్టింగ్‌లు > బ్యాటరీలో iReminder కోసం బ్యాటరీ ఆప్టిమైజేషన్‌ను ఆఫ్ చేయండి.",
+  "errorGeneric": "ఏదో తప్పు జరిగింది. దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "errorLoadFailed": "డేటాను లోడ్ చేయలేకపోయింది.",
+  "settingsAiSectionTitle": "AI సహాయకుడు",
+  "settingsAiEnable": "AI సహాయకుడిని ప్రారంభించు",
+  "settingsAiProvider": "AI ప్రొవైడర్",
+  "settingsAiModel": "మోడల్",
+  "settingsAiApiKey": "API కీ",
+  "settingsAiApiKeyHint": "మీ API కీని పేస్ట్ చేయండి",
+  "settingsAiApiKeyHelp": "కీ ఎక్కడ దొరుకుతుంది?",
+  "settingsAiApiKeySaved": "API కీ సేవ్ చేయబడింది",
+  "settingsAiAllowedCategories": "సహాయకుడు చదవగలిగే వర్గాలు",
+  "settingsAiAllowedCategoriesHint": "డిఫాల్ట్‌గా ఆఫ్‌లో ఉంది. సహాయకుడు చూడాలని మీరు కోరుకునే వర్గాలను మాత్రమే ఆన్ చేయండి — వేరే ఏదీ పంపబడదు.",
+  "settingsAiClearHistory": "చాట్ చరిత్రను క్లియర్ చేయి",
+  "settingsAiClearHistoryConfirmTitle": "చాట్ చరిత్రను క్లియర్ చేయాలా?",
+  "settingsAiClearHistoryConfirmBody": "ఇది ఈ పరికరంలో నిల్వ చేసిన ప్రతి ప్రశ్న మరియు సమాధానాన్ని తొలగిస్తుంది. దీన్ని తిరిగి పొందలేరు.",
+  "assistantTitle": "సహాయకుడు",
+  "assistantEmptyTitle": "నన్ను ఏదైనా అడగండి",
+  "assistantEmptyBody": "\"ఈ వారం నేను ఏమి చేయాలి?\" లేదా \"నా బైక్ రుణంలో ఎన్ని వాయిదాలు మిగిలి ఉన్నాయి?\" అని అడిగి చూడండి.",
+  "assistantInputHint": "ఏదైనా అడగండి…",
+  "assistantSend": "పంపు",
+  "assistantDisabledTitle": "సహాయకుడు ఆఫ్‌లో ఉన్నాడు",
+  "assistantDisabledBody": "చాట్ చేయడం ప్రారంభించడానికి సెట్టింగ్‌లలో దీన్ని ప్రారంభించి, AI ప్రొవైడర్‌ను ఎంచుకోండి.",
+  "assistantOpenSettings": "సెట్టింగ్‌లను తెరవండి",
+  "assistantThinking": "ఆలోచిస్తోంది…",
+  "validationRequired": "అవసరం",
+  "validationDayOfMonth": "1–31 మధ్య రోజును నమోదు చేయండి",
+  "validationMonth": "1–12 మధ్య నెలను నమోదు చేయండి",
+  "validationPositiveNumber": "0 కంటే ఎక్కువ సంఖ్యను నమోదు చేయండి",
+  "validationPositiveInteger": "0 కంటే ఎక్కువ పూర్ణ సంఖ్యను నమోదు చేయండి",
+  "settingsPermissionsSectionTitle": "నోటిఫికేషన్‌లు & అలారాలు",
+  "settingsPermissionsNotificationLabel": "నోటిఫికేషన్ అనుమతి",
+  "settingsPermissionsExactAlarmLabel": "ఖచ్చితమైన అలారం అనుమతి",
+  "settingsPermissionsGranted": "మంజూరైంది",
+  "settingsPermissionsDenied": "మంజూరు కాలేదు — రిమైండర్‌లు సమయానికి రాకపోవచ్చు",
+  "settingsPermissionsGrantAction": "మంజూరు చేయి",
+  "settingsPermissionsOpenSettingsAction": "సెట్టింగ్‌లను తెరవండి",
+  "onboardingExactAlarmRationaleTitle": "మరో అనుమతి",
+  "onboardingExactAlarmRationaleBody": "తదుపరి స్క్రీన్‌లో, మీరు సెట్ చేసిన ఖచ్చితమైన సమయానికి రిమైండర్‌లు రావడానికి ఖచ్చితమైన అలారాలను షెడ్యూల్ చేయడానికి iReminder ను అనుమతించండి.",
+  "loanMarkPaidSuccess": "చెల్లించినట్లు గుర్తించారు"
+}

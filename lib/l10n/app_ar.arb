@@ -1,0 +1,227 @@
+{
+  "@@locale": "ar",
+  "appTitle": "iReminder",
+  "navToday": "اليوم",
+  "navCalendar": "التقويم",
+  "navLoans": "الأقساط",
+  "navCategories": "الفئات",
+  "navSettings": "الإعدادات",
+  "navAssistant": "المساعد",
+  "onboardingTitle1": "لا تنسَ أبدًا ما يهمك",
+  "onboardingBody1": "تابع صيانة الأجهزة وخدمة السيارة والمناسبات وغيرها الكثير — كل ذلك في مكان واحد.",
+  "onboardingTitle2": "التكرار أصبح أسهل",
+  "onboardingBody2": "يوميًا أو أسبوعيًا أو شهريًا أو سنويًا، أو حتى وفق التقويم القمري — اضبطه مرة واحدة وسيتذكره iReminder دائمًا.",
+  "onboardingTitle3": "خصوصية كاملة وعمل بلا إنترنت",
+  "onboardingBody3": "بدون حساب، بدون سحابة، بدون تسجيل دخول. كل شيء يبقى على هاتفك فقط.",
+  "onboardingSkip": "تخطي",
+  "onboardingNext": "التالي",
+  "onboardingGetStarted": "ابدأ الآن",
+  "notificationPermissionTitle": "لا تفوّت أي موعد",
+  "notificationPermissionBody": "يحتاج iReminder إلى إذن لإرسال إشعارات لك عند اقتراب موعد الاستحقاق.",
+  "notificationPermissionAllow": "السماح بالإشعارات",
+  "notificationPermissionLater": "ليس الآن",
+  "homeSectionOverdue": "متأخر",
+  "homeSectionToday": "اليوم",
+  "homeSectionThisWeek": "هذا الأسبوع",
+  "homeSectionUpcoming": "قادم",
+  "homeEmptyTitle": "لا يوجد شيء هنا بعد",
+  "homeEmptyBody": "اضغط على + لإضافة أول تذكير أو قسط لديك.",
+  "fabAddReminder": "تذكير",
+  "fabAddLoan": "قسط",
+  "actionDone": "تم",
+  "actionSnooze": "تأجيل",
+  "actionEdit": "تعديل",
+  "actionDelete": "حذف",
+  "actionSave": "حفظ",
+  "actionCancel": "إلغاء",
+  "actionConfirm": "تأكيد",
+  "actionYes": "نعم",
+  "actionNo": "لا",
+  "actionOk": "موافق",
+  "actionAdd": "إضافة",
+  "actionClose": "إغلاق",
+  "reminderFormTitleNew": "تذكير جديد",
+  "reminderFormTitleEdit": "تعديل التذكير",
+  "reminderFieldTitle": "العنوان",
+  "reminderFieldTitleRequired": "العنوان مطلوب",
+  "reminderFieldDescription": "الوصف (اختياري)",
+  "reminderFieldCategory": "الفئة",
+  "reminderFieldRecurrence": "التكرار",
+  "reminderFieldStartDate": "تاريخ البدء",
+  "reminderFieldTime": "وقت التذكير",
+  "reminderFieldAdvanceNotice": "التنبيه قبل N يوم",
+  "reminderFieldRecurrenceDay": "يوم الشهر",
+  "reminderFieldRecurrenceMonth": "الشهر",
+  "reminderFieldRecurrenceWeekday": "يوم الأسبوع",
+  "reminderFieldIntervalDays": "كل N يوم",
+  "reminderFieldLunarDay": "اليوم القمري",
+  "reminderFieldLunarMonth": "الشهر القمري",
+  "reminderDeleteConfirmTitle": "هل تريد حذف هذا التذكير؟",
+  "reminderDeleteConfirmBody": "لا يمكن التراجع عن هذا الإجراء.",
+  "recurrenceNone": "مرة واحدة",
+  "recurrenceDaily": "يوميًا",
+  "recurrenceWeekly": "أسبوعيًا",
+  "recurrenceMonthly": "شهريًا",
+  "recurrenceYearly": "سنويًا",
+  "recurrenceCustomIntervalDays": "كل N يوم",
+  "recurrenceLunarYearly": "سنويًا (تقويم قمري)",
+  "weekdayMonday": "الاثنين",
+  "weekdayTuesday": "الثلاثاء",
+  "weekdayWednesday": "الأربعاء",
+  "weekdayThursday": "الخميس",
+  "weekdayFriday": "الجمعة",
+  "weekdaySaturday": "السبت",
+  "weekdaySunday": "الأحد",
+  "loanListTitle": "القروض والأقساط",
+  "loanFormTitleNew": "قسط جديد",
+  "loanFormTitleEdit": "تعديل القسط",
+  "loanFieldName": "الاسم",
+  "loanFieldCategory": "الفئة",
+  "loanFieldTotalAmount": "المبلغ الإجمالي (اختياري)",
+  "loanFieldInstallmentAmount": "مبلغ كل قسط",
+  "loanFieldTotalInstallments": "عدد الأقساط",
+  "loanFieldFrequency": "التكرار",
+  "loanFieldDueDayOfMonth": "يوم الاستحقاق من الشهر",
+  "loanFieldStartDate": "تاريخ البدء",
+  "loanFieldReminderAdvanceDays": "التذكير قبل N يوم من الاستحقاق",
+  "loanFieldNotes": "ملاحظات (اختياري)",
+  "loanFrequencyMonthly": "شهريًا",
+  "loanFrequencyWeekly": "أسبوعيًا",
+  "loanFrequencyBiweekly": "كل أسبوعين",
+  "loanProgress": "تم دفع {paid} من {total}",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "تحديد كمدفوع",
+  "loanMarkPaidBatch": "تحديد {count} قسطًا كمدفوعة",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "قيد الانتظار",
+  "loanStatusPaid": "مدفوع",
+  "loanStatusOverdue": "متأخر",
+  "loanInstallmentNumber": "القسط رقم {number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "هل تريد حذف هذا القسط؟",
+  "loanDeleteConfirmBody": "سيتم حذف جميع الأقساط الـ {count} أيضًا.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "الفئات",
+  "categoryFormTitleNew": "فئة جديدة",
+  "categoryFormTitleEdit": "تعديل الفئة",
+  "categoryFieldName": "الاسم",
+  "categoryFieldNameRequired": "الاسم مطلوب",
+  "categoryFieldIcon": "الأيقونة",
+  "categoryFieldColor": "اللون",
+  "categoryDeleteSimpleTitle": "هل تريد حذف هذه الفئة؟",
+  "categoryDeleteSimpleBody": "لا تحتوي هذه الفئة على أي تذكيرات.",
+  "categoryDeleteHasRemindersTitle": "لا تزال هذه الفئة تحتوي على تذكيرات",
+  "categoryDeleteHasRemindersBody": "يستخدم {count} تذكيرًا هذه الفئة. اختر كيف تريد التعامل معها.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "نقل إلى فئة أخرى",
+  "categoryDeleteReassignTarget": "نقل إلى",
+  "categoryDeleteRemoveAll": "حذف جميع الـ {count} تذكيرًا",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "سيؤدي هذا إلى حذف {count} تذكيرًا نهائيًا. لا يمكن التراجع عن هذا الإجراء.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "اسحب لإعادة الترتيب",
+  "settingsTitle": "الإعدادات",
+  "settingsLanguage": "اللغة",
+  "settingsDefaultReminderTime": "وقت التذكير الافتراضي",
+  "settingsTheme": "المظهر",
+  "settingsThemeSystem": "حسب النظام",
+  "settingsThemeLight": "فاتح",
+  "settingsThemeDark": "داكن",
+  "settingsBackupRestore": "النسخ الاحتياطي والاستعادة",
+  "settingsExport": "تصدير نسخة احتياطية",
+  "settingsImport": "استعادة من نسخة احتياطية",
+  "settingsExportLocationHint": "يتم الحفظ في Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "تم حفظ النسخة الاحتياطية",
+  "settingsImportNoneFound": "لم يتم العثور على ملفات نسخ احتياطي",
+  "settingsImportPickFile": "اختيار نسخة احتياطية",
+  "settingsImportSuccess": "تمت استعادة النسخة الاحتياطية",
+  "settingsImportConfirmTitle": "هل تريد استعادة النسخة الاحتياطية؟",
+  "settingsImportConfirmBody": "سيؤدي هذا إلى استبدال جميع البيانات الحالية بمحتوى ملف النسخة الاحتياطية.",
+  "settingsAbout": "حول التطبيق",
+  "settingsBatteryOptimizationTitle": "هل تصل الإشعارات في غير موعدها؟",
+  "settingsBatteryOptimizationBody": "بعض الشركات المصنّعة (سامسونج، شاومي، أوبو...) تقيّد بشدة تشغيل التطبيقات في الخلفية. أوقف تحسين البطارية لتطبيق iReminder من إعدادات هاتفك > البطارية للتأكد من وصول التذكيرات دائمًا في وقتها.",
+  "errorGeneric": "حدث خطأ ما. يُرجى المحاولة مرة أخرى.",
+  "errorLoadFailed": "تعذّر تحميل البيانات.",
+  "settingsAiSectionTitle": "المساعد الذكي",
+  "settingsAiEnable": "تفعيل المساعد الذكي",
+  "settingsAiProvider": "مزوّد الذكاء الاصطناعي",
+  "settingsAiModel": "النموذج",
+  "settingsAiApiKey": "مفتاح API",
+  "settingsAiApiKeyHint": "الصق مفتاح API الخاص بك",
+  "settingsAiApiKeyHelp": "من أين أحصل على المفتاح؟",
+  "settingsAiApiKeySaved": "تم حفظ مفتاح API",
+  "settingsAiAllowedCategories": "الفئات التي يمكن للمساعد قراءتها",
+  "settingsAiAllowedCategoriesHint": "معطّلة افتراضيًا. فعّل فقط الفئات التي تريد أن يطّلع عليها المساعد — لن يُرسل أي شيء آخر مطلقًا.",
+  "settingsAiClearHistory": "مسح سجل المحادثة",
+  "settingsAiClearHistoryConfirmTitle": "هل تريد مسح سجل المحادثة؟",
+  "settingsAiClearHistoryConfirmBody": "سيؤدي هذا إلى حذف جميع الأسئلة والأجوبة المخزّنة على هذا الجهاز. لا يمكن التراجع عن هذا الإجراء.",
+  "assistantTitle": "المساعد",
+  "assistantEmptyTitle": "اسألني عن أي شيء",
+  "assistantEmptyBody": "جرّب أن تسأل \"ماذا يجب أن أفعل هذا الأسبوع؟\" أو \"كم قسطًا تبقّى على قرض دراجتي؟\"",
+  "assistantInputHint": "اكتب سؤالك…",
+  "assistantSend": "إرسال",
+  "assistantDisabledTitle": "المساعد متوقف",
+  "assistantDisabledBody": "فعّله من الإعدادات واختر مزوّد ذكاء اصطناعي لتبدأ المحادثة.",
+  "assistantOpenSettings": "فتح الإعدادات",
+  "assistantThinking": "جارٍ التفكير…",
+  "validationRequired": "هذا الحقل مطلوب",
+  "validationDayOfMonth": "أدخل يومًا من 1 إلى 31",
+  "validationMonth": "أدخل شهرًا من 1 إلى 12",
+  "validationPositiveNumber": "أدخل رقمًا أكبر من 0",
+  "validationPositiveInteger": "أدخل عددًا صحيحًا أكبر من 0",
+  "settingsPermissionsSectionTitle": "الإشعارات والمنبّهات",
+  "settingsPermissionsNotificationLabel": "إذن الإشعارات",
+  "settingsPermissionsExactAlarmLabel": "إذن المنبّهات الدقيقة",
+  "settingsPermissionsGranted": "ممنوح",
+  "settingsPermissionsDenied": "غير ممنوح — قد لا تصل التذكيرات في وقتها",
+  "settingsPermissionsGrantAction": "منح الإذن",
+  "settingsPermissionsOpenSettingsAction": "فتح الإعدادات",
+  "onboardingExactAlarmRationaleTitle": "إذن إضافي أخير",
+  "onboardingExactAlarmRationaleBody": "في الشاشة التالية، اسمح لتطبيق iReminder بجدولة منبّهات دقيقة حتى تصل التذكيرات في الوقت المحدد بالضبط.",
+  "loanMarkPaidSuccess": "تم التحديد كمدفوع"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "id",
+  "appTitle": "iReminder",
+  "navToday": "Hari Ini",
+  "navCalendar": "Kalender",
+  "navLoans": "Cicilan",
+  "navCategories": "Kategori",
+  "navSettings": "Pengaturan",
+  "navAssistant": "Asisten",
+  "onboardingTitle1": "Jangan pernah lupa hal penting",
+  "onboardingBody1": "Lacak perawatan perangkat, servis kendaraan, hari ulang tahun, dan banyak lagi — semua dalam satu aplikasi.",
+  "onboardingTitle2": "Pengulangan jadi lebih mudah",
+  "onboardingBody2": "Harian, mingguan, bulanan, tahunan, atau bahkan berdasarkan kalender lunar — atur sekali dan iReminder akan mengingatkannya untukmu.",
+  "onboardingTitle3": "100% privat, 100% offline",
+  "onboardingBody3": "Tanpa akun, tanpa cloud, tanpa login. Semua data tetap ada di ponselmu.",
+  "onboardingSkip": "Lewati",
+  "onboardingNext": "Lanjut",
+  "onboardingGetStarted": "Mulai",
+  "notificationPermissionTitle": "Jangan sampai terlambat",
+  "notificationPermissionBody": "iReminder memerlukan izin untuk mengirim notifikasi saat ada sesuatu yang jatuh tempo.",
+  "notificationPermissionAllow": "Izinkan notifikasi",
+  "notificationPermissionLater": "Nanti saja",
+  "homeSectionOverdue": "Terlambat",
+  "homeSectionToday": "Hari Ini",
+  "homeSectionThisWeek": "Minggu Ini",
+  "homeSectionUpcoming": "Akan Datang",
+  "homeEmptyTitle": "Belum ada apa-apa di sini",
+  "homeEmptyBody": "Ketuk + untuk menambahkan pengingat atau cicilan pertamamu.",
+  "fabAddReminder": "Pengingat",
+  "fabAddLoan": "Cicilan",
+  "actionDone": "Selesai",
+  "actionSnooze": "Tunda",
+  "actionEdit": "Edit",
+  "actionDelete": "Hapus",
+  "actionSave": "Simpan",
+  "actionCancel": "Batal",
+  "actionConfirm": "Konfirmasi",
+  "actionYes": "Ya",
+  "actionNo": "Tidak",
+  "actionOk": "OK",
+  "actionAdd": "Tambah",
+  "actionClose": "Tutup",
+  "reminderFormTitleNew": "Pengingat baru",
+  "reminderFormTitleEdit": "Edit pengingat",
+  "reminderFieldTitle": "Judul",
+  "reminderFieldTitleRequired": "Judul wajib diisi",
+  "reminderFieldDescription": "Deskripsi (opsional)",
+  "reminderFieldCategory": "Kategori",
+  "reminderFieldRecurrence": "Pengulangan",
+  "reminderFieldStartDate": "Tanggal mulai",
+  "reminderFieldTime": "Waktu pengingat",
+  "reminderFieldAdvanceNotice": "Beri tahu N hari sebelumnya",
+  "reminderFieldRecurrenceDay": "Tanggal dalam bulan",
+  "reminderFieldRecurrenceMonth": "Bulan",
+  "reminderFieldRecurrenceWeekday": "Hari dalam minggu",
+  "reminderFieldIntervalDays": "Setiap N hari",
+  "reminderFieldLunarDay": "Tanggal lunar",
+  "reminderFieldLunarMonth": "Bulan lunar",
+  "reminderDeleteConfirmTitle": "Hapus pengingat ini?",
+  "reminderDeleteConfirmBody": "Tindakan ini tidak dapat dibatalkan.",
+  "recurrenceNone": "Sekali",
+  "recurrenceDaily": "Harian",
+  "recurrenceWeekly": "Mingguan",
+  "recurrenceMonthly": "Bulanan",
+  "recurrenceYearly": "Tahunan",
+  "recurrenceCustomIntervalDays": "Setiap N hari",
+  "recurrenceLunarYearly": "Tahunan (kalender lunar)",
+  "weekdayMonday": "Senin",
+  "weekdayTuesday": "Selasa",
+  "weekdayWednesday": "Rabu",
+  "weekdayThursday": "Kamis",
+  "weekdayFriday": "Jumat",
+  "weekdaySaturday": "Sabtu",
+  "weekdaySunday": "Minggu",
+  "loanListTitle": "Cicilan & pinjaman",
+  "loanFormTitleNew": "Cicilan baru",
+  "loanFormTitleEdit": "Edit cicilan",
+  "loanFieldName": "Nama",
+  "loanFieldCategory": "Kategori",
+  "loanFieldTotalAmount": "Jumlah total (opsional)",
+  "loanFieldInstallmentAmount": "Jumlah per cicilan",
+  "loanFieldTotalInstallments": "Jumlah cicilan",
+  "loanFieldFrequency": "Frekuensi",
+  "loanFieldDueDayOfMonth": "Tanggal jatuh tempo dalam bulan",
+  "loanFieldStartDate": "Tanggal mulai",
+  "loanFieldReminderAdvanceDays": "Ingatkan N hari sebelum jatuh tempo",
+  "loanFieldNotes": "Catatan (opsional)",
+  "loanFrequencyMonthly": "Bulanan",
+  "loanFrequencyWeekly": "Mingguan",
+  "loanFrequencyBiweekly": "Dua minggu sekali",
+  "loanProgress": "{paid} / {total} lunas",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Tandai sudah dibayar",
+  "loanMarkPaidBatch": "Tandai {count} cicilan sudah dibayar",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Belum jatuh tempo",
+  "loanStatusPaid": "Lunas",
+  "loanStatusOverdue": "Terlambat",
+  "loanInstallmentNumber": "Cicilan ke-{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Hapus cicilan ini?",
+  "loanDeleteConfirmBody": "Semua {count} cicilan juga akan dihapus.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategori",
+  "categoryFormTitleNew": "Kategori baru",
+  "categoryFormTitleEdit": "Edit kategori",
+  "categoryFieldName": "Nama",
+  "categoryFieldNameRequired": "Nama wajib diisi",
+  "categoryFieldIcon": "Ikon",
+  "categoryFieldColor": "Warna",
+  "categoryDeleteSimpleTitle": "Hapus kategori ini?",
+  "categoryDeleteSimpleBody": "Kategori ini belum memiliki pengingat.",
+  "categoryDeleteHasRemindersTitle": "Kategori ini masih memiliki pengingat",
+  "categoryDeleteHasRemindersBody": "{count} pengingat menggunakan kategori ini. Pilih tindakan yang ingin dilakukan.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Pindahkan ke kategori lain",
+  "categoryDeleteReassignTarget": "Pindahkan ke",
+  "categoryDeleteRemoveAll": "Hapus semua {count} pengingat",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Ini akan menghapus {count} pengingat secara permanen. Tindakan ini tidak dapat dibatalkan.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Seret untuk mengubah urutan",
+  "settingsTitle": "Pengaturan",
+  "settingsLanguage": "Bahasa",
+  "settingsDefaultReminderTime": "Waktu pengingat default",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "Sistem",
+  "settingsThemeLight": "Terang",
+  "settingsThemeDark": "Gelap",
+  "settingsBackupRestore": "Cadangkan & pulihkan",
+  "settingsExport": "Ekspor cadangan",
+  "settingsImport": "Pulihkan dari cadangan",
+  "settingsExportLocationHint": "Disimpan di Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Cadangan berhasil disimpan",
+  "settingsImportNoneFound": "Tidak ada file cadangan yang ditemukan",
+  "settingsImportPickFile": "Pilih cadangan",
+  "settingsImportSuccess": "Cadangan berhasil dipulihkan",
+  "settingsImportConfirmTitle": "Pulihkan cadangan?",
+  "settingsImportConfirmBody": "Ini akan mengganti semua data saat ini dengan isi file cadangan.",
+  "settingsAbout": "Tentang",
+  "settingsBatteryOptimizationTitle": "Notifikasi tidak muncul tepat waktu?",
+  "settingsBatteryOptimizationBody": "Beberapa merek ponsel (Samsung, Xiaomi, Oppo...) membatasi aplikasi latar belakang secara ketat. Matikan optimisasi baterai untuk iReminder di Pengaturan ponsel > Baterai agar pengingat selalu muncul tepat waktu.",
+  "errorGeneric": "Terjadi kesalahan. Silakan coba lagi.",
+  "errorLoadFailed": "Data gagal dimuat.",
+  "settingsAiSectionTitle": "Asisten AI",
+  "settingsAiEnable": "Aktifkan Asisten AI",
+  "settingsAiProvider": "Penyedia AI",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "Kunci API",
+  "settingsAiApiKeyHint": "Tempel kunci API kamu",
+  "settingsAiApiKeyHelp": "Di mana saya bisa mendapatkan kunci?",
+  "settingsAiApiKeySaved": "Kunci API tersimpan",
+  "settingsAiAllowedCategories": "Kategori yang boleh dibaca asisten",
+  "settingsAiAllowedCategoriesHint": "Nonaktif secara default. Aktifkan hanya kategori yang ingin kamu tampilkan ke asisten — tidak ada yang lain yang pernah dikirim.",
+  "settingsAiClearHistory": "Hapus riwayat obrolan",
+  "settingsAiClearHistoryConfirmTitle": "Hapus riwayat obrolan?",
+  "settingsAiClearHistoryConfirmBody": "Ini akan menghapus semua pertanyaan dan jawaban yang tersimpan di perangkat ini. Tindakan ini tidak dapat dibatalkan.",
+  "assistantTitle": "Asisten",
+  "assistantEmptyTitle": "Tanyakan apa saja",
+  "assistantEmptyBody": "Coba tanyakan \"Apa yang perlu saya lakukan minggu ini?\" atau \"Berapa cicilan motor saya yang tersisa?\"",
+  "assistantInputHint": "Tanyakan sesuatu…",
+  "assistantSend": "Kirim",
+  "assistantDisabledTitle": "Asisten sedang nonaktif",
+  "assistantDisabledBody": "Aktifkan di Pengaturan dan pilih penyedia AI untuk mulai mengobrol.",
+  "assistantOpenSettings": "Buka Pengaturan",
+  "assistantThinking": "Sedang berpikir…",
+  "validationRequired": "Wajib diisi",
+  "validationDayOfMonth": "Masukkan tanggal 1–31",
+  "validationMonth": "Masukkan bulan 1–12",
+  "validationPositiveNumber": "Masukkan angka lebih besar dari 0",
+  "validationPositiveInteger": "Masukkan bilangan bulat lebih besar dari 0",
+  "settingsPermissionsSectionTitle": "Notifikasi & Alarm",
+  "settingsPermissionsNotificationLabel": "Izin notifikasi",
+  "settingsPermissionsExactAlarmLabel": "Izin alarm presisi",
+  "settingsPermissionsGranted": "Diizinkan",
+  "settingsPermissionsDenied": "Belum diizinkan — pengingat mungkin tidak muncul tepat waktu",
+  "settingsPermissionsGrantAction": "Izinkan",
+  "settingsPermissionsOpenSettingsAction": "Buka pengaturan",
+  "onboardingExactAlarmRationaleTitle": "Satu izin lagi",
+  "onboardingExactAlarmRationaleBody": "Di layar berikutnya, izinkan iReminder menjadwalkan alarm presisi agar pengingat muncul tepat pada waktu yang kamu tentukan.",
+  "loanMarkPaidSuccess": "Ditandai sudah dibayar"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "fi",
+  "appTitle": "iReminder",
+  "navToday": "Tänään",
+  "navCalendar": "Kalenteri",
+  "navLoans": "Lainat",
+  "navCategories": "Kategoriat",
+  "navSettings": "Asetukset",
+  "navAssistant": "Avustaja",
+  "onboardingTitle1": "Älä koskaan unohda tärkeitä asioita",
+  "onboardingBody1": "Seuraa laitehuoltoja, ajoneuvon huoltoja, merkkipäiviä ja paljon muuta — kaikki samassa paikassa.",
+  "onboardingTitle2": "Toistuvat muistutukset tehty helpoksi",
+  "onboardingBody2": "Päivittäin, viikoittain, kuukausittain, vuosittain tai jopa kuukalenterin mukaan — aseta kerran, niin iReminder pitää kirjaa.",
+  "onboardingTitle3": "100 % yksityinen, 100 % offline",
+  "onboardingBody3": "Ei tiliä, ei pilveä, ei kirjautumista. Kaikki pysyy puhelimessasi.",
+  "onboardingSkip": "Ohita",
+  "onboardingNext": "Seuraava",
+  "onboardingGetStarted": "Aloita",
+  "notificationPermissionTitle": "Pysy aikataulussa",
+  "notificationPermissionBody": "iReminder tarvitsee luvan lähettää sinulle ilmoituksia, kun jokin erääntyy.",
+  "notificationPermissionAllow": "Salli ilmoitukset",
+  "notificationPermissionLater": "Ei nyt",
+  "homeSectionOverdue": "Myöhässä",
+  "homeSectionToday": "Tänään",
+  "homeSectionThisWeek": "Tällä viikolla",
+  "homeSectionUpcoming": "Tulossa",
+  "homeEmptyTitle": "Ei vielä mitään",
+  "homeEmptyBody": "Napauta + lisätäksesi ensimmäisen muistutuksen tai osamaksulainan.",
+  "fabAddReminder": "Muistutus",
+  "fabAddLoan": "Osamaksulaina",
+  "actionDone": "Valmis",
+  "actionSnooze": "Torkku",
+  "actionEdit": "Muokkaa",
+  "actionDelete": "Poista",
+  "actionSave": "Tallenna",
+  "actionCancel": "Peruuta",
+  "actionConfirm": "Vahvista",
+  "actionYes": "Kyllä",
+  "actionNo": "Ei",
+  "actionOk": "OK",
+  "actionAdd": "Lisää",
+  "actionClose": "Sulje",
+  "reminderFormTitleNew": "Uusi muistutus",
+  "reminderFormTitleEdit": "Muokkaa muistutusta",
+  "reminderFieldTitle": "Otsikko",
+  "reminderFieldTitleRequired": "Otsikko vaaditaan",
+  "reminderFieldDescription": "Kuvaus (valinnainen)",
+  "reminderFieldCategory": "Kategoria",
+  "reminderFieldRecurrence": "Toistuu",
+  "reminderFieldStartDate": "Aloituspäivä",
+  "reminderFieldTime": "Muistutuksen kellonaika",
+  "reminderFieldAdvanceNotice": "Muistuta N päivää etukäteen",
+  "reminderFieldRecurrenceDay": "Kuukauden päivä",
+  "reminderFieldRecurrenceMonth": "Kuukausi",
+  "reminderFieldRecurrenceWeekday": "Viikonpäivä",
+  "reminderFieldIntervalDays": "Joka N. päivä",
+  "reminderFieldLunarDay": "Kuukalenterin päivä",
+  "reminderFieldLunarMonth": "Kuukalenterin kuukausi",
+  "reminderDeleteConfirmTitle": "Poistetaanko tämä muistutus?",
+  "reminderDeleteConfirmBody": "Tätä ei voi perua.",
+  "recurrenceNone": "Kerran",
+  "recurrenceDaily": "Päivittäin",
+  "recurrenceWeekly": "Viikoittain",
+  "recurrenceMonthly": "Kuukausittain",
+  "recurrenceYearly": "Vuosittain",
+  "recurrenceCustomIntervalDays": "Joka N. päivä",
+  "recurrenceLunarYearly": "Vuosittain (kuukalenteri)",
+  "weekdayMonday": "Maanantai",
+  "weekdayTuesday": "Tiistai",
+  "weekdayWednesday": "Keskiviikko",
+  "weekdayThursday": "Torstai",
+  "weekdayFriday": "Perjantai",
+  "weekdaySaturday": "Lauantai",
+  "weekdaySunday": "Sunnuntai",
+  "loanListTitle": "Lainat ja osamaksut",
+  "loanFormTitleNew": "Uusi osamaksulaina",
+  "loanFormTitleEdit": "Muokkaa lainaa",
+  "loanFieldName": "Nimi",
+  "loanFieldCategory": "Kategoria",
+  "loanFieldTotalAmount": "Kokonaissumma (valinnainen)",
+  "loanFieldInstallmentAmount": "Summa per erä",
+  "loanFieldTotalInstallments": "Erien määrä",
+  "loanFieldFrequency": "Toistumistiheys",
+  "loanFieldDueDayOfMonth": "Eräpäivä kuukaudessa",
+  "loanFieldStartDate": "Aloituspäivä",
+  "loanFieldReminderAdvanceDays": "Muistuta N päivää ennen eräpäivää",
+  "loanFieldNotes": "Muistiinpanot (valinnainen)",
+  "loanFrequencyMonthly": "Kuukausittain",
+  "loanFrequencyWeekly": "Viikoittain",
+  "loanFrequencyBiweekly": "Joka toinen viikko",
+  "loanProgress": "{paid} / {total} maksettu",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Merkitse maksetuksi",
+  "loanMarkPaidBatch": "Merkitse {count} erää maksetuksi",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Odottaa",
+  "loanStatusPaid": "Maksettu",
+  "loanStatusOverdue": "Myöhässä",
+  "loanInstallmentNumber": "Erä #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Poistetaanko tämä laina?",
+  "loanDeleteConfirmBody": "Kaikki {count} erää poistetaan myös.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategoriat",
+  "categoryFormTitleNew": "Uusi kategoria",
+  "categoryFormTitleEdit": "Muokkaa kategoriaa",
+  "categoryFieldName": "Nimi",
+  "categoryFieldNameRequired": "Nimi vaaditaan",
+  "categoryFieldIcon": "Kuvake",
+  "categoryFieldColor": "Väri",
+  "categoryDeleteSimpleTitle": "Poistetaanko tämä kategoria?",
+  "categoryDeleteSimpleBody": "Tässä kategoriassa ei ole muistutuksia.",
+  "categoryDeleteHasRemindersTitle": "Tässä kategoriassa on vielä muistutuksia",
+  "categoryDeleteHasRemindersBody": "{count} muistutusta käyttää tätä kategoriaa. Valitse, mitä niille tehdään.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Siirrä toiseen kategoriaan",
+  "categoryDeleteReassignTarget": "Siirrä kohteeseen",
+  "categoryDeleteRemoveAll": "Poista kaikki {count} muistutusta",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Tämä poistaa pysyvästi {count} muistutusta. Tätä ei voi perua.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Järjestä vetämällä",
+  "settingsTitle": "Asetukset",
+  "settingsLanguage": "Kieli",
+  "settingsDefaultReminderTime": "Oletusmuistutusaika",
+  "settingsTheme": "Teema",
+  "settingsThemeSystem": "Järjestelmä",
+  "settingsThemeLight": "Vaalea",
+  "settingsThemeDark": "Tumma",
+  "settingsBackupRestore": "Varmuuskopiointi ja palautus",
+  "settingsExport": "Vie varmuuskopio",
+  "settingsImport": "Palauta varmuuskopiosta",
+  "settingsExportLocationHint": "Tallennettu polkuun Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Varmuuskopio tallennettu",
+  "settingsImportNoneFound": "Varmuuskopioita ei löytynyt",
+  "settingsImportPickFile": "Valitse varmuuskopio",
+  "settingsImportSuccess": "Varmuuskopio palautettu",
+  "settingsImportConfirmTitle": "Palautetaanko varmuuskopio?",
+  "settingsImportConfirmBody": "Tämä korvaa kaikki nykyiset tiedot varmuuskopiotiedoston sisällöllä.",
+  "settingsAbout": "Tietoja",
+  "settingsBatteryOptimizationTitle": "Eivätkö ilmoitukset tule ajallaan?",
+  "settingsBatteryOptimizationBody": "Jotkin puhelinvalmistajat (Samsung, Xiaomi, Oppo...) rajoittavat taustasovelluksia voimakkaasti. Poista akun optimointi käytöstä iReminderille puhelimen Asetukset > Akku -valikosta, jotta muistutukset saapuvat aina ajallaan.",
+  "errorGeneric": "Jokin meni pieleen. Yritä uudelleen.",
+  "errorLoadFailed": "Tietoja ei voitu ladata.",
+  "settingsAiSectionTitle": "Tekoälyavustaja",
+  "settingsAiEnable": "Ota tekoälyavustaja käyttöön",
+  "settingsAiProvider": "Tekoälypalveluntarjoaja",
+  "settingsAiModel": "Malli",
+  "settingsAiApiKey": "API-avain",
+  "settingsAiApiKeyHint": "Liitä API-avaimesi",
+  "settingsAiApiKeyHelp": "Mistä saan avaimen?",
+  "settingsAiApiKeySaved": "API-avain tallennettu",
+  "settingsAiAllowedCategories": "Kategoriat, joita avustaja saa lukea",
+  "settingsAiAllowedCategoriesHint": "Pois päältä oletuksena. Ota käyttöön vain ne kategoriat, jotka haluat avustajan näkevän — mitään muuta ei koskaan lähetetä.",
+  "settingsAiClearHistory": "Tyhjennä keskusteluhistoria",
+  "settingsAiClearHistoryConfirmTitle": "Tyhjennetäänkö keskusteluhistoria?",
+  "settingsAiClearHistoryConfirmBody": "Tämä poistaa kaikki laitteelle tallennetut kysymykset ja vastaukset. Tätä ei voi perua.",
+  "assistantTitle": "Avustaja",
+  "assistantEmptyTitle": "Kysy minulta mitä vain",
+  "assistantEmptyBody": "Kokeile esimerkiksi \"Mitä minun pitää tehdä tällä viikolla?\" tai \"Kuinka monta erää moottoripyörälainastani on jäljellä?\"",
+  "assistantInputHint": "Kysy jotain…",
+  "assistantSend": "Lähetä",
+  "assistantDisabledTitle": "Avustaja on pois käytöstä",
+  "assistantDisabledBody": "Ota se käyttöön asetuksista ja valitse tekoälypalveluntarjoaja aloittaaksesi keskustelun.",
+  "assistantOpenSettings": "Avaa asetukset",
+  "assistantThinking": "Mietitään…",
+  "validationRequired": "Pakollinen",
+  "validationDayOfMonth": "Anna päivä väliltä 1–31",
+  "validationMonth": "Anna kuukausi väliltä 1–12",
+  "validationPositiveNumber": "Anna nollaa suurempi luku",
+  "validationPositiveInteger": "Anna nollaa suurempi kokonaisluku",
+  "settingsPermissionsSectionTitle": "Ilmoitukset ja hälytykset",
+  "settingsPermissionsNotificationLabel": "Ilmoituslupa",
+  "settingsPermissionsExactAlarmLabel": "Tarkkojen hälytysten lupa",
+  "settingsPermissionsGranted": "Myönnetty",
+  "settingsPermissionsDenied": "Ei myönnetty — muistutukset eivät ehkä tule ajallaan",
+  "settingsPermissionsGrantAction": "Myönnä",
+  "settingsPermissionsOpenSettingsAction": "Avaa asetukset",
+  "onboardingExactAlarmRationaleTitle": "Vielä yksi lupa",
+  "onboardingExactAlarmRationaleBody": "Seuraavalla näytöllä salli iReminderin ajastaa tarkkoja hälytyksiä, jotta muistutukset laukeavat juuri sinä ajankohtana, jonka olet asettanut.",
+  "loanMarkPaidSuccess": "Merkitty maksetuksi"
+}

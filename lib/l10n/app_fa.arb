@@ -1,0 +1,227 @@
+{
+  "@@locale": "fa",
+  "appTitle": "iReminder",
+  "navToday": "امروز",
+  "navCalendar": "تقویم",
+  "navLoans": "وام‌ها",
+  "navCategories": "دسته‌بندی‌ها",
+  "navSettings": "تنظیمات",
+  "navAssistant": "دستیار",
+  "onboardingTitle1": "هرگز چیزهای مهم را فراموش نکنید",
+  "onboardingBody1": "نگهداری دستگاه‌ها، سرویس خودرو، سالگردها و موارد دیگر را — همه در یک جا پیگیری کنید.",
+  "onboardingTitle2": "یادآوری‌های تکرارشونده، ساده‌تر از همیشه",
+  "onboardingBody2": "روزانه، هفتگی، ماهانه، سالانه یا حتی بر اساس تقویم قمری — فقط یک‌بار تنظیم کنید و iReminder بقیه را به خاطر می‌سپارد.",
+  "onboardingTitle3": "۱۰۰٪ خصوصی، ۱۰۰٪ آفلاین",
+  "onboardingBody3": "بدون حساب کاربری، بدون فضای ابری، بدون ورود. همه‌چیز فقط روی گوشی شما باقی می‌ماند.",
+  "onboardingSkip": "رد کردن",
+  "onboardingNext": "بعدی",
+  "onboardingGetStarted": "شروع کنید",
+  "notificationPermissionTitle": "به‌موقع باخبر شوید",
+  "notificationPermissionBody": "برای اطلاع‌رسانی هنگام سررسید کارها، iReminder به مجوز ارسال اعلان نیاز دارد.",
+  "notificationPermissionAllow": "اجازه اعلان‌ها",
+  "notificationPermissionLater": "فعلاً نه",
+  "homeSectionOverdue": "عقب‌افتاده",
+  "homeSectionToday": "امروز",
+  "homeSectionThisWeek": "این هفته",
+  "homeSectionUpcoming": "پیش‌رو",
+  "homeEmptyTitle": "هنوز چیزی اینجا نیست",
+  "homeEmptyBody": "برای افزودن اولین یادآور یا وام قسطی خود، روی + ضربه بزنید.",
+  "fabAddReminder": "یادآور",
+  "fabAddLoan": "وام قسطی",
+  "actionDone": "انجام شد",
+  "actionSnooze": "به تعویق انداختن",
+  "actionEdit": "ویرایش",
+  "actionDelete": "حذف",
+  "actionSave": "ذخیره",
+  "actionCancel": "انصراف",
+  "actionConfirm": "تأیید",
+  "actionYes": "بله",
+  "actionNo": "خیر",
+  "actionOk": "باشه",
+  "actionAdd": "افزودن",
+  "actionClose": "بستن",
+  "reminderFormTitleNew": "یادآور جدید",
+  "reminderFormTitleEdit": "ویرایش یادآور",
+  "reminderFieldTitle": "عنوان",
+  "reminderFieldTitleRequired": "عنوان الزامی است",
+  "reminderFieldDescription": "توضیحات (اختیاری)",
+  "reminderFieldCategory": "دسته‌بندی",
+  "reminderFieldRecurrence": "تکرار",
+  "reminderFieldStartDate": "تاریخ شروع",
+  "reminderFieldTime": "زمان یادآوری",
+  "reminderFieldAdvanceNotice": "N روز زودتر اطلاع بده",
+  "reminderFieldRecurrenceDay": "روز ماه",
+  "reminderFieldRecurrenceMonth": "ماه",
+  "reminderFieldRecurrenceWeekday": "روز هفته",
+  "reminderFieldIntervalDays": "هر N روز",
+  "reminderFieldLunarDay": "روز قمری",
+  "reminderFieldLunarMonth": "ماه قمری",
+  "reminderDeleteConfirmTitle": "این یادآور حذف شود؟",
+  "reminderDeleteConfirmBody": "این کار قابل بازگشت نیست.",
+  "recurrenceNone": "یک‌بار",
+  "recurrenceDaily": "روزانه",
+  "recurrenceWeekly": "هفتگی",
+  "recurrenceMonthly": "ماهانه",
+  "recurrenceYearly": "سالانه",
+  "recurrenceCustomIntervalDays": "هر N روز",
+  "recurrenceLunarYearly": "سالانه (تقویم قمری)",
+  "weekdayMonday": "دوشنبه",
+  "weekdayTuesday": "سه‌شنبه",
+  "weekdayWednesday": "چهارشنبه",
+  "weekdayThursday": "پنجشنبه",
+  "weekdayFriday": "جمعه",
+  "weekdaySaturday": "شنبه",
+  "weekdaySunday": "یکشنبه",
+  "loanListTitle": "وام‌ها و اقساط",
+  "loanFormTitleNew": "وام قسطی جدید",
+  "loanFormTitleEdit": "ویرایش وام",
+  "loanFieldName": "نام",
+  "loanFieldCategory": "دسته‌بندی",
+  "loanFieldTotalAmount": "مبلغ کل (اختیاری)",
+  "loanFieldInstallmentAmount": "مبلغ هر قسط",
+  "loanFieldTotalInstallments": "تعداد اقساط",
+  "loanFieldFrequency": "تناوب",
+  "loanFieldDueDayOfMonth": "روز سررسید در ماه",
+  "loanFieldStartDate": "تاریخ شروع",
+  "loanFieldReminderAdvanceDays": "N روز قبل از سررسید یادآوری کن",
+  "loanFieldNotes": "یادداشت (اختیاری)",
+  "loanFrequencyMonthly": "ماهانه",
+  "loanFrequencyWeekly": "هفتگی",
+  "loanFrequencyBiweekly": "هر دو هفته",
+  "loanProgress": "{paid} از {total} قسط پرداخت شده",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "علامت‌گذاری به‌عنوان پرداخت‌شده",
+  "loanMarkPaidBatch": "علامت‌گذاری {count} قسط به‌عنوان پرداخت‌شده",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "در انتظار",
+  "loanStatusPaid": "پرداخت‌شده",
+  "loanStatusOverdue": "عقب‌افتاده",
+  "loanInstallmentNumber": "قسط #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "این وام حذف شود؟",
+  "loanDeleteConfirmBody": "تمام {count} قسط نیز حذف خواهند شد.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "دسته‌بندی‌ها",
+  "categoryFormTitleNew": "دسته‌بندی جدید",
+  "categoryFormTitleEdit": "ویرایش دسته‌بندی",
+  "categoryFieldName": "نام",
+  "categoryFieldNameRequired": "نام الزامی است",
+  "categoryFieldIcon": "آیکون",
+  "categoryFieldColor": "رنگ",
+  "categoryDeleteSimpleTitle": "این دسته‌بندی حذف شود؟",
+  "categoryDeleteSimpleBody": "این دسته‌بندی هیچ یادآوری ندارد.",
+  "categoryDeleteHasRemindersTitle": "این دسته‌بندی هنوز یادآور دارد",
+  "categoryDeleteHasRemindersBody": "{count} یادآور از این دسته‌بندی استفاده می‌کنند. نحوه برخورد با آن‌ها را انتخاب کنید.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "انتقال به دسته‌بندی دیگر",
+  "categoryDeleteReassignTarget": "انتقال به",
+  "categoryDeleteRemoveAll": "حذف همه {count} یادآور",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "این کار {count} یادآور را برای همیشه حذف می‌کند. این کار قابل بازگشت نیست.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "برای تغییر ترتیب بکشید",
+  "settingsTitle": "تنظیمات",
+  "settingsLanguage": "زبان",
+  "settingsDefaultReminderTime": "زمان پیش‌فرض یادآوری",
+  "settingsTheme": "پوسته",
+  "settingsThemeSystem": "سیستم",
+  "settingsThemeLight": "روشن",
+  "settingsThemeDark": "تیره",
+  "settingsBackupRestore": "پشتیبان‌گیری و بازیابی",
+  "settingsExport": "خروجی گرفتن از پشتیبان",
+  "settingsImport": "بازیابی از پشتیبان",
+  "settingsExportLocationHint": "در مسیر Android/data/com.ireminder.ireminder/files/backups ذخیره شد",
+  "settingsExportSuccess": "فایل پشتیبان ذخیره شد",
+  "settingsImportNoneFound": "هیچ فایل پشتیبانی یافت نشد",
+  "settingsImportPickFile": "یک فایل پشتیبان انتخاب کنید",
+  "settingsImportSuccess": "بازیابی با موفقیت انجام شد",
+  "settingsImportConfirmTitle": "پشتیبان بازیابی شود؟",
+  "settingsImportConfirmBody": "این کار همه داده‌های فعلی را با محتوای فایل پشتیبان جایگزین می‌کند.",
+  "settingsAbout": "درباره برنامه",
+  "settingsBatteryOptimizationTitle": "اعلان‌ها به‌موقع نمی‌رسند؟",
+  "settingsBatteryOptimizationBody": "برخی سازندگان گوشی (سامسونگ، شیائومی، اوپو و ...) برنامه‌های پس‌زمینه را به‌شدت محدود می‌کنند. برای اطمینان از رسیدن به‌موقع یادآورها، از مسیر تنظیمات گوشی > باتری، بهینه‌سازی باتری را برای iReminder غیرفعال کنید.",
+  "errorGeneric": "خطایی رخ داد. لطفاً دوباره تلاش کنید.",
+  "errorLoadFailed": "بارگذاری اطلاعات ممکن نشد.",
+  "settingsAiSectionTitle": "دستیار هوش مصنوعی",
+  "settingsAiEnable": "فعال‌سازی دستیار هوش مصنوعی",
+  "settingsAiProvider": "ارائه‌دهنده هوش مصنوعی",
+  "settingsAiModel": "مدل",
+  "settingsAiApiKey": "کلید API",
+  "settingsAiApiKeyHint": "کلید API خود را جای‌گذاری کنید",
+  "settingsAiApiKeyHelp": "کلید را از کجا بگیرم؟",
+  "settingsAiApiKeySaved": "کلید API ذخیره شد",
+  "settingsAiAllowedCategories": "دسته‌بندی‌هایی که دستیار می‌تواند ببیند",
+  "settingsAiAllowedCategoriesHint": "به‌طور پیش‌فرض غیرفعال است. فقط دسته‌بندی‌هایی را فعال کنید که می‌خواهید دستیار ببیند — چیز دیگری هرگز ارسال نمی‌شود.",
+  "settingsAiClearHistory": "پاک کردن تاریخچه گفتگو",
+  "settingsAiClearHistoryConfirmTitle": "تاریخچه گفتگو پاک شود؟",
+  "settingsAiClearHistoryConfirmBody": "این کار همه سؤال‌ها و پاسخ‌های ذخیره‌شده روی این دستگاه را حذف می‌کند. این کار قابل بازگشت نیست.",
+  "assistantTitle": "دستیار",
+  "assistantEmptyTitle": "هر چیزی می‌خواهید بپرسید",
+  "assistantEmptyBody": "امتحان کنید: «این هفته چه کارهایی باید انجام دهم؟» یا «چند قسط از وام موتورسیکلتم باقی مانده؟»",
+  "assistantInputHint": "چیزی بپرسید…",
+  "assistantSend": "ارسال",
+  "assistantDisabledTitle": "دستیار غیرفعال است",
+  "assistantDisabledBody": "برای شروع گفتگو، آن را در تنظیمات فعال کنید و یک ارائه‌دهنده هوش مصنوعی انتخاب کنید.",
+  "assistantOpenSettings": "باز کردن تنظیمات",
+  "assistantThinking": "در حال فکر کردن…",
+  "validationRequired": "الزامی است",
+  "validationDayOfMonth": "روزی بین ۱ تا ۳۱ وارد کنید",
+  "validationMonth": "ماهی بین ۱ تا ۱۲ وارد کنید",
+  "validationPositiveNumber": "عددی بزرگ‌تر از ۰ وارد کنید",
+  "validationPositiveInteger": "عدد صحیحی بزرگ‌تر از ۰ وارد کنید",
+  "settingsPermissionsSectionTitle": "اعلان‌ها و زنگ‌های هشدار",
+  "settingsPermissionsNotificationLabel": "مجوز اعلان",
+  "settingsPermissionsExactAlarmLabel": "مجوز زنگ هشدار دقیق",
+  "settingsPermissionsGranted": "اعطا شده",
+  "settingsPermissionsDenied": "اعطا نشده — ممکن است یادآورها به‌موقع فعال نشوند",
+  "settingsPermissionsGrantAction": "اعطای مجوز",
+  "settingsPermissionsOpenSettingsAction": "باز کردن تنظیمات",
+  "onboardingExactAlarmRationaleTitle": "یک مجوز دیگر",
+  "onboardingExactAlarmRationaleBody": "در صفحه بعد، به iReminder اجازه دهید زنگ‌های هشدار دقیق تنظیم کند تا یادآورها دقیقاً در زمانی که تعیین کرده‌اید فعال شوند.",
+  "loanMarkPaidSuccess": "به‌عنوان پرداخت‌شده علامت‌گذاری شد"
+}

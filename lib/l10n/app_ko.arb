@@ -1,0 +1,227 @@
+{
+  "@@locale": "ko",
+  "appTitle": "iReminder",
+  "navToday": "오늘",
+  "navCalendar": "캘린더",
+  "navLoans": "할부",
+  "navCategories": "카테고리",
+  "navSettings": "설정",
+  "navAssistant": "어시스턴트",
+  "onboardingTitle1": "중요한 일을 절대 잊지 마세요",
+  "onboardingBody1": "기기 관리, 자동차 점검, 기념일 등을 한곳에서 관리하세요.",
+  "onboardingTitle2": "반복 설정도 간단하게",
+  "onboardingBody2": "매일, 매주, 매월, 매년, 심지어 음력까지 — 한 번만 설정하면 iReminder가 알아서 챙겨드려요.",
+  "onboardingTitle3": "100% 비공개, 100% 오프라인",
+  "onboardingBody3": "계정도, 클라우드도, 로그인도 필요 없어요. 모든 데이터는 내 휴대폰에만 저장됩니다.",
+  "onboardingSkip": "건너뛰기",
+  "onboardingNext": "다음",
+  "onboardingGetStarted": "시작하기",
+  "notificationPermissionTitle": "일정을 놓치지 마세요",
+  "notificationPermissionBody": "마감일이 다가올 때 알려드리려면 iReminder에 알림 권한이 필요해요.",
+  "notificationPermissionAllow": "알림 허용",
+  "notificationPermissionLater": "나중에",
+  "homeSectionOverdue": "기한 지남",
+  "homeSectionToday": "오늘",
+  "homeSectionThisWeek": "이번 주",
+  "homeSectionUpcoming": "예정",
+  "homeEmptyTitle": "아직 아무것도 없어요",
+  "homeEmptyBody": "＋를 눌러 첫 리마인더나 할부를 추가해 보세요.",
+  "fabAddReminder": "리마인더",
+  "fabAddLoan": "할부",
+  "actionDone": "완료",
+  "actionSnooze": "다시 알림",
+  "actionEdit": "수정",
+  "actionDelete": "삭제",
+  "actionSave": "저장",
+  "actionCancel": "취소",
+  "actionConfirm": "확인",
+  "actionYes": "예",
+  "actionNo": "아니요",
+  "actionOk": "확인",
+  "actionAdd": "추가",
+  "actionClose": "닫기",
+  "reminderFormTitleNew": "새 리마인더",
+  "reminderFormTitleEdit": "리마인더 수정",
+  "reminderFieldTitle": "제목",
+  "reminderFieldTitleRequired": "제목을 입력해 주세요",
+  "reminderFieldDescription": "설명 (선택 사항)",
+  "reminderFieldCategory": "카테고리",
+  "reminderFieldRecurrence": "반복",
+  "reminderFieldStartDate": "시작일",
+  "reminderFieldTime": "알림 시간",
+  "reminderFieldAdvanceNotice": "N일 전에 알림",
+  "reminderFieldRecurrenceDay": "매월 날짜",
+  "reminderFieldRecurrenceMonth": "월",
+  "reminderFieldRecurrenceWeekday": "요일",
+  "reminderFieldIntervalDays": "N일마다",
+  "reminderFieldLunarDay": "음력 날짜",
+  "reminderFieldLunarMonth": "음력 월",
+  "reminderDeleteConfirmTitle": "이 리마인더를 삭제할까요?",
+  "reminderDeleteConfirmBody": "삭제하면 되돌릴 수 없어요.",
+  "recurrenceNone": "한 번만",
+  "recurrenceDaily": "매일",
+  "recurrenceWeekly": "매주",
+  "recurrenceMonthly": "매월",
+  "recurrenceYearly": "매년",
+  "recurrenceCustomIntervalDays": "N일마다",
+  "recurrenceLunarYearly": "매년 (음력)",
+  "weekdayMonday": "월요일",
+  "weekdayTuesday": "화요일",
+  "weekdayWednesday": "수요일",
+  "weekdayThursday": "목요일",
+  "weekdayFriday": "금요일",
+  "weekdaySaturday": "토요일",
+  "weekdaySunday": "일요일",
+  "loanListTitle": "대출 및 할부",
+  "loanFormTitleNew": "새 할부",
+  "loanFormTitleEdit": "할부 수정",
+  "loanFieldName": "이름",
+  "loanFieldCategory": "카테고리",
+  "loanFieldTotalAmount": "총액 (선택 사항)",
+  "loanFieldInstallmentAmount": "회당 납부액",
+  "loanFieldTotalInstallments": "총 납부 횟수",
+  "loanFieldFrequency": "납부 주기",
+  "loanFieldDueDayOfMonth": "매월 납부일",
+  "loanFieldStartDate": "시작일",
+  "loanFieldReminderAdvanceDays": "납부일 N일 전에 알림",
+  "loanFieldNotes": "메모 (선택 사항)",
+  "loanFrequencyMonthly": "매월",
+  "loanFrequencyWeekly": "매주",
+  "loanFrequencyBiweekly": "격주",
+  "loanProgress": "{total}회 중 {paid}회 납부",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "납부 완료로 표시",
+  "loanMarkPaidBatch": "{count}회를 납부 완료로 표시",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "대기 중",
+  "loanStatusPaid": "납부 완료",
+  "loanStatusOverdue": "연체",
+  "loanInstallmentNumber": "{number}회차",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "이 할부를 삭제할까요?",
+  "loanDeleteConfirmBody": "전체 {count}회 납부 내역도 함께 삭제됩니다.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "카테고리",
+  "categoryFormTitleNew": "새 카테고리",
+  "categoryFormTitleEdit": "카테고리 수정",
+  "categoryFieldName": "이름",
+  "categoryFieldNameRequired": "이름을 입력해 주세요",
+  "categoryFieldIcon": "아이콘",
+  "categoryFieldColor": "색상",
+  "categoryDeleteSimpleTitle": "이 카테고리를 삭제할까요?",
+  "categoryDeleteSimpleBody": "이 카테고리에는 리마인더가 없어요.",
+  "categoryDeleteHasRemindersTitle": "이 카테고리에는 아직 리마인더가 있어요",
+  "categoryDeleteHasRemindersBody": "{count}개의 리마인더가 이 카테고리를 사용 중이에요. 처리 방법을 선택해 주세요.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "다른 카테고리로 이동",
+  "categoryDeleteReassignTarget": "이동할 카테고리",
+  "categoryDeleteRemoveAll": "{count}개 리마인더 모두 삭제",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "{count}개의 리마인더가 영구적으로 삭제됩니다. 이 작업은 되돌릴 수 없어요.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "드래그하여 순서 변경",
+  "settingsTitle": "설정",
+  "settingsLanguage": "언어",
+  "settingsDefaultReminderTime": "기본 알림 시간",
+  "settingsTheme": "테마",
+  "settingsThemeSystem": "시스템 설정",
+  "settingsThemeLight": "라이트",
+  "settingsThemeDark": "다크",
+  "settingsBackupRestore": "백업 및 복원",
+  "settingsExport": "백업 내보내기",
+  "settingsImport": "백업에서 복원",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups 에 저장됩니다",
+  "settingsExportSuccess": "백업이 저장되었어요",
+  "settingsImportNoneFound": "백업 파일을 찾을 수 없어요",
+  "settingsImportPickFile": "백업 선택",
+  "settingsImportSuccess": "백업이 복원되었어요",
+  "settingsImportConfirmTitle": "백업을 복원할까요?",
+  "settingsImportConfirmBody": "현재 데이터가 모두 백업 파일의 내용으로 대체됩니다.",
+  "settingsAbout": "정보",
+  "settingsBatteryOptimizationTitle": "알림이 제때 오지 않나요?",
+  "settingsBatteryOptimizationBody": "일부 제조사(삼성, 샤오미, 오포 등)는 백그라운드 앱을 강하게 제한해요. 휴대폰의 설정 > 배터리에서 iReminder의 배터리 최적화를 꺼서 알림이 항상 제때 오도록 해주세요.",
+  "errorGeneric": "문제가 발생했어요. 다시 시도해 주세요.",
+  "errorLoadFailed": "데이터를 불러오지 못했어요.",
+  "settingsAiSectionTitle": "AI 어시스턴트",
+  "settingsAiEnable": "AI 어시스턴트 사용",
+  "settingsAiProvider": "AI 제공업체",
+  "settingsAiModel": "모델",
+  "settingsAiApiKey": "API 키",
+  "settingsAiApiKeyHint": "API 키를 붙여넣으세요",
+  "settingsAiApiKeyHelp": "키는 어디서 받나요?",
+  "settingsAiApiKeySaved": "API 키가 저장되었어요",
+  "settingsAiAllowedCategories": "어시스턴트가 볼 수 있는 카테고리",
+  "settingsAiAllowedCategoriesHint": "기본적으로 모두 꺼져 있어요. 어시스턴트에게 보여주고 싶은 카테고리만 켜세요 — 그 외에는 아무것도 전송되지 않아요.",
+  "settingsAiClearHistory": "대화 기록 삭제",
+  "settingsAiClearHistoryConfirmTitle": "대화 기록을 삭제할까요?",
+  "settingsAiClearHistoryConfirmBody": "이 기기에 저장된 모든 질문과 답변이 삭제됩니다. 이 작업은 되돌릴 수 없어요.",
+  "assistantTitle": "어시스턴트",
+  "assistantEmptyTitle": "무엇이든 물어보세요",
+  "assistantEmptyBody": "\"이번 주에 뭐 해야 해?\" 또는 \"오토바이 할부 몇 회 남았어?\" 같이 물어보세요.",
+  "assistantInputHint": "질문을 입력하세요…",
+  "assistantSend": "보내기",
+  "assistantDisabledTitle": "어시스턴트가 꺼져 있어요",
+  "assistantDisabledBody": "설정에서 켜고 AI 제공업체를 선택하면 대화를 시작할 수 있어요.",
+  "assistantOpenSettings": "설정 열기",
+  "assistantThinking": "생각하는 중…",
+  "validationRequired": "필수 입력 항목이에요",
+  "validationDayOfMonth": "1~31 사이의 날짜를 입력해 주세요",
+  "validationMonth": "1~12 사이의 월을 입력해 주세요",
+  "validationPositiveNumber": "0보다 큰 숫자를 입력해 주세요",
+  "validationPositiveInteger": "0보다 큰 정수를 입력해 주세요",
+  "settingsPermissionsSectionTitle": "알림 및 알람",
+  "settingsPermissionsNotificationLabel": "알림 권한",
+  "settingsPermissionsExactAlarmLabel": "정확한 알람 권한",
+  "settingsPermissionsGranted": "허용됨",
+  "settingsPermissionsDenied": "허용되지 않음 — 리마인더가 제때 울리지 않을 수 있어요",
+  "settingsPermissionsGrantAction": "허용",
+  "settingsPermissionsOpenSettingsAction": "설정 열기",
+  "onboardingExactAlarmRationaleTitle": "권한이 하나 더 필요해요",
+  "onboardingExactAlarmRationaleBody": "다음 화면에서 iReminder가 정확한 알람을 예약할 수 있도록 허용해 주세요. 그래야 설정한 시간에 정확히 알림이 울려요.",
+  "loanMarkPaidSuccess": "납부 완료로 표시했어요"
+}

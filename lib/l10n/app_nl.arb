@@ -1,0 +1,227 @@
+{
+  "@@locale": "nl",
+  "appTitle": "iReminder",
+  "navToday": "Vandaag",
+  "navCalendar": "Kalender",
+  "navLoans": "Afbetalingen",
+  "navCategories": "Categorieën",
+  "navSettings": "Instellingen",
+  "navAssistant": "Assistent",
+  "onboardingTitle1": "Vergeet nooit meer wat belangrijk is",
+  "onboardingBody1": "Houd onderhoud van apparaten, autoservice, jubilea en meer bij — allemaal op één plek.",
+  "onboardingTitle2": "Herhalingen worden eenvoudig",
+  "onboardingBody2": "Dagelijks, wekelijks, maandelijks, jaarlijks of zelfs op basis van de maankalender — stel het één keer in en iReminder houdt het bij.",
+  "onboardingTitle3": "100% privé, 100% offline",
+  "onboardingBody3": "Geen account, geen cloud, geen inloggen. Alles blijft op je telefoon.",
+  "onboardingSkip": "Overslaan",
+  "onboardingNext": "Volgende",
+  "onboardingGetStarted": "Aan de slag",
+  "notificationPermissionTitle": "Mis nooit meer een deadline",
+  "notificationPermissionBody": "iReminder heeft toestemming nodig om je een melding te sturen wanneer iets moet gebeuren.",
+  "notificationPermissionAllow": "Meldingen toestaan",
+  "notificationPermissionLater": "Niet nu",
+  "homeSectionOverdue": "Verlopen",
+  "homeSectionToday": "Vandaag",
+  "homeSectionThisWeek": "Deze week",
+  "homeSectionUpcoming": "Binnenkort",
+  "homeEmptyTitle": "Hier staat nog niets",
+  "homeEmptyBody": "Tik op + om je eerste herinnering of afbetalingsplan toe te voegen.",
+  "fabAddReminder": "Herinnering",
+  "fabAddLoan": "Afbetalingsplan",
+  "actionDone": "Klaar",
+  "actionSnooze": "Uitstellen",
+  "actionEdit": "Bewerken",
+  "actionDelete": "Verwijderen",
+  "actionSave": "Opslaan",
+  "actionCancel": "Annuleren",
+  "actionConfirm": "Bevestigen",
+  "actionYes": "Ja",
+  "actionNo": "Nee",
+  "actionOk": "OK",
+  "actionAdd": "Toevoegen",
+  "actionClose": "Sluiten",
+  "reminderFormTitleNew": "Nieuwe herinnering",
+  "reminderFormTitleEdit": "Herinnering bewerken",
+  "reminderFieldTitle": "Titel",
+  "reminderFieldTitleRequired": "Titel is verplicht",
+  "reminderFieldDescription": "Omschrijving (optioneel)",
+  "reminderFieldCategory": "Categorie",
+  "reminderFieldRecurrence": "Herhaling",
+  "reminderFieldStartDate": "Startdatum",
+  "reminderFieldTime": "Herinneringstijd",
+  "reminderFieldAdvanceNotice": "N dagen van tevoren melden",
+  "reminderFieldRecurrenceDay": "Dag van de maand",
+  "reminderFieldRecurrenceMonth": "Maand",
+  "reminderFieldRecurrenceWeekday": "Dag van de week",
+  "reminderFieldIntervalDays": "Elke N dagen",
+  "reminderFieldLunarDay": "Maankalender dag",
+  "reminderFieldLunarMonth": "Maankalender maand",
+  "reminderDeleteConfirmTitle": "Deze herinnering verwijderen?",
+  "reminderDeleteConfirmBody": "Dit kan niet ongedaan worden gemaakt.",
+  "recurrenceNone": "Eenmalig",
+  "recurrenceDaily": "Dagelijks",
+  "recurrenceWeekly": "Wekelijks",
+  "recurrenceMonthly": "Maandelijks",
+  "recurrenceYearly": "Jaarlijks",
+  "recurrenceCustomIntervalDays": "Elke N dagen",
+  "recurrenceLunarYearly": "Jaarlijks (maankalender)",
+  "weekdayMonday": "Maandag",
+  "weekdayTuesday": "Dinsdag",
+  "weekdayWednesday": "Woensdag",
+  "weekdayThursday": "Donderdag",
+  "weekdayFriday": "Vrijdag",
+  "weekdaySaturday": "Zaterdag",
+  "weekdaySunday": "Zondag",
+  "loanListTitle": "Leningen & afbetalingen",
+  "loanFormTitleNew": "Nieuw afbetalingsplan",
+  "loanFormTitleEdit": "Afbetalingsplan bewerken",
+  "loanFieldName": "Naam",
+  "loanFieldCategory": "Categorie",
+  "loanFieldTotalAmount": "Totaalbedrag (optioneel)",
+  "loanFieldInstallmentAmount": "Bedrag per termijn",
+  "loanFieldTotalInstallments": "Aantal termijnen",
+  "loanFieldFrequency": "Frequentie",
+  "loanFieldDueDayOfMonth": "Vervaldag van de maand",
+  "loanFieldStartDate": "Startdatum",
+  "loanFieldReminderAdvanceDays": "Herinner N dagen voor de vervaldatum",
+  "loanFieldNotes": "Notities (optioneel)",
+  "loanFrequencyMonthly": "Maandelijks",
+  "loanFrequencyWeekly": "Wekelijks",
+  "loanFrequencyBiweekly": "Tweewekelijks",
+  "loanProgress": "{paid} / {total} betaald",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Markeren als betaald",
+  "loanMarkPaidBatch": "{count} termijnen markeren als betaald",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "In afwachting",
+  "loanStatusPaid": "Betaald",
+  "loanStatusOverdue": "Verlopen",
+  "loanInstallmentNumber": "Termijn #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Dit afbetalingsplan verwijderen?",
+  "loanDeleteConfirmBody": "Alle {count} termijnen worden ook verwijderd.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Categorieën",
+  "categoryFormTitleNew": "Nieuwe categorie",
+  "categoryFormTitleEdit": "Categorie bewerken",
+  "categoryFieldName": "Naam",
+  "categoryFieldNameRequired": "Naam is verplicht",
+  "categoryFieldIcon": "Pictogram",
+  "categoryFieldColor": "Kleur",
+  "categoryDeleteSimpleTitle": "Deze categorie verwijderen?",
+  "categoryDeleteSimpleBody": "Deze categorie bevat geen herinneringen.",
+  "categoryDeleteHasRemindersTitle": "Deze categorie bevat nog herinneringen",
+  "categoryDeleteHasRemindersBody": "{count} herinneringen gebruiken deze categorie. Kies wat ermee moet gebeuren.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Verplaatsen naar een andere categorie",
+  "categoryDeleteReassignTarget": "Verplaatsen naar",
+  "categoryDeleteRemoveAll": "Alle {count} herinneringen verwijderen",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Dit verwijdert {count} herinneringen permanent. Dit kan niet ongedaan worden gemaakt.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Sleep om te herschikken",
+  "settingsTitle": "Instellingen",
+  "settingsLanguage": "Taal",
+  "settingsDefaultReminderTime": "Standaard herinneringstijd",
+  "settingsTheme": "Thema",
+  "settingsThemeSystem": "Systeem",
+  "settingsThemeLight": "Licht",
+  "settingsThemeDark": "Donker",
+  "settingsBackupRestore": "Back-up & herstel",
+  "settingsExport": "Back-up exporteren",
+  "settingsImport": "Herstellen vanaf back-up",
+  "settingsExportLocationHint": "Opgeslagen in Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Back-up opgeslagen",
+  "settingsImportNoneFound": "Geen back-upbestanden gevonden",
+  "settingsImportPickFile": "Kies een back-up",
+  "settingsImportSuccess": "Back-up hersteld",
+  "settingsImportConfirmTitle": "Back-up herstellen?",
+  "settingsImportConfirmBody": "Dit vervangt alle huidige gegevens door de inhoud van het back-upbestand.",
+  "settingsAbout": "Over",
+  "settingsBatteryOptimizationTitle": "Komen meldingen niet op tijd binnen?",
+  "settingsBatteryOptimizationBody": "Sommige telefoonmerken (Samsung, Xiaomi, Oppo...) beperken achtergrondapps agressief. Schakel batterijoptimalisatie voor iReminder uit via Instellingen > Batterij op je telefoon zodat herinneringen altijd op tijd binnenkomen.",
+  "errorGeneric": "Er is iets misgegaan. Probeer het opnieuw.",
+  "errorLoadFailed": "Gegevens konden niet worden geladen.",
+  "settingsAiSectionTitle": "AI-assistent",
+  "settingsAiEnable": "AI-assistent inschakelen",
+  "settingsAiProvider": "AI-provider",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "API-sleutel",
+  "settingsAiApiKeyHint": "Plak je API-sleutel",
+  "settingsAiApiKeyHelp": "Waar vind ik een sleutel?",
+  "settingsAiApiKeySaved": "API-sleutel opgeslagen",
+  "settingsAiAllowedCategories": "Categorieën die de assistent mag lezen",
+  "settingsAiAllowedCategoriesHint": "Standaard uitgeschakeld. Schakel alleen de categorieën in die de assistent mag zien — er wordt nooit iets anders verzonden.",
+  "settingsAiClearHistory": "Chatgeschiedenis wissen",
+  "settingsAiClearHistoryConfirmTitle": "Chatgeschiedenis wissen?",
+  "settingsAiClearHistoryConfirmBody": "Hiermee worden alle vragen en antwoorden op dit apparaat verwijderd. Dit kan niet ongedaan worden gemaakt.",
+  "assistantTitle": "Assistent",
+  "assistantEmptyTitle": "Vraag me wat dan ook",
+  "assistantEmptyBody": "Probeer bijvoorbeeld \"Wat moet ik deze week doen?\" of \"Hoeveel termijnen heb ik nog op mijn motorlening?\"",
+  "assistantInputHint": "Stel een vraag…",
+  "assistantSend": "Versturen",
+  "assistantDisabledTitle": "Assistent staat uit",
+  "assistantDisabledBody": "Schakel hem in bij Instellingen en kies een AI-provider om te beginnen met chatten.",
+  "assistantOpenSettings": "Instellingen openen",
+  "assistantThinking": "Aan het nadenken…",
+  "validationRequired": "Verplicht",
+  "validationDayOfMonth": "Voer een dag in van 1–31",
+  "validationMonth": "Voer een maand in van 1–12",
+  "validationPositiveNumber": "Voer een getal groter dan 0 in",
+  "validationPositiveInteger": "Voer een geheel getal groter dan 0 in",
+  "settingsPermissionsSectionTitle": "Meldingen & alarmen",
+  "settingsPermissionsNotificationLabel": "Meldingstoestemming",
+  "settingsPermissionsExactAlarmLabel": "Toestemming voor exacte alarmen",
+  "settingsPermissionsGranted": "Verleend",
+  "settingsPermissionsDenied": "Niet verleend — herinneringen komen mogelijk niet op tijd binnen",
+  "settingsPermissionsGrantAction": "Toestaan",
+  "settingsPermissionsOpenSettingsAction": "Instellingen openen",
+  "onboardingExactAlarmRationaleTitle": "Nog één toestemming",
+  "onboardingExactAlarmRationaleBody": "Sta iReminder op het volgende scherm toe om exacte alarmen in te stellen, zodat herinneringen precies op het ingestelde tijdstip afgaan.",
+  "loanMarkPaidSuccess": "Gemarkeerd als betaald"
+}

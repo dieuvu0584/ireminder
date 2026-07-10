@@ -1,0 +1,227 @@
+{
+  "@@locale": "ur",
+  "appTitle": "iReminder",
+  "navToday": "آج",
+  "navCalendar": "کیلنڈر",
+  "navLoans": "قرضے",
+  "navCategories": "زمرہ جات",
+  "navSettings": "ترتیبات",
+  "navAssistant": "اسسٹنٹ",
+  "onboardingTitle1": "اہم باتیں کبھی نہ بھولیں",
+  "onboardingBody1": "ڈیوائس کی دیکھ بھال، گاڑی کی سروس، سالگرہ اور مزید بہت کچھ — سب ایک ہی جگہ پر۔",
+  "onboardingTitle2": "تکرار اب بہت آسان",
+  "onboardingBody2": "روزانہ، ہفتہ وار، ماہانہ، سالانہ، یا قمری کیلنڈر کے مطابق بھی — ایک بار سیٹ کریں اور iReminder خود یاد رکھے گا۔",
+  "onboardingTitle3": "100% نجی، 100% آف لائن",
+  "onboardingBody3": "کوئی اکاؤنٹ نہیں، کوئی کلاؤڈ نہیں، کوئی لاگ ان نہیں۔ سب کچھ آپ کے فون میں ہی رہتا ہے۔",
+  "onboardingSkip": "نظر انداز کریں",
+  "onboardingNext": "اگلا",
+  "onboardingGetStarted": "شروع کریں",
+  "notificationPermissionTitle": "وقت پر رہیں",
+  "notificationPermissionBody": "جب کوئی کام مقررہ وقت پر ہو تو آپ کو بتانے کے لیے iReminder کو اطلاعات بھیجنے کی اجازت درکار ہے۔",
+  "notificationPermissionAllow": "اطلاعات کی اجازت دیں",
+  "notificationPermissionLater": "ابھی نہیں",
+  "homeSectionOverdue": "مقررہ وقت گزر چکا",
+  "homeSectionToday": "آج",
+  "homeSectionThisWeek": "اس ہفتے",
+  "homeSectionUpcoming": "آنے والے",
+  "homeEmptyTitle": "ابھی یہاں کچھ نہیں",
+  "homeEmptyBody": "اپنی پہلی یاد دہانی یا قسطوں والا قرض شامل کرنے کے لیے + پر تھپتھپائیں۔",
+  "fabAddReminder": "یاد دہانی",
+  "fabAddLoan": "قسطوں کا قرض",
+  "actionDone": "مکمل",
+  "actionSnooze": "کچھ دیر بعد یاد دلائیں",
+  "actionEdit": "ترمیم کریں",
+  "actionDelete": "حذف کریں",
+  "actionSave": "محفوظ کریں",
+  "actionCancel": "منسوخ کریں",
+  "actionConfirm": "تصدیق کریں",
+  "actionYes": "ہاں",
+  "actionNo": "نہیں",
+  "actionOk": "ٹھیک ہے",
+  "actionAdd": "شامل کریں",
+  "actionClose": "بند کریں",
+  "reminderFormTitleNew": "نئی یاد دہانی",
+  "reminderFormTitleEdit": "یاد دہانی میں ترمیم کریں",
+  "reminderFieldTitle": "عنوان",
+  "reminderFieldTitleRequired": "عنوان درکار ہے",
+  "reminderFieldDescription": "تفصیل (اختیاری)",
+  "reminderFieldCategory": "زمرہ",
+  "reminderFieldRecurrence": "تکرار",
+  "reminderFieldStartDate": "آغاز کی تاریخ",
+  "reminderFieldTime": "یاد دہانی کا وقت",
+  "reminderFieldAdvanceNotice": "N دن پہلے مطلع کریں",
+  "reminderFieldRecurrenceDay": "مہینے کا دن",
+  "reminderFieldRecurrenceMonth": "مہینہ",
+  "reminderFieldRecurrenceWeekday": "ہفتے کا دن",
+  "reminderFieldIntervalDays": "ہر N دن بعد",
+  "reminderFieldLunarDay": "قمری دن",
+  "reminderFieldLunarMonth": "قمری مہینہ",
+  "reminderDeleteConfirmTitle": "کیا یہ یاد دہانی حذف کر دیں؟",
+  "reminderDeleteConfirmBody": "اسے واپس نہیں لایا جا سکتا۔",
+  "recurrenceNone": "ایک بار",
+  "recurrenceDaily": "روزانہ",
+  "recurrenceWeekly": "ہفتہ وار",
+  "recurrenceMonthly": "ماہانہ",
+  "recurrenceYearly": "سالانہ",
+  "recurrenceCustomIntervalDays": "ہر N دن بعد",
+  "recurrenceLunarYearly": "سالانہ (قمری کیلنڈر)",
+  "weekdayMonday": "پیر",
+  "weekdayTuesday": "منگل",
+  "weekdayWednesday": "بدھ",
+  "weekdayThursday": "جمعرات",
+  "weekdayFriday": "جمعہ",
+  "weekdaySaturday": "ہفتہ",
+  "weekdaySunday": "اتوار",
+  "loanListTitle": "قرضے اور قسطیں",
+  "loanFormTitleNew": "نیا قسطوں کا قرض",
+  "loanFormTitleEdit": "قرض میں ترمیم کریں",
+  "loanFieldName": "نام",
+  "loanFieldCategory": "زمرہ",
+  "loanFieldTotalAmount": "کل رقم (اختیاری)",
+  "loanFieldInstallmentAmount": "ہر قسط کی رقم",
+  "loanFieldTotalInstallments": "قسطوں کی تعداد",
+  "loanFieldFrequency": "تعدد",
+  "loanFieldDueDayOfMonth": "مہینے میں واجب الادا دن",
+  "loanFieldStartDate": "آغاز کی تاریخ",
+  "loanFieldReminderAdvanceDays": "واجب الادا سے N دن پہلے یاد دلائیں",
+  "loanFieldNotes": "نوٹس (اختیاری)",
+  "loanFrequencyMonthly": "ماہانہ",
+  "loanFrequencyWeekly": "ہفتہ وار",
+  "loanFrequencyBiweekly": "ہر دو ہفتے بعد",
+  "loanProgress": "{paid} / {total} قسطیں ادا شدہ",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "ادا شدہ کے طور پر نشان زد کریں",
+  "loanMarkPaidBatch": "{count} قسطوں کو ادا شدہ کے طور پر نشان زد کریں",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "زیر التوا",
+  "loanStatusPaid": "ادا شدہ",
+  "loanStatusOverdue": "مقررہ وقت گزر چکا",
+  "loanInstallmentNumber": "قسط #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "کیا یہ قرض حذف کر دیں؟",
+  "loanDeleteConfirmBody": "تمام {count} قسطیں بھی حذف ہو جائیں گی۔",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "زمرہ جات",
+  "categoryFormTitleNew": "نیا زمرہ",
+  "categoryFormTitleEdit": "زمرے میں ترمیم کریں",
+  "categoryFieldName": "نام",
+  "categoryFieldNameRequired": "نام درکار ہے",
+  "categoryFieldIcon": "آئیکن",
+  "categoryFieldColor": "رنگ",
+  "categoryDeleteSimpleTitle": "کیا یہ زمرہ حذف کر دیں؟",
+  "categoryDeleteSimpleBody": "اس زمرے میں کوئی یاد دہانی نہیں ہے۔",
+  "categoryDeleteHasRemindersTitle": "اس زمرے میں اب بھی یاد دہانیاں موجود ہیں",
+  "categoryDeleteHasRemindersBody": "{count} یاد دہانیاں اس زمرے کو استعمال کر رہی ہیں۔ منتخب کریں کہ ان کے ساتھ کیا کیا جائے۔",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "دوسرے زمرے میں منتقل کریں",
+  "categoryDeleteReassignTarget": "منتقل کریں",
+  "categoryDeleteRemoveAll": "تمام {count} یاد دہانیاں حذف کریں",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "اس سے {count} یاد دہانیاں مستقل طور پر حذف ہو جائیں گی۔ اسے واپس نہیں لایا جا سکتا۔",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "ترتیب بدلنے کے لیے گھسیٹیں",
+  "settingsTitle": "ترتیبات",
+  "settingsLanguage": "زبان",
+  "settingsDefaultReminderTime": "طے شدہ یاد دہانی کا وقت",
+  "settingsTheme": "تھیم",
+  "settingsThemeSystem": "سسٹم کے مطابق",
+  "settingsThemeLight": "ہلکا",
+  "settingsThemeDark": "گہرا",
+  "settingsBackupRestore": "بیک اپ اور بحالی",
+  "settingsExport": "بیک اپ برآمد کریں",
+  "settingsImport": "بیک اپ سے بحال کریں",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups میں محفوظ کیا گیا",
+  "settingsExportSuccess": "بیک اپ محفوظ ہو گیا",
+  "settingsImportNoneFound": "کوئی بیک اپ فائل نہیں ملی",
+  "settingsImportPickFile": "ایک بیک اپ منتخب کریں",
+  "settingsImportSuccess": "بیک اپ بحال ہو گیا",
+  "settingsImportConfirmTitle": "کیا بیک اپ بحال کریں؟",
+  "settingsImportConfirmBody": "اس سے موجودہ تمام ڈیٹا بیک اپ فائل کے مواد سے بدل جائے گا۔",
+  "settingsAbout": "ایپ کے بارے میں",
+  "settingsBatteryOptimizationTitle": "کیا اطلاعات وقت پر موصول نہیں ہو رہیں؟",
+  "settingsBatteryOptimizationBody": "کچھ فون کمپنیاں (Samsung, Xiaomi, Oppo وغیرہ) بیک گراؤنڈ ایپس پر سختی سے پابندی لگاتی ہیں۔ اطلاعات ہمیشہ وقت پر آئیں اس کے لیے اپنے فون کی Settings > Battery میں جا کر iReminder کے لیے بیٹری آپٹیمائزیشن بند کریں۔",
+  "errorGeneric": "کچھ غلط ہو گیا۔ دوبارہ کوشش کریں۔",
+  "errorLoadFailed": "ڈیٹا لوڈ نہیں ہو سکا۔",
+  "settingsAiSectionTitle": "اے آئی اسسٹنٹ",
+  "settingsAiEnable": "اے آئی اسسٹنٹ فعال کریں",
+  "settingsAiProvider": "اے آئی فراہم کنندہ",
+  "settingsAiModel": "ماڈل",
+  "settingsAiApiKey": "API کلید",
+  "settingsAiApiKeyHint": "اپنی API کلید پیسٹ کریں",
+  "settingsAiApiKeyHelp": "کلید کہاں سے حاصل کروں؟",
+  "settingsAiApiKeySaved": "API کلید محفوظ ہو گئی",
+  "settingsAiAllowedCategories": "وہ زمرے جنہیں اسسٹنٹ دیکھ سکتا ہے",
+  "settingsAiAllowedCategoriesHint": "ڈیفالٹ طور پر بند ہے۔ صرف وہی زمرے فعال کریں جنہیں آپ اسسٹنٹ کو دکھانا چاہتے ہیں — اس کے علاوہ کچھ نہیں بھیجا جاتا۔",
+  "settingsAiClearHistory": "چیٹ کی تاریخ صاف کریں",
+  "settingsAiClearHistoryConfirmTitle": "کیا چیٹ کی تاریخ صاف کریں؟",
+  "settingsAiClearHistoryConfirmBody": "اس سے اس ڈیوائس پر محفوظ ہر سوال اور جواب حذف ہو جائے گا۔ اسے واپس نہیں لایا جا سکتا۔",
+  "assistantTitle": "اسسٹنٹ",
+  "assistantEmptyTitle": "مجھ سے کچھ بھی پوچھیں",
+  "assistantEmptyBody": "آزمائیں \"اس ہفتے مجھے کیا کرنا ہے؟\" یا \"میرے موٹرسائیکل قرض کی کتنی قسطیں باقی ہیں؟\"",
+  "assistantInputHint": "کچھ پوچھیں…",
+  "assistantSend": "بھیجیں",
+  "assistantDisabledTitle": "اسسٹنٹ بند ہے",
+  "assistantDisabledBody": "بات چیت شروع کرنے کے لیے ترتیبات میں جا کر اسے فعال کریں اور ایک اے آئی فراہم کنندہ منتخب کریں۔",
+  "assistantOpenSettings": "ترتیبات کھولیں",
+  "assistantThinking": "سوچ رہا ہے…",
+  "validationRequired": "درکار ہے",
+  "validationDayOfMonth": "1–31 کے درمیان دن درج کریں",
+  "validationMonth": "1–12 کے درمیان مہینہ درج کریں",
+  "validationPositiveNumber": "0 سے بڑا نمبر درج کریں",
+  "validationPositiveInteger": "0 سے بڑا مکمل عدد درج کریں",
+  "settingsPermissionsSectionTitle": "اطلاعات اور الارم",
+  "settingsPermissionsNotificationLabel": "اطلاعات کی اجازت",
+  "settingsPermissionsExactAlarmLabel": "درست وقت کے الارم کی اجازت",
+  "settingsPermissionsGranted": "دی گئی",
+  "settingsPermissionsDenied": "نہیں دی گئی — یاد دہانیاں وقت پر نہ آ سکیں",
+  "settingsPermissionsGrantAction": "اجازت دیں",
+  "settingsPermissionsOpenSettingsAction": "ترتیبات کھولیں",
+  "onboardingExactAlarmRationaleTitle": "ایک اور اجازت",
+  "onboardingExactAlarmRationaleBody": "اگلی اسکرین پر، iReminder کو درست وقت کے الارم شیڈول کرنے کی اجازت دیں تاکہ یاد دہانیاں عین اسی وقت پر آئیں جو آپ نے مقرر کیا ہے۔",
+  "loanMarkPaidSuccess": "ادا شدہ کے طور پر نشان زد کر دیا گیا"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "bn",
+  "appTitle": "iReminder",
+  "navToday": "আজ",
+  "navCalendar": "ক্যালেন্ডার",
+  "navLoans": "ঋণ",
+  "navCategories": "বিভাগ",
+  "navSettings": "সেটিংস",
+  "navAssistant": "সহায়ক",
+  "onboardingTitle1": "গুরুত্বপূর্ণ কিছু আর কখনো ভুলবেন না",
+  "onboardingBody1": "ডিভাইস রক্ষণাবেক্ষণ, গাড়ির সার্ভিসিং, বার্ষিকী এবং আরও অনেক কিছু — সব একসাথে এক জায়গায়।",
+  "onboardingTitle2": "পুনরাবৃত্তি এখন আরও সহজ",
+  "onboardingBody2": "প্রতিদিন, সাপ্তাহিক, মাসিক, বার্ষিক, এমনকি চান্দ্র ক্যালেন্ডার অনুযায়ীও — একবার সেট করুন, বাকিটা iReminder মনে রাখবে।",
+  "onboardingTitle3": "১০০% ব্যক্তিগত, ১০০% অফলাইন",
+  "onboardingBody3": "কোনো অ্যাকাউন্ট নেই, ক্লাউড নেই, লগইন নেই। সবকিছু আপনার ফোনেই থাকে।",
+  "onboardingSkip": "এড়িয়ে যান",
+  "onboardingNext": "পরবর্তী",
+  "onboardingGetStarted": "শুরু করুন",
+  "notificationPermissionTitle": "সময়মতো থাকুন",
+  "notificationPermissionBody": "কোনো কিছুর সময় হয়ে গেলে আপনাকে জানাতে iReminder-এর নোটিফিকেশন পাঠানোর অনুমতি প্রয়োজন।",
+  "notificationPermissionAllow": "নোটিফিকেশনের অনুমতি দিন",
+  "notificationPermissionLater": "এখন নয়",
+  "homeSectionOverdue": "মেয়াদোত্তীর্ণ",
+  "homeSectionToday": "আজ",
+  "homeSectionThisWeek": "এই সপ্তাহে",
+  "homeSectionUpcoming": "আসন্ন",
+  "homeEmptyTitle": "এখানে এখনো কিছু নেই",
+  "homeEmptyBody": "আপনার প্রথম রিমাইন্ডার বা কিস্তির ঋণ যোগ করতে + বাটনে ট্যাপ করুন।",
+  "fabAddReminder": "রিমাইন্ডার",
+  "fabAddLoan": "কিস্তির ঋণ",
+  "actionDone": "সম্পন্ন",
+  "actionSnooze": "স্নুজ",
+  "actionEdit": "সম্পাদনা",
+  "actionDelete": "মুছুন",
+  "actionSave": "সংরক্ষণ",
+  "actionCancel": "বাতিল",
+  "actionConfirm": "নিশ্চিত করুন",
+  "actionYes": "হ্যাঁ",
+  "actionNo": "না",
+  "actionOk": "ঠিক আছে",
+  "actionAdd": "যোগ করুন",
+  "actionClose": "বন্ধ করুন",
+  "reminderFormTitleNew": "নতুন রিমাইন্ডার",
+  "reminderFormTitleEdit": "রিমাইন্ডার সম্পাদনা করুন",
+  "reminderFieldTitle": "শিরোনাম",
+  "reminderFieldTitleRequired": "শিরোনাম আবশ্যক",
+  "reminderFieldDescription": "বিবরণ (ঐচ্ছিক)",
+  "reminderFieldCategory": "বিভাগ",
+  "reminderFieldRecurrence": "পুনরাবৃত্তি",
+  "reminderFieldStartDate": "শুরুর তারিখ",
+  "reminderFieldTime": "রিমাইন্ডারের সময়",
+  "reminderFieldAdvanceNotice": "N দিন আগে জানান",
+  "reminderFieldRecurrenceDay": "মাসের কততম দিন",
+  "reminderFieldRecurrenceMonth": "মাস",
+  "reminderFieldRecurrenceWeekday": "সপ্তাহের কোন দিন",
+  "reminderFieldIntervalDays": "প্রতি N দিনে",
+  "reminderFieldLunarDay": "চান্দ্র দিন",
+  "reminderFieldLunarMonth": "চান্দ্র মাস",
+  "reminderDeleteConfirmTitle": "এই রিমাইন্ডারটি মুছবেন?",
+  "reminderDeleteConfirmBody": "এটি পূর্বাবস্থায় ফেরানো যাবে না।",
+  "recurrenceNone": "একবার",
+  "recurrenceDaily": "প্রতিদিন",
+  "recurrenceWeekly": "সাপ্তাহিক",
+  "recurrenceMonthly": "মাসিক",
+  "recurrenceYearly": "বার্ষিক",
+  "recurrenceCustomIntervalDays": "প্রতি N দিনে",
+  "recurrenceLunarYearly": "বার্ষিক (চান্দ্র ক্যালেন্ডার)",
+  "weekdayMonday": "সোমবার",
+  "weekdayTuesday": "মঙ্গলবার",
+  "weekdayWednesday": "বুধবার",
+  "weekdayThursday": "বৃহস্পতিবার",
+  "weekdayFriday": "শুক্রবার",
+  "weekdaySaturday": "শনিবার",
+  "weekdaySunday": "রবিবার",
+  "loanListTitle": "ঋণ ও কিস্তি",
+  "loanFormTitleNew": "নতুন কিস্তির ঋণ",
+  "loanFormTitleEdit": "ঋণ সম্পাদনা করুন",
+  "loanFieldName": "নাম",
+  "loanFieldCategory": "বিভাগ",
+  "loanFieldTotalAmount": "মোট পরিমাণ (ঐচ্ছিক)",
+  "loanFieldInstallmentAmount": "প্রতি কিস্তির পরিমাণ",
+  "loanFieldTotalInstallments": "মোট কিস্তির সংখ্যা",
+  "loanFieldFrequency": "পুনরাবৃত্তির হার",
+  "loanFieldDueDayOfMonth": "মাসের কততম দিনে পরিশোধ্য",
+  "loanFieldStartDate": "শুরুর তারিখ",
+  "loanFieldReminderAdvanceDays": "পরিশোধের N দিন আগে জানান",
+  "loanFieldNotes": "নোট (ঐচ্ছিক)",
+  "loanFrequencyMonthly": "মাসিক",
+  "loanFrequencyWeekly": "সাপ্তাহিক",
+  "loanFrequencyBiweekly": "দ্বি-সাপ্তাহিক",
+  "loanProgress": "{paid} / {total} কিস্তি পরিশোধিত",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "পরিশোধিত হিসেবে চিহ্নিত করুন",
+  "loanMarkPaidBatch": "{count}টি কিস্তি পরিশোধিত হিসেবে চিহ্নিত করুন",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "বাকি আছে",
+  "loanStatusPaid": "পরিশোধিত",
+  "loanStatusOverdue": "মেয়াদোত্তীর্ণ",
+  "loanInstallmentNumber": "কিস্তি #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "এই ঋণটি মুছবেন?",
+  "loanDeleteConfirmBody": "সবগুলো {count}টি কিস্তিও মুছে যাবে।",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "বিভাগসমূহ",
+  "categoryFormTitleNew": "নতুন বিভাগ",
+  "categoryFormTitleEdit": "বিভাগ সম্পাদনা করুন",
+  "categoryFieldName": "নাম",
+  "categoryFieldNameRequired": "নাম আবশ্যক",
+  "categoryFieldIcon": "আইকন",
+  "categoryFieldColor": "রং",
+  "categoryDeleteSimpleTitle": "এই বিভাগটি মুছবেন?",
+  "categoryDeleteSimpleBody": "এই বিভাগে কোনো রিমাইন্ডার নেই।",
+  "categoryDeleteHasRemindersTitle": "এই বিভাগে এখনো রিমাইন্ডার আছে",
+  "categoryDeleteHasRemindersBody": "{count}টি রিমাইন্ডার এই বিভাগ ব্যবহার করছে। এগুলোর সাথে কী করবেন তা বেছে নিন।",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "অন্য বিভাগে সরান",
+  "categoryDeleteReassignTarget": "এখানে সরান",
+  "categoryDeleteRemoveAll": "সবগুলো {count}টি রিমাইন্ডার মুছুন",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "এতে {count}টি রিমাইন্ডার স্থায়ীভাবে মুছে যাবে। এটি পূর্বাবস্থায় ফেরানো যাবে না।",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "ক্রম পরিবর্তন করতে টেনে আনুন",
+  "settingsTitle": "সেটিংস",
+  "settingsLanguage": "ভাষা",
+  "settingsDefaultReminderTime": "ডিফল্ট রিমাইন্ডারের সময়",
+  "settingsTheme": "থিম",
+  "settingsThemeSystem": "সিস্টেম অনুযায়ী",
+  "settingsThemeLight": "হালকা",
+  "settingsThemeDark": "গাঢ়",
+  "settingsBackupRestore": "ব্যাকআপ ও পুনরুদ্ধার",
+  "settingsExport": "ব্যাকআপ এক্সপোর্ট করুন",
+  "settingsImport": "ব্যাকআপ থেকে পুনরুদ্ধার করুন",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups-এ সংরক্ষিত হয়েছে",
+  "settingsExportSuccess": "ব্যাকআপ সংরক্ষিত হয়েছে",
+  "settingsImportNoneFound": "কোনো ব্যাকআপ ফাইল পাওয়া যায়নি",
+  "settingsImportPickFile": "একটি ব্যাকআপ বেছে নিন",
+  "settingsImportSuccess": "ব্যাকআপ পুনরুদ্ধার হয়েছে",
+  "settingsImportConfirmTitle": "ব্যাকআপ পুনরুদ্ধার করবেন?",
+  "settingsImportConfirmBody": "এটি বর্তমান সব ডেটা মুছে ব্যাকআপ ফাইলের ডেটা দিয়ে প্রতিস্থাপন করবে।",
+  "settingsAbout": "সম্পর্কে",
+  "settingsBatteryOptimizationTitle": "নোটিফিকেশন সময়মতো আসছে না?",
+  "settingsBatteryOptimizationBody": "কিছু ফোন নির্মাতা (Samsung, Xiaomi, Oppo...) ব্যাকগ্রাউন্ড অ্যাপের ওপর কঠোর নিয়ন্ত্রণ রাখে। রিমাইন্ডার সবসময় ঠিক সময়ে আসে তা নিশ্চিত করতে ফোনের Settings > Battery-এ গিয়ে iReminder-এর জন্য ব্যাটারি অপ্টিমাইজেশন বন্ধ করুন।",
+  "errorGeneric": "কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।",
+  "errorLoadFailed": "ডেটা লোড করা যায়নি।",
+  "settingsAiSectionTitle": "এআই সহায়ক",
+  "settingsAiEnable": "এআই সহায়ক চালু করুন",
+  "settingsAiProvider": "এআই প্রোভাইডার",
+  "settingsAiModel": "মডেল",
+  "settingsAiApiKey": "এপিআই কী",
+  "settingsAiApiKeyHint": "আপনার এপিআই কী পেস্ট করুন",
+  "settingsAiApiKeyHelp": "কী কোথায় পাব?",
+  "settingsAiApiKeySaved": "এপিআই কী সংরক্ষিত হয়েছে",
+  "settingsAiAllowedCategories": "সহায়ক যেসব বিভাগ দেখতে পারবে",
+  "settingsAiAllowedCategoriesHint": "ডিফল্টভাবে বন্ধ থাকে। আপনি যে বিভাগগুলো সহায়ককে দেখাতে চান শুধু সেগুলোই চালু করুন — আর কিছুই পাঠানো হয় না।",
+  "settingsAiClearHistory": "চ্যাট হিস্টোরি মুছুন",
+  "settingsAiClearHistoryConfirmTitle": "চ্যাট হিস্টোরি মুছবেন?",
+  "settingsAiClearHistoryConfirmBody": "এতে এই ডিভাইসে সংরক্ষিত সব প্রশ্ন ও উত্তর মুছে যাবে। এটি পূর্বাবস্থায় ফেরানো যাবে না।",
+  "assistantTitle": "সহায়ক",
+  "assistantEmptyTitle": "যা খুশি জিজ্ঞাসা করুন",
+  "assistantEmptyBody": "চেষ্টা করে দেখুন \"এই সপ্তাহে আমার কী করা দরকার?\" অথবা \"আমার মোটরসাইকেল ঋণের আর কয়টা কিস্তি বাকি?\"",
+  "assistantInputHint": "কিছু জিজ্ঞাসা করুন…",
+  "assistantSend": "পাঠান",
+  "assistantDisabledTitle": "সহায়ক বন্ধ আছে",
+  "assistantDisabledBody": "চ্যাট শুরু করতে সেটিংসে গিয়ে এটি চালু করুন এবং একটি এআই প্রোভাইডার বেছে নিন।",
+  "assistantOpenSettings": "সেটিংস খুলুন",
+  "assistantThinking": "ভাবছে…",
+  "validationRequired": "আবশ্যক",
+  "validationDayOfMonth": "১–৩১ এর মধ্যে একটি দিন দিন",
+  "validationMonth": "১–১২ এর মধ্যে একটি মাস দিন",
+  "validationPositiveNumber": "০-এর চেয়ে বড় একটি সংখ্যা দিন",
+  "validationPositiveInteger": "০-এর চেয়ে বড় একটি পূর্ণসংখ্যা দিন",
+  "settingsPermissionsSectionTitle": "নোটিফিকেশন ও অ্যালার্ম",
+  "settingsPermissionsNotificationLabel": "নোটিফিকেশনের অনুমতি",
+  "settingsPermissionsExactAlarmLabel": "নির্ভুল অ্যালার্মের অনুমতি",
+  "settingsPermissionsGranted": "অনুমোদিত",
+  "settingsPermissionsDenied": "অনুমোদিত নয় — রিমাইন্ডার সময়মতো নাও আসতে পারে",
+  "settingsPermissionsGrantAction": "অনুমতি দিন",
+  "settingsPermissionsOpenSettingsAction": "সেটিংস খুলুন",
+  "onboardingExactAlarmRationaleTitle": "আরও একটি অনুমতি",
+  "onboardingExactAlarmRationaleBody": "পরের স্ক্রিনে, iReminder-কে নির্ভুল অ্যালার্ম শিডিউল করার অনুমতি দিন যাতে আপনার নির্ধারিত সময়েই রিমাইন্ডার আসে।",
+  "loanMarkPaidSuccess": "পরিশোধিত হিসেবে চিহ্নিত হয়েছে"
+}

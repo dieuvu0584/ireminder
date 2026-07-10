@@ -1,0 +1,554 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Bengali Bangla (`bn`).
+class AppLocalizationsBn extends AppLocalizations {
+  AppLocalizationsBn([String locale = 'bn']) : super(locale);
+
+  @override
+  String get appTitle => 'iReminder';
+
+  @override
+  String get navToday => 'আজ';
+
+  @override
+  String get navCalendar => 'ক্যালেন্ডার';
+
+  @override
+  String get navLoans => 'ঋণ';
+
+  @override
+  String get navCategories => 'বিভাগ';
+
+  @override
+  String get navSettings => 'সেটিংস';
+
+  @override
+  String get navAssistant => 'সহায়ক';
+
+  @override
+  String get onboardingTitle1 => 'গুরুত্বপূর্ণ কিছু আর কখনো ভুলবেন না';
+
+  @override
+  String get onboardingBody1 =>
+      'ডিভাইস রক্ষণাবেক্ষণ, গাড়ির সার্ভিসিং, বার্ষিকী এবং আরও অনেক কিছু — সব একসাথে এক জায়গায়।';
+
+  @override
+  String get onboardingTitle2 => 'পুনরাবৃত্তি এখন আরও সহজ';
+
+  @override
+  String get onboardingBody2 =>
+      'প্রতিদিন, সাপ্তাহিক, মাসিক, বার্ষিক, এমনকি চান্দ্র ক্যালেন্ডার অনুযায়ীও — একবার সেট করুন, বাকিটা iReminder মনে রাখবে।';
+
+  @override
+  String get onboardingTitle3 => '১০০% ব্যক্তিগত, ১০০% অফলাইন';
+
+  @override
+  String get onboardingBody3 =>
+      'কোনো অ্যাকাউন্ট নেই, ক্লাউড নেই, লগইন নেই। সবকিছু আপনার ফোনেই থাকে।';
+
+  @override
+  String get onboardingSkip => 'এড়িয়ে যান';
+
+  @override
+  String get onboardingNext => 'পরবর্তী';
+
+  @override
+  String get onboardingGetStarted => 'শুরু করুন';
+
+  @override
+  String get notificationPermissionTitle => 'সময়মতো থাকুন';
+
+  @override
+  String get notificationPermissionBody =>
+      'কোনো কিছুর সময় হয়ে গেলে আপনাকে জানাতে iReminder-এর নোটিফিকেশন পাঠানোর অনুমতি প্রয়োজন।';
+
+  @override
+  String get notificationPermissionAllow => 'নোটিফিকেশনের অনুমতি দিন';
+
+  @override
+  String get notificationPermissionLater => 'এখন নয়';
+
+  @override
+  String get homeSectionOverdue => 'মেয়াদোত্তীর্ণ';
+
+  @override
+  String get homeSectionToday => 'আজ';
+
+  @override
+  String get homeSectionThisWeek => 'এই সপ্তাহে';
+
+  @override
+  String get homeSectionUpcoming => 'আসন্ন';
+
+  @override
+  String get homeEmptyTitle => 'এখানে এখনো কিছু নেই';
+
+  @override
+  String get homeEmptyBody =>
+      'আপনার প্রথম রিমাইন্ডার বা কিস্তির ঋণ যোগ করতে + বাটনে ট্যাপ করুন।';
+
+  @override
+  String get fabAddReminder => 'রিমাইন্ডার';
+
+  @override
+  String get fabAddLoan => 'কিস্তির ঋণ';
+
+  @override
+  String get actionDone => 'সম্পন্ন';
+
+  @override
+  String get actionSnooze => 'স্নুজ';
+
+  @override
+  String get actionEdit => 'সম্পাদনা';
+
+  @override
+  String get actionDelete => 'মুছুন';
+
+  @override
+  String get actionSave => 'সংরক্ষণ';
+
+  @override
+  String get actionCancel => 'বাতিল';
+
+  @override
+  String get actionConfirm => 'নিশ্চিত করুন';
+
+  @override
+  String get actionYes => 'হ্যাঁ';
+
+  @override
+  String get actionNo => 'না';
+
+  @override
+  String get actionOk => 'ঠিক আছে';
+
+  @override
+  String get actionAdd => 'যোগ করুন';
+
+  @override
+  String get actionClose => 'বন্ধ করুন';
+
+  @override
+  String get reminderFormTitleNew => 'নতুন রিমাইন্ডার';
+
+  @override
+  String get reminderFormTitleEdit => 'রিমাইন্ডার সম্পাদনা করুন';
+
+  @override
+  String get reminderFieldTitle => 'শিরোনাম';
+
+  @override
+  String get reminderFieldTitleRequired => 'শিরোনাম আবশ্যক';
+
+  @override
+  String get reminderFieldDescription => 'বিবরণ (ঐচ্ছিক)';
+
+  @override
+  String get reminderFieldCategory => 'বিভাগ';
+
+  @override
+  String get reminderFieldRecurrence => 'পুনরাবৃত্তি';
+
+  @override
+  String get reminderFieldStartDate => 'শুরুর তারিখ';
+
+  @override
+  String get reminderFieldTime => 'রিমাইন্ডারের সময়';
+
+  @override
+  String get reminderFieldAdvanceNotice => 'N দিন আগে জানান';
+
+  @override
+  String get reminderFieldRecurrenceDay => 'মাসের কততম দিন';
+
+  @override
+  String get reminderFieldRecurrenceMonth => 'মাস';
+
+  @override
+  String get reminderFieldRecurrenceWeekday => 'সপ্তাহের কোন দিন';
+
+  @override
+  String get reminderFieldIntervalDays => 'প্রতি N দিনে';
+
+  @override
+  String get reminderFieldLunarDay => 'চান্দ্র দিন';
+
+  @override
+  String get reminderFieldLunarMonth => 'চান্দ্র মাস';
+
+  @override
+  String get reminderDeleteConfirmTitle => 'এই রিমাইন্ডারটি মুছবেন?';
+
+  @override
+  String get reminderDeleteConfirmBody => 'এটি পূর্বাবস্থায় ফেরানো যাবে না।';
+
+  @override
+  String get recurrenceNone => 'একবার';
+
+  @override
+  String get recurrenceDaily => 'প্রতিদিন';
+
+  @override
+  String get recurrenceWeekly => 'সাপ্তাহিক';
+
+  @override
+  String get recurrenceMonthly => 'মাসিক';
+
+  @override
+  String get recurrenceYearly => 'বার্ষিক';
+
+  @override
+  String get recurrenceCustomIntervalDays => 'প্রতি N দিনে';
+
+  @override
+  String get recurrenceLunarYearly => 'বার্ষিক (চান্দ্র ক্যালেন্ডার)';
+
+  @override
+  String get weekdayMonday => 'সোমবার';
+
+  @override
+  String get weekdayTuesday => 'মঙ্গলবার';
+
+  @override
+  String get weekdayWednesday => 'বুধবার';
+
+  @override
+  String get weekdayThursday => 'বৃহস্পতিবার';
+
+  @override
+  String get weekdayFriday => 'শুক্রবার';
+
+  @override
+  String get weekdaySaturday => 'শনিবার';
+
+  @override
+  String get weekdaySunday => 'রবিবার';
+
+  @override
+  String get loanListTitle => 'ঋণ ও কিস্তি';
+
+  @override
+  String get loanFormTitleNew => 'নতুন কিস্তির ঋণ';
+
+  @override
+  String get loanFormTitleEdit => 'ঋণ সম্পাদনা করুন';
+
+  @override
+  String get loanFieldName => 'নাম';
+
+  @override
+  String get loanFieldCategory => 'বিভাগ';
+
+  @override
+  String get loanFieldTotalAmount => 'মোট পরিমাণ (ঐচ্ছিক)';
+
+  @override
+  String get loanFieldInstallmentAmount => 'প্রতি কিস্তির পরিমাণ';
+
+  @override
+  String get loanFieldTotalInstallments => 'মোট কিস্তির সংখ্যা';
+
+  @override
+  String get loanFieldFrequency => 'পুনরাবৃত্তির হার';
+
+  @override
+  String get loanFieldDueDayOfMonth => 'মাসের কততম দিনে পরিশোধ্য';
+
+  @override
+  String get loanFieldStartDate => 'শুরুর তারিখ';
+
+  @override
+  String get loanFieldReminderAdvanceDays => 'পরিশোধের N দিন আগে জানান';
+
+  @override
+  String get loanFieldNotes => 'নোট (ঐচ্ছিক)';
+
+  @override
+  String get loanFrequencyMonthly => 'মাসিক';
+
+  @override
+  String get loanFrequencyWeekly => 'সাপ্তাহিক';
+
+  @override
+  String get loanFrequencyBiweekly => 'দ্বি-সাপ্তাহিক';
+
+  @override
+  String loanProgress(int paid, int total) {
+    return '$paid / $total কিস্তি পরিশোধিত';
+  }
+
+  @override
+  String get loanMarkPaid => 'পরিশোধিত হিসেবে চিহ্নিত করুন';
+
+  @override
+  String loanMarkPaidBatch(int count) {
+    return '$countটি কিস্তি পরিশোধিত হিসেবে চিহ্নিত করুন';
+  }
+
+  @override
+  String get loanStatusPending => 'বাকি আছে';
+
+  @override
+  String get loanStatusPaid => 'পরিশোধিত';
+
+  @override
+  String get loanStatusOverdue => 'মেয়াদোত্তীর্ণ';
+
+  @override
+  String loanInstallmentNumber(int number) {
+    return 'কিস্তি #$number';
+  }
+
+  @override
+  String get loanDeleteConfirmTitle => 'এই ঋণটি মুছবেন?';
+
+  @override
+  String loanDeleteConfirmBody(int count) {
+    return 'সবগুলো $countটি কিস্তিও মুছে যাবে।';
+  }
+
+  @override
+  String get categoryManagerTitle => 'বিভাগসমূহ';
+
+  @override
+  String get categoryFormTitleNew => 'নতুন বিভাগ';
+
+  @override
+  String get categoryFormTitleEdit => 'বিভাগ সম্পাদনা করুন';
+
+  @override
+  String get categoryFieldName => 'নাম';
+
+  @override
+  String get categoryFieldNameRequired => 'নাম আবশ্যক';
+
+  @override
+  String get categoryFieldIcon => 'আইকন';
+
+  @override
+  String get categoryFieldColor => 'রং';
+
+  @override
+  String get categoryDeleteSimpleTitle => 'এই বিভাগটি মুছবেন?';
+
+  @override
+  String get categoryDeleteSimpleBody => 'এই বিভাগে কোনো রিমাইন্ডার নেই।';
+
+  @override
+  String get categoryDeleteHasRemindersTitle => 'এই বিভাগে এখনো রিমাইন্ডার আছে';
+
+  @override
+  String categoryDeleteHasRemindersBody(int count) {
+    return '$countটি রিমাইন্ডার এই বিভাগ ব্যবহার করছে। এগুলোর সাথে কী করবেন তা বেছে নিন।';
+  }
+
+  @override
+  String get categoryDeleteReassign => 'অন্য বিভাগে সরান';
+
+  @override
+  String get categoryDeleteReassignTarget => 'এখানে সরান';
+
+  @override
+  String categoryDeleteRemoveAll(int count) {
+    return 'সবগুলো $countটি রিমাইন্ডার মুছুন';
+  }
+
+  @override
+  String categoryDeleteRemoveAllConfirm(int count) {
+    return 'এতে $countটি রিমাইন্ডার স্থায়ীভাবে মুছে যাবে। এটি পূর্বাবস্থায় ফেরানো যাবে না।';
+  }
+
+  @override
+  String get categoryReorderHint => 'ক্রম পরিবর্তন করতে টেনে আনুন';
+
+  @override
+  String get settingsTitle => 'সেটিংস';
+
+  @override
+  String get settingsLanguage => 'ভাষা';
+
+  @override
+  String get settingsDefaultReminderTime => 'ডিফল্ট রিমাইন্ডারের সময়';
+
+  @override
+  String get settingsTheme => 'থিম';
+
+  @override
+  String get settingsThemeSystem => 'সিস্টেম অনুযায়ী';
+
+  @override
+  String get settingsThemeLight => 'হালকা';
+
+  @override
+  String get settingsThemeDark => 'গাঢ়';
+
+  @override
+  String get settingsBackupRestore => 'ব্যাকআপ ও পুনরুদ্ধার';
+
+  @override
+  String get settingsExport => 'ব্যাকআপ এক্সপোর্ট করুন';
+
+  @override
+  String get settingsImport => 'ব্যাকআপ থেকে পুনরুদ্ধার করুন';
+
+  @override
+  String get settingsExportLocationHint =>
+      'Android/data/com.ireminder.ireminder/files/backups-এ সংরক্ষিত হয়েছে';
+
+  @override
+  String get settingsExportSuccess => 'ব্যাকআপ সংরক্ষিত হয়েছে';
+
+  @override
+  String get settingsImportNoneFound => 'কোনো ব্যাকআপ ফাইল পাওয়া যায়নি';
+
+  @override
+  String get settingsImportPickFile => 'একটি ব্যাকআপ বেছে নিন';
+
+  @override
+  String get settingsImportSuccess => 'ব্যাকআপ পুনরুদ্ধার হয়েছে';
+
+  @override
+  String get settingsImportConfirmTitle => 'ব্যাকআপ পুনরুদ্ধার করবেন?';
+
+  @override
+  String get settingsImportConfirmBody =>
+      'এটি বর্তমান সব ডেটা মুছে ব্যাকআপ ফাইলের ডেটা দিয়ে প্রতিস্থাপন করবে।';
+
+  @override
+  String get settingsAbout => 'সম্পর্কে';
+
+  @override
+  String get settingsBatteryOptimizationTitle => 'নোটিফিকেশন সময়মতো আসছে না?';
+
+  @override
+  String get settingsBatteryOptimizationBody =>
+      'কিছু ফোন নির্মাতা (Samsung, Xiaomi, Oppo...) ব্যাকগ্রাউন্ড অ্যাপের ওপর কঠোর নিয়ন্ত্রণ রাখে। রিমাইন্ডার সবসময় ঠিক সময়ে আসে তা নিশ্চিত করতে ফোনের Settings > Battery-এ গিয়ে iReminder-এর জন্য ব্যাটারি অপ্টিমাইজেশন বন্ধ করুন।';
+
+  @override
+  String get errorGeneric => 'কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।';
+
+  @override
+  String get errorLoadFailed => 'ডেটা লোড করা যায়নি।';
+
+  @override
+  String get settingsAiSectionTitle => 'এআই সহায়ক';
+
+  @override
+  String get settingsAiEnable => 'এআই সহায়ক চালু করুন';
+
+  @override
+  String get settingsAiProvider => 'এআই প্রোভাইডার';
+
+  @override
+  String get settingsAiModel => 'মডেল';
+
+  @override
+  String get settingsAiApiKey => 'এপিআই কী';
+
+  @override
+  String get settingsAiApiKeyHint => 'আপনার এপিআই কী পেস্ট করুন';
+
+  @override
+  String get settingsAiApiKeyHelp => 'কী কোথায় পাব?';
+
+  @override
+  String get settingsAiApiKeySaved => 'এপিআই কী সংরক্ষিত হয়েছে';
+
+  @override
+  String get settingsAiAllowedCategories => 'সহায়ক যেসব বিভাগ দেখতে পারবে';
+
+  @override
+  String get settingsAiAllowedCategoriesHint =>
+      'ডিফল্টভাবে বন্ধ থাকে। আপনি যে বিভাগগুলো সহায়ককে দেখাতে চান শুধু সেগুলোই চালু করুন — আর কিছুই পাঠানো হয় না।';
+
+  @override
+  String get settingsAiClearHistory => 'চ্যাট হিস্টোরি মুছুন';
+
+  @override
+  String get settingsAiClearHistoryConfirmTitle => 'চ্যাট হিস্টোরি মুছবেন?';
+
+  @override
+  String get settingsAiClearHistoryConfirmBody =>
+      'এতে এই ডিভাইসে সংরক্ষিত সব প্রশ্ন ও উত্তর মুছে যাবে। এটি পূর্বাবস্থায় ফেরানো যাবে না।';
+
+  @override
+  String get assistantTitle => 'সহায়ক';
+
+  @override
+  String get assistantEmptyTitle => 'যা খুশি জিজ্ঞাসা করুন';
+
+  @override
+  String get assistantEmptyBody =>
+      'চেষ্টা করে দেখুন \"এই সপ্তাহে আমার কী করা দরকার?\" অথবা \"আমার মোটরসাইকেল ঋণের আর কয়টা কিস্তি বাকি?\"';
+
+  @override
+  String get assistantInputHint => 'কিছু জিজ্ঞাসা করুন…';
+
+  @override
+  String get assistantSend => 'পাঠান';
+
+  @override
+  String get assistantDisabledTitle => 'সহায়ক বন্ধ আছে';
+
+  @override
+  String get assistantDisabledBody =>
+      'চ্যাট শুরু করতে সেটিংসে গিয়ে এটি চালু করুন এবং একটি এআই প্রোভাইডার বেছে নিন।';
+
+  @override
+  String get assistantOpenSettings => 'সেটিংস খুলুন';
+
+  @override
+  String get assistantThinking => 'ভাবছে…';
+
+  @override
+  String get validationRequired => 'আবশ্যক';
+
+  @override
+  String get validationDayOfMonth => '১–৩১ এর মধ্যে একটি দিন দিন';
+
+  @override
+  String get validationMonth => '১–১২ এর মধ্যে একটি মাস দিন';
+
+  @override
+  String get validationPositiveNumber => '০-এর চেয়ে বড় একটি সংখ্যা দিন';
+
+  @override
+  String get validationPositiveInteger => '০-এর চেয়ে বড় একটি পূর্ণসংখ্যা দিন';
+
+  @override
+  String get settingsPermissionsSectionTitle => 'নোটিফিকেশন ও অ্যালার্ম';
+
+  @override
+  String get settingsPermissionsNotificationLabel => 'নোটিফিকেশনের অনুমতি';
+
+  @override
+  String get settingsPermissionsExactAlarmLabel => 'নির্ভুল অ্যালার্মের অনুমতি';
+
+  @override
+  String get settingsPermissionsGranted => 'অনুমোদিত';
+
+  @override
+  String get settingsPermissionsDenied =>
+      'অনুমোদিত নয় — রিমাইন্ডার সময়মতো নাও আসতে পারে';
+
+  @override
+  String get settingsPermissionsGrantAction => 'অনুমতি দিন';
+
+  @override
+  String get settingsPermissionsOpenSettingsAction => 'সেটিংস খুলুন';
+
+  @override
+  String get onboardingExactAlarmRationaleTitle => 'আরও একটি অনুমতি';
+
+  @override
+  String get onboardingExactAlarmRationaleBody =>
+      'পরের স্ক্রিনে, iReminder-কে নির্ভুল অ্যালার্ম শিডিউল করার অনুমতি দিন যাতে আপনার নির্ধারিত সময়েই রিমাইন্ডার আসে।';
+
+  @override
+  String get loanMarkPaidSuccess => 'পরিশোধিত হিসেবে চিহ্নিত হয়েছে';
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "fil",
+  "appTitle": "iReminder",
+  "navToday": "Ngayon",
+  "navCalendar": "Kalendaryo",
+  "navLoans": "Utang",
+  "navCategories": "Mga Kategorya",
+  "navSettings": "Mga Setting",
+  "navAssistant": "Katulong",
+  "onboardingTitle1": "Huwag nang makalimot sa mahalaga",
+  "onboardingBody1": "I-track ang maintenance ng gamit, serbisyo ng sasakyan, anibersaryo, at marami pa — lahat sa iisang app.",
+  "onboardingTitle2": "Ginawang simple ang pag-uulit",
+  "onboardingBody2": "Araw-araw, lingguhan, buwanan, taunan, o kahit ayon sa kalendaryong lunar — i-set mo isang beses lang at aalalahanin ka na ni iReminder.",
+  "onboardingTitle3": "100% pribado, 100% offline",
+  "onboardingBody3": "Walang account, walang cloud, walang login. Nananatili ang lahat sa iyong telepono.",
+  "onboardingSkip": "Laktawan",
+  "onboardingNext": "Susunod",
+  "onboardingGetStarted": "Simulan na",
+  "notificationPermissionTitle": "Huwag mahuli sa oras",
+  "notificationPermissionBody": "Kailangan ng iReminder ng pahintulot na magpadala sa iyo ng notification kapag may deadline na.",
+  "notificationPermissionAllow": "Payagan ang mga notification",
+  "notificationPermissionLater": "Huwag muna",
+  "homeSectionOverdue": "Overdue",
+  "homeSectionToday": "Ngayon",
+  "homeSectionThisWeek": "Ngayong linggo",
+  "homeSectionUpcoming": "Paparating",
+  "homeEmptyTitle": "Wala pang laman dito",
+  "homeEmptyBody": "Pindutin ang + para idagdag ang una mong paalala o utang na hulugan.",
+  "fabAddReminder": "Paalala",
+  "fabAddLoan": "Utang na hulugan",
+  "actionDone": "Tapos na",
+  "actionSnooze": "I-snooze",
+  "actionEdit": "I-edit",
+  "actionDelete": "Tanggalin",
+  "actionSave": "I-save",
+  "actionCancel": "Kanselahin",
+  "actionConfirm": "Kumpirmahin",
+  "actionYes": "Oo",
+  "actionNo": "Hindi",
+  "actionOk": "OK",
+  "actionAdd": "Idagdag",
+  "actionClose": "Isara",
+  "reminderFormTitleNew": "Bagong paalala",
+  "reminderFormTitleEdit": "I-edit ang paalala",
+  "reminderFieldTitle": "Pamagat",
+  "reminderFieldTitleRequired": "Kailangan ang pamagat",
+  "reminderFieldDescription": "Deskripsyon (opsyonal)",
+  "reminderFieldCategory": "Kategorya",
+  "reminderFieldRecurrence": "Pag-uulit",
+  "reminderFieldStartDate": "Petsa ng simula",
+  "reminderFieldTime": "Oras ng paalala",
+  "reminderFieldAdvanceNotice": "Ipaalam N araw bago",
+  "reminderFieldRecurrenceDay": "Araw ng buwan",
+  "reminderFieldRecurrenceMonth": "Buwan",
+  "reminderFieldRecurrenceWeekday": "Araw ng linggo",
+  "reminderFieldIntervalDays": "Bawat N araw",
+  "reminderFieldLunarDay": "Araw sa lunar calendar",
+  "reminderFieldLunarMonth": "Buwan sa lunar calendar",
+  "reminderDeleteConfirmTitle": "Tanggalin ang paalalang ito?",
+  "reminderDeleteConfirmBody": "Hindi na ito maaaring bawiin.",
+  "recurrenceNone": "Isang beses",
+  "recurrenceDaily": "Araw-araw",
+  "recurrenceWeekly": "Lingguhan",
+  "recurrenceMonthly": "Buwanan",
+  "recurrenceYearly": "Taunan",
+  "recurrenceCustomIntervalDays": "Bawat N araw",
+  "recurrenceLunarYearly": "Taunan (lunar calendar)",
+  "weekdayMonday": "Lunes",
+  "weekdayTuesday": "Martes",
+  "weekdayWednesday": "Miyerkules",
+  "weekdayThursday": "Huwebes",
+  "weekdayFriday": "Biyernes",
+  "weekdaySaturday": "Sabado",
+  "weekdaySunday": "Linggo",
+  "loanListTitle": "Mga utang at hulugan",
+  "loanFormTitleNew": "Bagong utang na hulugan",
+  "loanFormTitleEdit": "I-edit ang utang",
+  "loanFieldName": "Pangalan",
+  "loanFieldCategory": "Kategorya",
+  "loanFieldTotalAmount": "Kabuuang halaga (opsyonal)",
+  "loanFieldInstallmentAmount": "Halaga bawat hulog",
+  "loanFieldTotalInstallments": "Bilang ng hulog",
+  "loanFieldFrequency": "Dalas",
+  "loanFieldDueDayOfMonth": "Araw ng deadline sa buwan",
+  "loanFieldStartDate": "Petsa ng simula",
+  "loanFieldReminderAdvanceDays": "Paalalahanan N araw bago ang deadline",
+  "loanFieldNotes": "Mga tala (opsyonal)",
+  "loanFrequencyMonthly": "Buwanan",
+  "loanFrequencyWeekly": "Lingguhan",
+  "loanFrequencyBiweekly": "Tuwing ikalawang linggo",
+  "loanProgress": "{paid} / {total} nabayaran na",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Markahang bayad na",
+  "loanMarkPaidBatch": "Markahang bayad na ang {count} hulog",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Nakabinbin",
+  "loanStatusPaid": "Bayad na",
+  "loanStatusOverdue": "Overdue",
+  "loanInstallmentNumber": "Hulog #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Tanggalin ang utang na ito?",
+  "loanDeleteConfirmBody": "Matatanggal din ang lahat ng {count} hulog.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Mga Kategorya",
+  "categoryFormTitleNew": "Bagong kategorya",
+  "categoryFormTitleEdit": "I-edit ang kategorya",
+  "categoryFieldName": "Pangalan",
+  "categoryFieldNameRequired": "Kailangan ang pangalan",
+  "categoryFieldIcon": "Icon",
+  "categoryFieldColor": "Kulay",
+  "categoryDeleteSimpleTitle": "Tanggalin ang kategoryang ito?",
+  "categoryDeleteSimpleBody": "Walang paalalang gumagamit sa kategoryang ito.",
+  "categoryDeleteHasRemindersTitle": "May mga paalala pa ang kategoryang ito",
+  "categoryDeleteHasRemindersBody": "May {count} paalalang gumagamit ng kategoryang ito. Piliin kung ano ang gagawin sa mga ito.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Ilipat sa ibang kategorya",
+  "categoryDeleteReassignTarget": "Ilipat sa",
+  "categoryDeleteRemoveAll": "Tanggalin ang lahat ng {count} paalala",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Permanenteng matatanggal ang {count} paalala. Hindi na ito maaaring bawiin.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "I-drag para ayusin",
+  "settingsTitle": "Mga Setting",
+  "settingsLanguage": "Wika",
+  "settingsDefaultReminderTime": "Default na oras ng paalala",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "System",
+  "settingsThemeLight": "Light",
+  "settingsThemeDark": "Dark",
+  "settingsBackupRestore": "Backup at restore",
+  "settingsExport": "I-export ang backup",
+  "settingsImport": "I-restore mula sa backup",
+  "settingsExportLocationHint": "Naka-save sa Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Na-save ang backup",
+  "settingsImportNoneFound": "Walang nahanap na backup file",
+  "settingsImportPickFile": "Pumili ng backup",
+  "settingsImportSuccess": "Na-restore ang backup",
+  "settingsImportConfirmTitle": "I-restore ang backup?",
+  "settingsImportConfirmBody": "Papalitan nito ang lahat ng kasalukuyang datos ng laman ng backup file.",
+  "settingsAbout": "Tungkol sa App",
+  "settingsBatteryOptimizationTitle": "Hindi tumutunog ang notification sa tamang oras?",
+  "settingsBatteryOptimizationBody": "Mahigpit na pinipigilan ng ilang gumagawa ng telepono (Samsung, Xiaomi, Oppo...) ang mga app na tumatakbo sa background. Alisin ang battery optimization para sa iReminder sa Settings > Battery ng iyong telepono para siguraduhing dumarating ang mga paalala sa tamang oras.",
+  "errorGeneric": "May naganap na error. Pakisubukang muli.",
+  "errorLoadFailed": "Hindi ma-load ang datos.",
+  "settingsAiSectionTitle": "AI Assistant",
+  "settingsAiEnable": "I-enable ang AI Assistant",
+  "settingsAiProvider": "AI provider",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "API key",
+  "settingsAiApiKeyHint": "I-paste ang iyong API key",
+  "settingsAiApiKeyHelp": "Saan ako kukuha ng key?",
+  "settingsAiApiKeySaved": "Na-save ang API key",
+  "settingsAiAllowedCategories": "Mga kategoryang puwedeng basahin ng Katulong",
+  "settingsAiAllowedCategoriesHint": "Naka-off bilang default. I-on lang ang mga kategoryang gusto mong makita ng Katulong — wala nang ibang ipapadala.",
+  "settingsAiClearHistory": "I-clear ang chat history",
+  "settingsAiClearHistoryConfirmTitle": "I-clear ang chat history?",
+  "settingsAiClearHistoryConfirmBody": "Buburahin nito ang lahat ng tanong at sagot na naka-save sa device na ito. Hindi na ito maaaring bawiin.",
+  "assistantTitle": "Katulong",
+  "assistantEmptyTitle": "Magtanong ka kahit ano",
+  "assistantEmptyBody": "Subukang magtanong ng \"Ano ang kailangan kong gawin ngayong linggo?\" o \"Ilang hulog na lang ang natitira sa utang ko sa motor?\"",
+  "assistantInputHint": "Magtanong…",
+  "assistantSend": "Ipadala",
+  "assistantDisabledTitle": "Naka-off ang Katulong",
+  "assistantDisabledBody": "I-enable ito sa Settings at pumili ng AI provider para makapag-chat.",
+  "assistantOpenSettings": "Buksan ang Settings",
+  "assistantThinking": "Nag-iisip…",
+  "validationRequired": "Kailangan",
+  "validationDayOfMonth": "Maglagay ng araw mula 1–31",
+  "validationMonth": "Maglagay ng buwan mula 1–12",
+  "validationPositiveNumber": "Maglagay ng numerong higit sa 0",
+  "validationPositiveInteger": "Maglagay ng buong numerong higit sa 0",
+  "settingsPermissionsSectionTitle": "Mga Notification at Alarm",
+  "settingsPermissionsNotificationLabel": "Pahintulot sa notification",
+  "settingsPermissionsExactAlarmLabel": "Pahintulot sa eksaktong alarm",
+  "settingsPermissionsGranted": "Naipagkaloob na",
+  "settingsPermissionsDenied": "Hindi pa naipagkakaloob — maaaring hindi tumunog ang mga paalala sa tamang oras",
+  "settingsPermissionsGrantAction": "Ipagkaloob",
+  "settingsPermissionsOpenSettingsAction": "Buksan ang settings",
+  "onboardingExactAlarmRationaleTitle": "Isa pang pahintulot",
+  "onboardingExactAlarmRationaleBody": "Sa susunod na screen, payagan ang iReminder na mag-schedule ng eksaktong alarm para tumunog ang mga paalala sa eksaktong oras na itinakda mo.",
+  "loanMarkPaidSuccess": "Namarkahang bayad na"
+}

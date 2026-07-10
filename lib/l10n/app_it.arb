@@ -1,0 +1,227 @@
+{
+  "@@locale": "it",
+  "appTitle": "iReminder",
+  "navToday": "Oggi",
+  "navCalendar": "Calendario",
+  "navLoans": "Rate",
+  "navCategories": "Categorie",
+  "navSettings": "Impostazioni",
+  "navAssistant": "Assistente",
+  "onboardingTitle1": "Non dimenticare mai ciò che conta",
+  "onboardingBody1": "Tieni traccia di manutenzioni, tagliandi, anniversari e molto altro — tutto in un unico posto.",
+  "onboardingTitle2": "Le ricorrenze diventano semplici",
+  "onboardingBody2": "Giornaliera, settimanale, mensile, annuale o anche secondo il calendario lunare — impostala una volta e iReminder se ne occupa.",
+  "onboardingTitle3": "100% privato, 100% offline",
+  "onboardingBody3": "Nessun account, nessun cloud, nessun accesso. Tutto resta sul tuo telefono.",
+  "onboardingSkip": "Salta",
+  "onboardingNext": "Avanti",
+  "onboardingGetStarted": "Inizia",
+  "notificationPermissionTitle": "Non perdere le scadenze",
+  "notificationPermissionBody": "iReminder ha bisogno del permesso di inviarti notifiche quando qualcosa è in scadenza.",
+  "notificationPermissionAllow": "Consenti notifiche",
+  "notificationPermissionLater": "Non ora",
+  "homeSectionOverdue": "Scaduti",
+  "homeSectionToday": "Oggi",
+  "homeSectionThisWeek": "Questa settimana",
+  "homeSectionUpcoming": "Prossimi",
+  "homeEmptyTitle": "Ancora nulla qui",
+  "homeEmptyBody": "Tocca + per aggiungere il tuo primo promemoria o piano rateale.",
+  "fabAddReminder": "Promemoria",
+  "fabAddLoan": "Piano rateale",
+  "actionDone": "Fatto",
+  "actionSnooze": "Rimanda",
+  "actionEdit": "Modifica",
+  "actionDelete": "Elimina",
+  "actionSave": "Salva",
+  "actionCancel": "Annulla",
+  "actionConfirm": "Conferma",
+  "actionYes": "Sì",
+  "actionNo": "No",
+  "actionOk": "OK",
+  "actionAdd": "Aggiungi",
+  "actionClose": "Chiudi",
+  "reminderFormTitleNew": "Nuovo promemoria",
+  "reminderFormTitleEdit": "Modifica promemoria",
+  "reminderFieldTitle": "Titolo",
+  "reminderFieldTitleRequired": "Il titolo è obbligatorio",
+  "reminderFieldDescription": "Descrizione (facoltativa)",
+  "reminderFieldCategory": "Categoria",
+  "reminderFieldRecurrence": "Ripeti",
+  "reminderFieldStartDate": "Data di inizio",
+  "reminderFieldTime": "Orario promemoria",
+  "reminderFieldAdvanceNotice": "Avvisa N giorni prima",
+  "reminderFieldRecurrenceDay": "Giorno del mese",
+  "reminderFieldRecurrenceMonth": "Mese",
+  "reminderFieldRecurrenceWeekday": "Giorno della settimana",
+  "reminderFieldIntervalDays": "Ogni N giorni",
+  "reminderFieldLunarDay": "Giorno lunare",
+  "reminderFieldLunarMonth": "Mese lunare",
+  "reminderDeleteConfirmTitle": "Eliminare questo promemoria?",
+  "reminderDeleteConfirmBody": "Non potrai annullare l'operazione.",
+  "recurrenceNone": "Una volta",
+  "recurrenceDaily": "Giornaliera",
+  "recurrenceWeekly": "Settimanale",
+  "recurrenceMonthly": "Mensile",
+  "recurrenceYearly": "Annuale",
+  "recurrenceCustomIntervalDays": "Ogni N giorni",
+  "recurrenceLunarYearly": "Annuale (calendario lunare)",
+  "weekdayMonday": "Lunedì",
+  "weekdayTuesday": "Martedì",
+  "weekdayWednesday": "Mercoledì",
+  "weekdayThursday": "Giovedì",
+  "weekdayFriday": "Venerdì",
+  "weekdaySaturday": "Sabato",
+  "weekdaySunday": "Domenica",
+  "loanListTitle": "Rate e finanziamenti",
+  "loanFormTitleNew": "Nuovo piano rateale",
+  "loanFormTitleEdit": "Modifica piano rateale",
+  "loanFieldName": "Nome",
+  "loanFieldCategory": "Categoria",
+  "loanFieldTotalAmount": "Importo totale (facoltativo)",
+  "loanFieldInstallmentAmount": "Importo per rata",
+  "loanFieldTotalInstallments": "Numero di rate",
+  "loanFieldFrequency": "Frequenza",
+  "loanFieldDueDayOfMonth": "Giorno di scadenza del mese",
+  "loanFieldStartDate": "Data di inizio",
+  "loanFieldReminderAdvanceDays": "Ricorda N giorni prima della scadenza",
+  "loanFieldNotes": "Note (facoltative)",
+  "loanFrequencyMonthly": "Mensile",
+  "loanFrequencyWeekly": "Settimanale",
+  "loanFrequencyBiweekly": "Bisettimanale",
+  "loanProgress": "{paid} / {total} pagate",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Segna come pagata",
+  "loanMarkPaidBatch": "Segna {count} rate come pagate",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "In attesa",
+  "loanStatusPaid": "Pagata",
+  "loanStatusOverdue": "Scaduta",
+  "loanInstallmentNumber": "Rata n. {number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Eliminare questo piano rateale?",
+  "loanDeleteConfirmBody": "Anche tutte le {count} rate verranno rimosse.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Categorie",
+  "categoryFormTitleNew": "Nuova categoria",
+  "categoryFormTitleEdit": "Modifica categoria",
+  "categoryFieldName": "Nome",
+  "categoryFieldNameRequired": "Il nome è obbligatorio",
+  "categoryFieldIcon": "Icona",
+  "categoryFieldColor": "Colore",
+  "categoryDeleteSimpleTitle": "Eliminare questa categoria?",
+  "categoryDeleteSimpleBody": "Questa categoria non contiene promemoria.",
+  "categoryDeleteHasRemindersTitle": "Questa categoria contiene ancora promemoria",
+  "categoryDeleteHasRemindersBody": "{count} promemoria usano questa categoria. Scegli cosa fare.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Sposta in un'altra categoria",
+  "categoryDeleteReassignTarget": "Sposta in",
+  "categoryDeleteRemoveAll": "Elimina tutti i {count} promemoria",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Questa operazione eliminerà definitivamente {count} promemoria. Non potrai annullarla.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Trascina per riordinare",
+  "settingsTitle": "Impostazioni",
+  "settingsLanguage": "Lingua",
+  "settingsDefaultReminderTime": "Orario promemoria predefinito",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "Sistema",
+  "settingsThemeLight": "Chiaro",
+  "settingsThemeDark": "Scuro",
+  "settingsBackupRestore": "Backup e ripristino",
+  "settingsExport": "Esporta backup",
+  "settingsImport": "Ripristina da backup",
+  "settingsExportLocationHint": "Salvato in Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Backup salvato",
+  "settingsImportNoneFound": "Nessun file di backup trovato",
+  "settingsImportPickFile": "Scegli un backup",
+  "settingsImportSuccess": "Backup ripristinato",
+  "settingsImportConfirmTitle": "Ripristinare il backup?",
+  "settingsImportConfirmBody": "Questa operazione sostituirà tutti i dati attuali con quelli del file di backup.",
+  "settingsAbout": "Informazioni",
+  "settingsBatteryOptimizationTitle": "Le notifiche non arrivano in orario?",
+  "settingsBatteryOptimizationBody": "Alcuni produttori (Samsung, Xiaomi, Oppo...) limitano molto le app in background. Disattiva l'ottimizzazione della batteria per iReminder in Impostazioni > Batteria del telefono per assicurarti che i promemoria arrivino sempre in tempo.",
+  "errorGeneric": "Qualcosa è andato storto. Riprova.",
+  "errorLoadFailed": "Impossibile caricare i dati.",
+  "settingsAiSectionTitle": "Assistente AI",
+  "settingsAiEnable": "Attiva l'Assistente AI",
+  "settingsAiProvider": "Provider AI",
+  "settingsAiModel": "Modello",
+  "settingsAiApiKey": "Chiave API",
+  "settingsAiApiKeyHint": "Incolla la tua chiave API",
+  "settingsAiApiKeyHelp": "Dove trovo una chiave?",
+  "settingsAiApiKeySaved": "Chiave API salvata",
+  "settingsAiAllowedCategories": "Categorie leggibili dall'assistente",
+  "settingsAiAllowedCategoriesHint": "Disattivate per impostazione predefinita. Attiva solo le categorie che vuoi far vedere all'assistente — nient'altro viene mai inviato.",
+  "settingsAiClearHistory": "Cancella cronologia chat",
+  "settingsAiClearHistoryConfirmTitle": "Cancellare la cronologia chat?",
+  "settingsAiClearHistoryConfirmBody": "Verranno eliminate tutte le domande e risposte salvate su questo dispositivo. Non potrai annullare l'operazione.",
+  "assistantTitle": "Assistente",
+  "assistantEmptyTitle": "Chiedimi qualsiasi cosa",
+  "assistantEmptyBody": "Prova a chiedere \"Cosa devo fare questa settimana?\" oppure \"Quante rate mancano sul mio prestito per la moto?\"",
+  "assistantInputHint": "Scrivi qualcosa…",
+  "assistantSend": "Invia",
+  "assistantDisabledTitle": "L'assistente è disattivato",
+  "assistantDisabledBody": "Attivalo nelle Impostazioni e scegli un provider AI per iniziare a chattare.",
+  "assistantOpenSettings": "Apri Impostazioni",
+  "assistantThinking": "Sto pensando…",
+  "validationRequired": "Obbligatorio",
+  "validationDayOfMonth": "Inserisci un giorno da 1 a 31",
+  "validationMonth": "Inserisci un mese da 1 a 12",
+  "validationPositiveNumber": "Inserisci un numero maggiore di 0",
+  "validationPositiveInteger": "Inserisci un numero intero maggiore di 0",
+  "settingsPermissionsSectionTitle": "Notifiche e allarmi",
+  "settingsPermissionsNotificationLabel": "Permesso notifiche",
+  "settingsPermissionsExactAlarmLabel": "Permesso allarmi precisi",
+  "settingsPermissionsGranted": "Concesso",
+  "settingsPermissionsDenied": "Non concesso — i promemoria potrebbero non arrivare in orario",
+  "settingsPermissionsGrantAction": "Concedi",
+  "settingsPermissionsOpenSettingsAction": "Apri impostazioni",
+  "onboardingExactAlarmRationaleTitle": "Un ultimo permesso",
+  "onboardingExactAlarmRationaleBody": "Nella prossima schermata, consenti a iReminder di programmare allarmi precisi affinché i promemoria arrivino esattamente all'ora impostata.",
+  "loanMarkPaidSuccess": "Segnata come pagata"
+}

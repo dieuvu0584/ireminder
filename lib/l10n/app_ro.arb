@@ -1,0 +1,227 @@
+{
+  "@@locale": "ro",
+  "appTitle": "iReminder",
+  "navToday": "Astăzi",
+  "navCalendar": "Calendar",
+  "navLoans": "Rate",
+  "navCategories": "Categorii",
+  "navSettings": "Setări",
+  "navAssistant": "Asistent",
+  "onboardingTitle1": "Nu mai uita ce contează",
+  "onboardingBody1": "Urmărește întreținerea aparatelor, service-ul mașinii, aniversările și multe altele — toate într-un singur loc.",
+  "onboardingTitle2": "Recurență simplă",
+  "onboardingBody2": "Zilnic, săptămânal, lunar, anual sau chiar după calendarul lunar — setezi o dată, iar iReminder ține evidența.",
+  "onboardingTitle3": "100% privat, 100% offline",
+  "onboardingBody3": "Fără cont, fără cloud, fără autentificare. Totul rămâne pe telefonul tău.",
+  "onboardingSkip": "Sari peste",
+  "onboardingNext": "Următorul",
+  "onboardingGetStarted": "Începe",
+  "notificationPermissionTitle": "Rămâi la timp",
+  "notificationPermissionBody": "iReminder are nevoie de permisiunea de a-ți trimite notificări atunci când ceva este scadent.",
+  "notificationPermissionAllow": "Permite notificările",
+  "notificationPermissionLater": "Nu acum",
+  "homeSectionOverdue": "Restante",
+  "homeSectionToday": "Astăzi",
+  "homeSectionThisWeek": "Săptămâna aceasta",
+  "homeSectionUpcoming": "Viitoare",
+  "homeEmptyTitle": "Încă nimic aici",
+  "homeEmptyBody": "Apasă + pentru a adăuga primul memento sau prima rată.",
+  "fabAddReminder": "Memento",
+  "fabAddLoan": "Rată",
+  "actionDone": "Gata",
+  "actionSnooze": "Amână",
+  "actionEdit": "Editează",
+  "actionDelete": "Șterge",
+  "actionSave": "Salvează",
+  "actionCancel": "Anulează",
+  "actionConfirm": "Confirmă",
+  "actionYes": "Da",
+  "actionNo": "Nu",
+  "actionOk": "OK",
+  "actionAdd": "Adaugă",
+  "actionClose": "Închide",
+  "reminderFormTitleNew": "Memento nou",
+  "reminderFormTitleEdit": "Editează mementoul",
+  "reminderFieldTitle": "Titlu",
+  "reminderFieldTitleRequired": "Titlul este obligatoriu",
+  "reminderFieldDescription": "Descriere (opțional)",
+  "reminderFieldCategory": "Categorie",
+  "reminderFieldRecurrence": "Se repetă",
+  "reminderFieldStartDate": "Data de start",
+  "reminderFieldTime": "Ora mementoului",
+  "reminderFieldAdvanceNotice": "Anunță cu N zile înainte",
+  "reminderFieldRecurrenceDay": "Ziua din lună",
+  "reminderFieldRecurrenceMonth": "Luna",
+  "reminderFieldRecurrenceWeekday": "Ziua din săptămână",
+  "reminderFieldIntervalDays": "La fiecare N zile",
+  "reminderFieldLunarDay": "Ziua lunară",
+  "reminderFieldLunarMonth": "Luna lunară",
+  "reminderDeleteConfirmTitle": "Ștergi acest memento?",
+  "reminderDeleteConfirmBody": "Această acțiune nu poate fi anulată.",
+  "recurrenceNone": "O singură dată",
+  "recurrenceDaily": "Zilnic",
+  "recurrenceWeekly": "Săptămânal",
+  "recurrenceMonthly": "Lunar",
+  "recurrenceYearly": "Anual",
+  "recurrenceCustomIntervalDays": "La fiecare N zile",
+  "recurrenceLunarYearly": "Anual (calendar lunar)",
+  "weekdayMonday": "Luni",
+  "weekdayTuesday": "Marți",
+  "weekdayWednesday": "Miercuri",
+  "weekdayThursday": "Joi",
+  "weekdayFriday": "Vineri",
+  "weekdaySaturday": "Sâmbătă",
+  "weekdaySunday": "Duminică",
+  "loanListTitle": "Rate și împrumuturi",
+  "loanFormTitleNew": "Rată nouă",
+  "loanFormTitleEdit": "Editează rata",
+  "loanFieldName": "Nume",
+  "loanFieldCategory": "Categorie",
+  "loanFieldTotalAmount": "Sumă totală (opțional)",
+  "loanFieldInstallmentAmount": "Sumă pe rată",
+  "loanFieldTotalInstallments": "Număr de rate",
+  "loanFieldFrequency": "Frecvență",
+  "loanFieldDueDayOfMonth": "Ziua scadentă din lună",
+  "loanFieldStartDate": "Data de start",
+  "loanFieldReminderAdvanceDays": "Amintește cu N zile înainte de scadență",
+  "loanFieldNotes": "Note (opțional)",
+  "loanFrequencyMonthly": "Lunar",
+  "loanFrequencyWeekly": "Săptămânal",
+  "loanFrequencyBiweekly": "La două săptămâni",
+  "loanProgress": "{paid} / {total} plătite",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Marchează ca plătită",
+  "loanMarkPaidBatch": "Marchează {count} rate ca plătite",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "În așteptare",
+  "loanStatusPaid": "Plătită",
+  "loanStatusOverdue": "Restantă",
+  "loanInstallmentNumber": "Rata #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Ștergi această rată?",
+  "loanDeleteConfirmBody": "Toate cele {count} rate vor fi eliminate și ele.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Categorii",
+  "categoryFormTitleNew": "Categorie nouă",
+  "categoryFormTitleEdit": "Editează categoria",
+  "categoryFieldName": "Nume",
+  "categoryFieldNameRequired": "Numele este obligatoriu",
+  "categoryFieldIcon": "Pictogramă",
+  "categoryFieldColor": "Culoare",
+  "categoryDeleteSimpleTitle": "Ștergi această categorie?",
+  "categoryDeleteSimpleBody": "Această categorie nu conține niciun memento.",
+  "categoryDeleteHasRemindersTitle": "Această categorie încă are mementouri",
+  "categoryDeleteHasRemindersBody": "{count} mementouri folosesc această categorie. Alege ce vrei să faci cu ele.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Mută în altă categorie",
+  "categoryDeleteReassignTarget": "Mută în",
+  "categoryDeleteRemoveAll": "Șterge toate cele {count} mementouri",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Aceasta va șterge definitiv {count} mementouri. Această acțiune nu poate fi anulată.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Trage pentru a reordona",
+  "settingsTitle": "Setări",
+  "settingsLanguage": "Limbă",
+  "settingsDefaultReminderTime": "Ora implicită a mementourilor",
+  "settingsTheme": "Temă",
+  "settingsThemeSystem": "Sistem",
+  "settingsThemeLight": "Deschisă",
+  "settingsThemeDark": "Închisă",
+  "settingsBackupRestore": "Backup și restaurare",
+  "settingsExport": "Exportă backup",
+  "settingsImport": "Restaurează din backup",
+  "settingsExportLocationHint": "Salvat în Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Backup salvat",
+  "settingsImportNoneFound": "Nu s-a găsit niciun fișier de backup",
+  "settingsImportPickFile": "Alege un backup",
+  "settingsImportSuccess": "Backup restaurat",
+  "settingsImportConfirmTitle": "Restaurezi backupul?",
+  "settingsImportConfirmBody": "Aceasta va înlocui toate datele curente cu conținutul fișierului de backup.",
+  "settingsAbout": "Despre",
+  "settingsBatteryOptimizationTitle": "Notificările nu apar la timp?",
+  "settingsBatteryOptimizationBody": "Unii producători de telefoane (Samsung, Xiaomi, Oppo...) restricționează agresiv aplicațiile care rulează în fundal. Dezactivează optimizarea bateriei pentru iReminder din Setări > Baterie, ca să te asiguri că mementourile ajung mereu la timp.",
+  "errorGeneric": "Ceva nu a mers bine. Te rugăm să încerci din nou.",
+  "errorLoadFailed": "Datele nu au putut fi încărcate.",
+  "settingsAiSectionTitle": "Asistent AI",
+  "settingsAiEnable": "Activează Asistentul AI",
+  "settingsAiProvider": "Furnizor AI",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "Cheie API",
+  "settingsAiApiKeyHint": "Lipește cheia API",
+  "settingsAiApiKeyHelp": "De unde obțin o cheie?",
+  "settingsAiApiKeySaved": "Cheia API a fost salvată",
+  "settingsAiAllowedCategories": "Categorii pe care asistentul le poate citi",
+  "settingsAiAllowedCategoriesHint": "Dezactivat implicit. Activează doar categoriile pe care vrei ca asistentul să le vadă — nimic altceva nu este trimis vreodată.",
+  "settingsAiClearHistory": "Șterge istoricul conversației",
+  "settingsAiClearHistoryConfirmTitle": "Ștergi istoricul conversației?",
+  "settingsAiClearHistoryConfirmBody": "Aceasta șterge toate întrebările și răspunsurile stocate pe acest dispozitiv. Această acțiune nu poate fi anulată.",
+  "assistantTitle": "Asistent",
+  "assistantEmptyTitle": "Întreabă-mă orice",
+  "assistantEmptyBody": "Încearcă „Ce trebuie să fac săptămâna aceasta?” sau „Câte rate mai am de plătit la împrumutul pentru motocicletă?”",
+  "assistantInputHint": "Întreabă ceva…",
+  "assistantSend": "Trimite",
+  "assistantDisabledTitle": "Asistentul este dezactivat",
+  "assistantDisabledBody": "Activează-l din Setări și alege un furnizor AI pentru a începe o conversație.",
+  "assistantOpenSettings": "Deschide Setările",
+  "assistantThinking": "Se gândește…",
+  "validationRequired": "Obligatoriu",
+  "validationDayOfMonth": "Introdu o zi între 1 și 31",
+  "validationMonth": "Introdu o lună între 1 și 12",
+  "validationPositiveNumber": "Introdu un număr mai mare decât 0",
+  "validationPositiveInteger": "Introdu un număr întreg mai mare decât 0",
+  "settingsPermissionsSectionTitle": "Notificări și alarme",
+  "settingsPermissionsNotificationLabel": "Permisiune notificări",
+  "settingsPermissionsExactAlarmLabel": "Permisiune alarme exacte",
+  "settingsPermissionsGranted": "Acordată",
+  "settingsPermissionsDenied": "Neacordată — mementourile ar putea să nu apară la timp",
+  "settingsPermissionsGrantAction": "Acordă",
+  "settingsPermissionsOpenSettingsAction": "Deschide setările",
+  "onboardingExactAlarmRationaleTitle": "Încă o permisiune",
+  "onboardingExactAlarmRationaleBody": "Pe ecranul următor, permite-i iReminder să programeze alarme exacte, astfel încât mementourile să apară exact la ora setată de tine.",
+  "loanMarkPaidSuccess": "Marcat ca plătit"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "el",
+  "appTitle": "iReminder",
+  "navToday": "Σήμερα",
+  "navCalendar": "Ημερολόγιο",
+  "navLoans": "Δόσεις",
+  "navCategories": "Κατηγορίες",
+  "navSettings": "Ρυθμίσεις",
+  "navAssistant": "Βοηθός",
+  "onboardingTitle1": "Μην ξεχνάς ό,τι έχει σημασία",
+  "onboardingBody1": "Παρακολούθησε τη συντήρηση συσκευών, το σέρβις του αυτοκινήτου, επετείους και πολλά άλλα — όλα σε ένα μέρος.",
+  "onboardingTitle2": "Η επανάληψη έγινε απλή",
+  "onboardingBody2": "Καθημερινά, εβδομαδιαία, μηνιαία, ετήσια, ακόμα και με το σεληνιακό ημερολόγιο — ρύθμισέ το μία φορά και το iReminder θα το θυμάται.",
+  "onboardingTitle3": "100% ιδιωτικό, 100% εκτός σύνδεσης",
+  "onboardingBody3": "Χωρίς λογαριασμό, χωρίς cloud, χωρίς σύνδεση. Όλα μένουν στο κινητό σου.",
+  "onboardingSkip": "Παράλειψη",
+  "onboardingNext": "Επόμενο",
+  "onboardingGetStarted": "Ξεκίνα τώρα",
+  "notificationPermissionTitle": "Μείνε στην ώρα σου",
+  "notificationPermissionBody": "Το iReminder χρειάζεται άδεια για να σου στέλνει ειδοποιήσεις όταν κάτι λήγει.",
+  "notificationPermissionAllow": "Επίτρεψε ειδοποιήσεις",
+  "notificationPermissionLater": "Όχι τώρα",
+  "homeSectionOverdue": "Ληξιπρόθεσμα",
+  "homeSectionToday": "Σήμερα",
+  "homeSectionThisWeek": "Αυτή την εβδομάδα",
+  "homeSectionUpcoming": "Προσεχώς",
+  "homeEmptyTitle": "Δεν υπάρχει τίποτα εδώ ακόμα",
+  "homeEmptyBody": "Πάτησε το + για να προσθέσεις την πρώτη σου υπενθύμιση ή δόση.",
+  "fabAddReminder": "Υπενθύμιση",
+  "fabAddLoan": "Δόση δανείου",
+  "actionDone": "Ολοκληρώθηκε",
+  "actionSnooze": "Αναβολή",
+  "actionEdit": "Επεξεργασία",
+  "actionDelete": "Διαγραφή",
+  "actionSave": "Αποθήκευση",
+  "actionCancel": "Ακύρωση",
+  "actionConfirm": "Επιβεβαίωση",
+  "actionYes": "Ναι",
+  "actionNo": "Όχι",
+  "actionOk": "OK",
+  "actionAdd": "Προσθήκη",
+  "actionClose": "Κλείσιμο",
+  "reminderFormTitleNew": "Νέα υπενθύμιση",
+  "reminderFormTitleEdit": "Επεξεργασία υπενθύμισης",
+  "reminderFieldTitle": "Τίτλος",
+  "reminderFieldTitleRequired": "Ο τίτλος είναι υποχρεωτικός",
+  "reminderFieldDescription": "Περιγραφή (προαιρετικό)",
+  "reminderFieldCategory": "Κατηγορία",
+  "reminderFieldRecurrence": "Επανάληψη",
+  "reminderFieldStartDate": "Ημερομηνία έναρξης",
+  "reminderFieldTime": "Ώρα υπενθύμισης",
+  "reminderFieldAdvanceNotice": "Ειδοποίηση N ημέρες πριν",
+  "reminderFieldRecurrenceDay": "Ημέρα του μήνα",
+  "reminderFieldRecurrenceMonth": "Μήνας",
+  "reminderFieldRecurrenceWeekday": "Ημέρα της εβδομάδας",
+  "reminderFieldIntervalDays": "Κάθε N ημέρες",
+  "reminderFieldLunarDay": "Σεληνιακή ημέρα",
+  "reminderFieldLunarMonth": "Σεληνιακός μήνας",
+  "reminderDeleteConfirmTitle": "Διαγραφή αυτής της υπενθύμισης;",
+  "reminderDeleteConfirmBody": "Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
+  "recurrenceNone": "Μία φορά",
+  "recurrenceDaily": "Καθημερινά",
+  "recurrenceWeekly": "Εβδομαδιαία",
+  "recurrenceMonthly": "Μηνιαία",
+  "recurrenceYearly": "Ετήσια",
+  "recurrenceCustomIntervalDays": "Κάθε N ημέρες",
+  "recurrenceLunarYearly": "Ετήσια (σεληνιακό ημερολόγιο)",
+  "weekdayMonday": "Δευτέρα",
+  "weekdayTuesday": "Τρίτη",
+  "weekdayWednesday": "Τετάρτη",
+  "weekdayThursday": "Πέμπτη",
+  "weekdayFriday": "Παρασκευή",
+  "weekdaySaturday": "Σάββατο",
+  "weekdaySunday": "Κυριακή",
+  "loanListTitle": "Δάνεια & δόσεις",
+  "loanFormTitleNew": "Νέο δάνειο με δόσεις",
+  "loanFormTitleEdit": "Επεξεργασία δανείου",
+  "loanFieldName": "Όνομα",
+  "loanFieldCategory": "Κατηγορία",
+  "loanFieldTotalAmount": "Συνολικό ποσό (προαιρετικό)",
+  "loanFieldInstallmentAmount": "Ποσό ανά δόση",
+  "loanFieldTotalInstallments": "Αριθμός δόσεων",
+  "loanFieldFrequency": "Συχνότητα",
+  "loanFieldDueDayOfMonth": "Ημέρα λήξης στον μήνα",
+  "loanFieldStartDate": "Ημερομηνία έναρξης",
+  "loanFieldReminderAdvanceDays": "Υπενθύμιση N ημέρες πριν τη λήξη",
+  "loanFieldNotes": "Σημειώσεις (προαιρετικό)",
+  "loanFrequencyMonthly": "Μηνιαία",
+  "loanFrequencyWeekly": "Εβδομαδιαία",
+  "loanFrequencyBiweekly": "Ανά δεκαπενθήμερο",
+  "loanProgress": "{paid} / {total} πληρωμένες",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Σήμανση ως πληρωμένη",
+  "loanMarkPaidBatch": "Σήμανση {count} δόσεων ως πληρωμένων",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Εκκρεμεί",
+  "loanStatusPaid": "Πληρωμένη",
+  "loanStatusOverdue": "Ληξιπρόθεσμη",
+  "loanInstallmentNumber": "Δόση #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Διαγραφή αυτού του δανείου;",
+  "loanDeleteConfirmBody": "Θα διαγραφούν και οι {count} δόσεις.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Κατηγορίες",
+  "categoryFormTitleNew": "Νέα κατηγορία",
+  "categoryFormTitleEdit": "Επεξεργασία κατηγορίας",
+  "categoryFieldName": "Όνομα",
+  "categoryFieldNameRequired": "Το όνομα είναι υποχρεωτικό",
+  "categoryFieldIcon": "Εικονίδιο",
+  "categoryFieldColor": "Χρώμα",
+  "categoryDeleteSimpleTitle": "Διαγραφή αυτής της κατηγορίας;",
+  "categoryDeleteSimpleBody": "Αυτή η κατηγορία δεν περιέχει υπενθυμίσεις.",
+  "categoryDeleteHasRemindersTitle": "Αυτή η κατηγορία περιέχει ακόμα υπενθυμίσεις",
+  "categoryDeleteHasRemindersBody": "{count} υπενθυμίσεις χρησιμοποιούν αυτή την κατηγορία. Επίλεξε τι θέλεις να κάνεις με αυτές.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Μετακίνηση σε άλλη κατηγορία",
+  "categoryDeleteReassignTarget": "Μετακίνηση σε",
+  "categoryDeleteRemoveAll": "Διαγραφή και των {count} υπενθυμίσεων",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Αυτό θα διαγράψει οριστικά {count} υπενθυμίσεις. Η ενέργεια δεν μπορεί να αναιρεθεί.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Σύρε για αναδιάταξη",
+  "settingsTitle": "Ρυθμίσεις",
+  "settingsLanguage": "Γλώσσα",
+  "settingsDefaultReminderTime": "Προεπιλεγμένη ώρα υπενθύμισης",
+  "settingsTheme": "Θέμα",
+  "settingsThemeSystem": "Σύστημα",
+  "settingsThemeLight": "Φωτεινό",
+  "settingsThemeDark": "Σκοτεινό",
+  "settingsBackupRestore": "Αντίγραφο ασφαλείας & επαναφορά",
+  "settingsExport": "Εξαγωγή αντιγράφου ασφαλείας",
+  "settingsImport": "Επαναφορά από αντίγραφο ασφαλείας",
+  "settingsExportLocationHint": "Αποθηκεύτηκε στο Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Το αντίγραφο ασφαλείας αποθηκεύτηκε",
+  "settingsImportNoneFound": "Δεν βρέθηκαν αρχεία αντιγράφων ασφαλείας",
+  "settingsImportPickFile": "Επίλεξε αντίγραφο ασφαλείας",
+  "settingsImportSuccess": "Το αντίγραφο ασφαλείας επαναφέρθηκε",
+  "settingsImportConfirmTitle": "Επαναφορά αντιγράφου ασφαλείας;",
+  "settingsImportConfirmBody": "Αυτό θα αντικαταστήσει όλα τα τρέχοντα δεδομένα με το περιεχόμενο του αρχείου αντιγράφου ασφαλείας.",
+  "settingsAbout": "Σχετικά",
+  "settingsBatteryOptimizationTitle": "Οι ειδοποιήσεις δεν εμφανίζονται στην ώρα τους;",
+  "settingsBatteryOptimizationBody": "Ορισμένοι κατασκευαστές (Samsung, Xiaomi, Oppo...) περιορίζουν έντονα τις εφαρμογές παρασκηνίου. Απενεργοποίησε τη βελτιστοποίηση μπαταρίας για το iReminder από Ρυθμίσεις > Μπαταρία, ώστε οι υπενθυμίσεις να φτάνουν πάντα στην ώρα τους.",
+  "errorGeneric": "Κάτι πήγε στραβά. Δοκίμασε ξανά.",
+  "errorLoadFailed": "Δεν ήταν δυνατή η φόρτωση των δεδομένων.",
+  "settingsAiSectionTitle": "Βοηθός AI",
+  "settingsAiEnable": "Ενεργοποίηση Βοηθού AI",
+  "settingsAiProvider": "Πάροχος AI",
+  "settingsAiModel": "Μοντέλο",
+  "settingsAiApiKey": "Κλειδί API",
+  "settingsAiApiKeyHint": "Επικόλλησε το κλειδί API σου",
+  "settingsAiApiKeyHelp": "Πού μπορώ να βρω ένα κλειδί;",
+  "settingsAiApiKeySaved": "Το κλειδί API αποθηκεύτηκε",
+  "settingsAiAllowedCategories": "Κατηγορίες που μπορεί να διαβάσει ο βοηθός",
+  "settingsAiAllowedCategoriesHint": "Απενεργοποιημένο από προεπιλογή. Ενεργοποίησε μόνο τις κατηγορίες που θέλεις να βλέπει ο βοηθός — τίποτα άλλο δεν αποστέλλεται ποτέ.",
+  "settingsAiClearHistory": "Διαγραφή ιστορικού συνομιλίας",
+  "settingsAiClearHistoryConfirmTitle": "Διαγραφή ιστορικού συνομιλίας;",
+  "settingsAiClearHistoryConfirmBody": "Αυτό διαγράφει κάθε ερώτηση και απάντηση που είναι αποθηκευμένη σε αυτή τη συσκευή. Η ενέργεια δεν μπορεί να αναιρεθεί.",
+  "assistantTitle": "Βοηθός",
+  "assistantEmptyTitle": "Ρώτησέ με ό,τι θέλεις",
+  "assistantEmptyBody": "Δοκίμασε «Τι πρέπει να κάνω αυτή την εβδομάδα;» ή «Πόσες δόσεις μου απομένουν στο δάνειο της μοτοσικλέτας;»",
+  "assistantInputHint": "Ρώτησε κάτι…",
+  "assistantSend": "Αποστολή",
+  "assistantDisabledTitle": "Ο βοηθός είναι απενεργοποιημένος",
+  "assistantDisabledBody": "Ενεργοποίησέ τον από τις Ρυθμίσεις και επίλεξε έναν πάροχο AI για να ξεκινήσεις τη συνομιλία.",
+  "assistantOpenSettings": "Άνοιγμα Ρυθμίσεων",
+  "assistantThinking": "Σκέφτεται…",
+  "validationRequired": "Υποχρεωτικό",
+  "validationDayOfMonth": "Εισάγετε μια ημέρα από 1–31",
+  "validationMonth": "Εισάγετε έναν μήνα από 1–12",
+  "validationPositiveNumber": "Εισάγετε έναν αριθμό μεγαλύτερο από 0",
+  "validationPositiveInteger": "Εισάγετε έναν ακέραιο αριθμό μεγαλύτερο από 0",
+  "settingsPermissionsSectionTitle": "Ειδοποιήσεις & Ξυπνητήρια",
+  "settingsPermissionsNotificationLabel": "Άδεια ειδοποιήσεων",
+  "settingsPermissionsExactAlarmLabel": "Άδεια ακριβών ξυπνητηριών",
+  "settingsPermissionsGranted": "Παραχωρήθηκε",
+  "settingsPermissionsDenied": "Δεν έχει παραχωρηθεί — οι υπενθυμίσεις ενδέχεται να μην εμφανίζονται στην ώρα τους",
+  "settingsPermissionsGrantAction": "Παραχώρηση",
+  "settingsPermissionsOpenSettingsAction": "Άνοιγμα ρυθμίσεων",
+  "onboardingExactAlarmRationaleTitle": "Ακόμα μία άδεια",
+  "onboardingExactAlarmRationaleBody": "Στην επόμενη οθόνη, επίτρεψε στο iReminder να προγραμματίζει ακριβή ξυπνητήρια, ώστε οι υπενθυμίσεις να εμφανίζονται ακριβώς την ώρα που όρισες.",
+  "loanMarkPaidSuccess": "Σημειώθηκε ως πληρωμένη"
+}

@@ -1,0 +1,227 @@
+{
+  "@@locale": "ja",
+  "appTitle": "iReminder",
+  "navToday": "今日",
+  "navCalendar": "カレンダー",
+  "navLoans": "分割払い",
+  "navCategories": "カテゴリ",
+  "navSettings": "設定",
+  "navAssistant": "アシスタント",
+  "onboardingTitle1": "大事なことを忘れない",
+  "onboardingBody1": "家電のメンテナンス、車の点検、記念日など、すべてを一つの場所で管理できます。",
+  "onboardingTitle2": "繰り返し設定も簡単",
+  "onboardingBody2": "毎日、毎週、毎月、毎年、さらには旧暦にも対応。一度設定すればiReminderが覚えておきます。",
+  "onboardingTitle3": "完全プライベート、完全オフライン",
+  "onboardingBody3": "アカウント登録も、クラウド連携も、ログインも不要。データはすべてあなたのスマホの中だけに残ります。",
+  "onboardingSkip": "スキップ",
+  "onboardingNext": "次へ",
+  "onboardingGetStarted": "はじめる",
+  "notificationPermissionTitle": "期限に遅れない",
+  "notificationPermissionBody": "期限が近づいたときに通知するため、iReminderに通知の許可が必要です。",
+  "notificationPermissionAllow": "通知を許可",
+  "notificationPermissionLater": "あとで",
+  "homeSectionOverdue": "期限切れ",
+  "homeSectionToday": "今日",
+  "homeSectionThisWeek": "今週",
+  "homeSectionUpcoming": "今後の予定",
+  "homeEmptyTitle": "まだ何もありません",
+  "homeEmptyBody": "＋をタップして、最初のリマインダーや分割払いを追加しましょう。",
+  "fabAddReminder": "リマインダー",
+  "fabAddLoan": "分割払い",
+  "actionDone": "完了",
+  "actionSnooze": "あとで通知",
+  "actionEdit": "編集",
+  "actionDelete": "削除",
+  "actionSave": "保存",
+  "actionCancel": "キャンセル",
+  "actionConfirm": "確認",
+  "actionYes": "はい",
+  "actionNo": "いいえ",
+  "actionOk": "OK",
+  "actionAdd": "追加",
+  "actionClose": "閉じる",
+  "reminderFormTitleNew": "新しいリマインダー",
+  "reminderFormTitleEdit": "リマインダーを編集",
+  "reminderFieldTitle": "タイトル",
+  "reminderFieldTitleRequired": "タイトルを入力してください",
+  "reminderFieldDescription": "説明（任意）",
+  "reminderFieldCategory": "カテゴリ",
+  "reminderFieldRecurrence": "繰り返し",
+  "reminderFieldStartDate": "開始日",
+  "reminderFieldTime": "通知時刻",
+  "reminderFieldAdvanceNotice": "N日前に通知",
+  "reminderFieldRecurrenceDay": "日にち",
+  "reminderFieldRecurrenceMonth": "月",
+  "reminderFieldRecurrenceWeekday": "曜日",
+  "reminderFieldIntervalDays": "N日ごと",
+  "reminderFieldLunarDay": "旧暦の日",
+  "reminderFieldLunarMonth": "旧暦の月",
+  "reminderDeleteConfirmTitle": "このリマインダーを削除しますか？",
+  "reminderDeleteConfirmBody": "この操作は元に戻せません。",
+  "recurrenceNone": "1回のみ",
+  "recurrenceDaily": "毎日",
+  "recurrenceWeekly": "毎週",
+  "recurrenceMonthly": "毎月",
+  "recurrenceYearly": "毎年",
+  "recurrenceCustomIntervalDays": "N日ごと",
+  "recurrenceLunarYearly": "毎年（旧暦）",
+  "weekdayMonday": "月曜日",
+  "weekdayTuesday": "火曜日",
+  "weekdayWednesday": "水曜日",
+  "weekdayThursday": "木曜日",
+  "weekdayFriday": "金曜日",
+  "weekdaySaturday": "土曜日",
+  "weekdaySunday": "日曜日",
+  "loanListTitle": "ローン・分割払い",
+  "loanFormTitleNew": "新しい分割払い",
+  "loanFormTitleEdit": "分割払いを編集",
+  "loanFieldName": "名前",
+  "loanFieldCategory": "カテゴリ",
+  "loanFieldTotalAmount": "合計金額（任意）",
+  "loanFieldInstallmentAmount": "1回あたりの支払額",
+  "loanFieldTotalInstallments": "支払い回数",
+  "loanFieldFrequency": "頻度",
+  "loanFieldDueDayOfMonth": "毎月の支払日",
+  "loanFieldStartDate": "開始日",
+  "loanFieldReminderAdvanceDays": "支払期限のN日前に通知",
+  "loanFieldNotes": "メモ（任意）",
+  "loanFrequencyMonthly": "毎月",
+  "loanFrequencyWeekly": "毎週",
+  "loanFrequencyBiweekly": "隔週",
+  "loanProgress": "{paid} / {total} 回 支払い済み",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "支払い済みにする",
+  "loanMarkPaidBatch": "{count}回分を支払い済みにする",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "未払い",
+  "loanStatusPaid": "支払い済み",
+  "loanStatusOverdue": "延滞",
+  "loanInstallmentNumber": "第{number}回",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "この分割払いを削除しますか？",
+  "loanDeleteConfirmBody": "{count}回分の支払いもすべて削除されます。",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "カテゴリ",
+  "categoryFormTitleNew": "新しいカテゴリ",
+  "categoryFormTitleEdit": "カテゴリを編集",
+  "categoryFieldName": "名前",
+  "categoryFieldNameRequired": "名前を入力してください",
+  "categoryFieldIcon": "アイコン",
+  "categoryFieldColor": "色",
+  "categoryDeleteSimpleTitle": "このカテゴリを削除しますか？",
+  "categoryDeleteSimpleBody": "このカテゴリにはリマインダーがありません。",
+  "categoryDeleteHasRemindersTitle": "このカテゴリにはまだリマインダーがあります",
+  "categoryDeleteHasRemindersBody": "{count}件のリマインダーがこのカテゴリを使用しています。どうするか選択してください。",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "別のカテゴリに移動",
+  "categoryDeleteReassignTarget": "移動先",
+  "categoryDeleteRemoveAll": "{count}件のリマインダーをすべて削除",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "{count}件のリマインダーが完全に削除されます。この操作は元に戻せません。",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "ドラッグして並べ替え",
+  "settingsTitle": "設定",
+  "settingsLanguage": "言語",
+  "settingsDefaultReminderTime": "デフォルトの通知時刻",
+  "settingsTheme": "テーマ",
+  "settingsThemeSystem": "端末の設定に従う",
+  "settingsThemeLight": "ライト",
+  "settingsThemeDark": "ダーク",
+  "settingsBackupRestore": "バックアップと復元",
+  "settingsExport": "バックアップを作成",
+  "settingsImport": "バックアップから復元",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups に保存されます",
+  "settingsExportSuccess": "バックアップを保存しました",
+  "settingsImportNoneFound": "バックアップファイルが見つかりません",
+  "settingsImportPickFile": "バックアップを選択",
+  "settingsImportSuccess": "バックアップを復元しました",
+  "settingsImportConfirmTitle": "バックアップを復元しますか？",
+  "settingsImportConfirmBody": "現在のすべてのデータがバックアップファイルの内容に置き換わります。",
+  "settingsAbout": "アプリについて",
+  "settingsBatteryOptimizationTitle": "通知が時間通りに届きませんか？",
+  "settingsBatteryOptimizationBody": "一部のメーカー（Samsung、Xiaomi、Oppoなど）はバックグラウンドアプリを厳しく制限しています。端末の「設定 > バッテリー」でiReminderのバッテリー最適化をオフにすると、通知が確実に時間通り届くようになります。",
+  "errorGeneric": "問題が発生しました。もう一度お試しください。",
+  "errorLoadFailed": "データを読み込めませんでした。",
+  "settingsAiSectionTitle": "AIアシスタント",
+  "settingsAiEnable": "AIアシスタントを有効にする",
+  "settingsAiProvider": "AIプロバイダー",
+  "settingsAiModel": "モデル",
+  "settingsAiApiKey": "APIキー",
+  "settingsAiApiKeyHint": "APIキーを貼り付けてください",
+  "settingsAiApiKeyHelp": "キーの取得方法は？",
+  "settingsAiApiKeySaved": "APIキーを保存しました",
+  "settingsAiAllowedCategories": "アシスタントに見せるカテゴリ",
+  "settingsAiAllowedCategoriesHint": "デフォルトではすべてオフです。アシスタントに見せたいカテゴリだけをオンにしてください。それ以外の情報は一切送信されません。",
+  "settingsAiClearHistory": "チャット履歴を削除",
+  "settingsAiClearHistoryConfirmTitle": "チャット履歴を削除しますか？",
+  "settingsAiClearHistoryConfirmBody": "この端末に保存されているすべての質問と回答が削除されます。この操作は元に戻せません。",
+  "assistantTitle": "アシスタント",
+  "assistantEmptyTitle": "何でも聞いてください",
+  "assistantEmptyBody": "「今週やることは？」や「バイクのローンはあと何回残ってる？」のように聞いてみましょう。",
+  "assistantInputHint": "質問を入力…",
+  "assistantSend": "送信",
+  "assistantDisabledTitle": "アシスタントはオフになっています",
+  "assistantDisabledBody": "設定で有効にしてAIプロバイダーを選択すると、会話を始められます。",
+  "assistantOpenSettings": "設定を開く",
+  "assistantThinking": "考え中…",
+  "validationRequired": "入力してください",
+  "validationDayOfMonth": "1〜31の日にちを入力してください",
+  "validationMonth": "1〜12の月を入力してください",
+  "validationPositiveNumber": "0より大きい数値を入力してください",
+  "validationPositiveInteger": "0より大きい整数を入力してください",
+  "settingsPermissionsSectionTitle": "通知とアラーム",
+  "settingsPermissionsNotificationLabel": "通知の権限",
+  "settingsPermissionsExactAlarmLabel": "正確なアラームの権限",
+  "settingsPermissionsGranted": "許可済み",
+  "settingsPermissionsDenied": "未許可 — リマインダーが時間通りに届かない場合があります",
+  "settingsPermissionsGrantAction": "許可する",
+  "settingsPermissionsOpenSettingsAction": "設定を開く",
+  "onboardingExactAlarmRationaleTitle": "もう1つ権限が必要です",
+  "onboardingExactAlarmRationaleBody": "次の画面で、iReminderが正確なアラームを設定できるように許可してください。これにより、設定した時刻通りにリマインダーが届きます。",
+  "loanMarkPaidSuccess": "支払い済みにしました"
+}
