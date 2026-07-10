@@ -555,4 +555,34 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Ödendi olarak işaretlendi';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Ses ve titreşim';
+
+  @override
+  String get settingsNotificationSound => 'Bildirim sesi';
+
+  @override
+  String get settingsNotificationVibration => 'Titreşim';
+
+  @override
+  String get settingsSnoozeDuration => 'Erteleme süresi';
+
+  @override
+  String get snoozeDuration5Min => '5 dakika';
+
+  @override
+  String get snoozeDuration10Min => '10 dakika';
+
+  @override
+  String get snoozeDuration15Min => '15 dakika';
+
+  @override
+  String get snoozeDuration30Min => '30 dakika';
+
+  @override
+  String get snoozeDuration60Min => '1 saat';
+
+  @override
+  String get snoozeDuration120Min => '2 saat';
 }

@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Buksan ang settings",
   "onboardingExactAlarmRationaleTitle": "Isa pang pahintulot",
   "onboardingExactAlarmRationaleBody": "Sa susunod na screen, payagan ang iReminder na mag-schedule ng eksaktong alarm para tumunog ang mga paalala sa eksaktong oras na itinakda mo.",
-  "loanMarkPaidSuccess": "Namarkahang bayad na"
+  "loanMarkPaidSuccess": "Namarkahang bayad na",
+  "settingsNotificationPrefsTitle": "Tunog at pag-vibrate",
+  "settingsNotificationSound": "Tunog ng abiso",
+  "settingsNotificationVibration": "Pag-vibrate",
+  "settingsSnoozeDuration": "Tagal ng pag-snooze",
+  "snoozeDuration5Min": "5 minuto",
+  "snoozeDuration10Min": "10 minuto",
+  "snoozeDuration15Min": "15 minuto",
+  "snoozeDuration30Min": "30 minuto",
+  "snoozeDuration60Min": "1 oras",
+  "snoozeDuration120Min": "2 oras"
 }

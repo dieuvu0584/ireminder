@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Buka tetapan",
   "onboardingExactAlarmRationaleTitle": "Satu lagi kebenaran",
   "onboardingExactAlarmRationaleBody": "Pada skrin seterusnya, benarkan iReminder menjadualkan penggera tepat supaya peringatan muncul pada masa yang tepat seperti yang anda tetapkan.",
-  "loanMarkPaidSuccess": "Ditandakan sebagai dibayar"
+  "loanMarkPaidSuccess": "Ditandakan sebagai dibayar",
+  "settingsNotificationPrefsTitle": "Bunyi & getaran",
+  "settingsNotificationSound": "Bunyi pemberitahuan",
+  "settingsNotificationVibration": "Getaran",
+  "settingsSnoozeDuration": "Tempoh tunda",
+  "snoozeDuration5Min": "5 minit",
+  "snoozeDuration10Min": "10 minit",
+  "snoozeDuration15Min": "15 minit",
+  "snoozeDuration30Min": "30 minit",
+  "snoozeDuration60Min": "1 jam",
+  "snoozeDuration120Min": "2 jam"
 }

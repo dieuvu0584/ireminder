@@ -551,4 +551,34 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'পরিশোধিত হিসেবে চিহ্নিত হয়েছে';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'শব্দ ও কম্পন';
+
+  @override
+  String get settingsNotificationSound => 'বিজ্ঞপ্তির শব্দ';
+
+  @override
+  String get settingsNotificationVibration => 'কম্পন';
+
+  @override
+  String get settingsSnoozeDuration => 'স্নুজ সময়কাল';
+
+  @override
+  String get snoozeDuration5Min => '৫ মিনিট';
+
+  @override
+  String get snoozeDuration10Min => '১০ মিনিট';
+
+  @override
+  String get snoozeDuration15Min => '১৫ মিনিট';
+
+  @override
+  String get snoozeDuration30Min => '৩০ মিনিট';
+
+  @override
+  String get snoozeDuration60Min => '১ ঘণ্টা';
+
+  @override
+  String get snoozeDuration120Min => '২ ঘণ্টা';
 }

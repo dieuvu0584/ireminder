@@ -25,9 +25,11 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
 
     if (parts[0] == 'reminder') {
       if (actionId == NotificationActionIds.reminderSnooze) {
+        final settings = await ref.read(settingsRepositoryProvider).get();
         await ref.read(reminderActionsProvider).snooze(
               id,
-              DateTime.now().add(const Duration(hours: 1)),
+              DateTime.now()
+                  .add(Duration(minutes: settings.snoozeDurationMinutes)),
             );
       } else {
         await ref.read(reminderActionsProvider).complete(id);

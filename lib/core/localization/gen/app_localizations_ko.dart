@@ -546,4 +546,34 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => '납부 완료로 표시했어요';
+
+  @override
+  String get settingsNotificationPrefsTitle => '소리 및 진동';
+
+  @override
+  String get settingsNotificationSound => '알림 소리';
+
+  @override
+  String get settingsNotificationVibration => '진동';
+
+  @override
+  String get settingsSnoozeDuration => '다시 알림 시간';
+
+  @override
+  String get snoozeDuration5Min => '5분';
+
+  @override
+  String get snoozeDuration10Min => '10분';
+
+  @override
+  String get snoozeDuration15Min => '15분';
+
+  @override
+  String get snoozeDuration30Min => '30분';
+
+  @override
+  String get snoozeDuration60Min => '1시간';
+
+  @override
+  String get snoozeDuration120Min => '2시간';
 }

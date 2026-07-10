@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "เปิดการตั้งค่า",
   "onboardingExactAlarmRationaleTitle": "อีกหนึ่งสิทธิ์การใช้งาน",
   "onboardingExactAlarmRationaleBody": "ในหน้าจอถัดไป กรุณาอนุญาตให้ iReminder ตั้งปลุกแบบตรงเวลา เพื่อให้การแจ้งเตือนมาตรงเวลาที่คุณตั้งไว้",
-  "loanMarkPaidSuccess": "ทำเครื่องหมายว่าชำระแล้ว"
+  "loanMarkPaidSuccess": "ทำเครื่องหมายว่าชำระแล้ว",
+  "settingsNotificationPrefsTitle": "เสียงและการสั่น",
+  "settingsNotificationSound": "เสียงแจ้งเตือน",
+  "settingsNotificationVibration": "การสั่น",
+  "settingsSnoozeDuration": "ระยะเวลาเลื่อนแจ้งเตือน",
+  "snoozeDuration5Min": "5 นาที",
+  "snoozeDuration10Min": "10 นาที",
+  "snoozeDuration15Min": "15 นาที",
+  "snoozeDuration30Min": "30 นาที",
+  "snoozeDuration60Min": "1 ชั่วโมง",
+  "snoozeDuration120Min": "2 ชั่วโมง"
 }

@@ -554,4 +554,34 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Позначено як сплачено';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Звук і вібрація';
+
+  @override
+  String get settingsNotificationSound => 'Звук сповіщення';
+
+  @override
+  String get settingsNotificationVibration => 'Вібрація';
+
+  @override
+  String get settingsSnoozeDuration => 'Тривалість відкладення';
+
+  @override
+  String get snoozeDuration5Min => '5 хвилин';
+
+  @override
+  String get snoozeDuration10Min => '10 хвилин';
+
+  @override
+  String get snoozeDuration15Min => '15 хвилин';
+
+  @override
+  String get snoozeDuration30Min => '30 хвилин';
+
+  @override
+  String get snoozeDuration60Min => '1 година';
+
+  @override
+  String get snoozeDuration120Min => '2 години';
 }

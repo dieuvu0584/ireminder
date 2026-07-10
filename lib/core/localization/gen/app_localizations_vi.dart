@@ -553,4 +553,34 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Đã đánh dấu là đã trả';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Âm thanh & rung';
+
+  @override
+  String get settingsNotificationSound => 'Âm thanh thông báo';
+
+  @override
+  String get settingsNotificationVibration => 'Rung';
+
+  @override
+  String get settingsSnoozeDuration => 'Thời gian nhắc lại';
+
+  @override
+  String get snoozeDuration5Min => '5 phút';
+
+  @override
+  String get snoozeDuration10Min => '10 phút';
+
+  @override
+  String get snoozeDuration15Min => '15 phút';
+
+  @override
+  String get snoozeDuration30Min => '30 phút';
+
+  @override
+  String get snoozeDuration60Min => '1 giờ';
+
+  @override
+  String get snoozeDuration120Min => '2 giờ';
 }

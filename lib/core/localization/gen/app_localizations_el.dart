@@ -560,4 +560,34 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Σημειώθηκε ως πληρωμένη';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Ήχος & δόνηση';
+
+  @override
+  String get settingsNotificationSound => 'Ήχος ειδοποίησης';
+
+  @override
+  String get settingsNotificationVibration => 'Δόνηση';
+
+  @override
+  String get settingsSnoozeDuration => 'Διάρκεια αναβολής';
+
+  @override
+  String get snoozeDuration5Min => '5 λεπτά';
+
+  @override
+  String get snoozeDuration10Min => '10 λεπτά';
+
+  @override
+  String get snoozeDuration15Min => '15 λεπτά';
+
+  @override
+  String get snoozeDuration30Min => '30 λεπτά';
+
+  @override
+  String get snoozeDuration60Min => '1 ώρα';
+
+  @override
+  String get snoozeDuration120Min => '2 ώρες';
 }

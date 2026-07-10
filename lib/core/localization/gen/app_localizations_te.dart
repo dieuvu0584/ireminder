@@ -556,4 +556,34 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'చెల్లించినట్లు గుర్తించారు';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'శబ్దం & వైబ్రేషన్';
+
+  @override
+  String get settingsNotificationSound => 'నోటిఫికేషన్ శబ్దం';
+
+  @override
+  String get settingsNotificationVibration => 'వైబ్రేషన్';
+
+  @override
+  String get settingsSnoozeDuration => 'స్నూజ్ వ్యవధి';
+
+  @override
+  String get snoozeDuration5Min => '5 నిమిషాలు';
+
+  @override
+  String get snoozeDuration10Min => '10 నిమిషాలు';
+
+  @override
+  String get snoozeDuration15Min => '15 నిమిషాలు';
+
+  @override
+  String get snoozeDuration30Min => '30 నిమిషాలు';
+
+  @override
+  String get snoozeDuration60Min => '1 గంట';
+
+  @override
+  String get snoozeDuration120Min => '2 గంటలు';
 }

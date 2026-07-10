@@ -6,6 +6,7 @@ import '../../../data/database/app_database.dart';
 import '../../providers/calendar_providers.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
+import '../../providers/settings_providers.dart';
 import '../../widgets/color_picker.dart';
 import '../../widgets/guarded_action.dart';
 import '../reminders/reminder_detail_screen.dart';
@@ -37,6 +38,9 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     // browsing a different day here pre-fills that day as the reminder's
     // start date instead of always defaulting to today.
     final selectedDay = ref.watch(selectedCalendarDayProvider);
+    final snoozeMinutes =
+        ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
+            60;
 
     return remindersAsync.when(
       data: (reminders) {
@@ -106,8 +110,9 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                                     .read(reminderActionsProvider)
                                     .snooze(
                                       r.id,
-                                      DateTime.now()
-                                          .add(const Duration(hours: 1)),
+                                      DateTime.now().add(
+                                        Duration(minutes: snoozeMinutes),
+                                      ),
                                     ),
                               ),
                             ),

@@ -552,4 +552,34 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'تم التحديد كمدفوع';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'الصوت والاهتزاز';
+
+  @override
+  String get settingsNotificationSound => 'صوت الإشعار';
+
+  @override
+  String get settingsNotificationVibration => 'الاهتزاز';
+
+  @override
+  String get settingsSnoozeDuration => 'مدة الغفوة';
+
+  @override
+  String get snoozeDuration5Min => '5 دقائق';
+
+  @override
+  String get snoozeDuration10Min => '10 دقائق';
+
+  @override
+  String get snoozeDuration15Min => '15 دقيقة';
+
+  @override
+  String get snoozeDuration30Min => '30 دقيقة';
+
+  @override
+  String get snoozeDuration60Min => 'ساعة واحدة';
+
+  @override
+  String get snoozeDuration120Min => 'ساعتان';
 }

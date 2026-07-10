@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Ayarları aç",
   "onboardingExactAlarmRationaleTitle": "Bir izin daha",
   "onboardingExactAlarmRationaleBody": "Bir sonraki ekranda, hatırlatıcıların tam olarak ayarladığınız saatte çalması için iReminder'a tam zamanlı alarm kurma izni verin.",
-  "loanMarkPaidSuccess": "Ödendi olarak işaretlendi"
+  "loanMarkPaidSuccess": "Ödendi olarak işaretlendi",
+  "settingsNotificationPrefsTitle": "Ses ve titreşim",
+  "settingsNotificationSound": "Bildirim sesi",
+  "settingsNotificationVibration": "Titreşim",
+  "settingsSnoozeDuration": "Erteleme süresi",
+  "snoozeDuration5Min": "5 dakika",
+  "snoozeDuration10Min": "10 dakika",
+  "snoozeDuration15Min": "15 dakika",
+  "snoozeDuration30Min": "30 dakika",
+  "snoozeDuration60Min": "1 saat",
+  "snoozeDuration120Min": "2 saat"
 }

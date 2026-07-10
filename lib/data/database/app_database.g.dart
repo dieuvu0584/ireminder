@@ -3320,6 +3320,47 @@ class $AppSettingsTable extends AppSettings
         ),
         defaultValue: const Constant(false),
       );
+  static const VerificationMeta _notificationSoundEnabledMeta =
+      const VerificationMeta('notificationSoundEnabled');
+  @override
+  late final GeneratedColumn<bool> notificationSoundEnabled =
+      GeneratedColumn<bool>(
+        'notification_sound_enabled',
+        aliasedName,
+        false,
+        type: DriftSqlType.bool,
+        requiredDuringInsert: false,
+        defaultConstraints: GeneratedColumn.constraintIsAlways(
+          'CHECK ("notification_sound_enabled" IN (0, 1))',
+        ),
+        defaultValue: const Constant(true),
+      );
+  static const VerificationMeta _notificationVibrationEnabledMeta =
+      const VerificationMeta('notificationVibrationEnabled');
+  @override
+  late final GeneratedColumn<bool> notificationVibrationEnabled =
+      GeneratedColumn<bool>(
+        'notification_vibration_enabled',
+        aliasedName,
+        false,
+        type: DriftSqlType.bool,
+        requiredDuringInsert: false,
+        defaultConstraints: GeneratedColumn.constraintIsAlways(
+          'CHECK ("notification_vibration_enabled" IN (0, 1))',
+        ),
+        defaultValue: const Constant(true),
+      );
+  static const VerificationMeta _snoozeDurationMinutesMeta =
+      const VerificationMeta('snoozeDurationMinutes');
+  @override
+  late final GeneratedColumn<int> snoozeDurationMinutes = GeneratedColumn<int>(
+    'snooze_duration_minutes',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(60),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -3328,6 +3369,9 @@ class $AppSettingsTable extends AppSettings
     themeMode,
     onboardingCompleted,
     notificationsPermissionAsked,
+    notificationSoundEnabled,
+    notificationVibrationEnabled,
+    snoozeDurationMinutes,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -3383,6 +3427,33 @@ class $AppSettingsTable extends AppSettings
         ),
       );
     }
+    if (data.containsKey('notification_sound_enabled')) {
+      context.handle(
+        _notificationSoundEnabledMeta,
+        notificationSoundEnabled.isAcceptableOrUnknown(
+          data['notification_sound_enabled']!,
+          _notificationSoundEnabledMeta,
+        ),
+      );
+    }
+    if (data.containsKey('notification_vibration_enabled')) {
+      context.handle(
+        _notificationVibrationEnabledMeta,
+        notificationVibrationEnabled.isAcceptableOrUnknown(
+          data['notification_vibration_enabled']!,
+          _notificationVibrationEnabledMeta,
+        ),
+      );
+    }
+    if (data.containsKey('snooze_duration_minutes')) {
+      context.handle(
+        _snoozeDurationMinutesMeta,
+        snoozeDurationMinutes.isAcceptableOrUnknown(
+          data['snooze_duration_minutes']!,
+          _snoozeDurationMinutesMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -3416,6 +3487,18 @@ class $AppSettingsTable extends AppSettings
         DriftSqlType.bool,
         data['${effectivePrefix}notifications_permission_asked'],
       )!,
+      notificationSoundEnabled: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}notification_sound_enabled'],
+      )!,
+      notificationVibrationEnabled: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}notification_vibration_enabled'],
+      )!,
+      snoozeDurationMinutes: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}snooze_duration_minutes'],
+      )!,
     );
   }
 
@@ -3432,6 +3515,9 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
   final String themeMode;
   final bool onboardingCompleted;
   final bool notificationsPermissionAsked;
+  final bool notificationSoundEnabled;
+  final bool notificationVibrationEnabled;
+  final int snoozeDurationMinutes;
   const AppSetting({
     required this.id,
     this.locale,
@@ -3439,6 +3525,9 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
     required this.themeMode,
     required this.onboardingCompleted,
     required this.notificationsPermissionAsked,
+    required this.notificationSoundEnabled,
+    required this.notificationVibrationEnabled,
+    required this.snoozeDurationMinutes,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -3453,6 +3542,13 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
     map['notifications_permission_asked'] = Variable<bool>(
       notificationsPermissionAsked,
     );
+    map['notification_sound_enabled'] = Variable<bool>(
+      notificationSoundEnabled,
+    );
+    map['notification_vibration_enabled'] = Variable<bool>(
+      notificationVibrationEnabled,
+    );
+    map['snooze_duration_minutes'] = Variable<int>(snoozeDurationMinutes);
     return map;
   }
 
@@ -3466,6 +3562,9 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
       themeMode: Value(themeMode),
       onboardingCompleted: Value(onboardingCompleted),
       notificationsPermissionAsked: Value(notificationsPermissionAsked),
+      notificationSoundEnabled: Value(notificationSoundEnabled),
+      notificationVibrationEnabled: Value(notificationVibrationEnabled),
+      snoozeDurationMinutes: Value(snoozeDurationMinutes),
     );
   }
 
@@ -3487,6 +3586,15 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
       notificationsPermissionAsked: serializer.fromJson<bool>(
         json['notificationsPermissionAsked'],
       ),
+      notificationSoundEnabled: serializer.fromJson<bool>(
+        json['notificationSoundEnabled'],
+      ),
+      notificationVibrationEnabled: serializer.fromJson<bool>(
+        json['notificationVibrationEnabled'],
+      ),
+      snoozeDurationMinutes: serializer.fromJson<int>(
+        json['snoozeDurationMinutes'],
+      ),
     );
   }
   @override
@@ -3501,6 +3609,13 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
       'notificationsPermissionAsked': serializer.toJson<bool>(
         notificationsPermissionAsked,
       ),
+      'notificationSoundEnabled': serializer.toJson<bool>(
+        notificationSoundEnabled,
+      ),
+      'notificationVibrationEnabled': serializer.toJson<bool>(
+        notificationVibrationEnabled,
+      ),
+      'snoozeDurationMinutes': serializer.toJson<int>(snoozeDurationMinutes),
     };
   }
 
@@ -3511,6 +3626,9 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
     String? themeMode,
     bool? onboardingCompleted,
     bool? notificationsPermissionAsked,
+    bool? notificationSoundEnabled,
+    bool? notificationVibrationEnabled,
+    int? snoozeDurationMinutes,
   }) => AppSetting(
     id: id ?? this.id,
     locale: locale.present ? locale.value : this.locale,
@@ -3519,6 +3637,11 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
     onboardingCompleted: onboardingCompleted ?? this.onboardingCompleted,
     notificationsPermissionAsked:
         notificationsPermissionAsked ?? this.notificationsPermissionAsked,
+    notificationSoundEnabled:
+        notificationSoundEnabled ?? this.notificationSoundEnabled,
+    notificationVibrationEnabled:
+        notificationVibrationEnabled ?? this.notificationVibrationEnabled,
+    snoozeDurationMinutes: snoozeDurationMinutes ?? this.snoozeDurationMinutes,
   );
   AppSetting copyWithCompanion(AppSettingsCompanion data) {
     return AppSetting(
@@ -3534,6 +3657,15 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
       notificationsPermissionAsked: data.notificationsPermissionAsked.present
           ? data.notificationsPermissionAsked.value
           : this.notificationsPermissionAsked,
+      notificationSoundEnabled: data.notificationSoundEnabled.present
+          ? data.notificationSoundEnabled.value
+          : this.notificationSoundEnabled,
+      notificationVibrationEnabled: data.notificationVibrationEnabled.present
+          ? data.notificationVibrationEnabled.value
+          : this.notificationVibrationEnabled,
+      snoozeDurationMinutes: data.snoozeDurationMinutes.present
+          ? data.snoozeDurationMinutes.value
+          : this.snoozeDurationMinutes,
     );
   }
 
@@ -3545,7 +3677,14 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
           ..write('defaultReminderTime: $defaultReminderTime, ')
           ..write('themeMode: $themeMode, ')
           ..write('onboardingCompleted: $onboardingCompleted, ')
-          ..write('notificationsPermissionAsked: $notificationsPermissionAsked')
+          ..write(
+            'notificationsPermissionAsked: $notificationsPermissionAsked, ',
+          )
+          ..write('notificationSoundEnabled: $notificationSoundEnabled, ')
+          ..write(
+            'notificationVibrationEnabled: $notificationVibrationEnabled, ',
+          )
+          ..write('snoozeDurationMinutes: $snoozeDurationMinutes')
           ..write(')'))
         .toString();
   }
@@ -3558,6 +3697,9 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
     themeMode,
     onboardingCompleted,
     notificationsPermissionAsked,
+    notificationSoundEnabled,
+    notificationVibrationEnabled,
+    snoozeDurationMinutes,
   );
   @override
   bool operator ==(Object other) =>
@@ -3569,7 +3711,11 @@ class AppSetting extends DataClass implements Insertable<AppSetting> {
           other.themeMode == this.themeMode &&
           other.onboardingCompleted == this.onboardingCompleted &&
           other.notificationsPermissionAsked ==
-              this.notificationsPermissionAsked);
+              this.notificationsPermissionAsked &&
+          other.notificationSoundEnabled == this.notificationSoundEnabled &&
+          other.notificationVibrationEnabled ==
+              this.notificationVibrationEnabled &&
+          other.snoozeDurationMinutes == this.snoozeDurationMinutes);
 }
 
 class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
@@ -3579,6 +3725,9 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
   final Value<String> themeMode;
   final Value<bool> onboardingCompleted;
   final Value<bool> notificationsPermissionAsked;
+  final Value<bool> notificationSoundEnabled;
+  final Value<bool> notificationVibrationEnabled;
+  final Value<int> snoozeDurationMinutes;
   const AppSettingsCompanion({
     this.id = const Value.absent(),
     this.locale = const Value.absent(),
@@ -3586,6 +3735,9 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
     this.themeMode = const Value.absent(),
     this.onboardingCompleted = const Value.absent(),
     this.notificationsPermissionAsked = const Value.absent(),
+    this.notificationSoundEnabled = const Value.absent(),
+    this.notificationVibrationEnabled = const Value.absent(),
+    this.snoozeDurationMinutes = const Value.absent(),
   });
   AppSettingsCompanion.insert({
     this.id = const Value.absent(),
@@ -3594,6 +3746,9 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
     this.themeMode = const Value.absent(),
     this.onboardingCompleted = const Value.absent(),
     this.notificationsPermissionAsked = const Value.absent(),
+    this.notificationSoundEnabled = const Value.absent(),
+    this.notificationVibrationEnabled = const Value.absent(),
+    this.snoozeDurationMinutes = const Value.absent(),
   });
   static Insertable<AppSetting> custom({
     Expression<int>? id,
@@ -3602,6 +3757,9 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
     Expression<String>? themeMode,
     Expression<bool>? onboardingCompleted,
     Expression<bool>? notificationsPermissionAsked,
+    Expression<bool>? notificationSoundEnabled,
+    Expression<bool>? notificationVibrationEnabled,
+    Expression<int>? snoozeDurationMinutes,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -3613,6 +3771,12 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
         'onboarding_completed': onboardingCompleted,
       if (notificationsPermissionAsked != null)
         'notifications_permission_asked': notificationsPermissionAsked,
+      if (notificationSoundEnabled != null)
+        'notification_sound_enabled': notificationSoundEnabled,
+      if (notificationVibrationEnabled != null)
+        'notification_vibration_enabled': notificationVibrationEnabled,
+      if (snoozeDurationMinutes != null)
+        'snooze_duration_minutes': snoozeDurationMinutes,
     });
   }
 
@@ -3623,6 +3787,9 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
     Value<String>? themeMode,
     Value<bool>? onboardingCompleted,
     Value<bool>? notificationsPermissionAsked,
+    Value<bool>? notificationSoundEnabled,
+    Value<bool>? notificationVibrationEnabled,
+    Value<int>? snoozeDurationMinutes,
   }) {
     return AppSettingsCompanion(
       id: id ?? this.id,
@@ -3632,6 +3799,12 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
       onboardingCompleted: onboardingCompleted ?? this.onboardingCompleted,
       notificationsPermissionAsked:
           notificationsPermissionAsked ?? this.notificationsPermissionAsked,
+      notificationSoundEnabled:
+          notificationSoundEnabled ?? this.notificationSoundEnabled,
+      notificationVibrationEnabled:
+          notificationVibrationEnabled ?? this.notificationVibrationEnabled,
+      snoozeDurationMinutes:
+          snoozeDurationMinutes ?? this.snoozeDurationMinutes,
     );
   }
 
@@ -3660,6 +3833,21 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
         notificationsPermissionAsked.value,
       );
     }
+    if (notificationSoundEnabled.present) {
+      map['notification_sound_enabled'] = Variable<bool>(
+        notificationSoundEnabled.value,
+      );
+    }
+    if (notificationVibrationEnabled.present) {
+      map['notification_vibration_enabled'] = Variable<bool>(
+        notificationVibrationEnabled.value,
+      );
+    }
+    if (snoozeDurationMinutes.present) {
+      map['snooze_duration_minutes'] = Variable<int>(
+        snoozeDurationMinutes.value,
+      );
+    }
     return map;
   }
 
@@ -3671,7 +3859,14 @@ class AppSettingsCompanion extends UpdateCompanion<AppSetting> {
           ..write('defaultReminderTime: $defaultReminderTime, ')
           ..write('themeMode: $themeMode, ')
           ..write('onboardingCompleted: $onboardingCompleted, ')
-          ..write('notificationsPermissionAsked: $notificationsPermissionAsked')
+          ..write(
+            'notificationsPermissionAsked: $notificationsPermissionAsked, ',
+          )
+          ..write('notificationSoundEnabled: $notificationSoundEnabled, ')
+          ..write(
+            'notificationVibrationEnabled: $notificationVibrationEnabled, ',
+          )
+          ..write('snoozeDurationMinutes: $snoozeDurationMinutes')
           ..write(')'))
         .toString();
   }
@@ -6857,6 +7052,9 @@ typedef $$AppSettingsTableCreateCompanionBuilder =
       Value<String> themeMode,
       Value<bool> onboardingCompleted,
       Value<bool> notificationsPermissionAsked,
+      Value<bool> notificationSoundEnabled,
+      Value<bool> notificationVibrationEnabled,
+      Value<int> snoozeDurationMinutes,
     });
 typedef $$AppSettingsTableUpdateCompanionBuilder =
     AppSettingsCompanion Function({
@@ -6866,6 +7064,9 @@ typedef $$AppSettingsTableUpdateCompanionBuilder =
       Value<String> themeMode,
       Value<bool> onboardingCompleted,
       Value<bool> notificationsPermissionAsked,
+      Value<bool> notificationSoundEnabled,
+      Value<bool> notificationVibrationEnabled,
+      Value<int> snoozeDurationMinutes,
     });
 
 class $$AppSettingsTableFilterComposer
@@ -6904,6 +7105,21 @@ class $$AppSettingsTableFilterComposer
 
   ColumnFilters<bool> get notificationsPermissionAsked => $composableBuilder(
     column: $table.notificationsPermissionAsked,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get notificationSoundEnabled => $composableBuilder(
+    column: $table.notificationSoundEnabled,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get notificationVibrationEnabled => $composableBuilder(
+    column: $table.notificationVibrationEnabled,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get snoozeDurationMinutes => $composableBuilder(
+    column: $table.snoozeDurationMinutes,
     builder: (column) => ColumnFilters(column),
   );
 }
@@ -6946,6 +7162,21 @@ class $$AppSettingsTableOrderingComposer
     column: $table.notificationsPermissionAsked,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<bool> get notificationSoundEnabled => $composableBuilder(
+    column: $table.notificationSoundEnabled,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get notificationVibrationEnabled => $composableBuilder(
+    column: $table.notificationVibrationEnabled,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get snoozeDurationMinutes => $composableBuilder(
+    column: $table.snoozeDurationMinutes,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$AppSettingsTableAnnotationComposer
@@ -6978,6 +7209,21 @@ class $$AppSettingsTableAnnotationComposer
 
   GeneratedColumn<bool> get notificationsPermissionAsked => $composableBuilder(
     column: $table.notificationsPermissionAsked,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get notificationSoundEnabled => $composableBuilder(
+    column: $table.notificationSoundEnabled,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get notificationVibrationEnabled => $composableBuilder(
+    column: $table.notificationVibrationEnabled,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get snoozeDurationMinutes => $composableBuilder(
+    column: $table.snoozeDurationMinutes,
     builder: (column) => column,
   );
 }
@@ -7019,6 +7265,9 @@ class $$AppSettingsTableTableManager
                 Value<String> themeMode = const Value.absent(),
                 Value<bool> onboardingCompleted = const Value.absent(),
                 Value<bool> notificationsPermissionAsked = const Value.absent(),
+                Value<bool> notificationSoundEnabled = const Value.absent(),
+                Value<bool> notificationVibrationEnabled = const Value.absent(),
+                Value<int> snoozeDurationMinutes = const Value.absent(),
               }) => AppSettingsCompanion(
                 id: id,
                 locale: locale,
@@ -7026,6 +7275,9 @@ class $$AppSettingsTableTableManager
                 themeMode: themeMode,
                 onboardingCompleted: onboardingCompleted,
                 notificationsPermissionAsked: notificationsPermissionAsked,
+                notificationSoundEnabled: notificationSoundEnabled,
+                notificationVibrationEnabled: notificationVibrationEnabled,
+                snoozeDurationMinutes: snoozeDurationMinutes,
               ),
           createCompanionCallback:
               ({
@@ -7035,6 +7287,9 @@ class $$AppSettingsTableTableManager
                 Value<String> themeMode = const Value.absent(),
                 Value<bool> onboardingCompleted = const Value.absent(),
                 Value<bool> notificationsPermissionAsked = const Value.absent(),
+                Value<bool> notificationSoundEnabled = const Value.absent(),
+                Value<bool> notificationVibrationEnabled = const Value.absent(),
+                Value<int> snoozeDurationMinutes = const Value.absent(),
               }) => AppSettingsCompanion.insert(
                 id: id,
                 locale: locale,
@@ -7042,6 +7297,9 @@ class $$AppSettingsTableTableManager
                 themeMode: themeMode,
                 onboardingCompleted: onboardingCompleted,
                 notificationsPermissionAsked: notificationsPermissionAsked,
+                notificationSoundEnabled: notificationSoundEnabled,
+                notificationVibrationEnabled: notificationVibrationEnabled,
+                snoozeDurationMinutes: snoozeDurationMinutes,
               ),
           withReferenceMapper: (p0) => p0
               .map((e) => (e.readTable(table), BaseReferences(db, table, e)))

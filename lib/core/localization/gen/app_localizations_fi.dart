@@ -557,4 +557,34 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Merkitty maksetuksi';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Ääni ja tärinä';
+
+  @override
+  String get settingsNotificationSound => 'Ilmoitusääni';
+
+  @override
+  String get settingsNotificationVibration => 'Tärinä';
+
+  @override
+  String get settingsSnoozeDuration => 'Torkkuaika';
+
+  @override
+  String get snoozeDuration5Min => '5 minuuttia';
+
+  @override
+  String get snoozeDuration10Min => '10 minuuttia';
+
+  @override
+  String get snoozeDuration15Min => '15 minuuttia';
+
+  @override
+  String get snoozeDuration30Min => '30 minuuttia';
+
+  @override
+  String get snoozeDuration60Min => '1 tunti';
+
+  @override
+  String get snoozeDuration120Min => '2 tuntia';
 }

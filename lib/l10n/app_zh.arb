@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "打开设置",
   "onboardingExactAlarmRationaleTitle": "还需要一项权限",
   "onboardingExactAlarmRationaleBody": "在下一屏，请允许 iReminder 安排精确闹钟，这样提醒才能准时在你设定的时间响起。",
-  "loanMarkPaidSuccess": "已标记为已付款"
+  "loanMarkPaidSuccess": "已标记为已付款",
+  "settingsNotificationPrefsTitle": "声音与振动",
+  "settingsNotificationSound": "通知声音",
+  "settingsNotificationVibration": "振动",
+  "settingsSnoozeDuration": "稍后提醒时长",
+  "snoozeDuration5Min": "5 分钟",
+  "snoozeDuration10Min": "10 分钟",
+  "snoozeDuration15Min": "15 分钟",
+  "snoozeDuration30Min": "30 分钟",
+  "snoozeDuration60Min": "1 小时",
+  "snoozeDuration120Min": "2 小时"
 }

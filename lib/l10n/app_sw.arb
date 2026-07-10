@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Fungua mipangilio",
   "onboardingExactAlarmRationaleTitle": "Ruhusa moja zaidi",
   "onboardingExactAlarmRationaleBody": "Kwenye skrini inayofuata, ruhusu iReminder kupanga kengele sahihi ili vikumbusho vifike kwa wakati hasa ulioweka.",
-  "loanMarkPaidSuccess": "Imewekwa alama kuwa imelipwa"
+  "loanMarkPaidSuccess": "Imewekwa alama kuwa imelipwa",
+  "settingsNotificationPrefsTitle": "Sauti na mtetemo",
+  "settingsNotificationSound": "Sauti ya arifa",
+  "settingsNotificationVibration": "Mtetemo",
+  "settingsSnoozeDuration": "Muda wa kuahirisha",
+  "snoozeDuration5Min": "Dakika 5",
+  "snoozeDuration10Min": "Dakika 10",
+  "snoozeDuration15Min": "Dakika 15",
+  "snoozeDuration30Min": "Dakika 30",
+  "snoozeDuration60Min": "Saa 1",
+  "snoozeDuration120Min": "Saa 2"
 }

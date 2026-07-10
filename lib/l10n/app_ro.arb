@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Deschide setările",
   "onboardingExactAlarmRationaleTitle": "Încă o permisiune",
   "onboardingExactAlarmRationaleBody": "Pe ecranul următor, permite-i iReminder să programeze alarme exacte, astfel încât mementourile să apară exact la ora setată de tine.",
-  "loanMarkPaidSuccess": "Marcat ca plătit"
+  "loanMarkPaidSuccess": "Marcat ca plătit",
+  "settingsNotificationPrefsTitle": "Sunet și vibrații",
+  "settingsNotificationSound": "Sunet notificare",
+  "settingsNotificationVibration": "Vibrații",
+  "settingsSnoozeDuration": "Durata amânării",
+  "snoozeDuration5Min": "5 minute",
+  "snoozeDuration10Min": "10 minute",
+  "snoozeDuration15Min": "15 minute",
+  "snoozeDuration30Min": "30 minute",
+  "snoozeDuration60Min": "1 oră",
+  "snoozeDuration120Min": "2 ore"
 }

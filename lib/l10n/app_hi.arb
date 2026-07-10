@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "सेटिंग्स खोलें",
   "onboardingExactAlarmRationaleTitle": "एक और अनुमति",
   "onboardingExactAlarmRationaleBody": "अगली स्क्रीन पर, iReminder को सटीक अलार्म शेड्यूल करने की अनुमति दें ताकि रिमाइंडर ठीक आपके तय समय पर बजें।",
-  "loanMarkPaidSuccess": "भुगतान के रूप में चिह्नित किया गया"
+  "loanMarkPaidSuccess": "भुगतान के रूप में चिह्नित किया गया",
+  "settingsNotificationPrefsTitle": "ध्वनि और वाइब्रेशन",
+  "settingsNotificationSound": "सूचना ध्वनि",
+  "settingsNotificationVibration": "वाइब्रेशन",
+  "settingsSnoozeDuration": "स्नूज़ समय",
+  "snoozeDuration5Min": "5 मिनट",
+  "snoozeDuration10Min": "10 मिनट",
+  "snoozeDuration15Min": "15 मिनट",
+  "snoozeDuration30Min": "30 मिनट",
+  "snoozeDuration60Min": "1 घंटा",
+  "snoozeDuration120Min": "2 घंटे"
 }

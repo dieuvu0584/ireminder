@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Открыть настройки",
   "onboardingExactAlarmRationaleTitle": "Ещё одно разрешение",
   "onboardingExactAlarmRationaleBody": "На следующем экране разрешите iReminder планировать точные будильники, чтобы напоминания приходили точно в заданное время.",
-  "loanMarkPaidSuccess": "Отмечено как оплачено"
+  "loanMarkPaidSuccess": "Отмечено как оплачено",
+  "settingsNotificationPrefsTitle": "Звук и вибрация",
+  "settingsNotificationSound": "Звук уведомления",
+  "settingsNotificationVibration": "Вибрация",
+  "settingsSnoozeDuration": "Длительность отложенного напоминания",
+  "snoozeDuration5Min": "5 минут",
+  "snoozeDuration10Min": "10 минут",
+  "snoozeDuration15Min": "15 минут",
+  "snoozeDuration30Min": "30 минут",
+  "snoozeDuration60Min": "1 час",
+  "snoozeDuration120Min": "2 часа"
 }

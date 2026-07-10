@@ -554,4 +554,34 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'भुगतान के रूप में चिह्नित किया गया';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'ध्वनि और वाइब्रेशन';
+
+  @override
+  String get settingsNotificationSound => 'सूचना ध्वनि';
+
+  @override
+  String get settingsNotificationVibration => 'वाइब्रेशन';
+
+  @override
+  String get settingsSnoozeDuration => 'स्नूज़ समय';
+
+  @override
+  String get snoozeDuration5Min => '5 मिनट';
+
+  @override
+  String get snoozeDuration10Min => '10 मिनट';
+
+  @override
+  String get snoozeDuration15Min => '15 मिनट';
+
+  @override
+  String get snoozeDuration30Min => '30 मिनट';
+
+  @override
+  String get snoozeDuration60Min => '1 घंटा';
+
+  @override
+  String get snoozeDuration120Min => '2 घंटे';
 }

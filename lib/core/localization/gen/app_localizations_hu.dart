@@ -560,4 +560,34 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Kifizetettként megjelölve';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Hang és rezgés';
+
+  @override
+  String get settingsNotificationSound => 'Értesítési hang';
+
+  @override
+  String get settingsNotificationVibration => 'Rezgés';
+
+  @override
+  String get settingsSnoozeDuration => 'Szundi időtartama';
+
+  @override
+  String get snoozeDuration5Min => '5 perc';
+
+  @override
+  String get snoozeDuration10Min => '10 perc';
+
+  @override
+  String get snoozeDuration15Min => '15 perc';
+
+  @override
+  String get snoozeDuration30Min => '30 perc';
+
+  @override
+  String get snoozeDuration60Min => '1 óra';
+
+  @override
+  String get snoozeDuration120Min => '2 óra';
 }

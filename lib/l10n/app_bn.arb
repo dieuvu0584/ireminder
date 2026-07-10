@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "সেটিংস খুলুন",
   "onboardingExactAlarmRationaleTitle": "আরও একটি অনুমতি",
   "onboardingExactAlarmRationaleBody": "পরের স্ক্রিনে, iReminder-কে নির্ভুল অ্যালার্ম শিডিউল করার অনুমতি দিন যাতে আপনার নির্ধারিত সময়েই রিমাইন্ডার আসে।",
-  "loanMarkPaidSuccess": "পরিশোধিত হিসেবে চিহ্নিত হয়েছে"
+  "loanMarkPaidSuccess": "পরিশোধিত হিসেবে চিহ্নিত হয়েছে",
+  "settingsNotificationPrefsTitle": "শব্দ ও কম্পন",
+  "settingsNotificationSound": "বিজ্ঞপ্তির শব্দ",
+  "settingsNotificationVibration": "কম্পন",
+  "settingsSnoozeDuration": "স্নুজ সময়কাল",
+  "snoozeDuration5Min": "৫ মিনিট",
+  "snoozeDuration10Min": "১০ মিনিট",
+  "snoozeDuration15Min": "১৫ মিনিট",
+  "snoozeDuration30Min": "৩০ মিনিট",
+  "snoozeDuration60Min": "১ ঘণ্টা",
+  "snoozeDuration120Min": "২ ঘণ্টা"
 }

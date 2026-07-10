@@ -553,4 +553,34 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'به‌عنوان پرداخت‌شده علامت‌گذاری شد';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'صدا و لرزش';
+
+  @override
+  String get settingsNotificationSound => 'صدای اعلان';
+
+  @override
+  String get settingsNotificationVibration => 'لرزش';
+
+  @override
+  String get settingsSnoozeDuration => 'مدت زمان تعویق';
+
+  @override
+  String get snoozeDuration5Min => '۵ دقیقه';
+
+  @override
+  String get snoozeDuration10Min => '۱۰ دقیقه';
+
+  @override
+  String get snoozeDuration15Min => '۱۵ دقیقه';
+
+  @override
+  String get snoozeDuration30Min => '۳۰ دقیقه';
+
+  @override
+  String get snoozeDuration60Min => '۱ ساعت';
+
+  @override
+  String get snoozeDuration120Min => '۲ ساعت';
 }

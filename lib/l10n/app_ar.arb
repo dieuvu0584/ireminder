@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "فتح الإعدادات",
   "onboardingExactAlarmRationaleTitle": "إذن إضافي أخير",
   "onboardingExactAlarmRationaleBody": "في الشاشة التالية، اسمح لتطبيق iReminder بجدولة منبّهات دقيقة حتى تصل التذكيرات في الوقت المحدد بالضبط.",
-  "loanMarkPaidSuccess": "تم التحديد كمدفوع"
+  "loanMarkPaidSuccess": "تم التحديد كمدفوع",
+  "settingsNotificationPrefsTitle": "الصوت والاهتزاز",
+  "settingsNotificationSound": "صوت الإشعار",
+  "settingsNotificationVibration": "الاهتزاز",
+  "settingsSnoozeDuration": "مدة الغفوة",
+  "snoozeDuration5Min": "5 دقائق",
+  "snoozeDuration10Min": "10 دقائق",
+  "snoozeDuration15Min": "15 دقيقة",
+  "snoozeDuration30Min": "30 دقيقة",
+  "snoozeDuration60Min": "ساعة واحدة",
+  "snoozeDuration120Min": "ساعتان"
 }

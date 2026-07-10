@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Beállítások megnyitása",
   "onboardingExactAlarmRationaleTitle": "Még egy engedély",
   "onboardingExactAlarmRationaleBody": "A következő képernyőn engedélyezd, hogy az iReminder pontos riasztásokat ütemezzen, hogy az emlékeztetők pontosan a beállított időpontban jelenjenek meg.",
-  "loanMarkPaidSuccess": "Kifizetettként megjelölve"
+  "loanMarkPaidSuccess": "Kifizetettként megjelölve",
+  "settingsNotificationPrefsTitle": "Hang és rezgés",
+  "settingsNotificationSound": "Értesítési hang",
+  "settingsNotificationVibration": "Rezgés",
+  "settingsSnoozeDuration": "Szundi időtartama",
+  "snoozeDuration5Min": "5 perc",
+  "snoozeDuration10Min": "10 perc",
+  "snoozeDuration15Min": "15 perc",
+  "snoozeDuration30Min": "30 perc",
+  "snoozeDuration60Min": "1 óra",
+  "snoozeDuration120Min": "2 óra"
 }

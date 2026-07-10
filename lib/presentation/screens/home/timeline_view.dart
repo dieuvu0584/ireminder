@@ -5,6 +5,7 @@ import '../../../core/localization/gen/app_localizations.dart';
 import '../../../data/database/app_database.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
+import '../../providers/settings_providers.dart';
 import '../../widgets/guarded_action.dart';
 import '../../widgets/reminder_card.dart';
 import '../reminders/reminder_detail_screen.dart';
@@ -17,6 +18,9 @@ class TimelineView extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final remindersAsync = ref.watch(activeRemindersStreamProvider);
     final categoriesAsync = ref.watch(categoriesStreamProvider);
+    final snoozeMinutes =
+        ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
+            60;
 
     return remindersAsync.when(
       data: (reminders) {
@@ -61,24 +65,28 @@ class TimelineView extends ConsumerWidget {
                 title: l10n.homeSectionOverdue,
                 reminders: overdue,
                 byId: byId,
+                snoozeMinutes: snoozeMinutes,
               ),
             if (dueToday.isNotEmpty)
               _Section(
                 title: l10n.homeSectionToday,
                 reminders: dueToday,
                 byId: byId,
+                snoozeMinutes: snoozeMinutes,
               ),
             if (thisWeek.isNotEmpty)
               _Section(
                 title: l10n.homeSectionThisWeek,
                 reminders: thisWeek,
                 byId: byId,
+                snoozeMinutes: snoozeMinutes,
               ),
             if (upcoming.isNotEmpty)
               _Section(
                 title: l10n.homeSectionUpcoming,
                 reminders: upcoming,
                 byId: byId,
+                snoozeMinutes: snoozeMinutes,
               ),
           ],
         );
@@ -93,11 +101,13 @@ class _Section extends ConsumerWidget {
   final String title;
   final List<Reminder> reminders;
   final Map<int, Category> byId;
+  final int snoozeMinutes;
 
   const _Section({
     required this.title,
     required this.reminders,
     required this.byId,
+    required this.snoozeMinutes,
   });
 
   @override
@@ -124,7 +134,7 @@ class _Section extends ConsumerWidget {
               context,
               () => ref.read(reminderActionsProvider).snooze(
                     r.id,
-                    DateTime.now().add(const Duration(hours: 1)),
+                    DateTime.now().add(Duration(minutes: snoozeMinutes)),
                   ),
             ),
           ),

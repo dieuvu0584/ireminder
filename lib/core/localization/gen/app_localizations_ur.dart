@@ -554,4 +554,34 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'ادا شدہ کے طور پر نشان زد کر دیا گیا';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'آواز اور وائبریشن';
+
+  @override
+  String get settingsNotificationSound => 'اطلاع کی آواز';
+
+  @override
+  String get settingsNotificationVibration => 'وائبریشن';
+
+  @override
+  String get settingsSnoozeDuration => 'اسنوز کا دورانیہ';
+
+  @override
+  String get snoozeDuration5Min => '5 منٹ';
+
+  @override
+  String get snoozeDuration10Min => '10 منٹ';
+
+  @override
+  String get snoozeDuration15Min => '15 منٹ';
+
+  @override
+  String get snoozeDuration30Min => '30 منٹ';
+
+  @override
+  String get snoozeDuration60Min => '1 گھنٹہ';
+
+  @override
+  String get snoozeDuration120Min => '2 گھنٹے';
 }

@@ -546,4 +546,34 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => '支払い済みにしました';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'サウンドとバイブレーション';
+
+  @override
+  String get settingsNotificationSound => '通知音';
+
+  @override
+  String get settingsNotificationVibration => 'バイブレーション';
+
+  @override
+  String get settingsSnoozeDuration => 'スヌーズ時間';
+
+  @override
+  String get snoozeDuration5Min => '5分';
+
+  @override
+  String get snoozeDuration10Min => '10分';
+
+  @override
+  String get snoozeDuration15Min => '15分';
+
+  @override
+  String get snoozeDuration30Min => '30分';
+
+  @override
+  String get snoozeDuration60Min => '1時間';
+
+  @override
+  String get snoozeDuration120Min => '2時間';
 }

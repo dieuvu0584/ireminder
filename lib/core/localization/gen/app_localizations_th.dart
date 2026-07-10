@@ -556,4 +556,34 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'ทำเครื่องหมายว่าชำระแล้ว';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'เสียงและการสั่น';
+
+  @override
+  String get settingsNotificationSound => 'เสียงแจ้งเตือน';
+
+  @override
+  String get settingsNotificationVibration => 'การสั่น';
+
+  @override
+  String get settingsSnoozeDuration => 'ระยะเวลาเลื่อนแจ้งเตือน';
+
+  @override
+  String get snoozeDuration5Min => '5 นาที';
+
+  @override
+  String get snoozeDuration10Min => '10 นาที';
+
+  @override
+  String get snoozeDuration15Min => '15 นาที';
+
+  @override
+  String get snoozeDuration30Min => '30 นาที';
+
+  @override
+  String get snoozeDuration60Min => '1 ชั่วโมง';
+
+  @override
+  String get snoozeDuration120Min => '2 ชั่วโมง';
 }

@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "設定を開く",
   "onboardingExactAlarmRationaleTitle": "もう1つ権限が必要です",
   "onboardingExactAlarmRationaleBody": "次の画面で、iReminderが正確なアラームを設定できるように許可してください。これにより、設定した時刻通りにリマインダーが届きます。",
-  "loanMarkPaidSuccess": "支払い済みにしました"
+  "loanMarkPaidSuccess": "支払い済みにしました",
+  "settingsNotificationPrefsTitle": "サウンドとバイブレーション",
+  "settingsNotificationSound": "通知音",
+  "settingsNotificationVibration": "バイブレーション",
+  "settingsSnoozeDuration": "スヌーズ時間",
+  "snoozeDuration5Min": "5分",
+  "snoozeDuration10Min": "10分",
+  "snoozeDuration15Min": "15分",
+  "snoozeDuration30Min": "30分",
+  "snoozeDuration60Min": "1時間",
+  "snoozeDuration120Min": "2時間"
 }

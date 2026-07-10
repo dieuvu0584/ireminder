@@ -559,4 +559,34 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Namarkahang bayad na';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Tunog at pag-vibrate';
+
+  @override
+  String get settingsNotificationSound => 'Tunog ng abiso';
+
+  @override
+  String get settingsNotificationVibration => 'Pag-vibrate';
+
+  @override
+  String get settingsSnoozeDuration => 'Tagal ng pag-snooze';
+
+  @override
+  String get snoozeDuration5Min => '5 minuto';
+
+  @override
+  String get snoozeDuration10Min => '10 minuto';
+
+  @override
+  String get snoozeDuration15Min => '15 minuto';
+
+  @override
+  String get snoozeDuration30Min => '30 minuto';
+
+  @override
+  String get snoozeDuration60Min => '1 oras';
+
+  @override
+  String get snoozeDuration120Min => '2 oras';
 }

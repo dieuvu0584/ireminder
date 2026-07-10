@@ -6,6 +6,7 @@ import '../../../core/utils/date_formatter.dart';
 import '../../../data/database/app_database.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
+import '../../providers/settings_providers.dart';
 import 'reminder_form_screen.dart';
 
 class ReminderDetailScreen extends ConsumerWidget {
@@ -37,6 +38,9 @@ class ReminderDetailScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final locale = Localizations.localeOf(context).toString();
     final categoriesAsync = ref.watch(categoriesStreamProvider);
+    final snoozeMinutes =
+        ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
+            60;
     // Watches the live row so edits made via the Edit screen (or a bulk
     // category reassignment/delete elsewhere) are reflected here instead of
     // this screen staying stuck showing the stale object it was opened with.
@@ -156,7 +160,8 @@ class ReminderDetailScreen extends ConsumerWidget {
                         ref,
                         () => ref.read(reminderActionsProvider).snooze(
                               current.id,
-                              DateTime.now().add(const Duration(hours: 1)),
+                              DateTime.now()
+                                  .add(Duration(minutes: snoozeMinutes)),
                             ),
                       ),
                     ),

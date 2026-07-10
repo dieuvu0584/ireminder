@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Instellingen openen",
   "onboardingExactAlarmRationaleTitle": "Nog één toestemming",
   "onboardingExactAlarmRationaleBody": "Sta iReminder op het volgende scherm toe om exacte alarmen in te stellen, zodat herinneringen precies op het ingestelde tijdstip afgaan.",
-  "loanMarkPaidSuccess": "Gemarkeerd als betaald"
+  "loanMarkPaidSuccess": "Gemarkeerd als betaald",
+  "settingsNotificationPrefsTitle": "Geluid en trilling",
+  "settingsNotificationSound": "Meldingsgeluid",
+  "settingsNotificationVibration": "Trillen",
+  "settingsSnoozeDuration": "Snooze-duur",
+  "snoozeDuration5Min": "5 minuten",
+  "snoozeDuration10Min": "10 minuten",
+  "snoozeDuration15Min": "15 minuten",
+  "snoozeDuration30Min": "30 minuten",
+  "snoozeDuration60Min": "1 uur",
+  "snoozeDuration120Min": "2 uur"
 }

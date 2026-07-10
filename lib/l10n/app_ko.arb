@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "설정 열기",
   "onboardingExactAlarmRationaleTitle": "권한이 하나 더 필요해요",
   "onboardingExactAlarmRationaleBody": "다음 화면에서 iReminder가 정확한 알람을 예약할 수 있도록 허용해 주세요. 그래야 설정한 시간에 정확히 알림이 울려요.",
-  "loanMarkPaidSuccess": "납부 완료로 표시했어요"
+  "loanMarkPaidSuccess": "납부 완료로 표시했어요",
+  "settingsNotificationPrefsTitle": "소리 및 진동",
+  "settingsNotificationSound": "알림 소리",
+  "settingsNotificationVibration": "진동",
+  "settingsSnoozeDuration": "다시 알림 시간",
+  "snoozeDuration5Min": "5분",
+  "snoozeDuration10Min": "10분",
+  "snoozeDuration15Min": "15분",
+  "snoozeDuration30Min": "30분",
+  "snoozeDuration60Min": "1시간",
+  "snoozeDuration120Min": "2시간"
 }

@@ -13,6 +13,12 @@ class AppSettings extends Table {
       boolean().withDefault(const Constant(false))();
   BoolColumn get notificationsPermissionAsked =>
       boolean().withDefault(const Constant(false))();
+  BoolColumn get notificationSoundEnabled =>
+      boolean().withDefault(const Constant(true))();
+  BoolColumn get notificationVibrationEnabled =>
+      boolean().withDefault(const Constant(true))();
+  IntColumn get snoozeDurationMinutes =>
+      integer().withDefault(const Constant(60))();
 
   @override
   Set<Column> get primaryKey => {id};

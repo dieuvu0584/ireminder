@@ -39,19 +39,47 @@ class NotificationService {
 
   NotificationActionCallback? onAction;
 
-  static const _reminderChannel = AndroidNotificationChannel(
-    'reminders_channel',
-    'Reminders',
-    description: 'Recurring and one-off reminder notifications',
-    importance: Importance.high,
-  );
+  static const _reminderChannelBase = 'reminders_channel';
+  static const _loanChannelBase = 'loan_installments_channel';
 
-  static const _loanChannel = AndroidNotificationChannel(
-    'loan_installments_channel',
-    'Loan installments',
-    description: 'Loan / installment due date notifications',
-    importance: Importance.high,
-  );
+  /// Android locks a channel's sound/vibration behavior in at creation
+  /// time — once a NotificationChannel exists, the app can't change its
+  /// settings later (only the user can, via system Settings), and
+  /// per-notification overrides in AndroidNotificationDetails are ignored
+  /// for channel-based notifications on Android 8+. So the sound/vibration
+  /// toggle in Settings is implemented as one channel per combination,
+  /// chosen at schedule-time, rather than a single channel that's mutated.
+  static String _channelId(
+    String base, {
+    required bool sound,
+    required bool vibration,
+  }) {
+    final suffix = sound && vibration
+        ? 'sv'
+        : sound
+            ? 's'
+            : vibration
+                ? 'v'
+                : 'silent';
+    return '${base}_$suffix';
+  }
+
+  static AndroidNotificationChannel _channel(
+    String base,
+    String displayName,
+    String description, {
+    required bool sound,
+    required bool vibration,
+  }) {
+    return AndroidNotificationChannel(
+      _channelId(base, sound: sound, vibration: vibration),
+      displayName,
+      description: description,
+      importance: Importance.high,
+      playSound: sound,
+      enableVibration: vibration,
+    );
+  }
 
   Future<void> init() async {
     tz_data.initializeTimeZones();
@@ -74,8 +102,24 @@ class NotificationService {
 
     final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
         AndroidFlutterLocalNotificationsPlugin>();
-    await androidPlugin?.createNotificationChannel(_reminderChannel);
-    await androidPlugin?.createNotificationChannel(_loanChannel);
+    for (final sound in [true, false]) {
+      for (final vibration in [true, false]) {
+        await androidPlugin?.createNotificationChannel(_channel(
+          _reminderChannelBase,
+          'Reminders',
+          'Recurring and one-off reminder notifications',
+          sound: sound,
+          vibration: vibration,
+        ));
+        await androidPlugin?.createNotificationChannel(_channel(
+          _loanChannelBase,
+          'Loan installments',
+          'Loan / installment due date notifications',
+          sound: sound,
+          vibration: vibration,
+        ));
+      }
+    }
   }
 
   /// The `timezone` package needs an IANA zone name (e.g.
@@ -160,6 +204,8 @@ class NotificationService {
     required DateTime fireAt,
     required String title,
     required String body,
+    bool soundEnabled = true,
+    bool vibrationEnabled = true,
   }) async {
     final id = NotificationIdSpace.forReminder(reminderId);
     await cancelReminder(reminderId);
@@ -170,11 +216,17 @@ class NotificationService {
       tz.TZDateTime.from(fireAt, tz.local),
       NotificationDetails(
         android: AndroidNotificationDetails(
-          _reminderChannel.id,
-          _reminderChannel.name,
-          channelDescription: _reminderChannel.description,
+          _channelId(
+            _reminderChannelBase,
+            sound: soundEnabled,
+            vibration: vibrationEnabled,
+          ),
+          'Reminders',
+          channelDescription: 'Recurring and one-off reminder notifications',
           importance: Importance.high,
           priority: Priority.high,
+          playSound: soundEnabled,
+          enableVibration: vibrationEnabled,
           actions: const [
             AndroidNotificationAction(
               NotificationActionIds.reminderDone,
@@ -201,6 +253,8 @@ class NotificationService {
     required DateTime fireAt,
     required String title,
     required String body,
+    bool soundEnabled = true,
+    bool vibrationEnabled = true,
   }) async {
     final id = NotificationIdSpace.forInstallment(installmentId);
     await cancelInstallment(installmentId);
@@ -211,11 +265,17 @@ class NotificationService {
       tz.TZDateTime.from(fireAt, tz.local),
       NotificationDetails(
         android: AndroidNotificationDetails(
-          _loanChannel.id,
-          _loanChannel.name,
-          channelDescription: _loanChannel.description,
+          _channelId(
+            _loanChannelBase,
+            sound: soundEnabled,
+            vibration: vibrationEnabled,
+          ),
+          'Loan installments',
+          channelDescription: 'Loan / installment due date notifications',
           importance: Importance.high,
           priority: Priority.high,
+          playSound: soundEnabled,
+          enableVibration: vibrationEnabled,
           actions: const [
             AndroidNotificationAction(
               NotificationActionIds.installmentPaid,

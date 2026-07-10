@@ -560,4 +560,34 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Marcat ca plătit';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Sunet și vibrații';
+
+  @override
+  String get settingsNotificationSound => 'Sunet notificare';
+
+  @override
+  String get settingsNotificationVibration => 'Vibrații';
+
+  @override
+  String get settingsSnoozeDuration => 'Durata amânării';
+
+  @override
+  String get snoozeDuration5Min => '5 minute';
+
+  @override
+  String get snoozeDuration10Min => '10 minute';
+
+  @override
+  String get snoozeDuration15Min => '15 minute';
+
+  @override
+  String get snoozeDuration30Min => '30 minute';
+
+  @override
+  String get snoozeDuration60Min => '1 oră';
+
+  @override
+  String get snoozeDuration120Min => '2 ore';
 }

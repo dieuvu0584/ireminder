@@ -551,4 +551,34 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'סומן כשולם';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'צליל ורטט';
+
+  @override
+  String get settingsNotificationSound => 'צליל התראה';
+
+  @override
+  String get settingsNotificationVibration => 'רטט';
+
+  @override
+  String get settingsSnoozeDuration => 'משך נודניק';
+
+  @override
+  String get snoozeDuration5Min => '5 דקות';
+
+  @override
+  String get snoozeDuration10Min => '10 דקות';
+
+  @override
+  String get snoozeDuration15Min => '15 דקות';
+
+  @override
+  String get snoozeDuration30Min => '30 דקות';
+
+  @override
+  String get snoozeDuration60Min => 'שעה אחת';
+
+  @override
+  String get snoozeDuration120Min => 'שעתיים';
 }

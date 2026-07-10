@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Åpne innstillinger",
   "onboardingExactAlarmRationaleTitle": "Én tillatelse til",
   "onboardingExactAlarmRationaleBody": "På neste skjerm, la iReminder planlegge presise alarmer slik at påminnelser utløses akkurat på tidspunktet du har valgt.",
-  "loanMarkPaidSuccess": "Merket som betalt"
+  "loanMarkPaidSuccess": "Merket som betalt",
+  "settingsNotificationPrefsTitle": "Lyd og vibrasjon",
+  "settingsNotificationSound": "Varslingslyd",
+  "settingsNotificationVibration": "Vibrasjon",
+  "settingsSnoozeDuration": "Utsettelsestid",
+  "snoozeDuration5Min": "5 minutter",
+  "snoozeDuration10Min": "10 minutter",
+  "snoozeDuration15Min": "15 minutter",
+  "snoozeDuration30Min": "30 minutter",
+  "snoozeDuration60Min": "1 time",
+  "snoozeDuration120Min": "2 timer"
 }

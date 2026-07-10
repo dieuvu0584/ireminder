@@ -559,4 +559,34 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Ditandai sudah dibayar';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Suara & getaran';
+
+  @override
+  String get settingsNotificationSound => 'Suara notifikasi';
+
+  @override
+  String get settingsNotificationVibration => 'Getaran';
+
+  @override
+  String get settingsSnoozeDuration => 'Durasi tunda';
+
+  @override
+  String get snoozeDuration5Min => '5 menit';
+
+  @override
+  String get snoozeDuration10Min => '10 menit';
+
+  @override
+  String get snoozeDuration15Min => '15 menit';
+
+  @override
+  String get snoozeDuration30Min => '30 menit';
+
+  @override
+  String get snoozeDuration60Min => '1 jam';
+
+  @override
+  String get snoozeDuration120Min => '2 jam';
 }

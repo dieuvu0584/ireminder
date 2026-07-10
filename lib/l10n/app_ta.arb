@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "அமைப்புகளைத் திற",
   "onboardingExactAlarmRationaleTitle": "இன்னொரு அனுமதி",
   "onboardingExactAlarmRationaleBody": "அடுத்த திரையில், நீங்கள் அமைத்த சரியான நேரத்தில் நினைவூட்டல்கள் வர, iReminder துல்லியமான அலாரங்களை திட்டமிட அனுமதிக்கவும்.",
-  "loanMarkPaidSuccess": "செலுத்தியதாக குறிக்கப்பட்டது"
+  "loanMarkPaidSuccess": "செலுத்தியதாக குறிக்கப்பட்டது",
+  "settingsNotificationPrefsTitle": "ஒலி & அதிர்வு",
+  "settingsNotificationSound": "அறிவிப்பு ஒலி",
+  "settingsNotificationVibration": "அதிர்வு",
+  "settingsSnoozeDuration": "தூக்கநேரம்",
+  "snoozeDuration5Min": "5 நிமிடங்கள்",
+  "snoozeDuration10Min": "10 நிமிடங்கள்",
+  "snoozeDuration15Min": "15 நிமிடங்கள்",
+  "snoozeDuration30Min": "30 நிமிடங்கள்",
+  "snoozeDuration60Min": "1 மணி நேரம்",
+  "snoozeDuration120Min": "2 மணி நேரம்"
 }

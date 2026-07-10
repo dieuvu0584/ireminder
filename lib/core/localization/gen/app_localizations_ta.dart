@@ -558,4 +558,34 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'செலுத்தியதாக குறிக்கப்பட்டது';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'ஒலி & அதிர்வு';
+
+  @override
+  String get settingsNotificationSound => 'அறிவிப்பு ஒலி';
+
+  @override
+  String get settingsNotificationVibration => 'அதிர்வு';
+
+  @override
+  String get settingsSnoozeDuration => 'தூக்கநேரம்';
+
+  @override
+  String get snoozeDuration5Min => '5 நிமிடங்கள்';
+
+  @override
+  String get snoozeDuration10Min => '10 நிமிடங்கள்';
+
+  @override
+  String get snoozeDuration15Min => '15 நிமிடங்கள்';
+
+  @override
+  String get snoozeDuration30Min => '30 நிமிடங்கள்';
+
+  @override
+  String get snoozeDuration60Min => '1 மணி நேரம்';
+
+  @override
+  String get snoozeDuration120Min => '2 மணி நேரம்';
 }

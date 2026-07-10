@@ -557,4 +557,34 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Označeno jako zaplaceno';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Zvuk a vibrace';
+
+  @override
+  String get settingsNotificationSound => 'Zvuk oznámení';
+
+  @override
+  String get settingsNotificationVibration => 'Vibrace';
+
+  @override
+  String get settingsSnoozeDuration => 'Doba odložení';
+
+  @override
+  String get snoozeDuration5Min => '5 minut';
+
+  @override
+  String get snoozeDuration10Min => '10 minut';
+
+  @override
+  String get snoozeDuration15Min => '15 minut';
+
+  @override
+  String get snoozeDuration30Min => '30 minut';
+
+  @override
+  String get snoozeDuration60Min => '1 hodina';
+
+  @override
+  String get snoozeDuration120Min => '2 hodiny';
 }

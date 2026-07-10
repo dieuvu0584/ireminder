@@ -42,7 +42,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -59,6 +59,13 @@ class AppDatabase extends _$AppDatabase {
             await m.createTable(aiSettings);
             await m.createTable(aiChatHistory);
             await into(aiSettings).insert(const AiSettingsCompanion());
+          }
+          if (from < 3) {
+            await m.addColumn(
+                appSettings, appSettings.notificationSoundEnabled);
+            await m.addColumn(
+                appSettings, appSettings.notificationVibrationEnabled);
+            await m.addColumn(appSettings, appSettings.snoozeDurationMinutes);
           }
         },
       );

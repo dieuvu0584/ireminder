@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "باز کردن تنظیمات",
   "onboardingExactAlarmRationaleTitle": "یک مجوز دیگر",
   "onboardingExactAlarmRationaleBody": "در صفحه بعد، به iReminder اجازه دهید زنگ‌های هشدار دقیق تنظیم کند تا یادآورها دقیقاً در زمانی که تعیین کرده‌اید فعال شوند.",
-  "loanMarkPaidSuccess": "به‌عنوان پرداخت‌شده علامت‌گذاری شد"
+  "loanMarkPaidSuccess": "به‌عنوان پرداخت‌شده علامت‌گذاری شد",
+  "settingsNotificationPrefsTitle": "صدا و لرزش",
+  "settingsNotificationSound": "صدای اعلان",
+  "settingsNotificationVibration": "لرزش",
+  "settingsSnoozeDuration": "مدت زمان تعویق",
+  "snoozeDuration5Min": "۵ دقیقه",
+  "snoozeDuration10Min": "۱۰ دقیقه",
+  "snoozeDuration15Min": "۱۵ دقیقه",
+  "snoozeDuration30Min": "۳۰ دقیقه",
+  "snoozeDuration60Min": "۱ ساعت",
+  "snoozeDuration120Min": "۲ ساعت"
 }

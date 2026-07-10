@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "సెట్టింగ్‌లను తెరవండి",
   "onboardingExactAlarmRationaleTitle": "మరో అనుమతి",
   "onboardingExactAlarmRationaleBody": "తదుపరి స్క్రీన్‌లో, మీరు సెట్ చేసిన ఖచ్చితమైన సమయానికి రిమైండర్‌లు రావడానికి ఖచ్చితమైన అలారాలను షెడ్యూల్ చేయడానికి iReminder ను అనుమతించండి.",
-  "loanMarkPaidSuccess": "చెల్లించినట్లు గుర్తించారు"
+  "loanMarkPaidSuccess": "చెల్లించినట్లు గుర్తించారు",
+  "settingsNotificationPrefsTitle": "శబ్దం & వైబ్రేషన్",
+  "settingsNotificationSound": "నోటిఫికేషన్ శబ్దం",
+  "settingsNotificationVibration": "వైబ్రేషన్",
+  "settingsSnoozeDuration": "స్నూజ్ వ్యవధి",
+  "snoozeDuration5Min": "5 నిమిషాలు",
+  "snoozeDuration10Min": "10 నిమిషాలు",
+  "snoozeDuration15Min": "15 నిమిషాలు",
+  "snoozeDuration30Min": "30 నిమిషాలు",
+  "snoozeDuration60Min": "1 గంట",
+  "snoozeDuration120Min": "2 గంటలు"
 }

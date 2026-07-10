@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Otwórz ustawienia",
   "onboardingExactAlarmRationaleTitle": "Jeszcze jedna zgoda",
   "onboardingExactAlarmRationaleBody": "Na następnym ekranie zezwól iReminder na ustawianie precyzyjnych alarmów, aby przypomnienia pojawiały się dokładnie o ustawionej godzinie.",
-  "loanMarkPaidSuccess": "Oznaczono jako spłacone"
+  "loanMarkPaidSuccess": "Oznaczono jako spłacone",
+  "settingsNotificationPrefsTitle": "Dźwięk i wibracje",
+  "settingsNotificationSound": "Dźwięk powiadomienia",
+  "settingsNotificationVibration": "Wibracje",
+  "settingsSnoozeDuration": "Czas drzemki",
+  "snoozeDuration5Min": "5 minut",
+  "snoozeDuration10Min": "10 minut",
+  "snoozeDuration15Min": "15 minut",
+  "snoozeDuration30Min": "30 minut",
+  "snoozeDuration60Min": "1 godzina",
+  "snoozeDuration120Min": "2 godziny"
 }

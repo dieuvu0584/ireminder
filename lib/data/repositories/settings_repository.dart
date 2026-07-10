@@ -37,6 +37,18 @@ class SettingsRepository {
         AppSettingsCompanion(notificationsPermissionAsked: Value(value)),
       );
 
+  Future<void> setNotificationSoundEnabled(bool value) => _patch(
+        AppSettingsCompanion(notificationSoundEnabled: Value(value)),
+      );
+
+  Future<void> setNotificationVibrationEnabled(bool value) => _patch(
+        AppSettingsCompanion(notificationVibrationEnabled: Value(value)),
+      );
+
+  Future<void> setSnoozeDurationMinutes(int minutes) => _patch(
+        AppSettingsCompanion(snoozeDurationMinutes: Value(minutes)),
+      );
+
   Future<void> _patch(AppSettingsCompanion companion) {
     return (_db.update(_db.appSettings)..where((s) => s.id.equals(1)))
         .write(companion);

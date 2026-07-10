@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Άνοιγμα ρυθμίσεων",
   "onboardingExactAlarmRationaleTitle": "Ακόμα μία άδεια",
   "onboardingExactAlarmRationaleBody": "Στην επόμενη οθόνη, επίτρεψε στο iReminder να προγραμματίζει ακριβή ξυπνητήρια, ώστε οι υπενθυμίσεις να εμφανίζονται ακριβώς την ώρα που όρισες.",
-  "loanMarkPaidSuccess": "Σημειώθηκε ως πληρωμένη"
+  "loanMarkPaidSuccess": "Σημειώθηκε ως πληρωμένη",
+  "settingsNotificationPrefsTitle": "Ήχος & δόνηση",
+  "settingsNotificationSound": "Ήχος ειδοποίησης",
+  "settingsNotificationVibration": "Δόνηση",
+  "settingsSnoozeDuration": "Διάρκεια αναβολής",
+  "snoozeDuration5Min": "5 λεπτά",
+  "snoozeDuration10Min": "10 λεπτά",
+  "snoozeDuration15Min": "15 λεπτά",
+  "snoozeDuration30Min": "30 λεπτά",
+  "snoozeDuration60Min": "1 ώρα",
+  "snoozeDuration120Min": "2 ώρες"
 }

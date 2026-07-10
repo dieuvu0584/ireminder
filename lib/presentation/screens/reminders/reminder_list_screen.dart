@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/database/app_database.dart';
 import '../../providers/reminder_providers.dart';
+import '../../providers/settings_providers.dart';
 import '../../widgets/guarded_action.dart';
 import '../../widgets/reminder_card.dart';
 import 'reminder_detail_screen.dart';
@@ -18,6 +19,9 @@ class ReminderListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final remindersAsync =
         ref.watch(remindersByCategoryStreamProvider(category.id));
+    final snoozeMinutes =
+        ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
+            60;
 
     return Scaffold(
       appBar: AppBar(title: Text(category.name)),
@@ -46,7 +50,7 @@ class ReminderListScreen extends ConsumerWidget {
                   context,
                   () => ref.read(reminderActionsProvider).snooze(
                         reminder.id,
-                        DateTime.now().add(const Duration(hours: 1)),
+                        DateTime.now().add(Duration(minutes: snoozeMinutes)),
                       ),
                 ),
               );

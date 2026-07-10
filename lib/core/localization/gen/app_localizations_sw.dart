@@ -554,4 +554,34 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Imewekwa alama kuwa imelipwa';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Sauti na mtetemo';
+
+  @override
+  String get settingsNotificationSound => 'Sauti ya arifa';
+
+  @override
+  String get settingsNotificationVibration => 'Mtetemo';
+
+  @override
+  String get settingsSnoozeDuration => 'Muda wa kuahirisha';
+
+  @override
+  String get snoozeDuration5Min => 'Dakika 5';
+
+  @override
+  String get snoozeDuration10Min => 'Dakika 10';
+
+  @override
+  String get snoozeDuration15Min => 'Dakika 15';
+
+  @override
+  String get snoozeDuration30Min => 'Dakika 30';
+
+  @override
+  String get snoozeDuration60Min => 'Saa 1';
+
+  @override
+  String get snoozeDuration120Min => 'Saa 2';
 }

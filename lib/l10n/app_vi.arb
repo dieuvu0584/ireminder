@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Mở cài đặt",
   "onboardingExactAlarmRationaleTitle": "Thêm một quyền nữa",
   "onboardingExactAlarmRationaleBody": "Ở màn hình tiếp theo, hãy cho phép iReminder đặt báo thức chính xác để nhắc nhở hiện đúng giờ bạn đã chọn.",
-  "loanMarkPaidSuccess": "Đã đánh dấu là đã trả"
+  "loanMarkPaidSuccess": "Đã đánh dấu là đã trả",
+  "settingsNotificationPrefsTitle": "Âm thanh & rung",
+  "settingsNotificationSound": "Âm thanh thông báo",
+  "settingsNotificationVibration": "Rung",
+  "settingsSnoozeDuration": "Thời gian nhắc lại",
+  "snoozeDuration5Min": "5 phút",
+  "snoozeDuration10Min": "10 phút",
+  "snoozeDuration15Min": "15 phút",
+  "snoozeDuration30Min": "30 phút",
+  "snoozeDuration60Min": "1 giờ",
+  "snoozeDuration120Min": "2 giờ"
 }

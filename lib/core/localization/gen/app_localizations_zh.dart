@@ -541,4 +541,34 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => '已标记为已付款';
+
+  @override
+  String get settingsNotificationPrefsTitle => '声音与振动';
+
+  @override
+  String get settingsNotificationSound => '通知声音';
+
+  @override
+  String get settingsNotificationVibration => '振动';
+
+  @override
+  String get settingsSnoozeDuration => '稍后提醒时长';
+
+  @override
+  String get snoozeDuration5Min => '5 分钟';
+
+  @override
+  String get snoozeDuration10Min => '10 分钟';
+
+  @override
+  String get snoozeDuration15Min => '15 分钟';
+
+  @override
+  String get snoozeDuration30Min => '30 分钟';
+
+  @override
+  String get snoozeDuration60Min => '1 小时';
+
+  @override
+  String get snoozeDuration120Min => '2 小时';
 }

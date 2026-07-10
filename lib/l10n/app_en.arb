@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Open settings",
   "onboardingExactAlarmRationaleTitle": "One more permission",
   "onboardingExactAlarmRationaleBody": "On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set.",
-  "loanMarkPaidSuccess": "Marked as paid"
+  "loanMarkPaidSuccess": "Marked as paid",
+  "settingsNotificationPrefsTitle": "Sound & vibration",
+  "settingsNotificationSound": "Notification sound",
+  "settingsNotificationVibration": "Vibration",
+  "settingsSnoozeDuration": "Snooze duration",
+  "snoozeDuration5Min": "5 minutes",
+  "snoozeDuration10Min": "10 minutes",
+  "snoozeDuration15Min": "15 minutes",
+  "snoozeDuration30Min": "30 minutes",
+  "snoozeDuration60Min": "1 hour",
+  "snoozeDuration120Min": "2 hours"
 }

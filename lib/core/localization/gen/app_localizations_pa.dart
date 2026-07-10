@@ -555,4 +555,34 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'ਅਦਾ ਕੀਤੀ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਇਆ ਗਿਆ';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'ਆਵਾਜ਼ ਅਤੇ ਵਾਈਬ੍ਰੇਸ਼ਨ';
+
+  @override
+  String get settingsNotificationSound => 'ਸੂਚਨਾ ਆਵਾਜ਼';
+
+  @override
+  String get settingsNotificationVibration => 'ਵਾਈਬ੍ਰੇਸ਼ਨ';
+
+  @override
+  String get settingsSnoozeDuration => 'ਸਨੂਜ਼ ਸਮਾਂ';
+
+  @override
+  String get snoozeDuration5Min => '5 ਮਿੰਟ';
+
+  @override
+  String get snoozeDuration10Min => '10 ਮਿੰਟ';
+
+  @override
+  String get snoozeDuration15Min => '15 ਮਿੰਟ';
+
+  @override
+  String get snoozeDuration30Min => '30 ਮਿੰਟ';
+
+  @override
+  String get snoozeDuration60Min => '1 ਘੰਟਾ';
+
+  @override
+  String get snoozeDuration120Min => '2 ਘੰਟੇ';
 }

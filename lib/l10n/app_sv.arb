@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Öppna inställningar",
   "onboardingExactAlarmRationaleTitle": "Ett tillstånd till",
   "onboardingExactAlarmRationaleBody": "På nästa skärm, tillåt iReminder att schemalägga exakta alarm så att påminnelser utlöses exakt vid den tid du har angett.",
-  "loanMarkPaidSuccess": "Markerad som betald"
+  "loanMarkPaidSuccess": "Markerad som betald",
+  "settingsNotificationPrefsTitle": "Ljud och vibration",
+  "settingsNotificationSound": "Aviseringsljud",
+  "settingsNotificationVibration": "Vibration",
+  "settingsSnoozeDuration": "Snoozetid",
+  "snoozeDuration5Min": "5 minuter",
+  "snoozeDuration10Min": "10 minuter",
+  "snoozeDuration15Min": "15 minuter",
+  "snoozeDuration30Min": "30 minuter",
+  "snoozeDuration60Min": "1 timme",
+  "snoozeDuration120Min": "2 timmar"
 }

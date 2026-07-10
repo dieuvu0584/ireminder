@@ -1203,6 +1203,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Marked as paid'**
   String get loanMarkPaidSuccess;
+
+  /// No description provided for @settingsNotificationPrefsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound & vibration'**
+  String get settingsNotificationPrefsTitle;
+
+  /// No description provided for @settingsNotificationSound.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification sound'**
+  String get settingsNotificationSound;
+
+  /// No description provided for @settingsNotificationVibration.
+  ///
+  /// In en, this message translates to:
+  /// **'Vibration'**
+  String get settingsNotificationVibration;
+
+  /// No description provided for @settingsSnoozeDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Snooze duration'**
+  String get settingsSnoozeDuration;
+
+  /// No description provided for @snoozeDuration5Min.
+  ///
+  /// In en, this message translates to:
+  /// **'5 minutes'**
+  String get snoozeDuration5Min;
+
+  /// No description provided for @snoozeDuration10Min.
+  ///
+  /// In en, this message translates to:
+  /// **'10 minutes'**
+  String get snoozeDuration10Min;
+
+  /// No description provided for @snoozeDuration15Min.
+  ///
+  /// In en, this message translates to:
+  /// **'15 minutes'**
+  String get snoozeDuration15Min;
+
+  /// No description provided for @snoozeDuration30Min.
+  ///
+  /// In en, this message translates to:
+  /// **'30 minutes'**
+  String get snoozeDuration30Min;
+
+  /// No description provided for @snoozeDuration60Min.
+  ///
+  /// In en, this message translates to:
+  /// **'1 hour'**
+  String get snoozeDuration60Min;
+
+  /// No description provided for @snoozeDuration120Min.
+  ///
+  /// In en, this message translates to:
+  /// **'2 hours'**
+  String get snoozeDuration120Min;
 }
 
 class _AppLocalizationsDelegate

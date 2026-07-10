@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Buka pengaturan",
   "onboardingExactAlarmRationaleTitle": "Satu izin lagi",
   "onboardingExactAlarmRationaleBody": "Di layar berikutnya, izinkan iReminder menjadwalkan alarm presisi agar pengingat muncul tepat pada waktu yang kamu tentukan.",
-  "loanMarkPaidSuccess": "Ditandai sudah dibayar"
+  "loanMarkPaidSuccess": "Ditandai sudah dibayar",
+  "settingsNotificationPrefsTitle": "Suara & getaran",
+  "settingsNotificationSound": "Suara notifikasi",
+  "settingsNotificationVibration": "Getaran",
+  "settingsSnoozeDuration": "Durasi tunda",
+  "snoozeDuration5Min": "5 menit",
+  "snoozeDuration10Min": "10 menit",
+  "snoozeDuration15Min": "15 menit",
+  "snoozeDuration30Min": "30 menit",
+  "snoozeDuration60Min": "1 jam",
+  "snoozeDuration120Min": "2 jam"
 }

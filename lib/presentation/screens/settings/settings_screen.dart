@@ -113,6 +113,8 @@ class SettingsScreen extends ConsumerWidget {
             const Divider(),
             const _PermissionsSection(),
             const Divider(),
+            const _NotificationPrefsSection(),
+            const Divider(),
             const _AiAssistantSection(),
             const Divider(),
             Padding(
@@ -379,6 +381,97 @@ class _PermissionRow extends StatelessWidget {
                 ),
               ],
             ),
+    );
+  }
+}
+
+class _NotificationPrefsSection extends ConsumerWidget {
+  const _NotificationPrefsSection();
+
+  static const List<int> _snoozeOptions = [5, 10, 15, 30, 60, 120];
+
+  String _snoozeLabel(AppLocalizations l10n, int minutes) {
+    switch (minutes) {
+      case 5:
+        return l10n.snoozeDuration5Min;
+      case 10:
+        return l10n.snoozeDuration10Min;
+      case 15:
+        return l10n.snoozeDuration15Min;
+      case 30:
+        return l10n.snoozeDuration30Min;
+      case 60:
+        return l10n.snoozeDuration60Min;
+      default:
+        return l10n.snoozeDuration120Min;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final settingsAsync = ref.watch(settingsStreamProvider);
+    final actions = ref.read(settingsActionsProvider);
+
+    return settingsAsync.when(
+      data: (settings) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+            child: Text(
+              l10n.settingsNotificationPrefsTitle,
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
+          SwitchListTile(
+            title: Text(l10n.settingsNotificationSound),
+            value: settings.notificationSoundEnabled,
+            onChanged: (v) async {
+              await actions.setNotificationSoundEnabled(v);
+              // Sound/vibration is baked into the Android notification
+              // channel at schedule time, not read at fire time — every
+              // already-scheduled alarm has to be rescheduled onto the
+              // channel variant matching the new preference, or it'll
+              // keep firing with the old setting until it's next touched.
+              await ref
+                  .read(alarmSchedulerServiceProvider)
+                  .rescheduleAllFromDatabase();
+            },
+          ),
+          SwitchListTile(
+            title: Text(l10n.settingsNotificationVibration),
+            value: settings.notificationVibrationEnabled,
+            onChanged: (v) async {
+              await actions.setNotificationVibrationEnabled(v);
+              await ref
+                  .read(alarmSchedulerServiceProvider)
+                  .rescheduleAllFromDatabase();
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: DropdownButtonFormField<int>(
+              key: ValueKey(settings.snoozeDurationMinutes),
+              initialValue: settings.snoozeDurationMinutes,
+              decoration:
+                  InputDecoration(labelText: l10n.settingsSnoozeDuration),
+              items: _snoozeOptions
+                  .map((m) => DropdownMenuItem(
+                        value: m,
+                        child: Text(_snoozeLabel(l10n, m)),
+                      ))
+                  .toList(),
+              onChanged: (v) {
+                if (v != null) actions.setSnoozeDurationMinutes(v);
+              },
+            ),
+          ),
+          const SizedBox(height: 8),
+        ],
+      ),
+      loading: () => const SizedBox.shrink(),
+      error: (e, st) => const SizedBox.shrink(),
     );
   }
 }

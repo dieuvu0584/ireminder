@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Otevřít nastavení",
   "onboardingExactAlarmRationaleTitle": "Ještě jedno oprávnění",
   "onboardingExactAlarmRationaleBody": "Na další obrazovce povolte aplikaci iReminder plánovat přesné budíky, aby se připomínky spouštěly přesně v nastavený čas.",
-  "loanMarkPaidSuccess": "Označeno jako zaplaceno"
+  "loanMarkPaidSuccess": "Označeno jako zaplaceno",
+  "settingsNotificationPrefsTitle": "Zvuk a vibrace",
+  "settingsNotificationSound": "Zvuk oznámení",
+  "settingsNotificationVibration": "Vibrace",
+  "settingsSnoozeDuration": "Doba odložení",
+  "snoozeDuration5Min": "5 minut",
+  "snoozeDuration10Min": "10 minut",
+  "snoozeDuration15Min": "15 minut",
+  "snoozeDuration30Min": "30 minut",
+  "snoozeDuration60Min": "1 hodina",
+  "snoozeDuration120Min": "2 hodiny"
 }

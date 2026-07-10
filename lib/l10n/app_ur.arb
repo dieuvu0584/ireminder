@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "ترتیبات کھولیں",
   "onboardingExactAlarmRationaleTitle": "ایک اور اجازت",
   "onboardingExactAlarmRationaleBody": "اگلی اسکرین پر، iReminder کو درست وقت کے الارم شیڈول کرنے کی اجازت دیں تاکہ یاد دہانیاں عین اسی وقت پر آئیں جو آپ نے مقرر کیا ہے۔",
-  "loanMarkPaidSuccess": "ادا شدہ کے طور پر نشان زد کر دیا گیا"
+  "loanMarkPaidSuccess": "ادا شدہ کے طور پر نشان زد کر دیا گیا",
+  "settingsNotificationPrefsTitle": "آواز اور وائبریشن",
+  "settingsNotificationSound": "اطلاع کی آواز",
+  "settingsNotificationVibration": "وائبریشن",
+  "settingsSnoozeDuration": "اسنوز کا دورانیہ",
+  "snoozeDuration5Min": "5 منٹ",
+  "snoozeDuration10Min": "10 منٹ",
+  "snoozeDuration15Min": "15 منٹ",
+  "snoozeDuration30Min": "30 منٹ",
+  "snoozeDuration60Min": "1 گھنٹہ",
+  "snoozeDuration120Min": "2 گھنٹے"
 }

@@ -32,6 +32,14 @@ class AlarmSchedulerService {
 
   AlarmSchedulerService(this._db, this._notifications);
 
+  Future<({bool sound, bool vibration})> _soundVibrationPrefs() async {
+    final settings = await (_db.select(_db.appSettings)).getSingle();
+    return (
+      sound: settings.notificationSoundEnabled,
+      vibration: settings.notificationVibrationEnabled,
+    );
+  }
+
   Future<void> scheduleForReminder(Reminder reminder) async {
     try {
       if (!reminder.isActive) {
@@ -45,6 +53,7 @@ class AlarmSchedulerService {
       final fireAt = reminder.snoozeUntil != null
           ? reminder.snoozeUntil!
           : _combine(fireDate, reminder.reminderTime);
+      final prefs = await _soundVibrationPrefs();
 
       if (fireAt.isBefore(DateTime.now())) {
         // Past due: still show it, but immediately rather than in the past.
@@ -53,6 +62,8 @@ class AlarmSchedulerService {
           fireAt: DateTime.now().add(const Duration(seconds: 5)),
           title: reminder.title,
           body: reminder.description ?? '',
+          soundEnabled: prefs.sound,
+          vibrationEnabled: prefs.vibration,
         );
         return;
       }
@@ -62,6 +73,8 @@ class AlarmSchedulerService {
         fireAt: fireAt,
         title: reminder.title,
         body: reminder.description ?? '',
+        soundEnabled: prefs.sound,
+        vibrationEnabled: prefs.vibration,
       );
     } catch (e) {
       debugPrint('AlarmSchedulerService: failed to schedule reminder '
@@ -92,12 +105,15 @@ class AlarmSchedulerService {
           .subtract(Duration(days: loan.reminderAdvanceDays));
       final fireAt = _combine(fireDate, defaultReminderTime);
       if (fireAt.isBefore(DateTime.now())) return;
+      final prefs = await _soundVibrationPrefs();
 
       await _notifications.scheduleInstallment(
         installmentId: installment.id,
         fireAt: fireAt,
         title: 'Installment #${installment.installmentNumber} due',
         body: '${loan.name} — ${installment.amount}',
+        soundEnabled: prefs.sound,
+        vibrationEnabled: prefs.vibration,
       );
     } catch (e) {
       debugPrint('AlarmSchedulerService: failed to schedule installment '

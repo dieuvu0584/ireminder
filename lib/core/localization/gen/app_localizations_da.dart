@@ -555,4 +555,34 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Markeret som betalt';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Lyd og vibration';
+
+  @override
+  String get settingsNotificationSound => 'Notifikationslyd';
+
+  @override
+  String get settingsNotificationVibration => 'Vibration';
+
+  @override
+  String get settingsSnoozeDuration => 'Udsættelsestid';
+
+  @override
+  String get snoozeDuration5Min => '5 minutter';
+
+  @override
+  String get snoozeDuration10Min => '10 minutter';
+
+  @override
+  String get snoozeDuration15Min => '15 minutter';
+
+  @override
+  String get snoozeDuration30Min => '30 minutter';
+
+  @override
+  String get snoozeDuration60Min => '1 time';
+
+  @override
+  String get snoozeDuration120Min => '2 timer';
 }

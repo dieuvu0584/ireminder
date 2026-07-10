@@ -558,4 +558,34 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Ditandakan sebagai dibayar';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Bunyi & getaran';
+
+  @override
+  String get settingsNotificationSound => 'Bunyi pemberitahuan';
+
+  @override
+  String get settingsNotificationVibration => 'Getaran';
+
+  @override
+  String get settingsSnoozeDuration => 'Tempoh tunda';
+
+  @override
+  String get snoozeDuration5Min => '5 minit';
+
+  @override
+  String get snoozeDuration10Min => '10 minit';
+
+  @override
+  String get snoozeDuration15Min => '15 minit';
+
+  @override
+  String get snoozeDuration30Min => '30 minit';
+
+  @override
+  String get snoozeDuration60Min => '1 jam';
+
+  @override
+  String get snoozeDuration120Min => '2 jam';
 }

@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "פתח הגדרות",
   "onboardingExactAlarmRationaleTitle": "עוד הרשאה אחת",
   "onboardingExactAlarmRationaleBody": "במסך הבא, אפשרו ל-iReminder לתזמן אזעקות מדויקות כדי שהתזכורות יופעלו בדיוק בשעה שקבעתם.",
-  "loanMarkPaidSuccess": "סומן כשולם"
+  "loanMarkPaidSuccess": "סומן כשולם",
+  "settingsNotificationPrefsTitle": "צליל ורטט",
+  "settingsNotificationSound": "צליל התראה",
+  "settingsNotificationVibration": "רטט",
+  "settingsSnoozeDuration": "משך נודניק",
+  "snoozeDuration5Min": "5 דקות",
+  "snoozeDuration10Min": "10 דקות",
+  "snoozeDuration15Min": "15 דקות",
+  "snoozeDuration30Min": "30 דקות",
+  "snoozeDuration60Min": "שעה אחת",
+  "snoozeDuration120Min": "שעתיים"
 }

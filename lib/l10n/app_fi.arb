@@ -223,5 +223,15 @@
   "settingsPermissionsOpenSettingsAction": "Avaa asetukset",
   "onboardingExactAlarmRationaleTitle": "Vielä yksi lupa",
   "onboardingExactAlarmRationaleBody": "Seuraavalla näytöllä salli iReminderin ajastaa tarkkoja hälytyksiä, jotta muistutukset laukeavat juuri sinä ajankohtana, jonka olet asettanut.",
-  "loanMarkPaidSuccess": "Merkitty maksetuksi"
+  "loanMarkPaidSuccess": "Merkitty maksetuksi",
+  "settingsNotificationPrefsTitle": "Ääni ja tärinä",
+  "settingsNotificationSound": "Ilmoitusääni",
+  "settingsNotificationVibration": "Tärinä",
+  "settingsSnoozeDuration": "Torkkuaika",
+  "snoozeDuration5Min": "5 minuuttia",
+  "snoozeDuration10Min": "10 minuuttia",
+  "snoozeDuration15Min": "15 minuuttia",
+  "snoozeDuration30Min": "30 minuuttia",
+  "snoozeDuration60Min": "1 tunti",
+  "snoozeDuration120Min": "2 tuntia"
 }

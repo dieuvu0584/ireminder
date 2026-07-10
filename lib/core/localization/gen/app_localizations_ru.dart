@@ -555,4 +555,34 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get loanMarkPaidSuccess => 'Отмечено как оплачено';
+
+  @override
+  String get settingsNotificationPrefsTitle => 'Звук и вибрация';
+
+  @override
+  String get settingsNotificationSound => 'Звук уведомления';
+
+  @override
+  String get settingsNotificationVibration => 'Вибрация';
+
+  @override
+  String get settingsSnoozeDuration => 'Длительность отложенного напоминания';
+
+  @override
+  String get snoozeDuration5Min => '5 минут';
+
+  @override
+  String get snoozeDuration10Min => '10 минут';
+
+  @override
+  String get snoozeDuration15Min => '15 минут';
+
+  @override
+  String get snoozeDuration30Min => '30 минут';
+
+  @override
+  String get snoozeDuration60Min => '1 час';
+
+  @override
+  String get snoozeDuration120Min => '2 часа';
 }
