@@ -96,67 +96,75 @@ class ReminderDetailScreen extends ConsumerWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (current.description != null &&
-                current.description!.isNotEmpty) ...[
-              Text(current.description!),
-              const SizedBox(height: 16),
-            ],
-            categoriesAsync.when(
-              data: (categories) {
-                final cat = categories
-                    .where((c) => c.id == current.categoryId)
-                    .firstOrNull;
-                return Text(cat?.name ?? '');
-              },
-              loading: () => const SizedBox.shrink(),
-              error: (e, st) => const SizedBox.shrink(),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              DateFormatter.formatDate(current.nextDueDate, locale),
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            Text(DateFormatter.formatTime(current.reminderTime, locale)),
-            const Spacer(),
-            Row(
-              children: [
-                Expanded(
-                  child: FilledButton.icon(
-                    icon: const Icon(Icons.check),
-                    label: Text(l10n.actionDone),
-                    onPressed: () => _runGuarded(
-                      context,
-                      ref,
-                      () => ref.read(reminderActionsProvider).complete(current.id),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: OutlinedButton.icon(
-                    icon: const Icon(Icons.snooze),
-                    label: Text(
-                      l10n.actionSnooze,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    onPressed: () => _runGuarded(
-                      context,
-                      ref,
-                      () => ref.read(reminderActionsProvider).snooze(
-                            current.id,
-                            DateTime.now().add(const Duration(hours: 1)),
-                          ),
-                    ),
-                  ),
-                ),
+      body: SafeArea(
+        // Without this, the Done/Snooze row (pushed to the bottom via the
+        // Spacer below) renders flush against the very edge of the screen
+        // and gets overlapped by the system navigation bar on devices that
+        // use on-screen nav buttons instead of gesture navigation.
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (current.description != null &&
+                  current.description!.isNotEmpty) ...[
+                Text(current.description!),
+                const SizedBox(height: 16),
               ],
-            ),
-          ],
+              categoriesAsync.when(
+                data: (categories) {
+                  final cat = categories
+                      .where((c) => c.id == current.categoryId)
+                      .firstOrNull;
+                  return Text(cat?.name ?? '');
+                },
+                loading: () => const SizedBox.shrink(),
+                error: (e, st) => const SizedBox.shrink(),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                DateFormatter.formatDate(current.nextDueDate, locale),
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              Text(DateFormatter.formatTime(current.reminderTime, locale)),
+              const Spacer(),
+              Row(
+                children: [
+                  Expanded(
+                    child: FilledButton.icon(
+                      icon: const Icon(Icons.check),
+                      label: Text(l10n.actionDone),
+                      onPressed: () => _runGuarded(
+                        context,
+                        ref,
+                        () => ref
+                            .read(reminderActionsProvider)
+                            .complete(current.id),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      icon: const Icon(Icons.snooze),
+                      label: Text(
+                        l10n.actionSnooze,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      onPressed: () => _runGuarded(
+                        context,
+                        ref,
+                        () => ref.read(reminderActionsProvider).snooze(
+                              current.id,
+                              DateTime.now().add(const Duration(hours: 1)),
+                            ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
