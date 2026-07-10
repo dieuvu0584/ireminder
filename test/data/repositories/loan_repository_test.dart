@@ -82,6 +82,39 @@ void main() {
     expect(loan.isActive, isTrue);
   });
 
+  test(
+      'watchActive() stream re-emits the updated paidInstallments after markPaid',
+      () async {
+    final loanId = await loans.create(
+      name: 'Reactive loan',
+      installmentAmount: 100,
+      totalInstallments: 3,
+      frequency: LoanFrequency.monthly,
+      startDate: DateTime(2026, 1, 1),
+    );
+    final installments = await loans.watchInstallments(loanId).first;
+
+    final emissionsFuture = loans
+        .watchActive()
+        .map((list) => list.firstWhere((l) => l.id == loanId).paidInstallments)
+        .distinct()
+        .take(2)
+        .toList();
+
+    // Let the stream attach before writing, matching how a screen watches
+    // it before the user takes any action.
+    await Future<void>.delayed(Duration.zero);
+
+    await loans.markPaid(
+      loanId: loanId,
+      installmentIds: installments.take(2).map((i) => i.id).toList(),
+      paidDate: DateTime(2026, 1, 1),
+    );
+
+    final emissions = await emissionsFuture.timeout(const Duration(seconds: 5));
+    expect(emissions, [0, 2]);
+  });
+
   test('getOverdueInstallments finds only past-due pending installments',
       () async {
     final loanId = await loans.create(

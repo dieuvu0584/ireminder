@@ -222,5 +222,6 @@
   "settingsPermissionsGrantAction": "授权",
   "settingsPermissionsOpenSettingsAction": "打开设置",
   "onboardingExactAlarmRationaleTitle": "还需要一项权限",
-  "onboardingExactAlarmRationaleBody": "在下一屏，请允许 iReminder 安排精确闹钟，这样提醒才能准时在你设定的时间响起。"
+  "onboardingExactAlarmRationaleBody": "在下一屏，请允许 iReminder 安排精确闹钟，这样提醒才能准时在你设定的时间响起。",
+  "loanMarkPaidSuccess": "已标记为已付款"
 }

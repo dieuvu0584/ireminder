@@ -335,9 +335,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryFieldColor => 'Couleur';
 
   @override
-  String get categoryDefaultBadge => 'Par défaut';
-
-  @override
   String get categoryDeleteSimpleTitle => 'Supprimer cette catégorie ?';
 
   @override
@@ -559,4 +556,7 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get onboardingExactAlarmRationaleBody =>
       'Sur l\'écran suivant, autorisez iReminder à planifier des alarmes exactes afin que les rappels sonnent précisément à l\'heure choisie.';
+
+  @override
+  String get loanMarkPaidSuccess => 'Marqué comme payé';
 }

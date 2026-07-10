@@ -222,5 +222,6 @@
   "settingsPermissionsGrantAction": "अनुमति दें",
   "settingsPermissionsOpenSettingsAction": "सेटिंग्स खोलें",
   "onboardingExactAlarmRationaleTitle": "एक और अनुमति",
-  "onboardingExactAlarmRationaleBody": "अगली स्क्रीन पर, iReminder को सटीक अलार्म शेड्यूल करने की अनुमति दें ताकि रिमाइंडर ठीक आपके तय समय पर बजें।"
+  "onboardingExactAlarmRationaleBody": "अगली स्क्रीन पर, iReminder को सटीक अलार्म शेड्यूल करने की अनुमति दें ताकि रिमाइंडर ठीक आपके तय समय पर बजें।",
+  "loanMarkPaidSuccess": "भुगतान के रूप में चिह्नित किया गया"
 }

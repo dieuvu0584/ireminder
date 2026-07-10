@@ -732,12 +732,6 @@ abstract class AppLocalizations {
   /// **'Color'**
   String get categoryFieldColor;
 
-  /// No description provided for @categoryDefaultBadge.
-  ///
-  /// In en, this message translates to:
-  /// **'Default'**
-  String get categoryDefaultBadge;
-
   /// No description provided for @categoryDeleteSimpleTitle.
   ///
   /// In en, this message translates to:
@@ -1139,6 +1133,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set.'**
   String get onboardingExactAlarmRationaleBody;
+
+  /// No description provided for @loanMarkPaidSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Marked as paid'**
+  String get loanMarkPaidSuccess;
 }
 
 class _AppLocalizationsDelegate

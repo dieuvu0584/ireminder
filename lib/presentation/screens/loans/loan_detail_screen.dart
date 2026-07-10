@@ -124,7 +124,16 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
                         installmentIds: _selected.toList(),
                         paidDate: DateTime.now(),
                       );
-                  if (mounted) setState(_selected.clear);
+                  if (mounted) {
+                    setState(_selected.clear);
+                    // Explicit success feedback — checking a box only
+                    // stages a selection, and without this the only sign
+                    // the tap actually committed anything is the status
+                    // chip quietly changing color a moment later.
+                    messenger.showSnackBar(
+                      SnackBar(content: Text(l10n.loanMarkPaidSuccess)),
+                    );
+                  }
                 } catch (_) {
                   if (mounted) {
                     messenger.showSnackBar(

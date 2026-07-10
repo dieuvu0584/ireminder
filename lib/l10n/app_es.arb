@@ -222,5 +222,6 @@
   "settingsPermissionsGrantAction": "Conceder",
   "settingsPermissionsOpenSettingsAction": "Abrir ajustes",
   "onboardingExactAlarmRationaleTitle": "Un permiso más",
-  "onboardingExactAlarmRationaleBody": "En la siguiente pantalla, permite que iReminder programe alarmas exactas para que los recordatorios suenen justo a la hora indicada."
+  "onboardingExactAlarmRationaleBody": "En la siguiente pantalla, permite que iReminder programe alarmas exactas para que los recordatorios suenen justo a la hora indicada.",
+  "loanMarkPaidSuccess": "Marcado como pagado"
 }

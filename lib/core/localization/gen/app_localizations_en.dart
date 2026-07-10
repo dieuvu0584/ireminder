@@ -334,9 +334,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryFieldColor => 'Color';
 
   @override
-  String get categoryDefaultBadge => 'Default';
-
-  @override
   String get categoryDeleteSimpleTitle => 'Delete this category?';
 
   @override
@@ -554,4 +551,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get onboardingExactAlarmRationaleBody =>
       'On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set.';
+
+  @override
+  String get loanMarkPaidSuccess => 'Marked as paid';
 }

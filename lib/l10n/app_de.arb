@@ -222,5 +222,6 @@
   "settingsPermissionsGrantAction": "Erteilen",
   "settingsPermissionsOpenSettingsAction": "Einstellungen öffnen",
   "onboardingExactAlarmRationaleTitle": "Noch eine Berechtigung",
-  "onboardingExactAlarmRationaleBody": "Erlaube iReminder auf dem nächsten Bildschirm, exakte Alarme zu planen, damit Erinnerungen genau zur eingestellten Zeit erscheinen."
+  "onboardingExactAlarmRationaleBody": "Erlaube iReminder auf dem nächsten Bildschirm, exakte Alarme zu planen, damit Erinnerungen genau zur eingestellten Zeit erscheinen.",
+  "loanMarkPaidSuccess": "Als bezahlt markiert"
 }

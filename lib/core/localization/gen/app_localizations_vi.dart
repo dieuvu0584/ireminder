@@ -334,9 +334,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get categoryFieldColor => 'Màu sắc';
 
   @override
-  String get categoryDefaultBadge => 'Mặc định';
-
-  @override
   String get categoryDeleteSimpleTitle => 'Xóa danh mục này?';
 
   @override
@@ -553,4 +550,7 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get onboardingExactAlarmRationaleBody =>
       'Ở màn hình tiếp theo, hãy cho phép iReminder đặt báo thức chính xác để nhắc nhở hiện đúng giờ bạn đã chọn.';
+
+  @override
+  String get loanMarkPaidSuccess => 'Đã đánh dấu là đã trả';
 }

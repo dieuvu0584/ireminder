@@ -329,9 +329,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get categoryFieldColor => '颜色';
 
   @override
-  String get categoryDefaultBadge => '默认';
-
-  @override
   String get categoryDeleteSimpleTitle => '删除此分类?';
 
   @override
@@ -541,4 +538,7 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get onboardingExactAlarmRationaleBody =>
       '在下一屏，请允许 iReminder 安排精确闹钟，这样提醒才能准时在你设定的时间响起。';
+
+  @override
+  String get loanMarkPaidSuccess => '已标记为已付款';
 }

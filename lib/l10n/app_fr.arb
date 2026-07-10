@@ -222,5 +222,6 @@
   "settingsPermissionsGrantAction": "Autoriser",
   "settingsPermissionsOpenSettingsAction": "Ouvrir les réglages",
   "onboardingExactAlarmRationaleTitle": "Encore une autorisation",
-  "onboardingExactAlarmRationaleBody": "Sur l'écran suivant, autorisez iReminder à planifier des alarmes exactes afin que les rappels sonnent précisément à l'heure choisie."
+  "onboardingExactAlarmRationaleBody": "Sur l'écran suivant, autorisez iReminder à planifier des alarmes exactes afin que les rappels sonnent précisément à l'heure choisie.",
+  "loanMarkPaidSuccess": "Marqué comme payé"
 }

@@ -222,5 +222,6 @@
   "settingsPermissionsGrantAction": "Cấp quyền",
   "settingsPermissionsOpenSettingsAction": "Mở cài đặt",
   "onboardingExactAlarmRationaleTitle": "Thêm một quyền nữa",
-  "onboardingExactAlarmRationaleBody": "Ở màn hình tiếp theo, hãy cho phép iReminder đặt báo thức chính xác để nhắc nhở hiện đúng giờ bạn đã chọn."
+  "onboardingExactAlarmRationaleBody": "Ở màn hình tiếp theo, hãy cho phép iReminder đặt báo thức chính xác để nhắc nhở hiện đúng giờ bạn đã chọn.",
+  "loanMarkPaidSuccess": "Đã đánh dấu là đã trả"
 }

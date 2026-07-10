@@ -222,5 +222,6 @@
   "settingsPermissionsGrantAction": "Grant",
   "settingsPermissionsOpenSettingsAction": "Open settings",
   "onboardingExactAlarmRationaleTitle": "One more permission",
-  "onboardingExactAlarmRationaleBody": "On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set."
+  "onboardingExactAlarmRationaleBody": "On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set.",
+  "loanMarkPaidSuccess": "Marked as paid"
 }

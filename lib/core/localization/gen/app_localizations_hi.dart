@@ -335,9 +335,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get categoryFieldColor => 'रंग';
 
   @override
-  String get categoryDefaultBadge => 'डिफ़ॉल्ट';
-
-  @override
   String get categoryDeleteSimpleTitle => 'यह श्रेणी हटाएं?';
 
   @override
@@ -554,4 +551,7 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get onboardingExactAlarmRationaleBody =>
       'अगली स्क्रीन पर, iReminder को सटीक अलार्म शेड्यूल करने की अनुमति दें ताकि रिमाइंडर ठीक आपके तय समय पर बजें।';
+
+  @override
+  String get loanMarkPaidSuccess => 'भुगतान के रूप में चिह्नित किया गया';
 }
