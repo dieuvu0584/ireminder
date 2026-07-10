@@ -134,7 +134,6 @@
   "categoryFieldNameRequired": "Le nom est requis",
   "categoryFieldIcon": "Icône",
   "categoryFieldColor": "Couleur",
-  "categoryDefaultBadge": "Par défaut",
   "categoryDeleteSimpleTitle": "Supprimer cette catégorie ?",
   "categoryDeleteSimpleBody": "Cette catégorie ne contient aucun rappel.",
   "categoryDeleteHasRemindersTitle": "Cette catégorie contient encore des rappels",

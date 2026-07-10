@@ -134,7 +134,6 @@
   "categoryFieldNameRequired": "请输入分类名称",
   "categoryFieldIcon": "图标",
   "categoryFieldColor": "颜色",
-  "categoryDefaultBadge": "默认",
   "categoryDeleteSimpleTitle": "删除此分类?",
   "categoryDeleteSimpleBody": "该分类下暂无提醒事项。",
   "categoryDeleteHasRemindersTitle": "该分类仍有提醒事项",

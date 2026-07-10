@@ -134,7 +134,6 @@
   "categoryFieldNameRequired": "El nombre es obligatorio",
   "categoryFieldIcon": "Ícono",
   "categoryFieldColor": "Color",
-  "categoryDefaultBadge": "Predeterminada",
   "categoryDeleteSimpleTitle": "¿Eliminar esta categoría?",
   "categoryDeleteSimpleBody": "Esta categoría no tiene recordatorios.",
   "categoryDeleteHasRemindersTitle": "Esta categoría todavía tiene recordatorios",

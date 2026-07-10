@@ -134,7 +134,6 @@
   "categoryFieldNameRequired": "श्रेणी का नाम आवश्यक है",
   "categoryFieldIcon": "आइकन",
   "categoryFieldColor": "रंग",
-  "categoryDefaultBadge": "डिफ़ॉल्ट",
   "categoryDeleteSimpleTitle": "यह श्रेणी हटाएं?",
   "categoryDeleteSimpleBody": "इस श्रेणी में कोई रिमाइंडर नहीं है।",
   "categoryDeleteHasRemindersTitle": "इस श्रेणी में अभी भी रिमाइंडर हैं",

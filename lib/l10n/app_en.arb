@@ -135,7 +135,6 @@
   "categoryFieldNameRequired": "Name is required",
   "categoryFieldIcon": "Icon",
   "categoryFieldColor": "Color",
-  "categoryDefaultBadge": "Default",
   "categoryDeleteSimpleTitle": "Delete this category?",
   "categoryDeleteSimpleBody": "This category has no reminders in it.",
   "categoryDeleteHasRemindersTitle": "This category still has reminders",

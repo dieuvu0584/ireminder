@@ -109,20 +109,9 @@ class CategoryManagerScreen extends ConsumerWidget {
                       resolveCategoryIcon(category.icon),
                       color: parseHexColor(category.color),
                     ),
-                    title: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            category.name,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        if (category.isSystemDefault) ...[
-                          const SizedBox(width: 8),
-                          _DefaultBadge(label: l10n.categoryDefaultBadge),
-                        ],
-                      ],
+                    title: Text(
+                      category.name,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
@@ -162,36 +151,6 @@ class CategoryManagerScreen extends ConsumerWidget {
           MaterialPageRoute(builder: (_) => const CategoryFormScreen()),
         ),
         child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-/// A compact inline badge, sized to sit level with body text — unlike
-/// [Chip], which defaults to a much taller minimum height and visibly
-/// throws off the row it sits in next to a plain [Text].
-class _DefaultBadge extends StatelessWidget {
-  final String label;
-
-  const _DefaultBadge({required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-      decoration: BoxDecoration(
-        color: scheme.secondaryContainer,
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 10,
-          height: 1.2,
-          fontWeight: FontWeight.w600,
-          color: scheme.onSecondaryContainer,
-        ),
       ),
     );
   }

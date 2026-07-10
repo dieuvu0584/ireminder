@@ -135,7 +135,6 @@
   "categoryFieldNameRequired": "Vui lòng nhập tên danh mục",
   "categoryFieldIcon": "Biểu tượng",
   "categoryFieldColor": "Màu sắc",
-  "categoryDefaultBadge": "Mặc định",
   "categoryDeleteSimpleTitle": "Xóa danh mục này?",
   "categoryDeleteSimpleBody": "Danh mục này chưa có nhắc việc nào.",
   "categoryDeleteHasRemindersTitle": "Danh mục này vẫn còn nhắc việc",
