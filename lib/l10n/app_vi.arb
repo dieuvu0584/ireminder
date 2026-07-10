@@ -1,0 +1,227 @@
+{
+  "@@locale": "vi",
+  "appTitle": "iReminder",
+  "navToday": "Hôm nay",
+  "navCalendar": "Lịch",
+  "navLoans": "Trả góp",
+  "navCategories": "Danh mục",
+  "navSettings": "Cài đặt",
+  "navAssistant": "Trợ lý",
+  "onboardingTitle1": "Không bao giờ quên việc quan trọng",
+  "onboardingBody1": "Theo dõi bảo trì thiết bị, bảo dưỡng xe, giỗ chạp và nhiều việc khác — tất cả trong một ứng dụng.",
+  "onboardingTitle2": "Lặp lại thật đơn giản",
+  "onboardingBody2": "Hàng ngày, hàng tuần, hàng tháng, hàng năm, hay theo âm lịch — chỉ cần cài đặt một lần, iReminder sẽ tự nhắc bạn.",
+  "onboardingTitle3": "Riêng tư 100%, chạy offline 100%",
+  "onboardingBody3": "Không tài khoản, không cloud, không đăng nhập. Mọi dữ liệu chỉ nằm trên máy của bạn.",
+  "onboardingSkip": "Bỏ qua",
+  "onboardingNext": "Tiếp theo",
+  "onboardingGetStarted": "Bắt đầu",
+  "notificationPermissionTitle": "Không bỏ lỡ việc cần làm",
+  "notificationPermissionBody": "iReminder cần quyền gửi thông báo để nhắc bạn khi đến hạn.",
+  "notificationPermissionAllow": "Cho phép thông báo",
+  "notificationPermissionLater": "Để sau",
+  "homeSectionOverdue": "Quá hạn",
+  "homeSectionToday": "Hôm nay",
+  "homeSectionThisWeek": "Tuần này",
+  "homeSectionUpcoming": "Sắp tới",
+  "homeEmptyTitle": "Chưa có việc nào",
+  "homeEmptyBody": "Nhấn + để thêm nhắc việc hoặc khoản trả góp đầu tiên.",
+  "fabAddReminder": "Nhắc việc",
+  "fabAddLoan": "Khoản trả góp",
+  "actionDone": "Đã xong",
+  "actionSnooze": "Nhắc lại sau",
+  "actionEdit": "Sửa",
+  "actionDelete": "Xóa",
+  "actionSave": "Lưu",
+  "actionCancel": "Hủy",
+  "actionConfirm": "Xác nhận",
+  "actionYes": "Có",
+  "actionNo": "Không",
+  "actionOk": "OK",
+  "actionAdd": "Thêm",
+  "actionClose": "Đóng",
+  "reminderFormTitleNew": "Nhắc việc mới",
+  "reminderFormTitleEdit": "Sửa nhắc việc",
+  "reminderFieldTitle": "Tiêu đề",
+  "reminderFieldTitleRequired": "Vui lòng nhập tiêu đề",
+  "reminderFieldDescription": "Mô tả (không bắt buộc)",
+  "reminderFieldCategory": "Danh mục",
+  "reminderFieldRecurrence": "Lặp lại",
+  "reminderFieldStartDate": "Ngày bắt đầu",
+  "reminderFieldTime": "Giờ nhắc",
+  "reminderFieldAdvanceNotice": "Báo trước N ngày",
+  "reminderFieldRecurrenceDay": "Ngày trong tháng",
+  "reminderFieldRecurrenceMonth": "Tháng",
+  "reminderFieldRecurrenceWeekday": "Thứ trong tuần",
+  "reminderFieldIntervalDays": "Mỗi N ngày",
+  "reminderFieldLunarDay": "Ngày âm lịch",
+  "reminderFieldLunarMonth": "Tháng âm lịch",
+  "reminderDeleteConfirmTitle": "Xóa nhắc việc này?",
+  "reminderDeleteConfirmBody": "Không thể hoàn tác sau khi xóa.",
+  "recurrenceNone": "Một lần",
+  "recurrenceDaily": "Hàng ngày",
+  "recurrenceWeekly": "Hàng tuần",
+  "recurrenceMonthly": "Hàng tháng",
+  "recurrenceYearly": "Hàng năm",
+  "recurrenceCustomIntervalDays": "Mỗi N ngày",
+  "recurrenceLunarYearly": "Hàng năm (âm lịch)",
+  "weekdayMonday": "Thứ Hai",
+  "weekdayTuesday": "Thứ Ba",
+  "weekdayWednesday": "Thứ Tư",
+  "weekdayThursday": "Thứ Năm",
+  "weekdayFriday": "Thứ Sáu",
+  "weekdaySaturday": "Thứ Bảy",
+  "weekdaySunday": "Chủ Nhật",
+  "loanListTitle": "Khoản trả góp / trả nợ",
+  "loanFormTitleNew": "Khoản trả góp mới",
+  "loanFormTitleEdit": "Sửa khoản trả góp",
+  "loanFieldName": "Tên khoản vay",
+  "loanFieldCategory": "Danh mục",
+  "loanFieldTotalAmount": "Tổng nợ gốc (không bắt buộc)",
+  "loanFieldInstallmentAmount": "Số tiền mỗi kỳ",
+  "loanFieldTotalInstallments": "Số kỳ trả",
+  "loanFieldFrequency": "Tần suất",
+  "loanFieldDueDayOfMonth": "Ngày đến hạn trong tháng",
+  "loanFieldStartDate": "Ngày bắt đầu",
+  "loanFieldReminderAdvanceDays": "Nhắc trước N ngày",
+  "loanFieldNotes": "Ghi chú (không bắt buộc)",
+  "loanFrequencyMonthly": "Hàng tháng",
+  "loanFrequencyWeekly": "Hàng tuần",
+  "loanFrequencyBiweekly": "Hai tuần một lần",
+  "loanProgress": "Đã trả {paid} / {total} kỳ",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Đánh dấu đã trả",
+  "loanMarkPaidBatch": "Đánh dấu {count} kỳ đã trả",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Chưa đến hạn",
+  "loanStatusPaid": "Đã trả",
+  "loanStatusOverdue": "Quá hạn",
+  "loanInstallmentNumber": "Kỳ #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Xóa khoản trả góp này?",
+  "loanDeleteConfirmBody": "Toàn bộ {count} kỳ trả cũng sẽ bị xóa.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Quản lý danh mục",
+  "categoryFormTitleNew": "Danh mục mới",
+  "categoryFormTitleEdit": "Sửa danh mục",
+  "categoryFieldName": "Tên danh mục",
+  "categoryFieldNameRequired": "Vui lòng nhập tên danh mục",
+  "categoryFieldIcon": "Biểu tượng",
+  "categoryFieldColor": "Màu sắc",
+  "categoryDefaultBadge": "Mặc định",
+  "categoryDeleteSimpleTitle": "Xóa danh mục này?",
+  "categoryDeleteSimpleBody": "Danh mục này chưa có nhắc việc nào.",
+  "categoryDeleteHasRemindersTitle": "Danh mục này vẫn còn nhắc việc",
+  "categoryDeleteHasRemindersBody": "Có {count} nhắc việc đang dùng danh mục này. Hãy chọn cách xử lý.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "Chuyển sang danh mục khác",
+  "categoryDeleteReassignTarget": "Chuyển đến",
+  "categoryDeleteRemoveAll": "Xóa toàn bộ {count} nhắc việc",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Thao tác này sẽ xóa vĩnh viễn {count} nhắc việc. Không thể hoàn tác.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Kéo để sắp xếp lại",
+  "settingsTitle": "Cài đặt",
+  "settingsLanguage": "Ngôn ngữ",
+  "settingsDefaultReminderTime": "Giờ nhắc mặc định",
+  "settingsTheme": "Giao diện",
+  "settingsThemeSystem": "Theo hệ thống",
+  "settingsThemeLight": "Sáng",
+  "settingsThemeDark": "Tối",
+  "settingsBackupRestore": "Sao lưu & phục hồi",
+  "settingsExport": "Xuất file sao lưu",
+  "settingsImport": "Phục hồi từ file sao lưu",
+  "settingsExportLocationHint": "Lưu tại Android/data/com.ireminder.ireminder/files/backups",
+  "settingsExportSuccess": "Đã lưu file sao lưu",
+  "settingsImportNoneFound": "Không tìm thấy file sao lưu nào",
+  "settingsImportPickFile": "Chọn file sao lưu",
+  "settingsImportSuccess": "Đã phục hồi dữ liệu",
+  "settingsImportConfirmTitle": "Phục hồi dữ liệu?",
+  "settingsImportConfirmBody": "Toàn bộ dữ liệu hiện tại sẽ bị thay thế bằng nội dung trong file sao lưu.",
+  "settingsAbout": "Thông tin ứng dụng",
+  "settingsBatteryOptimizationTitle": "Thông báo không hiện đúng giờ?",
+  "settingsBatteryOptimizationBody": "Một số hãng máy (Samsung, Xiaomi, Oppo...) tối ưu pin khá gắt, hạn chế app chạy nền. Hãy vào Cài đặt máy > Pin, tắt tối ưu pin cho iReminder để đảm bảo thông báo luôn đến đúng giờ.",
+  "errorGeneric": "Đã có lỗi xảy ra. Vui lòng thử lại.",
+  "errorLoadFailed": "Không tải được dữ liệu.",
+  "settingsAiSectionTitle": "Trợ lý AI",
+  "settingsAiEnable": "Bật Trợ lý AI",
+  "settingsAiProvider": "Nhà cung cấp AI",
+  "settingsAiModel": "Model",
+  "settingsAiApiKey": "API key",
+  "settingsAiApiKeyHint": "Dán API key của bạn vào đây",
+  "settingsAiApiKeyHelp": "Lấy key ở đâu?",
+  "settingsAiApiKeySaved": "Đã lưu API key",
+  "settingsAiAllowedCategories": "Danh mục cho phép Trợ lý đọc",
+  "settingsAiAllowedCategoriesHint": "Mặc định tắt hết. Chỉ bật những danh mục bạn muốn Trợ lý nhìn thấy — không có gì khác được gửi đi.",
+  "settingsAiClearHistory": "Xóa lịch sử chat",
+  "settingsAiClearHistoryConfirmTitle": "Xóa lịch sử chat?",
+  "settingsAiClearHistoryConfirmBody": "Toàn bộ câu hỏi và câu trả lời lưu trên máy sẽ bị xóa. Không thể hoàn tác.",
+  "assistantTitle": "Trợ lý",
+  "assistantEmptyTitle": "Hỏi Trợ lý bất cứ điều gì",
+  "assistantEmptyBody": "Thử hỏi \"Tuần này tôi cần làm gì?\" hoặc \"Còn bao nhiêu kỳ nữa hết nợ xe máy?\"",
+  "assistantInputHint": "Nhập câu hỏi…",
+  "assistantSend": "Gửi",
+  "assistantDisabledTitle": "Trợ lý đang tắt",
+  "assistantDisabledBody": "Bật tính năng này trong Cài đặt và chọn nhà cung cấp AI để bắt đầu trò chuyện.",
+  "assistantOpenSettings": "Mở Cài đặt",
+  "assistantThinking": "Đang suy nghĩ…",
+  "validationRequired": "Bắt buộc",
+  "validationDayOfMonth": "Nhập ngày từ 1–31",
+  "validationMonth": "Nhập tháng từ 1–12",
+  "validationPositiveNumber": "Nhập số lớn hơn 0",
+  "validationPositiveInteger": "Nhập số nguyên lớn hơn 0",
+  "settingsPermissionsSectionTitle": "Thông báo & Báo thức",
+  "settingsPermissionsNotificationLabel": "Quyền thông báo",
+  "settingsPermissionsExactAlarmLabel": "Quyền báo thức chính xác",
+  "settingsPermissionsGranted": "Đã cấp quyền",
+  "settingsPermissionsDenied": "Chưa được cấp — nhắc nhở có thể không hiện đúng giờ",
+  "settingsPermissionsGrantAction": "Cấp quyền",
+  "settingsPermissionsOpenSettingsAction": "Mở cài đặt",
+  "onboardingExactAlarmRationaleTitle": "Thêm một quyền nữa",
+  "onboardingExactAlarmRationaleBody": "Ở màn hình tiếp theo, hãy cho phép iReminder đặt báo thức chính xác để nhắc nhở hiện đúng giờ bạn đã chọn."
+}

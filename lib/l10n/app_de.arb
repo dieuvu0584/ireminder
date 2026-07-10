@@ -1,0 +1,227 @@
+{
+  "@@locale": "de",
+  "appTitle": "iReminder",
+  "navToday": "Heute",
+  "navCalendar": "Kalender",
+  "navLoans": "Raten",
+  "navCategories": "Kategorien",
+  "navSettings": "Einstellungen",
+  "onboardingTitle1": "Wichtiges nie mehr vergessen",
+  "onboardingBody1": "Behalte Gerätewartung, Fahrzeugservice, Jahrestage und mehr im Blick — alles an einem Ort.",
+  "onboardingTitle2": "Wiederholungen ganz einfach",
+  "onboardingBody2": "Täglich, wöchentlich, monatlich, jährlich oder sogar nach dem Mondkalender — einmal einrichten, iReminder behält den Überblick.",
+  "onboardingTitle3": "100 % privat, 100 % offline",
+  "onboardingBody3": "Kein Konto, keine Cloud, kein Login. Alles bleibt auf deinem Telefon.",
+  "onboardingSkip": "Überspringen",
+  "onboardingNext": "Weiter",
+  "onboardingGetStarted": "Los geht's",
+  "notificationPermissionTitle": "Nichts mehr verpassen",
+  "notificationPermissionBody": "iReminder benötigt die Berechtigung für Benachrichtigungen, um dich rechtzeitig zu erinnern.",
+  "notificationPermissionAllow": "Benachrichtigungen erlauben",
+  "notificationPermissionLater": "Nicht jetzt",
+  "homeSectionOverdue": "Überfällig",
+  "homeSectionToday": "Heute",
+  "homeSectionThisWeek": "Diese Woche",
+  "homeSectionUpcoming": "Demnächst",
+  "homeEmptyTitle": "Noch nichts hier",
+  "homeEmptyBody": "Tippe auf +, um deine erste Erinnerung oder Ratenzahlung hinzuzufügen.",
+  "fabAddReminder": "Erinnerung",
+  "fabAddLoan": "Ratenzahlung",
+  "actionDone": "Erledigt",
+  "actionSnooze": "Später erinnern",
+  "actionEdit": "Bearbeiten",
+  "actionDelete": "Löschen",
+  "actionSave": "Speichern",
+  "actionCancel": "Abbrechen",
+  "actionConfirm": "Bestätigen",
+  "actionYes": "Ja",
+  "actionNo": "Nein",
+  "actionOk": "OK",
+  "actionAdd": "Hinzufügen",
+  "actionClose": "Schließen",
+  "reminderFormTitleNew": "Neue Erinnerung",
+  "reminderFormTitleEdit": "Erinnerung bearbeiten",
+  "reminderFieldTitle": "Titel",
+  "reminderFieldTitleRequired": "Titel ist erforderlich",
+  "reminderFieldDescription": "Beschreibung (optional)",
+  "reminderFieldCategory": "Kategorie",
+  "reminderFieldRecurrence": "Wiederholung",
+  "reminderFieldStartDate": "Startdatum",
+  "reminderFieldTime": "Erinnerungszeit",
+  "reminderFieldAdvanceNotice": "N Tage vorher benachrichtigen",
+  "reminderFieldRecurrenceDay": "Tag des Monats",
+  "reminderFieldRecurrenceMonth": "Monat",
+  "reminderFieldRecurrenceWeekday": "Wochentag",
+  "reminderFieldIntervalDays": "Alle N Tage",
+  "reminderFieldLunarDay": "Mondtag",
+  "reminderFieldLunarMonth": "Mondmonat",
+  "reminderDeleteConfirmTitle": "Diese Erinnerung löschen?",
+  "reminderDeleteConfirmBody": "Dies kann nicht rückgängig gemacht werden.",
+  "recurrenceNone": "Einmalig",
+  "recurrenceDaily": "Täglich",
+  "recurrenceWeekly": "Wöchentlich",
+  "recurrenceMonthly": "Monatlich",
+  "recurrenceYearly": "Jährlich",
+  "recurrenceCustomIntervalDays": "Alle N Tage",
+  "recurrenceLunarYearly": "Jährlich (Mondkalender)",
+  "weekdayMonday": "Montag",
+  "weekdayTuesday": "Dienstag",
+  "weekdayWednesday": "Mittwoch",
+  "weekdayThursday": "Donnerstag",
+  "weekdayFriday": "Freitag",
+  "weekdaySaturday": "Samstag",
+  "weekdaySunday": "Sonntag",
+  "loanListTitle": "Raten & Kredite",
+  "loanFormTitleNew": "Neue Ratenzahlung",
+  "loanFormTitleEdit": "Ratenzahlung bearbeiten",
+  "loanFieldName": "Name",
+  "loanFieldCategory": "Kategorie",
+  "loanFieldTotalAmount": "Gesamtbetrag (optional)",
+  "loanFieldInstallmentAmount": "Betrag pro Rate",
+  "loanFieldTotalInstallments": "Anzahl der Raten",
+  "loanFieldFrequency": "Häufigkeit",
+  "loanFieldDueDayOfMonth": "Fälligkeitstag im Monat",
+  "loanFieldStartDate": "Startdatum",
+  "loanFieldReminderAdvanceDays": "N Tage vor Fälligkeit erinnern",
+  "loanFieldNotes": "Notizen (optional)",
+  "loanFrequencyMonthly": "Monatlich",
+  "loanFrequencyWeekly": "Wöchentlich",
+  "loanFrequencyBiweekly": "Alle zwei Wochen",
+  "loanProgress": "{paid} / {total} Raten bezahlt",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "Als bezahlt markieren",
+  "loanMarkPaidBatch": "{count} Raten als bezahlt markieren",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "Ausstehend",
+  "loanStatusPaid": "Bezahlt",
+  "loanStatusOverdue": "Überfällig",
+  "loanInstallmentNumber": "Rate Nr. {number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "Diese Ratenzahlung löschen?",
+  "loanDeleteConfirmBody": "Alle {count} Raten werden ebenfalls gelöscht.",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "Kategorien",
+  "categoryFormTitleNew": "Neue Kategorie",
+  "categoryFormTitleEdit": "Kategorie bearbeiten",
+  "categoryFieldName": "Name",
+  "categoryFieldNameRequired": "Name ist erforderlich",
+  "categoryFieldIcon": "Symbol",
+  "categoryFieldColor": "Farbe",
+  "categoryDefaultBadge": "Standard",
+  "categoryDeleteSimpleTitle": "Diese Kategorie löschen?",
+  "categoryDeleteSimpleBody": "Diese Kategorie enthält keine Erinnerungen.",
+  "categoryDeleteHasRemindersTitle": "Diese Kategorie enthält noch Erinnerungen",
+  "categoryDeleteHasRemindersBody": "{count} Erinnerungen nutzen diese Kategorie. Wähle, wie damit verfahren werden soll.",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "In andere Kategorie verschieben",
+  "categoryDeleteReassignTarget": "Verschieben nach",
+  "categoryDeleteRemoveAll": "Alle {count} Erinnerungen löschen",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "Dadurch werden {count} Erinnerungen dauerhaft gelöscht. Dies kann nicht rückgängig gemacht werden.",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "Zum Sortieren ziehen",
+  "settingsTitle": "Einstellungen",
+  "settingsLanguage": "Sprache",
+  "settingsDefaultReminderTime": "Standard-Erinnerungszeit",
+  "settingsTheme": "Design",
+  "settingsThemeSystem": "System",
+  "settingsThemeLight": "Hell",
+  "settingsThemeDark": "Dunkel",
+  "settingsBackupRestore": "Sichern & Wiederherstellen",
+  "settingsExport": "Backup exportieren",
+  "settingsImport": "Aus Backup wiederherstellen",
+  "settingsExportSuccess": "Backup gespeichert",
+  "settingsImportSuccess": "Backup wiederhergestellt",
+  "settingsImportConfirmTitle": "Backup wiederherstellen?",
+  "settingsImportConfirmBody": "Dadurch werden alle aktuellen Daten durch den Inhalt der Backup-Datei ersetzt.",
+  "settingsAbout": "Über die App",
+  "settingsBatteryOptimizationTitle": "Benachrichtigungen kommen nicht pünktlich?",
+  "settingsBatteryOptimizationBody": "Manche Hersteller (Samsung, Xiaomi, Oppo …) schränken Hintergrund-Apps stark ein. Deaktiviere die Akkuoptimierung für iReminder unter Einstellungen > Akku, damit Erinnerungen immer pünktlich ankommen.",
+  "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+  "errorLoadFailed": "Daten konnten nicht geladen werden.",
+  "navAssistant": "Assistent",
+  "settingsExportLocationHint": "Gespeichert unter Android/data/com.ireminder.ireminder/files/backups",
+  "settingsImportNoneFound": "Keine Sicherungsdateien gefunden",
+  "settingsImportPickFile": "Sicherung auswählen",
+  "settingsAiSectionTitle": "KI-Assistent",
+  "settingsAiEnable": "KI-Assistent aktivieren",
+  "settingsAiProvider": "KI-Anbieter",
+  "settingsAiModel": "Modell",
+  "settingsAiApiKey": "API-Schlüssel",
+  "settingsAiApiKeyHint": "API-Schlüssel einfügen",
+  "settingsAiApiKeyHelp": "Wo bekomme ich einen Schlüssel?",
+  "settingsAiApiKeySaved": "API-Schlüssel gespeichert",
+  "settingsAiAllowedCategories": "Kategorien, die der Assistent lesen darf",
+  "settingsAiAllowedCategoriesHint": "Standardmäßig aus. Aktiviere nur die Kategorien, die der Assistent sehen soll — nichts anderes wird je gesendet.",
+  "settingsAiClearHistory": "Chatverlauf löschen",
+  "settingsAiClearHistoryConfirmTitle": "Chatverlauf löschen?",
+  "settingsAiClearHistoryConfirmBody": "Alle auf diesem Gerät gespeicherten Fragen und Antworten werden gelöscht. Dies kann nicht rückgängig gemacht werden.",
+  "assistantTitle": "Assistent",
+  "assistantEmptyTitle": "Frag mich etwas",
+  "assistantEmptyBody": "Versuche „Was muss ich diese Woche erledigen?“ oder „Wie viele Raten meines Motorradkredits bleiben noch?“",
+  "assistantInputHint": "Etwas fragen…",
+  "assistantSend": "Senden",
+  "assistantDisabledTitle": "Assistent ist ausgeschaltet",
+  "assistantDisabledBody": "Aktiviere ihn in den Einstellungen und wähle einen KI-Anbieter, um zu chatten.",
+  "assistantOpenSettings": "Einstellungen öffnen",
+  "assistantThinking": "Denkt nach…",
+  "validationRequired": "Erforderlich",
+  "validationDayOfMonth": "Tag von 1–31 eingeben",
+  "validationMonth": "Monat von 1–12 eingeben",
+  "validationPositiveNumber": "Zahl größer als 0 eingeben",
+  "validationPositiveInteger": "Ganze Zahl größer als 0 eingeben",
+  "settingsPermissionsSectionTitle": "Benachrichtigungen & Alarme",
+  "settingsPermissionsNotificationLabel": "Benachrichtigungsberechtigung",
+  "settingsPermissionsExactAlarmLabel": "Berechtigung für exakte Alarme",
+  "settingsPermissionsGranted": "Erteilt",
+  "settingsPermissionsDenied": "Nicht erteilt — Erinnerungen werden möglicherweise nicht pünktlich angezeigt",
+  "settingsPermissionsGrantAction": "Erteilen",
+  "settingsPermissionsOpenSettingsAction": "Einstellungen öffnen",
+  "onboardingExactAlarmRationaleTitle": "Noch eine Berechtigung",
+  "onboardingExactAlarmRationaleBody": "Erlaube iReminder auf dem nächsten Bildschirm, exakte Alarme zu planen, damit Erinnerungen genau zur eingestellten Zeit erscheinen."
+}

@@ -1,0 +1,76 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - "claude/**"
+    paths-ignore:
+      - "**.md"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Build debug APK
+        run: flutter build apk --debug
+
+      - name: Build release APK (unsigned)
+        run: flutter build apk --release
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ireminder-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ireminder-release-apk-unsigned
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
+
+      # Workflow artifacts are served from Azure Blob Storage, which isn't
+      # reachable from every environment that might need the APK. Also
+      # publish the release APK to a dedicated branch via plain git push,
+      # since git itself is reachable everywhere GitHub is. The debug APK
+      # (~159MB uncompressed, bundles a full unstripped Flutter debug
+      # engine) is over GitHub's 100MB git push limit, so only the release
+      # build (~63MB) goes this route — it's also the more representative
+      # one to actually install.
+      - name: Publish release APK to apk-artifacts branch
+        run: |
+          set -e
+          cp build/app/outputs/flutter-apk/app-release.apk /tmp/ireminder-release-unsigned.apk
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan apk-artifacts
+          git rm -rf . > /dev/null 2>&1 || true
+          cp /tmp/ireminder-release-unsigned.apk .
+          git add ireminder-release-unsigned.apk
+          git commit -m "Build release APK from ${{ github.sha }}"
+          git push -f origin apk-artifacts

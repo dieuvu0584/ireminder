@@ -1,0 +1,227 @@
+{
+  "@@locale": "zh",
+  "appTitle": "iReminder",
+  "navToday": "今天",
+  "navCalendar": "日历",
+  "navLoans": "分期",
+  "navCategories": "分类",
+  "navSettings": "设置",
+  "onboardingTitle1": "重要的事永不遗忘",
+  "onboardingBody1": "设备保养、车辆保养、纪念日等,一个应用全部搞定。",
+  "onboardingTitle2": "重复提醒更简单",
+  "onboardingBody2": "每天、每周、每月、每年,甚至按农历——设置一次,iReminder 自动帮你记住。",
+  "onboardingTitle3": "100% 隐私,100% 离线",
+  "onboardingBody3": "无需账号,无需云端,无需登录。所有数据只保存在你的手机上。",
+  "onboardingSkip": "跳过",
+  "onboardingNext": "下一步",
+  "onboardingGetStarted": "开始使用",
+  "notificationPermissionTitle": "不错过任何事",
+  "notificationPermissionBody": "iReminder 需要通知权限,才能在事项到期时提醒你。",
+  "notificationPermissionAllow": "允许通知",
+  "notificationPermissionLater": "以后再说",
+  "homeSectionOverdue": "已过期",
+  "homeSectionToday": "今天",
+  "homeSectionThisWeek": "本周",
+  "homeSectionUpcoming": "即将到来",
+  "homeEmptyTitle": "暂无提醒事项",
+  "homeEmptyBody": "点击 + 添加你的第一个提醒或分期付款。",
+  "fabAddReminder": "提醒事项",
+  "fabAddLoan": "分期付款",
+  "actionDone": "完成",
+  "actionSnooze": "稍后提醒",
+  "actionEdit": "编辑",
+  "actionDelete": "删除",
+  "actionSave": "保存",
+  "actionCancel": "取消",
+  "actionConfirm": "确认",
+  "actionYes": "是",
+  "actionNo": "否",
+  "actionOk": "好的",
+  "actionAdd": "添加",
+  "actionClose": "关闭",
+  "reminderFormTitleNew": "新建提醒",
+  "reminderFormTitleEdit": "编辑提醒",
+  "reminderFieldTitle": "标题",
+  "reminderFieldTitleRequired": "请输入标题",
+  "reminderFieldDescription": "描述(可选)",
+  "reminderFieldCategory": "分类",
+  "reminderFieldRecurrence": "重复",
+  "reminderFieldStartDate": "开始日期",
+  "reminderFieldTime": "提醒时间",
+  "reminderFieldAdvanceNotice": "提前 N 天通知",
+  "reminderFieldRecurrenceDay": "每月日期",
+  "reminderFieldRecurrenceMonth": "月份",
+  "reminderFieldRecurrenceWeekday": "星期几",
+  "reminderFieldIntervalDays": "每 N 天",
+  "reminderFieldLunarDay": "农历日",
+  "reminderFieldLunarMonth": "农历月",
+  "reminderDeleteConfirmTitle": "删除此提醒?",
+  "reminderDeleteConfirmBody": "此操作无法撤销。",
+  "recurrenceNone": "仅一次",
+  "recurrenceDaily": "每天",
+  "recurrenceWeekly": "每周",
+  "recurrenceMonthly": "每月",
+  "recurrenceYearly": "每年",
+  "recurrenceCustomIntervalDays": "每 N 天",
+  "recurrenceLunarYearly": "每年(农历)",
+  "weekdayMonday": "星期一",
+  "weekdayTuesday": "星期二",
+  "weekdayWednesday": "星期三",
+  "weekdayThursday": "星期四",
+  "weekdayFriday": "星期五",
+  "weekdaySaturday": "星期六",
+  "weekdaySunday": "星期日",
+  "loanListTitle": "分期付款 / 借贷",
+  "loanFormTitleNew": "新建分期付款",
+  "loanFormTitleEdit": "编辑分期付款",
+  "loanFieldName": "名称",
+  "loanFieldCategory": "分类",
+  "loanFieldTotalAmount": "总金额(可选)",
+  "loanFieldInstallmentAmount": "每期金额",
+  "loanFieldTotalInstallments": "总期数",
+  "loanFieldFrequency": "还款频率",
+  "loanFieldDueDayOfMonth": "每月到期日",
+  "loanFieldStartDate": "开始日期",
+  "loanFieldReminderAdvanceDays": "提前 N 天提醒",
+  "loanFieldNotes": "备注(可选)",
+  "loanFrequencyMonthly": "每月",
+  "loanFrequencyWeekly": "每周",
+  "loanFrequencyBiweekly": "每两周",
+  "loanProgress": "已还 {paid} / {total} 期",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "标记为已还",
+  "loanMarkPaidBatch": "标记 {count} 期为已还",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "待还款",
+  "loanStatusPaid": "已还款",
+  "loanStatusOverdue": "已逾期",
+  "loanInstallmentNumber": "第 {number} 期",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "删除此分期付款?",
+  "loanDeleteConfirmBody": "全部 {count} 期也将一并删除。",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "分类管理",
+  "categoryFormTitleNew": "新建分类",
+  "categoryFormTitleEdit": "编辑分类",
+  "categoryFieldName": "名称",
+  "categoryFieldNameRequired": "请输入分类名称",
+  "categoryFieldIcon": "图标",
+  "categoryFieldColor": "颜色",
+  "categoryDefaultBadge": "默认",
+  "categoryDeleteSimpleTitle": "删除此分类?",
+  "categoryDeleteSimpleBody": "该分类下暂无提醒事项。",
+  "categoryDeleteHasRemindersTitle": "该分类仍有提醒事项",
+  "categoryDeleteHasRemindersBody": "有 {count} 个提醒事项使用此分类,请选择处理方式。",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "移动到其他分类",
+  "categoryDeleteReassignTarget": "移动到",
+  "categoryDeleteRemoveAll": "删除全部 {count} 个提醒事项",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "此操作将永久删除 {count} 个提醒事项,且无法撤销。",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "拖动以重新排序",
+  "settingsTitle": "设置",
+  "settingsLanguage": "语言",
+  "settingsDefaultReminderTime": "默认提醒时间",
+  "settingsTheme": "主题",
+  "settingsThemeSystem": "跟随系统",
+  "settingsThemeLight": "浅色",
+  "settingsThemeDark": "深色",
+  "settingsBackupRestore": "备份与恢复",
+  "settingsExport": "导出备份",
+  "settingsImport": "从备份恢复",
+  "settingsExportSuccess": "备份已保存",
+  "settingsImportSuccess": "已恢复备份",
+  "settingsImportConfirmTitle": "恢复备份?",
+  "settingsImportConfirmBody": "此操作将用备份文件中的内容替换当前所有数据。",
+  "settingsAbout": "关于",
+  "settingsBatteryOptimizationTitle": "通知没有准时到达?",
+  "settingsBatteryOptimizationBody": "部分手机厂商(三星、小米、Oppo 等)对后台应用限制较严格。请在手机 设置 > 电池 中关闭对 iReminder 的电池优化,以确保提醒能准时送达。",
+  "errorGeneric": "出现错误,请重试。",
+  "errorLoadFailed": "数据加载失败。",
+  "navAssistant": "助手",
+  "settingsExportLocationHint": "保存至 Android/data/com.ireminder.ireminder/files/backups",
+  "settingsImportNoneFound": "未找到备份文件",
+  "settingsImportPickFile": "选择备份",
+  "settingsAiSectionTitle": "AI 助手",
+  "settingsAiEnable": "启用 AI 助手",
+  "settingsAiProvider": "AI 提供商",
+  "settingsAiModel": "模型",
+  "settingsAiApiKey": "API 密钥",
+  "settingsAiApiKeyHint": "粘贴你的 API 密钥",
+  "settingsAiApiKeyHelp": "去哪里获取密钥？",
+  "settingsAiApiKeySaved": "API 密钥已保存",
+  "settingsAiAllowedCategories": "允许助手读取的分类",
+  "settingsAiAllowedCategoriesHint": "默认全部关闭。仅开启你希望助手看到的分类——不会发送其他任何内容。",
+  "settingsAiClearHistory": "清除聊天记录",
+  "settingsAiClearHistoryConfirmTitle": "清除聊天记录？",
+  "settingsAiClearHistoryConfirmBody": "此设备上保存的所有问题和回答都将被删除，且无法恢复。",
+  "assistantTitle": "助手",
+  "assistantEmptyTitle": "问我任何问题",
+  "assistantEmptyBody": "试试问「这周我需要做什么？」或「我的摩托车贷款还剩几期？」",
+  "assistantInputHint": "输入问题…",
+  "assistantSend": "发送",
+  "assistantDisabledTitle": "助手已关闭",
+  "assistantDisabledBody": "请在设置中启用并选择一个 AI 提供商以开始聊天。",
+  "assistantOpenSettings": "打开设置",
+  "assistantThinking": "思考中…",
+  "validationRequired": "必填",
+  "validationDayOfMonth": "请输入 1–31 之间的日期",
+  "validationMonth": "请输入 1–12 之间的月份",
+  "validationPositiveNumber": "请输入大于 0 的数字",
+  "validationPositiveInteger": "请输入大于 0 的整数",
+  "settingsPermissionsSectionTitle": "通知与闹钟",
+  "settingsPermissionsNotificationLabel": "通知权限",
+  "settingsPermissionsExactAlarmLabel": "精确闹钟权限",
+  "settingsPermissionsGranted": "已授权",
+  "settingsPermissionsDenied": "未授权——提醒可能无法准时提醒",
+  "settingsPermissionsGrantAction": "授权",
+  "settingsPermissionsOpenSettingsAction": "打开设置",
+  "onboardingExactAlarmRationaleTitle": "还需要一项权限",
+  "onboardingExactAlarmRationaleBody": "在下一屏，请允许 iReminder 安排精确闹钟，这样提醒才能准时在你设定的时间响起。"
+}

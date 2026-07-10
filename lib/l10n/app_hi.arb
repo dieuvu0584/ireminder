@@ -1,0 +1,227 @@
+{
+  "@@locale": "hi",
+  "appTitle": "iReminder",
+  "navToday": "आज",
+  "navCalendar": "कैलेंडर",
+  "navLoans": "किस्तें",
+  "navCategories": "श्रेणियाँ",
+  "navSettings": "सेटिंग्स",
+  "onboardingTitle1": "ज़रूरी काम कभी न भूलें",
+  "onboardingBody1": "डिवाइस मेंटेनेंस, वाहन सर्विसिंग, सालगिरह और भी बहुत कुछ — सब एक ही जगह।",
+  "onboardingTitle2": "दोहराव अब आसान",
+  "onboardingBody2": "रोज़, हफ़्ते में, महीने में, साल में, या चंद्र कैलेंडर के अनुसार भी — एक बार सेट करें, iReminder बाकी संभाल लेगा।",
+  "onboardingTitle3": "100% निजी, 100% ऑफ़लाइन",
+  "onboardingBody3": "कोई अकाउंट नहीं, कोई क्लाउड नहीं, कोई लॉगिन नहीं। सारा डेटा सिर्फ़ आपके फ़ोन में रहता है।",
+  "onboardingSkip": "छोड़ें",
+  "onboardingNext": "आगे",
+  "onboardingGetStarted": "शुरू करें",
+  "notificationPermissionTitle": "समय पर याद दिलाएं",
+  "notificationPermissionBody": "काम पूरा होने का समय आने पर सूचना भेजने के लिए iReminder को अनुमति चाहिए।",
+  "notificationPermissionAllow": "सूचनाओं की अनुमति दें",
+  "notificationPermissionLater": "अभी नहीं",
+  "homeSectionOverdue": "समय निकल गया",
+  "homeSectionToday": "आज",
+  "homeSectionThisWeek": "इस हफ़्ते",
+  "homeSectionUpcoming": "आने वाले",
+  "homeEmptyTitle": "अभी कुछ नहीं है",
+  "homeEmptyBody": "अपना पहला रिमाइंडर या किस्त जोड़ने के लिए + दबाएं।",
+  "fabAddReminder": "रिमाइंडर",
+  "fabAddLoan": "किस्त योजना",
+  "actionDone": "पूर्ण",
+  "actionSnooze": "बाद में याद दिलाएं",
+  "actionEdit": "संपादित करें",
+  "actionDelete": "हटाएं",
+  "actionSave": "सहेजें",
+  "actionCancel": "रद्द करें",
+  "actionConfirm": "पुष्टि करें",
+  "actionYes": "हाँ",
+  "actionNo": "नहीं",
+  "actionOk": "ठीक है",
+  "actionAdd": "जोड़ें",
+  "actionClose": "बंद करें",
+  "reminderFormTitleNew": "नया रिमाइंडर",
+  "reminderFormTitleEdit": "रिमाइंडर संपादित करें",
+  "reminderFieldTitle": "शीर्षक",
+  "reminderFieldTitleRequired": "शीर्षक आवश्यक है",
+  "reminderFieldDescription": "विवरण (वैकल्पिक)",
+  "reminderFieldCategory": "श्रेणी",
+  "reminderFieldRecurrence": "दोहराव",
+  "reminderFieldStartDate": "शुरुआत तिथि",
+  "reminderFieldTime": "याद दिलाने का समय",
+  "reminderFieldAdvanceNotice": "N दिन पहले सूचित करें",
+  "reminderFieldRecurrenceDay": "महीने का दिन",
+  "reminderFieldRecurrenceMonth": "महीना",
+  "reminderFieldRecurrenceWeekday": "सप्ताह का दिन",
+  "reminderFieldIntervalDays": "हर N दिन में",
+  "reminderFieldLunarDay": "चंद्र तिथि",
+  "reminderFieldLunarMonth": "चंद्र माह",
+  "reminderDeleteConfirmTitle": "यह रिमाइंडर हटाएं?",
+  "reminderDeleteConfirmBody": "इसे वापस नहीं लाया जा सकता।",
+  "recurrenceNone": "एक बार",
+  "recurrenceDaily": "प्रतिदिन",
+  "recurrenceWeekly": "साप्ताहिक",
+  "recurrenceMonthly": "मासिक",
+  "recurrenceYearly": "वार्षिक",
+  "recurrenceCustomIntervalDays": "हर N दिन में",
+  "recurrenceLunarYearly": "वार्षिक (चंद्र कैलेंडर)",
+  "weekdayMonday": "सोमवार",
+  "weekdayTuesday": "मंगलवार",
+  "weekdayWednesday": "बुधवार",
+  "weekdayThursday": "गुरुवार",
+  "weekdayFriday": "शुक्रवार",
+  "weekdaySaturday": "शनिवार",
+  "weekdaySunday": "रविवार",
+  "loanListTitle": "किस्तें और कर्ज़",
+  "loanFormTitleNew": "नई किस्त योजना",
+  "loanFormTitleEdit": "किस्त योजना संपादित करें",
+  "loanFieldName": "नाम",
+  "loanFieldCategory": "श्रेणी",
+  "loanFieldTotalAmount": "कुल राशि (वैकल्पिक)",
+  "loanFieldInstallmentAmount": "प्रति किस्त राशि",
+  "loanFieldTotalInstallments": "कुल किस्तों की संख्या",
+  "loanFieldFrequency": "आवृत्ति",
+  "loanFieldDueDayOfMonth": "महीने की देय तिथि",
+  "loanFieldStartDate": "शुरुआत तिथि",
+  "loanFieldReminderAdvanceDays": "देय तिथि से N दिन पहले याद दिलाएं",
+  "loanFieldNotes": "टिप्पणी (वैकल्पिक)",
+  "loanFrequencyMonthly": "मासिक",
+  "loanFrequencyWeekly": "साप्ताहिक",
+  "loanFrequencyBiweekly": "हर दो हफ़्ते में",
+  "loanProgress": "{paid} / {total} किस्तें चुकाई गईं",
+  "@loanProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loanMarkPaid": "भुगतान हुआ चिह्नित करें",
+  "loanMarkPaidBatch": "{count} किस्तें भुगतान हुई चिह्नित करें",
+  "@loanMarkPaidBatch": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loanStatusPending": "बाकी",
+  "loanStatusPaid": "भुगतान हो गया",
+  "loanStatusOverdue": "समय निकल गया",
+  "loanInstallmentNumber": "किस्त #{number}",
+  "@loanInstallmentNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDeleteConfirmTitle": "यह किस्त योजना हटाएं?",
+  "loanDeleteConfirmBody": "सभी {count} किस्तें भी हट जाएंगी।",
+  "@loanDeleteConfirmBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryManagerTitle": "श्रेणियाँ प्रबंधित करें",
+  "categoryFormTitleNew": "नई श्रेणी",
+  "categoryFormTitleEdit": "श्रेणी संपादित करें",
+  "categoryFieldName": "नाम",
+  "categoryFieldNameRequired": "श्रेणी का नाम आवश्यक है",
+  "categoryFieldIcon": "आइकन",
+  "categoryFieldColor": "रंग",
+  "categoryDefaultBadge": "डिफ़ॉल्ट",
+  "categoryDeleteSimpleTitle": "यह श्रेणी हटाएं?",
+  "categoryDeleteSimpleBody": "इस श्रेणी में कोई रिमाइंडर नहीं है।",
+  "categoryDeleteHasRemindersTitle": "इस श्रेणी में अभी भी रिमाइंडर हैं",
+  "categoryDeleteHasRemindersBody": "{count} रिमाइंडर इस श्रेणी का उपयोग कर रहे हैं। आगे क्या करना है चुनें।",
+  "@categoryDeleteHasRemindersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteReassign": "दूसरी श्रेणी में ले जाएं",
+  "categoryDeleteReassignTarget": "यहाँ ले जाएं",
+  "categoryDeleteRemoveAll": "सभी {count} रिमाइंडर हटाएं",
+  "@categoryDeleteRemoveAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryDeleteRemoveAllConfirm": "इससे {count} रिमाइंडर स्थायी रूप से हट जाएंगे। इसे वापस नहीं लाया जा सकता।",
+  "@categoryDeleteRemoveAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryReorderHint": "क्रम बदलने के लिए खींचें",
+  "settingsTitle": "सेटिंग्स",
+  "settingsLanguage": "भाषा",
+  "settingsDefaultReminderTime": "डिफ़ॉल्ट याद दिलाने का समय",
+  "settingsTheme": "थीम",
+  "settingsThemeSystem": "सिस्टम अनुसार",
+  "settingsThemeLight": "हल्का",
+  "settingsThemeDark": "गहरा",
+  "settingsBackupRestore": "बैकअप और पुनर्स्थापना",
+  "settingsExport": "बैकअप निर्यात करें",
+  "settingsImport": "बैकअप से पुनर्स्थापित करें",
+  "settingsExportSuccess": "बैकअप सहेजा गया",
+  "settingsImportSuccess": "बैकअप पुनर्स्थापित किया गया",
+  "settingsImportConfirmTitle": "बैकअप पुनर्स्थापित करें?",
+  "settingsImportConfirmBody": "इससे वर्तमान सभी डेटा बैकअप फ़ाइल की सामग्री से बदल जाएगा।",
+  "settingsAbout": "ऐप के बारे में",
+  "settingsBatteryOptimizationTitle": "सूचनाएं समय पर नहीं आ रहीं?",
+  "settingsBatteryOptimizationBody": "कुछ फ़ोन निर्माता (Samsung, Xiaomi, Oppo आदि) बैकग्राउंड ऐप्स को काफ़ी सीमित कर देते हैं। सूचनाएं हमेशा समय पर आएं, इसके लिए फ़ोन की सेटिंग्स > बैटरी में जाकर iReminder के लिए बैटरी ऑप्टिमाइज़ेशन बंद करें।",
+  "errorGeneric": "कुछ गलत हो गया। कृपया फिर से प्रयास करें।",
+  "errorLoadFailed": "डेटा लोड नहीं हो सका।",
+  "navAssistant": "सहायक",
+  "settingsExportLocationHint": "Android/data/com.ireminder.ireminder/files/backups में सेव किया गया",
+  "settingsImportNoneFound": "कोई बैकअप फ़ाइल नहीं मिली",
+  "settingsImportPickFile": "बैकअप चुनें",
+  "settingsAiSectionTitle": "AI सहायक",
+  "settingsAiEnable": "AI सहायक चालू करें",
+  "settingsAiProvider": "AI प्रदाता",
+  "settingsAiModel": "मॉडल",
+  "settingsAiApiKey": "API कुंजी",
+  "settingsAiApiKeyHint": "अपनी API कुंजी पेस्ट करें",
+  "settingsAiApiKeyHelp": "कुंजी कहाँ से मिलेगी?",
+  "settingsAiApiKeySaved": "API कुंजी सेव हो गई",
+  "settingsAiAllowedCategories": "जिन श्रेणियों को सहायक पढ़ सकता है",
+  "settingsAiAllowedCategoriesHint": "डिफ़ॉल्ट रूप से बंद। केवल वही श्रेणियाँ चालू करें जिन्हें आप सहायक को दिखाना चाहते हैं — इसके अलावा कुछ भी कभी नहीं भेजा जाता।",
+  "settingsAiClearHistory": "चैट इतिहास साफ़ करें",
+  "settingsAiClearHistoryConfirmTitle": "चैट इतिहास साफ़ करें?",
+  "settingsAiClearHistoryConfirmBody": "इस डिवाइस पर सेव हर सवाल और जवाब हटा दिया जाएगा। इसे वापस नहीं लाया जा सकता।",
+  "assistantTitle": "सहायक",
+  "assistantEmptyTitle": "मुझसे कुछ भी पूछें",
+  "assistantEmptyBody": "आज़माएं \"इस हफ़्ते मुझे क्या करना है?\" या \"मेरी बाइक लोन की कितनी किश्तें बाकी हैं?\"",
+  "assistantInputHint": "कुछ पूछें…",
+  "assistantSend": "भेजें",
+  "assistantDisabledTitle": "सहायक बंद है",
+  "assistantDisabledBody": "चैट शुरू करने के लिए सेटिंग्स में इसे चालू करें और एक AI प्रदाता चुनें।",
+  "assistantOpenSettings": "सेटिंग्स खोलें",
+  "assistantThinking": "सोच रहा है…",
+  "validationRequired": "आवश्यक",
+  "validationDayOfMonth": "1–31 के बीच दिन दर्ज करें",
+  "validationMonth": "1–12 के बीच महीना दर्ज करें",
+  "validationPositiveNumber": "0 से बड़ी संख्या दर्ज करें",
+  "validationPositiveInteger": "0 से बड़ी पूर्ण संख्या दर्ज करें",
+  "settingsPermissionsSectionTitle": "सूचनाएं और अलार्म",
+  "settingsPermissionsNotificationLabel": "सूचना अनुमति",
+  "settingsPermissionsExactAlarmLabel": "सटीक अलार्म अनुमति",
+  "settingsPermissionsGranted": "अनुमति दी गई",
+  "settingsPermissionsDenied": "अनुमति नहीं दी गई — रिमाइंडर समय पर नहीं बज सकते",
+  "settingsPermissionsGrantAction": "अनुमति दें",
+  "settingsPermissionsOpenSettingsAction": "सेटिंग्स खोलें",
+  "onboardingExactAlarmRationaleTitle": "एक और अनुमति",
+  "onboardingExactAlarmRationaleBody": "अगली स्क्रीन पर, iReminder को सटीक अलार्म शेड्यूल करने की अनुमति दें ताकि रिमाइंडर ठीक आपके तय समय पर बजें।"
+}

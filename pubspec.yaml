@@ -1,0 +1,57 @@
+name: ireminder
+description: "Local-first family reminder & installment tracker."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Database
+  drift: ^2.22.1
+  sqlite3_flutter_libs: ^0.5.28
+  path_provider: ^2.1.5
+  path: ^1.9.0
+
+  # Notifications & alarms
+  flutter_local_notifications: ^18.0.1
+  android_alarm_manager_plus: ^4.0.7
+  timezone: ^0.10.0
+
+  # Localization / formatting
+  intl: ^0.20.2
+
+  # Lunar calendar
+  lunar: ^1.7.2
+
+  # Theming
+  dynamic_color: ^1.7.0
+
+  # Phase 7 (optional AI assistant, BYOK) — API key storage only,
+  # per PROMPT.md §9.5. No general-purpose HTTP package is added; provider
+  # calls use dart:io's built-in HttpClient since they're plain JSON POSTs.
+  flutter_secure_storage: ^9.2.4
+  permission_handler: ^12.0.3
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.13
+  drift_dev: ^2.22.1
+
+flutter:
+  uses-material-design: true
+  generate: true

@@ -1,0 +1,94 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../data/database/app_database.dart';
+import '../../domain/enums/loan_frequency.dart';
+import 'notification_providers.dart';
+import 'repository_providers.dart';
+
+final activeLoansStreamProvider = StreamProvider<List<Loan>>((ref) {
+  return ref.watch(loanRepositoryProvider).watchActive();
+});
+
+final loanInstallmentsStreamProvider =
+    StreamProvider.family<List<LoanInstallment>, int>((ref, loanId) {
+  return ref.watch(loanRepositoryProvider).watchInstallments(loanId);
+});
+
+final loanActionsProvider = Provider<LoanActions>((ref) {
+  return LoanActions(ref);
+});
+
+class LoanActions {
+  final Ref _ref;
+  LoanActions(this._ref);
+
+  Future<int> create({
+    required String name,
+    int? categoryId,
+    double? totalAmount,
+    required double installmentAmount,
+    required int totalInstallments,
+    required LoanFrequency frequency,
+    int? dueDayOfMonth,
+    required DateTime startDate,
+    int reminderAdvanceDays = 3,
+    String? notes,
+  }) async {
+    final loanId = await _ref.read(loanRepositoryProvider).create(
+          name: name,
+          categoryId: categoryId,
+          totalAmount: totalAmount,
+          installmentAmount: installmentAmount,
+          totalInstallments: totalInstallments,
+          frequency: frequency,
+          dueDayOfMonth: dueDayOfMonth,
+          startDate: startDate,
+          reminderAdvanceDays: reminderAdvanceDays,
+          notes: notes,
+        );
+    await _scheduleAllForLoan(loanId);
+    return loanId;
+  }
+
+  Future<void> markPaid({
+    required int loanId,
+    required List<int> installmentIds,
+    required DateTime paidDate,
+  }) async {
+    await _ref.read(loanRepositoryProvider).markPaid(
+          loanId: loanId,
+          installmentIds: installmentIds,
+          paidDate: paidDate,
+        );
+    final scheduler = _ref.read(alarmSchedulerServiceProvider);
+    for (final id in installmentIds) {
+      await scheduler.cancelForInstallment(id);
+    }
+  }
+
+  Future<void> delete(int loanId) async {
+    final installments =
+        await _ref.read(loanRepositoryProvider).watchInstallments(loanId).first;
+    final scheduler = _ref.read(alarmSchedulerServiceProvider);
+    for (final installment in installments) {
+      await scheduler.cancelForInstallment(installment.id);
+    }
+    await _ref.read(loanRepositoryProvider).delete(loanId);
+  }
+
+  Future<void> _scheduleAllForLoan(int loanId) async {
+    final loan = await _ref.read(loanRepositoryProvider).getById(loanId);
+    if (loan == null) return;
+    final settings = await _ref.read(settingsRepositoryProvider).get();
+    final installments =
+        await _ref.read(loanRepositoryProvider).watchInstallments(loanId).first;
+    final scheduler = _ref.read(alarmSchedulerServiceProvider);
+    for (final installment in installments) {
+      await scheduler.scheduleForInstallment(
+        installment,
+        loan,
+        settings.defaultReminderTime,
+      );
+    }
+  }
+}
