@@ -122,6 +122,9 @@ class CategoryManagerScreen extends ConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         IconButton(
+                          padding: EdgeInsets.zero,
+                          constraints: const BoxConstraints(),
+                          visualDensity: VisualDensity.compact,
                           icon: const Icon(Icons.edit_outlined),
                           onPressed: () => Navigator.of(context).push(
                             MaterialPageRoute(
@@ -130,7 +133,11 @@ class CategoryManagerScreen extends ConsumerWidget {
                             ),
                           ),
                         ),
+                        const SizedBox(width: 20),
                         IconButton(
+                          padding: EdgeInsets.zero,
+                          constraints: const BoxConstraints(),
+                          visualDensity: VisualDensity.compact,
                           icon: const Icon(Icons.delete_outline),
                           onPressed: () =>
                               _handleDelete(context, ref, category),
