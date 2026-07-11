@@ -19,19 +19,21 @@ class ReminderRepository {
   }
 
   Stream<List<Reminder>> watchByCategory(int categoryId) {
-    return (_db.select(_db.reminders)
-          ..where((r) => r.categoryId.equals(categoryId)))
-        .watch();
+    return (_db.select(
+      _db.reminders,
+    )..where((r) => r.categoryId.equals(categoryId))).watch();
   }
 
   Future<Reminder?> getById(int id) {
-    return (_db.select(_db.reminders)..where((r) => r.id.equals(id)))
-        .getSingleOrNull();
+    return (_db.select(
+      _db.reminders,
+    )..where((r) => r.id.equals(id))).getSingleOrNull();
   }
 
   Stream<Reminder?> watchById(int id) {
-    return (_db.select(_db.reminders)..where((r) => r.id.equals(id)))
-        .watchSingleOrNull();
+    return (_db.select(
+      _db.reminders,
+    )..where((r) => r.id.equals(id))).watchSingleOrNull();
   }
 
   RecurrenceParams paramsOf(Reminder r) {
@@ -44,13 +46,35 @@ class ReminderRepository {
     );
   }
 
-  /// First occurrence is [startDate] itself unless it already passed for a
-  /// repeating rule, in which case roll forward once.
+  /// First occurrence for the reminder being created/edited.
+  ///
+  /// [RecurrenceType.weekly]/[monthly]/[yearly]/[lunarYearly] carry their
+  /// own day/month/weekday anchor independent of [startDate] (the form
+  /// lets a user set e.g. a lunar day/month with an unrelated start date,
+  /// such as "today" from the calendar's "+" prefill) — for those,
+  /// [startDate] is only a lower bound, and the actual due date must
+  /// respect the rule's anchor via [calculateFirstOccurrenceOnOrAfter].
+  ///
+  /// [RecurrenceType.none]/[daily]/[customIntervalDays] have no such
+  /// anchor: their first occurrence is [startDate] itself unless it
+  /// already passed, in which case roll forward once.
   DateTime _firstOccurrence(RecurrenceParams params, DateTime startDate) {
-    if (params.type == RecurrenceType.none) return startDate;
-    final alreadyPassed =
-        startDate.isBefore(DateTime.now().subtract(const Duration(days: 1)));
-    return alreadyPassed ? calculateNextDueDate(params, startDate) : startDate;
+    switch (params.type) {
+      case RecurrenceType.none:
+      case RecurrenceType.daily:
+      case RecurrenceType.customIntervalDays:
+        final alreadyPassed = startDate.isBefore(
+          DateTime.now().subtract(const Duration(days: 1)),
+        );
+        return alreadyPassed
+            ? calculateNextDueDate(params, startDate)
+            : startDate;
+      case RecurrenceType.weekly:
+      case RecurrenceType.monthly:
+      case RecurrenceType.yearly:
+      case RecurrenceType.lunarYearly:
+        return calculateFirstOccurrenceOnOrAfter(params, startDate);
+    }
   }
 
   Future<int> create({
@@ -77,7 +101,9 @@ class ReminderRepository {
     );
     final nextDue = _firstOccurrence(params, startDate);
 
-    return _db.into(_db.reminders).insert(
+    return _db
+        .into(_db.reminders)
+        .insert(
           RemindersCompanion.insert(
             title: title,
             description: Value(description),
@@ -108,7 +134,8 @@ class ReminderRepository {
     if (existing == null) {
       throw ArgumentError('Reminder ${reminder.id} not found');
     }
-    final recurrenceChanged = existing.recurrenceType != reminder.recurrenceType ||
+    final recurrenceChanged =
+        existing.recurrenceType != reminder.recurrenceType ||
         existing.recurrenceInterval != reminder.recurrenceInterval ||
         existing.recurrenceDay != reminder.recurrenceDay ||
         existing.recurrenceMonth != reminder.recurrenceMonth ||
@@ -117,7 +144,10 @@ class ReminderRepository {
 
     final toSave = recurrenceChanged
         ? reminder.copyWith(
-            nextDueDate: _firstOccurrence(paramsOf(reminder), reminder.startDate),
+            nextDueDate: _firstOccurrence(
+              paramsOf(reminder),
+              reminder.startDate,
+            ),
             updatedAt: DateTime.now(),
           )
         : reminder.copyWith(updatedAt: DateTime.now());
@@ -140,7 +170,9 @@ class ReminderRepository {
     }
     final now = DateTime.now();
 
-    await _db.into(_db.reminderLogs).insert(
+    await _db
+        .into(_db.reminderLogs)
+        .insert(
           ReminderLogsCompanion.insert(
             reminderId: reminderId,
             completedAt: now,
@@ -171,7 +203,9 @@ class ReminderRepository {
     if (reminder == null) {
       throw ArgumentError('Reminder $reminderId not found');
     }
-    await _db.into(_db.reminderLogs).insert(
+    await _db
+        .into(_db.reminderLogs)
+        .insert(
           ReminderLogsCompanion.insert(
             reminderId: reminderId,
             completedAt: DateTime.now(),

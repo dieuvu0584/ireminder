@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ireminder/core/utils/lunar_converter.dart';
 import 'package:ireminder/core/utils/recurrence_calculator.dart';
 import 'package:ireminder/domain/enums/recurrence_type.dart';
 import 'package:ireminder/domain/models/recurrence_params.dart';
@@ -24,8 +25,7 @@ void main() {
       expect(result, DateTime(2026, 7, 13)); // next Monday
     });
 
-    test('when fromDate is already the target weekday, jumps a full week',
-        () {
+    test('when fromDate is already the target weekday, jumps a full week', () {
       final result = calculateNextDueDate(
         const RecurrenceParams(type: RecurrenceType.weekly, weekday: 4),
         DateTime(2026, 7, 9), // Thursday
@@ -72,11 +72,7 @@ void main() {
     test('non-leap target year clamps Feb 29 -> Feb 28', () {
       // fromDate in 2027 -> next year is 2028... use 2023 -> 2024(leap) etc.
       final result = calculateNextDueDate(
-        const RecurrenceParams(
-          type: RecurrenceType.yearly,
-          day: 29,
-          month: 2,
-        ),
+        const RecurrenceParams(type: RecurrenceType.yearly, day: 29, month: 2),
         DateTime(2026, 6, 1), // -> next year 2027, not a leap year
       );
       expect(result, DateTime(2027, 2, 28));
@@ -84,11 +80,7 @@ void main() {
 
     test('leap target year keeps Feb 29', () {
       final result = calculateNextDueDate(
-        const RecurrenceParams(
-          type: RecurrenceType.yearly,
-          day: 29,
-          month: 2,
-        ),
+        const RecurrenceParams(type: RecurrenceType.yearly, day: 29, month: 2),
         DateTime(2027, 6, 1), // -> next year 2028, a leap year
       );
       expect(result, DateTime(2028, 2, 29));
@@ -131,34 +123,36 @@ void main() {
   });
 
   group('lunar_yearly - resolves a different solar date each year', () {
-    test('consecutive years give strictly increasing, distinct solar dates',
-        () {
-      // Lunar Tet (month=1, day=1) tracked across 3 consecutive years.
-      const params = RecurrenceParams(
-        type: RecurrenceType.lunarYearly,
-        month: 1,
-        day: 1,
-      );
+    test(
+      'consecutive years give strictly increasing, distinct solar dates',
+      () {
+        // Lunar Tet (month=1, day=1) tracked across 3 consecutive years.
+        const params = RecurrenceParams(
+          type: RecurrenceType.lunarYearly,
+          month: 1,
+          day: 1,
+        );
 
-      final first = calculateNextDueDate(params, DateTime(2025, 6, 1));
-      final second = calculateNextDueDate(params, first);
-      final third = calculateNextDueDate(params, second);
+        final first = calculateNextDueDate(params, DateTime(2025, 6, 1));
+        final second = calculateNextDueDate(params, first);
+        final third = calculateNextDueDate(params, second);
 
-      expect(first.isAfter(DateTime(2025, 6, 1)), isTrue);
-      expect(second.isAfter(first), isTrue);
-      expect(third.isAfter(second), isTrue);
+        expect(first.isAfter(DateTime(2025, 6, 1)), isTrue);
+        expect(second.isAfter(first), isTrue);
+        expect(third.isAfter(second), isTrue);
 
-      // Solar dates for Lunar New Year drift year to year (not a fixed
-      // solar month/day), so all three must differ.
-      expect(first, isNot(equals(second)));
-      expect(second, isNot(equals(third)));
-      expect(first, isNot(equals(third)));
+        // Solar dates for Lunar New Year drift year to year (not a fixed
+        // solar month/day), so all three must differ.
+        expect(first, isNot(equals(second)));
+        expect(second, isNot(equals(third)));
+        expect(first, isNot(equals(third)));
 
-      // Roughly one solar year apart each time (lunar year length varies
-      // 353-385 days).
-      expect(second.difference(first).inDays, inInclusiveRange(300, 400));
-      expect(third.difference(second).inDays, inInclusiveRange(300, 400));
-    });
+        // Roughly one solar year apart each time (lunar year length varies
+        // 353-385 days).
+        expect(second.difference(first).inDays, inInclusiveRange(300, 400));
+        expect(third.difference(second).inDays, inInclusiveRange(300, 400));
+      },
+    );
 
     test('always returns a date strictly after fromDate', () {
       const params = RecurrenceParams(
@@ -168,6 +162,120 @@ void main() {
       );
       final result = calculateNextDueDate(params, DateTime(2026, 8, 27));
       expect(result.isAfter(DateTime(2026, 8, 27)), isTrue);
+    });
+  });
+
+  group('yearly - same-year date still upcoming', () {
+    test(
+      'uses this year, not next, when the target date has not passed yet',
+      () {
+        final result = calculateNextDueDate(
+          const RecurrenceParams(
+            type: RecurrenceType.yearly,
+            day: 25,
+            month: 12,
+          ),
+          DateTime(2026, 1, 1),
+        );
+        expect(result, DateTime(2026, 12, 25));
+      },
+    );
+  });
+
+  group('calculateFirstOccurrenceOnOrAfter', () {
+    test(
+      'weekly: returns fromDate itself when its weekday already matches',
+      () {
+        // 2026-07-13 is a Monday.
+        final result = calculateFirstOccurrenceOnOrAfter(
+          const RecurrenceParams(type: RecurrenceType.weekly, weekday: 1),
+          DateTime(2026, 7, 13),
+        );
+        expect(result, DateTime(2026, 7, 13));
+      },
+    );
+
+    test('monthly: uses this month when the target day has not passed yet', () {
+      final result = calculateFirstOccurrenceOnOrAfter(
+        const RecurrenceParams(type: RecurrenceType.monthly, day: 20),
+        DateTime(2026, 7, 5),
+      );
+      expect(result, DateTime(2026, 7, 20));
+    });
+
+    test('monthly: rolls to next month when the target day already passed', () {
+      final result = calculateFirstOccurrenceOnOrAfter(
+        const RecurrenceParams(type: RecurrenceType.monthly, day: 3),
+        DateTime(2026, 7, 5),
+      );
+      expect(result, DateTime(2026, 8, 3));
+    });
+
+    test('yearly: uses this year when the target date has not passed yet', () {
+      final result = calculateFirstOccurrenceOnOrAfter(
+        const RecurrenceParams(type: RecurrenceType.yearly, day: 25, month: 12),
+        DateTime(2026, 1, 1),
+      );
+      expect(result, DateTime(2026, 12, 25));
+    });
+
+    test('yearly: rolls to next year when the target date already passed', () {
+      final result = calculateFirstOccurrenceOnOrAfter(
+        const RecurrenceParams(type: RecurrenceType.yearly, day: 1, month: 1),
+        DateTime(2026, 6, 1),
+      );
+      expect(result, DateTime(2027, 1, 1));
+    });
+
+    test('lunar_yearly: uses this year when the converted solar date has '
+        'not passed yet, regardless of fromDate', () {
+      // Reproduces the reported bug directly: a reminder created today
+      // must resolve to the correct lunar-derived solar date this year,
+      // not just echo fromDate back.
+      const params = RecurrenceParams(
+        type: RecurrenceType.lunarYearly,
+        month: 6,
+        day: 10,
+      );
+      final expected = LunarConverter.lunarToSolar(2026, 6, 10);
+      final result = calculateFirstOccurrenceOnOrAfter(
+        params,
+        DateTime(2026, 7, 11),
+      );
+      expect(result, expected);
+      expect(result, isNot(equals(DateTime(2026, 7, 11))));
+    });
+  });
+
+  group('occurrenceInYear', () {
+    test('yearly: returns the (month, day) within the given year', () {
+      final result = occurrenceInYear(
+        const RecurrenceParams(type: RecurrenceType.yearly, day: 25, month: 12),
+        2028,
+      );
+      expect(result, DateTime(2028, 12, 25));
+    });
+
+    test('lunar_yearly: returns a date that actually falls within the '
+        'given year', () {
+      final result = occurrenceInYear(
+        const RecurrenceParams(
+          type: RecurrenceType.lunarYearly,
+          month: 6,
+          day: 10,
+        ),
+        2028,
+      );
+      expect(result, isNotNull);
+      expect(result!.year, 2028);
+    });
+
+    test('returns null for recurrence types with no single per-year date', () {
+      final result = occurrenceInYear(
+        const RecurrenceParams(type: RecurrenceType.monthly, day: 15),
+        2028,
+      );
+      expect(result, isNull);
     });
   });
 }

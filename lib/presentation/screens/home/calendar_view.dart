@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
+import '../../../core/utils/lunar_converter.dart';
+import '../../../core/utils/recurrence_calculator.dart';
 import '../../../data/database/app_database.dart';
+import '../../../domain/enums/recurrence_type.dart';
+import '../../../domain/models/recurrence_params.dart';
 import '../../providers/calendar_providers.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
@@ -52,6 +56,35 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
           final d = r.snoozeUntil ?? r.nextDueDate;
           final key = DateTime(d.year, d.month, d.day);
           byDay.putIfAbsent(key, () => []).add(r);
+
+          // The DB only stores the single nearest upcoming occurrence, so
+          // browsing to a different year would otherwise show nothing for
+          // a yearly/lunar-yearly reminder that already has its next
+          // occurrence recorded for this year (or a past one). Project it
+          // onto whichever year is currently visible too.
+          final type = RecurrenceType.fromDbValue(r.recurrenceType);
+          if (r.snoozeUntil == null &&
+              (type == RecurrenceType.yearly ||
+                  type == RecurrenceType.lunarYearly)) {
+            final projected = occurrenceInYear(
+              RecurrenceParams(
+                type: type,
+                day: r.recurrenceDay,
+                month: r.recurrenceMonth,
+              ),
+              _visibleMonth.year,
+            );
+            if (projected != null) {
+              final projKey = DateTime(
+                projected.year,
+                projected.month,
+                projected.day,
+              );
+              if (projKey != key) {
+                byDay.putIfAbsent(projKey, () => []).add(r);
+              }
+            }
+          }
         }
 
         final selectedReminders = byDay[selectedDay] ?? const <Reminder>[];
@@ -272,6 +305,13 @@ class _MonthGrid extends StatelessWidget {
                       ? TextStyle(color: Theme.of(context).colorScheme.error)
                       : null,
                 ),
+                Text(
+                  _lunarLabel(day),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    fontSize: 8,
+                    color: Theme.of(context).colorScheme.outline,
+                  ),
+                ),
                 if (dayReminders.isNotEmpty)
                   Wrap(
                     spacing: 2,
@@ -306,6 +346,16 @@ class _MonthGrid extends StatelessWidget {
         );
       },
     );
+  }
+
+  /// Lunar day for [day], shown small under the solar day number so users
+  /// tracking lunar-calendar occasions (giỗ chạp, etc.) don't have to look
+  /// it up elsewhere. Shows "day/month" only on the 1st of the lunar
+  /// month (when the month value is actually new information) and just
+  /// the day number otherwise, matching common Vietnamese calendar apps.
+  String _lunarLabel(DateTime day) {
+    final lunar = LunarConverter.solarToLunar(day);
+    return lunar.day == 1 ? '${lunar.day}/${lunar.month}' : '${lunar.day}';
   }
 
   bool _isSameDay(DateTime a, DateTime b) =>

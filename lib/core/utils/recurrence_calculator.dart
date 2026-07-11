@@ -3,8 +3,9 @@ import '../../domain/models/recurrence_params.dart';
 import 'lunar_converter.dart';
 
 int _daysInMonth(int year, int month) {
-  final firstOfNextMonth =
-      month == 12 ? DateTime(year + 1, 1, 1) : DateTime(year, month + 1, 1);
+  final firstOfNextMonth = month == 12
+      ? DateTime(year + 1, 1, 1)
+      : DateTime(year, month + 1, 1);
   return firstOfNextMonth.subtract(const Duration(days: 1)).day;
 }
 
@@ -45,7 +46,9 @@ DateTime calculateNextDueDate(RecurrenceParams params, DateTime fromDate) {
     case RecurrenceType.yearly:
       final day = params.day!;
       final month = params.month!;
-      final year = from.year + 1;
+      final thisYearDay = day.clamp(1, _daysInMonth(from.year, month));
+      final thisYearDate = DateTime(from.year, month, thisYearDay);
+      final year = thisYearDate.isAfter(from) ? from.year : from.year + 1;
       final clampedDay = day.clamp(1, _daysInMonth(year, month));
       return DateTime(year, month, clampedDay);
 
@@ -70,5 +73,99 @@ DateTime calculateNextDueDate(RecurrenceParams params, DateTime fromDate) {
         'Could not resolve next lunar_yearly occurrence for '
         '$lunarMonth/$lunarDay from $from',
       );
+  }
+}
+
+/// Computes the first occurrence on or after [fromDate] — used when a
+/// reminder is first created (or its recurrence rule/start date is edited).
+/// [calculateNextDueDate] instead always assumes the previous cycle's
+/// occurrence already happened and jumps a full period ahead, which would
+/// wrongly skip an occurrence that's still upcoming within the current
+/// cycle (e.g. a yearly reminder created before this year's date has
+/// passed).
+DateTime calculateFirstOccurrenceOnOrAfter(
+  RecurrenceParams params,
+  DateTime fromDate,
+) {
+  final from = _dateOnly(fromDate);
+
+  switch (params.type) {
+    case RecurrenceType.none:
+    case RecurrenceType.daily:
+    case RecurrenceType.customIntervalDays:
+      return from;
+
+    case RecurrenceType.weekly:
+      final weekday = params.weekday!;
+      final diff = (weekday - from.weekday) % 7;
+      return from.add(Duration(days: diff));
+
+    case RecurrenceType.monthly:
+      final day = params.day!;
+      final thisMonthDay = day.clamp(1, _daysInMonth(from.year, from.month));
+      final thisMonth = DateTime(from.year, from.month, thisMonthDay);
+      if (!thisMonth.isBefore(from)) return thisMonth;
+      var year = from.year;
+      var month = from.month + 1;
+      if (month > 12) {
+        month -= 12;
+        year += 1;
+      }
+      final clampedDay = day.clamp(1, _daysInMonth(year, month));
+      return DateTime(year, month, clampedDay);
+
+    case RecurrenceType.yearly:
+      final day = params.day!;
+      final month = params.month!;
+      final thisYearDay = day.clamp(1, _daysInMonth(from.year, month));
+      final thisYear = DateTime(from.year, month, thisYearDay);
+      if (!thisYear.isBefore(from)) return thisYear;
+      final nextYearDay = day.clamp(1, _daysInMonth(from.year + 1, month));
+      return DateTime(from.year + 1, month, nextYearDay);
+
+    case RecurrenceType.lunarYearly:
+      final lunarDay = params.day!;
+      final lunarMonth = params.month!;
+      for (var yearOffset = 0; yearOffset <= 2; yearOffset++) {
+        final lunarYear = from.year + yearOffset;
+        final solarDate = LunarConverter.lunarToSolar(
+          lunarYear,
+          lunarMonth,
+          lunarDay,
+        );
+        if (!solarDate.isBefore(from)) {
+          return solarDate;
+        }
+      }
+      throw StateError(
+        'Could not resolve first lunar_yearly occurrence for '
+        '$lunarMonth/$lunarDay on or after $from',
+      );
+  }
+}
+
+/// The date [params] would fall on within [year], for the once-a-year
+/// recurrence types — used to project a yearly/lunar-yearly reminder onto
+/// a calendar month the user has browsed to, since the DB only stores the
+/// single nearest upcoming occurrence rather than a full future series.
+/// Returns null for recurrence types with no single per-year occurrence.
+DateTime? occurrenceInYear(RecurrenceParams params, int year) {
+  switch (params.type) {
+    case RecurrenceType.yearly:
+      final day = params.day!;
+      final month = params.month!;
+      return DateTime(year, month, day.clamp(1, _daysInMonth(year, month)));
+
+    case RecurrenceType.lunarYearly:
+      final day = params.day!;
+      final month = params.month!;
+      for (final lunarYear in [year, year - 1]) {
+        final solar = LunarConverter.lunarToSolar(lunarYear, month, day);
+        if (solar.year == year) return solar;
+      }
+      return null;
+
+    default:
+      return null;
   }
 }
