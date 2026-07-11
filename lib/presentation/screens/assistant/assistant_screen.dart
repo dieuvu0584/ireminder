@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
@@ -34,9 +35,9 @@ class _AssistantScreenState extends ConsumerState<AssistantScreen> {
       await ref.read(aiChatActionsProvider).ask(question);
     } on AiProviderException catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(e.userMessage)),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(e.userMessage)));
       }
     } catch (_) {
       // Non-provider failures (e.g. secure storage read for the API key
@@ -125,15 +126,12 @@ class _DisabledState extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 4),
-            Text(
-              l10n.assistantDisabledBody,
-              textAlign: TextAlign.center,
-            ),
+            Text(l10n.assistantDisabledBody, textAlign: TextAlign.center),
             const SizedBox(height: 16),
             FilledButton(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const SettingsScreen()),
-              ),
+              onPressed: () => Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const SettingsScreen())),
               child: Text(l10n.assistantOpenSettings),
             ),
           ],
@@ -212,12 +210,23 @@ class _ChatBody extends ConsumerWidget {
                       decoration: BoxDecoration(
                         color: isUser
                             ? Theme.of(context).colorScheme.primaryContainer
-                            : Theme.of(context)
-                                .colorScheme
-                                .surfaceContainerHighest,
+                            : Theme.of(
+                                context,
+                              ).colorScheme.surfaceContainerHighest,
                         borderRadius: BorderRadius.circular(16),
                       ),
-                      child: Text(m.content),
+                      child: isUser
+                          ? Text(m.content)
+                          : MarkdownBody(
+                              data: m.content,
+                              selectable: true,
+                              styleSheet:
+                                  MarkdownStyleSheet.fromTheme(
+                                    Theme.of(context),
+                                  ).copyWith(
+                                    p: Theme.of(context).textTheme.bodyMedium,
+                                  ),
+                            ),
                     ),
                   );
                 },

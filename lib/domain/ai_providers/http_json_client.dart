@@ -22,12 +22,14 @@ class HttpJsonClient {
       request.add(utf8.encode(jsonEncode(body)));
 
       final response = await request.close().timeout(
-            const Duration(seconds: 45),
-          );
+        const Duration(seconds: 45),
+      );
       final responseBody = await response.transform(utf8.decoder).join();
 
       if (response.statusCode < 200 || response.statusCode >= 300) {
-        throw AiProviderException(_mapHttpError(response.statusCode));
+        throw AiProviderException(
+          _mapHttpError(response.statusCode, responseBody),
+        );
       }
 
       final decoded = jsonDecode(responseBody);
@@ -50,15 +52,32 @@ class HttpJsonClient {
     }
   }
 
-  static String _mapHttpError(int statusCode) {
+  static String _mapHttpError(int statusCode, String responseBody) {
     switch (statusCode) {
       case 401:
       case 403:
         return 'Invalid API key. Check it in Settings.';
       case 429:
-        return 'Rate limit or quota exceeded. Try again later.';
+        return _isQuotaError(responseBody)
+            ? 'Out of quota: this API key has no usable credits/billing '
+                  'left. Add billing or a payment method on the provider '
+                  'account, then try again.'
+            : 'Rate limit exceeded — too many requests too quickly. '
+                  'Wait a bit and try again.';
       default:
         return 'AI provider returned an error ($statusCode).';
     }
+  }
+
+  /// OpenAI/Anthropic/Gemini all use HTTP 429 for both "too many requests
+  /// per minute" (transient) and "no credits/billing left" (needs the user
+  /// to act on their provider account) — the status code alone can't tell
+  /// them apart, so this sniffs the error body's type/code/message for the
+  /// quota-exhaustion signal each provider actually emits.
+  static bool _isQuotaError(String responseBody) {
+    final lower = responseBody.toLowerCase();
+    return lower.contains('insufficient_quota') ||
+        lower.contains('exceeded your current quota') ||
+        lower.contains('billing');
   }
 }
