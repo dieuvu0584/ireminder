@@ -18,9 +18,9 @@ void main() {
 
   tearDown(() => db.close());
 
-  test('onCreate seeds exactly the 7 default categories', () async {
+  test('onCreate seeds exactly the 8 default categories', () async {
     final all = await categories.getAll();
-    expect(all, hasLength(7));
+    expect(all, hasLength(8));
     expect(all.every((c) => c.isSystemDefault), isTrue);
   });
 

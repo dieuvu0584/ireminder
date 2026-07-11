@@ -24,6 +24,7 @@ const List<(String name, String icon, String color)> kDefaultCategories = [
   ('Công việc', 'work', '#6366F1'),
   ('Gia đình nhỏ', 'favorite', '#EC4899'),
   ('Dã ngoại & sự kiện', 'hiking', '#F59E0B'),
+  ('Sức khỏe', 'favorite', '#22C55E'),
 ];
 
 @DriftDatabase(
