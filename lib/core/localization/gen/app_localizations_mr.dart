@@ -466,7 +466,7 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'डीफॉल्टनुसार बंद. सहाय्यकाला दिसाव्यात असं वाटणाऱ्या श्रेणीच फक्त सुरू करा — बाकी काहीही पाठवलं जात नाही.';
+      'वित्त वगळता सर्व श्रेण्या डीफॉल्टनुसार शेअर केल्या जातात — सहाय्यकाला दिसू नयेत असे वाटणाऱ्या बंद करा.';
 
   @override
   String get settingsAiClearHistory => 'चॅट इतिहास साफ करा';

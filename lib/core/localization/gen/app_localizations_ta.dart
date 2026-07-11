@@ -470,7 +470,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'இயல்பாக அணைக்கப்பட்டுள்ளது. உதவியாளர் பார்க்க வேண்டும் என நீங்கள் விரும்பும் வகைகளை மட்டும் இயக்கவும் — வேறு எதுவும் அனுப்பப்படாது.';
+      'நிதி தவிர அனைத்து வகைகளும் இயல்பாகவே பகிரப்படும் — உதவியாளர் பார்க்க வேண்டாம் என நினைப்பவற்றை அணைக்கவும்.';
 
   @override
   String get settingsAiClearHistory => 'அரட்டை வரலாற்றை அழி';

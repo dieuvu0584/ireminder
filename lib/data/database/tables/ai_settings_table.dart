@@ -11,11 +11,13 @@ class AiSettings extends Table {
   TextColumn get modelName => text().nullable()();
   TextColumn get apiKeyEncrypted => text().nullable()();
 
-  /// JSON array of category ids allowed into the AI context. Starts empty
-  /// (nothing shared) rather than guessing which categories are
-  /// "sensitive" by name — category names are free text the user can
-  /// rename, so name-matching would be unreliable. The user opts categories
-  /// in explicitly in Settings > Assistant.
+  /// JSON array of category ids allowed into the AI context. Defaults to
+  /// "[]" here only as the column-level fallback (e.g. for rows that
+  /// bypass the app's own seeding); the app's actual initial value —
+  /// every default category except Finance — is set explicitly at
+  /// account creation in AppDatabase.onCreate, keyed by category id
+  /// rather than name so a rename doesn't change what's shared. The user
+  /// can adjust the set anytime in Settings > Assistant.
   TextColumn get allowedCategoryIds =>
       text().withDefault(const Constant('[]'))();
 

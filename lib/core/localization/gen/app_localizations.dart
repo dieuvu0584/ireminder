@@ -1039,7 +1039,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsAiAllowedCategoriesHint.
   ///
   /// In en, this message translates to:
-  /// **'Off by default. Turn on only the categories you want the assistant to see — nothing else is ever sent.'**
+  /// **'All categories except Finance are shared by default — turn off any you don\'t want the assistant to see.'**
   String get settingsAiAllowedCategoriesHint;
 
   /// No description provided for @settingsAiClearHistory.

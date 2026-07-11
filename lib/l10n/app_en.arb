@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Where do I get a key?",
   "settingsAiApiKeySaved": "API key saved",
   "settingsAiAllowedCategories": "Categories the assistant can read",
-  "settingsAiAllowedCategoriesHint": "Off by default. Turn on only the categories you want the assistant to see — nothing else is ever sent.",
+  "settingsAiAllowedCategoriesHint": "All categories except Finance are shared by default — turn off any you don't want the assistant to see.",
   "settingsAiClearHistory": "Clear chat history",
   "settingsAiClearHistoryConfirmTitle": "Clear chat history?",
   "settingsAiClearHistoryConfirmBody": "This deletes every question and answer stored on this device. This cannot be undone.",

@@ -466,7 +466,7 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Av som standard. Slå bare på kategoriene du vil at assistenten skal se — ingenting annet blir noensinne sendt.';
+      'Alle kategorier unntatt Økonomi deles som standard — slå av de du ikke vil at assistenten skal se.';
 
   @override
   String get settingsAiClearHistory => 'Slett samtalehistorikk';

@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Dove trovo una chiave?",
   "settingsAiApiKeySaved": "Chiave API salvata",
   "settingsAiAllowedCategories": "Categorie leggibili dall'assistente",
-  "settingsAiAllowedCategoriesHint": "Disattivate per impostazione predefinita. Attiva solo le categorie che vuoi far vedere all'assistente — nient'altro viene mai inviato.",
+  "settingsAiAllowedCategoriesHint": "Tutte le categorie tranne Finanze sono condivise per impostazione predefinita — disattiva quelle che non vuoi che l'assistente veda.",
   "settingsAiClearHistory": "Cancella cronologia chat",
   "settingsAiClearHistoryConfirmTitle": "Cancellare la cronologia chat?",
   "settingsAiClearHistoryConfirmBody": "Verranno eliminate tutte le domande e risposte salvate su questo dispositivo. Non potrai annullare l'operazione.",

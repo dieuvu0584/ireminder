@@ -471,7 +471,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Nonaktif secara default. Aktifkan hanya kategori yang ingin kamu tampilkan ke asisten — tidak ada yang lain yang pernah dikirim.';
+      'Semua kategori kecuali Keuangan dibagikan secara default — matikan yang tidak ingin dilihat asisten.';
 
   @override
   String get settingsAiClearHistory => 'Hapus riwayat obrolan';

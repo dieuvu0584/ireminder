@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Nitapata wapi ufunguo?",
   "settingsAiApiKeySaved": "Ufunguo wa API umehifadhiwa",
   "settingsAiAllowedCategories": "Jamii ambazo msaidizi anaweza kusoma",
-  "settingsAiAllowedCategoriesHint": "Zimezimwa kwa chaguo-msingi. Washa tu jamii unazotaka msaidizi aone — hakuna kingine kinachotumwa.",
+  "settingsAiAllowedCategoriesHint": "Kategoria zote isipokuwa Fedha zinashirikiwa kwa chaguo-msingi — zima zile usizotaka msaidizi aone.",
   "settingsAiClearHistory": "Futa historia ya mazungumzo",
   "settingsAiClearHistoryConfirmTitle": "Futa historia ya mazungumzo?",
   "settingsAiClearHistoryConfirmBody": "Hii itafuta kila swali na jibu lililohifadhiwa kwenye kifaa hiki. Haiwezi kutenduliwa.",

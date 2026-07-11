@@ -467,7 +467,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Вимкнено за замовчуванням. Увімкніть лише ті категорії, які хочете показати асистенту — більше нічого не надсилається.';
+      'Усі категорії, крім «Фінанси», спільні за умовчанням — вимкніть ті, які асистент не повинен бачити.';
 
   @override
   String get settingsAiClearHistory => 'Очистити історію чату';

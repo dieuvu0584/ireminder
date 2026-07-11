@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "איפה משיגים מפתח?",
   "settingsAiApiKeySaved": "מפתח ה-API נשמר",
   "settingsAiAllowedCategories": "קטגוריות שהעוזר רשאי לקרוא",
-  "settingsAiAllowedCategoriesHint": "כבוי כברירת מחדל. הפעילו רק את הקטגוריות שברצונכם שהעוזר יראה — שום דבר אחר לא נשלח לעולם.",
+  "settingsAiAllowedCategoriesHint": "כל הקטגוריות מלבד כספים משותפות כברירת מחדל — כבה את אלה שלא תרצה שהעוזר יראה.",
   "settingsAiClearHistory": "מחיקת היסטוריית הצ'אט",
   "settingsAiClearHistoryConfirmTitle": "למחוק את היסטוריית הצ'אט?",
   "settingsAiClearHistoryConfirmBody": "פעולה זו תמחק את כל השאלות והתשובות השמורות במכשיר זה. לא ניתן לבטל פעולה זו.",

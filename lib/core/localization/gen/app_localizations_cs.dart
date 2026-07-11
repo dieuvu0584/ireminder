@@ -468,7 +468,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Ve výchozím nastavení vypnuto. Zapněte pouze kategorie, které chcete asistentovi zpřístupnit — nic jiného se nikdy neodesílá.';
+      'Ve výchozím nastavení jsou sdíleny všechny kategorie kromě Financí — vypněte ty, které asistent nemá vidět.';
 
   @override
   String get settingsAiClearHistory => 'Vymazat historii konverzace';

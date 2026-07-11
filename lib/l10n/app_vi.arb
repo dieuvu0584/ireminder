@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Lấy key ở đâu?",
   "settingsAiApiKeySaved": "Đã lưu API key",
   "settingsAiAllowedCategories": "Danh mục cho phép Trợ lý đọc",
-  "settingsAiAllowedCategoriesHint": "Mặc định tắt hết. Chỉ bật những danh mục bạn muốn Trợ lý nhìn thấy — không có gì khác được gửi đi.",
+  "settingsAiAllowedCategoriesHint": "Mặc định đã bật hết, trừ danh mục Tài chính — tắt bớt những danh mục bạn không muốn Trợ lý nhìn thấy.",
   "settingsAiClearHistory": "Xóa lịch sử chat",
   "settingsAiClearHistoryConfirmTitle": "Xóa lịch sử chat?",
   "settingsAiClearHistoryConfirmBody": "Toàn bộ câu hỏi và câu trả lời lưu trên máy sẽ bị xóa. Không thể hoàn tác.",

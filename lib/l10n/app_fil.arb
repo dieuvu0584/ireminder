@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Saan ako kukuha ng key?",
   "settingsAiApiKeySaved": "Na-save ang API key",
   "settingsAiAllowedCategories": "Mga kategoryang puwedeng basahin ng Katulong",
-  "settingsAiAllowedCategoriesHint": "Naka-off bilang default. I-on lang ang mga kategoryang gusto mong makita ng Katulong — wala nang ibang ipapadala.",
+  "settingsAiAllowedCategoriesHint": "Lahat ng kategorya maliban sa Pananalapi ay ibinabahagi bilang default — i-off ang mga ayaw mong makita ng katulong.",
   "settingsAiClearHistory": "I-clear ang chat history",
   "settingsAiClearHistoryConfirmTitle": "I-clear ang chat history?",
   "settingsAiClearHistoryConfirmBody": "Buburahin nito ang lahat ng tanong at sagot na naka-save sa device na ito. Hindi na ito maaaring bawiin.",

@@ -467,7 +467,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Slået fra som standard. Slå kun de kategorier til, som du vil give assistenten adgang til — intet andet bliver nogensinde sendt.';
+      'Alle kategorier undtagen Økonomi deles som standard — slå dem fra, du ikke vil have, at assistenten ser.';
 
   @override
   String get settingsAiClearHistory => 'Ryd chathistorik';

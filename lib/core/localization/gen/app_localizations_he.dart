@@ -464,7 +464,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'כבוי כברירת מחדל. הפעילו רק את הקטגוריות שברצונכם שהעוזר יראה — שום דבר אחר לא נשלח לעולם.';
+      'כל הקטגוריות מלבד כספים משותפות כברירת מחדל — כבה את אלה שלא תרצה שהעוזר יראה.';
 
   @override
   String get settingsAiClearHistory => 'מחיקת היסטוריית הצ\'אט';

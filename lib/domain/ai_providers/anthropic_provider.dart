@@ -12,6 +12,13 @@ class AnthropicProvider implements AiProvider {
   String get defaultModel => 'claude-haiku-4-5';
 
   @override
+  List<String> get commonModels => const [
+        'claude-haiku-4-5',
+        'claude-sonnet-5',
+        'claude-opus-4-8',
+      ];
+
+  @override
   String get apiKeyHelpUrl => 'https://console.anthropic.com/settings/keys';
 
   @override

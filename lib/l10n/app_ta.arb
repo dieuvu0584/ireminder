@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "கீ எங்கே பெறுவது?",
   "settingsAiApiKeySaved": "API கீ சேமிக்கப்பட்டது",
   "settingsAiAllowedCategories": "உதவியாளர் படிக்கக்கூடிய வகைகள்",
-  "settingsAiAllowedCategoriesHint": "இயல்பாக அணைக்கப்பட்டுள்ளது. உதவியாளர் பார்க்க வேண்டும் என நீங்கள் விரும்பும் வகைகளை மட்டும் இயக்கவும் — வேறு எதுவும் அனுப்பப்படாது.",
+  "settingsAiAllowedCategoriesHint": "நிதி தவிர அனைத்து வகைகளும் இயல்பாகவே பகிரப்படும் — உதவியாளர் பார்க்க வேண்டாம் என நினைப்பவற்றை அணைக்கவும்.",
   "settingsAiClearHistory": "அரட்டை வரலாற்றை அழி",
   "settingsAiClearHistoryConfirmTitle": "அரட்டை வரலாற்றை அழிக்கவா?",
   "settingsAiClearHistoryConfirmBody": "இது இந்த சாதனத்தில் சேமிக்கப்பட்டுள்ள ஒவ்வொரு கேள்வியையும் பதிலையும் நீக்கிவிடும். இதை மீண்டும் செயல்தவிர்க்க முடியாது.",

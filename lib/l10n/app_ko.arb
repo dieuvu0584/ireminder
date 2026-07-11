@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "키는 어디서 받나요?",
   "settingsAiApiKeySaved": "API 키가 저장되었어요",
   "settingsAiAllowedCategories": "어시스턴트가 볼 수 있는 카테고리",
-  "settingsAiAllowedCategoriesHint": "기본적으로 모두 꺼져 있어요. 어시스턴트에게 보여주고 싶은 카테고리만 켜세요 — 그 외에는 아무것도 전송되지 않아요.",
+  "settingsAiAllowedCategoriesHint": "재정을 제외한 모든 카테고리가 기본적으로 공유됩니다 — 어시스턴트에게 보이고 싶지 않은 항목은 꺼주세요.",
   "settingsAiClearHistory": "대화 기록 삭제",
   "settingsAiClearHistoryConfirmTitle": "대화 기록을 삭제할까요?",
   "settingsAiClearHistoryConfirmBody": "이 기기에 저장된 모든 질문과 답변이 삭제됩니다. 이 작업은 되돌릴 수 없어요.",

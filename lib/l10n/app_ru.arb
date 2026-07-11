@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Где взять ключ?",
   "settingsAiApiKeySaved": "API-ключ сохранён",
   "settingsAiAllowedCategories": "Категории, доступные ассистенту",
-  "settingsAiAllowedCategoriesHint": "По умолчанию всё выключено. Включите только те категории, которые хотите показать ассистенту — больше ничего не передаётся.",
+  "settingsAiAllowedCategoriesHint": "По умолчанию открыты все категории, кроме «Финансы», — отключите те, которые не хотите показывать ассистенту.",
   "settingsAiClearHistory": "Очистить историю чата",
   "settingsAiClearHistoryConfirmTitle": "Очистить историю чата?",
   "settingsAiClearHistoryConfirmBody": "Все вопросы и ответы, сохранённые на этом устройстве, будут удалены. Это действие нельзя отменить.",

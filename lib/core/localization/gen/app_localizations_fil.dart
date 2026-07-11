@@ -469,7 +469,7 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Naka-off bilang default. I-on lang ang mga kategoryang gusto mong makita ng Katulong — wala nang ibang ipapadala.';
+      'Lahat ng kategorya maliban sa Pananalapi ay ibinabahagi bilang default — i-off ang mga ayaw mong makita ng katulong.';
 
   @override
   String get settingsAiClearHistory => 'I-clear ang chat history';

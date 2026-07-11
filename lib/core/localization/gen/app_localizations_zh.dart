@@ -458,7 +458,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      '默认全部关闭。仅开启你希望助手看到的分类——不会发送其他任何内容。';
+      '默认已开启除财务外的所有分类——关闭你不想让助手看到的分类。';
 
   @override
   String get settingsAiClearHistory => '清除聊天记录';

@@ -461,7 +461,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      '기본적으로 모두 꺼져 있어요. 어시스턴트에게 보여주고 싶은 카테고리만 켜세요 — 그 외에는 아무것도 전송되지 않아요.';
+      '재정을 제외한 모든 카테고리가 기본적으로 공유됩니다 — 어시스턴트에게 보이고 싶지 않은 항목은 꺼주세요.';
 
   @override
   String get settingsAiClearHistory => '대화 기록 삭제';

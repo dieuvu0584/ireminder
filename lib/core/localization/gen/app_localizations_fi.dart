@@ -469,7 +469,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Pois päältä oletuksena. Ota käyttöön vain ne kategoriat, jotka haluat avustajan näkevän — mitään muuta ei koskaan lähetetä.';
+      'Kaikki kategoriat Taloutta lukuun ottamatta jaetaan oletuksena — poista käytöstä ne, joita et halua avustajan näkevän.';
 
   @override
   String get settingsAiClearHistory => 'Tyhjennä keskusteluhistoria';

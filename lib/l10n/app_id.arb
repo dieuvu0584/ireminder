@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Di mana saya bisa mendapatkan kunci?",
   "settingsAiApiKeySaved": "Kunci API tersimpan",
   "settingsAiAllowedCategories": "Kategori yang boleh dibaca asisten",
-  "settingsAiAllowedCategoriesHint": "Nonaktif secara default. Aktifkan hanya kategori yang ingin kamu tampilkan ke asisten — tidak ada yang lain yang pernah dikirim.",
+  "settingsAiAllowedCategoriesHint": "Semua kategori kecuali Keuangan dibagikan secara default — matikan yang tidak ingin dilihat asisten.",
   "settingsAiClearHistory": "Hapus riwayat obrolan",
   "settingsAiClearHistoryConfirmTitle": "Hapus riwayat obrolan?",
   "settingsAiClearHistoryConfirmBody": "Ini akan menghapus semua pertanyaan dan jawaban yang tersimpan di perangkat ini. Tindakan ini tidak dapat dibatalkan.",

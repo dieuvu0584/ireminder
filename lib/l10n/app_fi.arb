@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Mistä saan avaimen?",
   "settingsAiApiKeySaved": "API-avain tallennettu",
   "settingsAiAllowedCategories": "Kategoriat, joita avustaja saa lukea",
-  "settingsAiAllowedCategoriesHint": "Pois päältä oletuksena. Ota käyttöön vain ne kategoriat, jotka haluat avustajan näkevän — mitään muuta ei koskaan lähetetä.",
+  "settingsAiAllowedCategoriesHint": "Kaikki kategoriat Taloutta lukuun ottamatta jaetaan oletuksena — poista käytöstä ne, joita et halua avustajan näkevän.",
   "settingsAiClearHistory": "Tyhjennä keskusteluhistoria",
   "settingsAiClearHistoryConfirmTitle": "Tyhjennetäänkö keskusteluhistoria?",
   "settingsAiClearHistoryConfirmBody": "Tämä poistaa kaikki laitteelle tallennetut kysymykset ja vastaukset. Tätä ei voi perua.",

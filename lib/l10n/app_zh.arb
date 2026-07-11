@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "去哪里获取密钥？",
   "settingsAiApiKeySaved": "API 密钥已保存",
   "settingsAiAllowedCategories": "允许助手读取的分类",
-  "settingsAiAllowedCategoriesHint": "默认全部关闭。仅开启你希望助手看到的分类——不会发送其他任何内容。",
+  "settingsAiAllowedCategoriesHint": "默认已开启除财务外的所有分类——关闭你不想让助手看到的分类。",
   "settingsAiClearHistory": "清除聊天记录",
   "settingsAiClearHistoryConfirmTitle": "清除聊天记录？",
   "settingsAiClearHistoryConfirmBody": "此设备上保存的所有问题和回答都将被删除，且无法恢复。",

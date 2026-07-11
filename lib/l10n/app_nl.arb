@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Waar vind ik een sleutel?",
   "settingsAiApiKeySaved": "API-sleutel opgeslagen",
   "settingsAiAllowedCategories": "Categorieën die de assistent mag lezen",
-  "settingsAiAllowedCategoriesHint": "Standaard uitgeschakeld. Schakel alleen de categorieën in die de assistent mag zien — er wordt nooit iets anders verzonden.",
+  "settingsAiAllowedCategoriesHint": "Standaard worden alle categorieën gedeeld, behalve Financiën — schakel uit wat de assistent niet mag zien.",
   "settingsAiClearHistory": "Chatgeschiedenis wissen",
   "settingsAiClearHistoryConfirmTitle": "Chatgeschiedenis wissen?",
   "settingsAiClearHistoryConfirmBody": "Hiermee worden alle vragen en antwoorden op dit apparaat verwijderd. Dit kan niet ongedaan worden gemaakt.",

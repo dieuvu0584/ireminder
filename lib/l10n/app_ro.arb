@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "De unde obțin o cheie?",
   "settingsAiApiKeySaved": "Cheia API a fost salvată",
   "settingsAiAllowedCategories": "Categorii pe care asistentul le poate citi",
-  "settingsAiAllowedCategoriesHint": "Dezactivat implicit. Activează doar categoriile pe care vrei ca asistentul să le vadă — nimic altceva nu este trimis vreodată.",
+  "settingsAiAllowedCategoriesHint": "Toate categoriile, cu excepția Finanțelor, sunt partajate implicit — dezactivează-le pe cele pe care nu vrei ca asistentul să le vadă.",
   "settingsAiClearHistory": "Șterge istoricul conversației",
   "settingsAiClearHistoryConfirmTitle": "Ștergi istoricul conversației?",
   "settingsAiClearHistoryConfirmBody": "Aceasta șterge toate întrebările și răspunsurile stocate pe acest dispozitiv. Această acțiune nu poate fi anulată.",

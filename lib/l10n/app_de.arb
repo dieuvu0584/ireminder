@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Wo bekomme ich einen Schlüssel?",
   "settingsAiApiKeySaved": "API-Schlüssel gespeichert",
   "settingsAiAllowedCategories": "Kategorien, die der Assistent lesen darf",
-  "settingsAiAllowedCategoriesHint": "Standardmäßig aus. Aktiviere nur die Kategorien, die der Assistent sehen soll — nichts anderes wird je gesendet.",
+  "settingsAiAllowedCategoriesHint": "Standardmäßig sind alle Kategorien außer Finanzen freigegeben — schalte aus, was der Assistent nicht sehen soll.",
   "settingsAiClearHistory": "Chatverlauf löschen",
   "settingsAiClearHistoryConfirmTitle": "Chatverlauf löschen?",
   "settingsAiClearHistoryConfirmBody": "Alle auf diesem Gerät gespeicherten Fragen und Antworten werden gelöscht. Dies kann nicht rückgängig gemacht werden.",

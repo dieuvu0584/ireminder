@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "¿Dónde consigo una clave?",
   "settingsAiApiKeySaved": "Clave API guardada",
   "settingsAiAllowedCategories": "Categorías que el asistente puede leer",
-  "settingsAiAllowedCategoriesHint": "Desactivado por defecto. Activa solo las categorías que quieras que el asistente vea — no se envía nada más.",
+  "settingsAiAllowedCategoriesHint": "Todas las categorías excepto Finanzas se comparten de forma predeterminada — desactiva las que no quieras que vea el asistente.",
   "settingsAiClearHistory": "Borrar historial de chat",
   "settingsAiClearHistoryConfirmTitle": "¿Borrar historial de chat?",
   "settingsAiClearHistoryConfirmBody": "Se eliminarán todas las preguntas y respuestas guardadas en este dispositivo. Esta acción no se puede deshacer.",

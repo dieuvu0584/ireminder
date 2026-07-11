@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "कुंजी कहाँ से मिलेगी?",
   "settingsAiApiKeySaved": "API कुंजी सेव हो गई",
   "settingsAiAllowedCategories": "जिन श्रेणियों को सहायक पढ़ सकता है",
-  "settingsAiAllowedCategoriesHint": "डिफ़ॉल्ट रूप से बंद। केवल वही श्रेणियाँ चालू करें जिन्हें आप सहायक को दिखाना चाहते हैं — इसके अलावा कुछ भी कभी नहीं भेजा जाता।",
+  "settingsAiAllowedCategoriesHint": "वित्त को छोड़कर सभी श्रेणियाँ डिफ़ॉल्ट रूप से साझा की जाती हैं — जिन्हें आप सहायक को नहीं दिखाना चाहते उन्हें बंद करें।",
   "settingsAiClearHistory": "चैट इतिहास साफ़ करें",
   "settingsAiClearHistoryConfirmTitle": "चैट इतिहास साफ़ करें?",
   "settingsAiClearHistoryConfirmBody": "इस डिवाइस पर सेव हर सवाल और जवाब हटा दिया जाएगा। इसे वापस नहीं लाया जा सकता।",

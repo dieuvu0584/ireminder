@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Hvor finder jeg en nøgle?",
   "settingsAiApiKeySaved": "API-nøgle gemt",
   "settingsAiAllowedCategories": "Kategorier assistenten må læse",
-  "settingsAiAllowedCategoriesHint": "Slået fra som standard. Slå kun de kategorier til, som du vil give assistenten adgang til — intet andet bliver nogensinde sendt.",
+  "settingsAiAllowedCategoriesHint": "Alle kategorier undtagen Økonomi deles som standard — slå dem fra, du ikke vil have, at assistenten ser.",
   "settingsAiClearHistory": "Ryd chathistorik",
   "settingsAiClearHistoryConfirmTitle": "Ryd chathistorik?",
   "settingsAiClearHistoryConfirmBody": "Dette sletter alle spørgsmål og svar, der er gemt på denne enhed. Dette kan ikke fortrydes.",

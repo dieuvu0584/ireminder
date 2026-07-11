@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Hvor finner jeg en nøkkel?",
   "settingsAiApiKeySaved": "API-nøkkel lagret",
   "settingsAiAllowedCategories": "Kategorier assistenten kan lese",
-  "settingsAiAllowedCategoriesHint": "Av som standard. Slå bare på kategoriene du vil at assistenten skal se — ingenting annet blir noensinne sendt.",
+  "settingsAiAllowedCategoriesHint": "Alle kategorier unntatt Økonomi deles som standard — slå av de du ikke vil at assistenten skal se.",
   "settingsAiClearHistory": "Slett samtalehistorikk",
   "settingsAiClearHistoryConfirmTitle": "Slette samtalehistorikk?",
   "settingsAiClearHistoryConfirmBody": "Dette sletter alle spørsmål og svar lagret på denne enheten. Dette kan ikke angres.",

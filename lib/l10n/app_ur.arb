@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "کلید کہاں سے حاصل کروں؟",
   "settingsAiApiKeySaved": "API کلید محفوظ ہو گئی",
   "settingsAiAllowedCategories": "وہ زمرے جنہیں اسسٹنٹ دیکھ سکتا ہے",
-  "settingsAiAllowedCategoriesHint": "ڈیفالٹ طور پر بند ہے۔ صرف وہی زمرے فعال کریں جنہیں آپ اسسٹنٹ کو دکھانا چاہتے ہیں — اس کے علاوہ کچھ نہیں بھیجا جاتا۔",
+  "settingsAiAllowedCategoriesHint": "مالیات کے علاوہ تمام زمرے پہلے سے شیئر کیے جاتے ہیں — جنہیں آپ اسسٹنٹ کو نہیں دکھانا چاہتے انہیں بند کر دیں۔",
   "settingsAiClearHistory": "چیٹ کی تاریخ صاف کریں",
   "settingsAiClearHistoryConfirmTitle": "کیا چیٹ کی تاریخ صاف کریں؟",
   "settingsAiClearHistoryConfirmBody": "اس سے اس ڈیوائس پر محفوظ ہر سوال اور جواب حذف ہو جائے گا۔ اسے واپس نہیں لایا جا سکتا۔",

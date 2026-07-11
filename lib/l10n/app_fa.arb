@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "کلید را از کجا بگیرم؟",
   "settingsAiApiKeySaved": "کلید API ذخیره شد",
   "settingsAiAllowedCategories": "دسته‌بندی‌هایی که دستیار می‌تواند ببیند",
-  "settingsAiAllowedCategoriesHint": "به‌طور پیش‌فرض غیرفعال است. فقط دسته‌بندی‌هایی را فعال کنید که می‌خواهید دستیار ببیند — چیز دیگری هرگز ارسال نمی‌شود.",
+  "settingsAiAllowedCategoriesHint": "همه دسته‌ها به‌جز امور مالی به‌طور پیش‌فرض به اشتراک گذاشته می‌شوند — هرکدام را که نمی‌خواهید دستیار ببیند خاموش کنید.",
   "settingsAiClearHistory": "پاک کردن تاریخچه گفتگو",
   "settingsAiClearHistoryConfirmTitle": "تاریخچه گفتگو پاک شود؟",
   "settingsAiClearHistoryConfirmBody": "این کار همه سؤال‌ها و پاسخ‌های ذخیره‌شده روی این دستگاه را حذف می‌کند. این کار قابل بازگشت نیست.",

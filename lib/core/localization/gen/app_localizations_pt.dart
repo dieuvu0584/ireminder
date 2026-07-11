@@ -468,7 +468,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Desativado por padrão. Ative apenas as categorias que quiser que o assistente veja — nada mais é enviado.';
+      'Todas as categorias, exceto Finanças, são compartilhadas por padrão — desative as que não quiser que o assistente veja.';
 
   @override
   String get settingsAiClearHistory => 'Limpar histórico de conversas';

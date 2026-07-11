@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:ui' show PlatformDispatcher;
 
@@ -68,9 +69,20 @@ class AppDatabase extends _$AppDatabase {
   MigrationStrategy get migration => MigrationStrategy(
         onCreate: (Migrator m) async {
           await m.createAll();
-          await _seedDefaultCategories();
+          final categoryIds = await _seedDefaultCategories();
           await into(appSettings).insert(const AppSettingsCompanion());
-          await into(aiSettings).insert(const AiSettingsCompanion());
+          // Default to sharing every category with the AI assistant
+          // except Finance (kDefaultCategories[3]) — a usable assistant
+          // out of the box, while keeping financial data opted-out until
+          // the user explicitly turns it on themselves in Settings.
+          final financeId = categoryIds[3];
+          final allowedIds =
+              categoryIds.where((id) => id != financeId).toList();
+          await into(aiSettings).insert(
+            AiSettingsCompanion(
+              allowedCategoryIds: Value(jsonEncode(allowedIds)),
+            ),
+          );
         },
         onUpgrade: (Migrator m, int from, int to) async {
           if (from < 2) {
@@ -90,9 +102,15 @@ class AppDatabase extends _$AppDatabase {
         },
       );
 
-  Future<void> _seedDefaultCategories() async {
+  /// Returns the inserted (or, if seeding was already done, existing)
+  /// default category ids in [kDefaultCategories] order, so callers can
+  /// key off a specific default (e.g. Finance) without depending on its
+  /// name — which is locale-dependent and freely renameable by the user.
+  Future<List<int>> _seedDefaultCategories() async {
     final existing = await select(categories).get();
-    if (existing.isNotEmpty) return;
+    if (existing.isNotEmpty) {
+      return existing.map((c) => c.id).toList();
+    }
     final now = DateTime.now();
     // Runs on first DB access, before app.dart has resolved+saved a
     // locale into settings (that read is itself what triggers this), so
@@ -102,9 +120,10 @@ class AppDatabase extends _$AppDatabase {
     // actually show.
     final locale = resolveInitialLocale(PlatformDispatcher.instance.locale);
     final l10n = lookupAppLocalizations(locale);
+    final ids = <int>[];
     for (var i = 0; i < kDefaultCategories.length; i++) {
       final (nameOf, icon, color) = kDefaultCategories[i];
-      await into(categories).insert(
+      final id = await into(categories).insert(
         CategoriesCompanion.insert(
           name: nameOf(l10n),
           icon: icon,
@@ -114,7 +133,9 @@ class AppDatabase extends _$AppDatabase {
           createdAt: now,
         ),
       );
+      ids.add(id);
     }
+    return ids;
   }
 }
 

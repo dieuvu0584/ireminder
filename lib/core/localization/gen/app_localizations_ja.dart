@@ -461,7 +461,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'デフォルトではすべてオフです。アシスタントに見せたいカテゴリだけをオンにしてください。それ以外の情報は一切送信されません。';
+      '「財務」以外のすべてのカテゴリーはデフォルトで共有されます — アシスタントに見せたくないものはオフにしてください。';
 
   @override
   String get settingsAiClearHistory => 'チャット履歴を削除';

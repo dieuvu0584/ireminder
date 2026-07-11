@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ireminder/data/database/app_database.dart';
@@ -22,6 +24,24 @@ void main() {
     final all = await categories.getAll();
     expect(all, hasLength(8));
     expect(all.every((c) => c.isSystemDefault), isTrue);
+  });
+
+  test('AI assistant defaults to allowing every category except Finance',
+      () async {
+    final all = await categories.getAll();
+    final financeCategory = all[3]; // kDefaultCategories[3] is Finance
+    final aiSettings = await db.select(db.aiSettings).getSingle();
+    final allowedIds =
+        (jsonDecode(aiSettings.allowedCategoryIds) as List).cast<int>().toSet();
+
+    expect(allowedIds, hasLength(7));
+    expect(allowedIds.contains(financeCategory.id), isFalse);
+    expect(
+      allowedIds,
+      containsAll(
+        all.where((c) => c.id != financeCategory.id).map((c) => c.id),
+      ),
+    );
   });
 
   test('delete() removes an empty category outright', () async {

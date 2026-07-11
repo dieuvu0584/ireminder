@@ -470,7 +470,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Standaard uitgeschakeld. Schakel alleen de categorieën in die de assistent mag zien — er wordt nooit iets anders verzonden.';
+      'Standaard worden alle categorieën gedeeld, behalve Financiën — schakel uit wat de assistent niet mag zien.';
 
   @override
   String get settingsAiClearHistory => 'Chatgeschiedenis wissen';

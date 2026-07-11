@@ -491,6 +491,17 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
   bool _obscureKey = true;
 
   @override
+  void initState() {
+    super.initState();
+    // DropdownMenu's onSelected only fires when picking a quick-pick entry
+    // — this also persists a manually-typed model name, since the field
+    // stays freely editable rather than constrained to the pick list.
+    _modelCtrl.addListener(() {
+      ref.read(aiSettingsActionsProvider).setModel(_modelCtrl.text);
+    });
+  }
+
+  @override
   void dispose() {
     _apiKeyCtrl.dispose();
     _modelCtrl.dispose();
@@ -580,11 +591,23 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
                 Padding(
                   padding:
                       const EdgeInsets.fromLTRB(16, 12, 16, 0),
-                  child: TextField(
+                  // DropdownMenu rather than a plain DropdownButton: it's
+                  // still a free-text field under the hood (via its own
+                  // controller), so picking a model from the quick-pick
+                  // list is convenient but never blocks typing a model
+                  // name the provider ships after commonModels goes stale.
+                  child: DropdownMenu<String>(
                     controller: _modelCtrl,
-                    decoration:
-                        InputDecoration(labelText: l10n.settingsAiModel),
-                    onChanged: (v) => actions.setModel(v),
+                    expandedInsets: EdgeInsets.zero,
+                    label: Text(l10n.settingsAiModel),
+                    enableFilter: true,
+                    requestFocusOnTap: true,
+                    onSelected: (v) {
+                      if (v != null) actions.setModel(v);
+                    },
+                    dropdownMenuEntries: provider.commonModels
+                        .map((m) => DropdownMenuEntry(value: m, label: m))
+                        .toList(),
                   ),
                 ),
                 Padding(

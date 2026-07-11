@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "من أين أحصل على المفتاح؟",
   "settingsAiApiKeySaved": "تم حفظ مفتاح API",
   "settingsAiAllowedCategories": "الفئات التي يمكن للمساعد قراءتها",
-  "settingsAiAllowedCategoriesHint": "معطّلة افتراضيًا. فعّل فقط الفئات التي تريد أن يطّلع عليها المساعد — لن يُرسل أي شيء آخر مطلقًا.",
+  "settingsAiAllowedCategoriesHint": "تتم مشاركة جميع الفئات باستثناء المالية بشكل افتراضي — أوقف تشغيل أي فئة لا تريد أن يراها المساعد.",
   "settingsAiClearHistory": "مسح سجل المحادثة",
   "settingsAiClearHistoryConfirmTitle": "هل تريد مسح سجل المحادثة؟",
   "settingsAiClearHistoryConfirmBody": "سيؤدي هذا إلى حذف جميع الأسئلة والأجوبة المخزّنة على هذا الجهاز. لا يمكن التراجع عن هذا الإجراء.",

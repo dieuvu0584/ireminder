@@ -470,7 +470,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Standardmäßig aus. Aktiviere nur die Kategorien, die der Assistent sehen soll — nichts anderes wird je gesendet.';
+      'Standardmäßig sind alle Kategorien außer Finanzen freigegeben — schalte aus, was der Assistent nicht sehen soll.';
 
   @override
   String get settingsAiClearHistory => 'Chatverlauf löschen';

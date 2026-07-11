@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "કી ક્યાંથી મળશે?",
   "settingsAiApiKeySaved": "API કી સાચવી",
   "settingsAiAllowedCategories": "શ્રેણીઓ જે સહાયક વાંચી શકે",
-  "settingsAiAllowedCategoriesHint": "ડિફોલ્ટ રીતે બંધ છે. ફક્ત તે શ્રેણીઓ ચાલુ કરો જે તમે સહાયકને બતાવવા માંગો છો — બીજું કંઈ ક્યારેય મોકલવામાં આવતું નથી.",
+  "settingsAiAllowedCategoriesHint": "નાણાં સિવાયની બધી શ્રેણીઓ ડિફૉલ્ટ રૂપે શેર થાય છે — સહાયકને ન બતાવવી હોય તે બંધ કરો.",
   "settingsAiClearHistory": "ચેટ ઇતિહાસ સાફ કરો",
   "settingsAiClearHistoryConfirmTitle": "ચેટ ઇતિહાસ સાફ કરવો છે?",
   "settingsAiClearHistoryConfirmBody": "આ આ ડિવાઇસ પર સંગ્રહિત દરેક પ્રશ્ન અને જવાબ કાઢી નાખશે. આ ક્રિયા પાછી લઈ શકાશે નહીં.",

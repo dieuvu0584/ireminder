@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Var hittar jag en nyckel?",
   "settingsAiApiKeySaved": "API-nyckel sparad",
   "settingsAiAllowedCategories": "Kategorier som assistenten får läsa",
-  "settingsAiAllowedCategoriesHint": "Avstängt som standard. Slå bara på de kategorier du vill att assistenten ska se — inget annat skickas någonsin.",
+  "settingsAiAllowedCategoriesHint": "Alla kategorier utom Ekonomi delas som standard — stäng av de du inte vill att assistenten ska se.",
   "settingsAiClearHistory": "Rensa chatthistorik",
   "settingsAiClearHistoryConfirmTitle": "Rensa chatthistorik?",
   "settingsAiClearHistoryConfirmBody": "Detta tar bort alla frågor och svar som är sparade på den här enheten. Detta kan inte ångras.",

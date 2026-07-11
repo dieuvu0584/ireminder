@@ -470,7 +470,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Desactivado por defecto. Activa solo las categorías que quieras que el asistente vea — no se envía nada más.';
+      'Todas las categorías excepto Finanzas se comparten de forma predeterminada — desactiva las que no quieras que vea el asistente.';
 
   @override
   String get settingsAiClearHistory => 'Borrar historial de chat';

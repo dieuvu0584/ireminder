@@ -469,7 +469,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Désactivé par défaut. N\'activez que les catégories que l\'assistant doit voir — rien d\'autre n\'est jamais envoyé.';
+      'Toutes les catégories sauf Finances sont partagées par défaut — désactivez celles que l\'assistant ne doit pas voir.';
 
   @override
   String get settingsAiClearHistory => 'Effacer l\'historique du chat';

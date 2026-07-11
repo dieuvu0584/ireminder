@@ -471,7 +471,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Alapértelmezetten kikapcsolva. Csak azokat a kategóriákat kapcsold be, amelyeket szeretnél, hogy az asszisztens lásson — semmi más nem kerül elküldésre.';
+      'Alapértelmezés szerint minden kategória megosztásra kerül a Pénzügyek kivételével — kapcsold ki, amit nem szeretnél, hogy az asszisztens lásson.';
 
   @override
   String get settingsAiClearHistory => 'Beszélgetési előzmények törlése';

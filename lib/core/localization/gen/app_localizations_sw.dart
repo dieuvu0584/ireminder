@@ -466,7 +466,7 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Zimezimwa kwa chaguo-msingi. Washa tu jamii unazotaka msaidizi aone — hakuna kingine kinachotumwa.';
+      'Kategoria zote isipokuwa Fedha zinashirikiwa kwa chaguo-msingi — zima zile usizotaka msaidizi aone.';
 
   @override
   String get settingsAiClearHistory => 'Futa historia ya mazungumzo';

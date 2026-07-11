@@ -465,7 +465,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'معطّلة افتراضيًا. فعّل فقط الفئات التي تريد أن يطّلع عليها المساعد — لن يُرسل أي شيء آخر مطلقًا.';
+      'تتم مشاركة جميع الفئات باستثناء المالية بشكل افتراضي — أوقف تشغيل أي فئة لا تريد أن يراها المساعد.';
 
   @override
   String get settingsAiClearHistory => 'مسح سجل المحادثة';

@@ -12,6 +12,15 @@ class OpenAiProvider implements AiProvider {
   String get defaultModel => 'gpt-4o-mini';
 
   @override
+  List<String> get commonModels => const [
+        'gpt-4o-mini',
+        'gpt-4o',
+        'gpt-4.1-mini',
+        'gpt-4.1',
+        'o4-mini',
+      ];
+
+  @override
   String get apiKeyHelpUrl => 'https://platform.openai.com/api-keys';
 
   @override

@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Skąd wziąć klucz?",
   "settingsAiApiKeySaved": "Klucz API zapisany",
   "settingsAiAllowedCategories": "Kategorie widoczne dla asystenta",
-  "settingsAiAllowedCategoriesHint": "Domyślnie wyłączone. Włącz tylko te kategorie, które asystent ma widzieć — nic innego nie jest wysyłane.",
+  "settingsAiAllowedCategoriesHint": "Domyślnie udostępnione są wszystkie kategorie oprócz Finansów — wyłącz te, których asystent nie powinien widzieć.",
   "settingsAiClearHistory": "Wyczyść historię czatu",
   "settingsAiClearHistoryConfirmTitle": "Wyczyścić historię czatu?",
   "settingsAiClearHistoryConfirmBody": "Spowoduje to usunięcie wszystkich pytań i odpowiedzi zapisanych na tym urządzeniu. Nie można tego cofnąć.",

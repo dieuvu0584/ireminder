@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "จะรับ key ได้จากไหน",
   "settingsAiApiKeySaved": "บันทึก API key แล้ว",
   "settingsAiAllowedCategories": "หมวดหมู่ที่ผู้ช่วยสามารถเข้าถึงได้",
-  "settingsAiAllowedCategoriesHint": "ปิดไว้เป็นค่าเริ่มต้น เปิดเฉพาะหมวดหมู่ที่คุณต้องการให้ผู้ช่วยมองเห็น — จะไม่มีข้อมูลอื่นถูกส่งออกไป",
+  "settingsAiAllowedCategoriesHint": "ทุกหมวดหมู่ยกเว้นการเงินจะถูกแชร์โดยค่าเริ่มต้น — ปิดหมวดหมู่ที่คุณไม่ต้องการให้ผู้ช่วยเห็น",
   "settingsAiClearHistory": "ล้างประวัติการสนทนา",
   "settingsAiClearHistoryConfirmTitle": "ล้างประวัติการสนทนาใช่ไหม",
   "settingsAiClearHistoryConfirmBody": "การดำเนินการนี้จะลบคำถามและคำตอบทั้งหมดที่บันทึกไว้ในเครื่องนี้ ไม่สามารถย้อนกลับได้",

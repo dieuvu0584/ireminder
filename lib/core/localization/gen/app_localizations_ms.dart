@@ -469,7 +469,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Dimatikan secara lalai. Hidupkan hanya kategori yang anda mahu pembantu lihat — tiada apa-apa lagi yang dihantar.';
+      'Semua kategori kecuali Kewangan dikongsi secara lalai — matikan mana-mana yang anda tidak mahu pembantu lihat.';
 
   @override
   String get settingsAiClearHistory => 'Kosongkan sejarah sembang';

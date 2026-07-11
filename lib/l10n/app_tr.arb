@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Anahtarı nereden alabilirim?",
   "settingsAiApiKeySaved": "API anahtarı kaydedildi",
   "settingsAiAllowedCategories": "Asistanın okuyabileceği kategoriler",
-  "settingsAiAllowedCategoriesHint": "Varsayılan olarak kapalıdır. Yalnızca asistanın görmesini istediğiniz kategorileri açın — başka hiçbir şey gönderilmez.",
+  "settingsAiAllowedCategoriesHint": "Finans hariç tüm kategoriler varsayılan olarak paylaşılır — asistanın görmesini istemediklerinizi kapatın.",
   "settingsAiClearHistory": "Sohbet geçmişini temizle",
   "settingsAiClearHistoryConfirmTitle": "Sohbet geçmişi temizlensin mi?",
   "settingsAiClearHistoryConfirmBody": "Bu cihazda saklanan tüm soru ve cevaplar silinir. Bu işlem geri alınamaz.",

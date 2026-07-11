@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Де взяти ключ?",
   "settingsAiApiKeySaved": "Ключ API збережено",
   "settingsAiAllowedCategories": "Категорії, які асистент може бачити",
-  "settingsAiAllowedCategoriesHint": "Вимкнено за замовчуванням. Увімкніть лише ті категорії, які хочете показати асистенту — більше нічого не надсилається.",
+  "settingsAiAllowedCategoriesHint": "Усі категорії, крім «Фінанси», спільні за умовчанням — вимкніть ті, які асистент не повинен бачити.",
   "settingsAiClearHistory": "Очистити історію чату",
   "settingsAiClearHistoryConfirmTitle": "Очистити історію чату?",
   "settingsAiClearHistoryConfirmBody": "Це видалить усі запитання й відповіді, збережені на цьому пристрої. Цю дію неможливо скасувати.",

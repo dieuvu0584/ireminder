@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Di mana saya boleh dapatkan kunci?",
   "settingsAiApiKeySaved": "Kunci API disimpan",
   "settingsAiAllowedCategories": "Kategori yang boleh dibaca oleh pembantu",
-  "settingsAiAllowedCategoriesHint": "Dimatikan secara lalai. Hidupkan hanya kategori yang anda mahu pembantu lihat — tiada apa-apa lagi yang dihantar.",
+  "settingsAiAllowedCategoriesHint": "Semua kategori kecuali Kewangan dikongsi secara lalai — matikan mana-mana yang anda tidak mahu pembantu lihat.",
   "settingsAiClearHistory": "Kosongkan sejarah sembang",
   "settingsAiClearHistoryConfirmTitle": "Kosongkan sejarah sembang?",
   "settingsAiClearHistoryConfirmBody": "Tindakan ini akan memadam setiap soalan dan jawapan yang disimpan pada peranti ini. Tindakan ini tidak boleh dibuat asal.",

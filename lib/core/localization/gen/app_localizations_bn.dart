@@ -464,7 +464,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'ডিফল্টভাবে বন্ধ থাকে। আপনি যে বিভাগগুলো সহায়ককে দেখাতে চান শুধু সেগুলোই চালু করুন — আর কিছুই পাঠানো হয় না।';
+      'অর্থ ছাড়া সব বিভাগ ডিফল্টরূপে শেয়ার করা হয় — সহকারীকে দেখাতে না চাইলে বন্ধ করে দিন।';
 
   @override
   String get settingsAiClearHistory => 'চ্যাট হিস্টোরি মুছুন';

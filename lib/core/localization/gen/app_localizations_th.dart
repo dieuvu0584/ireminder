@@ -468,7 +468,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'ปิดไว้เป็นค่าเริ่มต้น เปิดเฉพาะหมวดหมู่ที่คุณต้องการให้ผู้ช่วยมองเห็น — จะไม่มีข้อมูลอื่นถูกส่งออกไป';
+      'ทุกหมวดหมู่ยกเว้นการเงินจะถูกแชร์โดยค่าเริ่มต้น — ปิดหมวดหมู่ที่คุณไม่ต้องการให้ผู้ช่วยเห็น';
 
   @override
   String get settingsAiClearHistory => 'ล้างประวัติการสนทนา';

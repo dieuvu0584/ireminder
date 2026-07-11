@@ -471,7 +471,7 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Dezactivat implicit. Activează doar categoriile pe care vrei ca asistentul să le vadă — nimic altceva nu este trimis vreodată.';
+      'Toate categoriile, cu excepția Finanțelor, sunt partajate implicit — dezactivează-le pe cele pe care nu vrei ca asistentul să le vadă.';
 
   @override
   String get settingsAiClearHistory => 'Șterge istoricul conversației';

@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Onde consigo uma chave?",
   "settingsAiApiKeySaved": "Chave de API salva",
   "settingsAiAllowedCategories": "Categorias que o assistente pode ler",
-  "settingsAiAllowedCategoriesHint": "Desativado por padrão. Ative apenas as categorias que quiser que o assistente veja — nada mais é enviado.",
+  "settingsAiAllowedCategoriesHint": "Todas as categorias, exceto Finanças, são compartilhadas por padrão — desative as que não quiser que o assistente veja.",
   "settingsAiClearHistory": "Limpar histórico de conversas",
   "settingsAiClearHistoryConfirmTitle": "Limpar histórico de conversas?",
   "settingsAiClearHistoryConfirmBody": "Isso apaga todas as perguntas e respostas salvas neste aparelho. Essa ação não pode ser desfeita.",

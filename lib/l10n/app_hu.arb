@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Honnan szerezhetek kulcsot?",
   "settingsAiApiKeySaved": "Az API kulcs elmentve",
   "settingsAiAllowedCategories": "Az asszisztens által olvasható kategóriák",
-  "settingsAiAllowedCategoriesHint": "Alapértelmezetten kikapcsolva. Csak azokat a kategóriákat kapcsold be, amelyeket szeretnél, hogy az asszisztens lásson — semmi más nem kerül elküldésre.",
+  "settingsAiAllowedCategoriesHint": "Alapértelmezés szerint minden kategória megosztásra kerül a Pénzügyek kivételével — kapcsold ki, amit nem szeretnél, hogy az asszisztens lásson.",
   "settingsAiClearHistory": "Beszélgetési előzmények törlése",
   "settingsAiClearHistoryConfirmTitle": "Törlöd a beszélgetési előzményeket?",
   "settingsAiClearHistoryConfirmBody": "Ez törli az összes ezen az eszközön tárolt kérdést és választ. Ez a művelet nem vonható vissza.",

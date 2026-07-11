@@ -466,7 +466,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Mặc định tắt hết. Chỉ bật những danh mục bạn muốn Trợ lý nhìn thấy — không có gì khác được gửi đi.';
+      'Mặc định đã bật hết, trừ danh mục Tài chính — tắt bớt những danh mục bạn không muốn Trợ lý nhìn thấy.';
 
   @override
   String get settingsAiClearHistory => 'Xóa lịch sử chat';

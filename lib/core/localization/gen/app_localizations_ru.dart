@@ -466,7 +466,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'По умолчанию всё выключено. Включите только те категории, которые хотите показать ассистенту — больше ничего не передаётся.';
+      'По умолчанию открыты все категории, кроме «Финансы», — отключите те, которые не хотите показывать ассистенту.';
 
   @override
   String get settingsAiClearHistory => 'Очистить историю чата';

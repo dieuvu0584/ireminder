@@ -467,7 +467,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Off by default. Turn on only the categories you want the assistant to see — nothing else is ever sent.';
+      'All categories except Finance are shared by default — turn off any you don\'t want the assistant to see.';
 
   @override
   String get settingsAiClearHistory => 'Clear chat history';

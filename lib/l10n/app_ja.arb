@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "キーの取得方法は？",
   "settingsAiApiKeySaved": "APIキーを保存しました",
   "settingsAiAllowedCategories": "アシスタントに見せるカテゴリ",
-  "settingsAiAllowedCategoriesHint": "デフォルトではすべてオフです。アシスタントに見せたいカテゴリだけをオンにしてください。それ以外の情報は一切送信されません。",
+  "settingsAiAllowedCategoriesHint": "「財務」以外のすべてのカテゴリーはデフォルトで共有されます — アシスタントに見せたくないものはオフにしてください。",
   "settingsAiClearHistory": "チャット履歴を削除",
   "settingsAiClearHistoryConfirmTitle": "チャット履歴を削除しますか？",
   "settingsAiClearHistoryConfirmBody": "この端末に保存されているすべての質問と回答が削除されます。この操作は元に戻せません。",

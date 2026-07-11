@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "Kde získám klíč?",
   "settingsAiApiKeySaved": "API klíč byl uložen",
   "settingsAiAllowedCategories": "Kategorie, které smí asistent číst",
-  "settingsAiAllowedCategoriesHint": "Ve výchozím nastavení vypnuto. Zapněte pouze kategorie, které chcete asistentovi zpřístupnit — nic jiného se nikdy neodesílá.",
+  "settingsAiAllowedCategoriesHint": "Ve výchozím nastavení jsou sdíleny všechny kategorie kromě Financí — vypněte ty, které asistent nemá vidět.",
   "settingsAiClearHistory": "Vymazat historii konverzace",
   "settingsAiClearHistoryConfirmTitle": "Vymazat historii konverzace?",
   "settingsAiClearHistoryConfirmBody": "Tímto se smažou všechny otázky a odpovědi uložené v tomto zařízení. Tuto akci nelze vzít zpět.",

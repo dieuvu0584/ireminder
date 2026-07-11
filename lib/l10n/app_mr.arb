@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "की कुठे मिळेल?",
   "settingsAiApiKeySaved": "API की जतन झाली",
   "settingsAiAllowedCategories": "सहाय्यक वाचू शकेल अशा श्रेणी",
-  "settingsAiAllowedCategoriesHint": "डीफॉल्टनुसार बंद. सहाय्यकाला दिसाव्यात असं वाटणाऱ्या श्रेणीच फक्त सुरू करा — बाकी काहीही पाठवलं जात नाही.",
+  "settingsAiAllowedCategoriesHint": "वित्त वगळता सर्व श्रेण्या डीफॉल्टनुसार शेअर केल्या जातात — सहाय्यकाला दिसू नयेत असे वाटणाऱ्या बंद करा.",
   "settingsAiClearHistory": "चॅट इतिहास साफ करा",
   "settingsAiClearHistoryConfirmTitle": "चॅट इतिहास साफ करायचा?",
   "settingsAiClearHistoryConfirmBody": "यामुळे या डिव्हाइसवर साठवलेले सर्व प्रश्न आणि उत्तरं हटवली जातील. ही क्रिया पूर्ववत करता येणार नाही.",

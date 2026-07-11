@@ -467,7 +467,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'ڈیفالٹ طور پر بند ہے۔ صرف وہی زمرے فعال کریں جنہیں آپ اسسٹنٹ کو دکھانا چاہتے ہیں — اس کے علاوہ کچھ نہیں بھیجا جاتا۔';
+      'مالیات کے علاوہ تمام زمرے پہلے سے شیئر کیے جاتے ہیں — جنہیں آپ اسسٹنٹ کو نہیں دکھانا چاہتے انہیں بند کر دیں۔';
 
   @override
   String get settingsAiClearHistory => 'چیٹ کی تاریخ صاف کریں';

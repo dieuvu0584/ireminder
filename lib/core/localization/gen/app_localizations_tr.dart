@@ -467,7 +467,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Varsayılan olarak kapalıdır. Yalnızca asistanın görmesini istediğiniz kategorileri açın — başka hiçbir şey gönderilmez.';
+      'Finans hariç tüm kategoriler varsayılan olarak paylaşılır — asistanın görmesini istemediklerinizi kapatın.';
 
   @override
   String get settingsAiClearHistory => 'Sohbet geçmişini temizle';

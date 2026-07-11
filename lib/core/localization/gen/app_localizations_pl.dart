@@ -467,7 +467,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Domyślnie wyłączone. Włącz tylko te kategorie, które asystent ma widzieć — nic innego nie jest wysyłane.';
+      'Domyślnie udostępnione są wszystkie kategorie oprócz Finansów — wyłącz te, których asystent nie powinien widzieć.';
 
   @override
   String get settingsAiClearHistory => 'Wyczyść historię czatu';

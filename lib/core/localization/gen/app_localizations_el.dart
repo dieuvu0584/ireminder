@@ -470,7 +470,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Απενεργοποιημένο από προεπιλογή. Ενεργοποίησε μόνο τις κατηγορίες που θέλεις να βλέπει ο βοηθός — τίποτα άλλο δεν αποστέλλεται ποτέ.';
+      'Όλες οι κατηγορίες εκτός από τα Οικονομικά είναι κοινόχρηστες από προεπιλογή — απενεργοποιήστε όσες δεν θέλετε να βλέπει ο βοηθός.';
 
   @override
   String get settingsAiClearHistory => 'Διαγραφή ιστορικού συνομιλίας';

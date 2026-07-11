@@ -467,7 +467,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'డిఫాల్ట్‌గా ఆఫ్‌లో ఉంది. సహాయకుడు చూడాలని మీరు కోరుకునే వర్గాలను మాత్రమే ఆన్ చేయండి — వేరే ఏదీ పంపబడదు.';
+      'ఆర్థికం మినహా అన్ని వర్గాలు డిఫాల్ట్‌గా భాగస్వామ్యం చేయబడతాయి — సహాయకుడు చూడకూడదనుకున్నవాటిని ఆఫ్ చేయండి.';
 
   @override
   String get settingsAiClearHistory => 'చాట్ చరిత్రను క్లియర్ చేయి';

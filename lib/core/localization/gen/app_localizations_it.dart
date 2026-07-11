@@ -469,7 +469,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Disattivate per impostazione predefinita. Attiva solo le categorie che vuoi far vedere all\'assistente — nient\'altro viene mai inviato.';
+      'Tutte le categorie tranne Finanze sono condivise per impostazione predefinita — disattiva quelle che non vuoi che l\'assistente veda.';
 
   @override
   String get settingsAiClearHistory => 'Cancella cronologia chat';

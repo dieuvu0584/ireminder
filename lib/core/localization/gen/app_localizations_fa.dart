@@ -466,7 +466,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'به‌طور پیش‌فرض غیرفعال است. فقط دسته‌بندی‌هایی را فعال کنید که می‌خواهید دستیار ببیند — چیز دیگری هرگز ارسال نمی‌شود.';
+      'همه دسته‌ها به‌جز امور مالی به‌طور پیش‌فرض به اشتراک گذاشته می‌شوند — هرکدام را که نمی‌خواهید دستیار ببیند خاموش کنید.';
 
   @override
   String get settingsAiClearHistory => 'پاک کردن تاریخچه گفتگو';

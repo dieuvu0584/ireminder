@@ -466,7 +466,7 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'ડિફોલ્ટ રીતે બંધ છે. ફક્ત તે શ્રેણીઓ ચાલુ કરો જે તમે સહાયકને બતાવવા માંગો છો — બીજું કંઈ ક્યારેય મોકલવામાં આવતું નથી.';
+      'નાણાં સિવાયની બધી શ્રેણીઓ ડિફૉલ્ટ રૂપે શેર થાય છે — સહાયકને ન બતાવવી હોય તે બંધ કરો.';
 
   @override
   String get settingsAiClearHistory => 'ચેટ ઇતિહાસ સાફ કરો';

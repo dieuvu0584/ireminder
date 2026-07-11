@@ -23,6 +23,12 @@ abstract class AiProvider {
   /// suggestion the user can override, never hardcoded elsewhere.
   String get defaultModel;
 
+  /// A handful of well-known model names shown as quick picks in Settings.
+  /// Purely a convenience list, not a constraint — the model field stays
+  /// freely editable so a new/renamed model the provider ships after this
+  /// list goes stale can still just be typed in directly.
+  List<String> get commonModels;
+
   String get apiKeyHelpUrl;
 
   Future<String> sendMessage({

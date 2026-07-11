@@ -196,7 +196,7 @@
   "settingsAiApiKeyHelp": "কী কোথায় পাব?",
   "settingsAiApiKeySaved": "এপিআই কী সংরক্ষিত হয়েছে",
   "settingsAiAllowedCategories": "সহায়ক যেসব বিভাগ দেখতে পারবে",
-  "settingsAiAllowedCategoriesHint": "ডিফল্টভাবে বন্ধ থাকে। আপনি যে বিভাগগুলো সহায়ককে দেখাতে চান শুধু সেগুলোই চালু করুন — আর কিছুই পাঠানো হয় না।",
+  "settingsAiAllowedCategoriesHint": "অর্থ ছাড়া সব বিভাগ ডিফল্টরূপে শেয়ার করা হয় — সহকারীকে দেখাতে না চাইলে বন্ধ করে দিন।",
   "settingsAiClearHistory": "চ্যাট হিস্টোরি মুছুন",
   "settingsAiClearHistoryConfirmTitle": "চ্যাট হিস্টোরি মুছবেন?",
   "settingsAiClearHistoryConfirmBody": "এতে এই ডিভাইসে সংরক্ষিত সব প্রশ্ন ও উত্তর মুছে যাবে। এটি পূর্বাবস্থায় ফেরানো যাবে না।",

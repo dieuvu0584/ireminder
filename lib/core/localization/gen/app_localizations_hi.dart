@@ -467,7 +467,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'डिफ़ॉल्ट रूप से बंद। केवल वही श्रेणियाँ चालू करें जिन्हें आप सहायक को दिखाना चाहते हैं — इसके अलावा कुछ भी कभी नहीं भेजा जाता।';
+      'वित्त को छोड़कर सभी श्रेणियाँ डिफ़ॉल्ट रूप से साझा की जाती हैं — जिन्हें आप सहायक को नहीं दिखाना चाहते उन्हें बंद करें।';
 
   @override
   String get settingsAiClearHistory => 'चैट इतिहास साफ़ करें';

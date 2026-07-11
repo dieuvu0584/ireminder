@@ -468,7 +468,7 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'ਮੂਲ ਰੂਪ ਵਿੱਚ ਬੰਦ ਹੈ। ਸਿਰਫ਼ ਉਹ ਸ਼੍ਰੇਣੀਆਂ ਚਾਲੂ ਕਰੋ ਜੋ ਤੁਸੀਂ ਸਹਾਇਕ ਨੂੰ ਦਿਖਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ — ਹੋਰ ਕੁਝ ਵੀ ਕਦੇ ਨਹੀਂ ਭੇਜਿਆ ਜਾਂਦਾ।';
+      'ਵਿੱਤ ਨੂੰ ਛੱਡ ਕੇ ਸਾਰੀਆਂ ਸ਼੍ਰੇਣੀਆਂ ਮੂਲ ਰੂਪ ਵਿੱਚ ਸਾਂਝੀਆਂ ਹੁੰਦੀਆਂ ਹਨ — ਜਿਨ੍ਹਾਂ ਨੂੰ ਤੁਸੀਂ ਸਹਾਇਕ ਨੂੰ ਨਹੀਂ ਦਿਖਾਉਣਾ ਚਾਹੁੰਦੇ ਉਹਨਾਂ ਨੂੰ ਬੰਦ ਕਰੋ।';
 
   @override
   String get settingsAiClearHistory => 'ਚੈਟ ਇਤਿਹਾਸ ਸਾਫ਼ ਕਰੋ';

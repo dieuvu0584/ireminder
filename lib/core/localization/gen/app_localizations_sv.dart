@@ -469,7 +469,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get settingsAiAllowedCategoriesHint =>
-      'Avstängt som standard. Slå bara på de kategorier du vill att assistenten ska se — inget annat skickas någonsin.';
+      'Alla kategorier utom Ekonomi delas som standard — stäng av de du inte vill att assistenten ska se.';
 
   @override
   String get settingsAiClearHistory => 'Rensa chatthistorik';
