@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "દર N દિવસે",
   "reminderFieldLunarDay": "ચંદ્ર તારીખ",
   "reminderFieldLunarMonth": "ચંદ્ર મહિનો",
+  "reminderFieldLunarToggle": "ચંદ્ર કેલેન્ડર",
   "reminderDeleteConfirmTitle": "આ રિમાઇન્ડર કાઢી નાખવું છે?",
   "reminderDeleteConfirmBody": "આ ક્રિયા પાછી લઈ શકાશે નહીં.",
   "recurrenceNone": "એકવાર",

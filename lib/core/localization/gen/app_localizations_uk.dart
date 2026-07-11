@@ -182,6 +182,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Місячний місяць';
 
   @override
+  String get reminderFieldLunarToggle => 'Місячний календар';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Видалити це нагадування?';
 
   @override

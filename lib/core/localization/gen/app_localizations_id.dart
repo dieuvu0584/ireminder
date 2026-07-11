@@ -182,6 +182,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Bulan lunar';
 
   @override
+  String get reminderFieldLunarToggle => 'Kalender lunar';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Hapus pengingat ini?';
 
   @override

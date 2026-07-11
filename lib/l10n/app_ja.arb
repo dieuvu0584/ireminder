@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "N日ごと",
   "reminderFieldLunarDay": "旧暦の日",
   "reminderFieldLunarMonth": "旧暦の月",
+  "reminderFieldLunarToggle": "旧暦",
   "reminderDeleteConfirmTitle": "このリマインダーを削除しますか？",
   "reminderDeleteConfirmBody": "この操作は元に戻せません。",
   "recurrenceNone": "1回のみ",

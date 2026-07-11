@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "ஒவ்வொரு N நாட்களுக்கும்",
   "reminderFieldLunarDay": "சந்திர தேதி",
   "reminderFieldLunarMonth": "சந்திர மாதம்",
+  "reminderFieldLunarToggle": "சந்திர நாட்காட்டி",
   "reminderDeleteConfirmTitle": "இந்த நினைவூட்டலை நீக்கவா?",
   "reminderDeleteConfirmBody": "இதை மீண்டும் செயல்தவிர்க்க முடியாது.",
   "recurrenceNone": "ஒருமுறை",

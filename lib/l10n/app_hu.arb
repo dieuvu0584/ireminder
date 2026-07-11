@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Minden N. napon",
   "reminderFieldLunarDay": "Holdnaptári nap",
   "reminderFieldLunarMonth": "Holdnaptári hónap",
+  "reminderFieldLunarToggle": "Holdnaptár",
   "reminderDeleteConfirmTitle": "Törlöd ezt az emlékeztetőt?",
   "reminderDeleteConfirmBody": "Ez a művelet nem vonható vissza.",
   "recurrenceNone": "Egyszeri",

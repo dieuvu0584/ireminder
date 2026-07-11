@@ -177,6 +177,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reminderFieldLunarMonth => '农历月';
 
   @override
+  String get reminderFieldLunarToggle => '农历';
+
+  @override
   String get reminderDeleteConfirmTitle => '删除此提醒?';
 
   @override

@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Co N dni",
   "reminderFieldLunarDay": "Dzień księżycowy",
   "reminderFieldLunarMonth": "Miesiąc księżycowy",
+  "reminderFieldLunarToggle": "Kalendarz księżycowy",
   "reminderDeleteConfirmTitle": "Usunąć to przypomnienie?",
   "reminderDeleteConfirmBody": "Tej operacji nie można cofnąć.",
   "recurrenceNone": "Jednorazowo",

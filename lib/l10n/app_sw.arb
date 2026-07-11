@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Kila siku N",
   "reminderFieldLunarDay": "Siku ya kalenda ya mwezi",
   "reminderFieldLunarMonth": "Mwezi wa kalenda ya mwezi",
+  "reminderFieldLunarToggle": "Kalenda ya mwezi",
   "reminderDeleteConfirmTitle": "Futa kikumbusho hiki?",
   "reminderDeleteConfirmBody": "Hatua hii haiwezi kutenduliwa.",
   "recurrenceNone": "Mara moja",

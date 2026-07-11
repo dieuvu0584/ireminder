@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Bawat N araw",
   "reminderFieldLunarDay": "Araw sa lunar calendar",
   "reminderFieldLunarMonth": "Buwan sa lunar calendar",
+  "reminderFieldLunarToggle": "Kalendaryong lunar",
   "reminderDeleteConfirmTitle": "Tanggalin ang paalalang ito?",
   "reminderDeleteConfirmBody": "Hindi na ito maaaring bawiin.",
   "recurrenceNone": "Isang beses",

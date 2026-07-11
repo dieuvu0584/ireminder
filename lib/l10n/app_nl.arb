@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Elke N dagen",
   "reminderFieldLunarDay": "Maankalender dag",
   "reminderFieldLunarMonth": "Maankalender maand",
+  "reminderFieldLunarToggle": "Maankalender",
   "reminderDeleteConfirmTitle": "Deze herinnering verwijderen?",
   "reminderDeleteConfirmBody": "Dit kan niet ongedaan worden gemaakt.",
   "recurrenceNone": "Eenmalig",

@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "La fiecare N zile",
   "reminderFieldLunarDay": "Ziua lunară",
   "reminderFieldLunarMonth": "Luna lunară",
+  "reminderFieldLunarToggle": "Calendar lunar",
   "reminderDeleteConfirmTitle": "Ștergi acest memento?",
   "reminderDeleteConfirmBody": "Această acțiune nu poate fi anulată.",
   "recurrenceNone": "O singură dată",

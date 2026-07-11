@@ -55,6 +55,7 @@
   "reminderFieldIntervalDays": "हर N दिन में",
   "reminderFieldLunarDay": "चंद्र तिथि",
   "reminderFieldLunarMonth": "चंद्र माह",
+  "reminderFieldLunarToggle": "चंद्र कैलेंडर",
   "reminderDeleteConfirmTitle": "यह रिमाइंडर हटाएं?",
   "reminderDeleteConfirmBody": "इसे वापस नहीं लाया जा सकता।",
   "recurrenceNone": "एक बार",

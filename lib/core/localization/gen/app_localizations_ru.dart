@@ -182,6 +182,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Лунный месяц';
 
   @override
+  String get reminderFieldLunarToggle => 'Лунный календарь';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Удалить это напоминание?';
 
   @override

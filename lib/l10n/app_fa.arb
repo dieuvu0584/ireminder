@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "هر N روز",
   "reminderFieldLunarDay": "روز قمری",
   "reminderFieldLunarMonth": "ماه قمری",
+  "reminderFieldLunarToggle": "تقویم قمری",
   "reminderDeleteConfirmTitle": "این یادآور حذف شود؟",
   "reminderDeleteConfirmBody": "این کار قابل بازگشت نیست.",
   "recurrenceNone": "یک‌بار",

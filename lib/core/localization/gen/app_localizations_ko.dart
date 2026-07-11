@@ -180,6 +180,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reminderFieldLunarMonth => '음력 월';
 
   @override
+  String get reminderFieldLunarToggle => '음력';
+
+  @override
   String get reminderDeleteConfirmTitle => '이 리마인더를 삭제할까요?';
 
   @override

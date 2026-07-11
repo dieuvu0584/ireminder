@@ -55,6 +55,7 @@
   "reminderFieldIntervalDays": "Tous les N jours",
   "reminderFieldLunarDay": "Jour lunaire",
   "reminderFieldLunarMonth": "Mois lunaire",
+  "reminderFieldLunarToggle": "Calendrier lunaire",
   "reminderDeleteConfirmTitle": "Supprimer ce rappel ?",
   "reminderDeleteConfirmBody": "Cette action est irréversible.",
   "recurrenceNone": "Une seule fois",

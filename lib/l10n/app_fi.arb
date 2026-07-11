@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Joka N. päivä",
   "reminderFieldLunarDay": "Kuukalenterin päivä",
   "reminderFieldLunarMonth": "Kuukalenterin kuukausi",
+  "reminderFieldLunarToggle": "Kuukalenteri",
   "reminderDeleteConfirmTitle": "Poistetaanko tämä muistutus?",
   "reminderDeleteConfirmBody": "Tätä ei voi perua.",
   "recurrenceNone": "Kerran",

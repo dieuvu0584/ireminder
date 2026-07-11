@@ -55,6 +55,7 @@
   "reminderFieldIntervalDays": "Alle N Tage",
   "reminderFieldLunarDay": "Mondtag",
   "reminderFieldLunarMonth": "Mondmonat",
+  "reminderFieldLunarToggle": "Mondkalender",
   "reminderDeleteConfirmTitle": "Diese Erinnerung löschen?",
   "reminderDeleteConfirmBody": "Dies kann nicht rückgängig gemacht werden.",
   "recurrenceNone": "Einmalig",

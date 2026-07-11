@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Setiap N hari",
   "reminderFieldLunarDay": "Hari kalendar bulan",
   "reminderFieldLunarMonth": "Bulan kalendar bulan",
+  "reminderFieldLunarToggle": "Kalendar lunar",
   "reminderDeleteConfirmTitle": "Padam peringatan ini?",
   "reminderDeleteConfirmBody": "Tindakan ini tidak boleh dibuat asal.",
   "recurrenceNone": "Sekali sahaja",

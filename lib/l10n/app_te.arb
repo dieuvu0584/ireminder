@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "ప్రతి N రోజులకు",
   "reminderFieldLunarDay": "చాంద్రమాన రోజు",
   "reminderFieldLunarMonth": "చాంద్రమాన నెల",
+  "reminderFieldLunarToggle": "చాంద్రమాన క్యాలెండర్",
   "reminderDeleteConfirmTitle": "ఈ రిమైండర్‌ను తొలగించాలా?",
   "reminderDeleteConfirmBody": "దీన్ని తిరిగి పొందలేరు.",
   "recurrenceNone": "ఒకసారి",

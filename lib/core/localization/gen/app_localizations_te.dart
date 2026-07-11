@@ -182,6 +182,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get reminderFieldLunarMonth => 'చాంద్రమాన నెల';
 
   @override
+  String get reminderFieldLunarToggle => 'చాంద్రమాన క్యాలెండర్';
+
+  @override
   String get reminderDeleteConfirmTitle => 'ఈ రిమైండర్‌ను తొలగించాలా?';
 
   @override

@@ -55,6 +55,7 @@
   "reminderFieldIntervalDays": "每 N 天",
   "reminderFieldLunarDay": "农历日",
   "reminderFieldLunarMonth": "农历月",
+  "reminderFieldLunarToggle": "农历",
   "reminderDeleteConfirmTitle": "删除此提醒?",
   "reminderDeleteConfirmBody": "此操作无法撤销。",
   "recurrenceNone": "仅一次",

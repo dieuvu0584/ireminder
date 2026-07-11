@@ -182,6 +182,9 @@ class AppLocalizationsUr extends AppLocalizations {
   String get reminderFieldLunarMonth => 'قمری مہینہ';
 
   @override
+  String get reminderFieldLunarToggle => 'قمری کیلنڈر';
+
+  @override
   String get reminderDeleteConfirmTitle => 'کیا یہ یاد دہانی حذف کر دیں؟';
 
   @override

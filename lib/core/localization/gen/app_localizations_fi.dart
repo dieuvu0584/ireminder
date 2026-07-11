@@ -182,6 +182,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Kuukalenterin kuukausi';
 
   @override
+  String get reminderFieldLunarToggle => 'Kuukalenteri';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Poistetaanko tämä muistutus?';
 
   @override

@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "প্রতি N দিনে",
   "reminderFieldLunarDay": "চান্দ্র দিন",
   "reminderFieldLunarMonth": "চান্দ্র মাস",
+  "reminderFieldLunarToggle": "চন্দ্র পঞ্জিকা",
   "reminderDeleteConfirmTitle": "এই রিমাইন্ডারটি মুছবেন?",
   "reminderDeleteConfirmBody": "এটি পূর্বাবস্থায় ফেরানো যাবে না।",
   "recurrenceNone": "একবার",

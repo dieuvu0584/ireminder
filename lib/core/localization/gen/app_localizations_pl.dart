@@ -182,6 +182,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Miesiąc księżycowy';
 
   @override
+  String get reminderFieldLunarToggle => 'Kalendarz księżycowy';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Usunąć to przypomnienie?';
 
   @override

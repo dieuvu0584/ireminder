@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Her N günde bir",
   "reminderFieldLunarDay": "Ay takviminde gün",
   "reminderFieldLunarMonth": "Ay takviminde ay",
+  "reminderFieldLunarToggle": "Ay takvimi",
   "reminderDeleteConfirmTitle": "Bu hatırlatıcı silinsin mi?",
   "reminderDeleteConfirmBody": "Bu işlem geri alınamaz.",
   "recurrenceNone": "Bir kez",

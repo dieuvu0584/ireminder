@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Кожні N днів",
   "reminderFieldLunarDay": "Місячний день",
   "reminderFieldLunarMonth": "Місячний місяць",
+  "reminderFieldLunarToggle": "Місячний календар",
   "reminderDeleteConfirmTitle": "Видалити це нагадування?",
   "reminderDeleteConfirmBody": "Цю дію неможливо скасувати.",
   "recurrenceNone": "Один раз",

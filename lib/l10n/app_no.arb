@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Hver N. dag",
   "reminderFieldLunarDay": "Månekalenderdag",
   "reminderFieldLunarMonth": "Månekalendermåned",
+  "reminderFieldLunarToggle": "Månekalender",
   "reminderDeleteConfirmTitle": "Slette denne påminnelsen?",
   "reminderDeleteConfirmBody": "Dette kan ikke angres.",
   "recurrenceNone": "Én gang",

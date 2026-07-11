@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Každých N dní",
   "reminderFieldLunarDay": "Lunární den",
   "reminderFieldLunarMonth": "Lunární měsíc",
+  "reminderFieldLunarToggle": "Lunární kalendář",
   "reminderDeleteConfirmTitle": "Smazat tuto připomínku?",
   "reminderDeleteConfirmBody": "Tuto akci nelze vzít zpět.",
   "recurrenceNone": "Jednorázově",

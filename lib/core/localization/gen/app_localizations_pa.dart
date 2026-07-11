@@ -182,6 +182,9 @@ class AppLocalizationsPa extends AppLocalizations {
   String get reminderFieldLunarMonth => 'ਚੰਦਰ ਮਹੀਨਾ';
 
   @override
+  String get reminderFieldLunarToggle => 'ਚੰਦਰ ਕੈਲੰਡਰ';
+
+  @override
   String get reminderDeleteConfirmTitle => 'ਇਹ ਰਿਮਾਈਂਡਰ ਮਿਟਾਉਣਾ ਹੈ?';
 
   @override

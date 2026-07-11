@@ -182,6 +182,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Lunární měsíc';
 
   @override
+  String get reminderFieldLunarToggle => 'Lunární kalendář';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Smazat tuto připomínku?';
 
   @override

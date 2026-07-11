@@ -32,6 +32,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
 
   int? _categoryId;
   RecurrenceType _recurrenceType = RecurrenceType.none;
+  bool _isLunar = false;
   int? _recurrenceDay;
   int? _recurrenceMonth;
   int? _recurrenceWeekday;
@@ -50,7 +51,13 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     _categoryId = r?.categoryId ?? widget.initialCategoryId;
     _startDate = widget.initialStartDate ?? DateTime.now();
     if (r != null) {
-      _recurrenceType = RecurrenceType.fromDbValue(r.recurrenceType);
+      final type = RecurrenceType.fromDbValue(r.recurrenceType);
+      if (type == RecurrenceType.lunarYearly) {
+        _recurrenceType = RecurrenceType.yearly;
+        _isLunar = true;
+      } else {
+        _recurrenceType = type;
+      }
       _recurrenceDay = r.recurrenceDay;
       _recurrenceMonth = r.recurrenceMonth;
       _recurrenceWeekday = r.recurrenceWeekday;
@@ -77,6 +84,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     if (_categoryId == null) return;
     setState(() => _saving = true);
     final actions = ref.read(reminderActionsProvider);
+    final effectiveType = _recurrenceType == RecurrenceType.yearly && _isLunar
+        ? RecurrenceType.lunarYearly
+        : _recurrenceType;
     try {
       if (widget.existing == null) {
         await actions.create(
@@ -85,12 +95,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               ? null
               : _descCtrl.text.trim(),
           categoryId: _categoryId!,
-          recurrenceType: _recurrenceType,
+          recurrenceType: effectiveType,
           recurrenceInterval: _intervalDays,
           recurrenceDay: _recurrenceDay,
           recurrenceMonth: _recurrenceMonth,
           recurrenceWeekday: _recurrenceWeekday,
-          isLunar: _recurrenceType == RecurrenceType.lunarYearly,
+          isLunar: effectiveType == RecurrenceType.lunarYearly,
           startDate: _startDate,
           reminderTime: _timeString,
           advanceNoticeDays: _advanceNoticeDays,
@@ -103,12 +113,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               _descCtrl.text.trim().isEmpty ? null : _descCtrl.text.trim(),
             ),
             categoryId: _categoryId!,
-            recurrenceType: _recurrenceType.dbValue,
+            recurrenceType: effectiveType.dbValue,
             recurrenceInterval: drift.Value(_intervalDays),
             recurrenceDay: drift.Value(_recurrenceDay),
             recurrenceMonth: drift.Value(_recurrenceMonth),
             recurrenceWeekday: drift.Value(_recurrenceWeekday),
-            isLunar: _recurrenceType == RecurrenceType.lunarYearly,
+            isLunar: effectiveType == RecurrenceType.lunarYearly,
             startDate: _startDate,
             reminderTime: _timeString,
             advanceNoticeDays: _advanceNoticeDays,
@@ -244,6 +254,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                   labelText: l10n.reminderFieldRecurrence,
                 ),
                 items: RecurrenceType.values
+                    .where((t) => t != RecurrenceType.lunarYearly)
                     .map(
                       (t) => DropdownMenuItem(
                         value: t,
@@ -251,7 +262,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                       ),
                     )
                     .toList(),
-                onChanged: (v) => setState(() => _recurrenceType = v!),
+                onChanged: (v) => setState(() {
+                  _recurrenceType = v!;
+                  if (_recurrenceType != RecurrenceType.yearly) {
+                    _isLunar = false;
+                  }
+                }),
               ),
               const SizedBox(height: 12),
               ..._buildRecurrenceFields(l10n),
@@ -358,13 +374,22 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         ];
       case RecurrenceType.yearly:
         return [
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.brightness_2_outlined),
+            title: Text(l10n.reminderFieldLunarToggle),
+            value: _isLunar,
+            onChanged: (v) => setState(() => _isLunar = v),
+          ),
           Row(
             children: [
               Expanded(
                 child: TextFormField(
                   initialValue: _recurrenceDay?.toString() ?? '',
                   decoration: InputDecoration(
-                    labelText: l10n.reminderFieldRecurrenceDay,
+                    labelText: _isLunar
+                        ? l10n.reminderFieldLunarDay
+                        : l10n.reminderFieldRecurrenceDay,
                   ),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceDay = int.tryParse(v),
@@ -376,7 +401,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 child: TextFormField(
                   initialValue: _recurrenceMonth?.toString() ?? '',
                   decoration: InputDecoration(
-                    labelText: l10n.reminderFieldRecurrenceMonth,
+                    labelText: _isLunar
+                        ? l10n.reminderFieldLunarMonth
+                        : l10n.reminderFieldRecurrenceMonth,
                   ),
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _recurrenceMonth = int.tryParse(v),
@@ -399,35 +426,11 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           ),
         ];
       case RecurrenceType.lunarYearly:
-        return [
-          Row(
-            children: [
-              Expanded(
-                child: TextFormField(
-                  initialValue: _recurrenceDay?.toString() ?? '',
-                  decoration: InputDecoration(
-                    labelText: l10n.reminderFieldLunarDay,
-                  ),
-                  keyboardType: TextInputType.number,
-                  onChanged: (v) => _recurrenceDay = int.tryParse(v),
-                  validator: (v) => _validateDayOfMonth(l10n, v),
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: TextFormField(
-                  initialValue: _recurrenceMonth?.toString() ?? '',
-                  decoration: InputDecoration(
-                    labelText: l10n.reminderFieldLunarMonth,
-                  ),
-                  keyboardType: TextInputType.number,
-                  onChanged: (v) => _recurrenceMonth = int.tryParse(v),
-                  validator: (v) => _validateMonth(l10n, v),
-                ),
-              ),
-            ],
-          ),
-        ];
+        // Unreachable via the UI: the Repeat dropdown never offers this
+        // value directly (see its `items` filter above) — lunar yearly is
+        // represented as RecurrenceType.yearly + _isLunar instead, so this
+        // case only exists to keep the switch exhaustive over the enum.
+        return const [];
     }
   }
 }

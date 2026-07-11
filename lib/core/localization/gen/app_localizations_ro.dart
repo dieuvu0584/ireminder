@@ -182,6 +182,9 @@ class AppLocalizationsRo extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Luna lunară';
 
   @override
+  String get reminderFieldLunarToggle => 'Calendar lunar';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Ștergi acest memento?';
 
   @override

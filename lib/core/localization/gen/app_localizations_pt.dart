@@ -182,6 +182,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Mês lunar';
 
   @override
+  String get reminderFieldLunarToggle => 'Calendário lunar';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Excluir este lembrete?';
 
   @override

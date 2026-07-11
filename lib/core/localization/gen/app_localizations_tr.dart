@@ -182,6 +182,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Ay takviminde ay';
 
   @override
+  String get reminderFieldLunarToggle => 'Ay takvimi';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Bu hatırlatıcı silinsin mi?';
 
   @override

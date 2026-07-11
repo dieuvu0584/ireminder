@@ -182,6 +182,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Mwezi wa kalenda ya mwezi';
 
   @override
+  String get reminderFieldLunarToggle => 'Kalenda ya mwezi';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Futa kikumbusho hiki?';
 
   @override

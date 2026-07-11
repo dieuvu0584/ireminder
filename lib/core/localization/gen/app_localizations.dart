@@ -508,6 +508,12 @@ abstract class AppLocalizations {
   /// **'Lunar month'**
   String get reminderFieldLunarMonth;
 
+  /// No description provided for @reminderFieldLunarToggle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lunar calendar'**
+  String get reminderFieldLunarToggle;
+
   /// No description provided for @reminderDeleteConfirmTitle.
   ///
   /// In en, this message translates to:

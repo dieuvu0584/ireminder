@@ -181,6 +181,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reminderFieldLunarMonth => 'الشهر القمري';
 
   @override
+  String get reminderFieldLunarToggle => 'التقويم القمري';
+
+  @override
   String get reminderDeleteConfirmTitle => 'هل تريد حذف هذا التذكير؟';
 
   @override

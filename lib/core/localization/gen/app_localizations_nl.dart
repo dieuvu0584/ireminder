@@ -182,6 +182,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get reminderFieldLunarMonth => 'Maankalender maand';
 
   @override
+  String get reminderFieldLunarToggle => 'Maankalender';
+
+  @override
   String get reminderDeleteConfirmTitle => 'Deze herinnering verwijderen?';
 
   @override

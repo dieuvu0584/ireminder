@@ -182,6 +182,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get reminderFieldLunarMonth => 'חודש בלוח הירחי';
 
   @override
+  String get reminderFieldLunarToggle => 'לוח שנה ירחי';
+
+  @override
   String get reminderDeleteConfirmTitle => 'למחוק את התזכורת הזו?';
 
   @override

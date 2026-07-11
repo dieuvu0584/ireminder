@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "Every N days",
   "reminderFieldLunarDay": "Lunar day",
   "reminderFieldLunarMonth": "Lunar month",
+  "reminderFieldLunarToggle": "Lunar calendar",
   "reminderDeleteConfirmTitle": "Delete this reminder?",
   "reminderDeleteConfirmBody": "This cannot be undone.",
   "recurrenceNone": "Once",

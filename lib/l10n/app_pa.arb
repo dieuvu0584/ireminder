@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "ਹਰ N ਦਿਨਾਂ ਬਾਅਦ",
   "reminderFieldLunarDay": "ਚੰਦਰ ਦਿਨ",
   "reminderFieldLunarMonth": "ਚੰਦਰ ਮਹੀਨਾ",
+  "reminderFieldLunarToggle": "ਚੰਦਰ ਕੈਲੰਡਰ",
   "reminderDeleteConfirmTitle": "ਇਹ ਰਿਮਾਈਂਡਰ ਮਿਟਾਉਣਾ ਹੈ?",
   "reminderDeleteConfirmBody": "ਇਹ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
   "recurrenceNone": "ਇੱਕ ਵਾਰ",

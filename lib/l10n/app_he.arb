@@ -56,6 +56,7 @@
   "reminderFieldIntervalDays": "כל N ימים",
   "reminderFieldLunarDay": "יום בלוח הירחי",
   "reminderFieldLunarMonth": "חודש בלוח הירחי",
+  "reminderFieldLunarToggle": "לוח שנה ירחי",
   "reminderDeleteConfirmTitle": "למחוק את התזכורת הזו?",
   "reminderDeleteConfirmBody": "לא ניתן לבטל פעולה זו.",
   "recurrenceNone": "פעם אחת",

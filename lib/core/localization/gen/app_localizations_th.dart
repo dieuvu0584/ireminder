@@ -182,6 +182,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get reminderFieldLunarMonth => 'เดือนตามจันทรคติ';
 
   @override
+  String get reminderFieldLunarToggle => 'ปฏิทินจันทรคติ';
+
+  @override
   String get reminderDeleteConfirmTitle => 'ลบการแจ้งเตือนนี้ใช่ไหม';
 
   @override
