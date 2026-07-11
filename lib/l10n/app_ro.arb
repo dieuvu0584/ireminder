@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 minute",
   "snoozeDuration30Min": "30 minute",
   "snoozeDuration60Min": "1 oră",
-  "snoozeDuration120Min": "2 ore"
+  "snoozeDuration120Min": "2 ore",
+  "defaultCategoryHomeAppliances": "Casă și electrocasnice",
+  "defaultCategoryVehicles": "Vehicule",
+  "defaultCategoryFamilyEvents": "Aniversări și familie",
+  "defaultCategoryFinance": "Finanțe",
+  "defaultCategoryWork": "Muncă",
+  "defaultCategoryFamily": "Familie",
+  "defaultCategoryOutdoorEvents": "Ieșiri și evenimente",
+  "defaultCategoryHealth": "Sănătate"
 }

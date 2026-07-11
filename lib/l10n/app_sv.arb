@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 minuter",
   "snoozeDuration30Min": "30 minuter",
   "snoozeDuration60Min": "1 timme",
-  "snoozeDuration120Min": "2 timmar"
+  "snoozeDuration120Min": "2 timmar",
+  "defaultCategoryHomeAppliances": "Hem och apparater",
+  "defaultCategoryVehicles": "Fordon",
+  "defaultCategoryFamilyEvents": "Årsdagar och familj",
+  "defaultCategoryFinance": "Ekonomi",
+  "defaultCategoryWork": "Arbete",
+  "defaultCategoryFamily": "Familj",
+  "defaultCategoryOutdoorEvents": "Utflykter och event",
+  "defaultCategoryHealth": "Hälsa"
 }

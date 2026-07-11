@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 phút",
   "snoozeDuration30Min": "30 phút",
   "snoozeDuration60Min": "1 giờ",
-  "snoozeDuration120Min": "2 giờ"
+  "snoozeDuration120Min": "2 giờ",
+  "defaultCategoryHomeAppliances": "Nhà cửa & thiết bị",
+  "defaultCategoryVehicles": "Xe cộ",
+  "defaultCategoryFamilyEvents": "Giỗ chạp & gia đình",
+  "defaultCategoryFinance": "Tài chính",
+  "defaultCategoryWork": "Công việc",
+  "defaultCategoryFamily": "Gia đình nhỏ",
+  "defaultCategoryOutdoorEvents": "Dã ngoại & sự kiện",
+  "defaultCategoryHealth": "Sức khỏe"
 }

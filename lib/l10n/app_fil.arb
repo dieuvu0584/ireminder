@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 minuto",
   "snoozeDuration30Min": "30 minuto",
   "snoozeDuration60Min": "1 oras",
-  "snoozeDuration120Min": "2 oras"
+  "snoozeDuration120Min": "2 oras",
+  "defaultCategoryHomeAppliances": "Bahay at kagamitan",
+  "defaultCategoryVehicles": "Mga sasakyan",
+  "defaultCategoryFamilyEvents": "Anibersaryo at pamilya",
+  "defaultCategoryFinance": "Pananalapi",
+  "defaultCategoryWork": "Trabaho",
+  "defaultCategoryFamily": "Pamilya",
+  "defaultCategoryOutdoorEvents": "Paglalakbay at mga kaganapan",
+  "defaultCategoryHealth": "Kalusugan"
 }

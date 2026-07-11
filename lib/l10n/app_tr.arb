@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 dakika",
   "snoozeDuration30Min": "30 dakika",
   "snoozeDuration60Min": "1 saat",
-  "snoozeDuration120Min": "2 saat"
+  "snoozeDuration120Min": "2 saat",
+  "defaultCategoryHomeAppliances": "Ev ve cihazlar",
+  "defaultCategoryVehicles": "Araçlar",
+  "defaultCategoryFamilyEvents": "Yıl dönümleri ve aile",
+  "defaultCategoryFinance": "Finans",
+  "defaultCategoryWork": "İş",
+  "defaultCategoryFamily": "Aile",
+  "defaultCategoryOutdoorEvents": "Geziler ve etkinlikler",
+  "defaultCategoryHealth": "Sağlık"
 }

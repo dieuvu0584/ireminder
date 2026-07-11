@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 minut",
   "snoozeDuration30Min": "30 minut",
   "snoozeDuration60Min": "1 hodina",
-  "snoozeDuration120Min": "2 hodiny"
+  "snoozeDuration120Min": "2 hodiny",
+  "defaultCategoryHomeAppliances": "Domácnost a spotřebiče",
+  "defaultCategoryVehicles": "Vozidla",
+  "defaultCategoryFamilyEvents": "Výročí a rodina",
+  "defaultCategoryFinance": "Finance",
+  "defaultCategoryWork": "Práce",
+  "defaultCategoryFamily": "Rodina",
+  "defaultCategoryOutdoorEvents": "Výlety a akce",
+  "defaultCategoryHealth": "Zdraví"
 }

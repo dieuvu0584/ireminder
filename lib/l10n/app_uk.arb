@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 хвилин",
   "snoozeDuration30Min": "30 хвилин",
   "snoozeDuration60Min": "1 година",
-  "snoozeDuration120Min": "2 години"
+  "snoozeDuration120Min": "2 години",
+  "defaultCategoryHomeAppliances": "Дім і техніка",
+  "defaultCategoryVehicles": "Транспорт",
+  "defaultCategoryFamilyEvents": "Річниці та сім'я",
+  "defaultCategoryFinance": "Фінанси",
+  "defaultCategoryWork": "Робота",
+  "defaultCategoryFamily": "Сім'я",
+  "defaultCategoryOutdoorEvents": "Прогулянки та події",
+  "defaultCategoryHealth": "Здоров'я"
 }

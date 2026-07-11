@@ -581,4 +581,28 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '২ ঘণ্টা';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'বাড়ি ও যন্ত্রপাতি';
+
+  @override
+  String get defaultCategoryVehicles => 'যানবাহন';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'বার্ষিকী ও পরিবার';
+
+  @override
+  String get defaultCategoryFinance => 'অর্থ';
+
+  @override
+  String get defaultCategoryWork => 'কাজ';
+
+  @override
+  String get defaultCategoryFamily => 'পরিবার';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'ভ্রমণ ও অনুষ্ঠান';
+
+  @override
+  String get defaultCategoryHealth => 'স্বাস্থ্য';
 }

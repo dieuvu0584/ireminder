@@ -584,4 +584,28 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 години';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Дім і техніка';
+
+  @override
+  String get defaultCategoryVehicles => 'Транспорт';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Річниці та сім\'я';
+
+  @override
+  String get defaultCategoryFinance => 'Фінанси';
+
+  @override
+  String get defaultCategoryWork => 'Робота';
+
+  @override
+  String get defaultCategoryFamily => 'Сім\'я';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Прогулянки та події';
+
+  @override
+  String get defaultCategoryHealth => 'Здоров\'я';
 }

@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15분",
   "snoozeDuration30Min": "30분",
   "snoozeDuration60Min": "1시간",
-  "snoozeDuration120Min": "2시간"
+  "snoozeDuration120Min": "2시간",
+  "defaultCategoryHomeAppliances": "집과 가전제품",
+  "defaultCategoryVehicles": "차량",
+  "defaultCategoryFamilyEvents": "기념일과 가족",
+  "defaultCategoryFinance": "재정",
+  "defaultCategoryWork": "직장",
+  "defaultCategoryFamily": "가족",
+  "defaultCategoryOutdoorEvents": "나들이와 행사",
+  "defaultCategoryHealth": "건강"
 }

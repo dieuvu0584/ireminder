@@ -1263,6 +1263,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'2 hours'**
   String get snoozeDuration120Min;
+
+  /// No description provided for @defaultCategoryHomeAppliances.
+  ///
+  /// In en, this message translates to:
+  /// **'Home & Appliances'**
+  String get defaultCategoryHomeAppliances;
+
+  /// No description provided for @defaultCategoryVehicles.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicles'**
+  String get defaultCategoryVehicles;
+
+  /// No description provided for @defaultCategoryFamilyEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'Anniversaries & Family'**
+  String get defaultCategoryFamilyEvents;
+
+  /// No description provided for @defaultCategoryFinance.
+  ///
+  /// In en, this message translates to:
+  /// **'Finance'**
+  String get defaultCategoryFinance;
+
+  /// No description provided for @defaultCategoryWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Work'**
+  String get defaultCategoryWork;
+
+  /// No description provided for @defaultCategoryFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'Family'**
+  String get defaultCategoryFamily;
+
+  /// No description provided for @defaultCategoryOutdoorEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'Outings & Events'**
+  String get defaultCategoryOutdoorEvents;
+
+  /// No description provided for @defaultCategoryHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get defaultCategoryHealth;
 }
 
 class _AppLocalizationsDelegate

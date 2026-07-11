@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 دقيقة",
   "snoozeDuration30Min": "30 دقيقة",
   "snoozeDuration60Min": "ساعة واحدة",
-  "snoozeDuration120Min": "ساعتان"
+  "snoozeDuration120Min": "ساعتان",
+  "defaultCategoryHomeAppliances": "المنزل والأجهزة",
+  "defaultCategoryVehicles": "المركبات",
+  "defaultCategoryFamilyEvents": "الذكرى السنوية والعائلة",
+  "defaultCategoryFinance": "المالية",
+  "defaultCategoryWork": "العمل",
+  "defaultCategoryFamily": "العائلة",
+  "defaultCategoryOutdoorEvents": "النزهات والفعاليات",
+  "defaultCategoryHealth": "الصحة"
 }

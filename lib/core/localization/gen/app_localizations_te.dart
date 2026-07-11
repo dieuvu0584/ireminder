@@ -586,4 +586,28 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 గంటలు';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'ఇల్లు & ఉపకరణాలు';
+
+  @override
+  String get defaultCategoryVehicles => 'వాహనాలు';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'వార్షికోత్సవాలు & కుటుంబం';
+
+  @override
+  String get defaultCategoryFinance => 'ఆర్థికం';
+
+  @override
+  String get defaultCategoryWork => 'పని';
+
+  @override
+  String get defaultCategoryFamily => 'కుటుంబం';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'విహారయాత్రలు & కార్యక్రమాలు';
+
+  @override
+  String get defaultCategoryHealth => 'ఆరోగ్యం';
 }

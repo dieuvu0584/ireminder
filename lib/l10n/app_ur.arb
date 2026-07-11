@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 منٹ",
   "snoozeDuration30Min": "30 منٹ",
   "snoozeDuration60Min": "1 گھنٹہ",
-  "snoozeDuration120Min": "2 گھنٹے"
+  "snoozeDuration120Min": "2 گھنٹے",
+  "defaultCategoryHomeAppliances": "گھر اور آلات",
+  "defaultCategoryVehicles": "گاڑیاں",
+  "defaultCategoryFamilyEvents": "سالگرہ اور خاندان",
+  "defaultCategoryFinance": "مالیات",
+  "defaultCategoryWork": "کام",
+  "defaultCategoryFamily": "خاندان",
+  "defaultCategoryOutdoorEvents": "سیر و تقریبات",
+  "defaultCategoryHealth": "صحت"
 }

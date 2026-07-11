@@ -588,4 +588,28 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 மணி நேரம்';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'வீடு & உபகரணங்கள்';
+
+  @override
+  String get defaultCategoryVehicles => 'வாகனங்கள்';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'நினைவு நாட்கள் & குடும்பம்';
+
+  @override
+  String get defaultCategoryFinance => 'நிதி';
+
+  @override
+  String get defaultCategoryWork => 'வேலை';
+
+  @override
+  String get defaultCategoryFamily => 'குடும்பம்';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'உல்லாசப் பயணங்கள் & நிகழ்வுகள்';
+
+  @override
+  String get defaultCategoryHealth => 'ஆரோக்கியம்';
 }

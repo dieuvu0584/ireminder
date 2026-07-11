@@ -589,4 +589,28 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 horas';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Hogar y electrodomésticos';
+
+  @override
+  String get defaultCategoryVehicles => 'Vehículos';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Aniversarios y familia';
+
+  @override
+  String get defaultCategoryFinance => 'Finanzas';
+
+  @override
+  String get defaultCategoryWork => 'Trabajo';
+
+  @override
+  String get defaultCategoryFamily => 'Familia';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Salidas y eventos';
+
+  @override
+  String get defaultCategoryHealth => 'Salud';
 }

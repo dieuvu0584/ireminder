@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "Dakika 15",
   "snoozeDuration30Min": "Dakika 30",
   "snoozeDuration60Min": "Saa 1",
-  "snoozeDuration120Min": "Saa 2"
+  "snoozeDuration120Min": "Saa 2",
+  "defaultCategoryHomeAppliances": "Nyumba na vifaa",
+  "defaultCategoryVehicles": "Magari",
+  "defaultCategoryFamilyEvents": "Kumbukumbu na familia",
+  "defaultCategoryFinance": "Fedha",
+  "defaultCategoryWork": "Kazi",
+  "defaultCategoryFamily": "Familia",
+  "defaultCategoryOutdoorEvents": "Matembezi na matukio",
+  "defaultCategoryHealth": "Afya"
 }

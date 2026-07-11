@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "১৫ মিনিট",
   "snoozeDuration30Min": "৩০ মিনিট",
   "snoozeDuration60Min": "১ ঘণ্টা",
-  "snoozeDuration120Min": "২ ঘণ্টা"
+  "snoozeDuration120Min": "২ ঘণ্টা",
+  "defaultCategoryHomeAppliances": "বাড়ি ও যন্ত্রপাতি",
+  "defaultCategoryVehicles": "যানবাহন",
+  "defaultCategoryFamilyEvents": "বার্ষিকী ও পরিবার",
+  "defaultCategoryFinance": "অর্থ",
+  "defaultCategoryWork": "কাজ",
+  "defaultCategoryFamily": "পরিবার",
+  "defaultCategoryOutdoorEvents": "ভ্রমণ ও অনুষ্ঠান",
+  "defaultCategoryHealth": "স্বাস্থ্য"
 }

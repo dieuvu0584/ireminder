@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 นาที",
   "snoozeDuration30Min": "30 นาที",
   "snoozeDuration60Min": "1 ชั่วโมง",
-  "snoozeDuration120Min": "2 ชั่วโมง"
+  "snoozeDuration120Min": "2 ชั่วโมง",
+  "defaultCategoryHomeAppliances": "บ้านและเครื่องใช้ไฟฟ้า",
+  "defaultCategoryVehicles": "ยานพาหนะ",
+  "defaultCategoryFamilyEvents": "วันครบรอบและครอบครัว",
+  "defaultCategoryFinance": "การเงิน",
+  "defaultCategoryWork": "งาน",
+  "defaultCategoryFamily": "ครอบครัว",
+  "defaultCategoryOutdoorEvents": "เที่ยวและกิจกรรม",
+  "defaultCategoryHealth": "สุขภาพ"
 }

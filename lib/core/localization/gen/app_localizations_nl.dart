@@ -589,4 +589,28 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 uur';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Huis en apparaten';
+
+  @override
+  String get defaultCategoryVehicles => 'Voertuigen';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Jubilea en familie';
+
+  @override
+  String get defaultCategoryFinance => 'Financiën';
+
+  @override
+  String get defaultCategoryWork => 'Werk';
+
+  @override
+  String get defaultCategoryFamily => 'Familie';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Uitjes en evenementen';
+
+  @override
+  String get defaultCategoryHealth => 'Gezondheid';
 }

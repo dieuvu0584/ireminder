@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 minit",
   "snoozeDuration30Min": "30 minit",
   "snoozeDuration60Min": "1 jam",
-  "snoozeDuration120Min": "2 jam"
+  "snoozeDuration120Min": "2 jam",
+  "defaultCategoryHomeAppliances": "Rumah & peralatan",
+  "defaultCategoryVehicles": "Kenderaan",
+  "defaultCategoryFamilyEvents": "Ulang tahun & keluarga",
+  "defaultCategoryFinance": "Kewangan",
+  "defaultCategoryWork": "Kerja",
+  "defaultCategoryFamily": "Keluarga",
+  "defaultCategoryOutdoorEvents": "Percutian & acara",
+  "defaultCategoryHealth": "Kesihatan"
 }

@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 ਮਿੰਟ",
   "snoozeDuration30Min": "30 ਮਿੰਟ",
   "snoozeDuration60Min": "1 ਘੰਟਾ",
-  "snoozeDuration120Min": "2 ਘੰਟੇ"
+  "snoozeDuration120Min": "2 ਘੰਟੇ",
+  "defaultCategoryHomeAppliances": "ਘਰ ਅਤੇ ਉਪਕਰਣ",
+  "defaultCategoryVehicles": "ਵਾਹਨ",
+  "defaultCategoryFamilyEvents": "ਵਰ੍ਹੇਗੰਢ ਅਤੇ ਪਰਿਵਾਰ",
+  "defaultCategoryFinance": "ਵਿੱਤ",
+  "defaultCategoryWork": "ਕੰਮ",
+  "defaultCategoryFamily": "ਪਰਿਵਾਰ",
+  "defaultCategoryOutdoorEvents": "ਸੈਰ ਅਤੇ ਸਮਾਗਮ",
+  "defaultCategoryHealth": "ਸਿਹਤ"
 }

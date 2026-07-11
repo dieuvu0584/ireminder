@@ -589,4 +589,28 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 oras';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Bahay at kagamitan';
+
+  @override
+  String get defaultCategoryVehicles => 'Mga sasakyan';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Anibersaryo at pamilya';
+
+  @override
+  String get defaultCategoryFinance => 'Pananalapi';
+
+  @override
+  String get defaultCategoryWork => 'Trabaho';
+
+  @override
+  String get defaultCategoryFamily => 'Pamilya';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Paglalakbay at mga kaganapan';
+
+  @override
+  String get defaultCategoryHealth => 'Kalusugan';
 }

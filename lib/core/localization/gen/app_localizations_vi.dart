@@ -583,4 +583,28 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 giờ';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Nhà cửa & thiết bị';
+
+  @override
+  String get defaultCategoryVehicles => 'Xe cộ';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Giỗ chạp & gia đình';
+
+  @override
+  String get defaultCategoryFinance => 'Tài chính';
+
+  @override
+  String get defaultCategoryWork => 'Công việc';
+
+  @override
+  String get defaultCategoryFamily => 'Gia đình nhỏ';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Dã ngoại & sự kiện';
+
+  @override
+  String get defaultCategoryHealth => 'Sức khỏe';
 }

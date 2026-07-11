@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 minuuttia",
   "snoozeDuration30Min": "30 minuuttia",
   "snoozeDuration60Min": "1 tunti",
-  "snoozeDuration120Min": "2 tuntia"
+  "snoozeDuration120Min": "2 tuntia",
+  "defaultCategoryHomeAppliances": "Koti ja laitteet",
+  "defaultCategoryVehicles": "Ajoneuvot",
+  "defaultCategoryFamilyEvents": "Merkkipäivät ja perhe",
+  "defaultCategoryFinance": "Talous",
+  "defaultCategoryWork": "Työ",
+  "defaultCategoryFamily": "Perhe",
+  "defaultCategoryOutdoorEvents": "Retket ja tapahtumat",
+  "defaultCategoryHealth": "Terveys"
 }

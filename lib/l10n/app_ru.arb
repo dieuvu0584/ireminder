@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 минут",
   "snoozeDuration30Min": "30 минут",
   "snoozeDuration60Min": "1 час",
-  "snoozeDuration120Min": "2 часа"
+  "snoozeDuration120Min": "2 часа",
+  "defaultCategoryHomeAppliances": "Дом и техника",
+  "defaultCategoryVehicles": "Транспорт",
+  "defaultCategoryFamilyEvents": "Годовщины и семья",
+  "defaultCategoryFinance": "Финансы",
+  "defaultCategoryWork": "Работа",
+  "defaultCategoryFamily": "Семья",
+  "defaultCategoryOutdoorEvents": "Прогулки и мероприятия",
+  "defaultCategoryHealth": "Здоровье"
 }

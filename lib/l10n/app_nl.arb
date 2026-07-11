@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 minuten",
   "snoozeDuration30Min": "30 minuten",
   "snoozeDuration60Min": "1 uur",
-  "snoozeDuration120Min": "2 uur"
+  "snoozeDuration120Min": "2 uur",
+  "defaultCategoryHomeAppliances": "Huis en apparaten",
+  "defaultCategoryVehicles": "Voertuigen",
+  "defaultCategoryFamilyEvents": "Jubilea en familie",
+  "defaultCategoryFinance": "Financiën",
+  "defaultCategoryWork": "Werk",
+  "defaultCategoryFamily": "Familie",
+  "defaultCategoryOutdoorEvents": "Uitjes en evenementen",
+  "defaultCategoryHealth": "Gezondheid"
 }

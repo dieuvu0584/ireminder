@@ -590,4 +590,28 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 óra';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Otthon és készülékek';
+
+  @override
+  String get defaultCategoryVehicles => 'Járművek';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Évfordulók és család';
+
+  @override
+  String get defaultCategoryFinance => 'Pénzügyek';
+
+  @override
+  String get defaultCategoryWork => 'Munka';
+
+  @override
+  String get defaultCategoryFamily => 'Család';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Kirándulások és események';
+
+  @override
+  String get defaultCategoryHealth => 'Egészség';
 }

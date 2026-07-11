@@ -583,4 +583,28 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '۲ ساعت';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'خانه و لوازم';
+
+  @override
+  String get defaultCategoryVehicles => 'وسایل نقلیه';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'سالگرد و خانواده';
+
+  @override
+  String get defaultCategoryFinance => 'امور مالی';
+
+  @override
+  String get defaultCategoryWork => 'کار';
+
+  @override
+  String get defaultCategoryFamily => 'خانواده';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'گردش‌ها و رویدادها';
+
+  @override
+  String get defaultCategoryHealth => 'سلامتی';
 }

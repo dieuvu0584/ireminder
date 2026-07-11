@@ -590,4 +590,28 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 ore';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Casă și electrocasnice';
+
+  @override
+  String get defaultCategoryVehicles => 'Vehicule';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Aniversări și familie';
+
+  @override
+  String get defaultCategoryFinance => 'Finanțe';
+
+  @override
+  String get defaultCategoryWork => 'Muncă';
+
+  @override
+  String get defaultCategoryFamily => 'Familie';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Ieșiri și evenimente';
+
+  @override
+  String get defaultCategoryHealth => 'Sănătate';
 }

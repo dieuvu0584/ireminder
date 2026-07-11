@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 λεπτά",
   "snoozeDuration30Min": "30 λεπτά",
   "snoozeDuration60Min": "1 ώρα",
-  "snoozeDuration120Min": "2 ώρες"
+  "snoozeDuration120Min": "2 ώρες",
+  "defaultCategoryHomeAppliances": "Σπίτι & συσκευές",
+  "defaultCategoryVehicles": "Οχήματα",
+  "defaultCategoryFamilyEvents": "Επέτειοι & οικογένεια",
+  "defaultCategoryFinance": "Οικονομικά",
+  "defaultCategoryWork": "Εργασία",
+  "defaultCategoryFamily": "Οικογένεια",
+  "defaultCategoryOutdoorEvents": "Εκδρομές & εκδηλώσεις",
+  "defaultCategoryHealth": "Υγεία"
 }

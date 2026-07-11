@@ -576,4 +576,28 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2시간';
+
+  @override
+  String get defaultCategoryHomeAppliances => '집과 가전제품';
+
+  @override
+  String get defaultCategoryVehicles => '차량';
+
+  @override
+  String get defaultCategoryFamilyEvents => '기념일과 가족';
+
+  @override
+  String get defaultCategoryFinance => '재정';
+
+  @override
+  String get defaultCategoryWork => '직장';
+
+  @override
+  String get defaultCategoryFamily => '가족';
+
+  @override
+  String get defaultCategoryOutdoorEvents => '나들이와 행사';
+
+  @override
+  String get defaultCategoryHealth => '건강';
 }

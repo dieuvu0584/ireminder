@@ -583,4 +583,28 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 કલાક';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'ઘર અને ઉપકરણો';
+
+  @override
+  String get defaultCategoryVehicles => 'વાહનો';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'વર્ષગાંઠ અને પરિવાર';
+
+  @override
+  String get defaultCategoryFinance => 'નાણાં';
+
+  @override
+  String get defaultCategoryWork => 'કામ';
+
+  @override
+  String get defaultCategoryFamily => 'પરિવાર';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'પ્રવાસ અને પ્રસંગો';
+
+  @override
+  String get defaultCategoryHealth => 'આરોગ્ય';
 }

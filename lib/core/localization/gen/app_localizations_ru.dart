@@ -585,4 +585,28 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 часа';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Дом и техника';
+
+  @override
+  String get defaultCategoryVehicles => 'Транспорт';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Годовщины и семья';
+
+  @override
+  String get defaultCategoryFinance => 'Финансы';
+
+  @override
+  String get defaultCategoryWork => 'Работа';
+
+  @override
+  String get defaultCategoryFamily => 'Семья';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Прогулки и мероприятия';
+
+  @override
+  String get defaultCategoryHealth => 'Здоровье';
 }

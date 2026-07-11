@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 நிமிடங்கள்",
   "snoozeDuration30Min": "30 நிமிடங்கள்",
   "snoozeDuration60Min": "1 மணி நேரம்",
-  "snoozeDuration120Min": "2 மணி நேரம்"
+  "snoozeDuration120Min": "2 மணி நேரம்",
+  "defaultCategoryHomeAppliances": "வீடு & உபகரணங்கள்",
+  "defaultCategoryVehicles": "வாகனங்கள்",
+  "defaultCategoryFamilyEvents": "நினைவு நாட்கள் & குடும்பம்",
+  "defaultCategoryFinance": "நிதி",
+  "defaultCategoryWork": "வேலை",
+  "defaultCategoryFamily": "குடும்பம்",
+  "defaultCategoryOutdoorEvents": "உல்லாசப் பயணங்கள் & நிகழ்வுகள்",
+  "defaultCategoryHealth": "ஆரோக்கியம்"
 }

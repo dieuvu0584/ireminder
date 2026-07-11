@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15 分钟",
   "snoozeDuration30Min": "30 分钟",
   "snoozeDuration60Min": "1 小时",
-  "snoozeDuration120Min": "2 小时"
+  "snoozeDuration120Min": "2 小时",
+  "defaultCategoryHomeAppliances": "家居与电器",
+  "defaultCategoryVehicles": "车辆",
+  "defaultCategoryFamilyEvents": "纪念日与家庭",
+  "defaultCategoryFinance": "财务",
+  "defaultCategoryWork": "工作",
+  "defaultCategoryFamily": "家庭",
+  "defaultCategoryOutdoorEvents": "出游与活动",
+  "defaultCategoryHealth": "健康"
 }

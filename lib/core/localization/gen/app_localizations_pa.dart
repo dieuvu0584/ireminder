@@ -585,4 +585,28 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => '2 ਘੰਟੇ';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'ਘਰ ਅਤੇ ਉਪਕਰਣ';
+
+  @override
+  String get defaultCategoryVehicles => 'ਵਾਹਨ';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'ਵਰ੍ਹੇਗੰਢ ਅਤੇ ਪਰਿਵਾਰ';
+
+  @override
+  String get defaultCategoryFinance => 'ਵਿੱਤ';
+
+  @override
+  String get defaultCategoryWork => 'ਕੰਮ';
+
+  @override
+  String get defaultCategoryFamily => 'ਪਰਿਵਾਰ';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'ਸੈਰ ਅਤੇ ਸਮਾਗਮ';
+
+  @override
+  String get defaultCategoryHealth => 'ਸਿਹਤ';
 }

@@ -584,4 +584,28 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get snoozeDuration120Min => 'Saa 2';
+
+  @override
+  String get defaultCategoryHomeAppliances => 'Nyumba na vifaa';
+
+  @override
+  String get defaultCategoryVehicles => 'Magari';
+
+  @override
+  String get defaultCategoryFamilyEvents => 'Kumbukumbu na familia';
+
+  @override
+  String get defaultCategoryFinance => 'Fedha';
+
+  @override
+  String get defaultCategoryWork => 'Kazi';
+
+  @override
+  String get defaultCategoryFamily => 'Familia';
+
+  @override
+  String get defaultCategoryOutdoorEvents => 'Matembezi na matukio';
+
+  @override
+  String get defaultCategoryHealth => 'Afya';
 }

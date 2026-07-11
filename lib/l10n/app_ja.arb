@@ -233,5 +233,13 @@
   "snoozeDuration15Min": "15分",
   "snoozeDuration30Min": "30分",
   "snoozeDuration60Min": "1時間",
-  "snoozeDuration120Min": "2時間"
+  "snoozeDuration120Min": "2時間",
+  "defaultCategoryHomeAppliances": "家と家電",
+  "defaultCategoryVehicles": "車両",
+  "defaultCategoryFamilyEvents": "記念日と家族",
+  "defaultCategoryFinance": "財務",
+  "defaultCategoryWork": "仕事",
+  "defaultCategoryFamily": "家族",
+  "defaultCategoryOutdoorEvents": "おでかけとイベント",
+  "defaultCategoryHealth": "健康"
 }
