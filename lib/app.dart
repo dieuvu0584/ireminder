@@ -26,20 +26,26 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
     if (parts[0] == 'reminder') {
       if (actionId == NotificationActionIds.reminderSnooze) {
         final settings = await ref.read(settingsRepositoryProvider).get();
-        await ref.read(reminderActionsProvider).snooze(
+        await ref
+            .read(reminderActionsProvider)
+            .snooze(
               id,
-              DateTime.now()
-                  .add(Duration(minutes: settings.snoozeDurationMinutes)),
+              DateTime.now().add(
+                Duration(minutes: settings.snoozeDurationMinutes),
+              ),
             );
       } else {
         await ref.read(reminderActionsProvider).complete(id);
       }
     } else if (parts[0] == 'installment' &&
         actionId == NotificationActionIds.installmentPaid) {
-      final installment =
-          await ref.read(loanRepositoryProvider).getInstallmentById(id);
+      final installment = await ref
+          .read(loanRepositoryProvider)
+          .getInstallmentById(id);
       if (installment != null) {
-        await ref.read(loanActionsProvider).markPaid(
+        await ref
+            .read(loanActionsProvider)
+            .markPaid(
               loanId: installment.loanId,
               installmentIds: [installment.id],
               paidDate: DateTime.now(),
@@ -60,16 +66,30 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
 
   final settingsRepo = ref.read(settingsRepositoryProvider);
   final settings = await settingsRepo.get();
+  Locale activeLocale;
   if (settings.locale == null) {
     final systemLocale = WidgetsBinding.instance.platformDispatcher.locale;
-    final resolved = resolveInitialLocale(systemLocale);
-    await settingsRepo.setLocale(resolved.languageCode);
+    activeLocale = resolveInitialLocale(systemLocale);
+    await settingsRepo.setLocale(activeLocale.languageCode);
+  } else {
+    activeLocale = Locale(settings.locale!);
   }
 
   try {
+    // Default categories were seeded once in whatever locale was active
+    // at first launch; retranslate any that still hold a default name (in
+    // any language) so an app update or a later language switch actually
+    // takes effect on them too, without touching categories the user
+    // renamed themselves.
     await ref
-        .read(alarmSchedulerServiceProvider)
-        .rescheduleAllFromDatabase();
+        .read(categoryRepositoryProvider)
+        .syncDefaultCategoryNames(lookupAppLocalizations(activeLocale));
+  } catch (e) {
+    debugPrint('appBootstrap: syncDefaultCategoryNames failed: $e');
+  }
+
+  try {
+    await ref.read(alarmSchedulerServiceProvider).rescheduleAllFromDatabase();
   } catch (e) {
     debugPrint('appBootstrap: rescheduleAllFromDatabase failed: $e');
   }
@@ -96,8 +116,9 @@ class IReminderApp extends ConsumerWidget {
           locale: settingsAsync.valueOrNull?.locale != null
               ? Locale(settingsAsync.valueOrNull!.locale!)
               : null,
-          supportedLocales:
-              kSupportedLocales.map((l) => Locale(l.code)).toList(),
+          supportedLocales: kSupportedLocales
+              .map((l) => Locale(l.code))
+              .toList(),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           localeResolutionCallback: (locale, supported) {
             if (locale == null) return supported.first;
@@ -128,8 +149,6 @@ class _SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: CircularProgressIndicator()),
-    );
+    return const Scaffold(body: Center(child: CircularProgressIndicator()));
   }
 }
