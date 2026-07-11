@@ -89,6 +89,15 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
   }
 
   try {
+    // One-time self-heal for yearly/lunar-yearly reminders whose
+    // next_due_date was wrongly set to their start date by a now-fixed
+    // bug — corrects any row still showing the symptom, no-ops otherwise.
+    await ref.read(reminderRepositoryProvider).healStaleYearlyDueDates();
+  } catch (e) {
+    debugPrint('appBootstrap: healStaleYearlyDueDates failed: $e');
+  }
+
+  try {
     await ref.read(alarmSchedulerServiceProvider).rescheduleAllFromDatabase();
   } catch (e) {
     debugPrint('appBootstrap: rescheduleAllFromDatabase failed: $e');

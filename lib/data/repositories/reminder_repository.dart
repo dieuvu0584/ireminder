@@ -1,10 +1,18 @@
 import 'package:drift/drift.dart';
 
+import '../../core/utils/lunar_converter.dart';
 import '../../core/utils/recurrence_calculator.dart';
 import '../../domain/enums/recurrence_type.dart';
 import '../../domain/enums/loan_frequency.dart' show ReminderLogAction;
 import '../../domain/models/recurrence_params.dart';
 import '../database/app_database.dart';
+
+int _daysInMonth(int year, int month) {
+  final firstOfNextMonth = month == 12
+      ? DateTime(year + 1, 1, 1)
+      : DateTime(year, month + 1, 1);
+  return firstOfNextMonth.subtract(const Duration(days: 1)).day;
+}
 
 class ReminderRepository {
   final AppDatabase _db;
@@ -157,6 +165,56 @@ class ReminderRepository {
 
   Future<void> delete(int id) {
     return (_db.delete(_db.reminders)..where((r) => r.id.equals(id))).go();
+  }
+
+  /// Self-heal for reminders whose `next_due_date` was set by a fixed
+  /// bug: yearly/lunar-yearly reminders created with a start date that
+  /// hadn't "passed" yet got `next_due_date` set to that start date
+  /// itself, ignoring the day/month the user actually entered. Only
+  /// touches rows whose stored due date doesn't match what their own
+  /// day/month rule implies — a reminder that's simply overdue (rule
+  /// satisfied, date just in the past) is left alone, so this never
+  /// erases a legitimately-overdue reminder by fast-forwarding it.
+  Future<void> healStaleYearlyDueDates() async {
+    final all = await (_db.select(
+      _db.reminders,
+    )..where((r) => r.isActive.equals(true) & r.snoozeUntil.isNull())).get();
+    for (final r in all) {
+      final type = RecurrenceType.fromDbValue(r.recurrenceType);
+      if (type != RecurrenceType.yearly && type != RecurrenceType.lunarYearly) {
+        continue;
+      }
+      if (r.recurrenceDay == null || r.recurrenceMonth == null) continue;
+      if (_dueDateMatchesRule(
+        r.nextDueDate,
+        type,
+        r.recurrenceDay!,
+        r.recurrenceMonth!,
+      )) {
+        continue;
+      }
+      final corrected = calculateFirstOccurrenceOnOrAfter(
+        paramsOf(r),
+        r.startDate,
+      );
+      await (_db.update(_db.reminders)..where((t) => t.id.equals(r.id))).write(
+        RemindersCompanion(nextDueDate: Value(corrected)),
+      );
+    }
+  }
+
+  bool _dueDateMatchesRule(
+    DateTime dueDate,
+    RecurrenceType type,
+    int day,
+    int month,
+  ) {
+    if (type == RecurrenceType.yearly) {
+      final expectedDay = day.clamp(1, _daysInMonth(dueDate.year, month));
+      return dueDate.month == month && dueDate.day == expectedDay;
+    }
+    final lunar = LunarConverter.solarToLunar(dueDate);
+    return lunar.day == day && lunar.month == month;
   }
 
   /// Marks the reminder as completed today: logs it, recomputes

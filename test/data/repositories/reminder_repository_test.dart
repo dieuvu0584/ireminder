@@ -1,3 +1,4 @@
+import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ireminder/core/utils/lunar_converter.dart';
@@ -145,5 +146,72 @@ void main() {
 
     final saved = await reminders.getById(id);
     expect(saved!.nextDueDate, tomorrow);
+  });
+
+  group('healStaleYearlyDueDates', () {
+    test('corrects a lunar-yearly reminder stuck on its start date', () async {
+      final today = DateTime.now();
+      final todayDateOnly = DateTime(today.year, today.month, today.day);
+      final tomorrow = todayDateOnly.add(const Duration(days: 1));
+      final tomorrowLunar = LunarConverter.solarToLunar(tomorrow);
+      final now = DateTime.now();
+
+      // Simulate the pre-fix bug directly (bypassing the now-fixed
+      // create()): next_due_date == startDate, ignoring the lunar rule.
+      final id = await db
+          .into(db.reminders)
+          .insert(
+            RemindersCompanion.insert(
+              title: 'Death anniversary',
+              categoryId: categoryId,
+              recurrenceType: RecurrenceType.lunarYearly.dbValue,
+              recurrenceDay: Value(tomorrowLunar.day),
+              recurrenceMonth: Value(tomorrowLunar.month),
+              isLunar: const Value(true),
+              startDate: todayDateOnly,
+              nextDueDate: todayDateOnly,
+              reminderTime: '09:00',
+              createdAt: now,
+              updatedAt: now,
+            ),
+          );
+
+      await reminders.healStaleYearlyDueDates();
+
+      final healed = await reminders.getById(id);
+      expect(healed!.nextDueDate, tomorrow);
+    });
+
+    test(
+      'leaves a correctly-scheduled but overdue reminder untouched',
+      () async {
+        // The rule *is* satisfied here — it's just in the past, meaning the
+        // user simply hasn't completed it yet. Must not be "fixed" into the
+        // future, which would silently erase a legitimately overdue item.
+        final pastDue = DateTime(2020, 3, 15);
+        final now = DateTime.now();
+        final id = await db
+            .into(db.reminders)
+            .insert(
+              RemindersCompanion.insert(
+                title: 'Overdue yearly thing',
+                categoryId: categoryId,
+                recurrenceType: RecurrenceType.yearly.dbValue,
+                recurrenceDay: const Value(15),
+                recurrenceMonth: const Value(3),
+                startDate: DateTime(2019, 3, 15),
+                nextDueDate: pastDue,
+                reminderTime: '09:00',
+                createdAt: now,
+                updatedAt: now,
+              ),
+            );
+
+        await reminders.healStaleYearlyDueDates();
+
+        final unchanged = await reminders.getById(id);
+        expect(unchanged!.nextDueDate, pastDue);
+      },
+    );
   });
 }
