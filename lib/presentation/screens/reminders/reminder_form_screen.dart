@@ -89,6 +89,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         : _recurrenceType;
     try {
       bool scheduled;
+      String? scheduleError;
       if (widget.existing == null) {
         final result = await actions.create(
           title: _titleCtrl.text.trim(),
@@ -107,8 +108,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           advanceNoticeDays: _advanceNoticeDays,
         );
         scheduled = result.$2;
+        scheduleError = result.$3;
       } else {
-        scheduled = await actions.update(
+        final result = await actions.update(
           widget.existing!.copyWith(
             title: _titleCtrl.text.trim(),
             description: drift.Value(
@@ -126,15 +128,18 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
             advanceNoticeDays: _advanceNoticeDays,
           ),
         );
+        scheduled = result.$1;
+        scheduleError = result.$2;
       }
       if (mounted) {
         if (!scheduled) {
+          final base = AppLocalizations.of(context).reminderScheduleWarning;
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(
-                AppLocalizations.of(context).reminderScheduleWarning,
+                scheduleError == null ? base : '$base\n$scheduleError',
               ),
-              duration: const Duration(seconds: 6),
+              duration: const Duration(seconds: 10),
             ),
           );
         }

@@ -340,15 +340,24 @@ class _PermissionsSectionState extends ConsumerState<_PermissionsSection>
                   label: Text(l10n.settingsTestNotificationAction),
                   onPressed: () async {
                     final messenger = ScaffoldMessenger.of(context);
-                    await ref
-                        .read(notificationServiceProvider)
-                        .scheduleTestNotification();
-                    messenger.showSnackBar(
-                      SnackBar(
-                        content: Text(l10n.settingsTestNotificationScheduled),
-                        duration: const Duration(seconds: 8),
-                      ),
-                    );
+                    try {
+                      await ref
+                          .read(notificationServiceProvider)
+                          .scheduleTestNotification();
+                      messenger.showSnackBar(
+                        SnackBar(
+                          content: Text(l10n.settingsTestNotificationScheduled),
+                          duration: const Duration(seconds: 8),
+                        ),
+                      );
+                    } catch (e) {
+                      messenger.showSnackBar(
+                        SnackBar(
+                          content: Text('${l10n.errorGeneric}\n$e'),
+                          duration: const Duration(seconds: 10),
+                        ),
+                      );
+                    }
                   },
                 ),
               ),

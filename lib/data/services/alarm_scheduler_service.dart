@@ -40,16 +40,19 @@ class AlarmSchedulerService {
     );
   }
 
-  /// Returns whether scheduling actually succeeded — callers on the direct
-  /// user-action path (create/update/snooze) use this to surface a warning
-  /// instead of failing silently, while [rescheduleAllFromDatabase] (which
-  /// iterates every reminder on every app start) ignores it, since a
-  /// bulk-reschedule failure for one row must never block the rest.
-  Future<bool> scheduleForReminder(Reminder reminder) async {
+  /// Returns whether scheduling actually succeeded, plus the raw error (if
+  /// any) so the UI can show something more actionable than a generic
+  /// warning. Callers on the direct user-action path (create/update/
+  /// snooze) use this; [rescheduleAllFromDatabase] (which iterates every
+  /// reminder on every app start) ignores it, since a bulk-reschedule
+  /// failure for one row must never block the rest.
+  Future<(bool success, String? error)> scheduleForReminder(
+    Reminder reminder,
+  ) async {
     try {
       if (!reminder.isActive) {
         await _notifications.cancelReminder(reminder.id);
-        return true;
+        return (true, null);
       }
       final dueDate = reminder.snoozeUntil ?? reminder.nextDueDate;
       final fireDate = reminder.snoozeUntil != null
@@ -70,7 +73,7 @@ class AlarmSchedulerService {
           soundEnabled: prefs.sound,
           vibrationEnabled: prefs.vibration,
         );
-        return true;
+        return (true, null);
       }
 
       await _notifications.scheduleReminder(
@@ -81,13 +84,13 @@ class AlarmSchedulerService {
         soundEnabled: prefs.sound,
         vibrationEnabled: prefs.vibration,
       );
-      return true;
+      return (true, null);
     } catch (e) {
       debugPrint(
         'AlarmSchedulerService: failed to schedule reminder '
         '${reminder.id}: $e',
       );
-      return false;
+      return (false, e.toString());
     }
   }
 

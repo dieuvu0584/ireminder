@@ -29,10 +29,11 @@ class ReminderActions {
   final Ref _ref;
   ReminderActions(this._ref);
 
-  /// Returns (id, notificationScheduled) — the caller (UI layer) uses the
-  /// second value to warn the user when the reminder saved fine but the
-  /// OS-level alarm failed to schedule, instead of that failing silently.
-  Future<(int, bool)> create({
+  /// Returns (id, notificationScheduled, error) — the caller (UI layer)
+  /// uses the last two to warn the user, with the actual error text, when
+  /// the reminder saved fine but the OS-level alarm failed to schedule,
+  /// instead of that failing silently.
+  Future<(int, bool, String?)> create({
     required String title,
     String? description,
     required int categoryId,
@@ -64,20 +65,21 @@ class ReminderActions {
         );
     final reminder = await _ref.read(reminderRepositoryProvider).getById(id);
     var scheduled = true;
+    String? error;
     if (reminder != null) {
-      scheduled = await _ref
+      (scheduled, error) = await _ref
           .read(alarmSchedulerServiceProvider)
           .scheduleForReminder(reminder);
     }
-    return (id, scheduled);
+    return (id, scheduled, error);
   }
 
-  Future<bool> update(Reminder reminder) async {
+  Future<(bool, String?)> update(Reminder reminder) async {
     await _ref.read(reminderRepositoryProvider).update(reminder);
     final updated = await _ref
         .read(reminderRepositoryProvider)
         .getById(reminder.id);
-    if (updated == null) return true;
+    if (updated == null) return (true, null);
     return _ref
         .read(alarmSchedulerServiceProvider)
         .scheduleForReminder(updated);
@@ -105,7 +107,7 @@ class ReminderActions {
     }
   }
 
-  Future<bool> snooze(int reminderId, DateTime snoozeUntil) async {
+  Future<(bool, String?)> snooze(int reminderId, DateTime snoozeUntil) async {
     final updated = await _ref
         .read(reminderRepositoryProvider)
         .snooze(reminderId, snoozeUntil);
