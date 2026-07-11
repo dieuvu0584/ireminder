@@ -34,12 +34,21 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
+            // R8 minification was crashing every scheduled notification at
+            // fire time (Gson TypeToken reflection inside
+            // flutter_local_notifications' persistence code loses its
+            // generic signature once shrunk/obfuscated — see
+            // proguard-rules.pro). Added targeted keep rules for that one
+            // path, but the crash persisted on a real device retest,
+            // meaning either that path or another R8-sensitive one is
+            // still broken and there's no local Android toolchain here to
+            // iterate on the exact rule set. For a personal-use, sideloaded
+            // app the ~2x larger APK from skipping shrinking is a trivial
+            // cost against a whole class of native reflection crashes —
+            // simplest fix is turning R8 off entirely rather than
+            // continuing to guess at keep rules blind.
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
 }
