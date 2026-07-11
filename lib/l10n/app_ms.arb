@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Pemberitahuan & Penggera",
   "settingsPermissionsNotificationLabel": "Kebenaran pemberitahuan",
   "settingsPermissionsExactAlarmLabel": "Kebenaran penggera tepat",
+  "settingsPermissionsBatteryLabel": "Abaikan pengoptimuman bateri (disyorkan)",
   "settingsPermissionsGranted": "Diberikan",
   "settingsPermissionsDenied": "Tidak diberikan — peringatan mungkin tidak muncul tepat pada masanya",
   "settingsPermissionsGrantAction": "Berikan kebenaran",

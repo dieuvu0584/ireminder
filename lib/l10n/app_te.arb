@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "నోటిఫికేషన్‌లు & అలారాలు",
   "settingsPermissionsNotificationLabel": "నోటిఫికేషన్ అనుమతి",
   "settingsPermissionsExactAlarmLabel": "ఖచ్చితమైన అలారం అనుమతి",
+  "settingsPermissionsBatteryLabel": "బ్యాటరీ ఆప్టిమైజేషన్‌ను విస్మరించండి (సిఫార్సు చేయబడింది)",
   "settingsPermissionsGranted": "మంజూరైంది",
   "settingsPermissionsDenied": "మంజూరు కాలేదు — రిమైండర్‌లు సమయానికి రాకపోవచ్చు",
   "settingsPermissionsGrantAction": "మంజూరు చేయి",

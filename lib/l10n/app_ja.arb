@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "通知とアラーム",
   "settingsPermissionsNotificationLabel": "通知の権限",
   "settingsPermissionsExactAlarmLabel": "正確なアラームの権限",
+  "settingsPermissionsBatteryLabel": "バッテリー最適化を無視する（推奨）",
   "settingsPermissionsGranted": "許可済み",
   "settingsPermissionsDenied": "未許可 — リマインダーが時間通りに届かない場合があります",
   "settingsPermissionsGrantAction": "許可する",

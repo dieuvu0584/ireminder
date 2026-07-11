@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "การแจ้งเตือนและปลุก",
   "settingsPermissionsNotificationLabel": "สิทธิ์การแจ้งเตือน",
   "settingsPermissionsExactAlarmLabel": "สิทธิ์การตั้งปลุกแบบตรงเวลา",
+  "settingsPermissionsBatteryLabel": "ไม่สนใจการเพิ่มประสิทธิภาพแบตเตอรี่ (แนะนำ)",
   "settingsPermissionsGranted": "อนุญาตแล้ว",
   "settingsPermissionsDenied": "ยังไม่ได้รับอนุญาต — การแจ้งเตือนอาจไม่มาตรงเวลา",
   "settingsPermissionsGrantAction": "อนุญาต",

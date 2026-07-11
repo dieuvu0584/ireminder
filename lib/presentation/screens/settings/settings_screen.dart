@@ -146,8 +146,9 @@ class SettingsScreen extends ConsumerWidget {
               leading: const Icon(Icons.download_outlined),
               title: Text(l10n.settingsImport),
               onTap: () async {
-                final backups =
-                    await ref.read(backupServiceProvider).listBackups();
+                final backups = await ref
+                    .read(backupServiceProvider)
+                    .listBackups();
                 if (!context.mounted) return;
                 if (backups.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -323,6 +324,15 @@ class _PermissionsSectionState extends ConsumerState<_PermissionsSection>
                   ref.invalidate(permissionStatusProvider);
                 },
               ),
+              _PermissionRow(
+                label: l10n.settingsPermissionsBatteryLabel,
+                granted: status.batteryOptimizationIgnored,
+                l10n: l10n,
+                onGrant: () async {
+                  await ph.Permission.ignoreBatteryOptimizations.request();
+                  ref.invalidate(permissionStatusProvider);
+                },
+              ),
             ],
           ),
           loading: () => const Padding(
@@ -454,13 +464,16 @@ class _NotificationPrefsSection extends ConsumerWidget {
             child: DropdownButtonFormField<int>(
               key: ValueKey(settings.snoozeDurationMinutes),
               initialValue: settings.snoozeDurationMinutes,
-              decoration:
-                  InputDecoration(labelText: l10n.settingsSnoozeDuration),
+              decoration: InputDecoration(
+                labelText: l10n.settingsSnoozeDuration,
+              ),
               items: _snoozeOptions
-                  .map((m) => DropdownMenuItem(
-                        value: m,
-                        child: Text(_snoozeLabel(l10n, m)),
-                      ))
+                  .map(
+                    (m) => DropdownMenuItem(
+                      value: m,
+                      child: Text(_snoozeLabel(l10n, m)),
+                    ),
+                  )
                   .toList(),
               onChanged: (v) {
                 if (v != null) actions.setSnoozeDurationMinutes(v);
@@ -512,8 +525,9 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
     if (_loadedForProviderId == providerId) return;
     _loadedForProviderId = providerId;
     try {
-      final key =
-          await ref.read(aiSettingsActionsProvider).getApiKey(providerId);
+      final key = await ref
+          .read(aiSettingsActionsProvider)
+          .getApiKey(providerId);
       if (mounted && _loadedForProviderId == providerId) {
         _apiKeyCtrl.text = key ?? '';
       }
@@ -543,8 +557,9 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
             _modelCtrl.text = settings.modelName ?? provider.defaultModel;
           }
         }
-        final allowedIds =
-            ref.read(aiSettingsRepositoryProvider).allowedCategoryIds(settings);
+        final allowedIds = ref
+            .read(aiSettingsRepositoryProvider)
+            .allowedCategoryIds(settings);
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -570,13 +585,16 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
                   // the new provider's key — a mismatched pairing.
                   key: ValueKey(provider?.id),
                   initialValue: provider?.id,
-                  decoration:
-                      InputDecoration(labelText: l10n.settingsAiProvider),
+                  decoration: InputDecoration(
+                    labelText: l10n.settingsAiProvider,
+                  ),
                   items: AiProviderFactory.all
-                      .map((p) => DropdownMenuItem(
-                            value: p.id,
-                            child: Text(p.displayName),
-                          ))
+                      .map(
+                        (p) => DropdownMenuItem(
+                          value: p.id,
+                          child: Text(p.displayName),
+                        ),
+                      )
                       .toList(),
                   onChanged: (id) {
                     if (id == null) return;
@@ -589,8 +607,7 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
               ),
               if (provider != null) ...[
                 Padding(
-                  padding:
-                      const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
                   // DropdownMenu rather than a plain DropdownButton: it's
                   // still a free-text field under the hood (via its own
                   // controller), so picking a model from the quick-pick
@@ -622,9 +639,11 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: Icon(_obscureKey
-                                ? Icons.visibility_outlined
-                                : Icons.visibility_off_outlined),
+                            icon: Icon(
+                              _obscureKey
+                                  ? Icons.visibility_outlined
+                                  : Icons.visibility_off_outlined,
+                            ),
                             onPressed: () =>
                                 setState(() => _obscureKey = !_obscureKey),
                           ),
@@ -639,8 +658,7 @@ class _AiAssistantSectionState extends ConsumerState<_AiAssistantSection> {
                                 );
                                 messenger.showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text(l10n.settingsAiApiKeySaved),
+                                    content: Text(l10n.settingsAiApiKeySaved),
                                   ),
                                 );
                               } catch (_) {

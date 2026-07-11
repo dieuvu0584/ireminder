@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "התראות ואזעקות",
   "settingsPermissionsNotificationLabel": "הרשאת התראות",
   "settingsPermissionsExactAlarmLabel": "הרשאת אזעקות מדויקות",
+  "settingsPermissionsBatteryLabel": "התעלם מאופטימיזציית סוללה (מומלץ)",
   "settingsPermissionsGranted": "אושרה",
   "settingsPermissionsDenied": "לא אושרה — ייתכן שהתזכורות לא יופיעו בזמן",
   "settingsPermissionsGrantAction": "אשר",

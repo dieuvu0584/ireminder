@@ -547,6 +547,10 @@ class AppLocalizationsRo extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Permisiune alarme exacte';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Ignoră optimizarea bateriei (recomandat)';
+
+  @override
   String get settingsPermissionsGranted => 'Acordată';
 
   @override

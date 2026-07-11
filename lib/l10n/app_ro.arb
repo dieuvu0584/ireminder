@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Notificări și alarme",
   "settingsPermissionsNotificationLabel": "Permisiune notificări",
   "settingsPermissionsExactAlarmLabel": "Permisiune alarme exacte",
+  "settingsPermissionsBatteryLabel": "Ignoră optimizarea bateriei (recomandat)",
   "settingsPermissionsGranted": "Acordată",
   "settingsPermissionsDenied": "Neacordată — mementourile ar putea să nu apară la timp",
   "settingsPermissionsGrantAction": "Acordă",

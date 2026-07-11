@@ -534,6 +534,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => '正確なアラームの権限';
 
   @override
+  String get settingsPermissionsBatteryLabel => 'バッテリー最適化を無視する（推奨）';
+
+  @override
   String get settingsPermissionsGranted => '許可済み';
 
   @override

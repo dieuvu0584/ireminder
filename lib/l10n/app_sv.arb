@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Aviseringar och alarm",
   "settingsPermissionsNotificationLabel": "Aviseringstillstånd",
   "settingsPermissionsExactAlarmLabel": "Tillstånd för exakta alarm",
+  "settingsPermissionsBatteryLabel": "Ignorera batterioptimering (rekommenderas)",
   "settingsPermissionsGranted": "Beviljat",
   "settingsPermissionsDenied": "Inte beviljat — påminnelser kanske inte utlöses i tid",
   "settingsPermissionsGrantAction": "Bevilja",

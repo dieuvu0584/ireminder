@@ -543,6 +543,10 @@ class AppLocalizationsTh extends AppLocalizations {
       'สิทธิ์การตั้งปลุกแบบตรงเวลา';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'ไม่สนใจการเพิ่มประสิทธิภาพแบตเตอรี่ (แนะนำ)';
+
+  @override
   String get settingsPermissionsGranted => 'อนุญาตแล้ว';
 
   @override

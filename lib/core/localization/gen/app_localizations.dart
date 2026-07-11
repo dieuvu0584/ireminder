@@ -1174,6 +1174,12 @@ abstract class AppLocalizations {
   /// **'Exact alarm permission'**
   String get settingsPermissionsExactAlarmLabel;
 
+  /// No description provided for @settingsPermissionsBatteryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Ignore battery optimization (recommended)'**
+  String get settingsPermissionsBatteryLabel;
+
   /// No description provided for @settingsPermissionsGranted.
   ///
   /// In en, this message translates to:

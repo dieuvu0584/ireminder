@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Уведомления и будильники",
   "settingsPermissionsNotificationLabel": "Разрешение на уведомления",
   "settingsPermissionsExactAlarmLabel": "Разрешение на точные будильники",
+  "settingsPermissionsBatteryLabel": "Игнорировать оптимизацию батареи (рекомендуется)",
   "settingsPermissionsGranted": "Предоставлено",
   "settingsPermissionsDenied": "Не предоставлено — напоминания могут приходить не вовремя",
   "settingsPermissionsGrantAction": "Предоставить",

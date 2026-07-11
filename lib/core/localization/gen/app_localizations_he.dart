@@ -538,6 +538,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'הרשאת אזעקות מדויקות';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'התעלם מאופטימיזציית סוללה (מומלץ)';
+
+  @override
   String get settingsPermissionsGranted => 'אושרה';
 
   @override

@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Thông báo & Báo thức",
   "settingsPermissionsNotificationLabel": "Quyền thông báo",
   "settingsPermissionsExactAlarmLabel": "Quyền báo thức chính xác",
+  "settingsPermissionsBatteryLabel": "Bỏ qua tối ưu hóa pin (khuyến nghị)",
   "settingsPermissionsGranted": "Đã cấp quyền",
   "settingsPermissionsDenied": "Chưa được cấp — nhắc nhở có thể không hiện đúng giờ",
   "settingsPermissionsGrantAction": "Cấp quyền",

@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "सूचनाएं और अलार्म",
   "settingsPermissionsNotificationLabel": "सूचना अनुमति",
   "settingsPermissionsExactAlarmLabel": "सटीक अलार्म अनुमति",
+  "settingsPermissionsBatteryLabel": "बैटरी अनुकूलन अनदेखा करें (अनुशंसित)",
   "settingsPermissionsGranted": "अनुमति दी गई",
   "settingsPermissionsDenied": "अनुमति नहीं दी गई — रिमाइंडर समय पर नहीं बज सकते",
   "settingsPermissionsGrantAction": "अनुमति दें",

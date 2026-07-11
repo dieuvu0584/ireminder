@@ -543,6 +543,10 @@ class AppLocalizationsTe extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'ఖచ్చితమైన అలారం అనుమతి';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'బ్యాటరీ ఆప్టిమైజేషన్‌ను విస్మరించండి (సిఫార్సు చేయబడింది)';
+
+  @override
   String get settingsPermissionsGranted => 'మంజూరైంది';
 
   @override

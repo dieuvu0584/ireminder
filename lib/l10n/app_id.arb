@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Notifikasi & Alarm",
   "settingsPermissionsNotificationLabel": "Izin notifikasi",
   "settingsPermissionsExactAlarmLabel": "Izin alarm presisi",
+  "settingsPermissionsBatteryLabel": "Abaikan pengoptimalan baterai (disarankan)",
   "settingsPermissionsGranted": "Diizinkan",
   "settingsPermissionsDenied": "Belum diizinkan — pengingat mungkin tidak muncul tepat waktu",
   "settingsPermissionsGrantAction": "Izinkan",

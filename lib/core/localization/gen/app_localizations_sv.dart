@@ -543,6 +543,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Tillstånd för exakta alarm';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Ignorera batterioptimering (rekommenderas)';
+
+  @override
   String get settingsPermissionsGranted => 'Beviljat';
 
   @override

@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Ειδοποιήσεις & Ξυπνητήρια",
   "settingsPermissionsNotificationLabel": "Άδεια ειδοποιήσεων",
   "settingsPermissionsExactAlarmLabel": "Άδεια ακριβών ξυπνητηριών",
+  "settingsPermissionsBatteryLabel": "Παράβλεψη βελτιστοποίησης μπαταρίας (προτείνεται)",
   "settingsPermissionsGranted": "Παραχωρήθηκε",
   "settingsPermissionsDenied": "Δεν έχει παραχωρηθεί — οι υπενθυμίσεις ενδέχεται να μην εμφανίζονται στην ώρα τους",
   "settingsPermissionsGrantAction": "Παραχώρηση",

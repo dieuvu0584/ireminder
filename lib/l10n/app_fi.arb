@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Ilmoitukset ja hälytykset",
   "settingsPermissionsNotificationLabel": "Ilmoituslupa",
   "settingsPermissionsExactAlarmLabel": "Tarkkojen hälytysten lupa",
+  "settingsPermissionsBatteryLabel": "Ohita akun optimointi (suositus)",
   "settingsPermissionsGranted": "Myönnetty",
   "settingsPermissionsDenied": "Ei myönnetty — muistutukset eivät ehkä tule ajallaan",
   "settingsPermissionsGrantAction": "Myönnä",

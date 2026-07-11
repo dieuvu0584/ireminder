@@ -540,6 +540,10 @@ class AppLocalizationsGu extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'ચોક્કસ એલાર્મ પરવાનગી';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'બેટરી ઓપ્ટિમાઇઝેશન અવગણો (ભલામણ કરેલ)';
+
+  @override
   String get settingsPermissionsGranted => 'મંજૂર';
 
   @override

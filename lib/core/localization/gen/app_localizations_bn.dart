@@ -538,6 +538,10 @@ class AppLocalizationsBn extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'নির্ভুল অ্যালার্মের অনুমতি';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'ব্যাটারি অপ্টিমাইজেশন উপেক্ষা করুন (প্রস্তাবিত)';
+
+  @override
   String get settingsPermissionsGranted => 'অনুমোদিত';
 
   @override

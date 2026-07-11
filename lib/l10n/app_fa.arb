@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "اعلان‌ها و زنگ‌های هشدار",
   "settingsPermissionsNotificationLabel": "مجوز اعلان",
   "settingsPermissionsExactAlarmLabel": "مجوز زنگ هشدار دقیق",
+  "settingsPermissionsBatteryLabel": "نادیده گرفتن بهینه‌سازی باتری (توصیه‌شده)",
   "settingsPermissionsGranted": "اعطا شده",
   "settingsPermissionsDenied": "اعطا نشده — ممکن است یادآورها به‌موقع فعال نشوند",
   "settingsPermissionsGrantAction": "اعطای مجوز",

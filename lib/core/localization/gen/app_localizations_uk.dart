@@ -541,6 +541,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Дозвіл на точні будильники';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Ігнорувати оптимізацію батареї (рекомендовано)';
+
+  @override
   String get settingsPermissionsGranted => 'Надано';
 
   @override

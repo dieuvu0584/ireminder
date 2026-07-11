@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "اطلاعات اور الارم",
   "settingsPermissionsNotificationLabel": "اطلاعات کی اجازت",
   "settingsPermissionsExactAlarmLabel": "درست وقت کے الارم کی اجازت",
+  "settingsPermissionsBatteryLabel": "بیٹری آپٹیمائزیشن نظر انداز کریں (تجویز کردہ)",
   "settingsPermissionsGranted": "دی گئی",
   "settingsPermissionsDenied": "نہیں دی گئی — یاد دہانیاں وقت پر نہ آ سکیں",
   "settingsPermissionsGrantAction": "اجازت دیں",

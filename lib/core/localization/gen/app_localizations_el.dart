@@ -547,6 +547,10 @@ class AppLocalizationsEl extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Άδεια ακριβών ξυπνητηριών';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Παράβλεψη βελτιστοποίησης μπαταρίας (προτείνεται)';
+
+  @override
   String get settingsPermissionsGranted => 'Παραχωρήθηκε';
 
   @override

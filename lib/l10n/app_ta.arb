@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "அறிவிப்புகள் & அலாரங்கள்",
   "settingsPermissionsNotificationLabel": "அறிவிப்பு அனுமதி",
   "settingsPermissionsExactAlarmLabel": "துல்லியமான அலாரம் அனுமதி",
+  "settingsPermissionsBatteryLabel": "பேட்டரி மேம்படுத்தலை புறக்கணிக்கவும் (பரிந்துரைக்கப்படுகிறது)",
   "settingsPermissionsGranted": "வழங்கப்பட்டது",
   "settingsPermissionsDenied": "வழங்கப்படவில்லை — நினைவூட்டல்கள் சரியான நேரத்தில் வராமல் போகலாம்",
   "settingsPermissionsGrantAction": "வழங்கு",

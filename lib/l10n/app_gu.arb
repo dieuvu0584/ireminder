@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "સૂચનાઓ અને એલાર્મ",
   "settingsPermissionsNotificationLabel": "સૂચના પરવાનગી",
   "settingsPermissionsExactAlarmLabel": "ચોક્કસ એલાર્મ પરવાનગી",
+  "settingsPermissionsBatteryLabel": "બેટરી ઓપ્ટિમાઇઝેશન અવગણો (ભલામણ કરેલ)",
   "settingsPermissionsGranted": "મંજૂર",
   "settingsPermissionsDenied": "મંજૂર નથી — રિમાઇન્ડર સમયસર ન પણ આવે",
   "settingsPermissionsGrantAction": "મંજૂરી આપો",

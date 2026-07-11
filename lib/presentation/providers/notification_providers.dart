@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import '../../data/services/alarm_scheduler_service.dart';
 import '../../data/services/notification_service.dart';
@@ -18,10 +19,12 @@ final alarmSchedulerServiceProvider = Provider<AlarmSchedulerService>((ref) {
 class PermissionStatusSnapshot {
   final bool notificationsEnabled;
   final bool exactAlarmsEnabled;
+  final bool batteryOptimizationIgnored;
 
   const PermissionStatusSnapshot({
     required this.notificationsEnabled,
     required this.exactAlarmsEnabled,
+    required this.batteryOptimizationIgnored,
   });
 }
 
@@ -31,11 +34,14 @@ class PermissionStatusSnapshot {
 /// comes back from the system Settings app.
 final permissionStatusProvider =
     FutureProvider.autoDispose<PermissionStatusSnapshot>((ref) async {
-  final service = ref.watch(notificationServiceProvider);
-  final notifications = await service.areNotificationsEnabled();
-  final exactAlarms = await service.canScheduleExactAlarms();
-  return PermissionStatusSnapshot(
-    notificationsEnabled: notifications,
-    exactAlarmsEnabled: exactAlarms,
-  );
-});
+      final service = ref.watch(notificationServiceProvider);
+      final notifications = await service.areNotificationsEnabled();
+      final exactAlarms = await service.canScheduleExactAlarms();
+      final batteryIgnored =
+          await Permission.ignoreBatteryOptimizations.isGranted;
+      return PermissionStatusSnapshot(
+        notificationsEnabled: notifications,
+        exactAlarmsEnabled: exactAlarms,
+        batteryOptimizationIgnored: batteryIgnored,
+      );
+    });

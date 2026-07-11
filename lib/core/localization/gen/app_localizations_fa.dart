@@ -540,6 +540,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'مجوز زنگ هشدار دقیق';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'نادیده گرفتن بهینه‌سازی باتری (توصیه‌شده)';
+
+  @override
   String get settingsPermissionsGranted => 'اعطا شده';
 
   @override

@@ -5,6 +5,12 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- Some OEMs (notably Samsung/One UI) can still delay or drop an
+         exact alarm's notification even with SCHEDULE_EXACT_ALARM granted,
+         if the app is subject to battery/"sleeping apps" optimization.
+         Settings offers this as an opt-in permission row so reminders are
+         reliable, rather than assuming the OS default is enough. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
     <!-- Only used by the optional, off-by-default AI assistant (Phase 7)
          to reach the user's chosen BYOK provider. Every other feature is
          fully offline. -->

@@ -547,6 +547,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Pontos riasztás engedélye';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Akkumulátor-optimalizálás mellőzése (ajánlott)';
+
+  @override
   String get settingsPermissionsGranted => 'Megadva';
 
   @override

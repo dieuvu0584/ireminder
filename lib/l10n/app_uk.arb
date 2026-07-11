@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Сповіщення та будильники",
   "settingsPermissionsNotificationLabel": "Дозвіл на сповіщення",
   "settingsPermissionsExactAlarmLabel": "Дозвіл на точні будильники",
+  "settingsPermissionsBatteryLabel": "Ігнорувати оптимізацію батареї (рекомендовано)",
   "settingsPermissionsGranted": "Надано",
   "settingsPermissionsDenied": "Не надано — нагадування можуть не спрацювати вчасно",
   "settingsPermissionsGrantAction": "Надати",

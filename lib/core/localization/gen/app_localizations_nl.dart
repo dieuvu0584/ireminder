@@ -546,6 +546,10 @@ class AppLocalizationsNl extends AppLocalizations {
       'Toestemming voor exacte alarmen';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Batterijoptimalisatie negeren (aanbevolen)';
+
+  @override
   String get settingsPermissionsGranted => 'Verleend';
 
   @override

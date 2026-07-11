@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Bildirimler ve Alarmlar",
   "settingsPermissionsNotificationLabel": "Bildirim izni",
   "settingsPermissionsExactAlarmLabel": "Tam zamanlı alarm izni",
+  "settingsPermissionsBatteryLabel": "Pil optimizasyonunu yok say (önerilir)",
   "settingsPermissionsGranted": "Verildi",
   "settingsPermissionsDenied": "Verilmedi — hatırlatıcılar zamanında çalışmayabilir",
   "settingsPermissionsGrantAction": "İzin ver",

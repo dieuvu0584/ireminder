@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Oznámení a budíky",
   "settingsPermissionsNotificationLabel": "Oprávnění k oznámením",
   "settingsPermissionsExactAlarmLabel": "Oprávnění k přesným budíkům",
+  "settingsPermissionsBatteryLabel": "Ignorovat optimalizaci baterie (doporučeno)",
   "settingsPermissionsGranted": "Uděleno",
   "settingsPermissionsDenied": "Neuděleno — připomínky se nemusí spustit včas",
   "settingsPermissionsGrantAction": "Udělit",

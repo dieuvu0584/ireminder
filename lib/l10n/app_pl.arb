@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Powiadomienia i alarmy",
   "settingsPermissionsNotificationLabel": "Zgoda na powiadomienia",
   "settingsPermissionsExactAlarmLabel": "Zgoda na precyzyjne alarmy",
+  "settingsPermissionsBatteryLabel": "Ignoruj optymalizację baterii (zalecane)",
   "settingsPermissionsGranted": "Przyznano",
   "settingsPermissionsDenied": "Brak zgody — przypomnienia mogą nie pojawiać się na czas",
   "settingsPermissionsGrantAction": "Przyznaj",

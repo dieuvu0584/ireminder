@@ -542,6 +542,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Tam zamanlı alarm izni';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Pil optimizasyonunu yok say (önerilir)';
+
+  @override
   String get settingsPermissionsGranted => 'Verildi';
 
   @override

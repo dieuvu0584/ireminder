@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "ਸੂਚਨਾਵਾਂ ਅਤੇ ਅਲਾਰਮ",
   "settingsPermissionsNotificationLabel": "ਸੂਚਨਾ ਇਜਾਜ਼ਤ",
   "settingsPermissionsExactAlarmLabel": "ਸਟੀਕ ਅਲਾਰਮ ਇਜਾਜ਼ਤ",
+  "settingsPermissionsBatteryLabel": "ਬੈਟਰੀ ਓਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ (ਸਿਫਾਰਸ਼ ਕੀਤੀ)",
   "settingsPermissionsGranted": "ਦਿੱਤੀ ਗਈ",
   "settingsPermissionsDenied": "ਨਹੀਂ ਦਿੱਤੀ ਗਈ — ਰਿਮਾਈਂਡਰ ਸਮੇਂ ਸਿਰ ਨਹੀਂ ਆ ਸਕਦੇ",
   "settingsPermissionsGrantAction": "ਇਜਾਜ਼ਤ ਦਿਓ",

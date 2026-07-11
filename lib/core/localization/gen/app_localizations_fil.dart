@@ -546,6 +546,10 @@ class AppLocalizationsFil extends AppLocalizations {
       'Pahintulot sa eksaktong alarm';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Balewalain ang pag-optimize ng baterya (inirerekomenda)';
+
+  @override
   String get settingsPermissionsGranted => 'Naipagkaloob na';
 
   @override

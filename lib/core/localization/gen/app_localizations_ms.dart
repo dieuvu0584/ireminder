@@ -545,6 +545,10 @@ class AppLocalizationsMs extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Kebenaran penggera tepat';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Abaikan pengoptimuman bateri (disyorkan)';
+
+  @override
   String get settingsPermissionsGranted => 'Diberikan';
 
   @override

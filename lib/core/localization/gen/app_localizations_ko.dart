@@ -534,6 +534,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => '정확한 알람 권한';
 
   @override
+  String get settingsPermissionsBatteryLabel => '배터리 최적화 무시 (권장)';
+
+  @override
   String get settingsPermissionsGranted => '허용됨';
 
   @override

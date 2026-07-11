@@ -542,6 +542,10 @@ class AppLocalizationsPa extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'ਸਟੀਕ ਅਲਾਰਮ ਇਜਾਜ਼ਤ';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'ਬੈਟਰੀ ਓਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ (ਸਿਫਾਰਸ਼ ਕੀਤੀ)';
+
+  @override
   String get settingsPermissionsGranted => 'ਦਿੱਤੀ ਗਈ';
 
   @override

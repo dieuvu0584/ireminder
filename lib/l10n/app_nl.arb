@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Meldingen & alarmen",
   "settingsPermissionsNotificationLabel": "Meldingstoestemming",
   "settingsPermissionsExactAlarmLabel": "Toestemming voor exacte alarmen",
+  "settingsPermissionsBatteryLabel": "Batterijoptimalisatie negeren (aanbevolen)",
   "settingsPermissionsGranted": "Verleend",
   "settingsPermissionsDenied": "Niet verleend — herinneringen komen mogelijk niet op tijd binnen",
   "settingsPermissionsGrantAction": "Toestaan",

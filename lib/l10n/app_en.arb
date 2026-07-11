@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Notifications & Alarms",
   "settingsPermissionsNotificationLabel": "Notification permission",
   "settingsPermissionsExactAlarmLabel": "Exact alarm permission",
+  "settingsPermissionsBatteryLabel": "Ignore battery optimization (recommended)",
   "settingsPermissionsGranted": "Granted",
   "settingsPermissionsDenied": "Not granted — reminders may not fire on time",
   "settingsPermissionsGrantAction": "Grant",

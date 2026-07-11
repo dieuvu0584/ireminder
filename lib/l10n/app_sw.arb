@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Arifa na Kengele",
   "settingsPermissionsNotificationLabel": "Ruhusa ya arifa",
   "settingsPermissionsExactAlarmLabel": "Ruhusa ya kengele sahihi",
+  "settingsPermissionsBatteryLabel": "Puuza uboreshaji wa betri (inapendekezwa)",
   "settingsPermissionsGranted": "Imeruhusiwa",
   "settingsPermissionsDenied": "Haijaruhusiwa — vikumbusho vinaweza visifike kwa wakati",
   "settingsPermissionsGrantAction": "Ruhusu",

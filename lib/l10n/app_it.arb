@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Notifiche e allarmi",
   "settingsPermissionsNotificationLabel": "Permesso notifiche",
   "settingsPermissionsExactAlarmLabel": "Permesso allarmi precisi",
+  "settingsPermissionsBatteryLabel": "Ignora ottimizzazione batteria (consigliato)",
   "settingsPermissionsGranted": "Concesso",
   "settingsPermissionsDenied": "Non concesso — i promemoria potrebbero non arrivare in orario",
   "settingsPermissionsGrantAction": "Concedi",

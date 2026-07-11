@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Mga Notification at Alarm",
   "settingsPermissionsNotificationLabel": "Pahintulot sa notification",
   "settingsPermissionsExactAlarmLabel": "Pahintulot sa eksaktong alarm",
+  "settingsPermissionsBatteryLabel": "Balewalain ang pag-optimize ng baterya (inirerekomenda)",
   "settingsPermissionsGranted": "Naipagkaloob na",
   "settingsPermissionsDenied": "Hindi pa naipagkakaloob — maaaring hindi tumunog ang mga paalala sa tamang oras",
   "settingsPermissionsGrantAction": "Ipagkaloob",

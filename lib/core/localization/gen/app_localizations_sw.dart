@@ -541,6 +541,10 @@ class AppLocalizationsSw extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Ruhusa ya kengele sahihi';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Puuza uboreshaji wa betri (inapendekezwa)';
+
+  @override
   String get settingsPermissionsGranted => 'Imeruhusiwa';
 
   @override

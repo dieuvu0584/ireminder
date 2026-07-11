@@ -546,6 +546,10 @@ class AppLocalizationsDe extends AppLocalizations {
       'Berechtigung für exakte Alarme';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Akku-Optimierung ignorieren (empfohlen)';
+
+  @override
   String get settingsPermissionsGranted => 'Erteilt';
 
   @override

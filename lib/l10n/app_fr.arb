@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Notifications et alarmes",
   "settingsPermissionsNotificationLabel": "Autorisation de notification",
   "settingsPermissionsExactAlarmLabel": "Autorisation d'alarme exacte",
+  "settingsPermissionsBatteryLabel": "Ignorer l'optimisation de la batterie (recommandé)",
   "settingsPermissionsGranted": "Accordée",
   "settingsPermissionsDenied": "Non accordée — les rappels risquent de ne pas sonner à l'heure",
   "settingsPermissionsGrantAction": "Autoriser",

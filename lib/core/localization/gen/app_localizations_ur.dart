@@ -541,6 +541,10 @@ class AppLocalizationsUr extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'درست وقت کے الارم کی اجازت';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'بیٹری آپٹیمائزیشن نظر انداز کریں (تجویز کردہ)';
+
+  @override
   String get settingsPermissionsGranted => 'دی گئی';
 
   @override

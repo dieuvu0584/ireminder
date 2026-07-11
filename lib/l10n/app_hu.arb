@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Értesítések és riasztások",
   "settingsPermissionsNotificationLabel": "Értesítési engedély",
   "settingsPermissionsExactAlarmLabel": "Pontos riasztás engedélye",
+  "settingsPermissionsBatteryLabel": "Akkumulátor-optimalizálás mellőzése (ajánlott)",
   "settingsPermissionsGranted": "Megadva",
   "settingsPermissionsDenied": "Nincs megadva — előfordulhat, hogy az emlékeztetők nem időben jelennek meg",
   "settingsPermissionsGrantAction": "Engedélyezés",

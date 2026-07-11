@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Benachrichtigungen & Alarme",
   "settingsPermissionsNotificationLabel": "Benachrichtigungsberechtigung",
   "settingsPermissionsExactAlarmLabel": "Berechtigung für exakte Alarme",
+  "settingsPermissionsBatteryLabel": "Akku-Optimierung ignorieren (empfohlen)",
   "settingsPermissionsGranted": "Erteilt",
   "settingsPermissionsDenied": "Nicht erteilt — Erinnerungen werden möglicherweise nicht pünktlich angezeigt",
   "settingsPermissionsGrantAction": "Erteilen",

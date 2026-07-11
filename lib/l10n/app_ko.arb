@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "알림 및 알람",
   "settingsPermissionsNotificationLabel": "알림 권한",
   "settingsPermissionsExactAlarmLabel": "정확한 알람 권한",
+  "settingsPermissionsBatteryLabel": "배터리 최적화 무시 (권장)",
   "settingsPermissionsGranted": "허용됨",
   "settingsPermissionsDenied": "허용되지 않음 — 리마인더가 제때 울리지 않을 수 있어요",
   "settingsPermissionsGrantAction": "허용",

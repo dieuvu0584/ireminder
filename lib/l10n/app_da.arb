@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Notifikationer & alarmer",
   "settingsPermissionsNotificationLabel": "Notifikationstilladelse",
   "settingsPermissionsExactAlarmLabel": "Tilladelse til præcise alarmer",
+  "settingsPermissionsBatteryLabel": "Ignorer batterioptimering (anbefales)",
   "settingsPermissionsGranted": "Givet",
   "settingsPermissionsDenied": "Ikke givet — påmindelser kan udeblive",
   "settingsPermissionsGrantAction": "Giv tilladelse",

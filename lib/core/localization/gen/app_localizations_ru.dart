@@ -542,6 +542,10 @@ class AppLocalizationsRu extends AppLocalizations {
       'Разрешение на точные будильники';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Игнорировать оптимизацию батареи (рекомендуется)';
+
+  @override
   String get settingsPermissionsGranted => 'Предоставлено';
 
   @override

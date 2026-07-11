@@ -541,6 +541,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'सटीक अलार्म अनुमति';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'बैटरी अनुकूलन अनदेखा करें (अनुशंसित)';
+
+  @override
   String get settingsPermissionsGranted => 'अनुमति दी गई';
 
   @override

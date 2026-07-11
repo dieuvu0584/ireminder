@@ -542,6 +542,10 @@ class AppLocalizationsDa extends AppLocalizations {
       'Tilladelse til præcise alarmer';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Ignorer batterioptimering (anbefales)';
+
+  @override
   String get settingsPermissionsGranted => 'Givet';
 
   @override

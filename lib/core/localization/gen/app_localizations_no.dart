@@ -541,6 +541,10 @@ class AppLocalizationsNo extends AppLocalizations {
       'Tillatelse til presise alarmer';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Ignorer batterioptimalisering (anbefalt)';
+
+  @override
   String get settingsPermissionsGranted => 'Innvilget';
 
   @override

@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "Notificações e alarmes",
   "settingsPermissionsNotificationLabel": "Permissão de notificação",
   "settingsPermissionsExactAlarmLabel": "Permissão de alarme exato",
+  "settingsPermissionsBatteryLabel": "Ignorar otimização de bateria (recomendado)",
   "settingsPermissionsGranted": "Concedida",
   "settingsPermissionsDenied": "Não concedida — os lembretes podem não disparar na hora certa",
   "settingsPermissionsGrantAction": "Conceder",

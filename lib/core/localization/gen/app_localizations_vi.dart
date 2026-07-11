@@ -540,6 +540,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Quyền báo thức chính xác';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Bỏ qua tối ưu hóa pin (khuyến nghị)';
+
+  @override
   String get settingsPermissionsGranted => 'Đã cấp quyền';
 
   @override

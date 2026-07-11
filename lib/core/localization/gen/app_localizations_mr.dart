@@ -540,6 +540,10 @@ class AppLocalizationsMr extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'अचूक अलार्म परवानगी';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'बॅटरी ऑप्टिमायझेशन दुर्लक्ष करा (शिफारस केलेले)';
+
+  @override
   String get settingsPermissionsGranted => 'मंजूर';
 
   @override

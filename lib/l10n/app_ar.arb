@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "الإشعارات والمنبّهات",
   "settingsPermissionsNotificationLabel": "إذن الإشعارات",
   "settingsPermissionsExactAlarmLabel": "إذن المنبّهات الدقيقة",
+  "settingsPermissionsBatteryLabel": "تجاهل تحسين البطارية (موصى به)",
   "settingsPermissionsGranted": "ممنوح",
   "settingsPermissionsDenied": "غير ممنوح — قد لا تصل التذكيرات في وقتها",
   "settingsPermissionsGrantAction": "منح الإذن",

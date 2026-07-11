@@ -539,6 +539,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'إذن المنبّهات الدقيقة';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'تجاهل تحسين البطارية (موصى به)';
+
+  @override
   String get settingsPermissionsGranted => 'ممنوح';
 
   @override

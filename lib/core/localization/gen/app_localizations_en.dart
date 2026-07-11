@@ -541,6 +541,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Exact alarm permission';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Ignore battery optimization (recommended)';
+
+  @override
   String get settingsPermissionsGranted => 'Granted';
 
   @override

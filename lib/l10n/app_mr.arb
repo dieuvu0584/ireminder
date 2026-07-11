@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "सूचना आणि अलार्म",
   "settingsPermissionsNotificationLabel": "सूचना परवानगी",
   "settingsPermissionsExactAlarmLabel": "अचूक अलार्म परवानगी",
+  "settingsPermissionsBatteryLabel": "बॅटरी ऑप्टिमायझेशन दुर्लक्ष करा (शिफारस केलेले)",
   "settingsPermissionsGranted": "मंजूर",
   "settingsPermissionsDenied": "मंजूर नाही — रिमाइंडर वेळेवर येणार नाहीत",
   "settingsPermissionsGrantAction": "मंजूर करा",

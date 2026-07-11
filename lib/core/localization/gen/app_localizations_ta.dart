@@ -545,6 +545,10 @@ class AppLocalizationsTa extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'துல்லியமான அலாரம் அனுமதி';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'பேட்டரி மேம்படுத்தலை புறக்கணிக்கவும் (பரிந்துரைக்கப்படுகிறது)';
+
+  @override
   String get settingsPermissionsGranted => 'வழங்கப்பட்டது';
 
   @override

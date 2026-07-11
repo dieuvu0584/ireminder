@@ -226,6 +226,7 @@
   "settingsPermissionsSectionTitle": "নোটিফিকেশন ও অ্যালার্ম",
   "settingsPermissionsNotificationLabel": "নোটিফিকেশনের অনুমতি",
   "settingsPermissionsExactAlarmLabel": "নির্ভুল অ্যালার্মের অনুমতি",
+  "settingsPermissionsBatteryLabel": "ব্যাটারি অপ্টিমাইজেশন উপেক্ষা করুন (প্রস্তাবিত)",
   "settingsPermissionsGranted": "অনুমোদিত",
   "settingsPermissionsDenied": "অনুমোদিত নয় — রিমাইন্ডার সময়মতো নাও আসতে পারে",
   "settingsPermissionsGrantAction": "অনুমতি দিন",

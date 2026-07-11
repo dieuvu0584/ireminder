@@ -546,6 +546,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Izin alarm presisi';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Abaikan pengoptimalan baterai (disarankan)';
+
+  @override
   String get settingsPermissionsGranted => 'Diizinkan';
 
   @override

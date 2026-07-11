@@ -529,6 +529,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => '精确闹钟权限';
 
   @override
+  String get settingsPermissionsBatteryLabel => '忽略电池优化（推荐）';
+
+  @override
   String get settingsPermissionsGranted => '已授权';
 
   @override

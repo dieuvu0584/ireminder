@@ -544,6 +544,10 @@ class AppLocalizationsCs extends AppLocalizations {
       'Oprávnění k přesným budíkům';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Ignorovat optimalizaci baterie (doporučeno)';
+
+  @override
   String get settingsPermissionsGranted => 'Uděleno';
 
   @override

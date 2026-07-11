@@ -544,6 +544,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get settingsPermissionsExactAlarmLabel => 'Tarkkojen hälytysten lupa';
 
   @override
+  String get settingsPermissionsBatteryLabel =>
+      'Ohita akun optimointi (suositus)';
+
+  @override
   String get settingsPermissionsGranted => 'Myönnetty';
 
   @override
