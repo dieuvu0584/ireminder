@@ -254,5 +254,6 @@
   "defaultCategoryWork": "العمل",
   "defaultCategoryFamily": "العائلة",
   "defaultCategoryOutdoorEvents": "النزهات والفعاليات",
-  "defaultCategoryHealth": "الصحة"
+  "defaultCategoryHealth": "الصحة",
+  "defaultCategoryBirthday": "أعياد الميلاد"
 }

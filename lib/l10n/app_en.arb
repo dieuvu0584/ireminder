@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Work",
   "defaultCategoryFamily": "Family",
   "defaultCategoryOutdoorEvents": "Outings & Events",
-  "defaultCategoryHealth": "Health"
+  "defaultCategoryHealth": "Health",
+  "defaultCategoryBirthday": "Birthdays"
 }

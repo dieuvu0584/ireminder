@@ -622,4 +622,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => '健康';
+
+  @override
+  String get defaultCategoryBirthday => '誕生日';
 }

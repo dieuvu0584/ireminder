@@ -1347,6 +1347,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Health'**
   String get defaultCategoryHealth;
+
+  /// No description provided for @defaultCategoryBirthday.
+  ///
+  /// In en, this message translates to:
+  /// **'Birthdays'**
+  String get defaultCategoryBirthday;
 }
 
 class _AppLocalizationsDelegate

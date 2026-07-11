@@ -254,5 +254,6 @@
   "defaultCategoryWork": "仕事",
   "defaultCategoryFamily": "家族",
   "defaultCategoryOutdoorEvents": "おでかけとイベント",
-  "defaultCategoryHealth": "健康"
+  "defaultCategoryHealth": "健康",
+  "defaultCategoryBirthday": "誕生日"
 }

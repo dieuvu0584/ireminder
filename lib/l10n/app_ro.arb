@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Muncă",
   "defaultCategoryFamily": "Familie",
   "defaultCategoryOutdoorEvents": "Ieșiri și evenimente",
-  "defaultCategoryHealth": "Sănătate"
+  "defaultCategoryHealth": "Sănătate",
+  "defaultCategoryBirthday": "Zile de naștere"
 }

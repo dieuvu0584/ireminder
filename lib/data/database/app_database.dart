@@ -25,7 +25,7 @@ part 'app_database.g.dart';
 /// once, before Settings has a saved locale of its own, so this list only
 /// carries the parts that don't need translating.
 const List<(String Function(AppLocalizations), String icon, String color)>
-    kDefaultCategories = [
+kDefaultCategories = [
   (_nameHomeAppliances, 'home_repair_service', '#3B82F6'),
   (_nameVehicles, 'directions_car', '#F97316'),
   (_nameFamilyEvents, 'self_improvement', '#8B5CF6'),
@@ -34,6 +34,7 @@ const List<(String Function(AppLocalizations), String icon, String color)>
   (_nameFamily, 'favorite', '#EC4899'),
   (_nameOutdoorEvents, 'hiking', '#F59E0B'),
   (_nameHealth, 'favorite', '#22C55E'),
+  (_nameBirthday, 'cake', '#F43F5E'),
 ];
 
 String _nameHomeAppliances(AppLocalizations l) =>
@@ -43,9 +44,9 @@ String _nameFamilyEvents(AppLocalizations l) => l.defaultCategoryFamilyEvents;
 String _nameFinance(AppLocalizations l) => l.defaultCategoryFinance;
 String _nameWork(AppLocalizations l) => l.defaultCategoryWork;
 String _nameFamily(AppLocalizations l) => l.defaultCategoryFamily;
-String _nameOutdoorEvents(AppLocalizations l) =>
-    l.defaultCategoryOutdoorEvents;
+String _nameOutdoorEvents(AppLocalizations l) => l.defaultCategoryOutdoorEvents;
 String _nameHealth(AppLocalizations l) => l.defaultCategoryHealth;
+String _nameBirthday(AppLocalizations l) => l.defaultCategoryBirthday;
 
 @DriftDatabase(
   tables: [
@@ -67,40 +68,38 @@ class AppDatabase extends _$AppDatabase {
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (Migrator m) async {
-          await m.createAll();
-          final categoryIds = await _seedDefaultCategories();
-          await into(appSettings).insert(const AppSettingsCompanion());
-          // Default to sharing every category with the AI assistant
-          // except Finance (kDefaultCategories[3]) — a usable assistant
-          // out of the box, while keeping financial data opted-out until
-          // the user explicitly turns it on themselves in Settings.
-          final financeId = categoryIds[3];
-          final allowedIds =
-              categoryIds.where((id) => id != financeId).toList();
-          await into(aiSettings).insert(
-            AiSettingsCompanion(
-              allowedCategoryIds: Value(jsonEncode(allowedIds)),
-            ),
-          );
-        },
-        onUpgrade: (Migrator m, int from, int to) async {
-          if (from < 2) {
-            // Phase 7: optional AI assistant, added post-launch. Existing
-            // installs get the two new tables with no data loss elsewhere.
-            await m.createTable(aiSettings);
-            await m.createTable(aiChatHistory);
-            await into(aiSettings).insert(const AiSettingsCompanion());
-          }
-          if (from < 3) {
-            await m.addColumn(
-                appSettings, appSettings.notificationSoundEnabled);
-            await m.addColumn(
-                appSettings, appSettings.notificationVibrationEnabled);
-            await m.addColumn(appSettings, appSettings.snoozeDurationMinutes);
-          }
-        },
+    onCreate: (Migrator m) async {
+      await m.createAll();
+      final categoryIds = await _seedDefaultCategories();
+      await into(appSettings).insert(const AppSettingsCompanion());
+      // Default to sharing every category with the AI assistant
+      // except Finance (kDefaultCategories[3]) — a usable assistant
+      // out of the box, while keeping financial data opted-out until
+      // the user explicitly turns it on themselves in Settings.
+      final financeId = categoryIds[3];
+      final allowedIds = categoryIds.where((id) => id != financeId).toList();
+      await into(aiSettings).insert(
+        AiSettingsCompanion(allowedCategoryIds: Value(jsonEncode(allowedIds))),
       );
+    },
+    onUpgrade: (Migrator m, int from, int to) async {
+      if (from < 2) {
+        // Phase 7: optional AI assistant, added post-launch. Existing
+        // installs get the two new tables with no data loss elsewhere.
+        await m.createTable(aiSettings);
+        await m.createTable(aiChatHistory);
+        await into(aiSettings).insert(const AiSettingsCompanion());
+      }
+      if (from < 3) {
+        await m.addColumn(appSettings, appSettings.notificationSoundEnabled);
+        await m.addColumn(
+          appSettings,
+          appSettings.notificationVibrationEnabled,
+        );
+        await m.addColumn(appSettings, appSettings.snoozeDurationMinutes);
+      }
+    },
+  );
 
   /// Returns the inserted (or, if seeding was already done, existing)
   /// default category ids in [kDefaultCategories] order, so callers can

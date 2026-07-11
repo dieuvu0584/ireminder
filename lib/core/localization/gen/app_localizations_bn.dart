@@ -629,4 +629,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'স্বাস্থ্য';
+
+  @override
+  String get defaultCategoryBirthday => 'জন্মদিন';
 }

@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Arbejde",
   "defaultCategoryFamily": "Familie",
   "defaultCategoryOutdoorEvents": "Udflugter og events",
-  "defaultCategoryHealth": "Sundhed"
+  "defaultCategoryHealth": "Sundhed",
+  "defaultCategoryBirthday": "Fødselsdage"
 }

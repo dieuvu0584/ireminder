@@ -631,4 +631,7 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Helse';
+
+  @override
+  String get defaultCategoryBirthday => 'Bursdager';
 }

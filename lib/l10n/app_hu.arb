@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Munka",
   "defaultCategoryFamily": "Család",
   "defaultCategoryOutdoorEvents": "Kirándulások és események",
-  "defaultCategoryHealth": "Egészség"
+  "defaultCategoryHealth": "Egészség",
+  "defaultCategoryBirthday": "Születésnapok"
 }

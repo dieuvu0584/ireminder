@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Pekerjaan",
   "defaultCategoryFamily": "Keluarga",
   "defaultCategoryOutdoorEvents": "Jalan-jalan & acara",
-  "defaultCategoryHealth": "Kesehatan"
+  "defaultCategoryHealth": "Kesehatan",
+  "defaultCategoryBirthday": "Ulang Tahun"
 }

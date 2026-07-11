@@ -631,4 +631,7 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Afya';
+
+  @override
+  String get defaultCategoryBirthday => 'Siku za Kuzaliwa';
 }

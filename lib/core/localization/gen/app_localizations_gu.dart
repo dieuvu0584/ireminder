@@ -630,4 +630,7 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'આરોગ્ય';
+
+  @override
+  String get defaultCategoryBirthday => 'જન્મદિવસો';
 }

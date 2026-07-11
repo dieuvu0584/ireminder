@@ -637,4 +637,7 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Sănătate';
+
+  @override
+  String get defaultCategoryBirthday => 'Zile de naștere';
 }

@@ -254,5 +254,6 @@
   "defaultCategoryWork": "직장",
   "defaultCategoryFamily": "가족",
   "defaultCategoryOutdoorEvents": "나들이와 행사",
-  "defaultCategoryHealth": "건강"
+  "defaultCategoryHealth": "건강",
+  "defaultCategoryBirthday": "생일"
 }

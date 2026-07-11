@@ -634,4 +634,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Terveys';
+
+  @override
+  String get defaultCategoryBirthday => 'Syntymäpäivät';
 }

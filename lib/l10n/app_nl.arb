@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Werk",
   "defaultCategoryFamily": "Familie",
   "defaultCategoryOutdoorEvents": "Uitjes en evenementen",
-  "defaultCategoryHealth": "Gezondheid"
+  "defaultCategoryHealth": "Gezondheid",
+  "defaultCategoryBirthday": "Verjaardagen"
 }

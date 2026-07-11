@@ -254,5 +254,6 @@
   "defaultCategoryWork": "کام",
   "defaultCategoryFamily": "خاندان",
   "defaultCategoryOutdoorEvents": "سیر و تقریبات",
-  "defaultCategoryHealth": "صحت"
+  "defaultCategoryHealth": "صحت",
+  "defaultCategoryBirthday": "سالگرہ"
 }

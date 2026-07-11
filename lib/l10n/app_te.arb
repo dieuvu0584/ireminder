@@ -254,5 +254,6 @@
   "defaultCategoryWork": "పని",
   "defaultCategoryFamily": "కుటుంబం",
   "defaultCategoryOutdoorEvents": "విహారయాత్రలు & కార్యక్రమాలు",
-  "defaultCategoryHealth": "ఆరోగ్యం"
+  "defaultCategoryHealth": "ఆరోగ్యం",
+  "defaultCategoryBirthday": "పుట్టినరోజులు"
 }

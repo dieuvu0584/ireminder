@@ -254,5 +254,6 @@
   "defaultCategoryWork": "งาน",
   "defaultCategoryFamily": "ครอบครัว",
   "defaultCategoryOutdoorEvents": "เที่ยวและกิจกรรม",
-  "defaultCategoryHealth": "สุขภาพ"
+  "defaultCategoryHealth": "สุขภาพ",
+  "defaultCategoryBirthday": "วันเกิด"
 }

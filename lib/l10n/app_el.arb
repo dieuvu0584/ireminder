@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Εργασία",
   "defaultCategoryFamily": "Οικογένεια",
   "defaultCategoryOutdoorEvents": "Εκδρομές & εκδηλώσεις",
-  "defaultCategoryHealth": "Υγεία"
+  "defaultCategoryHealth": "Υγεία",
+  "defaultCategoryBirthday": "Γενέθλια"
 }

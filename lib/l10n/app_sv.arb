@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Arbete",
   "defaultCategoryFamily": "Familj",
   "defaultCategoryOutdoorEvents": "Utflykter och event",
-  "defaultCategoryHealth": "Hälsa"
+  "defaultCategoryHealth": "Hälsa",
+  "defaultCategoryBirthday": "Födelsedagar"
 }

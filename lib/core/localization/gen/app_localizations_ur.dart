@@ -631,4 +631,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'صحت';
+
+  @override
+  String get defaultCategoryBirthday => 'سالگرہ';
 }

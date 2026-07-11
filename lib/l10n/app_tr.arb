@@ -254,5 +254,6 @@
   "defaultCategoryWork": "İş",
   "defaultCategoryFamily": "Aile",
   "defaultCategoryOutdoorEvents": "Geziler ve etkinlikler",
-  "defaultCategoryHealth": "Sağlık"
+  "defaultCategoryHealth": "Sağlık",
+  "defaultCategoryBirthday": "Doğum Günleri"
 }

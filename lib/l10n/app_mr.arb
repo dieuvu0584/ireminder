@@ -254,5 +254,6 @@
   "defaultCategoryWork": "काम",
   "defaultCategoryFamily": "कुटुंब",
   "defaultCategoryOutdoorEvents": "सहली आणि कार्यक्रम",
-  "defaultCategoryHealth": "आरोग्य"
+  "defaultCategoryHealth": "आरोग्य",
+  "defaultCategoryBirthday": "वाढदिवस"
 }

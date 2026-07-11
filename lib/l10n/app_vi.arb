@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Công việc",
   "defaultCategoryFamily": "Gia đình nhỏ",
   "defaultCategoryOutdoorEvents": "Dã ngoại & sự kiện",
-  "defaultCategoryHealth": "Sức khỏe"
+  "defaultCategoryHealth": "Sức khỏe",
+  "defaultCategoryBirthday": "Sinh nhật"
 }

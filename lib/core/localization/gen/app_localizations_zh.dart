@@ -615,4 +615,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => '健康';
+
+  @override
+  String get defaultCategoryBirthday => '生日';
 }

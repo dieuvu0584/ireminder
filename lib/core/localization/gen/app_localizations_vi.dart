@@ -630,4 +630,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Sức khỏe';
+
+  @override
+  String get defaultCategoryBirthday => 'Sinh nhật';
 }

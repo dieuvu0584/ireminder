@@ -632,4 +632,7 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'ਸਿਹਤ';
+
+  @override
+  String get defaultCategoryBirthday => 'ਜਨਮਦਿਨ';
 }

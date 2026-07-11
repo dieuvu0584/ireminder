@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Trabaho",
   "defaultCategoryFamily": "Pamilya",
   "defaultCategoryOutdoorEvents": "Paglalakbay at mga kaganapan",
-  "defaultCategoryHealth": "Kalusugan"
+  "defaultCategoryHealth": "Kalusugan",
+  "defaultCategoryBirthday": "Kaarawan"
 }

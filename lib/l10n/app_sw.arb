@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Kazi",
   "defaultCategoryFamily": "Familia",
   "defaultCategoryOutdoorEvents": "Matembezi na matukio",
-  "defaultCategoryHealth": "Afya"
+  "defaultCategoryHealth": "Afya",
+  "defaultCategoryBirthday": "Siku za Kuzaliwa"
 }

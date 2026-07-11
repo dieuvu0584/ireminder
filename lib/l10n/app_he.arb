@@ -254,5 +254,6 @@
   "defaultCategoryWork": "עבודה",
   "defaultCategoryFamily": "משפחה",
   "defaultCategoryOutdoorEvents": "טיולים ואירועים",
-  "defaultCategoryHealth": "בריאות"
+  "defaultCategoryHealth": "בריאות",
+  "defaultCategoryBirthday": "ימי הולדת"
 }

@@ -632,4 +632,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Sundhed';
+
+  @override
+  String get defaultCategoryBirthday => 'Fødselsdage';
 }

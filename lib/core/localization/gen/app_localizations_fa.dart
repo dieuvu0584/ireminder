@@ -630,4 +630,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'سلامتی';
+
+  @override
+  String get defaultCategoryBirthday => 'تولدها';
 }

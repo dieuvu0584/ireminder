@@ -632,4 +632,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Sağlık';
+
+  @override
+  String get defaultCategoryBirthday => 'Doğum Günleri';
 }

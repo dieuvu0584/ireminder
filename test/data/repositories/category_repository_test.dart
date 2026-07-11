@@ -23,9 +23,9 @@ void main() {
 
   tearDown(() => db.close());
 
-  test('onCreate seeds exactly the 8 default categories', () async {
+  test('onCreate seeds exactly the 9 default categories', () async {
     final all = await categories.getAll();
-    expect(all, hasLength(8));
+    expect(all, hasLength(9));
     expect(all.every((c) => c.isSystemDefault), isTrue);
   });
 
@@ -39,7 +39,7 @@ void main() {
           .cast<int>()
           .toSet();
 
-      expect(allowedIds, hasLength(7));
+      expect(allowedIds, hasLength(8));
       expect(allowedIds.contains(financeCategory.id), isFalse);
       expect(
         allowedIds,
@@ -72,6 +72,31 @@ void main() {
     refreshed = await categories.getAll();
     expect(refreshed[4].name, 'My custom work name');
     expect(refreshed[3].name, enL10n.defaultCategoryFinance);
+  });
+
+  test('addMissingDefaultCategories fills in a slot missing from an '
+      'already-seeded install', () async {
+    final before = await categories.getAll();
+    expect(before, hasLength(9));
+
+    // Simulate an install that predates a default category being added
+    // (e.g. Birthdays): the row for that slot simply never existed.
+    final birthday = before.last;
+    await (db.delete(
+      db.categories,
+    )..where((c) => c.id.equals(birthday.id))).go();
+    expect(await categories.getAll(), hasLength(8));
+
+    final l10n = lookupAppLocalizations(const Locale('en'));
+    await categories.addMissingDefaultCategories(l10n);
+
+    final after = await categories.getAll();
+    expect(after, hasLength(9));
+    expect(after.any((c) => c.name == l10n.defaultCategoryBirthday), isTrue);
+
+    // Calling it again must not duplicate the slot it just filled.
+    await categories.addMissingDefaultCategories(l10n);
+    expect(await categories.getAll(), hasLength(9));
   });
 
   test('delete() removes an empty category outright', () async {

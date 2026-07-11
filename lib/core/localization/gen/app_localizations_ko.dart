@@ -622,4 +622,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => '건강';
+
+  @override
+  String get defaultCategoryBirthday => '생일';
 }

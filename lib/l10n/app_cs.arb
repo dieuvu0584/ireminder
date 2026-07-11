@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Práce",
   "defaultCategoryFamily": "Rodina",
   "defaultCategoryOutdoorEvents": "Výlety a akce",
-  "defaultCategoryHealth": "Zdraví"
+  "defaultCategoryHealth": "Zdraví",
+  "defaultCategoryBirthday": "Narozeniny"
 }

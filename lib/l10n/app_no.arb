@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Jobb",
   "defaultCategoryFamily": "Familie",
   "defaultCategoryOutdoorEvents": "Utflukter og arrangementer",
-  "defaultCategoryHealth": "Helse"
+  "defaultCategoryHealth": "Helse",
+  "defaultCategoryBirthday": "Bursdager"
 }

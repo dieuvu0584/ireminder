@@ -254,5 +254,6 @@
   "defaultCategoryWork": "ਕੰਮ",
   "defaultCategoryFamily": "ਪਰਿਵਾਰ",
   "defaultCategoryOutdoorEvents": "ਸੈਰ ਅਤੇ ਸਮਾਗਮ",
-  "defaultCategoryHealth": "ਸਿਹਤ"
+  "defaultCategoryHealth": "ਸਿਹਤ",
+  "defaultCategoryBirthday": "ਜਨਮਦਿਨ"
 }

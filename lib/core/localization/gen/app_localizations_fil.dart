@@ -636,4 +636,7 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Kalusugan';
+
+  @override
+  String get defaultCategoryBirthday => 'Kaarawan';
 }

@@ -254,5 +254,6 @@
   "defaultCategoryWork": "வேலை",
   "defaultCategoryFamily": "குடும்பம்",
   "defaultCategoryOutdoorEvents": "உல்லாசப் பயணங்கள் & நிகழ்வுகள்",
-  "defaultCategoryHealth": "ஆரோக்கியம்"
+  "defaultCategoryHealth": "ஆரோக்கியம்",
+  "defaultCategoryBirthday": "பிறந்தநாட்கள்"
 }

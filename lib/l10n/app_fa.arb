@@ -254,5 +254,6 @@
   "defaultCategoryWork": "کار",
   "defaultCategoryFamily": "خانواده",
   "defaultCategoryOutdoorEvents": "گردش‌ها و رویدادها",
-  "defaultCategoryHealth": "سلامتی"
+  "defaultCategoryHealth": "سلامتی",
+  "defaultCategoryBirthday": "تولدها"
 }

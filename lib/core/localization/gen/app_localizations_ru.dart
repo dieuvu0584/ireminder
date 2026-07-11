@@ -632,4 +632,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Здоровье';
+
+  @override
+  String get defaultCategoryBirthday => 'Дни рождения';
 }

@@ -254,5 +254,6 @@
   "defaultCategoryWork": "Робота",
   "defaultCategoryFamily": "Сім'я",
   "defaultCategoryOutdoorEvents": "Прогулянки та події",
-  "defaultCategoryHealth": "Здоров'я"
+  "defaultCategoryHealth": "Здоров'я",
+  "defaultCategoryBirthday": "Дні народження"
 }

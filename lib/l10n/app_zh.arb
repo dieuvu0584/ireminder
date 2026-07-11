@@ -254,5 +254,6 @@
   "defaultCategoryWork": "工作",
   "defaultCategoryFamily": "家庭",
   "defaultCategoryOutdoorEvents": "出游与活动",
-  "defaultCategoryHealth": "健康"
+  "defaultCategoryHealth": "健康",
+  "defaultCategoryBirthday": "生日"
 }

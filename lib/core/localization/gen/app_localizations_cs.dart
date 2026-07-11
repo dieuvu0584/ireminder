@@ -634,4 +634,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Zdraví';
+
+  @override
+  String get defaultCategoryBirthday => 'Narozeniny';
 }

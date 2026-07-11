@@ -100,6 +100,45 @@ class CategoryRepository {
     return null;
   }
 
+  /// Adds any [kDefaultCategories] slot not yet represented among existing
+  /// categories — covers a default category added in a later app update
+  /// (e.g. Birthdays) that an already-seeded install's DB predates, and
+  /// which [AppDatabase._seedDefaultCategories] therefore never inserted
+  /// (that only runs once, against an empty table). A slot already
+  /// represented — detected the same way [syncDefaultCategoryNames] does —
+  /// is left alone, so this never duplicates a category the user kept or
+  /// renamed.
+  Future<void> addMissingDefaultCategories(AppLocalizations l10n) async {
+    final all = await getAll();
+    final existingSlots = <int>{};
+    for (final category in all) {
+      if (!category.isSystemDefault) continue;
+      final slot = _defaultSlotForName(category.name);
+      if (slot != null) existingSlots.add(slot);
+    }
+    var nextSort = all.isEmpty
+        ? 0
+        : all.map((c) => c.sortOrder).reduce((a, b) => a > b ? a : b) + 1;
+    final now = DateTime.now();
+    for (var i = 0; i < kDefaultCategories.length; i++) {
+      if (existingSlots.contains(i)) continue;
+      final (nameOf, icon, color) = kDefaultCategories[i];
+      await _db
+          .into(_db.categories)
+          .insert(
+            CategoriesCompanion.insert(
+              name: nameOf(l10n),
+              icon: icon,
+              color: color,
+              sortOrder: Value(nextSort),
+              isSystemDefault: const Value(true),
+              createdAt: now,
+            ),
+          );
+      nextSort++;
+    }
+  }
+
   Future<int> countReminders(int categoryId) async {
     final query = _db.selectOnly(_db.reminders)
       ..addColumns([_db.reminders.id.count()])

@@ -631,4 +631,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Здоров\'я';
+
+  @override
+  String get defaultCategoryBirthday => 'Дні народження';
 }

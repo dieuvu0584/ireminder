@@ -637,4 +637,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get defaultCategoryHealth => 'Egészség';
+
+  @override
+  String get defaultCategoryBirthday => 'Születésnapok';
 }

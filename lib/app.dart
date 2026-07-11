@@ -89,6 +89,17 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
   }
 
   try {
+    // A default category added in a later app update (e.g. Birthdays)
+    // never reaches an existing install's DB otherwise — seeding only
+    // ever runs once, against an empty table.
+    await ref
+        .read(categoryRepositoryProvider)
+        .addMissingDefaultCategories(lookupAppLocalizations(activeLocale));
+  } catch (e) {
+    debugPrint('appBootstrap: addMissingDefaultCategories failed: $e');
+  }
+
+  try {
     // One-time self-heal for yearly/lunar-yearly reminders whose
     // next_due_date was wrongly set to their start date by a now-fixed
     // bug — corrects any row still showing the symptom, no-ops otherwise.
