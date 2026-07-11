@@ -40,7 +40,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     final selectedDay = ref.watch(selectedCalendarDayProvider);
     final snoozeMinutes =
         ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
-            60;
+        60;
 
     return remindersAsync.when(
       data: (reminders) {
@@ -61,14 +61,19 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
             _MonthHeader(
               month: _visibleMonth,
               onPrev: () => setState(() {
-                _visibleMonth =
-                    DateTime(_visibleMonth.year, _visibleMonth.month - 1);
+                _visibleMonth = DateTime(
+                  _visibleMonth.year,
+                  _visibleMonth.month - 1,
+                );
               }),
               onNext: () => setState(() {
-                _visibleMonth =
-                    DateTime(_visibleMonth.year, _visibleMonth.month + 1);
+                _visibleMonth = DateTime(
+                  _visibleMonth.year,
+                  _visibleMonth.month + 1,
+                );
               }),
             ),
+            const _WeekdayHeader(),
             _MonthGrid(
               month: _visibleMonth,
               selectedDay: selectedDay,
@@ -142,9 +147,9 @@ class _MonthHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final label = MaterialLocalizations.of(context)
-        .formatMonthYear(month)
-        .toString();
+    final label = MaterialLocalizations.of(
+      context,
+    ).formatMonthYear(month).toString();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(
@@ -152,9 +157,46 @@ class _MonthHeader extends StatelessWidget {
         children: [
           IconButton(icon: const Icon(Icons.chevron_left), onPressed: onPrev),
           Text(label, style: Theme.of(context).textTheme.titleMedium),
-          IconButton(
-              icon: const Icon(Icons.chevron_right), onPressed: onNext),
+          IconButton(icon: const Icon(Icons.chevron_right), onPressed: onNext),
         ],
+      ),
+    );
+  }
+}
+
+/// Locale-aware Mon..Sun weekday initials (e.g. "T2".."CN" in Vietnamese)
+/// above the day grid, with weekends picked out in the same color used for
+/// weekend day numbers below — so users can tell weekdays from weekends at
+/// a glance without counting columns.
+class _WeekdayHeader extends StatelessWidget {
+  const _WeekdayHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    // MaterialLocalizations.narrowWeekdays is Sunday-first (CLDR order);
+    // the grid below is Monday-first, so index 0 here is Sunday and needs
+    // to move to the end.
+    final sundayFirst = MaterialLocalizations.of(context).narrowWeekdays;
+    final mondayFirst = [...sundayFirst.sublist(1), sundayFirst[0]];
+    final weekendColor = Theme.of(context).colorScheme.error;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Row(
+        children: List.generate(7, (i) {
+          final isWeekend = i == 5 || i == 6; // Sat, Sun in Monday-first order
+          return Expanded(
+            child: Center(
+              child: Text(
+                mondayFirst[i],
+                style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                  color: isWeekend ? weekendColor : null,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          );
+        }),
       ),
     );
   }
@@ -179,8 +221,7 @@ class _MonthGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final firstOfMonth = DateTime(month.year, month.month, 1);
     final leadingBlanks = firstOfMonth.weekday - 1; // Monday-first grid
-    final daysInMonth =
-        DateTime(month.year, month.month + 1, 0).day;
+    final daysInMonth = DateTime(month.year, month.month + 1, 0).day;
     final totalCells = leadingBlanks + daysInMonth;
     final rows = (totalCells / 7).ceil();
 
@@ -199,11 +240,14 @@ class _MonthGrid extends StatelessWidget {
           return const SizedBox.shrink();
         }
         final day = DateTime(month.year, month.month, dayNum);
-        final isSelected = selectedDay != null &&
+        final isSelected =
+            selectedDay != null &&
             day.year == selectedDay!.year &&
             day.month == selectedDay!.month &&
             day.day == selectedDay!.day;
         final isToday = _isSameDay(day, DateTime.now());
+        final isWeekend =
+            day.weekday == DateTime.saturday || day.weekday == DateTime.sunday;
         final dayReminders = remindersByDay[day] ?? const [];
 
         return InkWell(
@@ -222,7 +266,12 @@ class _MonthGrid extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('$dayNum'),
+                Text(
+                  '$dayNum',
+                  style: isWeekend && !isSelected
+                      ? TextStyle(color: Theme.of(context).colorScheme.error)
+                      : null,
+                ),
                 if (dayReminders.isNotEmpty)
                   Wrap(
                     spacing: 2,
@@ -237,16 +286,17 @@ class _MonthGrid extends StatelessWidget {
                           width: 5,
                           height: 5,
                           decoration: BoxDecoration(
-                              color: color, shape: BoxShape.circle),
+                            color: color,
+                            shape: BoxShape.circle,
+                          ),
                         );
                       }),
                       if (dayReminders.length > 3)
                         Text(
                           '+${dayReminders.length - 3}',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelSmall
-                              ?.copyWith(fontSize: 8),
+                          style: Theme.of(
+                            context,
+                          ).textTheme.labelSmall?.copyWith(fontSize: 8),
                         ),
                     ],
                   ),
