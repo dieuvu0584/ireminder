@@ -66,6 +66,7 @@
   },
   "reminderDeleteConfirmTitle": "Diese Erinnerung löschen?",
   "reminderDeleteConfirmBody": "Dies kann nicht rückgängig gemacht werden.",
+  "reminderCompletedFeedback": "Als erledigt markiert",
   "reminderScheduleWarning": "Erinnerung gespeichert, aber die Benachrichtigung konnte nicht geplant werden. Bitte Benachrichtigungseinstellungen prüfen.",
   "recurrenceNone": "Einmalig",
   "recurrenceDaily": "Täglich",

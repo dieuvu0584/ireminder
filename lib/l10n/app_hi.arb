@@ -66,6 +66,7 @@
   },
   "reminderDeleteConfirmTitle": "यह रिमाइंडर हटाएं?",
   "reminderDeleteConfirmBody": "इसे वापस नहीं लाया जा सकता।",
+  "reminderCompletedFeedback": "पूर्ण के रूप में चिह्नित",
   "reminderScheduleWarning": "रिमाइंडर सेव हो गया, लेकिन सूचना शेड्यूल नहीं हो सकी। सूचना सेटिंग जांचें।",
   "recurrenceNone": "एक बार",
   "recurrenceDaily": "प्रतिदिन",

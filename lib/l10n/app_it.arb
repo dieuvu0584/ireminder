@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "Eliminare questo promemoria?",
   "reminderDeleteConfirmBody": "Non potrai annullare l'operazione.",
+  "reminderCompletedFeedback": "Contrassegnato come fatto",
   "reminderScheduleWarning": "Promemoria salvato, ma non è stato possibile pianificare la notifica. Controlla le impostazioni delle notifiche.",
   "recurrenceNone": "Una volta",
   "recurrenceDaily": "Giornaliera",

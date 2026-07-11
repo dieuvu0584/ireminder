@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "Delete this reminder?",
   "reminderDeleteConfirmBody": "This cannot be undone.",
+  "reminderCompletedFeedback": "Marked as done",
   "reminderScheduleWarning": "Reminder saved, but the notification could not be scheduled. Check notification settings.",
   "recurrenceNone": "Once",
   "recurrenceDaily": "Daily",

@@ -196,6 +196,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Bu işlem geri alınamaz.';
 
   @override
+  String get reminderCompletedFeedback => 'Tamamlandı olarak işaretlendi';
+
+  @override
   String get reminderScheduleWarning =>
       'Hatırlatıcı kaydedildi, ancak bildirim zamanlanamadı. Bildirim ayarlarını kontrol edin.';
 

@@ -191,6 +191,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reminderDeleteConfirmBody => '此操作无法撤销。';
 
   @override
+  String get reminderCompletedFeedback => '已标记为完成';
+
+  @override
   String get reminderScheduleWarning => '提醒已保存，但无法安排通知。请检查通知设置。';
 
   @override

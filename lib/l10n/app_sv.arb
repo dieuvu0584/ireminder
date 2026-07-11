@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "Ta bort denna påminnelse?",
   "reminderDeleteConfirmBody": "Detta kan inte ångras.",
+  "reminderCompletedFeedback": "Markerad som klar",
   "reminderScheduleWarning": "Påminnelsen sparades, men aviseringen kunde inte schemaläggas. Kontrollera aviseringsinställningarna.",
   "recurrenceNone": "En gång",
   "recurrenceDaily": "Dagligen",

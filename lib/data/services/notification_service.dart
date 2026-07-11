@@ -4,6 +4,8 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest_all.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
+import 'background_notification_handler.dart';
+
 /// Notification actions ids, kept stable so payload parsing on tap/action
 /// stays backward compatible across app updates.
 class NotificationActionIds {
@@ -157,9 +159,15 @@ class NotificationService {
 
   @pragma('vm:entry-point')
   static void _backgroundHandler(NotificationResponse response) {
-    // Kept intentionally minimal: heavy DB work for background action
-    // taps is dispatched from main.dart's registered top-level callback,
-    // which re-initializes a DB connection in the background isolate.
+    // A background isolate spawned fresh by the OS shares no runtime
+    // state with the main isolate, so this can't reach anything set up
+    // in app.dart — handleBackgroundNotificationAction opens its own DB
+    // connection instead. Fire-and-forget: this static callback can't be
+    // async itself (the plugin calls it synchronously).
+    handleBackgroundNotificationAction(
+      response.actionId ?? 'tap',
+      response.payload,
+    );
   }
 
   Future<bool> requestPermissions() async {

@@ -197,6 +197,9 @@ class AppLocalizationsId extends AppLocalizations {
       'Tindakan ini tidak dapat dibatalkan.';
 
   @override
+  String get reminderCompletedFeedback => 'Ditandai selesai';
+
+  @override
   String get reminderScheduleWarning =>
       'Pengingat disimpan, tetapi notifikasi tidak dapat dijadwalkan. Periksa pengaturan notifikasi.';
 

@@ -196,6 +196,9 @@ class AppLocalizationsNo extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Dette kan ikke angres.';
 
   @override
+  String get reminderCompletedFeedback => 'Merket som fullført';
+
+  @override
   String get reminderScheduleWarning =>
       'Påminnelsen ble lagret, men varselet kunne ikke planlegges. Sjekk varselinnstillingene.';
 

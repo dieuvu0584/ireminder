@@ -18,13 +18,17 @@ class ReminderDetailScreen extends ConsumerWidget {
   Future<void> _runGuarded(
     BuildContext context,
     WidgetRef ref,
-    Future<void> Function() action,
-  ) async {
+    Future<void> Function() action, {
+    String? successMessage,
+  }) async {
     final messenger = ScaffoldMessenger.of(context);
     final navigator = Navigator.of(context);
     try {
       await action();
       if (context.mounted) navigator.pop();
+      if (successMessage != null) {
+        messenger.showSnackBar(SnackBar(content: Text(successMessage)));
+      }
     } catch (_) {
       if (context.mounted) {
         messenger.showSnackBar(
@@ -166,6 +170,7 @@ class ReminderDetailScreen extends ConsumerWidget {
                         () => ref
                             .read(reminderActionsProvider)
                             .complete(current.id),
+                        successMessage: l10n.reminderCompletedFeedback,
                       ),
                     ),
                   ),

@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "Tanggalin ang paalalang ito?",
   "reminderDeleteConfirmBody": "Hindi na ito maaaring bawiin.",
+  "reminderCompletedFeedback": "Minarkahan bilang tapos na",
   "reminderScheduleWarning": "Na-save ang paalala, ngunit hindi ma-schedule ang notification. Suriin ang mga setting ng notification.",
   "recurrenceNone": "Isang beses",
   "recurrenceDaily": "Araw-araw",

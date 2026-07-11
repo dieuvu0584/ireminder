@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "Удалить это напоминание?",
   "reminderDeleteConfirmBody": "Это действие нельзя отменить.",
+  "reminderCompletedFeedback": "Отмечено как выполнено",
   "reminderScheduleWarning": "Напоминание сохранено, но не удалось запланировать уведомление. Проверьте настройки уведомлений.",
   "recurrenceNone": "Один раз",
   "recurrenceDaily": "Ежедневно",

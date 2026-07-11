@@ -196,6 +196,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Tätä ei voi perua.';
 
   @override
+  String get reminderCompletedFeedback => 'Merkitty valmiiksi';
+
+  @override
   String get reminderScheduleWarning =>
       'Muistutus tallennettiin, mutta ilmoitusta ei voitu ajastaa. Tarkista ilmoitusasetukset.';
 

@@ -197,6 +197,9 @@ class AppLocalizationsTa extends AppLocalizations {
       'இதை மீண்டும் செயல்தவிர்க்க முடியாது.';
 
   @override
+  String get reminderCompletedFeedback => 'முடிந்ததாகக் குறிக்கப்பட்டது';
+
+  @override
   String get reminderScheduleWarning =>
       'நினைவூட்டல் சேமிக்கப்பட்டது, ஆனால் அறிவிப்பை திட்டமிட முடியவில்லை. அறிவிப்பு அமைப்புகளை சரிபார்க்கவும்.';
 

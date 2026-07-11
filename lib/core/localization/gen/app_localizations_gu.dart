@@ -196,6 +196,9 @@ class AppLocalizationsGu extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'આ ક્રિયા પાછી લઈ શકાશે નહીં.';
 
   @override
+  String get reminderCompletedFeedback => 'પૂર્ણ તરીકે ચિહ્નિત થયું';
+
+  @override
   String get reminderScheduleWarning =>
       'રિમાઇન્ડર સાચવ્યું, પરંતુ સૂચના શેડ્યૂલ કરી શકાઈ નથી. સૂચના સેટિંગ્સ તપાસો.';
 

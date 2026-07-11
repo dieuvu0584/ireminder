@@ -196,6 +196,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Tuto akci nelze vzít zpět.';
 
   @override
+  String get reminderCompletedFeedback => 'Označeno jako dokončeno';
+
+  @override
   String get reminderScheduleWarning =>
       'Připomínka uložena, ale oznámení se nepodařilo naplánovat. Zkontrolujte nastavení oznámení.';
 

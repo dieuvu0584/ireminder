@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "ఈ రిమైండర్‌ను తొలగించాలా?",
   "reminderDeleteConfirmBody": "దీన్ని తిరిగి పొందలేరు.",
+  "reminderCompletedFeedback": "పూర్తయినట్లు గుర్తించబడింది",
   "reminderScheduleWarning": "రిమైండర్ సేవ్ చేయబడింది, కానీ నోటిఫికేషన్‌ను షెడ్యూల్ చేయలేకపోయాము. నోటిఫికేషన్ సెట్టింగ్‌లను తనిఖీ చేయండి.",
   "recurrenceNone": "ఒకసారి",
   "recurrenceDaily": "ప్రతిరోజు",

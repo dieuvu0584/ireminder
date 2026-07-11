@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "Padam peringatan ini?",
   "reminderDeleteConfirmBody": "Tindakan ini tidak boleh dibuat asal.",
+  "reminderCompletedFeedback": "Ditanda selesai",
   "reminderScheduleWarning": "Peringatan disimpan, tetapi pemberitahuan tidak dapat dijadualkan. Semak tetapan pemberitahuan.",
   "recurrenceNone": "Sekali sahaja",
   "recurrenceDaily": "Harian",

@@ -196,6 +196,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Cette action est irréversible.';
 
   @override
+  String get reminderCompletedFeedback => 'Marqué comme terminé';
+
+  @override
   String get reminderScheduleWarning =>
       'Rappel enregistré, mais la notification n\'a pas pu être planifiée. Vérifiez les paramètres de notification.';
 

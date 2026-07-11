@@ -197,6 +197,9 @@ class AppLocalizationsRo extends AppLocalizations {
       'Această acțiune nu poate fi anulată.';
 
   @override
+  String get reminderCompletedFeedback => 'Marcat ca finalizat';
+
+  @override
   String get reminderScheduleWarning =>
       'Memento salvat, dar notificarea nu a putut fi programată. Verifică setările de notificare.';
 

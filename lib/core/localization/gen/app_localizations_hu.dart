@@ -196,6 +196,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Ez a művelet nem vonható vissza.';
 
   @override
+  String get reminderCompletedFeedback => 'Kész jelölve';
+
+  @override
   String get reminderScheduleWarning =>
       'Az emlékeztető mentve, de az értesítést nem sikerült ütemezni. Ellenőrizd az értesítési beállításokat.';
 

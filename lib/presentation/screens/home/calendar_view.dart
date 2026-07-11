@@ -141,6 +141,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                                 () => ref
                                     .read(reminderActionsProvider)
                                     .complete(r.id),
+                                successMessage: l10n.reminderCompletedFeedback,
                               ),
                               onSnooze: () => runGuarded(
                                 context,

@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "Slet denne påmindelse?",
   "reminderDeleteConfirmBody": "Dette kan ikke fortrydes.",
+  "reminderCompletedFeedback": "Markeret som udført",
   "reminderScheduleWarning": "Påmindelsen blev gemt, men underretningen kunne ikke planlægges. Tjek dine underretningsindstillinger.",
   "recurrenceNone": "Én gang",
   "recurrenceDaily": "Dagligt",

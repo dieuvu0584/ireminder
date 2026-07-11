@@ -195,6 +195,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'لا يمكن التراجع عن هذا الإجراء.';
 
   @override
+  String get reminderCompletedFeedback => 'تم وضع علامة كمكتمل';
+
+  @override
   String get reminderScheduleWarning =>
       'تم حفظ التذكير، لكن تعذر جدولة الإشعار. تحقق من إعدادات الإشعارات.';
 

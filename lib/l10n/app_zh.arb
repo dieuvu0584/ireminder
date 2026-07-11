@@ -66,6 +66,7 @@
   },
   "reminderDeleteConfirmTitle": "删除此提醒?",
   "reminderDeleteConfirmBody": "此操作无法撤销。",
+  "reminderCompletedFeedback": "已标记为完成",
   "reminderScheduleWarning": "提醒已保存，但无法安排通知。请检查通知设置。",
   "recurrenceNone": "仅一次",
   "recurrenceDaily": "每天",

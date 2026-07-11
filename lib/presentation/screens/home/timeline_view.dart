@@ -20,7 +20,7 @@ class TimelineView extends ConsumerWidget {
     final categoriesAsync = ref.watch(categoriesStreamProvider);
     final snoozeMinutes =
         ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
-            60;
+        60;
 
     return remindersAsync.when(
       data: (reminders) {
@@ -38,10 +38,16 @@ class TimelineView extends ConsumerWidget {
 
         for (final r in reminders) {
           final due = r.snoozeUntil != null
-              ? DateTime(r.snoozeUntil!.year, r.snoozeUntil!.month,
-                  r.snoozeUntil!.day)
-              : DateTime(r.nextDueDate.year, r.nextDueDate.month,
-                  r.nextDueDate.day);
+              ? DateTime(
+                  r.snoozeUntil!.year,
+                  r.snoozeUntil!.month,
+                  r.snoozeUntil!.day,
+                )
+              : DateTime(
+                  r.nextDueDate.year,
+                  r.nextDueDate.month,
+                  r.nextDueDate.day,
+                );
           if (due.isBefore(today)) {
             overdue.add(r);
           } else if (due.isAtSameMomentAs(today)) {
@@ -124,15 +130,22 @@ class _Section extends ConsumerWidget {
             reminder: r,
             category: byId[r.categoryId],
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => ReminderDetailScreen(reminder: r)),
+              MaterialPageRoute(
+                builder: (_) => ReminderDetailScreen(reminder: r),
+              ),
             ),
             onComplete: () => runGuarded(
               context,
               () => ref.read(reminderActionsProvider).complete(r.id),
+              successMessage: AppLocalizations.of(
+                context,
+              ).reminderCompletedFeedback,
             ),
             onSnooze: () => runGuarded(
               context,
-              () => ref.read(reminderActionsProvider).snooze(
+              () => ref
+                  .read(reminderActionsProvider)
+                  .snooze(
                     r.id,
                     DateTime.now().add(Duration(minutes: snoozeMinutes)),
                   ),

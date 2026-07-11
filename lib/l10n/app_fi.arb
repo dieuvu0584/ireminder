@@ -67,6 +67,7 @@
   },
   "reminderDeleteConfirmTitle": "Poistetaanko tämä muistutus?",
   "reminderDeleteConfirmBody": "Tätä ei voi perua.",
+  "reminderCompletedFeedback": "Merkitty valmiiksi",
   "reminderScheduleWarning": "Muistutus tallennettiin, mutta ilmoitusta ei voitu ajastaa. Tarkista ilmoitusasetukset.",
   "recurrenceNone": "Kerran",
   "recurrenceDaily": "Päivittäin",

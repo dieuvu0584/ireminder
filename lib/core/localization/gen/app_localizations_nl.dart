@@ -197,6 +197,9 @@ class AppLocalizationsNl extends AppLocalizations {
       'Dit kan niet ongedaan worden gemaakt.';
 
   @override
+  String get reminderCompletedFeedback => 'Gemarkeerd als voltooid';
+
+  @override
   String get reminderScheduleWarning =>
       'Herinnering opgeslagen, maar de melding kon niet worden gepland. Controleer de meldingsinstellingen.';
 

@@ -196,6 +196,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Hatua hii haiwezi kutenduliwa.';
 
   @override
+  String get reminderCompletedFeedback => 'Imetiwa alama kama imekamilika';
+
+  @override
   String get reminderScheduleWarning =>
       'Ukumbusho umehifadhiwa, lakini arifa haikuweza kupangwa. Angalia mipangilio ya arifa.';
 

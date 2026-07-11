@@ -196,6 +196,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'This cannot be undone.';
 
   @override
+  String get reminderCompletedFeedback => 'Marked as done';
+
+  @override
   String get reminderScheduleWarning =>
       'Reminder saved, but the notification could not be scheduled. Check notification settings.';
 

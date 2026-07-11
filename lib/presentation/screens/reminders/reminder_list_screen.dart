@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/localization/gen/app_localizations.dart';
 import '../../../data/database/app_database.dart';
 import '../../providers/reminder_providers.dart';
 import '../../providers/settings_providers.dart';
@@ -17,11 +18,12 @@ class ReminderListScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final remindersAsync =
-        ref.watch(remindersByCategoryStreamProvider(category.id));
+    final remindersAsync = ref.watch(
+      remindersByCategoryStreamProvider(category.id),
+    );
     final snoozeMinutes =
         ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
-            60;
+        60;
 
     return Scaffold(
       appBar: AppBar(title: Text(category.name)),
@@ -45,10 +47,15 @@ class ReminderListScreen extends ConsumerWidget {
                 onComplete: () => runGuarded(
                   context,
                   () => ref.read(reminderActionsProvider).complete(reminder.id),
+                  successMessage: AppLocalizations.of(
+                    context,
+                  ).reminderCompletedFeedback,
                 ),
                 onSnooze: () => runGuarded(
                   context,
-                  () => ref.read(reminderActionsProvider).snooze(
+                  () => ref
+                      .read(reminderActionsProvider)
+                      .snooze(
                         reminder.id,
                         DateTime.now().add(Duration(minutes: snoozeMinutes)),
                       ),

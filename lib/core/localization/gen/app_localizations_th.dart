@@ -196,6 +196,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'ไม่สามารถย้อนกลับได้หลังจากลบ';
 
   @override
+  String get reminderCompletedFeedback => 'ทำเครื่องหมายว่าเสร็จแล้ว';
+
+  @override
   String get reminderScheduleWarning =>
       'บันทึกการแจ้งเตือนแล้ว แต่ไม่สามารถตั้งเวลาการแจ้งเตือนได้ โปรดตรวจสอบการตั้งค่าการแจ้งเตือน';
 

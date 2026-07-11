@@ -196,6 +196,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Это действие нельзя отменить.';
 
   @override
+  String get reminderCompletedFeedback => 'Отмечено как выполнено';
+
+  @override
   String get reminderScheduleWarning =>
       'Напоминание сохранено, но не удалось запланировать уведомление. Проверьте настройки уведомлений.';
 
