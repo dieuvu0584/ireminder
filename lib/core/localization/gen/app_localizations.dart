@@ -532,6 +532,12 @@ abstract class AppLocalizations {
   /// **'This cannot be undone.'**
   String get reminderDeleteConfirmBody;
 
+  /// No description provided for @reminderScheduleWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder saved, but the notification could not be scheduled. Check notification settings.'**
+  String get reminderScheduleWarning;
+
   /// No description provided for @recurrenceNone.
   ///
   /// In en, this message translates to:
@@ -1179,6 +1185,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ignore battery optimization (recommended)'**
   String get settingsPermissionsBatteryLabel;
+
+  /// No description provided for @settingsTestNotificationAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Test notification (10s)'**
+  String get settingsTestNotificationAction;
+
+  /// No description provided for @settingsTestNotificationScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled. Lock your screen or leave the app now and wait about 10 seconds.'**
+  String get settingsTestNotificationScheduled;
 
   /// No description provided for @settingsPermissionsGranted.
   ///

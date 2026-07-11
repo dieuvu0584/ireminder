@@ -333,6 +333,25 @@ class _PermissionsSectionState extends ConsumerState<_PermissionsSection>
                   ref.invalidate(permissionStatusProvider);
                 },
               ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 4, 16, 12),
+                child: OutlinedButton.icon(
+                  icon: const Icon(Icons.notifications_active_outlined),
+                  label: Text(l10n.settingsTestNotificationAction),
+                  onPressed: () async {
+                    final messenger = ScaffoldMessenger.of(context);
+                    await ref
+                        .read(notificationServiceProvider)
+                        .scheduleTestNotification();
+                    messenger.showSnackBar(
+                      SnackBar(
+                        content: Text(l10n.settingsTestNotificationScheduled),
+                        duration: const Duration(seconds: 8),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
           loading: () => const Padding(

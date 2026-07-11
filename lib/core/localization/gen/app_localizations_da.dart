@@ -196,6 +196,10 @@ class AppLocalizationsDa extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Dette kan ikke fortrydes.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Påmindelsen blev gemt, men underretningen kunne ikke planlægges. Tjek dine underretningsindstillinger.';
+
+  @override
   String get recurrenceNone => 'Én gang';
 
   @override
@@ -544,6 +548,13 @@ class AppLocalizationsDa extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignorer batterioptimering (anbefales)';
+
+  @override
+  String get settingsTestNotificationAction => 'Test underretning (10 sek.)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Planlagt. Lås din skærm, eller forlad appen nu, og vent ca. 10 sekunder.';
 
   @override
   String get settingsPermissionsGranted => 'Givet';

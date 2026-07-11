@@ -196,6 +196,10 @@ class AppLocalizationsMr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'ही क्रिया पूर्ववत करता येणार नाही.';
 
   @override
+  String get reminderScheduleWarning =>
+      'स्मरणपत्र जतन केले, परंतु सूचना शेड्यूल करता आली नाही. सूचना सेटिंग्ज तपासा.';
+
+  @override
   String get recurrenceNone => 'एकदाच';
 
   @override
@@ -542,6 +546,13 @@ class AppLocalizationsMr extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'बॅटरी ऑप्टिमायझेशन दुर्लक्ष करा (शिफारस केलेले)';
+
+  @override
+  String get settingsTestNotificationAction => 'सूचना तपासा (10 सेकंद)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'शेड्यूल केले. आता तुमची स्क्रीन लॉक करा किंवा अ‍ॅपमधून बाहेर पडा आणि सुमारे 10 सेकंद प्रतीक्षा करा.';
 
   @override
   String get settingsPermissionsGranted => 'मंजूर';

@@ -196,6 +196,10 @@ class AppLocalizationsGu extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'આ ક્રિયા પાછી લઈ શકાશે નહીં.';
 
   @override
+  String get reminderScheduleWarning =>
+      'રિમાઇન્ડર સાચવ્યું, પરંતુ સૂચના શેડ્યૂલ કરી શકાઈ નથી. સૂચના સેટિંગ્સ તપાસો.';
+
+  @override
   String get recurrenceNone => 'એકવાર';
 
   @override
@@ -542,6 +546,13 @@ class AppLocalizationsGu extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'બેટરી ઓપ્ટિમાઇઝેશન અવગણો (ભલામણ કરેલ)';
+
+  @override
+  String get settingsTestNotificationAction => 'સૂચના ચકાસો (10 સેકંડ)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'શેડ્યૂલ થયું. હમણાં તમારી સ્ક્રીન લૉક કરો અથવા એપ છોડો અને લગભગ 10 સેકંડ રાહ જુઓ.';
 
   @override
   String get settingsPermissionsGranted => 'મંજૂર';

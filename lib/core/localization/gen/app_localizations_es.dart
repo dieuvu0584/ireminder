@@ -196,6 +196,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Esta acción no se puede deshacer.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Recordatorio guardado, pero no se pudo programar la notificación. Revisa la configuración de notificaciones.';
+
+  @override
   String get recurrenceNone => 'Una vez';
 
   @override
@@ -548,6 +552,13 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignorar la optimización de batería (recomendado)';
+
+  @override
+  String get settingsTestNotificationAction => 'Probar notificación (10 s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Programado. Bloquea la pantalla o sal de la app ahora y espera unos 10 segundos.';
 
   @override
   String get settingsPermissionsGranted => 'Concedido';

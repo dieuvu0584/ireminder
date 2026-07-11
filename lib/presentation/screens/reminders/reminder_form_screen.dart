@@ -88,8 +88,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         ? RecurrenceType.lunarYearly
         : _recurrenceType;
     try {
+      bool scheduled;
       if (widget.existing == null) {
-        await actions.create(
+        final result = await actions.create(
           title: _titleCtrl.text.trim(),
           description: _descCtrl.text.trim().isEmpty
               ? null
@@ -105,8 +106,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           reminderTime: _timeString,
           advanceNoticeDays: _advanceNoticeDays,
         );
+        scheduled = result.$2;
       } else {
-        await actions.update(
+        scheduled = await actions.update(
           widget.existing!.copyWith(
             title: _titleCtrl.text.trim(),
             description: drift.Value(
@@ -125,7 +127,19 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           ),
         );
       }
-      if (mounted) Navigator.of(context).pop();
+      if (mounted) {
+        if (!scheduled) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                AppLocalizations.of(context).reminderScheduleWarning,
+              ),
+              duration: const Duration(seconds: 6),
+            ),
+          );
+        }
+        Navigator.of(context).pop();
+      }
     } catch (_) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(

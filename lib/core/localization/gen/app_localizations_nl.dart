@@ -197,6 +197,10 @@ class AppLocalizationsNl extends AppLocalizations {
       'Dit kan niet ongedaan worden gemaakt.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Herinnering opgeslagen, maar de melding kon niet worden gepland. Controleer de meldingsinstellingen.';
+
+  @override
   String get recurrenceNone => 'Eenmalig';
 
   @override
@@ -548,6 +552,13 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Batterijoptimalisatie negeren (aanbevolen)';
+
+  @override
+  String get settingsTestNotificationAction => 'Melding testen (10 sec)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Ingepland. Vergrendel je scherm of verlaat de app nu en wacht ongeveer 10 seconden.';
 
   @override
   String get settingsPermissionsGranted => 'Verleend';

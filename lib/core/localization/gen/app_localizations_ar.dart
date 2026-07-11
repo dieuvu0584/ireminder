@@ -195,6 +195,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'لا يمكن التراجع عن هذا الإجراء.';
 
   @override
+  String get reminderScheduleWarning =>
+      'تم حفظ التذكير، لكن تعذر جدولة الإشعار. تحقق من إعدادات الإشعارات.';
+
+  @override
   String get recurrenceNone => 'مرة واحدة';
 
   @override
@@ -541,6 +545,13 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'تجاهل تحسين البطارية (موصى به)';
+
+  @override
+  String get settingsTestNotificationAction => 'اختبار الإشعار (10 ثوانٍ)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'تمت الجدولة. أغلق الشاشة أو غادر التطبيق الآن وانتظر حوالي 10 ثوانٍ.';
 
   @override
   String get settingsPermissionsGranted => 'ممنوح';

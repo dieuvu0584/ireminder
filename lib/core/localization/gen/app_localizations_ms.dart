@@ -197,6 +197,10 @@ class AppLocalizationsMs extends AppLocalizations {
       'Tindakan ini tidak boleh dibuat asal.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Peringatan disimpan, tetapi pemberitahuan tidak dapat dijadualkan. Semak tetapan pemberitahuan.';
+
+  @override
   String get recurrenceNone => 'Sekali sahaja';
 
   @override
@@ -547,6 +551,13 @@ class AppLocalizationsMs extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Abaikan pengoptimuman bateri (disyorkan)';
+
+  @override
+  String get settingsTestNotificationAction => 'Uji pemberitahuan (10 saat)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Dijadualkan. Kunci skrin anda atau tinggalkan aplikasi sekarang dan tunggu kira-kira 10 saat.';
 
   @override
   String get settingsPermissionsGranted => 'Diberikan';

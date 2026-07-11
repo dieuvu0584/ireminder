@@ -194,6 +194,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'この操作は元に戻せません。';
 
   @override
+  String get reminderScheduleWarning =>
+      'リマインダーは保存されましたが、通知をスケジュールできませんでした。通知設定を確認してください。';
+
+  @override
   String get recurrenceNone => '1回のみ';
 
   @override
@@ -535,6 +539,13 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get settingsPermissionsBatteryLabel => 'バッテリー最適化を無視する（推奨）';
+
+  @override
+  String get settingsTestNotificationAction => '通知をテスト（10秒後）';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'スケジュール済みです。画面をロックするかアプリを閉じて、約10秒待ってください。';
 
   @override
   String get settingsPermissionsGranted => '許可済み';

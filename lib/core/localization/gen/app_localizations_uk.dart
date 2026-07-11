@@ -196,6 +196,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Цю дію неможливо скасувати.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Нагадування збережено, але не вдалося запланувати сповіщення. Перевірте налаштування сповіщень.';
+
+  @override
   String get recurrenceNone => 'Один раз';
 
   @override
@@ -543,6 +547,13 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ігнорувати оптимізацію батареї (рекомендовано)';
+
+  @override
+  String get settingsTestNotificationAction => 'Тест сповіщення (10 с)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Заплановано. Заблокуйте екран або вийдіть із застосунку й зачекайте близько 10 секунд.';
 
   @override
   String get settingsPermissionsGranted => 'Надано';

@@ -196,6 +196,10 @@ class AppLocalizationsBn extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'এটি পূর্বাবস্থায় ফেরানো যাবে না।';
 
   @override
+  String get reminderScheduleWarning =>
+      'রিমাইন্ডার সংরক্ষিত হয়েছে, কিন্তু বিজ্ঞপ্তি শিডিউল করা যায়নি। বিজ্ঞপ্তি সেটিংস পরীক্ষা করুন।';
+
+  @override
   String get recurrenceNone => 'একবার';
 
   @override
@@ -540,6 +544,14 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'ব্যাটারি অপ্টিমাইজেশন উপেক্ষা করুন (প্রস্তাবিত)';
+
+  @override
+  String get settingsTestNotificationAction =>
+      'বিজ্ঞপ্তি পরীক্ষা করুন (১০ সেকেন্ড)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'শিডিউল করা হয়েছে। এখনই স্ক্রিন লক করুন বা অ্যাপ থেকে বেরিয়ে যান এবং প্রায় ১০ সেকেন্ড অপেক্ষা করুন।';
 
   @override
   String get settingsPermissionsGranted => 'অনুমোদিত';

@@ -196,6 +196,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Bu işlem geri alınamaz.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Hatırlatıcı kaydedildi, ancak bildirim zamanlanamadı. Bildirim ayarlarını kontrol edin.';
+
+  @override
   String get recurrenceNone => 'Bir kez';
 
   @override
@@ -544,6 +548,13 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Pil optimizasyonunu yok say (önerilir)';
+
+  @override
+  String get settingsTestNotificationAction => 'Bildirimi test et (10 sn)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Zamanlandı. Şimdi ekranınızı kilitleyin veya uygulamadan çıkın ve yaklaşık 10 saniye bekleyin.';
 
   @override
   String get settingsPermissionsGranted => 'Verildi';

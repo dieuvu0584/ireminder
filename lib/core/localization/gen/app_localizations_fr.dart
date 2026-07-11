@@ -196,6 +196,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Cette action est irréversible.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Rappel enregistré, mais la notification n\'a pas pu être planifiée. Vérifiez les paramètres de notification.';
+
+  @override
   String get recurrenceNone => 'Une seule fois';
 
   @override
@@ -548,6 +552,13 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignorer l\'optimisation de la batterie (recommandé)';
+
+  @override
+  String get settingsTestNotificationAction => 'Tester la notification (10 s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Planifié. Verrouillez votre écran ou quittez l\'appli maintenant et attendez environ 10 secondes.';
 
   @override
   String get settingsPermissionsGranted => 'Accordée';

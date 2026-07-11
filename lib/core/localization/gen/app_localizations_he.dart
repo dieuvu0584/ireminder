@@ -196,6 +196,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'לא ניתן לבטל פעולה זו.';
 
   @override
+  String get reminderScheduleWarning =>
+      'התזכורת נשמרה, אך לא ניתן היה לתזמן את ההתראה. בדוק את הגדרות ההתראות.';
+
+  @override
   String get recurrenceNone => 'פעם אחת';
 
   @override
@@ -540,6 +544,13 @@ class AppLocalizationsHe extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'התעלם מאופטימיזציית סוללה (מומלץ)';
+
+  @override
+  String get settingsTestNotificationAction => 'בדיקת התראה (10 שניות)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'תוזמן. נעל את המסך או צא מהאפליקציה עכשיו והמתן כ-10 שניות.';
 
   @override
   String get settingsPermissionsGranted => 'אושרה';

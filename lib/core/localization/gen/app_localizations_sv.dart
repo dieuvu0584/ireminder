@@ -196,6 +196,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Detta kan inte ångras.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Påminnelsen sparades, men aviseringen kunde inte schemaläggas. Kontrollera aviseringsinställningarna.';
+
+  @override
   String get recurrenceNone => 'En gång';
 
   @override
@@ -545,6 +549,13 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignorera batterioptimering (rekommenderas)';
+
+  @override
+  String get settingsTestNotificationAction => 'Testa avisering (10 s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Schemalagt. Lås skärmen eller lämna appen nu och vänta cirka 10 sekunder.';
 
   @override
   String get settingsPermissionsGranted => 'Beviljat';

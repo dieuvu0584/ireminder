@@ -196,6 +196,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Tätä ei voi perua.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Muistutus tallennettiin, mutta ilmoitusta ei voitu ajastaa. Tarkista ilmoitusasetukset.';
+
+  @override
   String get recurrenceNone => 'Kerran';
 
   @override
@@ -546,6 +550,13 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ohita akun optimointi (suositus)';
+
+  @override
+  String get settingsTestNotificationAction => 'Testaa ilmoitus (10 s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Ajastettu. Lukitse näyttö tai poistu sovelluksesta nyt ja odota noin 10 sekuntia.';
 
   @override
   String get settingsPermissionsGranted => 'Myönnetty';

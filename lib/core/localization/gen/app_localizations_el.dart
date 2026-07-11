@@ -197,6 +197,10 @@ class AppLocalizationsEl extends AppLocalizations {
       'Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Η υπενθύμιση αποθηκεύτηκε, αλλά η ειδοποίηση δεν προγραμματίστηκε. Ελέγξτε τις ρυθμίσεις ειδοποιήσεων.';
+
+  @override
   String get recurrenceNone => 'Μία φορά';
 
   @override
@@ -549,6 +553,13 @@ class AppLocalizationsEl extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Παράβλεψη βελτιστοποίησης μπαταρίας (προτείνεται)';
+
+  @override
+  String get settingsTestNotificationAction => 'Δοκιμή ειδοποίησης (10 δ)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Προγραμματίστηκε. Κλειδώστε την οθόνη ή κλείστε την εφαρμογή τώρα και περιμένετε περίπου 10 δευτερόλεπτα.';
 
   @override
   String get settingsPermissionsGranted => 'Παραχωρήθηκε';

@@ -196,6 +196,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'This cannot be undone.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Reminder saved, but the notification could not be scheduled. Check notification settings.';
+
+  @override
   String get recurrenceNone => 'Once';
 
   @override
@@ -543,6 +547,13 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignore battery optimization (recommended)';
+
+  @override
+  String get settingsTestNotificationAction => 'Test notification (10s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Scheduled. Lock your screen or leave the app now and wait about 10 seconds.';
 
   @override
   String get settingsPermissionsGranted => 'Granted';

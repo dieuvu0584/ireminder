@@ -196,6 +196,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Ez a művelet nem vonható vissza.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Az emlékeztető mentve, de az értesítést nem sikerült ütemezni. Ellenőrizd az értesítési beállításokat.';
+
+  @override
   String get recurrenceNone => 'Egyszeri';
 
   @override
@@ -549,6 +553,13 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Akkumulátor-optimalizálás mellőzése (ajánlott)';
+
+  @override
+  String get settingsTestNotificationAction => 'Értesítés tesztelése (10 mp)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Ütemezve. Zárold most a képernyőt vagy lépj ki az appból, és várj kb. 10 másodpercet.';
 
   @override
   String get settingsPermissionsGranted => 'Megadva';

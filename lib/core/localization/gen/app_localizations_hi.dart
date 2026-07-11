@@ -196,6 +196,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'इसे वापस नहीं लाया जा सकता।';
 
   @override
+  String get reminderScheduleWarning =>
+      'रिमाइंडर सेव हो गया, लेकिन सूचना शेड्यूल नहीं हो सकी। सूचना सेटिंग जांचें।';
+
+  @override
   String get recurrenceNone => 'एक बार';
 
   @override
@@ -543,6 +547,13 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'बैटरी अनुकूलन अनदेखा करें (अनुशंसित)';
+
+  @override
+  String get settingsTestNotificationAction => 'सूचना जांचें (10 सेकंड)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'शेड्यूल हो गया। अपनी स्क्रीन लॉक करें या ऐप छोड़ दें और लगभग 10 सेकंड प्रतीक्षा करें।';
 
   @override
   String get settingsPermissionsGranted => 'अनुमति दी गई';

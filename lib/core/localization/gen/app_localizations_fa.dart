@@ -196,6 +196,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'این کار قابل بازگشت نیست.';
 
   @override
+  String get reminderScheduleWarning =>
+      'یادآور ذخیره شد، اما اعلان زمان‌بندی نشد. تنظیمات اعلان را بررسی کنید.';
+
+  @override
   String get recurrenceNone => 'یک‌بار';
 
   @override
@@ -542,6 +546,13 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'نادیده گرفتن بهینه‌سازی باتری (توصیه‌شده)';
+
+  @override
+  String get settingsTestNotificationAction => 'آزمایش اعلان (۱۰ ثانیه)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'زمان‌بندی شد. اکنون صفحه را قفل کنید یا از برنامه خارج شوید و حدود ۱۰ ثانیه صبر کنید.';
 
   @override
   String get settingsPermissionsGranted => 'اعطا شده';

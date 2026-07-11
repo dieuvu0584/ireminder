@@ -196,6 +196,10 @@ class AppLocalizationsFil extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Hindi na ito maaaring bawiin.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Na-save ang paalala, ngunit hindi ma-schedule ang notification. Suriin ang mga setting ng notification.';
+
+  @override
   String get recurrenceNone => 'Isang beses';
 
   @override
@@ -548,6 +552,13 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Balewalain ang pag-optimize ng baterya (inirerekomenda)';
+
+  @override
+  String get settingsTestNotificationAction => 'I-test ang notification (10s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Na-schedule na. I-lock ang iyong screen o umalis sa app ngayon at maghintay ng humigit-kumulang 10 segundo.';
 
   @override
   String get settingsPermissionsGranted => 'Naipagkaloob na';

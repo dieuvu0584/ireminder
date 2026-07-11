@@ -196,6 +196,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Tej operacji nie można cofnąć.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Przypomnienie zapisane, ale nie udało się zaplanować powiadomienia. Sprawdź ustawienia powiadomień.';
+
+  @override
   String get recurrenceNone => 'Jednorazowo';
 
   @override
@@ -543,6 +547,13 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignoruj optymalizację baterii (zalecane)';
+
+  @override
+  String get settingsTestNotificationAction => 'Testuj powiadomienie (10 s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Zaplanowano. Zablokuj ekran lub opuść aplikację i poczekaj około 10 sekund.';
 
   @override
   String get settingsPermissionsGranted => 'Przyznano';

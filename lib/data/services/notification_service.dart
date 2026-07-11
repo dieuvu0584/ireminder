@@ -18,16 +18,15 @@ class NotificationActionIds {
 class NotificationIdSpace {
   static const int reminderBase = 0;
   static const int installmentBase = 1000000;
+  static const int testNotificationId = 2000000;
 
   static int forReminder(int reminderId) => reminderBase + reminderId;
   static int forInstallment(int installmentId) =>
       installmentBase + installmentId;
 }
 
-typedef NotificationActionCallback = Future<void> Function(
-  String actionId,
-  String? payload,
-);
+typedef NotificationActionCallback =
+    Future<void> Function(String actionId, String? payload);
 
 /// Thin wrapper around flutter_local_notifications: init, permission
 /// requests, and cancel-before-show scheduling. Contains no business logic
@@ -57,10 +56,10 @@ class NotificationService {
     final suffix = sound && vibration
         ? 'sv'
         : sound
-            ? 's'
-            : vibration
-                ? 'v'
-                : 'silent';
+        ? 's'
+        : vibration
+        ? 'v'
+        : 'silent';
     return '${base}_$suffix';
   }
 
@@ -91,7 +90,9 @@ class NotificationService {
     // silhouette. Some OEM notification renderers silently fail to show
     // the notification at all (no error surfaced anywhere) rather than
     // render a broken icon when given an adaptive icon here.
-    const androidInit = AndroidInitializationSettings('@drawable/ic_notification');
+    const androidInit = AndroidInitializationSettings(
+      '@drawable/ic_notification',
+    );
     const initSettings = InitializationSettings(android: androidInit);
 
     await _plugin.initialize(
@@ -100,24 +101,30 @@ class NotificationService {
       onDidReceiveBackgroundNotificationResponse: _backgroundHandler,
     );
 
-    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     for (final sound in [true, false]) {
       for (final vibration in [true, false]) {
-        await androidPlugin?.createNotificationChannel(_channel(
-          _reminderChannelBase,
-          'Reminders',
-          'Recurring and one-off reminder notifications',
-          sound: sound,
-          vibration: vibration,
-        ));
-        await androidPlugin?.createNotificationChannel(_channel(
-          _loanChannelBase,
-          'Loan installments',
-          'Loan / installment due date notifications',
-          sound: sound,
-          vibration: vibration,
-        ));
+        await androidPlugin?.createNotificationChannel(
+          _channel(
+            _reminderChannelBase,
+            'Reminders',
+            'Recurring and one-off reminder notifications',
+            sound: sound,
+            vibration: vibration,
+          ),
+        );
+        await androidPlugin?.createNotificationChannel(
+          _channel(
+            _loanChannelBase,
+            'Loan installments',
+            'Loan / installment due date notifications',
+            sound: sound,
+            vibration: vibration,
+          ),
+        );
       }
     }
   }
@@ -131,8 +138,9 @@ class NotificationService {
   /// elsewhere, which is still far better than being off by the full
   /// offset.
   static tz.Location _deviceLocation() {
-    final offsetHours =
-        (DateTime.now().timeZoneOffset.inMinutes / 60).round().clamp(-12, 14);
+    final offsetHours = (DateTime.now().timeZoneOffset.inMinutes / 60)
+        .round()
+        .clamp(-12, 14);
     if (offsetHours == 0) return tz.UTC;
     // Etc/GMT uses POSIX sign convention: Etc/GMT-7 means UTC+7.
     final name = 'Etc/GMT${offsetHours > 0 ? '-' : '+'}${offsetHours.abs()}';
@@ -144,10 +152,7 @@ class NotificationService {
   }
 
   void _handleResponse(NotificationResponse response) {
-    onAction?.call(
-      response.actionId ?? 'tap',
-      response.payload,
-    );
+    onAction?.call(response.actionId ?? 'tap', response.payload);
   }
 
   @pragma('vm:entry-point')
@@ -159,8 +164,10 @@ class NotificationService {
 
   Future<bool> requestPermissions() async {
     if (!Platform.isAndroid) return true;
-    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     final notifGranted =
         await androidPlugin?.requestNotificationsPermission() ?? false;
     await androidPlugin?.requestExactAlarmsPermission();
@@ -169,15 +176,19 @@ class NotificationService {
 
   Future<bool> requestNotificationsOnly() async {
     if (!Platform.isAndroid) return true;
-    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     return await androidPlugin?.requestNotificationsPermission() ?? false;
   }
 
   Future<bool> requestExactAlarmsOnly() async {
     if (!Platform.isAndroid) return true;
-    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     return await androidPlugin?.requestExactAlarmsPermission() ?? false;
   }
 
@@ -187,16 +198,48 @@ class NotificationService {
   /// of the outcome.
   Future<bool> areNotificationsEnabled() async {
     if (!Platform.isAndroid) return true;
-    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     return await androidPlugin?.areNotificationsEnabled() ?? false;
   }
 
   Future<bool> canScheduleExactAlarms() async {
     if (!Platform.isAndroid) return true;
-    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     return await androidPlugin?.canScheduleExactNotifications() ?? false;
+  }
+
+  /// Schedules a one-off test notification ~10s out, on the same
+  /// exact-alarm path real reminders use. Lets a user isolate whether the
+  /// problem is "the OS never delivers it" (background app, lock the
+  /// screen, wait) vs. an app-level bug in a specific reminder's own due-
+  /// date computation — since this bypasses that computation entirely.
+  Future<void> scheduleTestNotification() async {
+    await _plugin.zonedSchedule(
+      NotificationIdSpace.testNotificationId,
+      'iReminder test',
+      'If you see this, scheduled notifications work on this phone.',
+      tz.TZDateTime.now(tz.local).add(const Duration(seconds: 10)),
+      NotificationDetails(
+        android: AndroidNotificationDetails(
+          _channelId(_reminderChannelBase, sound: true, vibration: true),
+          'Reminders',
+          channelDescription: 'Recurring and one-off reminder notifications',
+          importance: Importance.high,
+          priority: Priority.high,
+          playSound: true,
+          enableVibration: true,
+        ),
+      ),
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+    );
   }
 
   Future<void> scheduleReminder({

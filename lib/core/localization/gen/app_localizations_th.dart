@@ -196,6 +196,10 @@ class AppLocalizationsTh extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'ไม่สามารถย้อนกลับได้หลังจากลบ';
 
   @override
+  String get reminderScheduleWarning =>
+      'บันทึกการแจ้งเตือนแล้ว แต่ไม่สามารถตั้งเวลาการแจ้งเตือนได้ โปรดตรวจสอบการตั้งค่าการแจ้งเตือน';
+
+  @override
   String get recurrenceNone => 'ครั้งเดียว';
 
   @override
@@ -545,6 +549,13 @@ class AppLocalizationsTh extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'ไม่สนใจการเพิ่มประสิทธิภาพแบตเตอรี่ (แนะนำ)';
+
+  @override
+  String get settingsTestNotificationAction => 'ทดสอบการแจ้งเตือน (10 วินาที)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'ตั้งเวลาแล้ว โปรดล็อกหน้าจอหรือออกจากแอปตอนนี้แล้วรอประมาณ 10 วินาที';
 
   @override
   String get settingsPermissionsGranted => 'อนุญาตแล้ว';

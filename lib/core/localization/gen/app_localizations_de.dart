@@ -197,6 +197,10 @@ class AppLocalizationsDe extends AppLocalizations {
       'Dies kann nicht rückgängig gemacht werden.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Erinnerung gespeichert, aber die Benachrichtigung konnte nicht geplant werden. Bitte Benachrichtigungseinstellungen prüfen.';
+
+  @override
   String get recurrenceNone => 'Einmalig';
 
   @override
@@ -548,6 +552,14 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Akku-Optimierung ignorieren (empfohlen)';
+
+  @override
+  String get settingsTestNotificationAction =>
+      'Benachrichtigung testen (10 Sek.)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Geplant. Sperre jetzt den Bildschirm oder verlasse die App und warte etwa 10 Sekunden.';
 
   @override
   String get settingsPermissionsGranted => 'Erteilt';

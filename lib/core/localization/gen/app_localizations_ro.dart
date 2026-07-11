@@ -197,6 +197,10 @@ class AppLocalizationsRo extends AppLocalizations {
       'Această acțiune nu poate fi anulată.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Memento salvat, dar notificarea nu a putut fi programată. Verifică setările de notificare.';
+
+  @override
   String get recurrenceNone => 'O singură dată';
 
   @override
@@ -549,6 +553,13 @@ class AppLocalizationsRo extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignoră optimizarea bateriei (recomandat)';
+
+  @override
+  String get settingsTestNotificationAction => 'Testează notificarea (10 s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Programat. Blochează ecranul sau părăsește aplicația acum și așteaptă aproximativ 10 secunde.';
 
   @override
   String get settingsPermissionsGranted => 'Acordată';

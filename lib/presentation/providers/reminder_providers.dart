@@ -11,11 +11,13 @@ final activeRemindersStreamProvider = StreamProvider<List<Reminder>>((ref) {
 
 final remindersByCategoryStreamProvider =
     StreamProvider.family<List<Reminder>, int>((ref, categoryId) {
-  return ref.watch(reminderRepositoryProvider).watchByCategory(categoryId);
-});
+      return ref.watch(reminderRepositoryProvider).watchByCategory(categoryId);
+    });
 
-final reminderByIdStreamProvider =
-    StreamProvider.family<Reminder?, int>((ref, id) {
+final reminderByIdStreamProvider = StreamProvider.family<Reminder?, int>((
+  ref,
+  id,
+) {
   return ref.watch(reminderRepositoryProvider).watchById(id);
 });
 
@@ -27,7 +29,10 @@ class ReminderActions {
   final Ref _ref;
   ReminderActions(this._ref);
 
-  Future<int> create({
+  /// Returns (id, notificationScheduled) — the caller (UI layer) uses the
+  /// second value to warn the user when the reminder saved fine but the
+  /// OS-level alarm failed to schedule, instead of that failing silently.
+  Future<(int, bool)> create({
     required String title,
     String? description,
     required int categoryId,
@@ -41,7 +46,9 @@ class ReminderActions {
     required String reminderTime,
     int advanceNoticeDays = 0,
   }) async {
-    final id = await _ref.read(reminderRepositoryProvider).create(
+    final id = await _ref
+        .read(reminderRepositoryProvider)
+        .create(
           title: title,
           description: description,
           categoryId: categoryId,
@@ -56,23 +63,24 @@ class ReminderActions {
           advanceNoticeDays: advanceNoticeDays,
         );
     final reminder = await _ref.read(reminderRepositoryProvider).getById(id);
+    var scheduled = true;
     if (reminder != null) {
-      await _ref
+      scheduled = await _ref
           .read(alarmSchedulerServiceProvider)
           .scheduleForReminder(reminder);
     }
-    return id;
+    return (id, scheduled);
   }
 
-  Future<void> update(Reminder reminder) async {
+  Future<bool> update(Reminder reminder) async {
     await _ref.read(reminderRepositoryProvider).update(reminder);
-    final updated =
-        await _ref.read(reminderRepositoryProvider).getById(reminder.id);
-    if (updated != null) {
-      await _ref
-          .read(alarmSchedulerServiceProvider)
-          .scheduleForReminder(updated);
-    }
+    final updated = await _ref
+        .read(reminderRepositoryProvider)
+        .getById(reminder.id);
+    if (updated == null) return true;
+    return _ref
+        .read(alarmSchedulerServiceProvider)
+        .scheduleForReminder(updated);
   }
 
   Future<void> delete(int reminderId) async {
@@ -83,8 +91,9 @@ class ReminderActions {
   }
 
   Future<void> complete(int reminderId) async {
-    final updated =
-        await _ref.read(reminderRepositoryProvider).complete(reminderId);
+    final updated = await _ref
+        .read(reminderRepositoryProvider)
+        .complete(reminderId);
     if (updated.isActive) {
       await _ref
           .read(alarmSchedulerServiceProvider)
@@ -96,11 +105,11 @@ class ReminderActions {
     }
   }
 
-  Future<void> snooze(int reminderId, DateTime snoozeUntil) async {
+  Future<bool> snooze(int reminderId, DateTime snoozeUntil) async {
     final updated = await _ref
         .read(reminderRepositoryProvider)
         .snooze(reminderId, snoozeUntil);
-    await _ref
+    return _ref
         .read(alarmSchedulerServiceProvider)
         .scheduleForReminder(updated);
   }

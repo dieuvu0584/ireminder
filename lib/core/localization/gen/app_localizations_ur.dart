@@ -196,6 +196,10 @@ class AppLocalizationsUr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'اسے واپس نہیں لایا جا سکتا۔';
 
   @override
+  String get reminderScheduleWarning =>
+      'یاد دہانی محفوظ ہو گئی، لیکن اطلاع شیڈول نہیں ہو سکی۔ اطلاعی ترتیبات چیک کریں۔';
+
+  @override
   String get recurrenceNone => 'ایک بار';
 
   @override
@@ -543,6 +547,13 @@ class AppLocalizationsUr extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'بیٹری آپٹیمائزیشن نظر انداز کریں (تجویز کردہ)';
+
+  @override
+  String get settingsTestNotificationAction => 'اطلاع ٹیسٹ کریں (10 سیکنڈ)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'شیڈول ہو گیا۔ ابھی اپنی اسکرین لاک کریں یا ایپ چھوڑ دیں اور تقریباً 10 سیکنڈ انتظار کریں۔';
 
   @override
   String get settingsPermissionsGranted => 'دی گئی';

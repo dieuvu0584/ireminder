@@ -194,6 +194,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reminderDeleteConfirmBody => '삭제하면 되돌릴 수 없어요.';
 
   @override
+  String get reminderScheduleWarning =>
+      '리마인더는 저장되었지만 알림을 예약할 수 없었습니다. 알림 설정을 확인하세요.';
+
+  @override
   String get recurrenceNone => '한 번만';
 
   @override
@@ -535,6 +539,13 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsPermissionsBatteryLabel => '배터리 최적화 무시 (권장)';
+
+  @override
+  String get settingsTestNotificationAction => '알림 테스트 (10초)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      '예약되었습니다. 지금 화면을 잠그거나 앱을 나가서 약 10초 기다려주세요.';
 
   @override
   String get settingsPermissionsGranted => '허용됨';

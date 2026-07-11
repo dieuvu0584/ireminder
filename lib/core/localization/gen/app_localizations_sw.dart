@@ -196,6 +196,10 @@ class AppLocalizationsSw extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Hatua hii haiwezi kutenduliwa.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Ukumbusho umehifadhiwa, lakini arifa haikuweza kupangwa. Angalia mipangilio ya arifa.';
+
+  @override
   String get recurrenceNone => 'Mara moja';
 
   @override
@@ -543,6 +547,13 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Puuza uboreshaji wa betri (inapendekezwa)';
+
+  @override
+  String get settingsTestNotificationAction => 'Jaribu arifa (sekunde 10)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Imepangwa. Funga skrini yako au ondoka kwenye programu sasa na subiri sekunde 10 hivi.';
 
   @override
   String get settingsPermissionsGranted => 'Imeruhusiwa';

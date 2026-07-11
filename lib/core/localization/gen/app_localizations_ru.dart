@@ -196,6 +196,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Это действие нельзя отменить.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Напоминание сохранено, но не удалось запланировать уведомление. Проверьте настройки уведомлений.';
+
+  @override
   String get recurrenceNone => 'Один раз';
 
   @override
@@ -544,6 +548,13 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Игнорировать оптимизацию батареи (рекомендуется)';
+
+  @override
+  String get settingsTestNotificationAction => 'Тест уведомления (10 с)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Запланировано. Заблокируйте экран или выйдите из приложения и подождите около 10 секунд.';
 
   @override
   String get settingsPermissionsGranted => 'Предоставлено';

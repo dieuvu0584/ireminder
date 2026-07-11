@@ -196,6 +196,10 @@ class AppLocalizationsNo extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Dette kan ikke angres.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Påminnelsen ble lagret, men varselet kunne ikke planlegges. Sjekk varselinnstillingene.';
+
+  @override
   String get recurrenceNone => 'Én gang';
 
   @override
@@ -543,6 +547,13 @@ class AppLocalizationsNo extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignorer batterioptimalisering (anbefalt)';
+
+  @override
+  String get settingsTestNotificationAction => 'Test varsel (10 sek)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Planlagt. Lås skjermen eller forlat appen nå, og vent i ca. 10 sekunder.';
 
   @override
   String get settingsPermissionsGranted => 'Innvilget';

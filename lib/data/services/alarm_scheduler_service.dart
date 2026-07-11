@@ -40,11 +40,16 @@ class AlarmSchedulerService {
     );
   }
 
-  Future<void> scheduleForReminder(Reminder reminder) async {
+  /// Returns whether scheduling actually succeeded — callers on the direct
+  /// user-action path (create/update/snooze) use this to surface a warning
+  /// instead of failing silently, while [rescheduleAllFromDatabase] (which
+  /// iterates every reminder on every app start) ignores it, since a
+  /// bulk-reschedule failure for one row must never block the rest.
+  Future<bool> scheduleForReminder(Reminder reminder) async {
     try {
       if (!reminder.isActive) {
         await _notifications.cancelReminder(reminder.id);
-        return;
+        return true;
       }
       final dueDate = reminder.snoozeUntil ?? reminder.nextDueDate;
       final fireDate = reminder.snoozeUntil != null
@@ -65,7 +70,7 @@ class AlarmSchedulerService {
           soundEnabled: prefs.sound,
           vibrationEnabled: prefs.vibration,
         );
-        return;
+        return true;
       }
 
       await _notifications.scheduleReminder(
@@ -76,9 +81,13 @@ class AlarmSchedulerService {
         soundEnabled: prefs.sound,
         vibrationEnabled: prefs.vibration,
       );
+      return true;
     } catch (e) {
-      debugPrint('AlarmSchedulerService: failed to schedule reminder '
-          '${reminder.id}: $e');
+      debugPrint(
+        'AlarmSchedulerService: failed to schedule reminder '
+        '${reminder.id}: $e',
+      );
+      return false;
     }
   }
 
@@ -86,8 +95,10 @@ class AlarmSchedulerService {
     try {
       await _notifications.cancelReminder(reminderId);
     } catch (e) {
-      debugPrint('AlarmSchedulerService: failed to cancel reminder '
-          '$reminderId: $e');
+      debugPrint(
+        'AlarmSchedulerService: failed to cancel reminder '
+        '$reminderId: $e',
+      );
     }
   }
 
@@ -101,8 +112,9 @@ class AlarmSchedulerService {
         await _notifications.cancelInstallment(installment.id);
         return;
       }
-      final fireDate = installment.dueDate
-          .subtract(Duration(days: loan.reminderAdvanceDays));
+      final fireDate = installment.dueDate.subtract(
+        Duration(days: loan.reminderAdvanceDays),
+      );
       final fireAt = _combine(fireDate, defaultReminderTime);
       if (fireAt.isBefore(DateTime.now())) return;
       final prefs = await _soundVibrationPrefs();
@@ -116,8 +128,10 @@ class AlarmSchedulerService {
         vibrationEnabled: prefs.vibration,
       );
     } catch (e) {
-      debugPrint('AlarmSchedulerService: failed to schedule installment '
-          '${installment.id}: $e');
+      debugPrint(
+        'AlarmSchedulerService: failed to schedule installment '
+        '${installment.id}: $e',
+      );
     }
   }
 
@@ -125,8 +139,10 @@ class AlarmSchedulerService {
     try {
       await _notifications.cancelInstallment(installmentId);
     } catch (e) {
-      debugPrint('AlarmSchedulerService: failed to cancel installment '
-          '$installmentId: $e');
+      debugPrint(
+        'AlarmSchedulerService: failed to cancel installment '
+        '$installmentId: $e',
+      );
     }
   }
 
@@ -135,22 +151,23 @@ class AlarmSchedulerService {
   /// receiver) so scheduled notifications never drift from what's
   /// actually stored, regardless of what the OS silently dropped.
   Future<void> rescheduleAllFromDatabase() async {
-    final reminders = await (_db.select(_db.reminders)
-          ..where((r) => r.isActive.equals(true)))
-        .get();
+    final reminders = await (_db.select(
+      _db.reminders,
+    )..where((r) => r.isActive.equals(true))).get();
     for (final reminder in reminders) {
       await scheduleForReminder(reminder);
     }
 
     final settings = await (_db.select(_db.appSettings)).getSingle();
-    final activeLoans =
-        await (_db.select(_db.loans)..where((l) => l.isActive.equals(true)))
-            .get();
+    final activeLoans = await (_db.select(
+      _db.loans,
+    )..where((l) => l.isActive.equals(true))).get();
     for (final loan in activeLoans) {
-      final pending = await (_db.select(_db.loanInstallments)
-            ..where((i) =>
-                i.loanId.equals(loan.id) & i.status.equals('pending')))
-          .get();
+      final pending =
+          await (_db.select(_db.loanInstallments)..where(
+                (i) => i.loanId.equals(loan.id) & i.status.equals('pending'),
+              ))
+              .get();
       for (final installment in pending) {
         await scheduleForInstallment(
           installment,

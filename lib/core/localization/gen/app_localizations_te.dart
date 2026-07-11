@@ -196,6 +196,10 @@ class AppLocalizationsTe extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'దీన్ని తిరిగి పొందలేరు.';
 
   @override
+  String get reminderScheduleWarning =>
+      'రిమైండర్ సేవ్ చేయబడింది, కానీ నోటిఫికేషన్‌ను షెడ్యూల్ చేయలేకపోయాము. నోటిఫికేషన్ సెట్టింగ్‌లను తనిఖీ చేయండి.';
+
+  @override
   String get recurrenceNone => 'ఒకసారి';
 
   @override
@@ -545,6 +549,14 @@ class AppLocalizationsTe extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'బ్యాటరీ ఆప్టిమైజేషన్‌ను విస్మరించండి (సిఫార్సు చేయబడింది)';
+
+  @override
+  String get settingsTestNotificationAction =>
+      'నోటిఫికేషన్‌ను పరీక్షించండి (10 సె)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'షెడ్యూల్ చేయబడింది. ఇప్పుడు మీ స్క్రీన్‌ను లాక్ చేయండి లేదా యాప్ నుండి బయటకు వెళ్లి, సుమారు 10 సెకన్లు వేచి ఉండండి.';
 
   @override
   String get settingsPermissionsGranted => 'మంజూరైంది';

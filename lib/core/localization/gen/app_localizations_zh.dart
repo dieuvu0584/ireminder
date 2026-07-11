@@ -191,6 +191,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reminderDeleteConfirmBody => '此操作无法撤销。';
 
   @override
+  String get reminderScheduleWarning => '提醒已保存，但无法安排通知。请检查通知设置。';
+
+  @override
   String get recurrenceNone => '仅一次';
 
   @override
@@ -530,6 +533,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsPermissionsBatteryLabel => '忽略电池优化（推荐）';
+
+  @override
+  String get settingsTestNotificationAction => '测试通知（10秒）';
+
+  @override
+  String get settingsTestNotificationScheduled => '已安排。请立即锁屏或退出应用，等待约10秒。';
 
   @override
   String get settingsPermissionsGranted => '已授权';

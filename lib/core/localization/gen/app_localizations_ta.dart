@@ -197,6 +197,10 @@ class AppLocalizationsTa extends AppLocalizations {
       'இதை மீண்டும் செயல்தவிர்க்க முடியாது.';
 
   @override
+  String get reminderScheduleWarning =>
+      'நினைவூட்டல் சேமிக்கப்பட்டது, ஆனால் அறிவிப்பை திட்டமிட முடியவில்லை. அறிவிப்பு அமைப்புகளை சரிபார்க்கவும்.';
+
+  @override
   String get recurrenceNone => 'ஒருமுறை';
 
   @override
@@ -547,6 +551,13 @@ class AppLocalizationsTa extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'பேட்டரி மேம்படுத்தலை புறக்கணிக்கவும் (பரிந்துரைக்கப்படுகிறது)';
+
+  @override
+  String get settingsTestNotificationAction => 'அறிவிப்பை சோதிக்கவும் (10 வி)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'திட்டமிடப்பட்டது. இப்போது உங்கள் திரையை பூட்டவும் அல்லது பயன்பாட்டை விட்டு வெளியேறவும், சுமார் 10 வினாடிகள் காத்திருக்கவும்.';
 
   @override
   String get settingsPermissionsGranted => 'வழங்கப்பட்டது';

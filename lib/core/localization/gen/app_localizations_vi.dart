@@ -196,6 +196,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Không thể hoàn tác sau khi xóa.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Đã lưu nhắc việc, nhưng không lên lịch được thông báo. Hãy kiểm tra lại cài đặt thông báo.';
+
+  @override
   String get recurrenceNone => 'Một lần';
 
   @override
@@ -542,6 +546,13 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Bỏ qua tối ưu hóa pin (khuyến nghị)';
+
+  @override
+  String get settingsTestNotificationAction => 'Kiểm tra thông báo (10 giây)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Đã lên lịch. Hãy khóa màn hình hoặc thoát khỏi app ngay và chờ khoảng 10 giây.';
 
   @override
   String get settingsPermissionsGranted => 'Đã cấp quyền';

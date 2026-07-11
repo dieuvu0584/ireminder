@@ -196,6 +196,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Tuto akci nelze vzít zpět.';
 
   @override
+  String get reminderScheduleWarning =>
+      'Připomínka uložena, ale oznámení se nepodařilo naplánovat. Zkontrolujte nastavení oznámení.';
+
+  @override
   String get recurrenceNone => 'Jednorázově';
 
   @override
@@ -546,6 +550,13 @@ class AppLocalizationsCs extends AppLocalizations {
   @override
   String get settingsPermissionsBatteryLabel =>
       'Ignorovat optimalizaci baterie (doporučeno)';
+
+  @override
+  String get settingsTestNotificationAction => 'Otestovat oznámení (10 s)';
+
+  @override
+  String get settingsTestNotificationScheduled =>
+      'Naplánováno. Nyní uzamkněte obrazovku nebo opusťte aplikaci a počkejte asi 10 sekund.';
 
   @override
   String get settingsPermissionsGranted => 'Uděleno';
