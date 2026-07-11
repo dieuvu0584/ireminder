@@ -514,6 +514,12 @@ abstract class AppLocalizations {
   /// **'Lunar calendar'**
   String get reminderFieldLunarToggle;
 
+  /// No description provided for @reminderLunarDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{date} (lunar)'**
+  String reminderLunarDateLabel(String date);
+
   /// No description provided for @reminderDeleteConfirmTitle.
   ///
   /// In en, this message translates to:

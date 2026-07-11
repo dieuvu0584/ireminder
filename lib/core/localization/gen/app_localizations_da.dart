@@ -185,6 +185,11 @@ class AppLocalizationsDa extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Månekalender';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (måne)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'Slet denne påmindelse?';
 
   @override

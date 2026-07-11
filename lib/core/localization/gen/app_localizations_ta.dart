@@ -185,6 +185,11 @@ class AppLocalizationsTa extends AppLocalizations {
   String get reminderFieldLunarToggle => 'சந்திர நாட்காட்டி';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (சந்திரன்)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'இந்த நினைவூட்டலை நீக்கவா?';
 
   @override

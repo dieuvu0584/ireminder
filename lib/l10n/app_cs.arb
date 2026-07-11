@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Lunární den",
   "reminderFieldLunarMonth": "Lunární měsíc",
   "reminderFieldLunarToggle": "Lunární kalendář",
+  "reminderLunarDateLabel": "{date} (lunární)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Smazat tuto připomínku?",
   "reminderDeleteConfirmBody": "Tuto akci nelze vzít zpět.",
   "recurrenceNone": "Jednorázově",

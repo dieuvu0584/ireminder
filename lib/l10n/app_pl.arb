@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Dzień księżycowy",
   "reminderFieldLunarMonth": "Miesiąc księżycowy",
   "reminderFieldLunarToggle": "Kalendarz księżycowy",
+  "reminderLunarDateLabel": "{date} (księżycowy)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Usunąć to przypomnienie?",
   "reminderDeleteConfirmBody": "Tej operacji nie można cofnąć.",
   "recurrenceNone": "Jednorazowo",

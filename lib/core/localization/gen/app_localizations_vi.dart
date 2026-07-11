@@ -185,6 +185,11 @@ class AppLocalizationsVi extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Âm lịch';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (âm lịch)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'Xóa nhắc việc này?';
 
   @override

@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "ચંદ્ર તારીખ",
   "reminderFieldLunarMonth": "ચંદ્ર મહિનો",
   "reminderFieldLunarToggle": "ચંદ્ર કેલેન્ડર",
+  "reminderLunarDateLabel": "{date} (ચંદ્ર)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "આ રિમાઇન્ડર કાઢી નાખવું છે?",
   "reminderDeleteConfirmBody": "આ ક્રિયા પાછી લઈ શકાશે નહીં.",
   "recurrenceNone": "એકવાર",

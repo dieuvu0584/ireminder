@@ -12,6 +12,19 @@ class LunarConverter {
     final lunar = Lunar.fromDate(
       DateTime(solarDate.year, solarDate.month, solarDate.day),
     );
-    return (year: lunar.getYear(), month: lunar.getMonth(), day: lunar.getDay());
+    return (
+      year: lunar.getYear(),
+      month: lunar.getMonth(),
+      day: lunar.getDay(),
+    );
+  }
+
+  /// "day/month" for the lunar date corresponding to [solarDate] — the
+  /// compact form shown next to a lunar-recurring reminder so its solar
+  /// due date (which shifts every year) doesn't obscure the fixed lunar
+  /// occasion it actually represents.
+  static String formatDayMonth(DateTime solarDate) {
+    final lunar = solarToLunar(solarDate);
+    return '${lunar.day}/${lunar.month}';
   }
 }

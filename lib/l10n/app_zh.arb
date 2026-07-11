@@ -56,6 +56,14 @@
   "reminderFieldLunarDay": "农历日",
   "reminderFieldLunarMonth": "农历月",
   "reminderFieldLunarToggle": "农历",
+  "reminderLunarDateLabel": "{date}（农历）",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "删除此提醒?",
   "reminderDeleteConfirmBody": "此操作无法撤销。",
   "recurrenceNone": "仅一次",

@@ -185,6 +185,11 @@ class AppLocalizationsHu extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Holdnaptár';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (hold)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'Törlöd ezt az emlékeztetőt?';
 
   @override

@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Lunar day",
   "reminderFieldLunarMonth": "Lunar month",
   "reminderFieldLunarToggle": "Lunar calendar",
+  "reminderLunarDateLabel": "{date} (lunar)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Delete this reminder?",
   "reminderDeleteConfirmBody": "This cannot be undone.",
   "recurrenceNone": "Once",

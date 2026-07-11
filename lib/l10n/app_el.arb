@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Σεληνιακή ημέρα",
   "reminderFieldLunarMonth": "Σεληνιακός μήνας",
   "reminderFieldLunarToggle": "Σεληνιακό ημερολόγιο",
+  "reminderLunarDateLabel": "{date} (σεληνιακό)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Διαγραφή αυτής της υπενθύμισης;",
   "reminderDeleteConfirmBody": "Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
   "recurrenceNone": "Μία φορά",

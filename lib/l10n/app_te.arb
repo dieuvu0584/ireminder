@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "చాంద్రమాన రోజు",
   "reminderFieldLunarMonth": "చాంద్రమాన నెల",
   "reminderFieldLunarToggle": "చాంద్రమాన క్యాలెండర్",
+  "reminderLunarDateLabel": "{date} (చాంద్రమాన)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "ఈ రిమైండర్‌ను తొలగించాలా?",
   "reminderDeleteConfirmBody": "దీన్ని తిరిగి పొందలేరు.",
   "recurrenceNone": "ఒకసారి",

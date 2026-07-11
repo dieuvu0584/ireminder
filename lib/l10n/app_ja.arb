@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "旧暦の日",
   "reminderFieldLunarMonth": "旧暦の月",
   "reminderFieldLunarToggle": "旧暦",
+  "reminderLunarDateLabel": "{date}（旧暦）",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "このリマインダーを削除しますか？",
   "reminderDeleteConfirmBody": "この操作は元に戻せません。",
   "recurrenceNone": "1回のみ",

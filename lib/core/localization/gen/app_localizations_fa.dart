@@ -185,6 +185,11 @@ class AppLocalizationsFa extends AppLocalizations {
   String get reminderFieldLunarToggle => 'تقویم قمری';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (قمری)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'این یادآور حذف شود؟';
 
   @override

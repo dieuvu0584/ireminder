@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Maankalender dag",
   "reminderFieldLunarMonth": "Maankalender maand",
   "reminderFieldLunarToggle": "Maankalender",
+  "reminderLunarDateLabel": "{date} (maan)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Deze herinnering verwijderen?",
   "reminderDeleteConfirmBody": "Dit kan niet ongedaan worden gemaakt.",
   "recurrenceNone": "Eenmalig",

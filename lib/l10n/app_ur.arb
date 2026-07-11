@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "قمری دن",
   "reminderFieldLunarMonth": "قمری مہینہ",
   "reminderFieldLunarToggle": "قمری کیلنڈر",
+  "reminderLunarDateLabel": "{date} (قمری)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "کیا یہ یاد دہانی حذف کر دیں؟",
   "reminderDeleteConfirmBody": "اسے واپس نہیں لایا جا سکتا۔",
   "recurrenceNone": "ایک بار",

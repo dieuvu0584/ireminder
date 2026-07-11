@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "יום בלוח הירחי",
   "reminderFieldLunarMonth": "חודש בלוח הירחי",
   "reminderFieldLunarToggle": "לוח שנה ירחי",
+  "reminderLunarDateLabel": "{date} (ירחי)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "למחוק את התזכורת הזו?",
   "reminderDeleteConfirmBody": "לא ניתן לבטל פעולה זו.",
   "recurrenceNone": "פעם אחת",

@@ -185,6 +185,11 @@ class AppLocalizationsEl extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Σεληνιακό ημερολόγιο';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (σεληνιακό)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'Διαγραφή αυτής της υπενθύμισης;';
 
   @override

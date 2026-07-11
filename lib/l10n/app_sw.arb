@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Siku ya kalenda ya mwezi",
   "reminderFieldLunarMonth": "Mwezi wa kalenda ya mwezi",
   "reminderFieldLunarToggle": "Kalenda ya mwezi",
+  "reminderLunarDateLabel": "{date} (mwezi)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Futa kikumbusho hiki?",
   "reminderDeleteConfirmBody": "Hatua hii haiwezi kutenduliwa.",
   "recurrenceNone": "Mara moja",

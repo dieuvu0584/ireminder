@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Ay takviminde gün",
   "reminderFieldLunarMonth": "Ay takviminde ay",
   "reminderFieldLunarToggle": "Ay takvimi",
+  "reminderLunarDateLabel": "{date} (ay takvimi)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Bu hatırlatıcı silinsin mi?",
   "reminderDeleteConfirmBody": "Bu işlem geri alınamaz.",
   "recurrenceNone": "Bir kez",

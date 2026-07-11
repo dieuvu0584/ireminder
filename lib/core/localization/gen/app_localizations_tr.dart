@@ -185,6 +185,11 @@ class AppLocalizationsTr extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Ay takvimi';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (ay takvimi)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'Bu hatırlatıcı silinsin mi?';
 
   @override

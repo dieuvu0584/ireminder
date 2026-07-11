@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Holdnaptári nap",
   "reminderFieldLunarMonth": "Holdnaptári hónap",
   "reminderFieldLunarToggle": "Holdnaptár",
+  "reminderLunarDateLabel": "{date} (hold)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Törlöd ezt az emlékeztetőt?",
   "reminderDeleteConfirmBody": "Ez a művelet nem vonható vissza.",
   "recurrenceNone": "Egyszeri",

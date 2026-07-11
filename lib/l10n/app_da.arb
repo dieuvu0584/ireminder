@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Månekalenderdag",
   "reminderFieldLunarMonth": "Månekalendermåned",
   "reminderFieldLunarToggle": "Månekalender",
+  "reminderLunarDateLabel": "{date} (måne)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Slet denne påmindelse?",
   "reminderDeleteConfirmBody": "Dette kan ikke fortrydes.",
   "recurrenceNone": "Én gang",

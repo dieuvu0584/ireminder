@@ -185,6 +185,11 @@ class AppLocalizationsCs extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Lunární kalendář';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (lunární)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'Smazat tuto připomínku?';
 
   @override

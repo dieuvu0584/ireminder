@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "음력 날짜",
   "reminderFieldLunarMonth": "음력 월",
   "reminderFieldLunarToggle": "음력",
+  "reminderLunarDateLabel": "{date} (음력)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "이 리마인더를 삭제할까요?",
   "reminderDeleteConfirmBody": "삭제하면 되돌릴 수 없어요.",
   "recurrenceNone": "한 번만",

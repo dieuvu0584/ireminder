@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Лунный день",
   "reminderFieldLunarMonth": "Лунный месяц",
   "reminderFieldLunarToggle": "Лунный календарь",
+  "reminderLunarDateLabel": "{date} (лунный)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Удалить это напоминание?",
   "reminderDeleteConfirmBody": "Это действие нельзя отменить.",
   "recurrenceNone": "Один раз",

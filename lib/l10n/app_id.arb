@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Tanggal lunar",
   "reminderFieldLunarMonth": "Bulan lunar",
   "reminderFieldLunarToggle": "Kalender lunar",
+  "reminderLunarDateLabel": "{date} (lunar)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Hapus pengingat ini?",
   "reminderDeleteConfirmBody": "Tindakan ini tidak dapat dibatalkan.",
   "recurrenceNone": "Sekali",

@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "روز قمری",
   "reminderFieldLunarMonth": "ماه قمری",
   "reminderFieldLunarToggle": "تقویم قمری",
+  "reminderLunarDateLabel": "{date} (قمری)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "این یادآور حذف شود؟",
   "reminderDeleteConfirmBody": "این کار قابل بازگشت نیست.",
   "recurrenceNone": "یک‌بار",

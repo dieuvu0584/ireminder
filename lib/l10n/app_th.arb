@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "วันตามจันทรคติ",
   "reminderFieldLunarMonth": "เดือนตามจันทรคติ",
   "reminderFieldLunarToggle": "ปฏิทินจันทรคติ",
+  "reminderLunarDateLabel": "{date} (จันทรคติ)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "ลบการแจ้งเตือนนี้ใช่ไหม",
   "reminderDeleteConfirmBody": "ไม่สามารถย้อนกลับได้หลังจากลบ",
   "recurrenceNone": "ครั้งเดียว",

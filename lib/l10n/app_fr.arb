@@ -56,6 +56,14 @@
   "reminderFieldLunarDay": "Jour lunaire",
   "reminderFieldLunarMonth": "Mois lunaire",
   "reminderFieldLunarToggle": "Calendrier lunaire",
+  "reminderLunarDateLabel": "{date} (lunaire)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Supprimer ce rappel ?",
   "reminderDeleteConfirmBody": "Cette action est irréversible.",
   "recurrenceNone": "Une seule fois",

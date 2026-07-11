@@ -56,6 +56,14 @@
   "reminderFieldLunarDay": "Mondtag",
   "reminderFieldLunarMonth": "Mondmonat",
   "reminderFieldLunarToggle": "Mondkalender",
+  "reminderLunarDateLabel": "{date} (Mondkalender)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Diese Erinnerung löschen?",
   "reminderDeleteConfirmBody": "Dies kann nicht rückgängig gemacht werden.",
   "recurrenceNone": "Einmalig",

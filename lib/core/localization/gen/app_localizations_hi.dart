@@ -185,6 +185,11 @@ class AppLocalizationsHi extends AppLocalizations {
   String get reminderFieldLunarToggle => 'चंद्र कैलेंडर';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date (चंद्र)';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'यह रिमाइंडर हटाएं?';
 
   @override

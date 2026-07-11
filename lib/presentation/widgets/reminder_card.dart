@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/localization/gen/app_localizations.dart';
+import '../../core/utils/lunar_converter.dart';
 import '../../data/database/app_database.dart';
 import 'color_picker.dart';
 import 'icon_catalog.dart';
@@ -24,8 +25,9 @@ class ReminderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final color =
-        category != null ? parseHexColor(category!.color) : Colors.grey;
+    final color = category != null
+        ? parseHexColor(category!.color)
+        : Colors.grey;
 
     return Dismissible(
       key: ValueKey('reminder_${reminder.id}'),
@@ -64,8 +66,34 @@ class ReminderCard extends StatelessWidget {
             ),
           ),
           title: Text(reminder.title),
-          subtitle: Text(
-            '${reminder.reminderTime} · ${category?.name ?? ''}',
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('${reminder.reminderTime} · ${category?.name ?? ''}'),
+              if (reminder.isLunar)
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.brightness_2_outlined,
+                      size: 12,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                    const SizedBox(width: 4),
+                    Text(
+                      l10n.reminderLunarDateLabel(
+                        LunarConverter.formatDayMonth(
+                          reminder.snoozeUntil ?? reminder.nextDueDate,
+                        ),
+                      ),
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                    ),
+                  ],
+                ),
+            ],
           ),
           trailing: IconButton(
             icon: const Icon(Icons.check_circle_outline),

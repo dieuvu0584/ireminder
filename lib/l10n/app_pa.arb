@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "ਚੰਦਰ ਦਿਨ",
   "reminderFieldLunarMonth": "ਚੰਦਰ ਮਹੀਨਾ",
   "reminderFieldLunarToggle": "ਚੰਦਰ ਕੈਲੰਡਰ",
+  "reminderLunarDateLabel": "{date} (ਚੰਦਰ)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "ਇਹ ਰਿਮਾਈਂਡਰ ਮਿਟਾਉਣਾ ਹੈ?",
   "reminderDeleteConfirmBody": "ਇਹ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
   "recurrenceNone": "ਇੱਕ ਵਾਰ",

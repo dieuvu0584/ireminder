@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Місячний день",
   "reminderFieldLunarMonth": "Місячний місяць",
   "reminderFieldLunarToggle": "Місячний календар",
+  "reminderLunarDateLabel": "{date} (місячний)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Видалити це нагадування?",
   "reminderDeleteConfirmBody": "Цю дію неможливо скасувати.",
   "recurrenceNone": "Один раз",

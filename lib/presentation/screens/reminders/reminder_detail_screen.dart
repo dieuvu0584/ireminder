@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../../core/utils/date_formatter.dart';
+import '../../../core/utils/lunar_converter.dart';
 import '../../../data/database/app_database.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
@@ -40,7 +41,7 @@ class ReminderDetailScreen extends ConsumerWidget {
     final categoriesAsync = ref.watch(categoriesStreamProvider);
     final snoozeMinutes =
         ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
-            60;
+        60;
     // Watches the live row so edits made via the Edit screen (or a bulk
     // category reassignment/delete elsewhere) are reflected here instead of
     // this screen staying stuck showing the stale object it was opened with.
@@ -126,9 +127,30 @@ class ReminderDetailScreen extends ConsumerWidget {
                 error: (e, st) => const SizedBox.shrink(),
               ),
               const SizedBox(height: 8),
-              Text(
-                DateFormatter.formatDate(current.nextDueDate, locale),
-                style: Theme.of(context).textTheme.titleMedium,
+              Row(
+                children: [
+                  Text(
+                    DateFormatter.formatDate(current.nextDueDate, locale),
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  if (current.isLunar) ...[
+                    const SizedBox(width: 8),
+                    Icon(
+                      Icons.brightness_2_outlined,
+                      size: 16,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                    const SizedBox(width: 2),
+                    Text(
+                      l10n.reminderLunarDateLabel(
+                        LunarConverter.formatDayMonth(current.nextDueDate),
+                      ),
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                    ),
+                  ],
+                ],
               ),
               Text(DateFormatter.formatTime(current.reminderTime, locale)),
               const Spacer(),
@@ -158,10 +180,13 @@ class ReminderDetailScreen extends ConsumerWidget {
                       onPressed: () => _runGuarded(
                         context,
                         ref,
-                        () => ref.read(reminderActionsProvider).snooze(
+                        () => ref
+                            .read(reminderActionsProvider)
+                            .snooze(
                               current.id,
-                              DateTime.now()
-                                  .add(Duration(minutes: snoozeMinutes)),
+                              DateTime.now().add(
+                                Duration(minutes: snoozeMinutes),
+                              ),
                             ),
                       ),
                     ),

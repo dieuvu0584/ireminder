@@ -56,6 +56,14 @@
   "reminderFieldLunarDay": "चंद्र तिथि",
   "reminderFieldLunarMonth": "चंद्र माह",
   "reminderFieldLunarToggle": "चंद्र कैलेंडर",
+  "reminderLunarDateLabel": "{date} (चंद्र)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "यह रिमाइंडर हटाएं?",
   "reminderDeleteConfirmBody": "इसे वापस नहीं लाया जा सकता।",
   "recurrenceNone": "एक बार",

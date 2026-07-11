@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Ziua lunară",
   "reminderFieldLunarMonth": "Luna lunară",
   "reminderFieldLunarToggle": "Calendar lunar",
+  "reminderLunarDateLabel": "{date} (lunar)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Ștergi acest memento?",
   "reminderDeleteConfirmBody": "Această acțiune nu poate fi anulată.",
   "recurrenceNone": "O singură dată",

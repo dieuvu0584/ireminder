@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Kuukalenterin päivä",
   "reminderFieldLunarMonth": "Kuukalenterin kuukausi",
   "reminderFieldLunarToggle": "Kuukalenteri",
+  "reminderLunarDateLabel": "{date} (kuu)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Poistetaanko tämä muistutus?",
   "reminderDeleteConfirmBody": "Tätä ei voi perua.",
   "recurrenceNone": "Kerran",

@@ -183,6 +183,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String get reminderFieldLunarToggle => '旧暦';
 
   @override
+  String reminderLunarDateLabel(String date) {
+    return '$date（旧暦）';
+  }
+
+  @override
   String get reminderDeleteConfirmTitle => 'このリマインダーを削除しますか？';
 
   @override

@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "சந்திர தேதி",
   "reminderFieldLunarMonth": "சந்திர மாதம்",
   "reminderFieldLunarToggle": "சந்திர நாட்காட்டி",
+  "reminderLunarDateLabel": "{date} (சந்திரன்)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "இந்த நினைவூட்டலை நீக்கவா?",
   "reminderDeleteConfirmBody": "இதை மீண்டும் செயல்தவிர்க்க முடியாது.",
   "recurrenceNone": "ஒருமுறை",

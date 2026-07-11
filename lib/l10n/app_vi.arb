@@ -57,6 +57,14 @@
   "reminderFieldLunarDay": "Ngày âm lịch",
   "reminderFieldLunarMonth": "Tháng âm lịch",
   "reminderFieldLunarToggle": "Âm lịch",
+  "reminderLunarDateLabel": "{date} (âm lịch)",
+  "@reminderLunarDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "reminderDeleteConfirmTitle": "Xóa nhắc việc này?",
   "reminderDeleteConfirmBody": "Không thể hoàn tác sau khi xóa.",
   "recurrenceNone": "Một lần",
