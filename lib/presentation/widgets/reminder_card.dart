@@ -13,10 +13,10 @@ class ReminderCard extends StatelessWidget {
   final VoidCallback onComplete;
   final VoidCallback onSnooze;
 
-  /// Whether this occurrence was actually completed — controls the trailing
-  /// icon's color (green vs. gray/outline) when [historical] is true.
-  /// Ignored when [historical] is false: the current, still-actionable
-  /// occurrence always shows the plain outline icon regardless.
+  /// Whether this occurrence was actually completed — green check if so.
+  /// If not completed, the check is orange while still actionable
+  /// ([historical] false) or gray once it's a past, auto-skipped
+  /// occurrence ([historical] true) — see [_trailingColor].
   final bool completed;
 
   /// True for an entry the calendar plots on a past day (either completed
@@ -85,17 +85,20 @@ class ReminderCard extends StatelessWidget {
               ),
           ],
         ),
-        trailing: historical
-            ? Icon(
-                Icons.check_circle,
-                color: completed
-                    ? Colors.green
-                    : Theme.of(context).colorScheme.outline,
-              )
-            : IconButton(
-                icon: const Icon(Icons.check_circle_outline),
-                onPressed: onComplete,
-              ),
+        // Always the same IconButton, whether tappable or not (rather
+        // than switching between IconButton and a bare Icon), so the
+        // trailing check never shifts position/size between rows —
+        // IconButton's own padding and minimum tap target differ from a
+        // plain Icon's, which misaligned rows that mixed the two.
+        trailing: IconButton(
+          icon: Icon(
+            completed || historical
+                ? Icons.check_circle
+                : Icons.check_circle_outline,
+            color: _trailingColor(context),
+          ),
+          onPressed: historical ? null : onComplete,
+        ),
       ),
     );
 
@@ -127,6 +130,16 @@ class ReminderCard extends StatelessWidget {
       },
       child: card,
     );
+  }
+
+  /// Green once done; orange while still due and actionable; gray once
+  /// it's moved past its day without being done (see
+  /// ReminderRepository.autoSkipOverdue) — a glance at the color alone
+  /// tells you whether something still needs attention.
+  Color _trailingColor(BuildContext context) {
+    if (completed) return Colors.green;
+    if (historical) return Theme.of(context).colorScheme.outline;
+    return Colors.orange;
   }
 
   Widget _swipeBackground(
