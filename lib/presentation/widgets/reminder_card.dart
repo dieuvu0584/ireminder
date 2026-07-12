@@ -13,11 +13,17 @@ class ReminderCard extends StatelessWidget {
   final VoidCallback onComplete;
   final VoidCallback onSnooze;
 
-  /// True for a historical entry the calendar plots on a past day it was
-  /// completed on — shown as a plain, non-interactive row with a green
-  /// check instead of swipe-to-complete/snooze actions, since a past
-  /// occurrence isn't something to act on again.
+  /// Whether this occurrence was actually completed — controls the trailing
+  /// icon's color (green vs. gray/outline) when [historical] is true.
+  /// Ignored when [historical] is false: the current, still-actionable
+  /// occurrence always shows the plain outline icon regardless.
   final bool completed;
+
+  /// True for an entry the calendar plots on a past day (either completed
+  /// or auto-skipped) — shown as a plain, non-interactive row instead of
+  /// swipe-to-complete/snooze actions, since a past occurrence isn't
+  /// something to act on again.
+  final bool historical;
 
   const ReminderCard({
     super.key,
@@ -27,6 +33,7 @@ class ReminderCard extends StatelessWidget {
     required this.onComplete,
     required this.onSnooze,
     this.completed = false,
+    this.historical = false,
   });
 
   @override
@@ -78,8 +85,13 @@ class ReminderCard extends StatelessWidget {
               ),
           ],
         ),
-        trailing: completed
-            ? const Icon(Icons.check_circle, color: Colors.green)
+        trailing: historical
+            ? Icon(
+                Icons.check_circle,
+                color: completed
+                    ? Colors.green
+                    : Theme.of(context).colorScheme.outline,
+              )
             : IconButton(
                 icon: const Icon(Icons.check_circle_outline),
                 onPressed: onComplete,
@@ -87,7 +99,7 @@ class ReminderCard extends StatelessWidget {
       ),
     );
 
-    if (completed) return card;
+    if (historical) return card;
 
     return Dismissible(
       key: ValueKey('reminder_${reminder.id}'),

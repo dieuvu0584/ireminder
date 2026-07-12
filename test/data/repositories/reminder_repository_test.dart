@@ -260,4 +260,138 @@ void main() {
       );
     },
   );
+
+  group('autoSkipOverdue', () {
+    test(
+      'advances a recurring reminder past its missed day and logs it as skipped, not completed',
+      () async {
+        final now = DateTime.now();
+        final yesterday = DateTime(
+          now.year,
+          now.month,
+          now.day,
+        ).subtract(const Duration(days: 1));
+        final id = await db
+            .into(db.reminders)
+            .insert(
+              RemindersCompanion.insert(
+                title: 'Water plants',
+                categoryId: categoryId,
+                recurrenceType: RecurrenceType.daily.dbValue,
+                startDate: yesterday,
+                nextDueDate: yesterday,
+                reminderTime: '08:00',
+                createdAt: now,
+                updatedAt: now,
+              ),
+            );
+
+        await reminders.autoSkipOverdue();
+
+        final updated = await reminders.getById(id);
+        expect(updated!.isActive, isTrue);
+        expect(
+          updated.nextDueDate.isBefore(DateTime(now.year, now.month, now.day)),
+          isFalse,
+        );
+
+        final skipped = await reminders.watchSkippedLogs().first;
+        expect(skipped, hasLength(1));
+        expect(skipped.first.reminderId, id);
+        final completed = await reminders.watchCompletedLogs().first;
+        expect(completed, isEmpty);
+      },
+    );
+
+    test(
+      'deactivates a one-off reminder past its missed day without marking it completed',
+      () async {
+        final now = DateTime.now();
+        final yesterday = DateTime(
+          now.year,
+          now.month,
+          now.day,
+        ).subtract(const Duration(days: 1));
+        final id = await db
+            .into(db.reminders)
+            .insert(
+              RemindersCompanion.insert(
+                title: 'One-off errand',
+                categoryId: categoryId,
+                recurrenceType: RecurrenceType.none.dbValue,
+                startDate: yesterday,
+                nextDueDate: yesterday,
+                reminderTime: '08:00',
+                createdAt: now,
+                updatedAt: now,
+              ),
+            );
+
+        await reminders.autoSkipOverdue();
+
+        final updated = await reminders.getById(id);
+        expect(updated!.isActive, isFalse);
+
+        final skipped = await reminders.watchSkippedLogs().first;
+        expect(skipped.map((l) => l.reminderId), contains(id));
+        final completed = await reminders.watchCompletedLogs().first;
+        expect(completed.map((l) => l.reminderId), isNot(contains(id)));
+      },
+    );
+
+    test('leaves a reminder due later today untouched', () async {
+      final now = DateTime.now();
+      final today = DateTime(now.year, now.month, now.day);
+      final id = await reminders.create(
+        title: 'Take medicine',
+        categoryId: categoryId,
+        recurrenceType: RecurrenceType.daily,
+        startDate: today,
+        reminderTime: '23:59',
+      );
+
+      await reminders.autoSkipOverdue();
+
+      final unchanged = await reminders.getById(id);
+      expect(unchanged!.nextDueDate, today);
+      final skipped = await reminders.watchSkippedLogs().first;
+      expect(skipped, isEmpty);
+    });
+
+    test(
+      'skips a reminder whose snooze target has also passed, clearing the snooze',
+      () async {
+        final now = DateTime.now();
+        final yesterday = DateTime(
+          now.year,
+          now.month,
+          now.day,
+        ).subtract(const Duration(days: 1));
+        final id = await db
+            .into(db.reminders)
+            .insert(
+              RemindersCompanion.insert(
+                title: 'Snoozed and forgotten',
+                categoryId: categoryId,
+                recurrenceType: RecurrenceType.daily.dbValue,
+                startDate: yesterday,
+                nextDueDate: yesterday,
+                snoozeUntil: Value(yesterday.add(const Duration(hours: 20))),
+                reminderTime: '08:00',
+                createdAt: now,
+                updatedAt: now,
+              ),
+            );
+
+        await reminders.autoSkipOverdue();
+
+        final updated = await reminders.getById(id);
+        expect(updated!.snoozeUntil, isNull);
+        expect(
+          updated.nextDueDate.isBefore(DateTime(now.year, now.month, now.day)),
+          isFalse,
+        );
+      },
+    );
+  });
 }

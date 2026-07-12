@@ -110,6 +110,17 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
   }
 
   try {
+    // Once a reminder's due day has fully passed without being completed,
+    // stop re-nagging about it every time the app reopens — move it
+    // forward (or deactivate one-off reminders) instead. Must run before
+    // rescheduleAllFromDatabase below so the OS alarm gets scheduled
+    // against the corrected date, not the stale one.
+    await ref.read(reminderRepositoryProvider).autoSkipOverdue();
+  } catch (e) {
+    debugPrint('appBootstrap: autoSkipOverdue failed: $e');
+  }
+
+  try {
     await ref.read(alarmSchedulerServiceProvider).rescheduleAllFromDatabase();
   } catch (e) {
     debugPrint('appBootstrap: rescheduleAllFromDatabase failed: $e');

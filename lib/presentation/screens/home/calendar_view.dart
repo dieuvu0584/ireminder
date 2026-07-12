@@ -41,6 +41,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     // was scheduled on it just because it's since been completed.
     final remindersAsync = ref.watch(allRemindersStreamProvider);
     final completedLogsAsync = ref.watch(completedReminderLogsStreamProvider);
+    final skippedLogsAsync = ref.watch(skippedReminderLogsStreamProvider);
     final categoriesAsync = ref.watch(categoriesStreamProvider);
     // Shared with HomeScreen's "+" FAB, so creating a reminder while
     // browsing a different day here pre-fills that day as the reminder's
@@ -55,14 +56,23 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
         final categories = categoriesAsync.valueOrNull ?? const <Category>[];
         final byId = {for (final c in categories) c.id: c};
         final remindersById = {for (final r in reminders) r.id: r};
+        // A one-off reminder going inactive means either it was completed
+        // or auto-skipped (see ReminderRepository.autoSkipOverdue) — this
+        // set is how the entries below tell those two apart for coloring,
+        // since next_due_date/isActive alone can't distinguish them.
+        final completedReminderIds = {
+          for (final log in completedLogsAsync.valueOrNull ?? const [])
+            log.reminderId,
+        };
 
         final byDay = <DateTime, List<_CalendarEntry>>{};
         for (final r in reminders) {
           final d = r.snoozeUntil ?? r.nextDueDate;
           final key = DateTime(d.year, d.month, d.day);
+          final done = !r.isActive && completedReminderIds.contains(r.id);
           byDay
               .putIfAbsent(key, () => [])
-              .add(_CalendarEntry(r, completed: !r.isActive));
+              .add(_CalendarEntry(r, completed: done, historical: !r.isActive));
 
           // The DB only stores the single nearest upcoming occurrence, so
           // browsing to a different year would otherwise show nothing for
@@ -90,18 +100,25 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
               if (projKey != key) {
                 byDay
                     .putIfAbsent(projKey, () => [])
-                    .add(_CalendarEntry(r, completed: !r.isActive));
+                    .add(
+                      _CalendarEntry(
+                        r,
+                        completed: done,
+                        historical: !r.isActive,
+                      ),
+                    );
               }
             }
           }
         }
 
         // A recurring reminder's next_due_date only ever holds the single
-        // upcoming occurrence, so its past completed cycles aren't
-        // reachable above at all — plot each logged completion on the day
-        // it actually happened. One-off (none) reminders are skipped here
-        // since they're already fully represented above (next_due_date
-        // never moves for them, so the same day would double up).
+        // upcoming occurrence, so its past completed/skipped cycles aren't
+        // reachable above at all — plot each logged completion/skip on the
+        // day it actually happened. One-off (none) reminders are excluded
+        // from both loops since they're already fully represented above
+        // (next_due_date never moves for them, so the same day would
+        // double up).
         for (final log in completedLogsAsync.valueOrNull ?? const []) {
           final reminder = remindersById[log.reminderId];
           if (reminder == null) continue;
@@ -113,7 +130,22 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
           final key = DateTime(d.year, d.month, d.day);
           byDay
               .putIfAbsent(key, () => [])
-              .add(_CalendarEntry(reminder, completed: true));
+              .add(_CalendarEntry(reminder, completed: true, historical: true));
+        }
+        for (final log in skippedLogsAsync.valueOrNull ?? const []) {
+          final reminder = remindersById[log.reminderId];
+          if (reminder == null) continue;
+          if (RecurrenceType.fromDbValue(reminder.recurrenceType) ==
+              RecurrenceType.none) {
+            continue;
+          }
+          final d = log.completedAt;
+          final key = DateTime(d.year, d.month, d.day);
+          byDay
+              .putIfAbsent(key, () => [])
+              .add(
+                _CalendarEntry(reminder, completed: false, historical: true),
+              );
         }
 
         final selectedEntries = byDay[selectedDay] ?? const <_CalendarEntry>[];
@@ -158,11 +190,13 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                           .map(
                             (entry) => ReminderCard(
                               key: ValueKey(
-                                'cal_${entry.reminder.id}_${entry.completed}',
+                                'cal_${entry.reminder.id}_${entry.completed}_'
+                                '${entry.historical}',
                               ),
                               reminder: entry.reminder,
                               category: byId[entry.reminder.categoryId],
                               completed: entry.completed,
+                              historical: entry.historical,
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (_) => ReminderDetailScreen(
@@ -202,14 +236,23 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
   }
 }
 
-/// A reminder plotted on a specific calendar day, tagged with whether
-/// that particular occurrence is done — the same [Reminder] can appear
-/// on more than one day (its current occurrence, plus any of its past
-/// logged completions), each with its own [completed] value.
+/// A reminder plotted on a specific calendar day. [completed] marks
+/// whether that particular occurrence was actually done (green vs
+/// gray/category dot). [historical] marks whether it's a past
+/// completed/skipped occurrence — shown as a static row rather than an
+/// actionable one, since there's nothing to swipe-complete/snooze about
+/// something already resolved one way or the other. The same [Reminder]
+/// can appear on more than one day (its current occurrence, plus any of
+/// its past logged completions/skips), each with its own values.
 class _CalendarEntry {
   final Reminder reminder;
   final bool completed;
-  const _CalendarEntry(this.reminder, {required this.completed});
+  final bool historical;
+  const _CalendarEntry(
+    this.reminder, {
+    required this.completed,
+    required this.historical,
+  });
 }
 
 class _MonthHeader extends StatelessWidget {

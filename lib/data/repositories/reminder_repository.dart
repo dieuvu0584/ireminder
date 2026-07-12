@@ -47,6 +47,17 @@ class ReminderRepository {
         .watch();
   }
 
+  /// All auto-skipped occurrences (see [autoSkipOverdue]), most recent
+  /// first — used alongside [watchAll] to plot a recurring reminder's past
+  /// *missed* occurrences on the calendar day they were skipped, since
+  /// once skipped `next_due_date` moves on and no longer points at that day.
+  Stream<List<ReminderLog>> watchSkippedLogs() {
+    return (_db.select(_db.reminderLogs)
+          ..where((l) => l.action.equals(ReminderLogAction.skipped.dbValue))
+          ..orderBy([(l) => OrderingTerm.desc(l.completedAt)]))
+        .watch();
+  }
+
   Stream<List<Reminder>> watchByCategory(int categoryId) {
     return (_db.select(
       _db.reminders,
@@ -301,5 +312,67 @@ class ReminderRepository {
     );
     await _db.update(_db.reminders).replace(updated);
     return updated;
+  }
+
+  /// Once a reminder's due day (or snooze day, if snoozed) has fully
+  /// passed — not just its time, the calendar day itself — re-nagging
+  /// about it on every app open is more annoying than useful. Called once
+  /// at app bootstrap: recurring reminders jump forward to their next
+  /// occurrence on or after today; one-off (`none`) reminders are
+  /// deactivated, same end state as [complete] but without pretending the
+  /// user actually did it. Either way it's logged as `skipped` (not
+  /// `completed`) anchored at the missed day, so the calendar still shows
+  /// it as not-done (gray) there instead of the day going blank or
+  /// looking finished.
+  Future<void> autoSkipOverdue() async {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final all = await (_db.select(
+      _db.reminders,
+    )..where((r) => r.isActive.equals(true))).get();
+
+    for (final r in all) {
+      final effectiveDue = r.snoozeUntil ?? r.nextDueDate;
+      final dueDay = DateTime(
+        effectiveDue.year,
+        effectiveDue.month,
+        effectiveDue.day,
+      );
+      if (!dueDay.isBefore(today)) continue;
+
+      await _db
+          .into(_db.reminderLogs)
+          .insert(
+            ReminderLogsCompanion.insert(
+              reminderId: r.id,
+              completedAt: effectiveDue,
+              action: ReminderLogAction.skipped.dbValue,
+            ),
+          );
+
+      final type = RecurrenceType.fromDbValue(r.recurrenceType);
+      if (type == RecurrenceType.none) {
+        await (_db.update(
+          _db.reminders,
+        )..where((t) => t.id.equals(r.id))).write(
+          RemindersCompanion(
+            isActive: const Value(false),
+            snoozeUntil: const Value(null),
+            updatedAt: Value(now),
+          ),
+        );
+      } else {
+        final nextDue = calculateFirstOccurrenceOnOrAfter(paramsOf(r), today);
+        await (_db.update(
+          _db.reminders,
+        )..where((t) => t.id.equals(r.id))).write(
+          RemindersCompanion(
+            nextDueDate: Value(nextDue),
+            snoozeUntil: const Value(null),
+            updatedAt: Value(now),
+          ),
+        );
+      }
+    }
   }
 }

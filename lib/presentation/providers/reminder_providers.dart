@@ -19,6 +19,12 @@ final completedReminderLogsStreamProvider = StreamProvider<List<ReminderLog>>((
   return ref.watch(reminderRepositoryProvider).watchCompletedLogs();
 });
 
+final skippedReminderLogsStreamProvider = StreamProvider<List<ReminderLog>>((
+  ref,
+) {
+  return ref.watch(reminderRepositoryProvider).watchSkippedLogs();
+});
+
 final remindersByCategoryStreamProvider =
     StreamProvider.family<List<Reminder>, int>((ref, categoryId) {
       return ref.watch(reminderRepositoryProvider).watchByCategory(categoryId);
