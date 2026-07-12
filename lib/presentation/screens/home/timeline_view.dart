@@ -151,6 +151,7 @@ class _Section extends ConsumerWidget {
           (r) => ReminderCard(
             reminder: r,
             category: byId[r.categoryId],
+            occurrenceDate: r.snoozeUntil ?? r.nextDueDate,
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) => ReminderDetailScreen(reminder: r),

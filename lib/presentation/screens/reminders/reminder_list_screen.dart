@@ -39,6 +39,7 @@ class ReminderListScreen extends ConsumerWidget {
               return ReminderCard(
                 reminder: reminder,
                 category: category,
+                occurrenceDate: reminder.snoozeUntil ?? reminder.nextDueDate,
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => ReminderDetailScreen(reminder: reminder),

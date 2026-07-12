@@ -163,6 +163,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                               category: byId[entry.reminder.categoryId],
                               completed: entry.completed,
                               historical: entry.historical,
+                              occurrenceDate: selectedDay,
                               // Only today's own entries are correctable
                               // same-day — a genuinely past day's history
                               // stays locked, since there's no "undo" for
