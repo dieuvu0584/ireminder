@@ -263,6 +263,8 @@ class NotificationService {
     required DateTime fireAt,
     required String title,
     required String body,
+    required String doneActionLabel,
+    required String snoozeActionLabel,
     bool soundEnabled = true,
     bool vibrationEnabled = true,
   }) async {
@@ -286,15 +288,15 @@ class NotificationService {
           priority: Priority.high,
           playSound: soundEnabled,
           enableVibration: vibrationEnabled,
-          actions: const [
+          actions: [
             AndroidNotificationAction(
               NotificationActionIds.reminderDone,
-              'Done',
+              doneActionLabel,
               showsUserInterface: false,
             ),
             AndroidNotificationAction(
               NotificationActionIds.reminderSnooze,
-              'Snooze',
+              snoozeActionLabel,
               showsUserInterface: false,
             ),
           ],
@@ -312,6 +314,7 @@ class NotificationService {
     required DateTime fireAt,
     required String title,
     required String body,
+    required String markPaidActionLabel,
     bool soundEnabled = true,
     bool vibrationEnabled = true,
   }) async {
@@ -335,10 +338,10 @@ class NotificationService {
           priority: Priority.high,
           playSound: soundEnabled,
           enableVibration: vibrationEnabled,
-          actions: const [
+          actions: [
             AndroidNotificationAction(
               NotificationActionIds.installmentPaid,
-              'Mark paid',
+              markPaidActionLabel,
               showsUserInterface: false,
             ),
           ],

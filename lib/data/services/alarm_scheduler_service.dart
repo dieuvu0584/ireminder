@@ -1,6 +1,8 @@
 import 'package:drift/drift.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart' show Locale;
 
+import '../../core/localization/gen/app_localizations.dart';
 import '../database/app_database.dart';
 import 'notification_service.dart';
 
@@ -32,11 +34,18 @@ class AlarmSchedulerService {
 
   AlarmSchedulerService(this._db, this._notifications);
 
-  Future<({bool sound, bool vibration})> _soundVibrationPrefs() async {
+  /// Notification action button labels ("Done"/"Snooze"/"Mark paid") must
+  /// be resolved here rather than left hardcoded — this runs outside any
+  /// widget tree (background isolates included), so there's no
+  /// BuildContext to pull AppLocalizations.of(context) from the way every
+  /// other piece of UI text in the app does.
+  Future<({bool sound, bool vibration, AppLocalizations l10n})>
+  _notificationPrefs() async {
     final settings = await (_db.select(_db.appSettings)).getSingle();
     return (
       sound: settings.notificationSoundEnabled,
       vibration: settings.notificationVibrationEnabled,
+      l10n: lookupAppLocalizations(Locale(settings.locale ?? 'en')),
     );
   }
 
@@ -67,7 +76,7 @@ class AlarmSchedulerService {
               minutes: reminder.advanceNoticeMinutes,
             ),
           );
-      final prefs = await _soundVibrationPrefs();
+      final prefs = await _notificationPrefs();
 
       if (fireAt.isBefore(DateTime.now())) {
         // Past due: still show it, but immediately rather than in the past.
@@ -76,6 +85,8 @@ class AlarmSchedulerService {
           fireAt: DateTime.now().add(const Duration(seconds: 5)),
           title: reminder.title,
           body: reminder.description ?? '',
+          doneActionLabel: prefs.l10n.actionDone,
+          snoozeActionLabel: prefs.l10n.actionSnooze,
           soundEnabled: prefs.sound,
           vibrationEnabled: prefs.vibration,
         );
@@ -87,6 +98,8 @@ class AlarmSchedulerService {
         fireAt: fireAt,
         title: reminder.title,
         body: reminder.description ?? '',
+        doneActionLabel: prefs.l10n.actionDone,
+        snoozeActionLabel: prefs.l10n.actionSnooze,
         soundEnabled: prefs.sound,
         vibrationEnabled: prefs.vibration,
       );
@@ -126,13 +139,14 @@ class AlarmSchedulerService {
       );
       final fireAt = _combine(fireDate, defaultReminderTime);
       if (fireAt.isBefore(DateTime.now())) return;
-      final prefs = await _soundVibrationPrefs();
+      final prefs = await _notificationPrefs();
 
       await _notifications.scheduleInstallment(
         installmentId: installment.id,
         fireAt: fireAt,
         title: 'Installment #${installment.installmentNumber} due',
         body: '${loan.name} — ${installment.amount}',
+        markPaidActionLabel: prefs.l10n.loanMarkPaid,
         soundEnabled: prefs.sound,
         vibrationEnabled: prefs.vibration,
       );
