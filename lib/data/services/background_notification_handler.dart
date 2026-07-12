@@ -21,9 +21,22 @@ Future<void> handleBackgroundNotificationAction(
   final id = int.tryParse(parts[1]);
   if (id == null) return;
 
+  final notifications = NotificationService();
+  // Dismiss first, before opening the DB or doing anything else. A
+  // background isolate the OS spins up just to handle this tap gets a
+  // limited execution window (tighter still under some OEMs' aggressive
+  // battery management) — the popup actually closing is the part the
+  // user notices, so it must not be stuck behind slower DB bookkeeping
+  // that might not finish before the isolate gets torn down.
+  if (actionId == NotificationActionIds.reminderSnooze ||
+      actionId == NotificationActionIds.reminderDone) {
+    await notifications.cancelReminder(id);
+  } else if (actionId == NotificationActionIds.installmentPaid) {
+    await notifications.cancelInstallment(id);
+  }
+
   final db = AppDatabase();
   try {
-    final notifications = NotificationService();
     if (parts[0] == 'reminder') {
       final reminders = ReminderRepository(db);
       final alarms = AlarmSchedulerService(db, notifications);
@@ -34,7 +47,7 @@ Future<void> handleBackgroundNotificationAction(
           DateTime.now().add(Duration(minutes: settings.snoozeDurationMinutes)),
         );
         await alarms.scheduleForReminder(updated);
-      } else {
+      } else if (actionId == NotificationActionIds.reminderDone) {
         final updated = await reminders.complete(id);
         if (updated.isActive) {
           await alarms.scheduleForReminder(updated);
@@ -42,6 +55,8 @@ Future<void> handleBackgroundNotificationAction(
           await alarms.cancelForReminder(id);
         }
       }
+      // Otherwise this is a plain tap on the notification body (opening
+      // the app), not an action button — nothing to do here.
     } else if (parts[0] == 'installment' &&
         actionId == NotificationActionIds.installmentPaid) {
       final loans = LoanRepository(db);

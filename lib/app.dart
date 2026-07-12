@@ -24,6 +24,17 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
     final id = int.tryParse(parts[1]);
     if (id == null) return;
 
+    // Tapping an action button does not auto-dismiss the notification
+    // (unlike tapping the body, which respects autoCancel) — dismiss it
+    // explicitly, and do so before any DB work below so the visible
+    // "did my tap register" feedback never waits on it.
+    if (actionId == NotificationActionIds.reminderSnooze ||
+        actionId == NotificationActionIds.reminderDone) {
+      await notificationService.cancelReminder(id);
+    } else if (actionId == NotificationActionIds.installmentPaid) {
+      await notificationService.cancelInstallment(id);
+    }
+
     if (parts[0] == 'reminder') {
       if (actionId == NotificationActionIds.reminderSnooze) {
         final settings = await ref.read(settingsRepositoryProvider).get();
@@ -35,9 +46,11 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
                 Duration(minutes: settings.snoozeDurationMinutes),
               ),
             );
-      } else {
+      } else if (actionId == NotificationActionIds.reminderDone) {
         await ref.read(reminderActionsProvider).complete(id);
       }
+      // Otherwise this is a plain tap on the notification body (opening
+      // the app), not an action button — nothing to do here.
     } else if (parts[0] == 'installment' &&
         actionId == NotificationActionIds.installmentPaid) {
       final installment = await ref
