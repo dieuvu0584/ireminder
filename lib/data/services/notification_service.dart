@@ -21,6 +21,7 @@ class NotificationIdSpace {
   static const int reminderBase = 0;
   static const int installmentBase = 1000000;
   static const int testNotificationId = 2000000;
+  static const int debugNotificationId = 3000000;
 
   static int forReminder(int reminderId) => reminderBase + reminderId;
   static int forInstallment(int installmentId) =>
@@ -351,6 +352,31 @@ class NotificationService {
           UILocalNotificationDateInterpretation.absoluteTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       payload: 'installment:$installmentId',
+    );
+  }
+
+  /// TEMPORARY diagnostic: fires an immediate, unscheduled notification so
+  /// a real device can show us whether/where the Done/Snooze action
+  /// pipeline actually runs, since a background isolate's crash is
+  /// otherwise completely invisible (no logcat access, no crash report —
+  /// nothing). Safe to call from either the foreground or a background
+  /// isolate, and safe even if the app was never `init()`-ed in this
+  /// isolate, since `.show()` creates its channel on demand.
+  /// TODO: remove once the "Done/Snooze does nothing" report is resolved.
+  Future<void> showDebugNotification(String message) async {
+    await _plugin.show(
+      NotificationIdSpace.debugNotificationId,
+      'iReminder debug',
+      message,
+      const NotificationDetails(
+        android: AndroidNotificationDetails(
+          'debug_channel',
+          'Debug',
+          channelDescription: 'Temporary diagnostic notifications',
+          importance: Importance.high,
+          priority: Priority.high,
+        ),
+      ),
     );
   }
 

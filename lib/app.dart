@@ -18,6 +18,14 @@ import 'presentation/screens/onboarding/permission_check_screen.dart';
 final appBootstrapProvider = FutureProvider<void>((ref) async {
   final notificationService = ref.read(notificationServiceProvider);
   notificationService.onAction = (actionId, payload) async {
+    // TEMPORARY: confirms the foreground handler is the one actually
+    // receiving the tap (as opposed to the background isolate handler in
+    // background_notification_handler.dart, or neither). TODO: remove
+    // once the "Done/Snooze does nothing" report is resolved.
+    await notificationService.showDebugNotification(
+      'foreground handler entered: action=$actionId payload=$payload',
+    );
+
     if (payload == null) return;
     final parts = payload.split(':');
     if (parts.length != 2) return;
@@ -35,36 +43,45 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
       await notificationService.cancelInstallment(id);
     }
 
-    if (parts[0] == 'reminder') {
-      if (actionId == NotificationActionIds.reminderSnooze) {
-        final settings = await ref.read(settingsRepositoryProvider).get();
-        await ref
-            .read(reminderActionsProvider)
-            .snooze(
-              id,
-              DateTime.now().add(
-                Duration(minutes: settings.snoozeDurationMinutes),
-              ),
-            );
-      } else if (actionId == NotificationActionIds.reminderDone) {
-        await ref.read(reminderActionsProvider).complete(id);
+    try {
+      if (parts[0] == 'reminder') {
+        if (actionId == NotificationActionIds.reminderSnooze) {
+          final settings = await ref.read(settingsRepositoryProvider).get();
+          await ref
+              .read(reminderActionsProvider)
+              .snooze(
+                id,
+                DateTime.now().add(
+                  Duration(minutes: settings.snoozeDurationMinutes),
+                ),
+              );
+        } else if (actionId == NotificationActionIds.reminderDone) {
+          await ref.read(reminderActionsProvider).complete(id);
+        }
+        // Otherwise this is a plain tap on the notification body (opening
+        // the app), not an action button — nothing to do here.
+      } else if (parts[0] == 'installment' &&
+          actionId == NotificationActionIds.installmentPaid) {
+        final installment = await ref
+            .read(loanRepositoryProvider)
+            .getInstallmentById(id);
+        if (installment != null) {
+          await ref
+              .read(loanActionsProvider)
+              .markPaid(
+                loanId: installment.loanId,
+                installmentIds: [installment.id],
+                paidDate: DateTime.now(),
+              );
+        }
       }
-      // Otherwise this is a plain tap on the notification body (opening
-      // the app), not an action button — nothing to do here.
-    } else if (parts[0] == 'installment' &&
-        actionId == NotificationActionIds.installmentPaid) {
-      final installment = await ref
-          .read(loanRepositoryProvider)
-          .getInstallmentById(id);
-      if (installment != null) {
-        await ref
-            .read(loanActionsProvider)
-            .markPaid(
-              loanId: installment.loanId,
-              installmentIds: [installment.id],
-              paidDate: DateTime.now(),
-            );
-      }
+      await notificationService.showDebugNotification(
+        'foreground handler finished OK for $actionId',
+      );
+    } catch (e) {
+      await notificationService.showDebugNotification(
+        'foreground handler ERROR: $e',
+      );
     }
   };
   // Notification setup and alarm scheduling touch the OS (permissions,
