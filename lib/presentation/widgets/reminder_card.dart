@@ -40,6 +40,16 @@ class ReminderCard extends StatelessWidget {
   /// which stay locked since nothing lets you undo those.
   final bool allowToggle;
 
+  /// True when this reminder's due day hasn't arrived yet. Completing a
+  /// reminder before its actual due day either creates a duplicate "done"
+  /// entry (recurring: tapping repeatedly before the due day each logs a
+  /// separate completion for today) or makes it vanish entirely (one-off:
+  /// it gets deactivated while nextDueDate stays in the future, so it's no
+  /// longer listed as upcoming but also isn't today's date for the Today
+  /// section to pick up). Locks the Complete action only — Snooze stays
+  /// available regardless of due day.
+  final bool completionLocked;
+
   const ReminderCard({
     super.key,
     required this.reminder,
@@ -51,6 +61,7 @@ class ReminderCard extends StatelessWidget {
     this.historical = false,
     this.occurrenceDate,
     this.allowToggle = false,
+    this.completionLocked = false,
   });
 
   @override
@@ -119,7 +130,9 @@ class ReminderCard extends StatelessWidget {
                 : Icons.check_circle_outline,
             color: _trailingColor(context),
           ),
-          onPressed: (!historical || allowToggle) ? onComplete : null,
+          onPressed: (!historical || allowToggle) && !completionLocked
+              ? onComplete
+              : null,
         ),
       ),
     );
@@ -128,13 +141,18 @@ class ReminderCard extends StatelessWidget {
 
     return Dismissible(
       key: ValueKey('reminder_${reminder.id}'),
-      background: _swipeBackground(
-        context,
-        alignment: Alignment.centerLeft,
-        color: Colors.green,
-        icon: Icons.check_circle,
-        label: l10n.actionDone,
-      ),
+      direction: completionLocked
+          ? DismissDirection.endToStart
+          : DismissDirection.horizontal,
+      background: completionLocked
+          ? null
+          : _swipeBackground(
+              context,
+              alignment: Alignment.centerLeft,
+              color: Colors.green,
+              icon: Icons.check_circle,
+              label: l10n.actionDone,
+            ),
       secondaryBackground: _swipeBackground(
         context,
         alignment: Alignment.centerRight,

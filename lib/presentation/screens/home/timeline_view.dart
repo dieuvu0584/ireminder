@@ -93,6 +93,7 @@ class TimelineView extends ConsumerWidget {
                 reminders: overdue,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
+                today: today,
               ),
             if (thisWeek.isNotEmpty)
               _Section(
@@ -100,6 +101,7 @@ class TimelineView extends ConsumerWidget {
                 reminders: thisWeek,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
+                today: today,
               ),
             if (upcoming.isNotEmpty)
               _Section(
@@ -107,6 +109,7 @@ class TimelineView extends ConsumerWidget {
                 reminders: upcoming,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
+                today: today,
               ),
             if (todayEntries.isNotEmpty)
               _TodaySection(
@@ -130,12 +133,14 @@ class _Section extends ConsumerWidget {
   final List<Reminder> reminders;
   final Map<int, Category> byId;
   final int snoozeMinutes;
+  final DateTime today;
 
   const _Section({
     required this.title,
     required this.reminders,
     required this.byId,
     required this.snoozeMinutes,
+    required this.today,
   });
 
   @override
@@ -147,11 +152,18 @@ class _Section extends ConsumerWidget {
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
           child: Text(title, style: Theme.of(context).textTheme.titleMedium),
         ),
-        ...reminders.map(
-          (r) => ReminderCard(
+        ...reminders.map((r) {
+          final due = r.snoozeUntil ?? r.nextDueDate;
+          final dueDay = DateTime(due.year, due.month, due.day);
+          // A reminder whose due day hasn't arrived yet can't be completed
+          // from here — see ReminderCard.completionLocked. Overdue entries
+          // (dueDay before today) stay completable as before.
+          final completionLocked = dueDay.isAfter(today);
+          return ReminderCard(
             reminder: r,
             category: byId[r.categoryId],
             occurrenceDate: r.snoozeUntil ?? r.nextDueDate,
+            completionLocked: completionLocked,
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) => ReminderDetailScreen(reminder: r),
@@ -173,8 +185,8 @@ class _Section extends ConsumerWidget {
                     DateTime.now().add(Duration(minutes: snoozeMinutes)),
                   ),
             ),
-          ),
-        ),
+          );
+        }),
       ],
     );
   }

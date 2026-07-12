@@ -112,10 +112,14 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
         final selectedEntries =
             byDay[selectedDay] ?? const <ReminderOccurrence>[];
         final now = DateTime.now();
+        final today = DateTime(now.year, now.month, now.day);
         final isSelectedDayToday =
             selectedDay.year == now.year &&
             selectedDay.month == now.month &&
             selectedDay.day == now.day;
+        // A day that hasn't arrived yet can't have its entries completed
+        // from here — see ReminderCard.completionLocked.
+        final isSelectedDayFuture = selectedDay.isAfter(today);
 
         return Column(
           children: [
@@ -169,6 +173,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                               // stays locked, since there's no "undo" for
                               // something several cycles behind by now.
                               allowToggle: isSelectedDayToday,
+                              completionLocked: isSelectedDayFuture,
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (_) => ReminderDetailScreen(

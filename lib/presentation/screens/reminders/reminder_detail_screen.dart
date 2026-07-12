@@ -15,24 +15,21 @@ class ReminderDetailScreen extends ConsumerWidget {
 
   const ReminderDetailScreen({super.key, required this.reminder});
 
-  /// Done/Snooze only make sense once a reminder has actually fired —
-  /// showing them for a reminder that's merely scheduled for later (e.g.
-  /// browsing ahead in the calendar to a future occurrence) invites
-  /// completing something that hasn't happened yet. A reminder currently
-  /// snoozed is always "triggered" (that's how it got snoozed in the
-  /// first place), regardless of whether the snooze window itself has
-  /// elapsed.
+  /// Done/Snooze only make sense once a reminder's due day has actually
+  /// arrived — showing them for a reminder merely scheduled for a future
+  /// day (e.g. browsing ahead in the calendar to a future occurrence)
+  /// invites completing something that hasn't happened yet, which for a
+  /// recurring reminder logs a duplicate "done" entry and for a one-off
+  /// deactivates it while its due date stays in the future, making it
+  /// vanish from every list. Gated at the day level rather than the exact
+  /// fire time, so a reminder due later today can still be completed
+  /// early today (matching ReminderCard.completionLocked elsewhere).
   bool _isTriggered(Reminder r) {
-    if (r.snoozeUntil != null) return true;
-    final parts = r.reminderTime.split(':');
-    final fireAt = DateTime(
-      r.nextDueDate.year,
-      r.nextDueDate.month,
-      r.nextDueDate.day,
-      int.parse(parts[0]),
-      int.parse(parts[1]),
-    );
-    return !fireAt.isAfter(DateTime.now());
+    final due = r.snoozeUntil ?? r.nextDueDate;
+    final dueDay = DateTime(due.year, due.month, due.day);
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    return !dueDay.isAfter(today);
   }
 
   Future<void> _runGuarded(

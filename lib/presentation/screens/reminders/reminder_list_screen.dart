@@ -32,14 +32,22 @@ class ReminderListScreen extends ConsumerWidget {
           if (reminders.isEmpty) {
             return const Center(child: Icon(Icons.check_circle_outline));
           }
+          final now = DateTime.now();
+          final today = DateTime(now.year, now.month, now.day);
           return ListView.builder(
             itemCount: reminders.length,
             itemBuilder: (context, index) {
               final reminder = reminders[index];
+              final due = reminder.snoozeUntil ?? reminder.nextDueDate;
+              final dueDay = DateTime(due.year, due.month, due.day);
+              // A reminder whose due day hasn't arrived yet can't be
+              // completed from here — see ReminderCard.completionLocked.
+              final completionLocked = dueDay.isAfter(today);
               return ReminderCard(
                 reminder: reminder,
                 category: category,
                 occurrenceDate: reminder.snoozeUntil ?? reminder.nextDueDate,
+                completionLocked: completionLocked,
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => ReminderDetailScreen(reminder: reminder),
