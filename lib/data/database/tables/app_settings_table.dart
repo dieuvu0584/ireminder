@@ -18,7 +18,7 @@ class AppSettings extends Table {
   BoolColumn get notificationVibrationEnabled =>
       boolean().withDefault(const Constant(true))();
   IntColumn get snoozeDurationMinutes =>
-      integer().withDefault(const Constant(60))();
+      integer().withDefault(const Constant(5))();
 
   @override
   Set<Column> get primaryKey => {id};
