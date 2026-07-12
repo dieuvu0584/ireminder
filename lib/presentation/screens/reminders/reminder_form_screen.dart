@@ -51,7 +51,18 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     _titleCtrl = TextEditingController(text: r?.title ?? '');
     _descCtrl = TextEditingController(text: r?.description ?? '');
     _categoryId = r?.categoryId ?? widget.initialCategoryId;
-    _startDate = widget.initialStartDate ?? DateTime.now();
+    if (r == null) {
+      // New reminders can't start in the past — e.g. the "+" FAB prefills
+      // whatever day is selected on the calendar, which may be a past day
+      // being browsed. Clamp up to today rather than silently letting a
+      // past start date through.
+      final now = DateTime.now();
+      final today = DateTime(now.year, now.month, now.day);
+      final requested = widget.initialStartDate ?? today;
+      _startDate = requested.isBefore(today) ? today : requested;
+    } else {
+      _startDate = r.startDate;
+    }
     if (r != null) {
       final type = RecurrenceType.fromDbValue(r.recurrenceType);
       if (type == RecurrenceType.lunarYearly) {
@@ -64,7 +75,6 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       _recurrenceMonth = r.recurrenceMonth;
       _recurrenceWeekday = r.recurrenceWeekday;
       _intervalDays = r.recurrenceInterval;
-      _startDate = r.startDate;
       _advanceNoticeDays = r.advanceNoticeDays;
       _advanceNoticeHours = r.advanceNoticeHours;
       _advanceNoticeMinutes = r.advanceNoticeMinutes;
@@ -307,10 +317,21 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 ),
                 trailing: const Icon(Icons.calendar_today),
                 onTap: () async {
+                  // New reminders can't be backdated (see initState); an
+                  // existing reminder's start date may already anchor a
+                  // legitimately past day (e.g. a yearly reminder created
+                  // years ago), so editing keeps the wider range to avoid
+                  // an assertion failure if _startDate itself predates
+                  // today, without inviting a *new* past date to be picked.
+                  final now = DateTime.now();
+                  final today = DateTime(now.year, now.month, now.day);
+                  final firstDate = widget.existing == null
+                      ? today
+                      : (_startDate.isBefore(today) ? _startDate : today);
                   final picked = await showDatePicker(
                     context: context,
                     initialDate: _startDate,
-                    firstDate: DateTime(2000),
+                    firstDate: firstDate,
                     lastDate: DateTime(2100),
                   );
                   if (picked != null) setState(() => _startDate = picked);
