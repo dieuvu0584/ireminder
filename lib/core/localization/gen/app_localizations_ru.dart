@@ -161,7 +161,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reminderFieldTime => 'Время напоминания';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Напомнить за N дней';
+  String get reminderFieldAdvanceNotice => 'Напомнить заранее';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Дни';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Часы';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Минуты';
 
   @override
   String get reminderFieldRecurrenceDay => 'День месяца';

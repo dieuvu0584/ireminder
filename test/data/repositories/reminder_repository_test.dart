@@ -214,4 +214,50 @@ void main() {
       },
     );
   });
+
+  test(
+    'watchAll() includes a completed (inactive) one-off reminder, unlike watchActive()',
+    () async {
+      final id = await reminders.create(
+        title: 'One-off task',
+        categoryId: categoryId,
+        recurrenceType: RecurrenceType.none,
+        startDate: DateTime.now().add(const Duration(days: 1)),
+        reminderTime: '08:00',
+      );
+      await reminders.complete(id);
+
+      final active = await reminders.watchActive().first;
+      expect(active.any((r) => r.id == id), isFalse);
+
+      final all = await reminders.watchAll().first;
+      final completed = all.firstWhere((r) => r.id == id);
+      expect(completed.isActive, isFalse);
+    },
+  );
+
+  test(
+    'watchCompletedLogs() returns only completed-action logs, most recent first',
+    () async {
+      final id = await reminders.create(
+        title: 'Recurring task',
+        categoryId: categoryId,
+        recurrenceType: RecurrenceType.daily,
+        startDate: DateTime(2026, 1, 1),
+        reminderTime: '08:00',
+      );
+      await reminders.complete(id);
+      await reminders.snooze(id, DateTime.now().add(const Duration(hours: 1)));
+      await reminders.complete(id);
+
+      final logs = await reminders.watchCompletedLogs().first;
+      expect(logs.every((l) => l.action == 'completed'), isTrue);
+      expect(logs.length, 2);
+      expect(
+        logs.first.completedAt.isAfter(logs.last.completedAt) ||
+            logs.first.completedAt.isAtSameMomentAs(logs.last.completedAt),
+        isTrue,
+      );
+    },
+  );
 }

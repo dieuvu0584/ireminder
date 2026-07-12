@@ -5,8 +5,7 @@ class Reminders extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get title => text()();
   TextColumn get description => text().nullable()();
-  IntColumn get categoryId =>
-      integer().references(Categories, #id)();
+  IntColumn get categoryId => integer().references(Categories, #id)();
 
   /// none | daily | weekly | monthly | yearly | custom_interval_days | lunar_yearly
   TextColumn get recurrenceType => text()();
@@ -19,7 +18,10 @@ class Reminders extends Table {
   DateTimeColumn get startDate => dateTime()();
   DateTimeColumn get nextDueDate => dateTime()();
   TextColumn get reminderTime => text()(); // "HH:mm"
-  IntColumn get advanceNoticeDays =>
+  IntColumn get advanceNoticeDays => integer().withDefault(const Constant(0))();
+  IntColumn get advanceNoticeHours =>
+      integer().withDefault(const Constant(0))();
+  IntColumn get advanceNoticeMinutes =>
       integer().withDefault(const Constant(0))();
   BoolColumn get isActive => boolean().withDefault(const Constant(true))();
   DateTimeColumn get snoozeUntil => dateTime().nullable()();

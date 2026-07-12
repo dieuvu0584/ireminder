@@ -469,8 +469,26 @@ abstract class AppLocalizations {
   /// No description provided for @reminderFieldAdvanceNotice.
   ///
   /// In en, this message translates to:
-  /// **'Notify N days early'**
+  /// **'Notify me in advance'**
   String get reminderFieldAdvanceNotice;
+
+  /// No description provided for @reminderFieldAdvanceNoticeDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Days'**
+  String get reminderFieldAdvanceNoticeDays;
+
+  /// No description provided for @reminderFieldAdvanceNoticeHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Hours'**
+  String get reminderFieldAdvanceNoticeHours;
+
+  /// No description provided for @reminderFieldAdvanceNoticeMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'Minutes'**
+  String get reminderFieldAdvanceNoticeMinutes;
 
   /// No description provided for @reminderFieldRecurrenceDay.
   ///

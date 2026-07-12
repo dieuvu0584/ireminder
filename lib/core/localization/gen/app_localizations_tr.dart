@@ -161,7 +161,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get reminderFieldTime => 'Hatırlatma saati';
 
   @override
-  String get reminderFieldAdvanceNotice => 'N gün önceden bildir';
+  String get reminderFieldAdvanceNotice => 'Önceden bildir';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Gün';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Saat';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Dakika';
 
   @override
   String get reminderFieldRecurrenceDay => 'Ayın günü';

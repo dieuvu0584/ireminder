@@ -161,7 +161,16 @@ class AppLocalizationsFi extends AppLocalizations {
   String get reminderFieldTime => 'Muistutuksen kellonaika';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Muistuta N päivää etukäteen';
+  String get reminderFieldAdvanceNotice => 'Ilmoita etukäteen';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Päivää';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Tuntia';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minuuttia';
 
   @override
   String get reminderFieldRecurrenceDay => 'Kuukauden päivä';

@@ -160,7 +160,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reminderFieldTime => 'وقت التذكير';
 
   @override
-  String get reminderFieldAdvanceNotice => 'التنبيه قبل N يوم';
+  String get reminderFieldAdvanceNotice => 'التنبيه مسبقًا';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'أيام';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'ساعات';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'دقائق';
 
   @override
   String get reminderFieldRecurrenceDay => 'يوم الشهر';

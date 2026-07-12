@@ -159,7 +159,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reminderFieldTime => '알림 시간';
 
   @override
-  String get reminderFieldAdvanceNotice => 'N일 전에 알림';
+  String get reminderFieldAdvanceNotice => '미리 알림';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => '일';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => '시간';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => '분';
 
   @override
   String get reminderFieldRecurrenceDay => '매월 날짜';

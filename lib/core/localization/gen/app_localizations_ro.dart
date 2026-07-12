@@ -161,7 +161,16 @@ class AppLocalizationsRo extends AppLocalizations {
   String get reminderFieldTime => 'Ora mementoului';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Anunță cu N zile înainte';
+  String get reminderFieldAdvanceNotice => 'Anunță în avans';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Zile';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Ore';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minute';
 
   @override
   String get reminderFieldRecurrenceDay => 'Ziua din lună';

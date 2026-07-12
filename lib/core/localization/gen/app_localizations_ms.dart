@@ -161,7 +161,16 @@ class AppLocalizationsMs extends AppLocalizations {
   String get reminderFieldTime => 'Masa peringatan';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Beritahu N hari lebih awal';
+  String get reminderFieldAdvanceNotice => 'Beritahu awal';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Hari';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Jam';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minit';
 
   @override
   String get reminderFieldRecurrenceDay => 'Hari dalam bulan';

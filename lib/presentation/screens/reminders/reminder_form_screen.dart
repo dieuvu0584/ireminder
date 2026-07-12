@@ -40,6 +40,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
   late DateTime _startDate;
   TimeOfDay _time = const TimeOfDay(hour: 9, minute: 0);
   int _advanceNoticeDays = 0;
+  int _advanceNoticeHours = 0;
+  int _advanceNoticeMinutes = 0;
   bool _saving = false;
 
   @override
@@ -64,6 +66,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       _intervalDays = r.recurrenceInterval;
       _startDate = r.startDate;
       _advanceNoticeDays = r.advanceNoticeDays;
+      _advanceNoticeHours = r.advanceNoticeHours;
+      _advanceNoticeMinutes = r.advanceNoticeMinutes;
       final parts = r.reminderTime.split(':');
       _time = TimeOfDay(hour: int.parse(parts[0]), minute: int.parse(parts[1]));
     }
@@ -106,6 +110,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           startDate: _startDate,
           reminderTime: _timeString,
           advanceNoticeDays: _advanceNoticeDays,
+          advanceNoticeHours: _advanceNoticeHours,
+          advanceNoticeMinutes: _advanceNoticeMinutes,
         );
         scheduled = result.$2;
         scheduleError = result.$3;
@@ -126,6 +132,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
             startDate: _startDate,
             reminderTime: _timeString,
             advanceNoticeDays: _advanceNoticeDays,
+            advanceNoticeHours: _advanceNoticeHours,
+            advanceNoticeMinutes: _advanceNoticeMinutes,
           ),
         );
         scheduled = result.$1;
@@ -322,13 +330,51 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 },
               ),
               const SizedBox(height: 12),
-              TextFormField(
-                initialValue: _advanceNoticeDays.toString(),
-                decoration: InputDecoration(
-                  labelText: l10n.reminderFieldAdvanceNotice,
+              Text(
+                l10n.reminderFieldAdvanceNotice,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
-                keyboardType: TextInputType.number,
-                onChanged: (v) => _advanceNoticeDays = int.tryParse(v) ?? 0,
+              ),
+              const SizedBox(height: 4),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      initialValue: _advanceNoticeDays.toString(),
+                      decoration: InputDecoration(
+                        labelText: l10n.reminderFieldAdvanceNoticeDays,
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (v) =>
+                          _advanceNoticeDays = int.tryParse(v) ?? 0,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: TextFormField(
+                      initialValue: _advanceNoticeHours.toString(),
+                      decoration: InputDecoration(
+                        labelText: l10n.reminderFieldAdvanceNoticeHours,
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (v) =>
+                          _advanceNoticeHours = int.tryParse(v) ?? 0,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: TextFormField(
+                      initialValue: _advanceNoticeMinutes.toString(),
+                      decoration: InputDecoration(
+                        labelText: l10n.reminderFieldAdvanceNoticeMinutes,
+                      ),
+                      keyboardType: TextInputType.number,
+                      onChanged: (v) =>
+                          _advanceNoticeMinutes = int.tryParse(v) ?? 0,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 24),
             ],

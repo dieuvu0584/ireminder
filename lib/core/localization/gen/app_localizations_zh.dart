@@ -156,7 +156,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reminderFieldTime => '提醒时间';
 
   @override
-  String get reminderFieldAdvanceNotice => '提前 N 天通知';
+  String get reminderFieldAdvanceNotice => '提前提醒';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => '天';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => '小时';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => '分钟';
 
   @override
   String get reminderFieldRecurrenceDay => '每月日期';

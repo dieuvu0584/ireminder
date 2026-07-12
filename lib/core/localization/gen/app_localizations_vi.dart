@@ -161,7 +161,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String get reminderFieldTime => 'Giờ nhắc';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Báo trước N ngày';
+  String get reminderFieldAdvanceNotice => 'Báo trước';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Ngày';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Giờ';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Phút';
 
   @override
   String get reminderFieldRecurrenceDay => 'Ngày trong tháng';

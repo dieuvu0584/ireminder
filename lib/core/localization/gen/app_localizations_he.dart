@@ -161,7 +161,16 @@ class AppLocalizationsHe extends AppLocalizations {
   String get reminderFieldTime => 'שעת תזכורת';
 
   @override
-  String get reminderFieldAdvanceNotice => 'הודע N ימים מראש';
+  String get reminderFieldAdvanceNotice => 'הודע מראש';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'ימים';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'שעות';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'דקות';
 
   @override
   String get reminderFieldRecurrenceDay => 'יום בחודש';

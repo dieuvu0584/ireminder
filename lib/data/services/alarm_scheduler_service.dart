@@ -54,13 +54,19 @@ class AlarmSchedulerService {
         await _notifications.cancelReminder(reminder.id);
         return (true, null);
       }
-      final dueDate = reminder.snoozeUntil ?? reminder.nextDueDate;
-      final fireDate = reminder.snoozeUntil != null
-          ? reminder.snoozeUntil!
-          : dueDate.subtract(Duration(days: reminder.advanceNoticeDays));
-      final fireAt = reminder.snoozeUntil != null
-          ? reminder.snoozeUntil!
-          : _combine(fireDate, reminder.reminderTime);
+      // Advance notice is a precise offset before the exact due moment
+      // (date + reminder time combined), not a day-shift that keeps the
+      // same time-of-day — so "2 hours before" and "30 minutes before"
+      // both mean what they say, not just "N days earlier, same time".
+      final fireAt =
+          reminder.snoozeUntil ??
+          _combine(reminder.nextDueDate, reminder.reminderTime).subtract(
+            Duration(
+              days: reminder.advanceNoticeDays,
+              hours: reminder.advanceNoticeHours,
+              minutes: reminder.advanceNoticeMinutes,
+            ),
+          );
       final prefs = await _soundVibrationPrefs();
 
       if (fireAt.isBefore(DateTime.now())) {

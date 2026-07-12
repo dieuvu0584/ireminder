@@ -15,6 +15,26 @@ class ReminderDetailScreen extends ConsumerWidget {
 
   const ReminderDetailScreen({super.key, required this.reminder});
 
+  /// Done/Snooze only make sense once a reminder has actually fired —
+  /// showing them for a reminder that's merely scheduled for later (e.g.
+  /// browsing ahead in the calendar to a future occurrence) invites
+  /// completing something that hasn't happened yet. A reminder currently
+  /// snoozed is always "triggered" (that's how it got snoozed in the
+  /// first place), regardless of whether the snooze window itself has
+  /// elapsed.
+  bool _isTriggered(Reminder r) {
+    if (r.snoozeUntil != null) return true;
+    final parts = r.reminderTime.split(':');
+    final fireAt = DateTime(
+      r.nextDueDate.year,
+      r.nextDueDate.month,
+      r.nextDueDate.day,
+      int.parse(parts[0]),
+      int.parse(parts[1]),
+    );
+    return !fireAt.isAfter(DateTime.now());
+  }
+
   Future<void> _runGuarded(
     BuildContext context,
     WidgetRef ref,
@@ -158,46 +178,47 @@ class ReminderDetailScreen extends ConsumerWidget {
               ),
               Text(DateFormatter.formatTime(current.reminderTime, locale)),
               const Spacer(),
-              Row(
-                children: [
-                  Expanded(
-                    child: FilledButton.icon(
-                      icon: const Icon(Icons.check),
-                      label: Text(l10n.actionDone),
-                      onPressed: () => _runGuarded(
-                        context,
-                        ref,
-                        () => ref
-                            .read(reminderActionsProvider)
-                            .complete(current.id),
-                        successMessage: l10n.reminderCompletedFeedback,
+              if (_isTriggered(current))
+                Row(
+                  children: [
+                    Expanded(
+                      child: FilledButton.icon(
+                        icon: const Icon(Icons.check),
+                        label: Text(l10n.actionDone),
+                        onPressed: () => _runGuarded(
+                          context,
+                          ref,
+                          () => ref
+                              .read(reminderActionsProvider)
+                              .complete(current.id),
+                          successMessage: l10n.reminderCompletedFeedback,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: OutlinedButton.icon(
-                      icon: const Icon(Icons.snooze),
-                      label: Text(
-                        l10n.actionSnooze,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      onPressed: () => _runGuarded(
-                        context,
-                        ref,
-                        () => ref
-                            .read(reminderActionsProvider)
-                            .snooze(
-                              current.id,
-                              DateTime.now().add(
-                                Duration(minutes: snoozeMinutes),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        icon: const Icon(Icons.snooze),
+                        label: Text(
+                          l10n.actionSnooze,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        onPressed: () => _runGuarded(
+                          context,
+                          ref,
+                          () => ref
+                              .read(reminderActionsProvider)
+                              .snooze(
+                                current.id,
+                                DateTime.now().add(
+                                  Duration(minutes: snoozeMinutes),
+                                ),
                               ),
-                            ),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
             ],
           ),
         ),

@@ -9,6 +9,16 @@ final activeRemindersStreamProvider = StreamProvider<List<Reminder>>((ref) {
   return ref.watch(reminderRepositoryProvider).watchActive();
 });
 
+final allRemindersStreamProvider = StreamProvider<List<Reminder>>((ref) {
+  return ref.watch(reminderRepositoryProvider).watchAll();
+});
+
+final completedReminderLogsStreamProvider = StreamProvider<List<ReminderLog>>((
+  ref,
+) {
+  return ref.watch(reminderRepositoryProvider).watchCompletedLogs();
+});
+
 final remindersByCategoryStreamProvider =
     StreamProvider.family<List<Reminder>, int>((ref, categoryId) {
       return ref.watch(reminderRepositoryProvider).watchByCategory(categoryId);
@@ -46,6 +56,8 @@ class ReminderActions {
     required DateTime startDate,
     required String reminderTime,
     int advanceNoticeDays = 0,
+    int advanceNoticeHours = 0,
+    int advanceNoticeMinutes = 0,
   }) async {
     final id = await _ref
         .read(reminderRepositoryProvider)
@@ -62,6 +74,8 @@ class ReminderActions {
           startDate: startDate,
           reminderTime: reminderTime,
           advanceNoticeDays: advanceNoticeDays,
+          advanceNoticeHours: advanceNoticeHours,
+          advanceNoticeMinutes: advanceNoticeMinutes,
         );
     final reminder = await _ref.read(reminderRepositoryProvider).getById(id);
     var scheduled = true;

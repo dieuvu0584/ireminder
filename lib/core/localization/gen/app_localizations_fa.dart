@@ -161,7 +161,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String get reminderFieldTime => 'زمان یادآوری';
 
   @override
-  String get reminderFieldAdvanceNotice => 'N روز زودتر اطلاع بده';
+  String get reminderFieldAdvanceNotice => 'از قبل اطلاع بده';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'روز';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'ساعت';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'دقیقه';
 
   @override
   String get reminderFieldRecurrenceDay => 'روز ماه';

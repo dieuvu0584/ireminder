@@ -161,7 +161,16 @@ class AppLocalizationsTe extends AppLocalizations {
   String get reminderFieldTime => 'రిమైండర్ సమయం';
 
   @override
-  String get reminderFieldAdvanceNotice => 'N రోజుల ముందుగా తెలియజేయి';
+  String get reminderFieldAdvanceNotice => 'ముందుగా తెలియజేయండి';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'రోజులు';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'గంటలు';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'నిమిషాలు';
 
   @override
   String get reminderFieldRecurrenceDay => 'నెలలో రోజు';

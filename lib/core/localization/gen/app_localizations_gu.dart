@@ -161,7 +161,16 @@ class AppLocalizationsGu extends AppLocalizations {
   String get reminderFieldTime => 'રિમાઇન્ડરનો સમય';
 
   @override
-  String get reminderFieldAdvanceNotice => 'N દિવસ પહેલાં જણાવો';
+  String get reminderFieldAdvanceNotice => 'અગાઉથી જાણ કરો';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'દિવસો';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'કલાકો';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'મિનિટ';
 
   @override
   String get reminderFieldRecurrenceDay => 'મહિનાનો દિવસ';

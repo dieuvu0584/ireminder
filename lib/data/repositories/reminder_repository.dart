@@ -26,6 +26,27 @@ class ReminderRepository {
         .watch();
   }
 
+  /// Includes inactive (completed one-off) reminders too — only actual
+  /// deletion removes a row from this. Used by the calendar tab so
+  /// browsing to a past day still shows what was scheduled there instead
+  /// of a completed reminder just vanishing.
+  Stream<List<Reminder>> watchAll() {
+    return (_db.select(
+      _db.reminders,
+    )..orderBy([(r) => OrderingTerm.asc(r.nextDueDate)])).watch();
+  }
+
+  /// All logged completions, most recent first — used alongside
+  /// [watchAll] to plot a recurring reminder's past completed occurrences
+  /// on the calendar day they were actually completed, since
+  /// `next_due_date` only ever holds the single upcoming occurrence.
+  Stream<List<ReminderLog>> watchCompletedLogs() {
+    return (_db.select(_db.reminderLogs)
+          ..where((l) => l.action.equals(ReminderLogAction.completed.dbValue))
+          ..orderBy([(l) => OrderingTerm.desc(l.completedAt)]))
+        .watch();
+  }
+
   Stream<List<Reminder>> watchByCategory(int categoryId) {
     return (_db.select(
       _db.reminders,
@@ -98,6 +119,8 @@ class ReminderRepository {
     required DateTime startDate,
     required String reminderTime,
     int advanceNoticeDays = 0,
+    int advanceNoticeHours = 0,
+    int advanceNoticeMinutes = 0,
   }) async {
     final now = DateTime.now();
     final params = RecurrenceParams(
@@ -126,6 +149,8 @@ class ReminderRepository {
             nextDueDate: nextDue,
             reminderTime: reminderTime,
             advanceNoticeDays: Value(advanceNoticeDays),
+            advanceNoticeHours: Value(advanceNoticeHours),
+            advanceNoticeMinutes: Value(advanceNoticeMinutes),
             createdAt: now,
             updatedAt: now,
           ),

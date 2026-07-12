@@ -13,6 +13,12 @@ class ReminderCard extends StatelessWidget {
   final VoidCallback onComplete;
   final VoidCallback onSnooze;
 
+  /// True for a historical entry the calendar plots on a past day it was
+  /// completed on — shown as a plain, non-interactive row with a green
+  /// check instead of swipe-to-complete/snooze actions, since a past
+  /// occurrence isn't something to act on again.
+  final bool completed;
+
   const ReminderCard({
     super.key,
     required this.reminder,
@@ -20,6 +26,7 @@ class ReminderCard extends StatelessWidget {
     required this.onTap,
     required this.onComplete,
     required this.onSnooze,
+    this.completed = false,
   });
 
   @override
@@ -28,6 +35,59 @@ class ReminderCard extends StatelessWidget {
     final color = category != null
         ? parseHexColor(category!.color)
         : Colors.grey;
+
+    final card = Card(
+      child: ListTile(
+        onTap: onTap,
+        leading: CircleAvatar(
+          backgroundColor: color.withValues(alpha: 0.15),
+          child: Icon(
+            category != null
+                ? resolveCategoryIcon(category!.icon)
+                : Icons.notifications,
+            color: color,
+          ),
+        ),
+        title: Text(reminder.title),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('${reminder.reminderTime} · ${category?.name ?? ''}'),
+            if (reminder.isLunar)
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.brightness_2_outlined,
+                    size: 12,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    l10n.reminderLunarDateLabel(
+                      LunarConverter.formatDayMonth(
+                        reminder.snoozeUntil ?? reminder.nextDueDate,
+                      ),
+                    ),
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                  ),
+                ],
+              ),
+          ],
+        ),
+        trailing: completed
+            ? const Icon(Icons.check_circle, color: Colors.green)
+            : IconButton(
+                icon: const Icon(Icons.check_circle_outline),
+                onPressed: onComplete,
+              ),
+      ),
+    );
+
+    if (completed) return card;
 
     return Dismissible(
       key: ValueKey('reminder_${reminder.id}'),
@@ -53,54 +113,7 @@ class ReminderCard extends StatelessWidget {
         }
         return false; // let the provider-driven stream remove/update the row
       },
-      child: Card(
-        child: ListTile(
-          onTap: onTap,
-          leading: CircleAvatar(
-            backgroundColor: color.withValues(alpha: 0.15),
-            child: Icon(
-              category != null
-                  ? resolveCategoryIcon(category!.icon)
-                  : Icons.notifications,
-              color: color,
-            ),
-          ),
-          title: Text(reminder.title),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text('${reminder.reminderTime} · ${category?.name ?? ''}'),
-              if (reminder.isLunar)
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.brightness_2_outlined,
-                      size: 12,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                    const SizedBox(width: 4),
-                    Text(
-                      l10n.reminderLunarDateLabel(
-                        LunarConverter.formatDayMonth(
-                          reminder.snoozeUntil ?? reminder.nextDueDate,
-                        ),
-                      ),
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Theme.of(context).colorScheme.secondary,
-                      ),
-                    ),
-                  ],
-                ),
-            ],
-          ),
-          trailing: IconButton(
-            icon: const Icon(Icons.check_circle_outline),
-            onPressed: onComplete,
-          ),
-        ),
-      ),
+      child: card,
     );
   }
 

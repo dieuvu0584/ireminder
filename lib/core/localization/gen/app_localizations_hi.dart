@@ -161,7 +161,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String get reminderFieldTime => 'याद दिलाने का समय';
 
   @override
-  String get reminderFieldAdvanceNotice => 'N दिन पहले सूचित करें';
+  String get reminderFieldAdvanceNotice => 'पहले से सूचित करें';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'दिन';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'घंटे';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'मिनट';
 
   @override
   String get reminderFieldRecurrenceDay => 'महीने का दिन';

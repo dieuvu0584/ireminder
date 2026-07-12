@@ -161,7 +161,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get reminderFieldTime => 'Påminnelsetid';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Notifiera N dagar i förväg';
+  String get reminderFieldAdvanceNotice => 'Meddela i förväg';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Dagar';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Timmar';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minuter';
 
   @override
   String get reminderFieldRecurrenceDay => 'Dag i månaden';

@@ -161,7 +161,16 @@ class AppLocalizationsFil extends AppLocalizations {
   String get reminderFieldTime => 'Oras ng paalala';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Ipaalam N araw bago';
+  String get reminderFieldAdvanceNotice => 'Ipaalam nang maaga';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Araw';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Oras';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minuto';
 
   @override
   String get reminderFieldRecurrenceDay => 'Araw ng buwan';

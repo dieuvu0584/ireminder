@@ -161,7 +161,16 @@ class AppLocalizationsIt extends AppLocalizations {
   String get reminderFieldTime => 'Orario promemoria';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Avvisa N giorni prima';
+  String get reminderFieldAdvanceNotice => 'Avvisa in anticipo';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Giorni';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Ore';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minuti';
 
   @override
   String get reminderFieldRecurrenceDay => 'Giorno del mese';

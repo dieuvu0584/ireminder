@@ -161,7 +161,16 @@ class AppLocalizationsNo extends AppLocalizations {
   String get reminderFieldTime => 'Påminnelsestidspunkt';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Varsle N dager i forveien';
+  String get reminderFieldAdvanceNotice => 'Varsle på forhånd';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Dager';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Timer';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minutter';
 
   @override
   String get reminderFieldRecurrenceDay => 'Dag i måneden';

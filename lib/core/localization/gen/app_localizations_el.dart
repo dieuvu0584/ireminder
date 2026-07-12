@@ -161,7 +161,16 @@ class AppLocalizationsEl extends AppLocalizations {
   String get reminderFieldTime => 'Ώρα υπενθύμισης';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Ειδοποίηση N ημέρες πριν';
+  String get reminderFieldAdvanceNotice => 'Ειδοποίηση εκ των προτέρων';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Ημέρες';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Ώρες';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Λεπτά';
 
   @override
   String get reminderFieldRecurrenceDay => 'Ημέρα του μήνα';

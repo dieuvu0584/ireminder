@@ -161,7 +161,16 @@ class AppLocalizationsUk extends AppLocalizations {
   String get reminderFieldTime => 'Час нагадування';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Попередити за N днів';
+  String get reminderFieldAdvanceNotice => 'Повідомити заздалегідь';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Дні';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Години';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Хвилини';
 
   @override
   String get reminderFieldRecurrenceDay => 'День місяця';

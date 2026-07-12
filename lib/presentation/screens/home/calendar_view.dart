@@ -36,7 +36,11 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final remindersAsync = ref.watch(activeRemindersStreamProvider);
+    // Includes inactive (completed one-off) reminders, unlike the Today
+    // tab's activeRemindersStreamProvider — a past day shouldn't lose what
+    // was scheduled on it just because it's since been completed.
+    final remindersAsync = ref.watch(allRemindersStreamProvider);
+    final completedLogsAsync = ref.watch(completedReminderLogsStreamProvider);
     final categoriesAsync = ref.watch(categoriesStreamProvider);
     // Shared with HomeScreen's "+" FAB, so creating a reminder while
     // browsing a different day here pre-fills that day as the reminder's
@@ -50,12 +54,15 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
       data: (reminders) {
         final categories = categoriesAsync.valueOrNull ?? const <Category>[];
         final byId = {for (final c in categories) c.id: c};
+        final remindersById = {for (final r in reminders) r.id: r};
 
-        final byDay = <DateTime, List<Reminder>>{};
+        final byDay = <DateTime, List<_CalendarEntry>>{};
         for (final r in reminders) {
           final d = r.snoozeUntil ?? r.nextDueDate;
           final key = DateTime(d.year, d.month, d.day);
-          byDay.putIfAbsent(key, () => []).add(r);
+          byDay
+              .putIfAbsent(key, () => [])
+              .add(_CalendarEntry(r, completed: !r.isActive));
 
           // The DB only stores the single nearest upcoming occurrence, so
           // browsing to a different year would otherwise show nothing for
@@ -81,13 +88,35 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                 projected.day,
               );
               if (projKey != key) {
-                byDay.putIfAbsent(projKey, () => []).add(r);
+                byDay
+                    .putIfAbsent(projKey, () => [])
+                    .add(_CalendarEntry(r, completed: !r.isActive));
               }
             }
           }
         }
 
-        final selectedReminders = byDay[selectedDay] ?? const <Reminder>[];
+        // A recurring reminder's next_due_date only ever holds the single
+        // upcoming occurrence, so its past completed cycles aren't
+        // reachable above at all — plot each logged completion on the day
+        // it actually happened. One-off (none) reminders are skipped here
+        // since they're already fully represented above (next_due_date
+        // never moves for them, so the same day would double up).
+        for (final log in completedLogsAsync.valueOrNull ?? const []) {
+          final reminder = remindersById[log.reminderId];
+          if (reminder == null) continue;
+          if (RecurrenceType.fromDbValue(reminder.recurrenceType) ==
+              RecurrenceType.none) {
+            continue;
+          }
+          final d = log.completedAt;
+          final key = DateTime(d.year, d.month, d.day);
+          byDay
+              .putIfAbsent(key, () => [])
+              .add(_CalendarEntry(reminder, completed: true));
+        }
+
+        final selectedEntries = byDay[selectedDay] ?? const <_CalendarEntry>[];
 
         return Column(
           children: [
@@ -110,14 +139,14 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
             _MonthGrid(
               month: _visibleMonth,
               selectedDay: selectedDay,
-              remindersByDay: byDay,
+              entriesByDay: byDay,
               categoriesById: byId,
               onSelectDay: (d) =>
                   ref.read(selectedCalendarDayProvider.notifier).state = d,
             ),
             const Divider(height: 1),
             Expanded(
-              child: selectedReminders.isEmpty
+              child: selectedEntries.isEmpty
                   ? Center(
                       child: Text(
                         l10n.homeEmptyTitle,
@@ -125,22 +154,27 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                       ),
                     )
                   : ListView(
-                      children: selectedReminders
+                      children: selectedEntries
                           .map(
-                            (r) => ReminderCard(
-                              reminder: r,
-                              category: byId[r.categoryId],
+                            (entry) => ReminderCard(
+                              key: ValueKey(
+                                'cal_${entry.reminder.id}_${entry.completed}',
+                              ),
+                              reminder: entry.reminder,
+                              category: byId[entry.reminder.categoryId],
+                              completed: entry.completed,
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (_) =>
-                                      ReminderDetailScreen(reminder: r),
+                                  builder: (_) => ReminderDetailScreen(
+                                    reminder: entry.reminder,
+                                  ),
                                 ),
                               ),
                               onComplete: () => runGuarded(
                                 context,
                                 () => ref
                                     .read(reminderActionsProvider)
-                                    .complete(r.id),
+                                    .complete(entry.reminder.id),
                                 successMessage: l10n.reminderCompletedFeedback,
                               ),
                               onSnooze: () => runGuarded(
@@ -148,7 +182,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                                 () => ref
                                     .read(reminderActionsProvider)
                                     .snooze(
-                                      r.id,
+                                      entry.reminder.id,
                                       DateTime.now().add(
                                         Duration(minutes: snoozeMinutes),
                                       ),
@@ -166,6 +200,16 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
       error: (e, st) => Center(child: Text(l10n.errorLoadFailed)),
     );
   }
+}
+
+/// A reminder plotted on a specific calendar day, tagged with whether
+/// that particular occurrence is done — the same [Reminder] can appear
+/// on more than one day (its current occurrence, plus any of its past
+/// logged completions), each with its own [completed] value.
+class _CalendarEntry {
+  final Reminder reminder;
+  final bool completed;
+  const _CalendarEntry(this.reminder, {required this.completed});
 }
 
 class _MonthHeader extends StatelessWidget {
@@ -239,14 +283,14 @@ class _WeekdayHeader extends StatelessWidget {
 class _MonthGrid extends StatelessWidget {
   final DateTime month;
   final DateTime? selectedDay;
-  final Map<DateTime, List<Reminder>> remindersByDay;
+  final Map<DateTime, List<_CalendarEntry>> entriesByDay;
   final Map<int, Category> categoriesById;
   final ValueChanged<DateTime> onSelectDay;
 
   const _MonthGrid({
     required this.month,
     required this.selectedDay,
-    required this.remindersByDay,
+    required this.entriesByDay,
     required this.categoriesById,
     required this.onSelectDay,
   });
@@ -282,7 +326,7 @@ class _MonthGrid extends StatelessWidget {
         final isToday = _isSameDay(day, DateTime.now());
         final isWeekend =
             day.weekday == DateTime.saturday || day.weekday == DateTime.sunday;
-        final dayReminders = remindersByDay[day] ?? const [];
+        final dayEntries = entriesByDay[day] ?? const [];
 
         return InkWell(
           onTap: () => onSelectDay(day),
@@ -313,13 +357,13 @@ class _MonthGrid extends StatelessWidget {
                     color: Theme.of(context).colorScheme.outline,
                   ),
                 ),
-                if (dayReminders.isNotEmpty)
+                if (dayEntries.isNotEmpty)
                   Wrap(
                     spacing: 2,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      ...dayReminders.take(3).map((r) {
-                        final cat = categoriesById[r.categoryId];
+                      ...dayEntries.take(3).map((entry) {
+                        final cat = categoriesById[entry.reminder.categoryId];
                         final color = cat != null
                             ? parseHexColor(cat.color)
                             : Colors.grey;
@@ -327,14 +371,14 @@ class _MonthGrid extends StatelessWidget {
                           width: 5,
                           height: 5,
                           decoration: BoxDecoration(
-                            color: color,
+                            color: entry.completed ? Colors.green : color,
                             shape: BoxShape.circle,
                           ),
                         );
                       }),
-                      if (dayReminders.length > 3)
+                      if (dayEntries.length > 3)
                         Text(
-                          '+${dayReminders.length - 3}',
+                          '+${dayEntries.length - 3}',
                           style: Theme.of(
                             context,
                           ).textTheme.labelSmall?.copyWith(fontSize: 8),

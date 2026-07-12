@@ -161,7 +161,16 @@ class AppLocalizationsId extends AppLocalizations {
   String get reminderFieldTime => 'Waktu pengingat';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Beri tahu N hari sebelumnya';
+  String get reminderFieldAdvanceNotice => 'Beri tahu lebih awal';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Hari';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Jam';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Menit';
 
   @override
   String get reminderFieldRecurrenceDay => 'Tanggal dalam bulan';

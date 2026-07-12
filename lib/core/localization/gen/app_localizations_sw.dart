@@ -161,7 +161,16 @@ class AppLocalizationsSw extends AppLocalizations {
   String get reminderFieldTime => 'Muda wa kikumbusho';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Arifu siku N mapema';
+  String get reminderFieldAdvanceNotice => 'Arifu mapema';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Siku';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Masaa';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Dakika';
 
   @override
   String get reminderFieldRecurrenceDay => 'Siku ya mwezi';

@@ -161,7 +161,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get reminderFieldTime => 'Heure du rappel';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Prévenir N jours à l\'avance';
+  String get reminderFieldAdvanceNotice => 'Notifier à l\'avance';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Jours';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Heures';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minutes';
 
   @override
   String get reminderFieldRecurrenceDay => 'Jour du mois';

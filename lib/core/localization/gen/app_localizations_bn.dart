@@ -161,7 +161,16 @@ class AppLocalizationsBn extends AppLocalizations {
   String get reminderFieldTime => 'রিমাইন্ডারের সময়';
 
   @override
-  String get reminderFieldAdvanceNotice => 'N দিন আগে জানান';
+  String get reminderFieldAdvanceNotice => 'আগেই জানান';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'দিন';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'ঘন্টা';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'মিনিট';
 
   @override
   String get reminderFieldRecurrenceDay => 'মাসের কততম দিন';

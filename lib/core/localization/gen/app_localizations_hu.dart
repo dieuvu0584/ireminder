@@ -161,7 +161,16 @@ class AppLocalizationsHu extends AppLocalizations {
   String get reminderFieldTime => 'Emlékeztető ideje';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Értesítés N nappal korábban';
+  String get reminderFieldAdvanceNotice => 'Előzetes értesítés';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Nap';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Óra';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Perc';
 
   @override
   String get reminderFieldRecurrenceDay => 'Hónap napja';

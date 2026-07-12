@@ -161,7 +161,16 @@ class AppLocalizationsTh extends AppLocalizations {
   String get reminderFieldTime => 'เวลาแจ้งเตือน';
 
   @override
-  String get reminderFieldAdvanceNotice => 'แจ้งล่วงหน้า N วัน';
+  String get reminderFieldAdvanceNotice => 'แจ้งเตือนล่วงหน้า';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'วัน';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'ชั่วโมง';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'นาที';
 
   @override
   String get reminderFieldRecurrenceDay => 'วันที่ในเดือน';

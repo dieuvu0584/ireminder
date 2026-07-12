@@ -161,7 +161,16 @@ class AppLocalizationsCs extends AppLocalizations {
   String get reminderFieldTime => 'Čas připomínky';
 
   @override
-  String get reminderFieldAdvanceNotice => 'Upozornit N dní předem';
+  String get reminderFieldAdvanceNotice => 'Upozornit předem';
+
+  @override
+  String get reminderFieldAdvanceNoticeDays => 'Dny';
+
+  @override
+  String get reminderFieldAdvanceNoticeHours => 'Hodiny';
+
+  @override
+  String get reminderFieldAdvanceNoticeMinutes => 'Minuty';
 
   @override
   String get reminderFieldRecurrenceDay => 'Den v měsíci';

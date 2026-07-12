@@ -615,6 +615,28 @@ class $RemindersTable extends Reminders
     requiredDuringInsert: false,
     defaultValue: const Constant(0),
   );
+  static const VerificationMeta _advanceNoticeHoursMeta =
+      const VerificationMeta('advanceNoticeHours');
+  @override
+  late final GeneratedColumn<int> advanceNoticeHours = GeneratedColumn<int>(
+    'advance_notice_hours',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _advanceNoticeMinutesMeta =
+      const VerificationMeta('advanceNoticeMinutes');
+  @override
+  late final GeneratedColumn<int> advanceNoticeMinutes = GeneratedColumn<int>(
+    'advance_notice_minutes',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
   static const VerificationMeta _isActiveMeta = const VerificationMeta(
     'isActive',
   );
@@ -679,6 +701,8 @@ class $RemindersTable extends Reminders
     nextDueDate,
     reminderTime,
     advanceNoticeDays,
+    advanceNoticeHours,
+    advanceNoticeMinutes,
     isActive,
     snoozeUntil,
     createdAt,
@@ -816,6 +840,24 @@ class $RemindersTable extends Reminders
         ),
       );
     }
+    if (data.containsKey('advance_notice_hours')) {
+      context.handle(
+        _advanceNoticeHoursMeta,
+        advanceNoticeHours.isAcceptableOrUnknown(
+          data['advance_notice_hours']!,
+          _advanceNoticeHoursMeta,
+        ),
+      );
+    }
+    if (data.containsKey('advance_notice_minutes')) {
+      context.handle(
+        _advanceNoticeMinutesMeta,
+        advanceNoticeMinutes.isAcceptableOrUnknown(
+          data['advance_notice_minutes']!,
+          _advanceNoticeMinutesMeta,
+        ),
+      );
+    }
     if (data.containsKey('is_active')) {
       context.handle(
         _isActiveMeta,
@@ -912,6 +954,14 @@ class $RemindersTable extends Reminders
         DriftSqlType.int,
         data['${effectivePrefix}advance_notice_days'],
       )!,
+      advanceNoticeHours: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}advance_notice_hours'],
+      )!,
+      advanceNoticeMinutes: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}advance_notice_minutes'],
+      )!,
       isActive: attachedDatabase.typeMapping.read(
         DriftSqlType.bool,
         data['${effectivePrefix}is_active'],
@@ -954,6 +1004,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
   final DateTime nextDueDate;
   final String reminderTime;
   final int advanceNoticeDays;
+  final int advanceNoticeHours;
+  final int advanceNoticeMinutes;
   final bool isActive;
   final DateTime? snoozeUntil;
   final DateTime createdAt;
@@ -973,6 +1025,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     required this.nextDueDate,
     required this.reminderTime,
     required this.advanceNoticeDays,
+    required this.advanceNoticeHours,
+    required this.advanceNoticeMinutes,
     required this.isActive,
     this.snoozeUntil,
     required this.createdAt,
@@ -1005,6 +1059,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     map['next_due_date'] = Variable<DateTime>(nextDueDate);
     map['reminder_time'] = Variable<String>(reminderTime);
     map['advance_notice_days'] = Variable<int>(advanceNoticeDays);
+    map['advance_notice_hours'] = Variable<int>(advanceNoticeHours);
+    map['advance_notice_minutes'] = Variable<int>(advanceNoticeMinutes);
     map['is_active'] = Variable<bool>(isActive);
     if (!nullToAbsent || snoozeUntil != null) {
       map['snooze_until'] = Variable<DateTime>(snoozeUntil);
@@ -1040,6 +1096,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
       nextDueDate: Value(nextDueDate),
       reminderTime: Value(reminderTime),
       advanceNoticeDays: Value(advanceNoticeDays),
+      advanceNoticeHours: Value(advanceNoticeHours),
+      advanceNoticeMinutes: Value(advanceNoticeMinutes),
       isActive: Value(isActive),
       snoozeUntil: snoozeUntil == null && nullToAbsent
           ? const Value.absent()
@@ -1069,6 +1127,10 @@ class Reminder extends DataClass implements Insertable<Reminder> {
       nextDueDate: serializer.fromJson<DateTime>(json['nextDueDate']),
       reminderTime: serializer.fromJson<String>(json['reminderTime']),
       advanceNoticeDays: serializer.fromJson<int>(json['advanceNoticeDays']),
+      advanceNoticeHours: serializer.fromJson<int>(json['advanceNoticeHours']),
+      advanceNoticeMinutes: serializer.fromJson<int>(
+        json['advanceNoticeMinutes'],
+      ),
       isActive: serializer.fromJson<bool>(json['isActive']),
       snoozeUntil: serializer.fromJson<DateTime?>(json['snoozeUntil']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
@@ -1093,6 +1155,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
       'nextDueDate': serializer.toJson<DateTime>(nextDueDate),
       'reminderTime': serializer.toJson<String>(reminderTime),
       'advanceNoticeDays': serializer.toJson<int>(advanceNoticeDays),
+      'advanceNoticeHours': serializer.toJson<int>(advanceNoticeHours),
+      'advanceNoticeMinutes': serializer.toJson<int>(advanceNoticeMinutes),
       'isActive': serializer.toJson<bool>(isActive),
       'snoozeUntil': serializer.toJson<DateTime?>(snoozeUntil),
       'createdAt': serializer.toJson<DateTime>(createdAt),
@@ -1115,6 +1179,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     DateTime? nextDueDate,
     String? reminderTime,
     int? advanceNoticeDays,
+    int? advanceNoticeHours,
+    int? advanceNoticeMinutes,
     bool? isActive,
     Value<DateTime?> snoozeUntil = const Value.absent(),
     DateTime? createdAt,
@@ -1142,6 +1208,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     nextDueDate: nextDueDate ?? this.nextDueDate,
     reminderTime: reminderTime ?? this.reminderTime,
     advanceNoticeDays: advanceNoticeDays ?? this.advanceNoticeDays,
+    advanceNoticeHours: advanceNoticeHours ?? this.advanceNoticeHours,
+    advanceNoticeMinutes: advanceNoticeMinutes ?? this.advanceNoticeMinutes,
     isActive: isActive ?? this.isActive,
     snoozeUntil: snoozeUntil.present ? snoozeUntil.value : this.snoozeUntil,
     createdAt: createdAt ?? this.createdAt,
@@ -1183,6 +1251,12 @@ class Reminder extends DataClass implements Insertable<Reminder> {
       advanceNoticeDays: data.advanceNoticeDays.present
           ? data.advanceNoticeDays.value
           : this.advanceNoticeDays,
+      advanceNoticeHours: data.advanceNoticeHours.present
+          ? data.advanceNoticeHours.value
+          : this.advanceNoticeHours,
+      advanceNoticeMinutes: data.advanceNoticeMinutes.present
+          ? data.advanceNoticeMinutes.value
+          : this.advanceNoticeMinutes,
       isActive: data.isActive.present ? data.isActive.value : this.isActive,
       snoozeUntil: data.snoozeUntil.present
           ? data.snoozeUntil.value
@@ -1209,6 +1283,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
           ..write('nextDueDate: $nextDueDate, ')
           ..write('reminderTime: $reminderTime, ')
           ..write('advanceNoticeDays: $advanceNoticeDays, ')
+          ..write('advanceNoticeHours: $advanceNoticeHours, ')
+          ..write('advanceNoticeMinutes: $advanceNoticeMinutes, ')
           ..write('isActive: $isActive, ')
           ..write('snoozeUntil: $snoozeUntil, ')
           ..write('createdAt: $createdAt, ')
@@ -1233,6 +1309,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     nextDueDate,
     reminderTime,
     advanceNoticeDays,
+    advanceNoticeHours,
+    advanceNoticeMinutes,
     isActive,
     snoozeUntil,
     createdAt,
@@ -1256,6 +1334,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
           other.nextDueDate == this.nextDueDate &&
           other.reminderTime == this.reminderTime &&
           other.advanceNoticeDays == this.advanceNoticeDays &&
+          other.advanceNoticeHours == this.advanceNoticeHours &&
+          other.advanceNoticeMinutes == this.advanceNoticeMinutes &&
           other.isActive == this.isActive &&
           other.snoozeUntil == this.snoozeUntil &&
           other.createdAt == this.createdAt &&
@@ -1277,6 +1357,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
   final Value<DateTime> nextDueDate;
   final Value<String> reminderTime;
   final Value<int> advanceNoticeDays;
+  final Value<int> advanceNoticeHours;
+  final Value<int> advanceNoticeMinutes;
   final Value<bool> isActive;
   final Value<DateTime?> snoozeUntil;
   final Value<DateTime> createdAt;
@@ -1296,6 +1378,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     this.nextDueDate = const Value.absent(),
     this.reminderTime = const Value.absent(),
     this.advanceNoticeDays = const Value.absent(),
+    this.advanceNoticeHours = const Value.absent(),
+    this.advanceNoticeMinutes = const Value.absent(),
     this.isActive = const Value.absent(),
     this.snoozeUntil = const Value.absent(),
     this.createdAt = const Value.absent(),
@@ -1316,6 +1400,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     required DateTime nextDueDate,
     required String reminderTime,
     this.advanceNoticeDays = const Value.absent(),
+    this.advanceNoticeHours = const Value.absent(),
+    this.advanceNoticeMinutes = const Value.absent(),
     this.isActive = const Value.absent(),
     this.snoozeUntil = const Value.absent(),
     required DateTime createdAt,
@@ -1343,6 +1429,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     Expression<DateTime>? nextDueDate,
     Expression<String>? reminderTime,
     Expression<int>? advanceNoticeDays,
+    Expression<int>? advanceNoticeHours,
+    Expression<int>? advanceNoticeMinutes,
     Expression<bool>? isActive,
     Expression<DateTime>? snoozeUntil,
     Expression<DateTime>? createdAt,
@@ -1363,6 +1451,10 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
       if (nextDueDate != null) 'next_due_date': nextDueDate,
       if (reminderTime != null) 'reminder_time': reminderTime,
       if (advanceNoticeDays != null) 'advance_notice_days': advanceNoticeDays,
+      if (advanceNoticeHours != null)
+        'advance_notice_hours': advanceNoticeHours,
+      if (advanceNoticeMinutes != null)
+        'advance_notice_minutes': advanceNoticeMinutes,
       if (isActive != null) 'is_active': isActive,
       if (snoozeUntil != null) 'snooze_until': snoozeUntil,
       if (createdAt != null) 'created_at': createdAt,
@@ -1385,6 +1477,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     Value<DateTime>? nextDueDate,
     Value<String>? reminderTime,
     Value<int>? advanceNoticeDays,
+    Value<int>? advanceNoticeHours,
+    Value<int>? advanceNoticeMinutes,
     Value<bool>? isActive,
     Value<DateTime?>? snoozeUntil,
     Value<DateTime>? createdAt,
@@ -1405,6 +1499,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
       nextDueDate: nextDueDate ?? this.nextDueDate,
       reminderTime: reminderTime ?? this.reminderTime,
       advanceNoticeDays: advanceNoticeDays ?? this.advanceNoticeDays,
+      advanceNoticeHours: advanceNoticeHours ?? this.advanceNoticeHours,
+      advanceNoticeMinutes: advanceNoticeMinutes ?? this.advanceNoticeMinutes,
       isActive: isActive ?? this.isActive,
       snoozeUntil: snoozeUntil ?? this.snoozeUntil,
       createdAt: createdAt ?? this.createdAt,
@@ -1457,6 +1553,12 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     if (advanceNoticeDays.present) {
       map['advance_notice_days'] = Variable<int>(advanceNoticeDays.value);
     }
+    if (advanceNoticeHours.present) {
+      map['advance_notice_hours'] = Variable<int>(advanceNoticeHours.value);
+    }
+    if (advanceNoticeMinutes.present) {
+      map['advance_notice_minutes'] = Variable<int>(advanceNoticeMinutes.value);
+    }
     if (isActive.present) {
       map['is_active'] = Variable<bool>(isActive.value);
     }
@@ -1489,6 +1591,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
           ..write('nextDueDate: $nextDueDate, ')
           ..write('reminderTime: $reminderTime, ')
           ..write('advanceNoticeDays: $advanceNoticeDays, ')
+          ..write('advanceNoticeHours: $advanceNoticeHours, ')
+          ..write('advanceNoticeMinutes: $advanceNoticeMinutes, ')
           ..write('isActive: $isActive, ')
           ..write('snoozeUntil: $snoozeUntil, ')
           ..write('createdAt: $createdAt, ')
@@ -4057,11 +4161,13 @@ class AiSetting extends DataClass implements Insertable<AiSetting> {
   final String? modelName;
   final String? apiKeyEncrypted;
 
-  /// JSON array of category ids allowed into the AI context. Starts empty
-  /// (nothing shared) rather than guessing which categories are
-  /// "sensitive" by name — category names are free text the user can
-  /// rename, so name-matching would be unreliable. The user opts categories
-  /// in explicitly in Settings > Assistant.
+  /// JSON array of category ids allowed into the AI context. Defaults to
+  /// "[]" here only as the column-level fallback (e.g. for rows that
+  /// bypass the app's own seeding); the app's actual initial value —
+  /// every default category except Finance — is set explicitly at
+  /// account creation in AppDatabase.onCreate, keyed by category id
+  /// rather than name so a rename doesn't change what's shared. The user
+  /// can adjust the set anytime in Settings > Assistant.
   final String allowedCategoryIds;
   const AiSetting({
     required this.id,
@@ -5082,6 +5188,8 @@ typedef $$RemindersTableCreateCompanionBuilder =
       required DateTime nextDueDate,
       required String reminderTime,
       Value<int> advanceNoticeDays,
+      Value<int> advanceNoticeHours,
+      Value<int> advanceNoticeMinutes,
       Value<bool> isActive,
       Value<DateTime?> snoozeUntil,
       required DateTime createdAt,
@@ -5103,6 +5211,8 @@ typedef $$RemindersTableUpdateCompanionBuilder =
       Value<DateTime> nextDueDate,
       Value<String> reminderTime,
       Value<int> advanceNoticeDays,
+      Value<int> advanceNoticeHours,
+      Value<int> advanceNoticeMinutes,
       Value<bool> isActive,
       Value<DateTime?> snoozeUntil,
       Value<DateTime> createdAt,
@@ -5225,6 +5335,16 @@ class $$RemindersTableFilterComposer
 
   ColumnFilters<int> get advanceNoticeDays => $composableBuilder(
     column: $table.advanceNoticeDays,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get advanceNoticeHours => $composableBuilder(
+    column: $table.advanceNoticeHours,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get advanceNoticeMinutes => $composableBuilder(
+    column: $table.advanceNoticeMinutes,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -5371,6 +5491,16 @@ class $$RemindersTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<int> get advanceNoticeHours => $composableBuilder(
+    column: $table.advanceNoticeHours,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get advanceNoticeMinutes => $composableBuilder(
+    column: $table.advanceNoticeMinutes,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<bool> get isActive => $composableBuilder(
     column: $table.isActive,
     builder: (column) => ColumnOrderings(column),
@@ -5481,6 +5611,16 @@ class $$RemindersTableAnnotationComposer
     builder: (column) => column,
   );
 
+  GeneratedColumn<int> get advanceNoticeHours => $composableBuilder(
+    column: $table.advanceNoticeHours,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get advanceNoticeMinutes => $composableBuilder(
+    column: $table.advanceNoticeMinutes,
+    builder: (column) => column,
+  );
+
   GeneratedColumn<bool> get isActive =>
       $composableBuilder(column: $table.isActive, builder: (column) => column);
 
@@ -5586,6 +5726,8 @@ class $$RemindersTableTableManager
                 Value<DateTime> nextDueDate = const Value.absent(),
                 Value<String> reminderTime = const Value.absent(),
                 Value<int> advanceNoticeDays = const Value.absent(),
+                Value<int> advanceNoticeHours = const Value.absent(),
+                Value<int> advanceNoticeMinutes = const Value.absent(),
                 Value<bool> isActive = const Value.absent(),
                 Value<DateTime?> snoozeUntil = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
@@ -5605,6 +5747,8 @@ class $$RemindersTableTableManager
                 nextDueDate: nextDueDate,
                 reminderTime: reminderTime,
                 advanceNoticeDays: advanceNoticeDays,
+                advanceNoticeHours: advanceNoticeHours,
+                advanceNoticeMinutes: advanceNoticeMinutes,
                 isActive: isActive,
                 snoozeUntil: snoozeUntil,
                 createdAt: createdAt,
@@ -5626,6 +5770,8 @@ class $$RemindersTableTableManager
                 required DateTime nextDueDate,
                 required String reminderTime,
                 Value<int> advanceNoticeDays = const Value.absent(),
+                Value<int> advanceNoticeHours = const Value.absent(),
+                Value<int> advanceNoticeMinutes = const Value.absent(),
                 Value<bool> isActive = const Value.absent(),
                 Value<DateTime?> snoozeUntil = const Value.absent(),
                 required DateTime createdAt,
@@ -5645,6 +5791,8 @@ class $$RemindersTableTableManager
                 nextDueDate: nextDueDate,
                 reminderTime: reminderTime,
                 advanceNoticeDays: advanceNoticeDays,
+                advanceNoticeHours: advanceNoticeHours,
+                advanceNoticeMinutes: advanceNoticeMinutes,
                 isActive: isActive,
                 snoozeUntil: snoozeUntil,
                 createdAt: createdAt,
