@@ -40,8 +40,16 @@ class NotificationService {
 
   NotificationActionCallback? onAction;
 
-  static const _reminderChannelBase = 'reminders_channel';
-  static const _loanChannelBase = 'loan_installments_channel';
+  // _v2 suffix: forces a brand-new channel id. Android bakes a channel's
+  // sound/vibration into it permanently at creation and never lets the
+  // app change it again — if this device ever had the old
+  // "reminders_channel_*" ids created with sound silenced (e.g. toggled
+  // off in system Settings during earlier troubleshooting, or a stale
+  // channel from a much earlier test install), no code change could ever
+  // fix that specific channel. Bumping the id abandons whatever state the
+  // old one is stuck in and starts clean.
+  static const _reminderChannelBase = 'reminders_channel_v2';
+  static const _loanChannelBase = 'loan_installments_channel_v2';
 
   /// Android locks a channel's sound/vibration behavior in at creation
   /// time — once a NotificationChannel exists, the app can't change its
