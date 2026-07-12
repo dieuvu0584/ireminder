@@ -32,6 +32,14 @@ class ReminderCard extends StatelessWidget {
   /// a glance rather than implicit from the section heading alone.
   final DateTime? occurrenceDate;
 
+  /// Only meaningful when [historical] is true: keeps the trailing check
+  /// tappable (calling [onComplete], which the caller wires to whichever
+  /// of complete/uncomplete undoes the current state) instead of locking
+  /// it. Used for today's own entries, where "oops, wrong one" should
+  /// still be fixable same-day — unlike a genuinely past day's entries,
+  /// which stay locked since nothing lets you undo those.
+  final bool allowToggle;
+
   const ReminderCard({
     super.key,
     required this.reminder,
@@ -42,6 +50,7 @@ class ReminderCard extends StatelessWidget {
     this.completed = false,
     this.historical = false,
     this.occurrenceDate,
+    this.allowToggle = false,
   });
 
   @override
@@ -110,7 +119,7 @@ class ReminderCard extends StatelessWidget {
                 : Icons.check_circle_outline,
             color: _trailingColor(context),
           ),
-          onPressed: historical ? null : onComplete,
+          onPressed: (!historical || allowToggle) ? onComplete : null,
         ),
       ),
     );

@@ -394,4 +394,86 @@ void main() {
       },
     );
   });
+
+  group('uncomplete', () {
+    test(
+      'reverts a completed one-off reminder back to active and removes the log',
+      () async {
+        final id = await reminders.create(
+          title: 'One-off task',
+          categoryId: categoryId,
+          recurrenceType: RecurrenceType.none,
+          startDate: DateTime.now(),
+          reminderTime: '08:00',
+        );
+        await reminders.complete(id);
+
+        final reverted = await reminders.uncomplete(id);
+
+        expect(reverted.isActive, isTrue);
+        final logs = await reminders.watchCompletedLogs().first;
+        expect(logs.where((l) => l.reminderId == id), isEmpty);
+      },
+    );
+
+    test(
+      'reverts a completed recurring reminder back to due today and removes the log',
+      () async {
+        final id = await reminders.create(
+          title: 'Daily task',
+          categoryId: categoryId,
+          recurrenceType: RecurrenceType.daily,
+          startDate: DateTime(2026, 1, 1),
+          reminderTime: '08:00',
+        );
+        await reminders.complete(id);
+
+        final reverted = await reminders.uncomplete(id);
+
+        final now = DateTime.now();
+        final today = DateTime(now.year, now.month, now.day);
+        expect(reverted.nextDueDate, today);
+        final logs = await reminders.watchCompletedLogs().first;
+        expect(logs.where((l) => l.reminderId == id), isEmpty);
+      },
+    );
+
+    test(
+      'only removes today\'s completed log, leaving an earlier one intact',
+      () async {
+        final id = await reminders.create(
+          title: 'Recurring task',
+          categoryId: categoryId,
+          recurrenceType: RecurrenceType.daily,
+          startDate: DateTime(2026, 1, 1),
+          reminderTime: '08:00',
+        );
+        final now = DateTime.now();
+        final yesterday = DateTime(
+          now.year,
+          now.month,
+          now.day,
+        ).subtract(const Duration(days: 1));
+        await db
+            .into(db.reminderLogs)
+            .insert(
+              ReminderLogsCompanion.insert(
+                reminderId: id,
+                completedAt: yesterday,
+                action: 'completed',
+              ),
+            );
+        await reminders.complete(id);
+
+        await reminders.uncomplete(id);
+
+        final logs = await reminders.watchCompletedLogs().first;
+        expect(logs.where((l) => l.reminderId == id), hasLength(1));
+        expect(
+          logs.firstWhere((l) => l.reminderId == id).completedAt,
+          yesterday,
+        );
+      },
+    );
+  });
 }

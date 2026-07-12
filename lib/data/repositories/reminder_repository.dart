@@ -292,6 +292,39 @@ class ReminderRepository {
     return updated;
   }
 
+  /// Reverts a reminder marked done earlier today back to pending.
+  /// Deliberately only ever resets it to be due *today* again — undoing a
+  /// completion from an earlier day would conflict with whatever
+  /// occurrence has since become current (a recurring reminder may
+  /// already be several cycles ahead by now), so this is only meant to
+  /// back out a same-day "oops, tapped the wrong one" via the Today tab's
+  /// toggle, not to rewrite history.
+  Future<Reminder> uncomplete(int reminderId) async {
+    final reminder = await getById(reminderId);
+    if (reminder == null) {
+      throw ArgumentError('Reminder $reminderId not found');
+    }
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final tomorrow = today.add(const Duration(days: 1));
+
+    await (_db.delete(_db.reminderLogs)..where(
+          (l) =>
+              l.reminderId.equals(reminderId) &
+              l.action.equals(ReminderLogAction.completed.dbValue) &
+              l.completedAt.isBiggerOrEqualValue(today) &
+              l.completedAt.isSmallerThanValue(tomorrow),
+        ))
+        .go();
+
+    final type = RecurrenceType.fromDbValue(reminder.recurrenceType);
+    final updated = type == RecurrenceType.none
+        ? reminder.copyWith(isActive: true, updatedAt: now)
+        : reminder.copyWith(nextDueDate: today, updatedAt: now);
+    await _db.update(_db.reminders).replace(updated);
+    return updated;
+  }
+
   Future<Reminder> snooze(int reminderId, DateTime snoozeUntil) async {
     final reminder = await getById(reminderId);
     if (reminder == null) {

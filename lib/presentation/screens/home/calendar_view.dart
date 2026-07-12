@@ -111,6 +111,11 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
 
         final selectedEntries =
             byDay[selectedDay] ?? const <ReminderOccurrence>[];
+        final now = DateTime.now();
+        final isSelectedDayToday =
+            selectedDay.year == now.year &&
+            selectedDay.month == now.month &&
+            selectedDay.day == now.day;
 
         return Column(
           children: [
@@ -158,6 +163,11 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                               category: byId[entry.reminder.categoryId],
                               completed: entry.completed,
                               historical: entry.historical,
+                              // Only today's own entries are correctable
+                              // same-day — a genuinely past day's history
+                              // stays locked, since there's no "undo" for
+                              // something several cycles behind by now.
+                              allowToggle: isSelectedDayToday,
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (_) => ReminderDetailScreen(
@@ -167,10 +177,16 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                               ),
                               onComplete: () => runGuarded(
                                 context,
-                                () => ref
-                                    .read(reminderActionsProvider)
-                                    .complete(entry.reminder.id),
-                                successMessage: l10n.reminderCompletedFeedback,
+                                () => entry.completed
+                                    ? ref
+                                          .read(reminderActionsProvider)
+                                          .uncomplete(entry.reminder.id)
+                                    : ref
+                                          .read(reminderActionsProvider)
+                                          .complete(entry.reminder.id),
+                                successMessage: entry.completed
+                                    ? null
+                                    : l10n.reminderCompletedFeedback,
                               ),
                               onSnooze: () => runGuarded(
                                 context,

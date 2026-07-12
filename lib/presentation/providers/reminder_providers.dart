@@ -127,6 +127,17 @@ class ReminderActions {
     }
   }
 
+  /// Undoes [complete] for a reminder marked done earlier today — always
+  /// leaves it due today again and re-schedules its notification, since
+  /// undoing anything but today's own completion isn't offered anywhere
+  /// in the UI (see ReminderRepository.uncomplete).
+  Future<void> uncomplete(int reminderId) async {
+    final updated = await _ref
+        .read(reminderRepositoryProvider)
+        .uncomplete(reminderId);
+    await _ref.read(alarmSchedulerServiceProvider).scheduleForReminder(updated);
+  }
+
   Future<(bool, String?)> snooze(int reminderId, DateTime snoozeUntil) async {
     final updated = await _ref
         .read(reminderRepositoryProvider)

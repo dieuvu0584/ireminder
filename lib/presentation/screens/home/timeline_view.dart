@@ -219,6 +219,12 @@ class _TodaySection extends ConsumerWidget {
             completed: entry.completed,
             historical: entry.historical,
             occurrenceDate: today,
+            // Today's own entries stay correctable same-day — a skip
+            // never lands on today (autoSkipOverdue only ever fires for
+            // days strictly before today), so the only historical state
+            // reachable here is "completed today", and toggling it back
+            // just undoes that.
+            allowToggle: true,
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) => ReminderDetailScreen(reminder: entry.reminder),
@@ -226,11 +232,16 @@ class _TodaySection extends ConsumerWidget {
             ),
             onComplete: () => runGuarded(
               context,
-              () =>
-                  ref.read(reminderActionsProvider).complete(entry.reminder.id),
-              successMessage: AppLocalizations.of(
-                context,
-              ).reminderCompletedFeedback,
+              () => entry.completed
+                  ? ref
+                        .read(reminderActionsProvider)
+                        .uncomplete(entry.reminder.id)
+                  : ref
+                        .read(reminderActionsProvider)
+                        .complete(entry.reminder.id),
+              successMessage: entry.completed
+                  ? null
+                  : AppLocalizations.of(context).reminderCompletedFeedback,
             ),
             onSnooze: () => runGuarded(
               context,
