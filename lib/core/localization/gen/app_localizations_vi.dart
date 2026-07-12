@@ -60,17 +60,27 @@ class AppLocalizationsVi extends AppLocalizations {
   String get onboardingGetStarted => 'Bắt đầu';
 
   @override
-  String get notificationPermissionTitle => 'Không bỏ lỡ việc cần làm';
+  String get permissionCheckTitle => 'Kiểm tra quyền';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder cần quyền gửi thông báo để nhắc bạn khi đến hạn.';
+  String get permissionCheckIntro =>
+      'iReminder cần đủ 3 quyền dưới đây để nhắc nhở đúng giờ. Khi cấp quyền \"Báo thức chính xác\", máy có thể chuyển sang màn hình Cài đặt hệ thống — đó là bình thường.';
 
   @override
-  String get notificationPermissionAllow => 'Cho phép thông báo';
+  String get permissionCheckContinueAction => 'Tiếp tục';
 
   @override
-  String get notificationPermissionLater => 'Để sau';
+  String get permissionCheckIncompleteTitle => 'Chưa cấp đủ quyền';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Nếu thiếu các quyền này, nhắc nhở có thể không hoạt động chính xác. Bạn có thể cấp sau trong Cài đặt, nhưng rất dễ quên.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Quay lại cấp quyền';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Vẫn tiếp tục';
 
   @override
   String get homeSectionOverdue => 'Quá hạn';
@@ -578,13 +588,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Mở cài đặt';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Thêm một quyền nữa';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Ở màn hình tiếp theo, hãy cho phép iReminder đặt báo thức chính xác để nhắc nhở hiện đúng giờ bạn đã chọn.';
 
   @override
   String get loanMarkPaidSuccess => 'Đã đánh dấu là đã trả';

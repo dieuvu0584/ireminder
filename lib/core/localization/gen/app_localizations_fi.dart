@@ -60,17 +60,27 @@ class AppLocalizationsFi extends AppLocalizations {
   String get onboardingGetStarted => 'Aloita';
 
   @override
-  String get notificationPermissionTitle => 'Pysy aikataulussa';
+  String get permissionCheckTitle => 'Tarkista käyttöoikeudet';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder tarvitsee luvan lähettää sinulle ilmoituksia, kun jokin erääntyy.';
+  String get permissionCheckIntro =>
+      'iReminder tarvitsee nämä 3 käyttöoikeutta muistuttaakseen sinua luotettavasti juuri oikeaan aikaan. \"Tarkka herätys\"-oikeuden myöntäminen saattaa avata järjestelmäasetukset — se on normaalia.';
 
   @override
-  String get notificationPermissionAllow => 'Salli ilmoitukset';
+  String get permissionCheckContinueAction => 'Jatka';
 
   @override
-  String get notificationPermissionLater => 'Ei nyt';
+  String get permissionCheckIncompleteTitle => 'Käyttöoikeudet puutteelliset';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Muistutukset eivät välttämättä laukea luotettavasti ilman näitä käyttöoikeuksia. Voit myöntää ne myöhemmin asetuksista, mutta se unohtuu helposti.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Palaa ja myönnä';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Jatka silti';
 
   @override
   String get homeSectionOverdue => 'Myöhässä';
@@ -582,13 +592,6 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Avaa asetukset';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Vielä yksi lupa';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Seuraavalla näytöllä salli iReminderin ajastaa tarkkoja hälytyksiä, jotta muistutukset laukeavat juuri sinä ajankohtana, jonka olet asettanut.';
 
   @override
   String get loanMarkPaidSuccess => 'Merkitty maksetuksi';

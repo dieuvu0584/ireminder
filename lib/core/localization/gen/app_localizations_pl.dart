@@ -60,17 +60,27 @@ class AppLocalizationsPl extends AppLocalizations {
   String get onboardingGetStarted => 'Zaczynajmy';
 
   @override
-  String get notificationPermissionTitle => 'Nie przegap terminu';
+  String get permissionCheckTitle => 'Sprawdź uprawnienia';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder potrzebuje zgody na wysyłanie powiadomień, gdy zbliża się termin.';
+  String get permissionCheckIntro =>
+      'iReminder potrzebuje tych 3 uprawnień, aby niezawodnie powiadamiać Cię dokładnie o wyznaczonej porze. Przyznanie uprawnienia \"Dokładny alarm\" może otworzyć ekran ustawień systemowych — to normalne.';
 
   @override
-  String get notificationPermissionAllow => 'Zezwól na powiadomienia';
+  String get permissionCheckContinueAction => 'Kontynuuj';
 
   @override
-  String get notificationPermissionLater => 'Nie teraz';
+  String get permissionCheckIncompleteTitle => 'Uprawnienia niekompletne';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Bez tych uprawnień przypomnienia mogą nie działać niezawodnie. Możesz przyznać je później w Ustawieniach, ale łatwo o tym zapomnieć.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Wróć i przyznaj';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Kontynuuj mimo to';
 
   @override
   String get homeSectionOverdue => 'Zaległe';
@@ -579,13 +589,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Otwórz ustawienia';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Jeszcze jedna zgoda';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Na następnym ekranie zezwól iReminder na ustawianie precyzyjnych alarmów, aby przypomnienia pojawiały się dokładnie o ustawionej godzinie.';
 
   @override
   String get loanMarkPaidSuccess => 'Oznaczono jako spłacone';

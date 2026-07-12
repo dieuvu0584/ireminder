@@ -60,17 +60,27 @@ class AppLocalizationsCs extends AppLocalizations {
   String get onboardingGetStarted => 'Začít';
 
   @override
-  String get notificationPermissionTitle => 'Nic nezmeškejte';
+  String get permissionCheckTitle => 'Zkontrolovat oprávnění';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder potřebuje oprávnění k zasílání oznámení, když se něco blíží.';
+  String get permissionCheckIntro =>
+      'Aplikace iReminder potřebuje tato 3 oprávnění, aby vás spolehlivě upozornila přesně v nastavený čas. Udělení oprávnění \"Přesný budík\" může otevřít obrazovku systémových nastavení — to je v pořádku.';
 
   @override
-  String get notificationPermissionAllow => 'Povolit oznámení';
+  String get permissionCheckContinueAction => 'Pokračovat';
 
   @override
-  String get notificationPermissionLater => 'Teď ne';
+  String get permissionCheckIncompleteTitle => 'Oprávnění nejsou úplná';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Bez těchto oprávnění se připomenutí nemusí spolehlivě spouštět. Můžete je udělit později v Nastavení, ale snadno se na to zapomíná.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Zpět a udělit';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Přesto pokračovat';
 
   @override
   String get homeSectionOverdue => 'Po termínu';
@@ -582,13 +592,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Otevřít nastavení';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Ještě jedno oprávnění';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Na další obrazovce povolte aplikaci iReminder plánovat přesné budíky, aby se připomínky spouštěly přesně v nastavený čas.';
 
   @override
   String get loanMarkPaidSuccess => 'Označeno jako zaplaceno';

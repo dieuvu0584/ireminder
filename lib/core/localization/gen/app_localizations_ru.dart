@@ -60,17 +60,27 @@ class AppLocalizationsRu extends AppLocalizations {
   String get onboardingGetStarted => 'Начать';
 
   @override
-  String get notificationPermissionTitle => 'Ничего не пропустите';
+  String get permissionCheckTitle => 'Проверка разрешений';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder нужно разрешение на отправку уведомлений, когда наступает срок.';
+  String get permissionCheckIntro =>
+      'Приложению iReminder нужны эти 3 разрешения, чтобы надёжно напоминать вам точно в срок. Предоставление разрешения «Точный будильник» может открыть экран системных настроек — это нормально.';
 
   @override
-  String get notificationPermissionAllow => 'Разрешить уведомления';
+  String get permissionCheckContinueAction => 'Продолжить';
 
   @override
-  String get notificationPermissionLater => 'Не сейчас';
+  String get permissionCheckIncompleteTitle => 'Разрешения не полные';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Без этих разрешений напоминания могут срабатывать ненадёжно. Вы можете предоставить их позже в настройках, но это легко забыть.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Вернуться и предоставить';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Всё равно продолжить';
 
   @override
   String get homeSectionOverdue => 'Просрочено';
@@ -580,13 +590,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Открыть настройки';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Ещё одно разрешение';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'На следующем экране разрешите iReminder планировать точные будильники, чтобы напоминания приходили точно в заданное время.';
 
   @override
   String get loanMarkPaidSuccess => 'Отмечено как оплачено';

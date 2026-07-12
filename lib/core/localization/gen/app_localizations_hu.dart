@@ -60,17 +60,27 @@ class AppLocalizationsHu extends AppLocalizations {
   String get onboardingGetStarted => 'Kezdjük';
 
   @override
-  String get notificationPermissionTitle => 'Ne csússz le semmiről';
+  String get permissionCheckTitle => 'Engedélyek ellenőrzése';
 
   @override
-  String get notificationPermissionBody =>
-      'Az iReminder engedélyt kér, hogy értesítést küldhessen, amikor valami esedékessé válik.';
+  String get permissionCheckIntro =>
+      'Az iReminder-nek erre a 3 engedélyre van szüksége ahhoz, hogy pontosan a beállított időpontban megbízhatóan értesítsen. A \"Pontos ébresztő\" engedélyezése rendszerbeállítások képernyőre irányíthat — ez normális.';
 
   @override
-  String get notificationPermissionAllow => 'Értesítések engedélyezése';
+  String get permissionCheckContinueAction => 'Folytatás';
 
   @override
-  String get notificationPermissionLater => 'Most nem';
+  String get permissionCheckIncompleteTitle => 'Az engedélyek hiányosak';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Ezen engedélyek nélkül előfordulhat, hogy az emlékeztetők nem indulnak el megbízhatóan. Később a Beállításokban is megadhatod őket, de könnyű elfelejteni.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Vissza és engedélyezés';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Folytatás mindenképp';
 
   @override
   String get homeSectionOverdue => 'Lejárt';
@@ -585,13 +595,6 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Beállítások megnyitása';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Még egy engedély';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'A következő képernyőn engedélyezd, hogy az iReminder pontos riasztásokat ütemezzen, hogy az emlékeztetők pontosan a beállított időpontban jelenjenek meg.';
 
   @override
   String get loanMarkPaidSuccess => 'Kifizetettként megjelölve';

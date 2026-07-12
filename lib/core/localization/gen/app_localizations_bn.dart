@@ -60,17 +60,27 @@ class AppLocalizationsBn extends AppLocalizations {
   String get onboardingGetStarted => 'শুরু করুন';
 
   @override
-  String get notificationPermissionTitle => 'সময়মতো থাকুন';
+  String get permissionCheckTitle => 'অনুমতি পরীক্ষা করুন';
 
   @override
-  String get notificationPermissionBody =>
-      'কোনো কিছুর সময় হয়ে গেলে আপনাকে জানাতে iReminder-এর নোটিফিকেশন পাঠানোর অনুমতি প্রয়োজন।';
+  String get permissionCheckIntro =>
+      'নির্ধারিত সঠিক সময়ে আপনাকে নির্ভরযোগ্যভাবে জানাতে iReminder-এর এই ৩টি অনুমতি প্রয়োজন। \"সঠিক অ্যালার্ম\" অনুমতি দিলে সিস্টেম সেটিংস স্ক্রিনে যেতে পারে — এটি স্বাভাবিক।';
 
   @override
-  String get notificationPermissionAllow => 'নোটিফিকেশনের অনুমতি দিন';
+  String get permissionCheckContinueAction => 'চালিয়ে যান';
 
   @override
-  String get notificationPermissionLater => 'এখন নয়';
+  String get permissionCheckIncompleteTitle => 'অনুমতি অসম্পূর্ণ';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'এই অনুমতি ছাড়া রিমাইন্ডার নির্ভরযোগ্যভাবে বাজতে নাও পারে। আপনি পরে সেটিংস থেকে দিতে পারবেন, তবে ভুলে যাওয়া সহজ।';
+
+  @override
+  String get permissionCheckIncompleteStay => 'ফিরে গিয়ে অনুমতি দিন';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'তবুও চালিয়ে যান';
 
   @override
   String get homeSectionOverdue => 'মেয়াদোত্তীর্ণ';
@@ -577,13 +587,6 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'সেটিংস খুলুন';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'আরও একটি অনুমতি';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'পরের স্ক্রিনে, iReminder-কে নির্ভুল অ্যালার্ম শিডিউল করার অনুমতি দিন যাতে আপনার নির্ধারিত সময়েই রিমাইন্ডার আসে।';
 
   @override
   String get loanMarkPaidSuccess => 'পরিশোধিত হিসেবে চিহ্নিত হয়েছে';

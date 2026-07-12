@@ -60,17 +60,27 @@ class AppLocalizationsSw extends AppLocalizations {
   String get onboardingGetStarted => 'Anza';
 
   @override
-  String get notificationPermissionTitle => 'Usichelewe';
+  String get permissionCheckTitle => 'Angalia ruhusa';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder inahitaji ruhusa ya kukutumia arifa wakati kitu kinapokaribia muda wake.';
+  String get permissionCheckIntro =>
+      'iReminder inahitaji ruhusa hizi 3 ili kukukumbusha kwa uhakika kwa wakati halisi uliopanga. Kutoa ruhusa ya \"Kengele sahihi\" kunaweza kufungua skrini ya Mipangilio ya mfumo — hilo ni la kawaida.';
 
   @override
-  String get notificationPermissionAllow => 'Ruhusu arifa';
+  String get permissionCheckContinueAction => 'Endelea';
 
   @override
-  String get notificationPermissionLater => 'Si sasa';
+  String get permissionCheckIncompleteTitle => 'Ruhusa hazijakamilika';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Vikumbusho vinaweza kutofanya kazi kwa uhakika bila ruhusa hizi. Unaweza kuzitoa baadaye kwenye Mipangilio, lakini ni rahisi kusahau.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Rudi na utoe';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Endelea hata hivyo';
 
   @override
   String get homeSectionOverdue => 'Zilizochelewa';
@@ -579,13 +589,6 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Fungua mipangilio';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Ruhusa moja zaidi';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Kwenye skrini inayofuata, ruhusu iReminder kupanga kengele sahihi ili vikumbusho vifike kwa wakati hasa ulioweka.';
 
   @override
   String get loanMarkPaidSuccess => 'Imewekwa alama kuwa imelipwa';

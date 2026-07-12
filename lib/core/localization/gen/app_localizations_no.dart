@@ -60,17 +60,27 @@ class AppLocalizationsNo extends AppLocalizations {
   String get onboardingGetStarted => 'Kom i gang';
 
   @override
-  String get notificationPermissionTitle => 'Ikke gå glipp av noe';
+  String get permissionCheckTitle => 'Sjekk tillatelser';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder trenger tillatelse til å sende deg varsler når noe forfaller.';
+  String get permissionCheckIntro =>
+      'iReminder trenger disse 3 tillatelsene for å kunne varsle deg pålitelig til nøyaktig angitt tid. Å gi \"Nøyaktig alarm\" kan åpne en systeminnstillingsskjerm — det er normalt.';
 
   @override
-  String get notificationPermissionAllow => 'Tillat varsler';
+  String get permissionCheckContinueAction => 'Fortsett';
 
   @override
-  String get notificationPermissionLater => 'Ikke nå';
+  String get permissionCheckIncompleteTitle => 'Tillatelser er ufullstendige';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Påminnelser vil kanskje ikke utløses pålitelig uten disse tillatelsene. Du kan gi dem senere i Innstillinger, men det er lett å glemme.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Gå tilbake og gi';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Fortsett likevel';
 
   @override
   String get homeSectionOverdue => 'Forfalt';
@@ -579,13 +589,6 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Åpne innstillinger';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Én tillatelse til';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'På neste skjerm, la iReminder planlegge presise alarmer slik at påminnelser utløses akkurat på tidspunktet du har valgt.';
 
   @override
   String get loanMarkPaidSuccess => 'Merket som betalt';

@@ -59,17 +59,27 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboardingGetStarted => 'はじめる';
 
   @override
-  String get notificationPermissionTitle => '期限に遅れない';
+  String get permissionCheckTitle => '権限を確認';
 
   @override
-  String get notificationPermissionBody =>
-      '期限が近づいたときに通知するため、iReminderに通知の許可が必要です。';
+  String get permissionCheckIntro =>
+      'iReminder が正確な時刻に通知するには、次の3つの権限が必要です。「正確なアラーム」を許可すると、システム設定画面に移動することがありますが、これは想定内の動作です。';
 
   @override
-  String get notificationPermissionAllow => '通知を許可';
+  String get permissionCheckContinueAction => '続ける';
 
   @override
-  String get notificationPermissionLater => 'あとで';
+  String get permissionCheckIncompleteTitle => '権限が不足しています';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'これらの権限がないと、リマインダーが確実に通知されない場合があります。後から設定画面で許可することもできますが、忘れやすいのでご注意ください。';
+
+  @override
+  String get permissionCheckIncompleteStay => '戻って許可する';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'このまま続ける';
 
   @override
   String get homeSectionOverdue => '期限切れ';
@@ -570,13 +580,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => '設定を開く';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'もう1つ権限が必要です';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      '次の画面で、iReminderが正確なアラームを設定できるように許可してください。これにより、設定した時刻通りにリマインダーが届きます。';
 
   @override
   String get loanMarkPaidSuccess => '支払い済みにしました';

@@ -60,17 +60,27 @@ class AppLocalizationsPa extends AppLocalizations {
   String get onboardingGetStarted => 'ਸ਼ੁਰੂ ਕਰੋ';
 
   @override
-  String get notificationPermissionTitle => 'ਸਮੇਂ ਸਿਰ ਰਹੋ';
+  String get permissionCheckTitle => 'ਅਧਿਕਾਰ ਜਾਂਚੋ';
 
   @override
-  String get notificationPermissionBody =>
-      'ਜਦੋਂ ਕੋਈ ਚੀਜ਼ ਬਾਕੀ ਹੋਵੇ ਤਾਂ ਤੁਹਾਨੂੰ ਸੂਚਨਾ ਭੇਜਣ ਲਈ iReminder ਨੂੰ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਹੈ।';
+  String get permissionCheckIntro =>
+      'ਤੁਹਾਡੇ ਵੱਲੋਂ ਸੈੱਟ ਕੀਤੇ ਸਹੀ ਸਮੇਂ \'ਤੇ ਭਰੋਸੇਯੋਗ ਢੰਗ ਨਾਲ ਸੂਚਿਤ ਕਰਨ ਲਈ iReminder ਨੂੰ ਇਹ 3 ਅਧਿਕਾਰ ਚਾਹੀਦੇ ਹਨ। \"ਸਟੀਕ ਅਲਾਰਮ\" ਦੇਣ ਨਾਲ ਸਿਸਟਮ ਸੈਟਿੰਗਜ਼ ਸਕਰੀਨ ਖੁੱਲ੍ਹ ਸਕਦੀ ਹੈ — ਇਹ ਆਮ ਗੱਲ ਹੈ।';
 
   @override
-  String get notificationPermissionAllow => 'ਸੂਚਨਾਵਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ';
+  String get permissionCheckContinueAction => 'ਜਾਰੀ ਰੱਖੋ';
 
   @override
-  String get notificationPermissionLater => 'ਹੁਣ ਨਹੀਂ';
+  String get permissionCheckIncompleteTitle => 'ਅਧਿਕਾਰ ਅਧੂਰੇ ਹਨ';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'ਇਹਨਾਂ ਅਧਿਕਾਰਾਂ ਤੋਂ ਬਿਨਾਂ ਯਾਦ-ਦਹਾਨੀਆਂ ਭਰੋਸੇਯੋਗ ਢੰਗ ਨਾਲ ਕੰਮ ਨਹੀਂ ਕਰ ਸਕਦੀਆਂ। ਤੁਸੀਂ ਬਾਅਦ ਵਿੱਚ ਸੈਟਿੰਗਾਂ ਤੋਂ ਦੇ ਸਕਦੇ ਹੋ, ਪਰ ਭੁੱਲਣਾ ਸੌਖਾ ਹੈ।';
+
+  @override
+  String get permissionCheckIncompleteStay => 'ਵਾਪਸ ਜਾ ਕੇ ਦਿਓ';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'ਫਿਰ ਵੀ ਜਾਰੀ ਰੱਖੋ';
 
   @override
   String get homeSectionOverdue => 'ਮਿਆਦ ਖਤਮ';
@@ -580,13 +590,6 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'ਇੱਕ ਹੋਰ ਇਜਾਜ਼ਤ';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'ਅਗਲੀ ਸਕ੍ਰੀਨ \'ਤੇ, iReminder ਨੂੰ ਸਟੀਕ ਅਲਾਰਮ ਸੈੱਟ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ ਤਾਂ ਜੋ ਰਿਮਾਈਂਡਰ ਤੁਹਾਡੇ ਵੱਲੋਂ ਸੈੱਟ ਕੀਤੇ ਸਹੀ ਸਮੇਂ \'ਤੇ ਆਉਣ।';
 
   @override
   String get loanMarkPaidSuccess => 'ਅਦਾ ਕੀਤੀ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਇਆ ਗਿਆ';

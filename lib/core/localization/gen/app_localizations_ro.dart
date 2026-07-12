@@ -60,17 +60,27 @@ class AppLocalizationsRo extends AppLocalizations {
   String get onboardingGetStarted => 'Începe';
 
   @override
-  String get notificationPermissionTitle => 'Rămâi la timp';
+  String get permissionCheckTitle => 'Verifică permisiunile';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder are nevoie de permisiunea de a-ți trimite notificări atunci când ceva este scadent.';
+  String get permissionCheckIntro =>
+      'iReminder are nevoie de aceste 3 permisiuni pentru a te anunța fiabil la ora exactă. Acordarea permisiunii \"Alarmă exactă\" poate deschide un ecran de setări de sistem — este normal.';
 
   @override
-  String get notificationPermissionAllow => 'Permite notificările';
+  String get permissionCheckContinueAction => 'Continuă';
 
   @override
-  String get notificationPermissionLater => 'Nu acum';
+  String get permissionCheckIncompleteTitle => 'Permisiuni incomplete';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Fără aceste permisiuni, mementourile ar putea să nu se declanșeze fiabil. Le poți acorda mai târziu din Setări, dar e ușor să uiți.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Înapoi și acordă';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Continuă oricum';
 
   @override
   String get homeSectionOverdue => 'Restante';
@@ -585,13 +595,6 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Deschide setările';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Încă o permisiune';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Pe ecranul următor, permite-i iReminder să programeze alarme exacte, astfel încât mementourile să apară exact la ora setată de tine.';
 
   @override
   String get loanMarkPaidSuccess => 'Marcat ca plătit';

@@ -60,17 +60,27 @@ class AppLocalizationsMr extends AppLocalizations {
   String get onboardingGetStarted => 'सुरुवात करा';
 
   @override
-  String get notificationPermissionTitle => 'वेळेवर रहा';
+  String get permissionCheckTitle => 'परवानग्या तपासा';
 
   @override
-  String get notificationPermissionBody =>
-      'एखादी गोष्ट देय झाल्यावर सूचना पाठवण्यासाठी iReminder ला परवानगी हवी आहे.';
+  String get permissionCheckIntro =>
+      'तुम्ही ठरवलेल्या नेमक्या वेळी विश्वासार्हपणे सूचित करण्यासाठी iReminder ला या 3 परवानग्या हव्या आहेत. \"अचूक अलार्म\" दिल्यास सिस्टम सेटिंग्ज स्क्रीन उघडू शकते — हे सामान्य आहे.';
 
   @override
-  String get notificationPermissionAllow => 'सूचनांना परवानगी द्या';
+  String get permissionCheckContinueAction => 'पुढे सुरू ठेवा';
 
   @override
-  String get notificationPermissionLater => 'आत्ता नको';
+  String get permissionCheckIncompleteTitle => 'परवानग्या अपूर्ण आहेत';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'या परवानग्यांशिवाय स्मरणपत्रे विश्वासार्हपणे कार्य करू शकत नाहीत. तुम्ही नंतर सेटिंग्जमधून देऊ शकता, पण विसरणे सोपे आहे.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'मागे जाऊन द्या';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'तरीही पुढे सुरू ठेवा';
 
   @override
   String get homeSectionOverdue => 'मुदत उलटलेले';
@@ -578,13 +588,6 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'सेटिंग्ज उघडा';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'आणखी एक परवानगी';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'पुढच्या स्क्रीनवर, तुम्ही ठरवलेल्या अचूक वेळी रिमाइंडर वाजण्यासाठी iReminder ला अचूक अलार्म शेड्यूल करण्याची परवानगी द्या.';
 
   @override
   String get loanMarkPaidSuccess => 'भरलं म्हणून चिन्हांकित केलं';

@@ -59,17 +59,27 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingGetStarted => '시작하기';
 
   @override
-  String get notificationPermissionTitle => '일정을 놓치지 마세요';
+  String get permissionCheckTitle => '권한 확인';
 
   @override
-  String get notificationPermissionBody =>
-      '마감일이 다가올 때 알려드리려면 iReminder에 알림 권한이 필요해요.';
+  String get permissionCheckIntro =>
+      'iReminder가 설정한 정확한 시간에 알림을 보내려면 아래 3가지 권한이 필요합니다. \"정확한 알람\" 권한을 허용하면 시스템 설정 화면으로 이동할 수 있습니다 — 정상적인 동작입니다.';
 
   @override
-  String get notificationPermissionAllow => '알림 허용';
+  String get permissionCheckContinueAction => '계속';
 
   @override
-  String get notificationPermissionLater => '나중에';
+  String get permissionCheckIncompleteTitle => '권한이 완료되지 않음';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      '이 권한이 없으면 알림이 정확히 울리지 않을 수 있습니다. 나중에 설정에서 허용할 수 있지만 잊기 쉽습니다.';
+
+  @override
+  String get permissionCheckIncompleteStay => '돌아가서 허용';
+
+  @override
+  String get permissionCheckIncompleteContinue => '그래도 계속';
 
   @override
   String get homeSectionOverdue => '기한 지남';
@@ -570,13 +580,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => '설정 열기';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => '권한이 하나 더 필요해요';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      '다음 화면에서 iReminder가 정확한 알람을 예약할 수 있도록 허용해 주세요. 그래야 설정한 시간에 정확히 알림이 울려요.';
 
   @override
   String get loanMarkPaidSuccess => '납부 완료로 표시했어요';

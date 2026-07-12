@@ -60,17 +60,27 @@ class AppLocalizationsDa extends AppLocalizations {
   String get onboardingGetStarted => 'Kom i gang';
 
   @override
-  String get notificationPermissionTitle => 'Kom ikke for sent';
+  String get permissionCheckTitle => 'Tjek tilladelser';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder skal bruge tilladelse til at sende dig notifikationer, når noget er ved at forfalde.';
+  String get permissionCheckIntro =>
+      'iReminder skal bruge disse 3 tilladelser for at kunne give dig pålidelige påmindelser præcis på det angivne tidspunkt. At give \"Præcis alarm\" kan åbne en systemindstillingsskærm — det er normalt.';
 
   @override
-  String get notificationPermissionAllow => 'Tillad notifikationer';
+  String get permissionCheckContinueAction => 'Fortsæt';
 
   @override
-  String get notificationPermissionLater => 'Ikke nu';
+  String get permissionCheckIncompleteTitle => 'Tilladelser er ufuldstændige';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Påmindelser udløses muligvis ikke pålideligt uden disse tilladelser. Du kan give dem senere i Indstillinger, men det er let at glemme.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Gå tilbage og giv';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Fortsæt alligevel';
 
   @override
   String get homeSectionOverdue => 'Overskredet';
@@ -580,13 +590,6 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Åbn indstillinger';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Én tilladelse mere';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'På næste skærm skal du give iReminder lov til at planlægge præcise alarmer, så påmindelser udløses præcis på det tidspunkt, du har valgt.';
 
   @override
   String get loanMarkPaidSuccess => 'Markeret som betalt';

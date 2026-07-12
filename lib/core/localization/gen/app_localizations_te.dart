@@ -60,17 +60,27 @@ class AppLocalizationsTe extends AppLocalizations {
   String get onboardingGetStarted => 'ప్రారంభించండి';
 
   @override
-  String get notificationPermissionTitle => 'సమయానికి ఉండండి';
+  String get permissionCheckTitle => 'అనుమతులను తనిఖీ చేయండి';
 
   @override
-  String get notificationPermissionBody =>
-      'ఏదైనా గడువు వచ్చినప్పుడు మీకు నోటిఫికేషన్ పంపడానికి iReminder కు అనుమతి అవసరం.';
+  String get permissionCheckIntro =>
+      'మీరు సెట్ చేసిన ఖచ్చితమైన సమయానికి నమ్మకంగా తెలియజేయడానికి iReminder కి ఈ 3 అనుమతులు అవసరం. \"ఖచ్చితమైన అలారం\" మంజూరు చేస్తే సిస్టమ్ సెట్టింగ్‌ల స్క్రీన్‌కు వెళ్లవచ్చు — ఇది సాధారణమే.';
 
   @override
-  String get notificationPermissionAllow => 'నోటిఫికేషన్‌లను అనుమతించండి';
+  String get permissionCheckContinueAction => 'కొనసాగించు';
 
   @override
-  String get notificationPermissionLater => 'ఇప్పుడు వద్దు';
+  String get permissionCheckIncompleteTitle => 'అనుమతులు అసంపూర్ణంగా ఉన్నాయి';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'ఈ అనుమతులు లేకుండా రిమైండర్‌లు నమ్మకంగా పని చేయకపోవచ్చు. మీరు తర్వాత సెట్టింగ్‌ల నుండి మంజూరు చేయవచ్చు, కానీ మర్చిపోవడం సులభం.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'వెనక్కి వెళ్లి మంజూరు చేయండి';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'అయినా కొనసాగించు';
 
   @override
   String get homeSectionOverdue => 'గడువు మించినవి';
@@ -582,13 +592,6 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'సెట్టింగ్‌లను తెరవండి';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'మరో అనుమతి';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'తదుపరి స్క్రీన్‌లో, మీరు సెట్ చేసిన ఖచ్చితమైన సమయానికి రిమైండర్‌లు రావడానికి ఖచ్చితమైన అలారాలను షెడ్యూల్ చేయడానికి iReminder ను అనుమతించండి.';
 
   @override
   String get loanMarkPaidSuccess => 'చెల్లించినట్లు గుర్తించారు';

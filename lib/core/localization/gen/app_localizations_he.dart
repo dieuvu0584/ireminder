@@ -60,17 +60,27 @@ class AppLocalizationsHe extends AppLocalizations {
   String get onboardingGetStarted => 'בואו נתחיל';
 
   @override
-  String get notificationPermissionTitle => 'הישארו בזמן';
+  String get permissionCheckTitle => 'בדיקת הרשאות';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder זקוקה להרשאה כדי לשלוח לכם התראות כשמשהו עומד לפוג.';
+  String get permissionCheckIntro =>
+      'ל-iReminder דרושות 3 ההרשאות הללו כדי להתריע לך באופן אמין בדיוק בזמן שנקבע. מתן הרשאת \"התראה מדויקת\" עשוי לפתוח מסך הגדרות מערכת — זה תקין.';
 
   @override
-  String get notificationPermissionAllow => 'אפשר התראות';
+  String get permissionCheckContinueAction => 'המשך';
 
   @override
-  String get notificationPermissionLater => 'לא עכשיו';
+  String get permissionCheckIncompleteTitle => 'ההרשאות אינן שלמות';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'ייתכן שתזכורות לא יופעלו באופן אמין ללא ההרשאות הללו. תוכל להעניק אותן מאוחר יותר דרך ההגדרות, אך קל לשכוח זאת.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'חזרה והענקה';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'המשך בכל זאת';
 
   @override
   String get homeSectionOverdue => 'באיחור';
@@ -576,13 +586,6 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'פתח הגדרות';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'עוד הרשאה אחת';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'במסך הבא, אפשרו ל-iReminder לתזמן אזעקות מדויקות כדי שהתזכורות יופעלו בדיוק בשעה שקבעתם.';
 
   @override
   String get loanMarkPaidSuccess => 'סומן כשולם';

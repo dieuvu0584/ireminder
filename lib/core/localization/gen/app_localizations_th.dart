@@ -60,17 +60,27 @@ class AppLocalizationsTh extends AppLocalizations {
   String get onboardingGetStarted => 'เริ่มต้นใช้งาน';
 
   @override
-  String get notificationPermissionTitle => 'ไม่พลาดทุกกำหนดการ';
+  String get permissionCheckTitle => 'ตรวจสอบสิทธิ์';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder ต้องการสิทธิ์ส่งการแจ้งเตือนเพื่อเตือนคุณเมื่อถึงกำหนด';
+  String get permissionCheckIntro =>
+      'iReminder ต้องการสิทธิ์ทั้ง 3 นี้เพื่อแจ้งเตือนคุณได้ตรงเวลาอย่างแม่นยำ การอนุญาต \"ปลุกตรงเวลา\" อาจพาไปยังหน้าตั้งค่าระบบ — เป็นเรื่องปกติ';
 
   @override
-  String get notificationPermissionAllow => 'อนุญาตการแจ้งเตือน';
+  String get permissionCheckContinueAction => 'ดำเนินการต่อ';
 
   @override
-  String get notificationPermissionLater => 'ไว้ทีหลัง';
+  String get permissionCheckIncompleteTitle => 'สิทธิ์ยังไม่ครบ';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'การแจ้งเตือนอาจทำงานไม่แม่นยำหากไม่ได้รับสิทธิ์เหล่านี้ คุณสามารถอนุญาตภายหลังได้ในการตั้งค่า แต่ก็ลืมได้ง่าย';
+
+  @override
+  String get permissionCheckIncompleteStay => 'กลับไปอนุญาต';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'ดำเนินการต่อเช่นเดิม';
 
   @override
   String get homeSectionOverdue => 'เลยกำหนด';
@@ -581,13 +591,6 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'เปิดการตั้งค่า';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'อีกหนึ่งสิทธิ์การใช้งาน';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'ในหน้าจอถัดไป กรุณาอนุญาตให้ iReminder ตั้งปลุกแบบตรงเวลา เพื่อให้การแจ้งเตือนมาตรงเวลาที่คุณตั้งไว้';
 
   @override
   String get loanMarkPaidSuccess => 'ทำเครื่องหมายว่าชำระแล้ว';

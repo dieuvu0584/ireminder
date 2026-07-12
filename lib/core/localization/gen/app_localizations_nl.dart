@@ -60,17 +60,27 @@ class AppLocalizationsNl extends AppLocalizations {
   String get onboardingGetStarted => 'Aan de slag';
 
   @override
-  String get notificationPermissionTitle => 'Mis nooit meer een deadline';
+  String get permissionCheckTitle => 'Machtigingen controleren';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder heeft toestemming nodig om je een melding te sturen wanneer iets moet gebeuren.';
+  String get permissionCheckIntro =>
+      'iReminder heeft deze 3 machtigingen nodig om je betrouwbaar op het exacte tijdstip te melden. Het verlenen van \"Exact alarm\" kan naar een systeeminstellingenscherm leiden — dat is normaal.';
 
   @override
-  String get notificationPermissionAllow => 'Meldingen toestaan';
+  String get permissionCheckContinueAction => 'Doorgaan';
 
   @override
-  String get notificationPermissionLater => 'Niet nu';
+  String get permissionCheckIncompleteTitle => 'Machtigingen onvolledig';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Herinneringen werken mogelijk niet betrouwbaar zonder deze machtigingen. Je kunt ze later alsnog verlenen via Instellingen, maar dat wordt makkelijk vergeten.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Terug en verlenen';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Toch doorgaan';
 
   @override
   String get homeSectionOverdue => 'Verlopen';
@@ -584,13 +594,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Instellingen openen';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Nog één toestemming';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Sta iReminder op het volgende scherm toe om exacte alarmen in te stellen, zodat herinneringen precies op het ingestelde tijdstip afgaan.';
 
   @override
   String get loanMarkPaidSuccess => 'Gemarkeerd als betaald';

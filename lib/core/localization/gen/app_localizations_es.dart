@@ -60,17 +60,27 @@ class AppLocalizationsEs extends AppLocalizations {
   String get onboardingGetStarted => 'Empezar';
 
   @override
-  String get notificationPermissionTitle => 'No te pierdas nada';
+  String get permissionCheckTitle => 'Comprobar permisos';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder necesita permiso para enviarte notificaciones cuando algo esté por vencer.';
+  String get permissionCheckIntro =>
+      'iReminder necesita estos 3 permisos para avisarte con fiabilidad a la hora exacta. Conceder \"Alarma exacta\" puede abrir una pantalla de ajustes del sistema — es normal.';
 
   @override
-  String get notificationPermissionAllow => 'Permitir notificaciones';
+  String get permissionCheckContinueAction => 'Continuar';
 
   @override
-  String get notificationPermissionLater => 'Ahora no';
+  String get permissionCheckIncompleteTitle => 'Permisos incompletos';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Es posible que los recordatorios no se activen de forma fiable sin estos permisos. Puedes concederlos más tarde en Ajustes, pero es fácil olvidarlo.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Volver y conceder';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Continuar de todos modos';
 
   @override
   String get homeSectionOverdue => 'Atrasado';
@@ -584,13 +594,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Abrir ajustes';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Un permiso más';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'En la siguiente pantalla, permite que iReminder programe alarmas exactas para que los recordatorios suenen justo a la hora indicada.';
 
   @override
   String get loanMarkPaidSuccess => 'Marcado como pagado';

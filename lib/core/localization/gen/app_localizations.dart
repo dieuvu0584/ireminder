@@ -268,29 +268,47 @@ abstract class AppLocalizations {
   /// **'Get started'**
   String get onboardingGetStarted;
 
-  /// No description provided for @notificationPermissionTitle.
+  /// No description provided for @permissionCheckTitle.
   ///
   /// In en, this message translates to:
-  /// **'Stay on time'**
-  String get notificationPermissionTitle;
+  /// **'Check permissions'**
+  String get permissionCheckTitle;
 
-  /// No description provided for @notificationPermissionBody.
+  /// No description provided for @permissionCheckIntro.
   ///
   /// In en, this message translates to:
-  /// **'iReminder needs permission to send you notifications when something is due.'**
-  String get notificationPermissionBody;
+  /// **'iReminder needs these 3 permissions to reliably notify you at the exact time you set. Granting Exact alarm may take you to a system Settings screen — that\'s expected.'**
+  String get permissionCheckIntro;
 
-  /// No description provided for @notificationPermissionAllow.
+  /// No description provided for @permissionCheckContinueAction.
   ///
   /// In en, this message translates to:
-  /// **'Allow notifications'**
-  String get notificationPermissionAllow;
+  /// **'Continue'**
+  String get permissionCheckContinueAction;
 
-  /// No description provided for @notificationPermissionLater.
+  /// No description provided for @permissionCheckIncompleteTitle.
   ///
   /// In en, this message translates to:
-  /// **'Not now'**
-  String get notificationPermissionLater;
+  /// **'Permissions incomplete'**
+  String get permissionCheckIncompleteTitle;
+
+  /// No description provided for @permissionCheckIncompleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders may not fire reliably without these permissions. You can grant them later from Settings, but it\'s easy to forget.'**
+  String get permissionCheckIncompleteBody;
+
+  /// No description provided for @permissionCheckIncompleteStay.
+  ///
+  /// In en, this message translates to:
+  /// **'Go back and grant'**
+  String get permissionCheckIncompleteStay;
+
+  /// No description provided for @permissionCheckIncompleteContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue anyway'**
+  String get permissionCheckIncompleteContinue;
 
   /// No description provided for @homeSectionOverdue.
   ///
@@ -1245,18 +1263,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open settings'**
   String get settingsPermissionsOpenSettingsAction;
-
-  /// No description provided for @onboardingExactAlarmRationaleTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'One more permission'**
-  String get onboardingExactAlarmRationaleTitle;
-
-  /// No description provided for @onboardingExactAlarmRationaleBody.
-  ///
-  /// In en, this message translates to:
-  /// **'On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set.'**
-  String get onboardingExactAlarmRationaleBody;
 
   /// No description provided for @loanMarkPaidSuccess.
   ///

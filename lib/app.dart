@@ -13,6 +13,7 @@ import 'presentation/providers/repository_providers.dart';
 import 'presentation/providers/settings_providers.dart';
 import 'presentation/screens/home/home_screen.dart';
 import 'presentation/screens/onboarding/onboarding_screen.dart';
+import 'presentation/screens/onboarding/permission_check_screen.dart';
 
 final appBootstrapProvider = FutureProvider<void>((ref) async {
   final notificationService = ref.read(notificationServiceProvider);
@@ -149,9 +150,37 @@ class IReminderApp extends ConsumerWidget {
           },
           home: bootstrap.when(
             data: (_) => settingsAsync.when(
-              data: (settings) => settings.onboardingCompleted
-                  ? const HomeScreen()
-                  : const OnboardingScreen(),
+              data: (settings) {
+                if (!settings.onboardingCompleted) {
+                  return const OnboardingScreen();
+                }
+                // Onboarding only ever asks once and moves on regardless of
+                // outcome (or the user may have revoked a permission later
+                // from system Settings), so re-check on every cold start
+                // and surface the same checklist again rather than letting
+                // a reminder silently never fire with no explanation.
+                // Waits for the check (via .when, not valueOrNull) rather
+                // than defaulting to HomeScreen while loading — the
+                // Navigator only resolves its initial route once, so
+                // picking HomeScreen first and "switching" once the async
+                // check resolves would never actually take effect.
+                final permAsync = ref.watch(permissionStatusProvider);
+                return permAsync.when(
+                  data: (status) {
+                    if (!status.notificationsEnabled ||
+                        !status.exactAlarmsEnabled) {
+                      return PermissionCheckScreen(
+                        onContinue: (ctx) => Navigator.of(ctx).pushReplacement(
+                          MaterialPageRoute(builder: (_) => const HomeScreen()),
+                        ),
+                      );
+                    }
+                    return const HomeScreen();
+                  },
+                  loading: () => const _SplashScreen(),
+                  error: (e, st) => const HomeScreen(),
+                );
+              },
               loading: () => const _SplashScreen(),
               error: (e, st) => const _SplashScreen(),
             ),

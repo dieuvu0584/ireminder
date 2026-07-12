@@ -60,17 +60,27 @@ class AppLocalizationsIt extends AppLocalizations {
   String get onboardingGetStarted => 'Inizia';
 
   @override
-  String get notificationPermissionTitle => 'Non perdere le scadenze';
+  String get permissionCheckTitle => 'Verifica permessi';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder ha bisogno del permesso di inviarti notifiche quando qualcosa è in scadenza.';
+  String get permissionCheckIntro =>
+      'iReminder ha bisogno di questi 3 permessi per avvisarti in modo affidabile all\'ora esatta. Concedere \"Allarme esatto\" potrebbe aprire una schermata delle impostazioni di sistema — è normale.';
 
   @override
-  String get notificationPermissionAllow => 'Consenti notifiche';
+  String get permissionCheckContinueAction => 'Continua';
 
   @override
-  String get notificationPermissionLater => 'Non ora';
+  String get permissionCheckIncompleteTitle => 'Permessi incompleti';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'I promemoria potrebbero non attivarsi in modo affidabile senza questi permessi. Puoi concederli in seguito dalle Impostazioni, ma è facile dimenticarsene.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Torna indietro e concedi';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Continua comunque';
 
   @override
   String get homeSectionOverdue => 'Scaduti';
@@ -583,13 +593,6 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Apri impostazioni';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Un ultimo permesso';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Nella prossima schermata, consenti a iReminder di programmare allarmi precisi affinché i promemoria arrivino esattamente all\'ora impostata.';
 
   @override
   String get loanMarkPaidSuccess => 'Segnata come pagata';

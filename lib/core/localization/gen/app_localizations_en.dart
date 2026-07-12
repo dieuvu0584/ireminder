@@ -60,17 +60,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboardingGetStarted => 'Get started';
 
   @override
-  String get notificationPermissionTitle => 'Stay on time';
+  String get permissionCheckTitle => 'Check permissions';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder needs permission to send you notifications when something is due.';
+  String get permissionCheckIntro =>
+      'iReminder needs these 3 permissions to reliably notify you at the exact time you set. Granting Exact alarm may take you to a system Settings screen — that\'s expected.';
 
   @override
-  String get notificationPermissionAllow => 'Allow notifications';
+  String get permissionCheckContinueAction => 'Continue';
 
   @override
-  String get notificationPermissionLater => 'Not now';
+  String get permissionCheckIncompleteTitle => 'Permissions incomplete';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Reminders may not fire reliably without these permissions. You can grant them later from Settings, but it\'s easy to forget.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Go back and grant';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Continue anyway';
 
   @override
   String get homeSectionOverdue => 'Overdue';
@@ -579,13 +589,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Open settings';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'One more permission';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'On the next screen, allow iReminder to schedule exact alarms so reminders fire at the exact time you set.';
 
   @override
   String get loanMarkPaidSuccess => 'Marked as paid';

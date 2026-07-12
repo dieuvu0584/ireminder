@@ -60,17 +60,27 @@ class AppLocalizationsSv extends AppLocalizations {
   String get onboardingGetStarted => 'Kom igång';
 
   @override
-  String get notificationPermissionTitle => 'Missa aldrig något';
+  String get permissionCheckTitle => 'Kontrollera behörigheter';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder behöver tillstånd att skicka aviseringar när något förfaller.';
+  String get permissionCheckIntro =>
+      'iReminder behöver dessa 3 behörigheter för att kunna påminna dig pålitligt exakt vid inställd tid. Att bevilja \"Exakt alarm\" kan öppna en systeminställningsskärm — det är normalt.';
 
   @override
-  String get notificationPermissionAllow => 'Tillåt aviseringar';
+  String get permissionCheckContinueAction => 'Fortsätt';
 
   @override
-  String get notificationPermissionLater => 'Inte nu';
+  String get permissionCheckIncompleteTitle => 'Behörigheter är ofullständiga';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Påminnelser kanske inte utlöses pålitligt utan dessa behörigheter. Du kan bevilja dem senare i Inställningar, men det är lätt att glömma.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Gå tillbaka och bevilja';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Fortsätt ändå';
 
   @override
   String get homeSectionOverdue => 'Försenat';
@@ -581,13 +591,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Öppna inställningar';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Ett tillstånd till';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'På nästa skärm, tillåt iReminder att schemalägga exakta alarm så att påminnelser utlöses exakt vid den tid du har angett.';
 
   @override
   String get loanMarkPaidSuccess => 'Markerad som betald';

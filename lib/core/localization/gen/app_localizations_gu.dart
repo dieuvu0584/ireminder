@@ -60,17 +60,27 @@ class AppLocalizationsGu extends AppLocalizations {
   String get onboardingGetStarted => 'શરૂ કરો';
 
   @override
-  String get notificationPermissionTitle => 'સમયસર રહો';
+  String get permissionCheckTitle => 'પરવાનગીઓ તપાસો';
 
   @override
-  String get notificationPermissionBody =>
-      'કંઈક બાકી હોય ત્યારે તમને સૂચના મોકલવા માટે iReminder ને પરવાનગીની જરૂર છે.';
+  String get permissionCheckIntro =>
+      'તમે સેટ કરેલા ચોક્કસ સમયે વિશ્વસનીય રીતે તમને જાણ કરવા માટે iReminder ને આ 3 પરવાનગીઓની જરૂર છે. \"ચોક્કસ એલાર્મ\" આપવાથી સિસ્ટમ સેટિંગ્સ સ્ક્રીન ખૂલી શકે છે — આ સામાન્ય છે.';
 
   @override
-  String get notificationPermissionAllow => 'સૂચનાઓને મંજૂરી આપો';
+  String get permissionCheckContinueAction => 'ચાલુ રાખો';
 
   @override
-  String get notificationPermissionLater => 'હમણાં નહીં';
+  String get permissionCheckIncompleteTitle => 'પરવાનગીઓ અધૂરી છે';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'આ પરવાનગીઓ વિના રિમાઇન્ડર્સ વિશ્વસનીય રીતે કામ ન કરી શકે. તમે પછીથી સેટિંગ્સમાંથી આપી શકો છો, પણ ભૂલી જવું સહેલું છે.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'પાછા જઈને આપો';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'તેમ છતાં ચાલુ રાખો';
 
   @override
   String get homeSectionOverdue => 'મુદત વીતી ગયેલ';
@@ -578,13 +588,6 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'સેટિંગ્સ ખોલો';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'એક વધુ પરવાનગી';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'આગલી સ્ક્રીન પર, iReminder ને ચોક્કસ એલાર્મ શેડ્યૂલ કરવાની મંજૂરી આપો જેથી રિમાઇન્ડર તમે સેટ કરેલા ચોક્કસ સમયે આવે.';
 
   @override
   String get loanMarkPaidSuccess => 'ચૂકવેલ તરીકે ચિહ્નિત કર્યું';

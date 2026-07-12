@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:permission_handler/permission_handler.dart' as ph;
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
@@ -14,6 +13,7 @@ import '../../providers/backup_providers.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/notification_providers.dart';
 import '../../providers/settings_providers.dart';
+import '../../widgets/permission_checklist.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -252,43 +252,13 @@ class SettingsScreen extends ConsumerWidget {
 /// Onboarding only ever asks for these permissions once and moves on
 /// regardless of the outcome, so a denial there previously left the user
 /// with no way to ever grant them again. This section shows live status
-/// and lets them grant/open system settings at any time. Re-checks status
-/// on every app resume since there's no OS-level permission-change
-/// listener — the user may have toggled it from system Settings directly.
-class _PermissionsSection extends ConsumerStatefulWidget {
+/// and lets them grant/open system settings at any time.
+class _PermissionsSection extends StatelessWidget {
   const _PermissionsSection();
-
-  @override
-  ConsumerState<_PermissionsSection> createState() =>
-      _PermissionsSectionState();
-}
-
-class _PermissionsSectionState extends ConsumerState<_PermissionsSection>
-    with WidgetsBindingObserver {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addObserver(this);
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      ref.invalidate(permissionStatusProvider);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final statusAsync = ref.watch(permissionStatusProvider);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -299,126 +269,8 @@ class _PermissionsSectionState extends ConsumerState<_PermissionsSection>
             style: Theme.of(context).textTheme.labelLarge,
           ),
         ),
-        statusAsync.when(
-          data: (status) => Column(
-            children: [
-              _PermissionRow(
-                label: l10n.settingsPermissionsNotificationLabel,
-                granted: status.notificationsEnabled,
-                l10n: l10n,
-                onGrant: () async {
-                  await ref
-                      .read(notificationServiceProvider)
-                      .requestNotificationsOnly();
-                  ref.invalidate(permissionStatusProvider);
-                },
-              ),
-              _PermissionRow(
-                label: l10n.settingsPermissionsExactAlarmLabel,
-                granted: status.exactAlarmsEnabled,
-                l10n: l10n,
-                onGrant: () async {
-                  await ref
-                      .read(notificationServiceProvider)
-                      .requestExactAlarmsOnly();
-                  ref.invalidate(permissionStatusProvider);
-                },
-              ),
-              _PermissionRow(
-                label: l10n.settingsPermissionsBatteryLabel,
-                granted: status.batteryOptimizationIgnored,
-                l10n: l10n,
-                onGrant: () async {
-                  await ph.Permission.ignoreBatteryOptimizations.request();
-                  ref.invalidate(permissionStatusProvider);
-                },
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 4, 16, 12),
-                child: OutlinedButton.icon(
-                  icon: const Icon(Icons.notifications_active_outlined),
-                  label: Text(l10n.settingsTestNotificationAction),
-                  onPressed: () async {
-                    final messenger = ScaffoldMessenger.of(context);
-                    try {
-                      await ref
-                          .read(notificationServiceProvider)
-                          .scheduleTestNotification();
-                      messenger.showSnackBar(
-                        SnackBar(
-                          content: Text(l10n.settingsTestNotificationScheduled),
-                          duration: const Duration(seconds: 8),
-                        ),
-                      );
-                    } catch (e) {
-                      messenger.showSnackBar(
-                        SnackBar(
-                          content: Text('${l10n.errorGeneric}\n$e'),
-                          duration: const Duration(seconds: 10),
-                        ),
-                      );
-                    }
-                  },
-                ),
-              ),
-            ],
-          ),
-          loading: () => const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: LinearProgressIndicator(),
-          ),
-          error: (e, st) => const SizedBox.shrink(),
-        ),
+        const PermissionsChecklist(),
       ],
-    );
-  }
-}
-
-class _PermissionRow extends StatelessWidget {
-  final String label;
-  final bool granted;
-  final AppLocalizations l10n;
-  final Future<void> Function() onGrant;
-
-  const _PermissionRow({
-    required this.label,
-    required this.granted,
-    required this.l10n,
-    required this.onGrant,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return ListTile(
-      leading: Icon(
-        granted ? Icons.check_circle : Icons.error_outline,
-        color: granted ? Colors.green : scheme.error,
-      ),
-      title: Text(label),
-      subtitle: Text(
-        granted
-            ? l10n.settingsPermissionsGranted
-            : l10n.settingsPermissionsDenied,
-        maxLines: 2,
-        overflow: TextOverflow.ellipsis,
-      ),
-      trailing: granted
-          ? null
-          : Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextButton(
-                  onPressed: onGrant,
-                  child: Text(l10n.settingsPermissionsGrantAction),
-                ),
-                IconButton(
-                  tooltip: l10n.settingsPermissionsOpenSettingsAction,
-                  icon: const Icon(Icons.settings_outlined),
-                  onPressed: () => ph.openAppSettings(),
-                ),
-              ],
-            ),
     );
   }
 }

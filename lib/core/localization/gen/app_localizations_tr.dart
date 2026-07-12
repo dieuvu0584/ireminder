@@ -60,17 +60,27 @@ class AppLocalizationsTr extends AppLocalizations {
   String get onboardingGetStarted => 'Başlayın';
 
   @override
-  String get notificationPermissionTitle => 'Zamanında haberdar olun';
+  String get permissionCheckTitle => 'İzinleri kontrol et';
 
   @override
-  String get notificationPermissionBody =>
-      'Bir şeyin vakti geldiğinde size bildirim gönderebilmek için iReminder\'ın izne ihtiyacı var.';
+  String get permissionCheckIntro =>
+      'iReminder\'ın tam olarak belirlediğiniz saatte güvenilir şekilde bildirim gönderebilmesi için bu 3 izne ihtiyacı var. \"Tam zamanlı alarm\" iznini vermek sistem ayarları ekranına yönlendirebilir — bu normaldir.';
 
   @override
-  String get notificationPermissionAllow => 'Bildirimlere izin ver';
+  String get permissionCheckContinueAction => 'Devam et';
 
   @override
-  String get notificationPermissionLater => 'Şimdi değil';
+  String get permissionCheckIncompleteTitle => 'İzinler eksik';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Bu izinler olmadan hatırlatıcılar güvenilir şekilde çalışmayabilir. Daha sonra Ayarlar\'dan verebilirsiniz, ancak unutmak kolaydır.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Geri dön ve izin ver';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Yine de devam et';
 
   @override
   String get homeSectionOverdue => 'Süresi geçti';
@@ -580,13 +590,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Ayarları aç';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Bir izin daha';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Bir sonraki ekranda, hatırlatıcıların tam olarak ayarladığınız saatte çalması için iReminder\'a tam zamanlı alarm kurma izni verin.';
 
   @override
   String get loanMarkPaidSuccess => 'Ödendi olarak işaretlendi';

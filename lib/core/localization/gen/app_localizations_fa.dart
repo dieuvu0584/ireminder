@@ -60,17 +60,27 @@ class AppLocalizationsFa extends AppLocalizations {
   String get onboardingGetStarted => 'شروع کنید';
 
   @override
-  String get notificationPermissionTitle => 'به‌موقع باخبر شوید';
+  String get permissionCheckTitle => 'بررسی مجوزها';
 
   @override
-  String get notificationPermissionBody =>
-      'برای اطلاع‌رسانی هنگام سررسید کارها، iReminder به مجوز ارسال اعلان نیاز دارد.';
+  String get permissionCheckIntro =>
+      'iReminder برای اطلاع‌رسانی دقیق در زمان تعیین‌شده به این ۳ مجوز نیاز دارد. اعطای مجوز «زنگ دقیق» ممکن است شما را به صفحه تنظیمات سیستم ببرد — این طبیعی است.';
 
   @override
-  String get notificationPermissionAllow => 'اجازه اعلان‌ها';
+  String get permissionCheckContinueAction => 'ادامه';
 
   @override
-  String get notificationPermissionLater => 'فعلاً نه';
+  String get permissionCheckIncompleteTitle => 'مجوزها ناقص است';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'بدون این مجوزها ممکن است یادآورها به‌طور قابل‌اعتماد فعال نشوند. می‌توانید بعداً از تنظیمات آن‌ها را بدهید، اما فراموش کردنش آسان است.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'بازگشت و اعطای مجوز';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'در هر صورت ادامه بده';
 
   @override
   String get homeSectionOverdue => 'عقب‌افتاده';
@@ -578,13 +588,6 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'باز کردن تنظیمات';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'یک مجوز دیگر';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'در صفحه بعد، به iReminder اجازه دهید زنگ‌های هشدار دقیق تنظیم کند تا یادآورها دقیقاً در زمانی که تعیین کرده‌اید فعال شوند.';
 
   @override
   String get loanMarkPaidSuccess => 'به‌عنوان پرداخت‌شده علامت‌گذاری شد';

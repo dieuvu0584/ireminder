@@ -60,17 +60,27 @@ class AppLocalizationsDe extends AppLocalizations {
   String get onboardingGetStarted => 'Los geht\'s';
 
   @override
-  String get notificationPermissionTitle => 'Nichts mehr verpassen';
+  String get permissionCheckTitle => 'Berechtigungen prüfen';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder benötigt die Berechtigung für Benachrichtigungen, um dich rechtzeitig zu erinnern.';
+  String get permissionCheckIntro =>
+      'iReminder benötigt diese 3 Berechtigungen, um dich zuverlässig zur genauen Zeit zu benachrichtigen. Das Erteilen von \"Exakter Alarm\" kann zu einer Systemeinstellungen-Seite führen — das ist normal.';
 
   @override
-  String get notificationPermissionAllow => 'Benachrichtigungen erlauben';
+  String get permissionCheckContinueAction => 'Weiter';
 
   @override
-  String get notificationPermissionLater => 'Nicht jetzt';
+  String get permissionCheckIncompleteTitle => 'Berechtigungen unvollständig';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Ohne diese Berechtigungen werden Erinnerungen möglicherweise nicht zuverlässig ausgelöst. Du kannst sie später in den Einstellungen erteilen, vergisst das aber leicht.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Zurück und erteilen';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Trotzdem fortfahren';
 
   @override
   String get homeSectionOverdue => 'Überfällig';
@@ -585,13 +595,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Einstellungen öffnen';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Noch eine Berechtigung';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Erlaube iReminder auf dem nächsten Bildschirm, exakte Alarme zu planen, damit Erinnerungen genau zur eingestellten Zeit erscheinen.';
 
   @override
   String get loanMarkPaidSuccess => 'Als bezahlt markiert';

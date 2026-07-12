@@ -60,17 +60,27 @@ class AppLocalizationsTa extends AppLocalizations {
   String get onboardingGetStarted => 'தொடங்குவோம்';
 
   @override
-  String get notificationPermissionTitle => 'நேரம் தவறாமல் இருங்கள்';
+  String get permissionCheckTitle => 'அனுமதிகளைச் சரிபார்க்கவும்';
 
   @override
-  String get notificationPermissionBody =>
-      'ஏதேனும் நிலுவையில் இருக்கும்போது உங்களுக்கு அறிவிப்பு அனுப்ப iReminder-க்கு அனுமதி தேவை.';
+  String get permissionCheckIntro =>
+      'நீங்கள் அமைத்த சரியான நேரத்தில் நம்பகமாக நினைவூட்ட iReminder-க்கு இந்த 3 அனுமதிகள் தேவை. \"துல்லியமான அலாரம்\" அனுமதியை வழங்குவது கணினி அமைப்புகள் திரைக்கு அழைத்துச் செல்லலாம் — இது இயல்பானது.';
 
   @override
-  String get notificationPermissionAllow => 'அறிவிப்புகளை அனுமதி';
+  String get permissionCheckContinueAction => 'தொடரவும்';
 
   @override
-  String get notificationPermissionLater => 'இப்போது வேண்டாம்';
+  String get permissionCheckIncompleteTitle => 'அனுமதிகள் முழுமையடையவில்லை';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'இந்த அனுமதிகள் இல்லாமல் நினைவூட்டல்கள் நம்பகமாக இயங்காமல் போகலாம். பின்னர் அமைப்புகளில் இருந்து வழங்கலாம், ஆனால் மறந்துவிடுவது எளிது.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'திரும்பிச் சென்று வழங்கவும்';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'எப்படியும் தொடரவும்';
 
   @override
   String get homeSectionOverdue => 'தவறிய தேதி';
@@ -583,13 +593,6 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'அமைப்புகளைத் திற';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'இன்னொரு அனுமதி';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'அடுத்த திரையில், நீங்கள் அமைத்த சரியான நேரத்தில் நினைவூட்டல்கள் வர, iReminder துல்லியமான அலாரங்களை திட்டமிட அனுமதிக்கவும்.';
 
   @override
   String get loanMarkPaidSuccess => 'செலுத்தியதாக குறிக்கப்பட்டது';

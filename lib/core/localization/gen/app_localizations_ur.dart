@@ -60,17 +60,27 @@ class AppLocalizationsUr extends AppLocalizations {
   String get onboardingGetStarted => 'شروع کریں';
 
   @override
-  String get notificationPermissionTitle => 'وقت پر رہیں';
+  String get permissionCheckTitle => 'اجازتیں چیک کریں';
 
   @override
-  String get notificationPermissionBody =>
-      'جب کوئی کام مقررہ وقت پر ہو تو آپ کو بتانے کے لیے iReminder کو اطلاعات بھیجنے کی اجازت درکار ہے۔';
+  String get permissionCheckIntro =>
+      'درست وقت پر آپ کو قابل اعتماد طریقے سے مطلع کرنے کے لیے iReminder کو یہ 3 اجازتیں درکار ہیں۔ \"درست الارم\" دینے پر سسٹم سیٹنگز اسکرین کھل سکتی ہے — یہ معمول ہے۔';
 
   @override
-  String get notificationPermissionAllow => 'اطلاعات کی اجازت دیں';
+  String get permissionCheckContinueAction => 'جاری رکھیں';
 
   @override
-  String get notificationPermissionLater => 'ابھی نہیں';
+  String get permissionCheckIncompleteTitle => 'اجازتیں نامکمل ہیں';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'ان اجازتوں کے بغیر یاد دہانیاں قابل اعتماد طریقے سے کام نہیں کر سکتیں۔ آپ بعد میں سیٹنگز سے دے سکتے ہیں، لیکن بھولنا آسان ہے۔';
+
+  @override
+  String get permissionCheckIncompleteStay => 'واپس جا کر اجازت دیں';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'بہرحال جاری رکھیں';
 
   @override
   String get homeSectionOverdue => 'مقررہ وقت گزر چکا';
@@ -579,13 +589,6 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'ترتیبات کھولیں';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'ایک اور اجازت';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'اگلی اسکرین پر، iReminder کو درست وقت کے الارم شیڈول کرنے کی اجازت دیں تاکہ یاد دہانیاں عین اسی وقت پر آئیں جو آپ نے مقرر کیا ہے۔';
 
   @override
   String get loanMarkPaidSuccess => 'ادا شدہ کے طور پر نشان زد کر دیا گیا';

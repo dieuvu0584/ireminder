@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
-import '../../providers/notification_providers.dart';
 import '../../providers/settings_providers.dart';
 import '../home/home_screen.dart';
+import 'permission_check_screen.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
@@ -17,56 +17,26 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   final _controller = PageController();
   int _page = 0;
 
-  Future<void> _finish() async {
-    final l10n = AppLocalizations.of(context);
-    final proceed = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l10n.notificationPermissionTitle),
-        content: Text(l10n.notificationPermissionBody),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(false),
-            child: Text(l10n.notificationPermissionLater),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.of(ctx).pop(true),
-            child: Text(l10n.notificationPermissionAllow),
-          ),
-        ],
+  // Permission requests themselves — with a full status readout and a
+  // reminder to actually finish granting them — now live in
+  // PermissionCheckScreen rather than a chain of dialogs here, so a
+  // denial mid-flow doesn't just get silently dropped once onboarding
+  // moves on.
+  void _finish() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) =>
+            PermissionCheckScreen(onContinue: (_) => _completeOnboarding()),
       ),
     );
-    if (proceed == true) {
-      await ref.read(notificationServiceProvider).requestNotificationsOnly();
-      if (mounted) {
-        // Exact-alarm permission redirects straight to a system Settings
-        // page with no dialog of its own — explain why before the app
-        // suddenly loses focus, rather than leaving it unexplained.
-        await showDialog<void>(
-          context: context,
-          builder: (ctx) => AlertDialog(
-            title: Text(l10n.onboardingExactAlarmRationaleTitle),
-            content: Text(l10n.onboardingExactAlarmRationaleBody),
-            actions: [
-              FilledButton(
-                onPressed: () => Navigator.of(ctx).pop(),
-                child: Text(l10n.actionOk),
-              ),
-            ],
-          ),
-        );
-      }
-      if (mounted) {
-        await ref.read(notificationServiceProvider).requestExactAlarmsOnly();
-      }
-    }
-    if (!mounted) return;
+  }
+
+  Future<void> _completeOnboarding() async {
     await ref.read(settingsActionsProvider).setOnboardingCompleted(true);
-    if (mounted) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const HomeScreen()),
-      );
-    }
+    if (!mounted) return;
+    Navigator.of(
+      context,
+    ).pushReplacement(MaterialPageRoute(builder: (_) => const HomeScreen()));
   }
 
   @override

@@ -60,17 +60,28 @@ class AppLocalizationsFil extends AppLocalizations {
   String get onboardingGetStarted => 'Simulan na';
 
   @override
-  String get notificationPermissionTitle => 'Huwag mahuli sa oras';
+  String get permissionCheckTitle => 'Suriin ang mga pahintulot';
 
   @override
-  String get notificationPermissionBody =>
-      'Kailangan ng iReminder ng pahintulot na magpadala sa iyo ng notification kapag may deadline na.';
+  String get permissionCheckIntro =>
+      'Kailangan ng iReminder ang 3 pahintulot na ito para maaasahan kang paalalahanan sa eksaktong oras na itinakda mo. Ang pagbibigay ng \"Eksaktong alarm\" ay maaaring magbukas ng screen ng Mga Setting ng system — normal lang ito.';
 
   @override
-  String get notificationPermissionAllow => 'Payagan ang mga notification';
+  String get permissionCheckContinueAction => 'Magpatuloy';
 
   @override
-  String get notificationPermissionLater => 'Huwag muna';
+  String get permissionCheckIncompleteTitle =>
+      'Hindi kumpleto ang mga pahintulot';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Maaaring hindi maaasahan ang mga paalala nang wala ang mga pahintulot na ito. Puwede mo itong ibigay sa Settings sa ibang pagkakataon, pero madaling makalimutan.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Bumalik at bigyan';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Magpatuloy pa rin';
 
   @override
   String get homeSectionOverdue => 'Overdue';
@@ -584,13 +595,6 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Buksan ang settings';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Isa pang pahintulot';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Sa susunod na screen, payagan ang iReminder na mag-schedule ng eksaktong alarm para tumunog ang mga paalala sa eksaktong oras na itinakda mo.';
 
   @override
   String get loanMarkPaidSuccess => 'Namarkahang bayad na';

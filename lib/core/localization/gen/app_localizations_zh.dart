@@ -57,16 +57,27 @@ class AppLocalizationsZh extends AppLocalizations {
   String get onboardingGetStarted => '开始使用';
 
   @override
-  String get notificationPermissionTitle => '不错过任何事';
+  String get permissionCheckTitle => '检查权限';
 
   @override
-  String get notificationPermissionBody => 'iReminder 需要通知权限,才能在事项到期时提醒你。';
+  String get permissionCheckIntro =>
+      'iReminder 需要以下 3 项权限才能准时可靠地提醒你。授予“精确闹钟”权限可能会跳转到系统设置页面，这是正常现象。';
 
   @override
-  String get notificationPermissionAllow => '允许通知';
+  String get permissionCheckContinueAction => '继续';
 
   @override
-  String get notificationPermissionLater => '以后再说';
+  String get permissionCheckIncompleteTitle => '权限未完成';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      '缺少这些权限，提醒可能无法准时可靠地触发。你之后仍可在设置中授予，但很容易忘记。';
+
+  @override
+  String get permissionCheckIncompleteStay => '返回授权';
+
+  @override
+  String get permissionCheckIncompleteContinue => '仍然继续';
 
   @override
   String get homeSectionOverdue => '已过期';
@@ -563,13 +574,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => '打开设置';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => '还需要一项权限';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      '在下一屏，请允许 iReminder 安排精确闹钟，这样提醒才能准时在你设定的时间响起。';
 
   @override
   String get loanMarkPaidSuccess => '已标记为已付款';

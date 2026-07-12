@@ -60,17 +60,27 @@ class AppLocalizationsAr extends AppLocalizations {
   String get onboardingGetStarted => 'ابدأ الآن';
 
   @override
-  String get notificationPermissionTitle => 'لا تفوّت أي موعد';
+  String get permissionCheckTitle => 'التحقق من الأذونات';
 
   @override
-  String get notificationPermissionBody =>
-      'يحتاج iReminder إلى إذن لإرسال إشعارات لك عند اقتراب موعد الاستحقاق.';
+  String get permissionCheckIntro =>
+      'يحتاج iReminder إلى هذه الأذونات الثلاثة لتنبيهك بشكل موثوق في الوقت المحدد بالضبط. قد يؤدي منح إذن \"المنبه الدقيق\" إلى فتح شاشة إعدادات النظام — وهذا أمر متوقع.';
 
   @override
-  String get notificationPermissionAllow => 'السماح بالإشعارات';
+  String get permissionCheckContinueAction => 'متابعة';
 
   @override
-  String get notificationPermissionLater => 'ليس الآن';
+  String get permissionCheckIncompleteTitle => 'الأذونات غير مكتملة';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'قد لا تعمل التذكيرات بشكل موثوق دون هذه الأذونات. يمكنك منحها لاحقًا من الإعدادات، لكن من السهل نسيان ذلك.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'الرجوع والمنح';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'المتابعة على أي حال';
 
   @override
   String get homeSectionOverdue => 'متأخر';
@@ -577,13 +587,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'فتح الإعدادات';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'إذن إضافي أخير';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'في الشاشة التالية، اسمح لتطبيق iReminder بجدولة منبّهات دقيقة حتى تصل التذكيرات في الوقت المحدد بالضبط.';
 
   @override
   String get loanMarkPaidSuccess => 'تم التحديد كمدفوع';

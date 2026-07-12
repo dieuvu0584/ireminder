@@ -60,17 +60,27 @@ class AppLocalizationsEl extends AppLocalizations {
   String get onboardingGetStarted => 'Ξεκίνα τώρα';
 
   @override
-  String get notificationPermissionTitle => 'Μείνε στην ώρα σου';
+  String get permissionCheckTitle => 'Έλεγχος δικαιωμάτων';
 
   @override
-  String get notificationPermissionBody =>
-      'Το iReminder χρειάζεται άδεια για να σου στέλνει ειδοποιήσεις όταν κάτι λήγει.';
+  String get permissionCheckIntro =>
+      'Το iReminder χρειάζεται αυτές τις 3 άδειες για να σας ειδοποιεί αξιόπιστα την ακριβή ώρα. Η παραχώρηση του \"Ακριβές ξυπνητήρι\" ενδέχεται να ανοίξει μια οθόνη ρυθμίσεων συστήματος — αυτό είναι φυσιολογικό.';
 
   @override
-  String get notificationPermissionAllow => 'Επίτρεψε ειδοποιήσεις';
+  String get permissionCheckContinueAction => 'Συνέχεια';
 
   @override
-  String get notificationPermissionLater => 'Όχι τώρα';
+  String get permissionCheckIncompleteTitle => 'Ελλιπή δικαιώματα';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Οι υπενθυμίσεις ενδέχεται να μην ενεργοποιούνται αξιόπιστα χωρίς αυτά τα δικαιώματα. Μπορείτε να τα παραχωρήσετε αργότερα από τις Ρυθμίσεις, αλλά είναι εύκολο να το ξεχάσετε.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Επιστροφή και παραχώρηση';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Συνέχεια όπως και να \'χει';
 
   @override
   String get homeSectionOverdue => 'Ληξιπρόθεσμα';
@@ -585,13 +595,6 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Άνοιγμα ρυθμίσεων';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Ακόμα μία άδεια';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Στην επόμενη οθόνη, επίτρεψε στο iReminder να προγραμματίζει ακριβή ξυπνητήρια, ώστε οι υπενθυμίσεις να εμφανίζονται ακριβώς την ώρα που όρισες.';
 
   @override
   String get loanMarkPaidSuccess => 'Σημειώθηκε ως πληρωμένη';

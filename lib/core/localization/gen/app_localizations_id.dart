@@ -60,17 +60,27 @@ class AppLocalizationsId extends AppLocalizations {
   String get onboardingGetStarted => 'Mulai';
 
   @override
-  String get notificationPermissionTitle => 'Jangan sampai terlambat';
+  String get permissionCheckTitle => 'Periksa izin';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder memerlukan izin untuk mengirim notifikasi saat ada sesuatu yang jatuh tempo.';
+  String get permissionCheckIntro =>
+      'iReminder memerlukan 3 izin ini agar dapat mengingatkan Anda secara andal tepat pada waktunya. Memberikan izin \"Alarm tepat\" mungkin membuka layar Setelan sistem — ini wajar.';
 
   @override
-  String get notificationPermissionAllow => 'Izinkan notifikasi';
+  String get permissionCheckContinueAction => 'Lanjutkan';
 
   @override
-  String get notificationPermissionLater => 'Nanti saja';
+  String get permissionCheckIncompleteTitle => 'Izin belum lengkap';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Pengingat mungkin tidak berjalan dengan andal tanpa izin ini. Anda bisa memberikannya nanti lewat Setelan, tapi mudah terlupa.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Kembali dan berikan';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Tetap lanjutkan';
 
   @override
   String get homeSectionOverdue => 'Terlambat';
@@ -584,13 +594,6 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Buka pengaturan';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Satu izin lagi';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'Di layar berikutnya, izinkan iReminder menjadwalkan alarm presisi agar pengingat muncul tepat pada waktu yang kamu tentukan.';
 
   @override
   String get loanMarkPaidSuccess => 'Ditandai sudah dibayar';

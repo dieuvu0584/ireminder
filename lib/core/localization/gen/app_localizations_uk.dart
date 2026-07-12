@@ -60,17 +60,27 @@ class AppLocalizationsUk extends AppLocalizations {
   String get onboardingGetStarted => 'Почати';
 
   @override
-  String get notificationPermissionTitle => 'Не спізнюйтесь';
+  String get permissionCheckTitle => 'Перевірка дозволів';
 
   @override
-  String get notificationPermissionBody =>
-      'iReminder потребує дозволу надсилати сповіщення, щоб нагадати вам, коли настане термін.';
+  String get permissionCheckIntro =>
+      'Додатку iReminder потрібні ці 3 дозволи, щоб надійно нагадувати вам точно у визначений час. Надання дозволу «Точний будильник» може відкрити екран системних налаштувань — це нормально.';
 
   @override
-  String get notificationPermissionAllow => 'Дозволити сповіщення';
+  String get permissionCheckContinueAction => 'Продовжити';
 
   @override
-  String get notificationPermissionLater => 'Не зараз';
+  String get permissionCheckIncompleteTitle => 'Дозволи не повні';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'Без цих дозволів нагадування можуть спрацьовувати ненадійно. Ви можете надати їх пізніше в налаштуваннях, але про це легко забути.';
+
+  @override
+  String get permissionCheckIncompleteStay => 'Повернутися й надати';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'Все одно продовжити';
 
   @override
   String get homeSectionOverdue => 'Прострочено';
@@ -579,13 +589,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Відкрити налаштування';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'Ще один дозвіл';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'На наступному екрані дозвольте iReminder планувати точні будильники, щоб нагадування спрацьовували саме в той час, який ви вказали.';
 
   @override
   String get loanMarkPaidSuccess => 'Позначено як сплачено';

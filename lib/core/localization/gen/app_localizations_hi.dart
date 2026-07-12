@@ -60,17 +60,27 @@ class AppLocalizationsHi extends AppLocalizations {
   String get onboardingGetStarted => 'शुरू करें';
 
   @override
-  String get notificationPermissionTitle => 'समय पर याद दिलाएं';
+  String get permissionCheckTitle => 'अनुमतियां जांचें';
 
   @override
-  String get notificationPermissionBody =>
-      'काम पूरा होने का समय आने पर सूचना भेजने के लिए iReminder को अनुमति चाहिए।';
+  String get permissionCheckIntro =>
+      'समय पर सूचित करने के लिए iReminder को ये 3 अनुमतियां चाहिए। \"सटीक अलार्म\" देने पर सिस्टम सेटिंग्स स्क्रीन खुल सकती है — यह सामान्य है।';
 
   @override
-  String get notificationPermissionAllow => 'सूचनाओं की अनुमति दें';
+  String get permissionCheckContinueAction => 'जारी रखें';
 
   @override
-  String get notificationPermissionLater => 'अभी नहीं';
+  String get permissionCheckIncompleteTitle => 'अनुमतियां अधूरी हैं';
+
+  @override
+  String get permissionCheckIncompleteBody =>
+      'इन अनुमतियों के बिना रिमाइंडर सही तरीके से काम नहीं कर सकते। आप बाद में सेटिंग्स से दे सकते हैं, पर भूलना आसान है।';
+
+  @override
+  String get permissionCheckIncompleteStay => 'वापस जाकर अनुमति दें';
+
+  @override
+  String get permissionCheckIncompleteContinue => 'फिर भी जारी रखें';
 
   @override
   String get homeSectionOverdue => 'समय निकल गया';
@@ -579,13 +589,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'सेटिंग्स खोलें';
-
-  @override
-  String get onboardingExactAlarmRationaleTitle => 'एक और अनुमति';
-
-  @override
-  String get onboardingExactAlarmRationaleBody =>
-      'अगली स्क्रीन पर, iReminder को सटीक अलार्म शेड्यूल करने की अनुमति दें ताकि रिमाइंडर ठीक आपके तय समय पर बजें।';
 
   @override
   String get loanMarkPaidSuccess => 'भुगतान के रूप में चिह्नित किया गया';
