@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../core/localization/gen/app_localizations.dart';
 import '../../../data/database/app_database.dart';
 import '../../providers/reminder_providers.dart';
 import '../../providers/settings_providers.dart';
@@ -56,9 +55,6 @@ class ReminderListScreen extends ConsumerWidget {
                 onComplete: () => runGuarded(
                   context,
                   () => ref.read(reminderActionsProvider).complete(reminder.id),
-                  successMessage: AppLocalizations.of(
-                    context,
-                  ).reminderCompletedFeedback,
                 ),
                 onSnooze: () => runGuarded(
                   context,

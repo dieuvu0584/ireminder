@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Bu hatırlatıcı silinsin mi?",
   "reminderDeleteConfirmBody": "Bu işlem geri alınamaz.",
-  "reminderCompletedFeedback": "Tamamlandı olarak işaretlendi",
   "reminderScheduleWarning": "Hatırlatıcı kaydedildi, ancak bildirim zamanlanamadı. Bildirim ayarlarını kontrol edin.",
   "recurrenceNone": "Bir kez",
   "recurrenceDaily": "Günlük",

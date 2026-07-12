@@ -212,9 +212,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Non potrai annullare l\'operazione.';
 
   @override
-  String get reminderCompletedFeedback => 'Contrassegnato come fatto';
-
-  @override
   String get reminderScheduleWarning =>
       'Promemoria salvato, ma non è stato possibile pianificare la notifica. Controlla le impostazioni delle notifiche.';
 

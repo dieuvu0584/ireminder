@@ -212,9 +212,6 @@ class AppLocalizationsBn extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'এটি পূর্বাবস্থায় ফেরানো যাবে না।';
 
   @override
-  String get reminderCompletedFeedback => 'সম্পন্ন হিসেবে চিহ্নিত';
-
-  @override
   String get reminderScheduleWarning =>
       'রিমাইন্ডার সংরক্ষিত হয়েছে, কিন্তু বিজ্ঞপ্তি শিডিউল করা যায়নি। বিজ্ঞপ্তি সেটিংস পরীক্ষা করুন।';
 

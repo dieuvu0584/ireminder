@@ -212,9 +212,6 @@ class AppLocalizationsTe extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'దీన్ని తిరిగి పొందలేరు.';
 
   @override
-  String get reminderCompletedFeedback => 'పూర్తయినట్లు గుర్తించబడింది';
-
-  @override
   String get reminderScheduleWarning =>
       'రిమైండర్ సేవ్ చేయబడింది, కానీ నోటిఫికేషన్‌ను షెడ్యూల్ చేయలేకపోయాము. నోటిఫికేషన్ సెట్టింగ్‌లను తనిఖీ చేయండి.';
 

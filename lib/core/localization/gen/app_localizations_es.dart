@@ -212,9 +212,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Esta acción no se puede deshacer.';
 
   @override
-  String get reminderCompletedFeedback => 'Marcado como hecho';
-
-  @override
   String get reminderScheduleWarning =>
       'Recordatorio guardado, pero no se pudo programar la notificación. Revisa la configuración de notificaciones.';
 

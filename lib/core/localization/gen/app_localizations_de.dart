@@ -213,9 +213,6 @@ class AppLocalizationsDe extends AppLocalizations {
       'Dies kann nicht rückgängig gemacht werden.';
 
   @override
-  String get reminderCompletedFeedback => 'Als erledigt markiert';
-
-  @override
   String get reminderScheduleWarning =>
       'Erinnerung gespeichert, aber die Benachrichtigung konnte nicht geplant werden. Bitte Benachrichtigungseinstellungen prüfen.';
 

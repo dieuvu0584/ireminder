@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Excluir este lembrete?",
   "reminderDeleteConfirmBody": "Essa ação não pode ser desfeita.",
-  "reminderCompletedFeedback": "Marcado como concluído",
   "reminderScheduleWarning": "Lembrete salvo, mas não foi possível agendar a notificação. Verifique as configurações de notificação.",
   "recurrenceNone": "Uma vez",
   "recurrenceDaily": "Diariamente",

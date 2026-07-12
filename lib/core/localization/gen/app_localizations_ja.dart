@@ -210,9 +210,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'この操作は元に戻せません。';
 
   @override
-  String get reminderCompletedFeedback => '完了にしました';
-
-  @override
   String get reminderScheduleWarning =>
       'リマインダーは保存されましたが、通知をスケジュールできませんでした。通知設定を確認してください。';
 

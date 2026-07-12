@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Διαγραφή αυτής της υπενθύμισης;",
   "reminderDeleteConfirmBody": "Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
-  "reminderCompletedFeedback": "Επισημάνθηκε ως ολοκληρωμένο",
   "reminderScheduleWarning": "Η υπενθύμιση αποθηκεύτηκε, αλλά η ειδοποίηση δεν προγραμματίστηκε. Ελέγξτε τις ρυθμίσεις ειδοποιήσεων.",
   "recurrenceNone": "Μία φορά",
   "recurrenceDaily": "Καθημερινά",

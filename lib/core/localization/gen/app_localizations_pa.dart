@@ -212,9 +212,6 @@ class AppLocalizationsPa extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'ਇਹ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।';
 
   @override
-  String get reminderCompletedFeedback => 'ਪੂਰਾ ਵਜੋਂ ਨਿਸ਼ਾਨਬੱਧ ਕੀਤਾ';
-
-  @override
   String get reminderScheduleWarning =>
       'ਰਿਮਾਈਂਡਰ ਸੇਵ ਹੋ ਗਿਆ, ਪਰ ਸੂਚਨਾ ਸ਼ਡਿਊਲ ਨਹੀਂ ਹੋ ਸਕੀ। ਸੂਚਨਾ ਸੈਟਿੰਗਾਂ ਦੀ ਜਾਂਚ ਕਰੋ।';
 

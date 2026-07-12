@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Slette denne påminnelsen?",
   "reminderDeleteConfirmBody": "Dette kan ikke angres.",
-  "reminderCompletedFeedback": "Merket som fullført",
   "reminderScheduleWarning": "Påminnelsen ble lagret, men varselet kunne ikke planlegges. Sjekk varselinnstillingene.",
   "recurrenceNone": "Én gang",
   "recurrenceDaily": "Daglig",

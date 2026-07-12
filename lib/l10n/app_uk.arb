@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Видалити це нагадування?",
   "reminderDeleteConfirmBody": "Цю дію неможливо скасувати.",
-  "reminderCompletedFeedback": "Позначено як виконано",
   "reminderScheduleWarning": "Нагадування збережено, але не вдалося запланувати сповіщення. Перевірте налаштування сповіщень.",
   "recurrenceNone": "Один раз",
   "recurrenceDaily": "Щодня",

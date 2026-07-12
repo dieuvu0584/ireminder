@@ -212,9 +212,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'לא ניתן לבטל פעולה זו.';
 
   @override
-  String get reminderCompletedFeedback => 'סומן כבוצע';
-
-  @override
   String get reminderScheduleWarning =>
       'התזכורת נשמרה, אך לא ניתן היה לתזמן את ההתראה. בדוק את הגדרות ההתראות.';
 

@@ -212,9 +212,6 @@ class AppLocalizationsMr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'ही क्रिया पूर्ववत करता येणार नाही.';
 
   @override
-  String get reminderCompletedFeedback => 'पूर्ण म्हणून चिन्हांकित';
-
-  @override
   String get reminderScheduleWarning =>
       'स्मरणपत्र जतन केले, परंतु सूचना शेड्यूल करता आली नाही. सूचना सेटिंग्ज तपासा.';
 

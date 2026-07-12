@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "このリマインダーを削除しますか？",
   "reminderDeleteConfirmBody": "この操作は元に戻せません。",
-  "reminderCompletedFeedback": "完了にしました",
   "reminderScheduleWarning": "リマインダーは保存されましたが、通知をスケジュールできませんでした。通知設定を確認してください。",
   "recurrenceNone": "1回のみ",
   "recurrenceDaily": "毎日",

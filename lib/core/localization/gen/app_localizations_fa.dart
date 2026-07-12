@@ -212,9 +212,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'این کار قابل بازگشت نیست.';
 
   @override
-  String get reminderCompletedFeedback => 'به‌عنوان انجام‌شده علامت‌گذاری شد';
-
-  @override
   String get reminderScheduleWarning =>
       'یادآور ذخیره شد، اما اعلان زمان‌بندی نشد. تنظیمات اعلان را بررسی کنید.';
 

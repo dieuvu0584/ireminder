@@ -210,9 +210,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reminderDeleteConfirmBody => '삭제하면 되돌릴 수 없어요.';
 
   @override
-  String get reminderCompletedFeedback => '완료로 표시됨';
-
-  @override
   String get reminderScheduleWarning =>
       '리마인더는 저장되었지만 알림을 예약할 수 없었습니다. 알림 설정을 확인하세요.';
 

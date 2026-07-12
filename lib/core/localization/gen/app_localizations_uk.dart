@@ -212,9 +212,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Цю дію неможливо скасувати.';
 
   @override
-  String get reminderCompletedFeedback => 'Позначено як виконано';
-
-  @override
   String get reminderScheduleWarning =>
       'Нагадування збережено, але не вдалося запланувати сповіщення. Перевірте налаштування сповіщень.';
 

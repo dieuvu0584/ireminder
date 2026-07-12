@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "کیا یہ یاد دہانی حذف کر دیں؟",
   "reminderDeleteConfirmBody": "اسے واپس نہیں لایا جا سکتا۔",
-  "reminderCompletedFeedback": "مکمل کے طور پر نشان زد",
   "reminderScheduleWarning": "یاد دہانی محفوظ ہو گئی، لیکن اطلاع شیڈول نہیں ہو سکی۔ اطلاعی ترتیبات چیک کریں۔",
   "recurrenceNone": "ایک بار",
   "recurrenceDaily": "روزانہ",

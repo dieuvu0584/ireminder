@@ -212,9 +212,6 @@ class AppLocalizationsDa extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Dette kan ikke fortrydes.';
 
   @override
-  String get reminderCompletedFeedback => 'Markeret som udført';
-
-  @override
   String get reminderScheduleWarning =>
       'Påmindelsen blev gemt, men underretningen kunne ikke planlægges. Tjek dine underretningsindstillinger.';
 

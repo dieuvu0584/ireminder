@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "این یادآور حذف شود؟",
   "reminderDeleteConfirmBody": "این کار قابل بازگشت نیست.",
-  "reminderCompletedFeedback": "به‌عنوان انجام‌شده علامت‌گذاری شد",
   "reminderScheduleWarning": "یادآور ذخیره شد، اما اعلان زمان‌بندی نشد. تنظیمات اعلان را بررسی کنید.",
   "recurrenceNone": "یک‌بار",
   "recurrenceDaily": "روزانه",

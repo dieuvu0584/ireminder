@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Törlöd ezt az emlékeztetőt?",
   "reminderDeleteConfirmBody": "Ez a művelet nem vonható vissza.",
-  "reminderCompletedFeedback": "Kész jelölve",
   "reminderScheduleWarning": "Az emlékeztető mentve, de az értesítést nem sikerült ütemezni. Ellenőrizd az értesítési beállításokat.",
   "recurrenceNone": "Egyszeri",
   "recurrenceDaily": "Naponta",

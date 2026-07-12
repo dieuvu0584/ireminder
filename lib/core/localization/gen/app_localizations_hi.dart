@@ -212,9 +212,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'इसे वापस नहीं लाया जा सकता।';
 
   @override
-  String get reminderCompletedFeedback => 'पूर्ण के रूप में चिह्नित';
-
-  @override
   String get reminderScheduleWarning =>
       'रिमाइंडर सेव हो गया, लेकिन सूचना शेड्यूल नहीं हो सकी। सूचना सेटिंग जांचें।';
 

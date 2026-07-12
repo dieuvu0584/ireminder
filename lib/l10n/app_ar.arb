@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "هل تريد حذف هذا التذكير؟",
   "reminderDeleteConfirmBody": "لا يمكن التراجع عن هذا الإجراء.",
-  "reminderCompletedFeedback": "تم وضع علامة كمكتمل",
   "reminderScheduleWarning": "تم حفظ التذكير، لكن تعذر جدولة الإشعار. تحقق من إعدادات الإشعارات.",
   "recurrenceNone": "مرة واحدة",
   "recurrenceDaily": "يوميًا",

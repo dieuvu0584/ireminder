@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Usunąć to przypomnienie?",
   "reminderDeleteConfirmBody": "Tej operacji nie można cofnąć.",
-  "reminderCompletedFeedback": "Oznaczono jako wykonane",
   "reminderScheduleWarning": "Przypomnienie zapisane, ale nie udało się zaplanować powiadomienia. Sprawdź ustawienia powiadomień.",
   "recurrenceNone": "Jednorazowo",
   "recurrenceDaily": "Codziennie",

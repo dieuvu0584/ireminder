@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "இந்த நினைவூட்டலை நீக்கவா?",
   "reminderDeleteConfirmBody": "இதை மீண்டும் செயல்தவிர்க்க முடியாது.",
-  "reminderCompletedFeedback": "முடிந்ததாகக் குறிக்கப்பட்டது",
   "reminderScheduleWarning": "நினைவூட்டல் சேமிக்கப்பட்டது, ஆனால் அறிவிப்பை திட்டமிட முடியவில்லை. அறிவிப்பு அமைப்புகளை சரிபார்க்கவும்.",
   "recurrenceNone": "ஒருமுறை",
   "recurrenceDaily": "தினமும்",

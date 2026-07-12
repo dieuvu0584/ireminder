@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Hapus pengingat ini?",
   "reminderDeleteConfirmBody": "Tindakan ini tidak dapat dibatalkan.",
-  "reminderCompletedFeedback": "Ditandai selesai",
   "reminderScheduleWarning": "Pengingat disimpan, tetapi notifikasi tidak dapat dijadwalkan. Periksa pengaturan notifikasi.",
   "recurrenceNone": "Sekali",
   "recurrenceDaily": "Harian",

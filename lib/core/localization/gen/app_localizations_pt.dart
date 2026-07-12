@@ -212,9 +212,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Essa ação não pode ser desfeita.';
 
   @override
-  String get reminderCompletedFeedback => 'Marcado como concluído';
-
-  @override
   String get reminderScheduleWarning =>
       'Lembrete salvo, mas não foi possível agendar a notificação. Verifique as configurações de notificação.';
 

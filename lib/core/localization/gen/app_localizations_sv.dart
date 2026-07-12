@@ -212,9 +212,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Detta kan inte ångras.';
 
   @override
-  String get reminderCompletedFeedback => 'Markerad som klar';
-
-  @override
   String get reminderScheduleWarning =>
       'Påminnelsen sparades, men aviseringen kunde inte schemaläggas. Kontrollera aviseringsinställningarna.';
 

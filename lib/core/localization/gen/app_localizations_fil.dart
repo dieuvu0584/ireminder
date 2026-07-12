@@ -213,9 +213,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Hindi na ito maaaring bawiin.';
 
   @override
-  String get reminderCompletedFeedback => 'Minarkahan bilang tapos na';
-
-  @override
   String get reminderScheduleWarning =>
       'Na-save ang paalala, ngunit hindi ma-schedule ang notification. Suriin ang mga setting ng notification.';
 

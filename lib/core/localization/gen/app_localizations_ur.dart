@@ -212,9 +212,6 @@ class AppLocalizationsUr extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'اسے واپس نہیں لایا جا سکتا۔';
 
   @override
-  String get reminderCompletedFeedback => 'مکمل کے طور پر نشان زد';
-
-  @override
   String get reminderScheduleWarning =>
       'یاد دہانی محفوظ ہو گئی، لیکن اطلاع شیڈول نہیں ہو سکی۔ اطلاعی ترتیبات چیک کریں۔';
 

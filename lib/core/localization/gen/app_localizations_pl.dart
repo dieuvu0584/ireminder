@@ -212,9 +212,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Tej operacji nie można cofnąć.';
 
   @override
-  String get reminderCompletedFeedback => 'Oznaczono jako wykonane';
-
-  @override
   String get reminderScheduleWarning =>
       'Przypomnienie zapisane, ale nie udało się zaplanować powiadomienia. Sprawdź ustawienia powiadomień.';
 

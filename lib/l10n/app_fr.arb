@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Supprimer ce rappel ?",
   "reminderDeleteConfirmBody": "Cette action est irréversible.",
-  "reminderCompletedFeedback": "Marqué comme terminé",
   "reminderScheduleWarning": "Rappel enregistré, mais la notification n'a pas pu être planifiée. Vérifiez les paramètres de notification.",
   "recurrenceNone": "Une seule fois",
   "recurrenceDaily": "Quotidien",

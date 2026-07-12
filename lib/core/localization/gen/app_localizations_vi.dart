@@ -212,9 +212,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get reminderDeleteConfirmBody => 'Không thể hoàn tác sau khi xóa.';
 
   @override
-  String get reminderCompletedFeedback => 'Đã đánh dấu hoàn thành';
-
-  @override
   String get reminderScheduleWarning =>
       'Đã lưu nhắc việc, nhưng không lên lịch được thông báo. Hãy kiểm tra lại cài đặt thông báo.';
 

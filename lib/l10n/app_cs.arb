@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Smazat tuto připomínku?",
   "reminderDeleteConfirmBody": "Tuto akci nelze vzít zpět.",
-  "reminderCompletedFeedback": "Označeno jako dokončeno",
   "reminderScheduleWarning": "Připomínka uložena, ale oznámení se nepodařilo naplánovat. Zkontrolujte nastavení oznámení.",
   "recurrenceNone": "Jednorázově",
   "recurrenceDaily": "Denně",

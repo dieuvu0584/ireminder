@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Deze herinnering verwijderen?",
   "reminderDeleteConfirmBody": "Dit kan niet ongedaan worden gemaakt.",
-  "reminderCompletedFeedback": "Gemarkeerd als voltooid",
   "reminderScheduleWarning": "Herinnering opgeslagen, maar de melding kon niet worden gepland. Controleer de meldingsinstellingen.",
   "recurrenceNone": "Eenmalig",
   "recurrenceDaily": "Dagelijks",

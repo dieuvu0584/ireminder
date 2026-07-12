@@ -213,9 +213,6 @@ class AppLocalizationsMs extends AppLocalizations {
       'Tindakan ini tidak boleh dibuat asal.';
 
   @override
-  String get reminderCompletedFeedback => 'Ditanda selesai';
-
-  @override
   String get reminderScheduleWarning =>
       'Peringatan disimpan, tetapi pemberitahuan tidak dapat dijadualkan. Semak tetapan pemberitahuan.';
 

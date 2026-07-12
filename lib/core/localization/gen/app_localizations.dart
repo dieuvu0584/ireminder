@@ -562,12 +562,6 @@ abstract class AppLocalizations {
   /// **'This cannot be undone.'**
   String get reminderDeleteConfirmBody;
 
-  /// No description provided for @reminderCompletedFeedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Marked as done'**
-  String get reminderCompletedFeedback;
-
   /// No description provided for @reminderScheduleWarning.
   ///
   /// In en, this message translates to:

@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "¿Eliminar este recordatorio?",
   "reminderDeleteConfirmBody": "Esta acción no se puede deshacer.",
-  "reminderCompletedFeedback": "Marcado como hecho",
   "reminderScheduleWarning": "Recordatorio guardado, pero no se pudo programar la notificación. Revisa la configuración de notificaciones.",
   "recurrenceNone": "Una vez",
   "recurrenceDaily": "Diario",

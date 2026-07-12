@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "ลบการแจ้งเตือนนี้ใช่ไหม",
   "reminderDeleteConfirmBody": "ไม่สามารถย้อนกลับได้หลังจากลบ",
-  "reminderCompletedFeedback": "ทำเครื่องหมายว่าเสร็จแล้ว",
   "reminderScheduleWarning": "บันทึกการแจ้งเตือนแล้ว แต่ไม่สามารถตั้งเวลาการแจ้งเตือนได้ โปรดตรวจสอบการตั้งค่าการแจ้งเตือน",
   "recurrenceNone": "ครั้งเดียว",
   "recurrenceDaily": "ทุกวัน",

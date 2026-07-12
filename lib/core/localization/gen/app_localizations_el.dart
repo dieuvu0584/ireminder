@@ -213,9 +213,6 @@ class AppLocalizationsEl extends AppLocalizations {
       'Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.';
 
   @override
-  String get reminderCompletedFeedback => 'Επισημάνθηκε ως ολοκληρωμένο';
-
-  @override
   String get reminderScheduleWarning =>
       'Η υπενθύμιση αποθηκεύτηκε, αλλά η ειδοποίηση δεν προγραμματίστηκε. Ελέγξτε τις ρυθμίσεις ειδοποιήσεων.';
 

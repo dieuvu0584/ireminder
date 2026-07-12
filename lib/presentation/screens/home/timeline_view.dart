@@ -172,9 +172,6 @@ class _Section extends ConsumerWidget {
             onComplete: () => runGuarded(
               context,
               () => ref.read(reminderActionsProvider).complete(r.id),
-              successMessage: AppLocalizations.of(
-                context,
-              ).reminderCompletedFeedback,
             ),
             onSnooze: () => runGuarded(
               context,
@@ -252,9 +249,6 @@ class _TodaySection extends ConsumerWidget {
                   : ref
                         .read(reminderActionsProvider)
                         .complete(entry.reminder.id),
-              successMessage: entry.completed
-                  ? null
-                  : AppLocalizations.of(context).reminderCompletedFeedback,
             ),
             onSnooze: () => runGuarded(
               context,

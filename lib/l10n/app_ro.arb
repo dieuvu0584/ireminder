@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "Ștergi acest memento?",
   "reminderDeleteConfirmBody": "Această acțiune nu poate fi anulată.",
-  "reminderCompletedFeedback": "Marcat ca finalizat",
   "reminderScheduleWarning": "Memento salvat, dar notificarea nu a putut fi programată. Verifică setările de notificare.",
   "recurrenceNone": "O singură dată",
   "recurrenceDaily": "Zilnic",

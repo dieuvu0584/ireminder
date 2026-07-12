@@ -72,7 +72,6 @@
   },
   "reminderDeleteConfirmTitle": "למחוק את התזכורת הזו?",
   "reminderDeleteConfirmBody": "לא ניתן לבטל פעולה זו.",
-  "reminderCompletedFeedback": "סומן כבוצע",
   "reminderScheduleWarning": "התזכורת נשמרה, אך לא ניתן היה לתזמן את ההתראה. בדוק את הגדרות ההתראות.",
   "recurrenceNone": "פעם אחת",
   "recurrenceDaily": "יומי",

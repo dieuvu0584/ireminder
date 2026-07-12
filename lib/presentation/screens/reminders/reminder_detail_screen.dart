@@ -188,7 +188,6 @@ class ReminderDetailScreen extends ConsumerWidget {
                           () => ref
                               .read(reminderActionsProvider)
                               .complete(current.id),
-                          successMessage: l10n.reminderCompletedFeedback,
                         ),
                       ),
                     ),
