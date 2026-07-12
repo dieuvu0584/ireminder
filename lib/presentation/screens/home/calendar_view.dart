@@ -11,7 +11,6 @@ import '../../providers/calendar_providers.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../providers/settings_providers.dart';
-import '../../widgets/color_picker.dart';
 import '../../widgets/guarded_action.dart';
 import '../reminders/reminder_detail_screen.dart';
 import '../../widgets/reminder_card.dart';
@@ -172,7 +171,6 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
               month: _visibleMonth,
               selectedDay: selectedDay,
               entriesByDay: byDay,
-              categoriesById: byId,
               onSelectDay: (d) =>
                   ref.read(selectedCalendarDayProvider.notifier).state = d,
             ),
@@ -327,16 +325,24 @@ class _MonthGrid extends StatelessWidget {
   final DateTime month;
   final DateTime? selectedDay;
   final Map<DateTime, List<_CalendarEntry>> entriesByDay;
-  final Map<int, Category> categoriesById;
   final ValueChanged<DateTime> onSelectDay;
 
   const _MonthGrid({
     required this.month,
     required this.selectedDay,
     required this.entriesByDay,
-    required this.categoriesById,
     required this.onSelectDay,
   });
+
+  /// Same 3-color scheme as ReminderCard's trailing check — orange while
+  /// still due and actionable, green once done, gray once auto-skipped
+  /// past its day — instead of the category color, so a glance at the
+  /// month grid shows what needs attention without opening the day.
+  Color _dotColor(BuildContext context, _CalendarEntry entry) {
+    if (entry.completed) return Colors.green;
+    if (entry.historical) return Theme.of(context).colorScheme.outline;
+    return Colors.orange;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -406,15 +412,11 @@ class _MonthGrid extends StatelessWidget {
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
                       ...dayEntries.take(3).map((entry) {
-                        final cat = categoriesById[entry.reminder.categoryId];
-                        final color = cat != null
-                            ? parseHexColor(cat.color)
-                            : Colors.grey;
                         return Container(
                           width: 5,
                           height: 5,
                           decoration: BoxDecoration(
-                            color: entry.completed ? Colors.green : color,
+                            color: _dotColor(context, entry),
                             shape: BoxShape.circle,
                           ),
                         );
