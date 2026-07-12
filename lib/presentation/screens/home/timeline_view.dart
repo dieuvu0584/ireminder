@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
+import '../../../core/utils/reminder_occurrence_builder.dart';
 import '../../../data/database/app_database.dart';
+import '../../../domain/models/reminder_occurrence.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../providers/settings_providers.dart';
@@ -16,14 +18,23 @@ class TimelineView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final remindersAsync = ref.watch(activeRemindersStreamProvider);
+    final activeRemindersAsync = ref.watch(activeRemindersStreamProvider);
+    // Today gets its own section below, built separately from all
+    // reminders (not just active ones) plus completed/skipped logs — an
+    // item completed earlier today would otherwise vanish from this tab
+    // entirely (deactivated if one-off, or its next_due_date already
+    // moved to a future day if recurring), even though it legitimately
+    // happened today.
+    final allRemindersAsync = ref.watch(allRemindersStreamProvider);
+    final completedLogsAsync = ref.watch(completedReminderLogsStreamProvider);
+    final skippedLogsAsync = ref.watch(skippedReminderLogsStreamProvider);
     final categoriesAsync = ref.watch(categoriesStreamProvider);
     final snoozeMinutes =
         ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
         60;
 
-    return remindersAsync.when(
-      data: (reminders) {
+    return activeRemindersAsync.when(
+      data: (activeReminders) {
         final categories = categoriesAsync.valueOrNull ?? const <Category>[];
         final byId = {for (final c in categories) c.id: c};
 
@@ -32,11 +43,10 @@ class TimelineView extends ConsumerWidget {
         final endOfWeek = today.add(Duration(days: 7 - today.weekday));
 
         final overdue = <Reminder>[];
-        final dueToday = <Reminder>[];
         final thisWeek = <Reminder>[];
         final upcoming = <Reminder>[];
 
-        for (final r in reminders) {
+        for (final r in activeReminders) {
           final due = r.snoozeUntil != null
               ? DateTime(
                   r.snoozeUntil!.year,
@@ -51,7 +61,7 @@ class TimelineView extends ConsumerWidget {
           if (due.isBefore(today)) {
             overdue.add(r);
           } else if (due.isAtSameMomentAs(today)) {
-            dueToday.add(r);
+            continue; // covered by the Today section below instead
           } else if (!due.isAfter(endOfWeek)) {
             thisWeek.add(r);
           } else {
@@ -59,7 +69,18 @@ class TimelineView extends ConsumerWidget {
           }
         }
 
-        if (reminders.isEmpty) {
+        final todayEntries =
+            buildOccurrencesByDay(
+              reminders: allRemindersAsync.valueOrNull ?? const [],
+              completedLogs: completedLogsAsync.valueOrNull ?? const [],
+              skippedLogs: skippedLogsAsync.valueOrNull ?? const [],
+            )[today] ??
+            const <ReminderOccurrence>[];
+
+        if (overdue.isEmpty &&
+            thisWeek.isEmpty &&
+            upcoming.isEmpty &&
+            todayEntries.isEmpty) {
           return _EmptyState(l10n: l10n);
         }
 
@@ -70,13 +91,6 @@ class TimelineView extends ConsumerWidget {
               _Section(
                 title: l10n.homeSectionOverdue,
                 reminders: overdue,
-                byId: byId,
-                snoozeMinutes: snoozeMinutes,
-              ),
-            if (dueToday.isNotEmpty)
-              _Section(
-                title: l10n.homeSectionToday,
-                reminders: dueToday,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
               ),
@@ -91,6 +105,14 @@ class TimelineView extends ConsumerWidget {
               _Section(
                 title: l10n.homeSectionUpcoming,
                 reminders: upcoming,
+                byId: byId,
+                snoozeMinutes: snoozeMinutes,
+              ),
+            if (todayEntries.isNotEmpty)
+              _TodaySection(
+                title: l10n.homeSectionToday,
+                entries: todayEntries,
+                today: today,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
               ),
@@ -147,6 +169,75 @@ class _Section extends ConsumerWidget {
                   .read(reminderActionsProvider)
                   .snooze(
                     r.id,
+                    DateTime.now().add(Duration(minutes: snoozeMinutes)),
+                  ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Every reminder that touches today — done, skipped, or still pending —
+/// unlike [_Section], which only ever lists still-actionable reminders.
+/// Each row shows the date too, since a completed/skipped entry here is
+/// a historical record (see ReminderCard's `historical`) rather than
+/// today's own live state.
+class _TodaySection extends ConsumerWidget {
+  final String title;
+  final List<ReminderOccurrence> entries;
+  final DateTime today;
+  final Map<int, Category> byId;
+  final int snoozeMinutes;
+
+  const _TodaySection({
+    required this.title,
+    required this.entries,
+    required this.today,
+    required this.byId,
+    required this.snoozeMinutes,
+  });
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
+          child: Text(title, style: Theme.of(context).textTheme.titleMedium),
+        ),
+        ...entries.map(
+          (entry) => ReminderCard(
+            key: ValueKey(
+              'today_${entry.reminder.id}_${entry.completed}_'
+              '${entry.historical}',
+            ),
+            reminder: entry.reminder,
+            category: byId[entry.reminder.categoryId],
+            completed: entry.completed,
+            historical: entry.historical,
+            occurrenceDate: today,
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => ReminderDetailScreen(reminder: entry.reminder),
+              ),
+            ),
+            onComplete: () => runGuarded(
+              context,
+              () =>
+                  ref.read(reminderActionsProvider).complete(entry.reminder.id),
+              successMessage: AppLocalizations.of(
+                context,
+              ).reminderCompletedFeedback,
+            ),
+            onSnooze: () => runGuarded(
+              context,
+              () => ref
+                  .read(reminderActionsProvider)
+                  .snooze(
+                    entry.reminder.id,
                     DateTime.now().add(Duration(minutes: snoozeMinutes)),
                   ),
             ),

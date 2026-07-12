@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/localization/gen/app_localizations.dart';
+import '../../core/utils/date_formatter.dart';
 import '../../core/utils/lunar_converter.dart';
 import '../../data/database/app_database.dart';
 import 'color_picker.dart';
@@ -25,6 +26,12 @@ class ReminderCard extends StatelessWidget {
   /// something to act on again.
   final bool historical;
 
+  /// When set, shown next to the time in the subtitle. Used by the Today
+  /// tab's "what happened today" section, where every row is pinned to
+  /// today by construction but a visible date still makes it explicit at
+  /// a glance rather than implicit from the section heading alone.
+  final DateTime? occurrenceDate;
+
   const ReminderCard({
     super.key,
     required this.reminder,
@@ -34,6 +41,7 @@ class ReminderCard extends StatelessWidget {
     required this.onSnooze,
     this.completed = false,
     this.historical = false,
+    this.occurrenceDate,
   });
 
   @override
@@ -60,7 +68,12 @@ class ReminderCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('${reminder.reminderTime} · ${category?.name ?? ''}'),
+            Text(
+              occurrenceDate != null
+                  ? '${DateFormatter.formatDate(occurrenceDate!, Localizations.localeOf(context).toString())} · '
+                        '${reminder.reminderTime} · ${category?.name ?? ''}'
+                  : '${reminder.reminderTime} · ${category?.name ?? ''}',
+            ),
             if (reminder.isLunar)
               Row(
                 mainAxisSize: MainAxisSize.min,

@@ -4,9 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../../core/utils/lunar_converter.dart';
 import '../../../core/utils/recurrence_calculator.dart';
+import '../../../core/utils/reminder_occurrence_builder.dart';
 import '../../../data/database/app_database.dart';
 import '../../../domain/enums/recurrence_type.dart';
 import '../../../domain/models/recurrence_params.dart';
+import '../../../domain/models/reminder_occurrence.dart';
 import '../../providers/calendar_providers.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
@@ -54,100 +56,61 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
       data: (reminders) {
         final categories = categoriesAsync.valueOrNull ?? const <Category>[];
         final byId = {for (final c in categories) c.id: c};
-        final remindersById = {for (final r in reminders) r.id: r};
-        // A one-off reminder going inactive means either it was completed
-        // or auto-skipped (see ReminderRepository.autoSkipOverdue) — this
-        // set is how the entries below tell those two apart for coloring,
-        // since next_due_date/isActive alone can't distinguish them.
-        final completedReminderIds = {
-          for (final log in completedLogsAsync.valueOrNull ?? const [])
-            log.reminderId,
-        };
 
-        final byDay = <DateTime, List<_CalendarEntry>>{};
+        final byDay = buildOccurrencesByDay(
+          reminders: reminders,
+          completedLogs: completedLogsAsync.valueOrNull ?? const [],
+          skippedLogs: skippedLogsAsync.valueOrNull ?? const [],
+        );
+
+        // The DB only stores the single nearest upcoming occurrence, so
+        // browsing to a different year would otherwise show nothing for a
+        // yearly/lunar-yearly reminder that already has its next occurrence
+        // recorded for this year (or a past one). Project it onto whichever
+        // year is currently visible too — on top of whatever
+        // buildOccurrencesByDay already produced, calendar-browsing-specific
+        // and not needed by the Today tab, which only ever cares about now.
         for (final r in reminders) {
-          final d = r.snoozeUntil ?? r.nextDueDate;
-          final key = DateTime(d.year, d.month, d.day);
-          final done = !r.isActive && completedReminderIds.contains(r.id);
-          byDay
-              .putIfAbsent(key, () => [])
-              .add(_CalendarEntry(r, completed: done, historical: !r.isActive));
-
-          // The DB only stores the single nearest upcoming occurrence, so
-          // browsing to a different year would otherwise show nothing for
-          // a yearly/lunar-yearly reminder that already has its next
-          // occurrence recorded for this year (or a past one). Project it
-          // onto whichever year is currently visible too.
           final type = RecurrenceType.fromDbValue(r.recurrenceType);
-          if (r.snoozeUntil == null &&
-              (type == RecurrenceType.yearly ||
-                  type == RecurrenceType.lunarYearly)) {
-            final projected = occurrenceInYear(
-              RecurrenceParams(
-                type: type,
-                day: r.recurrenceDay,
-                month: r.recurrenceMonth,
-              ),
-              _visibleMonth.year,
-            );
-            if (projected != null) {
-              final projKey = DateTime(
-                projected.year,
-                projected.month,
-                projected.day,
+          if (r.snoozeUntil != null ||
+              (type != RecurrenceType.yearly &&
+                  type != RecurrenceType.lunarYearly)) {
+            continue;
+          }
+          final projected = occurrenceInYear(
+            RecurrenceParams(
+              type: type,
+              day: r.recurrenceDay,
+              month: r.recurrenceMonth,
+            ),
+            _visibleMonth.year,
+          );
+          if (projected == null) continue;
+          final projKey = DateTime(
+            projected.year,
+            projected.month,
+            projected.day,
+          );
+          final currentKey = DateTime(
+            r.nextDueDate.year,
+            r.nextDueDate.month,
+            r.nextDueDate.day,
+          );
+          if (projKey == currentKey) continue;
+          final done =
+              !r.isActive &&
+              (completedLogsAsync.valueOrNull ?? const []).any(
+                (log) => log.reminderId == r.id,
               );
-              if (projKey != key) {
-                byDay
-                    .putIfAbsent(projKey, () => [])
-                    .add(
-                      _CalendarEntry(
-                        r,
-                        completed: done,
-                        historical: !r.isActive,
-                      ),
-                    );
-              }
-            }
-          }
-        }
-
-        // A recurring reminder's next_due_date only ever holds the single
-        // upcoming occurrence, so its past completed/skipped cycles aren't
-        // reachable above at all — plot each logged completion/skip on the
-        // day it actually happened. One-off (none) reminders are excluded
-        // from both loops since they're already fully represented above
-        // (next_due_date never moves for them, so the same day would
-        // double up).
-        for (final log in completedLogsAsync.valueOrNull ?? const []) {
-          final reminder = remindersById[log.reminderId];
-          if (reminder == null) continue;
-          if (RecurrenceType.fromDbValue(reminder.recurrenceType) ==
-              RecurrenceType.none) {
-            continue;
-          }
-          final d = log.completedAt;
-          final key = DateTime(d.year, d.month, d.day);
           byDay
-              .putIfAbsent(key, () => [])
-              .add(_CalendarEntry(reminder, completed: true, historical: true));
-        }
-        for (final log in skippedLogsAsync.valueOrNull ?? const []) {
-          final reminder = remindersById[log.reminderId];
-          if (reminder == null) continue;
-          if (RecurrenceType.fromDbValue(reminder.recurrenceType) ==
-              RecurrenceType.none) {
-            continue;
-          }
-          final d = log.completedAt;
-          final key = DateTime(d.year, d.month, d.day);
-          byDay
-              .putIfAbsent(key, () => [])
+              .putIfAbsent(projKey, () => [])
               .add(
-                _CalendarEntry(reminder, completed: false, historical: true),
+                ReminderOccurrence(r, completed: done, historical: !r.isActive),
               );
         }
 
-        final selectedEntries = byDay[selectedDay] ?? const <_CalendarEntry>[];
+        final selectedEntries =
+            byDay[selectedDay] ?? const <ReminderOccurrence>[];
 
         return Column(
           children: [
@@ -234,25 +197,6 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
   }
 }
 
-/// A reminder plotted on a specific calendar day. [completed] marks
-/// whether that particular occurrence was actually done (green vs
-/// gray/category dot). [historical] marks whether it's a past
-/// completed/skipped occurrence — shown as a static row rather than an
-/// actionable one, since there's nothing to swipe-complete/snooze about
-/// something already resolved one way or the other. The same [Reminder]
-/// can appear on more than one day (its current occurrence, plus any of
-/// its past logged completions/skips), each with its own values.
-class _CalendarEntry {
-  final Reminder reminder;
-  final bool completed;
-  final bool historical;
-  const _CalendarEntry(
-    this.reminder, {
-    required this.completed,
-    required this.historical,
-  });
-}
-
 class _MonthHeader extends StatelessWidget {
   final DateTime month;
   final VoidCallback onPrev;
@@ -324,7 +268,7 @@ class _WeekdayHeader extends StatelessWidget {
 class _MonthGrid extends StatelessWidget {
   final DateTime month;
   final DateTime? selectedDay;
-  final Map<DateTime, List<_CalendarEntry>> entriesByDay;
+  final Map<DateTime, List<ReminderOccurrence>> entriesByDay;
   final ValueChanged<DateTime> onSelectDay;
 
   const _MonthGrid({
@@ -338,7 +282,7 @@ class _MonthGrid extends StatelessWidget {
   /// still due and actionable, green once done, gray once auto-skipped
   /// past its day — instead of the category color, so a glance at the
   /// month grid shows what needs attention without opening the day.
-  Color _dotColor(BuildContext context, _CalendarEntry entry) {
+  Color _dotColor(BuildContext context, ReminderOccurrence entry) {
     if (entry.completed) return Colors.green;
     if (entry.historical) return Theme.of(context).colorScheme.outline;
     return Colors.orange;
