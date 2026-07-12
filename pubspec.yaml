@@ -38,13 +38,7 @@ dependencies:
   # Theming
   dynamic_color: ^1.7.0
 
-  # Phase 7 (optional AI assistant, BYOK) — API key storage only,
-  # per PROMPT.md §9.5. No general-purpose HTTP package is added; provider
-  # calls use dart:io's built-in HttpClient since they're plain JSON POSTs.
-  flutter_secure_storage: ^9.2.4
   permission_handler: ^12.0.3
-  url_launcher: ^6.3.2
-  flutter_markdown_plus: ^1.0.12
 
 dev_dependencies:
   flutter_test:

@@ -27,9 +27,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get navSettings => 'Налаштування';
 
   @override
-  String get navAssistant => 'Асистент';
-
-  @override
   String get onboardingTitle1 => 'Ніколи не забувайте важливе';
 
   @override
@@ -470,77 +467,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Не вдалося завантажити дані.';
-
-  @override
-  String get settingsAiSectionTitle => 'ШІ-асистент';
-
-  @override
-  String get settingsAiEnable => 'Увімкнути ШІ-асистента';
-
-  @override
-  String get settingsAiProvider => 'Постачальник ШІ';
-
-  @override
-  String get settingsAiModel => 'Модель';
-
-  @override
-  String get settingsAiApiKey => 'Ключ API';
-
-  @override
-  String get settingsAiApiKeyHint => 'Вставте свій ключ API';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Де взяти ключ?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Ключ API збережено';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Категорії, які асистент може бачити';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Усі категорії, крім «Фінанси», спільні за умовчанням — вимкніть ті, які асистент не повинен бачити.';
-
-  @override
-  String get settingsAiClearHistory => 'Очистити історію чату';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Очистити історію чату?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Це видалить усі запитання й відповіді, збережені на цьому пристрої. Цю дію неможливо скасувати.';
-
-  @override
-  String get assistantTitle => 'Асистент';
-
-  @override
-  String get assistantEmptyTitle => 'Запитайте про що завгодно';
-
-  @override
-  String get assistantEmptyBody =>
-      'Спробуйте: «Що мені потрібно зробити цього тижня?» або «Скільки платежів залишилось за кредитом на мотоцикл?»';
-
-  @override
-  String get assistantInputHint => 'Задайте питання…';
-
-  @override
-  String get assistantSend => 'Надіслати';
-
-  @override
-  String get assistantDisabledTitle => 'Асистента вимкнено';
-
-  @override
-  String get assistantDisabledBody =>
-      'Увімкніть його в налаштуваннях і виберіть постачальника ШІ, щоб почати спілкування.';
-
-  @override
-  String get assistantOpenSettings => 'Відкрити налаштування';
-
-  @override
-  String get assistantThinking => 'Думаю…';
 
   @override
   String get validationRequired => 'Обов\'язкове поле';

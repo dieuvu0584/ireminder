@@ -27,9 +27,6 @@ class AppLocalizationsBn extends AppLocalizations {
   String get navSettings => 'সেটিংস';
 
   @override
-  String get navAssistant => 'সহায়ক';
-
-  @override
   String get onboardingTitle1 => 'গুরুত্বপূর্ণ কিছু আর কখনো ভুলবেন না';
 
   @override
@@ -468,76 +465,6 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'ডেটা লোড করা যায়নি।';
-
-  @override
-  String get settingsAiSectionTitle => 'এআই সহায়ক';
-
-  @override
-  String get settingsAiEnable => 'এআই সহায়ক চালু করুন';
-
-  @override
-  String get settingsAiProvider => 'এআই প্রোভাইডার';
-
-  @override
-  String get settingsAiModel => 'মডেল';
-
-  @override
-  String get settingsAiApiKey => 'এপিআই কী';
-
-  @override
-  String get settingsAiApiKeyHint => 'আপনার এপিআই কী পেস্ট করুন';
-
-  @override
-  String get settingsAiApiKeyHelp => 'কী কোথায় পাব?';
-
-  @override
-  String get settingsAiApiKeySaved => 'এপিআই কী সংরক্ষিত হয়েছে';
-
-  @override
-  String get settingsAiAllowedCategories => 'সহায়ক যেসব বিভাগ দেখতে পারবে';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'অর্থ ছাড়া সব বিভাগ ডিফল্টরূপে শেয়ার করা হয় — সহকারীকে দেখাতে না চাইলে বন্ধ করে দিন।';
-
-  @override
-  String get settingsAiClearHistory => 'চ্যাট হিস্টোরি মুছুন';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'চ্যাট হিস্টোরি মুছবেন?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'এতে এই ডিভাইসে সংরক্ষিত সব প্রশ্ন ও উত্তর মুছে যাবে। এটি পূর্বাবস্থায় ফেরানো যাবে না।';
-
-  @override
-  String get assistantTitle => 'সহায়ক';
-
-  @override
-  String get assistantEmptyTitle => 'যা খুশি জিজ্ঞাসা করুন';
-
-  @override
-  String get assistantEmptyBody =>
-      'চেষ্টা করে দেখুন \"এই সপ্তাহে আমার কী করা দরকার?\" অথবা \"আমার মোটরসাইকেল ঋণের আর কয়টা কিস্তি বাকি?\"';
-
-  @override
-  String get assistantInputHint => 'কিছু জিজ্ঞাসা করুন…';
-
-  @override
-  String get assistantSend => 'পাঠান';
-
-  @override
-  String get assistantDisabledTitle => 'সহায়ক বন্ধ আছে';
-
-  @override
-  String get assistantDisabledBody =>
-      'চ্যাট শুরু করতে সেটিংসে গিয়ে এটি চালু করুন এবং একটি এআই প্রোভাইডার বেছে নিন।';
-
-  @override
-  String get assistantOpenSettings => 'সেটিংস খুলুন';
-
-  @override
-  String get assistantThinking => 'ভাবছে…';
 
   @override
   String get validationRequired => 'আবশ্যক';

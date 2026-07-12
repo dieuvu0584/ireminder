@@ -27,9 +27,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get navSettings => 'الإعدادات';
 
   @override
-  String get navAssistant => 'المساعد';
-
-  @override
   String get onboardingTitle1 => 'لا تنسَ أبدًا ما يهمك';
 
   @override
@@ -469,76 +466,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'تعذّر تحميل البيانات.';
-
-  @override
-  String get settingsAiSectionTitle => 'المساعد الذكي';
-
-  @override
-  String get settingsAiEnable => 'تفعيل المساعد الذكي';
-
-  @override
-  String get settingsAiProvider => 'مزوّد الذكاء الاصطناعي';
-
-  @override
-  String get settingsAiModel => 'النموذج';
-
-  @override
-  String get settingsAiApiKey => 'مفتاح API';
-
-  @override
-  String get settingsAiApiKeyHint => 'الصق مفتاح API الخاص بك';
-
-  @override
-  String get settingsAiApiKeyHelp => 'من أين أحصل على المفتاح؟';
-
-  @override
-  String get settingsAiApiKeySaved => 'تم حفظ مفتاح API';
-
-  @override
-  String get settingsAiAllowedCategories => 'الفئات التي يمكن للمساعد قراءتها';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'تتم مشاركة جميع الفئات باستثناء المالية بشكل افتراضي — أوقف تشغيل أي فئة لا تريد أن يراها المساعد.';
-
-  @override
-  String get settingsAiClearHistory => 'مسح سجل المحادثة';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'هل تريد مسح سجل المحادثة؟';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'سيؤدي هذا إلى حذف جميع الأسئلة والأجوبة المخزّنة على هذا الجهاز. لا يمكن التراجع عن هذا الإجراء.';
-
-  @override
-  String get assistantTitle => 'المساعد';
-
-  @override
-  String get assistantEmptyTitle => 'اسألني عن أي شيء';
-
-  @override
-  String get assistantEmptyBody =>
-      'جرّب أن تسأل \"ماذا يجب أن أفعل هذا الأسبوع؟\" أو \"كم قسطًا تبقّى على قرض دراجتي؟\"';
-
-  @override
-  String get assistantInputHint => 'اكتب سؤالك…';
-
-  @override
-  String get assistantSend => 'إرسال';
-
-  @override
-  String get assistantDisabledTitle => 'المساعد متوقف';
-
-  @override
-  String get assistantDisabledBody =>
-      'فعّله من الإعدادات واختر مزوّد ذكاء اصطناعي لتبدأ المحادثة.';
-
-  @override
-  String get assistantOpenSettings => 'فتح الإعدادات';
-
-  @override
-  String get assistantThinking => 'جارٍ التفكير…';
 
   @override
   String get validationRequired => 'هذا الحقل مطلوب';

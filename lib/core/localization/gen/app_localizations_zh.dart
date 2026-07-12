@@ -27,9 +27,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get navSettings => '设置';
 
   @override
-  String get navAssistant => '助手';
-
-  @override
   String get onboardingTitle1 => '重要的事永不遗忘';
 
   @override
@@ -462,73 +459,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get errorLoadFailed => '数据加载失败。';
-
-  @override
-  String get settingsAiSectionTitle => 'AI 助手';
-
-  @override
-  String get settingsAiEnable => '启用 AI 助手';
-
-  @override
-  String get settingsAiProvider => 'AI 提供商';
-
-  @override
-  String get settingsAiModel => '模型';
-
-  @override
-  String get settingsAiApiKey => 'API 密钥';
-
-  @override
-  String get settingsAiApiKeyHint => '粘贴你的 API 密钥';
-
-  @override
-  String get settingsAiApiKeyHelp => '去哪里获取密钥？';
-
-  @override
-  String get settingsAiApiKeySaved => 'API 密钥已保存';
-
-  @override
-  String get settingsAiAllowedCategories => '允许助手读取的分类';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      '默认已开启除财务外的所有分类——关闭你不想让助手看到的分类。';
-
-  @override
-  String get settingsAiClearHistory => '清除聊天记录';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => '清除聊天记录？';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody => '此设备上保存的所有问题和回答都将被删除，且无法恢复。';
-
-  @override
-  String get assistantTitle => '助手';
-
-  @override
-  String get assistantEmptyTitle => '问我任何问题';
-
-  @override
-  String get assistantEmptyBody => '试试问「这周我需要做什么？」或「我的摩托车贷款还剩几期？」';
-
-  @override
-  String get assistantInputHint => '输入问题…';
-
-  @override
-  String get assistantSend => '发送';
-
-  @override
-  String get assistantDisabledTitle => '助手已关闭';
-
-  @override
-  String get assistantDisabledBody => '请在设置中启用并选择一个 AI 提供商以开始聊天。';
-
-  @override
-  String get assistantOpenSettings => '打开设置';
-
-  @override
-  String get assistantThinking => '思考中…';
 
   @override
   String get validationRequired => '必填';

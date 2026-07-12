@@ -27,9 +27,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get navSettings => 'Instellingen';
 
   @override
-  String get navAssistant => 'Assistent';
-
-  @override
   String get onboardingTitle1 => 'Vergeet nooit meer wat belangrijk is';
 
   @override
@@ -473,77 +470,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Gegevens konden niet worden geladen.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI-assistent';
-
-  @override
-  String get settingsAiEnable => 'AI-assistent inschakelen';
-
-  @override
-  String get settingsAiProvider => 'AI-provider';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'API-sleutel';
-
-  @override
-  String get settingsAiApiKeyHint => 'Plak je API-sleutel';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Waar vind ik een sleutel?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API-sleutel opgeslagen';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Categorieën die de assistent mag lezen';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Standaard worden alle categorieën gedeeld, behalve Financiën — schakel uit wat de assistent niet mag zien.';
-
-  @override
-  String get settingsAiClearHistory => 'Chatgeschiedenis wissen';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Chatgeschiedenis wissen?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Hiermee worden alle vragen en antwoorden op dit apparaat verwijderd. Dit kan niet ongedaan worden gemaakt.';
-
-  @override
-  String get assistantTitle => 'Assistent';
-
-  @override
-  String get assistantEmptyTitle => 'Vraag me wat dan ook';
-
-  @override
-  String get assistantEmptyBody =>
-      'Probeer bijvoorbeeld \"Wat moet ik deze week doen?\" of \"Hoeveel termijnen heb ik nog op mijn motorlening?\"';
-
-  @override
-  String get assistantInputHint => 'Stel een vraag…';
-
-  @override
-  String get assistantSend => 'Versturen';
-
-  @override
-  String get assistantDisabledTitle => 'Assistent staat uit';
-
-  @override
-  String get assistantDisabledBody =>
-      'Schakel hem in bij Instellingen en kies een AI-provider om te beginnen met chatten.';
-
-  @override
-  String get assistantOpenSettings => 'Instellingen openen';
-
-  @override
-  String get assistantThinking => 'Aan het nadenken…';
 
   @override
   String get validationRequired => 'Verplicht';

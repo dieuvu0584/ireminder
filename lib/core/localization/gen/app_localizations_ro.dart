@@ -27,9 +27,6 @@ class AppLocalizationsRo extends AppLocalizations {
   String get navSettings => 'Setări';
 
   @override
-  String get navAssistant => 'Asistent';
-
-  @override
   String get onboardingTitle1 => 'Nu mai uita ce contează';
 
   @override
@@ -474,78 +471,6 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Datele nu au putut fi încărcate.';
-
-  @override
-  String get settingsAiSectionTitle => 'Asistent AI';
-
-  @override
-  String get settingsAiEnable => 'Activează Asistentul AI';
-
-  @override
-  String get settingsAiProvider => 'Furnizor AI';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'Cheie API';
-
-  @override
-  String get settingsAiApiKeyHint => 'Lipește cheia API';
-
-  @override
-  String get settingsAiApiKeyHelp => 'De unde obțin o cheie?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Cheia API a fost salvată';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Categorii pe care asistentul le poate citi';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Toate categoriile, cu excepția Finanțelor, sunt partajate implicit — dezactivează-le pe cele pe care nu vrei ca asistentul să le vadă.';
-
-  @override
-  String get settingsAiClearHistory => 'Șterge istoricul conversației';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle =>
-      'Ștergi istoricul conversației?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Aceasta șterge toate întrebările și răspunsurile stocate pe acest dispozitiv. Această acțiune nu poate fi anulată.';
-
-  @override
-  String get assistantTitle => 'Asistent';
-
-  @override
-  String get assistantEmptyTitle => 'Întreabă-mă orice';
-
-  @override
-  String get assistantEmptyBody =>
-      'Încearcă „Ce trebuie să fac săptămâna aceasta?” sau „Câte rate mai am de plătit la împrumutul pentru motocicletă?”';
-
-  @override
-  String get assistantInputHint => 'Întreabă ceva…';
-
-  @override
-  String get assistantSend => 'Trimite';
-
-  @override
-  String get assistantDisabledTitle => 'Asistentul este dezactivat';
-
-  @override
-  String get assistantDisabledBody =>
-      'Activează-l din Setări și alege un furnizor AI pentru a începe o conversație.';
-
-  @override
-  String get assistantOpenSettings => 'Deschide Setările';
-
-  @override
-  String get assistantThinking => 'Se gândește…';
 
   @override
   String get validationRequired => 'Obligatoriu';

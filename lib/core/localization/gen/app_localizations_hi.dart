@@ -27,9 +27,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get navSettings => 'सेटिंग्स';
 
   @override
-  String get navAssistant => 'सहायक';
-
-  @override
   String get onboardingTitle1 => 'ज़रूरी काम कभी न भूलें';
 
   @override
@@ -470,77 +467,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'डेटा लोड नहीं हो सका।';
-
-  @override
-  String get settingsAiSectionTitle => 'AI सहायक';
-
-  @override
-  String get settingsAiEnable => 'AI सहायक चालू करें';
-
-  @override
-  String get settingsAiProvider => 'AI प्रदाता';
-
-  @override
-  String get settingsAiModel => 'मॉडल';
-
-  @override
-  String get settingsAiApiKey => 'API कुंजी';
-
-  @override
-  String get settingsAiApiKeyHint => 'अपनी API कुंजी पेस्ट करें';
-
-  @override
-  String get settingsAiApiKeyHelp => 'कुंजी कहाँ से मिलेगी?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API कुंजी सेव हो गई';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'जिन श्रेणियों को सहायक पढ़ सकता है';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'वित्त को छोड़कर सभी श्रेणियाँ डिफ़ॉल्ट रूप से साझा की जाती हैं — जिन्हें आप सहायक को नहीं दिखाना चाहते उन्हें बंद करें।';
-
-  @override
-  String get settingsAiClearHistory => 'चैट इतिहास साफ़ करें';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'चैट इतिहास साफ़ करें?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'इस डिवाइस पर सेव हर सवाल और जवाब हटा दिया जाएगा। इसे वापस नहीं लाया जा सकता।';
-
-  @override
-  String get assistantTitle => 'सहायक';
-
-  @override
-  String get assistantEmptyTitle => 'मुझसे कुछ भी पूछें';
-
-  @override
-  String get assistantEmptyBody =>
-      'आज़माएं \"इस हफ़्ते मुझे क्या करना है?\" या \"मेरी बाइक लोन की कितनी किश्तें बाकी हैं?\"';
-
-  @override
-  String get assistantInputHint => 'कुछ पूछें…';
-
-  @override
-  String get assistantSend => 'भेजें';
-
-  @override
-  String get assistantDisabledTitle => 'सहायक बंद है';
-
-  @override
-  String get assistantDisabledBody =>
-      'चैट शुरू करने के लिए सेटिंग्स में इसे चालू करें और एक AI प्रदाता चुनें।';
-
-  @override
-  String get assistantOpenSettings => 'सेटिंग्स खोलें';
-
-  @override
-  String get assistantThinking => 'सोच रहा है…';
 
   @override
   String get validationRequired => 'आवश्यक';

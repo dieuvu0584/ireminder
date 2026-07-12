@@ -27,9 +27,6 @@ class AppLocalizationsTe extends AppLocalizations {
   String get navSettings => 'సెట్టింగ్‌లు';
 
   @override
-  String get navAssistant => 'సహాయకుడు';
-
-  @override
   String get onboardingTitle1 => 'ముఖ్యమైనవి ఎప్పుడూ మర్చిపోకండి';
 
   @override
@@ -471,77 +468,6 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'డేటాను లోడ్ చేయలేకపోయింది.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI సహాయకుడు';
-
-  @override
-  String get settingsAiEnable => 'AI సహాయకుడిని ప్రారంభించు';
-
-  @override
-  String get settingsAiProvider => 'AI ప్రొవైడర్';
-
-  @override
-  String get settingsAiModel => 'మోడల్';
-
-  @override
-  String get settingsAiApiKey => 'API కీ';
-
-  @override
-  String get settingsAiApiKeyHint => 'మీ API కీని పేస్ట్ చేయండి';
-
-  @override
-  String get settingsAiApiKeyHelp => 'కీ ఎక్కడ దొరుకుతుంది?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API కీ సేవ్ చేయబడింది';
-
-  @override
-  String get settingsAiAllowedCategories => 'సహాయకుడు చదవగలిగే వర్గాలు';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'ఆర్థికం మినహా అన్ని వర్గాలు డిఫాల్ట్‌గా భాగస్వామ్యం చేయబడతాయి — సహాయకుడు చూడకూడదనుకున్నవాటిని ఆఫ్ చేయండి.';
-
-  @override
-  String get settingsAiClearHistory => 'చాట్ చరిత్రను క్లియర్ చేయి';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle =>
-      'చాట్ చరిత్రను క్లియర్ చేయాలా?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'ఇది ఈ పరికరంలో నిల్వ చేసిన ప్రతి ప్రశ్న మరియు సమాధానాన్ని తొలగిస్తుంది. దీన్ని తిరిగి పొందలేరు.';
-
-  @override
-  String get assistantTitle => 'సహాయకుడు';
-
-  @override
-  String get assistantEmptyTitle => 'నన్ను ఏదైనా అడగండి';
-
-  @override
-  String get assistantEmptyBody =>
-      '\"ఈ వారం నేను ఏమి చేయాలి?\" లేదా \"నా బైక్ రుణంలో ఎన్ని వాయిదాలు మిగిలి ఉన్నాయి?\" అని అడిగి చూడండి.';
-
-  @override
-  String get assistantInputHint => 'ఏదైనా అడగండి…';
-
-  @override
-  String get assistantSend => 'పంపు';
-
-  @override
-  String get assistantDisabledTitle => 'సహాయకుడు ఆఫ్‌లో ఉన్నాడు';
-
-  @override
-  String get assistantDisabledBody =>
-      'చాట్ చేయడం ప్రారంభించడానికి సెట్టింగ్‌లలో దీన్ని ప్రారంభించి, AI ప్రొవైడర్‌ను ఎంచుకోండి.';
-
-  @override
-  String get assistantOpenSettings => 'సెట్టింగ్‌లను తెరవండి';
-
-  @override
-  String get assistantThinking => 'ఆలోచిస్తోంది…';
 
   @override
   String get validationRequired => 'అవసరం';

@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
-import '../../providers/ai_providers.dart';
 import '../../providers/calendar_providers.dart';
-import '../assistant/assistant_screen.dart';
 import '../categories/category_manager_screen.dart';
 import '../loans/loan_form_screen.dart';
 import '../loans/loan_list_screen.dart';
@@ -59,20 +57,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
       );
     } else if (choice == 'loan' && context.mounted) {
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (_) => const LoanFormScreen()),
-      );
+      Navigator.of(
+        context,
+      ).push(MaterialPageRoute(builder: (_) => const LoanFormScreen()));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    // The Assistant tab only exists at all when Phase 7 is turned on in
-    // Settings — hidden, not just disabled, so there's no dangling UI
-    // surface (and no chance of a stray network call) while it's off.
-    final aiEnabled =
-        ref.watch(aiSettingsStreamProvider).valueOrNull?.isEnabled ?? false;
 
     final tabs = <Widget>[
       // Unlike the other tabs, this one has no Scaffold/AppBar of its own
@@ -92,9 +85,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ],
               ),
               const Expanded(
-                child: TabBarView(
-                  children: [TimelineView(), CalendarView()],
-                ),
+                child: TabBarView(children: [TimelineView(), CalendarView()]),
               ),
             ],
           ),
@@ -102,7 +93,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
       const LoanListScreen(),
       const CategoryManagerScreen(),
-      if (aiEnabled) const AssistantScreen(),
       const SettingsScreen(),
     ];
 
@@ -126,12 +116,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         selectedIcon: const Icon(Icons.category),
         label: l10n.navCategories,
       ),
-      if (aiEnabled)
-        NavigationDestination(
-          icon: const Icon(Icons.smart_toy_outlined),
-          selectedIcon: const Icon(Icons.smart_toy),
-          label: l10n.navAssistant,
-        ),
       NavigationDestination(
         icon: const Icon(Icons.settings_outlined),
         selectedIcon: const Icon(Icons.settings),

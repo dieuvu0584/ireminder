@@ -27,9 +27,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get navSettings => 'Inställningar';
 
   @override
-  String get navAssistant => 'Assistent';
-
-  @override
   String get onboardingTitle1 => 'Glöm aldrig det som spelar roll';
 
   @override
@@ -472,77 +469,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Det gick inte att läsa in data.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI-assistent';
-
-  @override
-  String get settingsAiEnable => 'Aktivera AI-assistent';
-
-  @override
-  String get settingsAiProvider => 'AI-leverantör';
-
-  @override
-  String get settingsAiModel => 'Modell';
-
-  @override
-  String get settingsAiApiKey => 'API-nyckel';
-
-  @override
-  String get settingsAiApiKeyHint => 'Klistra in din API-nyckel';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Var hittar jag en nyckel?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API-nyckel sparad';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Kategorier som assistenten får läsa';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Alla kategorier utom Ekonomi delas som standard — stäng av de du inte vill att assistenten ska se.';
-
-  @override
-  String get settingsAiClearHistory => 'Rensa chatthistorik';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Rensa chatthistorik?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Detta tar bort alla frågor och svar som är sparade på den här enheten. Detta kan inte ångras.';
-
-  @override
-  String get assistantTitle => 'Assistent';
-
-  @override
-  String get assistantEmptyTitle => 'Fråga mig vad som helst';
-
-  @override
-  String get assistantEmptyBody =>
-      'Prova ”Vad behöver jag göra den här veckan?” eller ”Hur många avbetalningar har jag kvar på mitt mc-lån?”';
-
-  @override
-  String get assistantInputHint => 'Fråga något …';
-
-  @override
-  String get assistantSend => 'Skicka';
-
-  @override
-  String get assistantDisabledTitle => 'Assistenten är avstängd';
-
-  @override
-  String get assistantDisabledBody =>
-      'Aktivera den i Inställningar och välj en AI-leverantör för att börja chatta.';
-
-  @override
-  String get assistantOpenSettings => 'Öppna Inställningar';
-
-  @override
-  String get assistantThinking => 'Tänker …';
 
   @override
   String get validationRequired => 'Obligatoriskt';

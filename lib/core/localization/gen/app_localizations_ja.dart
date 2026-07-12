@@ -27,9 +27,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get navSettings => '設定';
 
   @override
-  String get navAssistant => 'アシスタント';
-
-  @override
   String get onboardingTitle1 => '大事なことを忘れない';
 
   @override
@@ -465,75 +462,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'データを読み込めませんでした。';
-
-  @override
-  String get settingsAiSectionTitle => 'AIアシスタント';
-
-  @override
-  String get settingsAiEnable => 'AIアシスタントを有効にする';
-
-  @override
-  String get settingsAiProvider => 'AIプロバイダー';
-
-  @override
-  String get settingsAiModel => 'モデル';
-
-  @override
-  String get settingsAiApiKey => 'APIキー';
-
-  @override
-  String get settingsAiApiKeyHint => 'APIキーを貼り付けてください';
-
-  @override
-  String get settingsAiApiKeyHelp => 'キーの取得方法は？';
-
-  @override
-  String get settingsAiApiKeySaved => 'APIキーを保存しました';
-
-  @override
-  String get settingsAiAllowedCategories => 'アシスタントに見せるカテゴリ';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      '「財務」以外のすべてのカテゴリーはデフォルトで共有されます — アシスタントに見せたくないものはオフにしてください。';
-
-  @override
-  String get settingsAiClearHistory => 'チャット履歴を削除';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'チャット履歴を削除しますか？';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'この端末に保存されているすべての質問と回答が削除されます。この操作は元に戻せません。';
-
-  @override
-  String get assistantTitle => 'アシスタント';
-
-  @override
-  String get assistantEmptyTitle => '何でも聞いてください';
-
-  @override
-  String get assistantEmptyBody =>
-      '「今週やることは？」や「バイクのローンはあと何回残ってる？」のように聞いてみましょう。';
-
-  @override
-  String get assistantInputHint => '質問を入力…';
-
-  @override
-  String get assistantSend => '送信';
-
-  @override
-  String get assistantDisabledTitle => 'アシスタントはオフになっています';
-
-  @override
-  String get assistantDisabledBody => '設定で有効にしてAIプロバイダーを選択すると、会話を始められます。';
-
-  @override
-  String get assistantOpenSettings => '設定を開く';
-
-  @override
-  String get assistantThinking => '考え中…';
 
   @override
   String get validationRequired => '入力してください';

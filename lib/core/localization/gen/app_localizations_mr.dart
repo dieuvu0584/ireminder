@@ -27,9 +27,6 @@ class AppLocalizationsMr extends AppLocalizations {
   String get navSettings => 'सेटिंग्ज';
 
   @override
-  String get navAssistant => 'सहाय्यक';
-
-  @override
   String get onboardingTitle1 => 'महत्त्वाचं कधीच विसरू नका';
 
   @override
@@ -470,76 +467,6 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'डेटा लोड करता आला नाही.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI सहाय्यक';
-
-  @override
-  String get settingsAiEnable => 'AI सहाय्यक सुरू करा';
-
-  @override
-  String get settingsAiProvider => 'AI प्रोव्हायडर';
-
-  @override
-  String get settingsAiModel => 'मॉडेल';
-
-  @override
-  String get settingsAiApiKey => 'API की';
-
-  @override
-  String get settingsAiApiKeyHint => 'तुमची API की पेस्ट करा';
-
-  @override
-  String get settingsAiApiKeyHelp => 'की कुठे मिळेल?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API की जतन झाली';
-
-  @override
-  String get settingsAiAllowedCategories => 'सहाय्यक वाचू शकेल अशा श्रेणी';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'वित्त वगळता सर्व श्रेण्या डीफॉल्टनुसार शेअर केल्या जातात — सहाय्यकाला दिसू नयेत असे वाटणाऱ्या बंद करा.';
-
-  @override
-  String get settingsAiClearHistory => 'चॅट इतिहास साफ करा';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'चॅट इतिहास साफ करायचा?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'यामुळे या डिव्हाइसवर साठवलेले सर्व प्रश्न आणि उत्तरं हटवली जातील. ही क्रिया पूर्ववत करता येणार नाही.';
-
-  @override
-  String get assistantTitle => 'सहाय्यक';
-
-  @override
-  String get assistantEmptyTitle => 'मला काहीही विचारा';
-
-  @override
-  String get assistantEmptyBody =>
-      '\"या आठवड्यात मला काय करायचं आहे?\" किंवा \"माझ्या बाइक कर्जाचे किती हप्ते बाकी आहेत?\" असं विचारून पहा.';
-
-  @override
-  String get assistantInputHint => 'काहीतरी विचारा…';
-
-  @override
-  String get assistantSend => 'पाठवा';
-
-  @override
-  String get assistantDisabledTitle => 'सहाय्यक बंद आहे';
-
-  @override
-  String get assistantDisabledBody =>
-      'गप्पा सुरू करण्यासाठी सेटिंग्जमध्ये तो सुरू करा आणि AI प्रोव्हायडर निवडा.';
-
-  @override
-  String get assistantOpenSettings => 'सेटिंग्ज उघडा';
-
-  @override
-  String get assistantThinking => 'विचार करत आहे…';
 
   @override
   String get validationRequired => 'आवश्यक';

@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:ui' show Locale;
 
 import 'package:drift/drift.dart' show Value;
@@ -28,27 +27,6 @@ void main() {
     expect(all, hasLength(9));
     expect(all.every((c) => c.isSystemDefault), isTrue);
   });
-
-  test(
-    'AI assistant defaults to allowing every category except Finance',
-    () async {
-      final all = await categories.getAll();
-      final financeCategory = all[3]; // kDefaultCategories[3] is Finance
-      final aiSettings = await db.select(db.aiSettings).getSingle();
-      final allowedIds = (jsonDecode(aiSettings.allowedCategoryIds) as List)
-          .cast<int>()
-          .toSet();
-
-      expect(allowedIds, hasLength(8));
-      expect(allowedIds.contains(financeCategory.id), isFalse);
-      expect(
-        allowedIds,
-        containsAll(
-          all.where((c) => c.id != financeCategory.id).map((c) => c.id),
-        ),
-      );
-    },
-  );
 
   test('syncDefaultCategoryNames retranslates an untouched default category '
       'and leaves a renamed one alone', () async {

@@ -27,9 +27,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get navSettings => 'Ayarlar';
 
   @override
-  String get navAssistant => 'Asistan';
-
-  @override
   String get onboardingTitle1 => 'Önemli olanı asla unutmayın';
 
   @override
@@ -470,78 +467,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Veriler yüklenemedi.';
-
-  @override
-  String get settingsAiSectionTitle => 'Yapay Zeka Asistanı';
-
-  @override
-  String get settingsAiEnable => 'Yapay Zeka Asistanını etkinleştir';
-
-  @override
-  String get settingsAiProvider => 'Yapay zeka sağlayıcısı';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'API anahtarı';
-
-  @override
-  String get settingsAiApiKeyHint => 'API anahtarınızı yapıştırın';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Anahtarı nereden alabilirim?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API anahtarı kaydedildi';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Asistanın okuyabileceği kategoriler';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Finans hariç tüm kategoriler varsayılan olarak paylaşılır — asistanın görmesini istemediklerinizi kapatın.';
-
-  @override
-  String get settingsAiClearHistory => 'Sohbet geçmişini temizle';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle =>
-      'Sohbet geçmişi temizlensin mi?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Bu cihazda saklanan tüm soru ve cevaplar silinir. Bu işlem geri alınamaz.';
-
-  @override
-  String get assistantTitle => 'Asistan';
-
-  @override
-  String get assistantEmptyTitle => 'Bana istediğinizi sorun';
-
-  @override
-  String get assistantEmptyBody =>
-      '\"Bu hafta ne yapmam gerekiyor?\" ya da \"Motosiklet kredimde kaç taksit kaldı?\" gibi bir şey deneyin.';
-
-  @override
-  String get assistantInputHint => 'Bir şeyler sorun…';
-
-  @override
-  String get assistantSend => 'Gönder';
-
-  @override
-  String get assistantDisabledTitle => 'Asistan kapalı';
-
-  @override
-  String get assistantDisabledBody =>
-      'Sohbete başlamak için Ayarlar\'dan etkinleştirin ve bir yapay zeka sağlayıcısı seçin.';
-
-  @override
-  String get assistantOpenSettings => 'Ayarları aç';
-
-  @override
-  String get assistantThinking => 'Düşünüyor…';
 
   @override
   String get validationRequired => 'Zorunlu';

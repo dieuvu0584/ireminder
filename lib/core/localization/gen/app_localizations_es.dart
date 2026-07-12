@@ -27,9 +27,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get navSettings => 'Ajustes';
 
   @override
-  String get navAssistant => 'Asistente';
-
-  @override
   String get onboardingTitle1 => 'Nunca olvides lo importante';
 
   @override
@@ -473,77 +470,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'No se pudieron cargar los datos.';
-
-  @override
-  String get settingsAiSectionTitle => 'Asistente de IA';
-
-  @override
-  String get settingsAiEnable => 'Activar Asistente de IA';
-
-  @override
-  String get settingsAiProvider => 'Proveedor de IA';
-
-  @override
-  String get settingsAiModel => 'Modelo';
-
-  @override
-  String get settingsAiApiKey => 'Clave API';
-
-  @override
-  String get settingsAiApiKeyHint => 'Pega tu clave API';
-
-  @override
-  String get settingsAiApiKeyHelp => '¿Dónde consigo una clave?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Clave API guardada';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Categorías que el asistente puede leer';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Todas las categorías excepto Finanzas se comparten de forma predeterminada — desactiva las que no quieras que vea el asistente.';
-
-  @override
-  String get settingsAiClearHistory => 'Borrar historial de chat';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => '¿Borrar historial de chat?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Se eliminarán todas las preguntas y respuestas guardadas en este dispositivo. Esta acción no se puede deshacer.';
-
-  @override
-  String get assistantTitle => 'Asistente';
-
-  @override
-  String get assistantEmptyTitle => 'Pregúntame lo que sea';
-
-  @override
-  String get assistantEmptyBody =>
-      'Prueba «¿Qué tengo que hacer esta semana?» o «¿Cuántas cuotas quedan del préstamo de mi moto?»';
-
-  @override
-  String get assistantInputHint => 'Escribe algo…';
-
-  @override
-  String get assistantSend => 'Enviar';
-
-  @override
-  String get assistantDisabledTitle => 'El asistente está desactivado';
-
-  @override
-  String get assistantDisabledBody =>
-      'Actívalo en Ajustes y elige un proveedor de IA para empezar a chatear.';
-
-  @override
-  String get assistantOpenSettings => 'Abrir ajustes';
-
-  @override
-  String get assistantThinking => 'Pensando…';
 
   @override
   String get validationRequired => 'Obligatorio';

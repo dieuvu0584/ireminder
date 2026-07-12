@@ -27,9 +27,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get navSettings => 'Beállítások';
 
   @override
-  String get navAssistant => 'Asszisztens';
-
-  @override
   String get onboardingTitle1 => 'Soha ne felejtsd el, ami fontos';
 
   @override
@@ -474,78 +471,6 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Az adatok betöltése nem sikerült.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI asszisztens';
-
-  @override
-  String get settingsAiEnable => 'AI asszisztens engedélyezése';
-
-  @override
-  String get settingsAiProvider => 'AI szolgáltató';
-
-  @override
-  String get settingsAiModel => 'Modell';
-
-  @override
-  String get settingsAiApiKey => 'API kulcs';
-
-  @override
-  String get settingsAiApiKeyHint => 'Illeszd be az API kulcsodat';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Honnan szerezhetek kulcsot?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Az API kulcs elmentve';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Az asszisztens által olvasható kategóriák';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Alapértelmezés szerint minden kategória megosztásra kerül a Pénzügyek kivételével — kapcsold ki, amit nem szeretnél, hogy az asszisztens lásson.';
-
-  @override
-  String get settingsAiClearHistory => 'Beszélgetési előzmények törlése';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle =>
-      'Törlöd a beszélgetési előzményeket?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Ez törli az összes ezen az eszközön tárolt kérdést és választ. Ez a művelet nem vonható vissza.';
-
-  @override
-  String get assistantTitle => 'Asszisztens';
-
-  @override
-  String get assistantEmptyTitle => 'Kérdezz bármit';
-
-  @override
-  String get assistantEmptyBody =>
-      'Próbáld ki: „Mit kell tennem ezen a héten?” vagy „Hány részlet van még hátra a motorhitelemből?”';
-
-  @override
-  String get assistantInputHint => 'Kérdezz valamit…';
-
-  @override
-  String get assistantSend => 'Küldés';
-
-  @override
-  String get assistantDisabledTitle => 'Az asszisztens ki van kapcsolva';
-
-  @override
-  String get assistantDisabledBody =>
-      'Kapcsold be a Beállításokban, és válassz egy AI szolgáltatót a beszélgetés megkezdéséhez.';
-
-  @override
-  String get assistantOpenSettings => 'Beállítások megnyitása';
-
-  @override
-  String get assistantThinking => 'Gondolkodik…';
 
   @override
   String get validationRequired => 'Kötelező';

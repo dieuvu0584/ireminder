@@ -27,9 +27,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get navSettings => 'Cài đặt';
 
   @override
-  String get navAssistant => 'Trợ lý';
-
-  @override
   String get onboardingTitle1 => 'Không bao giờ quên việc quan trọng';
 
   @override
@@ -470,76 +467,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Không tải được dữ liệu.';
-
-  @override
-  String get settingsAiSectionTitle => 'Trợ lý AI';
-
-  @override
-  String get settingsAiEnable => 'Bật Trợ lý AI';
-
-  @override
-  String get settingsAiProvider => 'Nhà cung cấp AI';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'API key';
-
-  @override
-  String get settingsAiApiKeyHint => 'Dán API key của bạn vào đây';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Lấy key ở đâu?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Đã lưu API key';
-
-  @override
-  String get settingsAiAllowedCategories => 'Danh mục cho phép Trợ lý đọc';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Mặc định đã bật hết, trừ danh mục Tài chính — tắt bớt những danh mục bạn không muốn Trợ lý nhìn thấy.';
-
-  @override
-  String get settingsAiClearHistory => 'Xóa lịch sử chat';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Xóa lịch sử chat?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Toàn bộ câu hỏi và câu trả lời lưu trên máy sẽ bị xóa. Không thể hoàn tác.';
-
-  @override
-  String get assistantTitle => 'Trợ lý';
-
-  @override
-  String get assistantEmptyTitle => 'Hỏi Trợ lý bất cứ điều gì';
-
-  @override
-  String get assistantEmptyBody =>
-      'Thử hỏi \"Tuần này tôi cần làm gì?\" hoặc \"Còn bao nhiêu kỳ nữa hết nợ xe máy?\"';
-
-  @override
-  String get assistantInputHint => 'Nhập câu hỏi…';
-
-  @override
-  String get assistantSend => 'Gửi';
-
-  @override
-  String get assistantDisabledTitle => 'Trợ lý đang tắt';
-
-  @override
-  String get assistantDisabledBody =>
-      'Bật tính năng này trong Cài đặt và chọn nhà cung cấp AI để bắt đầu trò chuyện.';
-
-  @override
-  String get assistantOpenSettings => 'Mở Cài đặt';
-
-  @override
-  String get assistantThinking => 'Đang suy nghĩ…';
 
   @override
   String get validationRequired => 'Bắt buộc';

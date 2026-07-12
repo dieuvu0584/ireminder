@@ -27,9 +27,6 @@ class AppLocalizationsDa extends AppLocalizations {
   String get navSettings => 'Indstillinger';
 
   @override
-  String get navAssistant => 'Assistent';
-
-  @override
   String get onboardingTitle1 => 'Glem aldrig det, der betyder noget';
 
   @override
@@ -471,76 +468,6 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Kunne ikke indlæse data.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI-assistent';
-
-  @override
-  String get settingsAiEnable => 'Aktivér AI-assistent';
-
-  @override
-  String get settingsAiProvider => 'AI-udbyder';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'API-nøgle';
-
-  @override
-  String get settingsAiApiKeyHint => 'Indsæt din API-nøgle';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Hvor finder jeg en nøgle?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API-nøgle gemt';
-
-  @override
-  String get settingsAiAllowedCategories => 'Kategorier assistenten må læse';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Alle kategorier undtagen Økonomi deles som standard — slå dem fra, du ikke vil have, at assistenten ser.';
-
-  @override
-  String get settingsAiClearHistory => 'Ryd chathistorik';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Ryd chathistorik?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Dette sletter alle spørgsmål og svar, der er gemt på denne enhed. Dette kan ikke fortrydes.';
-
-  @override
-  String get assistantTitle => 'Assistent';
-
-  @override
-  String get assistantEmptyTitle => 'Spørg mig om hvad som helst';
-
-  @override
-  String get assistantEmptyBody =>
-      'Prøv \"Hvad skal jeg gøre i denne uge?\" eller \"Hvor mange afdrag mangler jeg på mit motorcykellån?\"';
-
-  @override
-  String get assistantInputHint => 'Spørg om noget…';
-
-  @override
-  String get assistantSend => 'Send';
-
-  @override
-  String get assistantDisabledTitle => 'Assistenten er slået fra';
-
-  @override
-  String get assistantDisabledBody =>
-      'Slå den til i Indstillinger, og vælg en AI-udbyder for at begynde at chatte.';
-
-  @override
-  String get assistantOpenSettings => 'Åbn Indstillinger';
-
-  @override
-  String get assistantThinking => 'Tænker…';
 
   @override
   String get validationRequired => 'Påkrævet';

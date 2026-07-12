@@ -27,9 +27,6 @@ class AppLocalizationsPa extends AppLocalizations {
   String get navSettings => 'ਸੈਟਿੰਗਾਂ';
 
   @override
-  String get navAssistant => 'ਸਹਾਇਕ';
-
-  @override
   String get onboardingTitle1 => 'ਜ਼ਰੂਰੀ ਗੱਲਾਂ ਕਦੇ ਨਾ ਭੁੱਲੋ';
 
   @override
@@ -472,76 +469,6 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'ਡਾਟਾ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕਿਆ।';
-
-  @override
-  String get settingsAiSectionTitle => 'AI ਸਹਾਇਕ';
-
-  @override
-  String get settingsAiEnable => 'AI ਸਹਾਇਕ ਚਾਲੂ ਕਰੋ';
-
-  @override
-  String get settingsAiProvider => 'AI ਪ੍ਰਦਾਤਾ';
-
-  @override
-  String get settingsAiModel => 'ਮਾਡਲ';
-
-  @override
-  String get settingsAiApiKey => 'API ਕੁੰਜੀ';
-
-  @override
-  String get settingsAiApiKeyHint => 'ਆਪਣੀ API ਕੁੰਜੀ ਪੇਸਟ ਕਰੋ';
-
-  @override
-  String get settingsAiApiKeyHelp => 'ਕੁੰਜੀ ਕਿੱਥੋਂ ਮਿਲੇਗੀ?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API ਕੁੰਜੀ ਸੰਭਾਲੀ ਗਈ';
-
-  @override
-  String get settingsAiAllowedCategories => 'ਸ਼੍ਰੇਣੀਆਂ ਜੋ ਸਹਾਇਕ ਪੜ੍ਹ ਸਕਦਾ ਹੈ';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'ਵਿੱਤ ਨੂੰ ਛੱਡ ਕੇ ਸਾਰੀਆਂ ਸ਼੍ਰੇਣੀਆਂ ਮੂਲ ਰੂਪ ਵਿੱਚ ਸਾਂਝੀਆਂ ਹੁੰਦੀਆਂ ਹਨ — ਜਿਨ੍ਹਾਂ ਨੂੰ ਤੁਸੀਂ ਸਹਾਇਕ ਨੂੰ ਨਹੀਂ ਦਿਖਾਉਣਾ ਚਾਹੁੰਦੇ ਉਹਨਾਂ ਨੂੰ ਬੰਦ ਕਰੋ।';
-
-  @override
-  String get settingsAiClearHistory => 'ਚੈਟ ਇਤਿਹਾਸ ਸਾਫ਼ ਕਰੋ';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'ਚੈਟ ਇਤਿਹਾਸ ਸਾਫ਼ ਕਰਨਾ ਹੈ?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'ਇਹ ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਸੰਭਾਲਿਆ ਹਰ ਸਵਾਲ ਅਤੇ ਜਵਾਬ ਮਿਟਾ ਦੇਵੇਗਾ। ਇਹ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।';
-
-  @override
-  String get assistantTitle => 'ਸਹਾਇਕ';
-
-  @override
-  String get assistantEmptyTitle => 'ਮੈਨੂੰ ਕੁਝ ਵੀ ਪੁੱਛੋ';
-
-  @override
-  String get assistantEmptyBody =>
-      '\"ਇਸ ਹਫ਼ਤੇ ਮੈਨੂੰ ਕੀ ਕਰਨ ਦੀ ਲੋੜ ਹੈ?\" ਜਾਂ \"ਮੇਰੇ ਮੋਟਰਸਾਈਕਲ ਕਰਜ਼ੇ ਦੀਆਂ ਕਿੰਨੀਆਂ ਕਿਸ਼ਤਾਂ ਬਾਕੀ ਹਨ?\" ਵਰਗਾ ਸਵਾਲ ਪੁੱਛ ਕੇ ਵੇਖੋ।';
-
-  @override
-  String get assistantInputHint => 'ਕੁਝ ਪੁੱਛੋ…';
-
-  @override
-  String get assistantSend => 'ਭੇਜੋ';
-
-  @override
-  String get assistantDisabledTitle => 'ਸਹਾਇਕ ਬੰਦ ਹੈ';
-
-  @override
-  String get assistantDisabledBody =>
-      'ਗੱਲਬਾਤ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇਸਨੂੰ ਚਾਲੂ ਕਰੋ ਅਤੇ ਇੱਕ AI ਪ੍ਰਦਾਤਾ ਚੁਣੋ।';
-
-  @override
-  String get assistantOpenSettings => 'ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ';
-
-  @override
-  String get assistantThinking => 'ਸੋਚ ਰਿਹਾ ਹੈ…';
 
   @override
   String get validationRequired => 'ਲਾਜ਼ਮੀ';

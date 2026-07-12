@@ -27,9 +27,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get navSettings => 'Настройки';
 
   @override
-  String get navAssistant => 'Ассистент';
-
-  @override
   String get onboardingTitle1 => 'Никогда не забывайте важное';
 
   @override
@@ -470,76 +467,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Не удалось загрузить данные.';
-
-  @override
-  String get settingsAiSectionTitle => 'ИИ-ассистент';
-
-  @override
-  String get settingsAiEnable => 'Включить ИИ-ассистента';
-
-  @override
-  String get settingsAiProvider => 'Провайдер ИИ';
-
-  @override
-  String get settingsAiModel => 'Модель';
-
-  @override
-  String get settingsAiApiKey => 'API-ключ';
-
-  @override
-  String get settingsAiApiKeyHint => 'Вставьте ваш API-ключ';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Где взять ключ?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API-ключ сохранён';
-
-  @override
-  String get settingsAiAllowedCategories => 'Категории, доступные ассистенту';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'По умолчанию открыты все категории, кроме «Финансы», — отключите те, которые не хотите показывать ассистенту.';
-
-  @override
-  String get settingsAiClearHistory => 'Очистить историю чата';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Очистить историю чата?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Все вопросы и ответы, сохранённые на этом устройстве, будут удалены. Это действие нельзя отменить.';
-
-  @override
-  String get assistantTitle => 'Ассистент';
-
-  @override
-  String get assistantEmptyTitle => 'Спросите что угодно';
-
-  @override
-  String get assistantEmptyBody =>
-      'Попробуйте спросить «Что мне нужно сделать на этой неделе?» или «Сколько платежей осталось по кредиту на мотоцикл?»';
-
-  @override
-  String get assistantInputHint => 'Введите вопрос…';
-
-  @override
-  String get assistantSend => 'Отправить';
-
-  @override
-  String get assistantDisabledTitle => 'Ассистент отключён';
-
-  @override
-  String get assistantDisabledBody =>
-      'Включите его в настройках и выберите провайдера ИИ, чтобы начать общение.';
-
-  @override
-  String get assistantOpenSettings => 'Открыть настройки';
-
-  @override
-  String get assistantThinking => 'Думаю…';
 
   @override
   String get validationRequired => 'Обязательное поле';

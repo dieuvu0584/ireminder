@@ -27,9 +27,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get navSettings => 'Nastavení';
 
   @override
-  String get navAssistant => 'Asistent';
-
-  @override
   String get onboardingTitle1 => 'Nezapomeňte na to, co je důležité';
 
   @override
@@ -471,78 +468,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Data se nepodařilo načíst.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI asistent';
-
-  @override
-  String get settingsAiEnable => 'Povolit AI asistenta';
-
-  @override
-  String get settingsAiProvider => 'Poskytovatel AI';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'API klíč';
-
-  @override
-  String get settingsAiApiKeyHint => 'Vložte svůj API klíč';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Kde získám klíč?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API klíč byl uložen';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Kategorie, které smí asistent číst';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Ve výchozím nastavení jsou sdíleny všechny kategorie kromě Financí — vypněte ty, které asistent nemá vidět.';
-
-  @override
-  String get settingsAiClearHistory => 'Vymazat historii konverzace';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle =>
-      'Vymazat historii konverzace?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Tímto se smažou všechny otázky a odpovědi uložené v tomto zařízení. Tuto akci nelze vzít zpět.';
-
-  @override
-  String get assistantTitle => 'Asistent';
-
-  @override
-  String get assistantEmptyTitle => 'Zeptejte se mě na cokoliv';
-
-  @override
-  String get assistantEmptyBody =>
-      'Zkuste „Co musím tento týden udělat?“ nebo „Kolik splátek mi zbývá na úvěru na motorku?“';
-
-  @override
-  String get assistantInputHint => 'Zeptejte se na něco…';
-
-  @override
-  String get assistantSend => 'Odeslat';
-
-  @override
-  String get assistantDisabledTitle => 'Asistent je vypnutý';
-
-  @override
-  String get assistantDisabledBody =>
-      'Zapněte ho v Nastavení a vyberte poskytovatele AI, abyste mohli začít konverzaci.';
-
-  @override
-  String get assistantOpenSettings => 'Otevřít nastavení';
-
-  @override
-  String get assistantThinking => 'Přemýšlí…';
 
   @override
   String get validationRequired => 'Povinné';

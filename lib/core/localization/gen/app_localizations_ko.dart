@@ -27,9 +27,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get navSettings => '설정';
 
   @override
-  String get navAssistant => '어시스턴트';
-
-  @override
   String get onboardingTitle1 => '중요한 일을 절대 잊지 마세요';
 
   @override
@@ -465,75 +462,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get errorLoadFailed => '데이터를 불러오지 못했어요.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI 어시스턴트';
-
-  @override
-  String get settingsAiEnable => 'AI 어시스턴트 사용';
-
-  @override
-  String get settingsAiProvider => 'AI 제공업체';
-
-  @override
-  String get settingsAiModel => '모델';
-
-  @override
-  String get settingsAiApiKey => 'API 키';
-
-  @override
-  String get settingsAiApiKeyHint => 'API 키를 붙여넣으세요';
-
-  @override
-  String get settingsAiApiKeyHelp => '키는 어디서 받나요?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API 키가 저장되었어요';
-
-  @override
-  String get settingsAiAllowedCategories => '어시스턴트가 볼 수 있는 카테고리';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      '재정을 제외한 모든 카테고리가 기본적으로 공유됩니다 — 어시스턴트에게 보이고 싶지 않은 항목은 꺼주세요.';
-
-  @override
-  String get settingsAiClearHistory => '대화 기록 삭제';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => '대화 기록을 삭제할까요?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      '이 기기에 저장된 모든 질문과 답변이 삭제됩니다. 이 작업은 되돌릴 수 없어요.';
-
-  @override
-  String get assistantTitle => '어시스턴트';
-
-  @override
-  String get assistantEmptyTitle => '무엇이든 물어보세요';
-
-  @override
-  String get assistantEmptyBody =>
-      '\"이번 주에 뭐 해야 해?\" 또는 \"오토바이 할부 몇 회 남았어?\" 같이 물어보세요.';
-
-  @override
-  String get assistantInputHint => '질문을 입력하세요…';
-
-  @override
-  String get assistantSend => '보내기';
-
-  @override
-  String get assistantDisabledTitle => '어시스턴트가 꺼져 있어요';
-
-  @override
-  String get assistantDisabledBody => '설정에서 켜고 AI 제공업체를 선택하면 대화를 시작할 수 있어요.';
-
-  @override
-  String get assistantOpenSettings => '설정 열기';
-
-  @override
-  String get assistantThinking => '생각하는 중…';
 
   @override
   String get validationRequired => '필수 입력 항목이에요';

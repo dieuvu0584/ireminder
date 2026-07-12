@@ -27,9 +27,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get navSettings => 'Asetukset';
 
   @override
-  String get navAssistant => 'Avustaja';
-
-  @override
   String get onboardingTitle1 => 'Älä koskaan unohda tärkeitä asioita';
 
   @override
@@ -472,78 +469,6 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Tietoja ei voitu ladata.';
-
-  @override
-  String get settingsAiSectionTitle => 'Tekoälyavustaja';
-
-  @override
-  String get settingsAiEnable => 'Ota tekoälyavustaja käyttöön';
-
-  @override
-  String get settingsAiProvider => 'Tekoälypalveluntarjoaja';
-
-  @override
-  String get settingsAiModel => 'Malli';
-
-  @override
-  String get settingsAiApiKey => 'API-avain';
-
-  @override
-  String get settingsAiApiKeyHint => 'Liitä API-avaimesi';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Mistä saan avaimen?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API-avain tallennettu';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Kategoriat, joita avustaja saa lukea';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Kaikki kategoriat Taloutta lukuun ottamatta jaetaan oletuksena — poista käytöstä ne, joita et halua avustajan näkevän.';
-
-  @override
-  String get settingsAiClearHistory => 'Tyhjennä keskusteluhistoria';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle =>
-      'Tyhjennetäänkö keskusteluhistoria?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Tämä poistaa kaikki laitteelle tallennetut kysymykset ja vastaukset. Tätä ei voi perua.';
-
-  @override
-  String get assistantTitle => 'Avustaja';
-
-  @override
-  String get assistantEmptyTitle => 'Kysy minulta mitä vain';
-
-  @override
-  String get assistantEmptyBody =>
-      'Kokeile esimerkiksi \"Mitä minun pitää tehdä tällä viikolla?\" tai \"Kuinka monta erää moottoripyörälainastani on jäljellä?\"';
-
-  @override
-  String get assistantInputHint => 'Kysy jotain…';
-
-  @override
-  String get assistantSend => 'Lähetä';
-
-  @override
-  String get assistantDisabledTitle => 'Avustaja on pois käytöstä';
-
-  @override
-  String get assistantDisabledBody =>
-      'Ota se käyttöön asetuksista ja valitse tekoälypalveluntarjoaja aloittaaksesi keskustelun.';
-
-  @override
-  String get assistantOpenSettings => 'Avaa asetukset';
-
-  @override
-  String get assistantThinking => 'Mietitään…';
 
   @override
   String get validationRequired => 'Pakollinen';

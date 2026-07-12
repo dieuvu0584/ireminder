@@ -26,7 +26,8 @@ class BackupService {
   BackupService(this._db);
 
   Future<Directory> _backupDir() async {
-    final base = await getExternalStorageDirectory() ??
+    final base =
+        await getExternalStorageDirectory() ??
         await getApplicationDocumentsDirectory();
     final dir = Directory(p.join(base.path, 'backups'));
     if (!await dir.exists()) {
@@ -37,7 +38,9 @@ class BackupService {
 
   Future<String> exportBackup() async {
     final payload = await _buildExportPayload();
-    final bytes = utf8.encode(const JsonEncoder.withIndent('  ').convert(payload));
+    final bytes = utf8.encode(
+      const JsonEncoder.withIndent('  ').convert(payload),
+    );
     final fileName =
         'ireminder_backup_${DateTime.now().toIso8601String().replaceAll(':', '-').split('.').first}.json';
 
@@ -55,8 +58,9 @@ class BackupService {
         .where((e) => e is File && e.path.endsWith('.json'))
         .cast<File>()
         .toList();
-    entries.sort((a, b) =>
-        b.statSync().modified.compareTo(a.statSync().modified));
+    entries.sort(
+      (a, b) => b.statSync().modified.compareTo(a.statSync().modified),
+    );
     return entries;
   }
 
@@ -67,8 +71,6 @@ class BackupService {
     final loans = await _db.select(_db.loans).get();
     final loanInstallments = await _db.select(_db.loanInstallments).get();
     final settings = await _db.select(_db.appSettings).getSingle();
-    final aiSettings = await _db.select(_db.aiSettings).getSingle();
-    final aiChatHistory = await _db.select(_db.aiChatHistory).get();
 
     return {
       'formatVersion': kBackupFormatVersion,
@@ -79,10 +81,6 @@ class BackupService {
       'loans': loans.map((l) => l.toJson()).toList(),
       'loanInstallments': loanInstallments.map((i) => i.toJson()).toList(),
       'appSettings': settings.toJson(),
-      // Provider/model/allowed-category choices only — the API key itself
-      // lives in secure storage and is never written into this file.
-      'aiSettings': aiSettings.toJson(),
-      'aiChatHistory': aiChatHistory.map((h) => h.toJson()).toList(),
     };
   }
 
@@ -99,7 +97,6 @@ class BackupService {
 
   Future<void> _restoreFromPayload(Map<String, dynamic> json) async {
     await _db.transaction(() async {
-      await _db.delete(_db.aiChatHistory).go();
       await _db.delete(_db.loanInstallments).go();
       await _db.delete(_db.reminderLogs).go();
       await _db.delete(_db.loans).go();
@@ -107,61 +104,56 @@ class BackupService {
       await _db.delete(_db.categories).go();
 
       for (final row in (json['categories'] as List)) {
-        await _db.into(_db.categories).insert(
+        await _db
+            .into(_db.categories)
+            .insert(
               Category.fromJson(row as Map<String, dynamic>),
               mode: drift.InsertMode.insertOrReplace,
             );
       }
       for (final row in (json['reminders'] as List)) {
-        await _db.into(_db.reminders).insert(
+        await _db
+            .into(_db.reminders)
+            .insert(
               Reminder.fromJson(row as Map<String, dynamic>),
               mode: drift.InsertMode.insertOrReplace,
             );
       }
       for (final row in (json['reminderLogs'] as List)) {
-        await _db.into(_db.reminderLogs).insert(
+        await _db
+            .into(_db.reminderLogs)
+            .insert(
               ReminderLog.fromJson(row as Map<String, dynamic>),
               mode: drift.InsertMode.insertOrReplace,
             );
       }
       for (final row in (json['loans'] as List)) {
-        await _db.into(_db.loans).insert(
+        await _db
+            .into(_db.loans)
+            .insert(
               Loan.fromJson(row as Map<String, dynamic>),
               mode: drift.InsertMode.insertOrReplace,
             );
       }
       for (final row in (json['loanInstallments'] as List)) {
-        await _db.into(_db.loanInstallments).insert(
+        await _db
+            .into(_db.loanInstallments)
+            .insert(
               LoanInstallment.fromJson(row as Map<String, dynamic>),
               mode: drift.InsertMode.insertOrReplace,
             );
       }
       if (json['appSettings'] != null) {
-        final settings =
-            AppSetting.fromJson(json['appSettings'] as Map<String, dynamic>);
-        await _db.into(_db.appSettings).insert(
-              settings,
-              mode: drift.InsertMode.insertOrReplace,
-            );
+        final settings = AppSetting.fromJson(
+          json['appSettings'] as Map<String, dynamic>,
+        );
+        await _db
+            .into(_db.appSettings)
+            .insert(settings, mode: drift.InsertMode.insertOrReplace);
       }
-      // Both absent in backups made before Phase 7 — restoring one of
-      // those must not crash, just leave the AI tables at their defaults.
-      if (json['aiSettings'] != null) {
-        final aiSettings =
-            AiSetting.fromJson(json['aiSettings'] as Map<String, dynamic>);
-        await _db.into(_db.aiSettings).insert(
-              aiSettings,
-              mode: drift.InsertMode.insertOrReplace,
-            );
-      }
-      if (json['aiChatHistory'] != null) {
-        for (final row in (json['aiChatHistory'] as List)) {
-          await _db.into(_db.aiChatHistory).insert(
-                AiChatHistoryData.fromJson(row as Map<String, dynamic>),
-                mode: drift.InsertMode.insertOrReplace,
-              );
-        }
-      }
+      // 'aiSettings'/'aiChatHistory' keys from a backup made before the AI
+      // assistant was removed are simply ignored — those tables no longer
+      // exist, and there's nothing to restore them into.
     });
   }
 }

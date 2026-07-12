@@ -27,9 +27,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get navSettings => 'Pengaturan';
 
   @override
-  String get navAssistant => 'Asisten';
-
-  @override
   String get onboardingTitle1 => 'Jangan pernah lupa hal penting';
 
   @override
@@ -474,77 +471,6 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Data gagal dimuat.';
-
-  @override
-  String get settingsAiSectionTitle => 'Asisten AI';
-
-  @override
-  String get settingsAiEnable => 'Aktifkan Asisten AI';
-
-  @override
-  String get settingsAiProvider => 'Penyedia AI';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'Kunci API';
-
-  @override
-  String get settingsAiApiKeyHint => 'Tempel kunci API kamu';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Di mana saya bisa mendapatkan kunci?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Kunci API tersimpan';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Kategori yang boleh dibaca asisten';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Semua kategori kecuali Keuangan dibagikan secara default — matikan yang tidak ingin dilihat asisten.';
-
-  @override
-  String get settingsAiClearHistory => 'Hapus riwayat obrolan';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Hapus riwayat obrolan?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Ini akan menghapus semua pertanyaan dan jawaban yang tersimpan di perangkat ini. Tindakan ini tidak dapat dibatalkan.';
-
-  @override
-  String get assistantTitle => 'Asisten';
-
-  @override
-  String get assistantEmptyTitle => 'Tanyakan apa saja';
-
-  @override
-  String get assistantEmptyBody =>
-      'Coba tanyakan \"Apa yang perlu saya lakukan minggu ini?\" atau \"Berapa cicilan motor saya yang tersisa?\"';
-
-  @override
-  String get assistantInputHint => 'Tanyakan sesuatu…';
-
-  @override
-  String get assistantSend => 'Kirim';
-
-  @override
-  String get assistantDisabledTitle => 'Asisten sedang nonaktif';
-
-  @override
-  String get assistantDisabledBody =>
-      'Aktifkan di Pengaturan dan pilih penyedia AI untuk mulai mengobrol.';
-
-  @override
-  String get assistantOpenSettings => 'Buka Pengaturan';
-
-  @override
-  String get assistantThinking => 'Sedang berpikir…';
 
   @override
   String get validationRequired => 'Wajib diisi';

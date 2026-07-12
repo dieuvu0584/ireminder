@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 import 'dart:ui' show PlatformDispatcher;
 
@@ -15,8 +14,6 @@ import 'tables/reminder_logs_table.dart';
 import 'tables/loans_table.dart';
 import 'tables/loan_installments_table.dart';
 import 'tables/app_settings_table.dart';
-import 'tables/ai_settings_table.dart';
-import 'tables/ai_chat_history_table.dart';
 
 part 'app_database.g.dart';
 
@@ -56,40 +53,22 @@ String _nameBirthday(AppLocalizations l) => l.defaultCategoryBirthday;
     Loans,
     LoanInstallments,
     AppSettings,
-    AiSettings,
-    AiChatHistory,
   ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (Migrator m) async {
       await m.createAll();
-      final categoryIds = await _seedDefaultCategories();
+      await _seedDefaultCategories();
       await into(appSettings).insert(const AppSettingsCompanion());
-      // Default to sharing every category with the AI assistant
-      // except Finance (kDefaultCategories[3]) — a usable assistant
-      // out of the box, while keeping financial data opted-out until
-      // the user explicitly turns it on themselves in Settings.
-      final financeId = categoryIds[3];
-      final allowedIds = categoryIds.where((id) => id != financeId).toList();
-      await into(aiSettings).insert(
-        AiSettingsCompanion(allowedCategoryIds: Value(jsonEncode(allowedIds))),
-      );
     },
     onUpgrade: (Migrator m, int from, int to) async {
-      if (from < 2) {
-        // Phase 7: optional AI assistant, added post-launch. Existing
-        // installs get the two new tables with no data loss elsewhere.
-        await m.createTable(aiSettings);
-        await m.createTable(aiChatHistory);
-        await into(aiSettings).insert(const AiSettingsCompanion());
-      }
       if (from < 3) {
         await m.addColumn(appSettings, appSettings.notificationSoundEnabled);
         await m.addColumn(
@@ -101,6 +80,17 @@ class AppDatabase extends _$AppDatabase {
       if (from < 4) {
         await m.addColumn(reminders, reminders.advanceNoticeHours);
         await m.addColumn(reminders, reminders.advanceNoticeMinutes);
+      }
+      // The optional AI assistant (and its BYOK network calls) was
+      // removed entirely — drop its tables rather than leaving them
+      // orphaned. Only installs that passed through version 2+ ever had
+      // these tables created in the first place (version 1 predates the
+      // AI assistant), so this must not run unconditionally for `from < 5`
+      // — a v1-to-v5 upgrade skipping straight past would hit "no such
+      // table" trying to drop something that was never there.
+      if (from >= 2 && from < 5) {
+        await m.deleteTable('ai_settings');
+        await m.deleteTable('ai_chat_history');
       }
     },
   );

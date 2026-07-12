@@ -27,9 +27,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get navSettings => 'அமைப்புகள்';
 
   @override
-  String get navAssistant => 'உதவியாளர்';
-
-  @override
   String get onboardingTitle1 => 'முக்கியமானதை மறவாதீர்கள்';
 
   @override
@@ -474,76 +471,6 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'தரவை ஏற்ற முடியவில்லை.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI உதவியாளர்';
-
-  @override
-  String get settingsAiEnable => 'AI உதவியாளரை இயக்கு';
-
-  @override
-  String get settingsAiProvider => 'AI வழங்குநர்';
-
-  @override
-  String get settingsAiModel => 'மாடல்';
-
-  @override
-  String get settingsAiApiKey => 'API கீ';
-
-  @override
-  String get settingsAiApiKeyHint => 'உங்கள் API கீயை ஒட்டவும்';
-
-  @override
-  String get settingsAiApiKeyHelp => 'கீ எங்கே பெறுவது?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API கீ சேமிக்கப்பட்டது';
-
-  @override
-  String get settingsAiAllowedCategories => 'உதவியாளர் படிக்கக்கூடிய வகைகள்';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'நிதி தவிர அனைத்து வகைகளும் இயல்பாகவே பகிரப்படும் — உதவியாளர் பார்க்க வேண்டாம் என நினைப்பவற்றை அணைக்கவும்.';
-
-  @override
-  String get settingsAiClearHistory => 'அரட்டை வரலாற்றை அழி';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'அரட்டை வரலாற்றை அழிக்கவா?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'இது இந்த சாதனத்தில் சேமிக்கப்பட்டுள்ள ஒவ்வொரு கேள்வியையும் பதிலையும் நீக்கிவிடும். இதை மீண்டும் செயல்தவிர்க்க முடியாது.';
-
-  @override
-  String get assistantTitle => 'உதவியாளர்';
-
-  @override
-  String get assistantEmptyTitle => 'எதைப் பற்றி வேண்டுமானாலும் கேளுங்கள்';
-
-  @override
-  String get assistantEmptyBody =>
-      '\"இந்த வாரம் நான் என்ன செய்ய வேண்டும்?\" அல்லது \"என் பைக் கடனில் எத்தனை தவணைகள் மீதம் உள்ளன?\" என்று கேட்டுப் பாருங்கள்.';
-
-  @override
-  String get assistantInputHint => 'ஏதாவது கேளுங்கள்…';
-
-  @override
-  String get assistantSend => 'அனுப்பு';
-
-  @override
-  String get assistantDisabledTitle => 'உதவியாளர் அணைக்கப்பட்டுள்ளது';
-
-  @override
-  String get assistantDisabledBody =>
-      'அரட்டையைத் தொடங்க அமைப்புகளில் இதை இயக்கி, ஒரு AI வழங்குநரைத் தேர்ந்தெடுக்கவும்.';
-
-  @override
-  String get assistantOpenSettings => 'அமைப்புகளைத் திற';
-
-  @override
-  String get assistantThinking => 'யோசித்துக்கொண்டிருக்கிறது…';
 
   @override
   String get validationRequired => 'அவசியம்';

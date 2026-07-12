@@ -27,9 +27,6 @@ class AppLocalizationsEl extends AppLocalizations {
   String get navSettings => 'Ρυθμίσεις';
 
   @override
-  String get navAssistant => 'Βοηθός';
-
-  @override
   String get onboardingTitle1 => 'Μην ξεχνάς ό,τι έχει σημασία';
 
   @override
@@ -473,78 +470,6 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Δεν ήταν δυνατή η φόρτωση των δεδομένων.';
-
-  @override
-  String get settingsAiSectionTitle => 'Βοηθός AI';
-
-  @override
-  String get settingsAiEnable => 'Ενεργοποίηση Βοηθού AI';
-
-  @override
-  String get settingsAiProvider => 'Πάροχος AI';
-
-  @override
-  String get settingsAiModel => 'Μοντέλο';
-
-  @override
-  String get settingsAiApiKey => 'Κλειδί API';
-
-  @override
-  String get settingsAiApiKeyHint => 'Επικόλλησε το κλειδί API σου';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Πού μπορώ να βρω ένα κλειδί;';
-
-  @override
-  String get settingsAiApiKeySaved => 'Το κλειδί API αποθηκεύτηκε';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Κατηγορίες που μπορεί να διαβάσει ο βοηθός';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Όλες οι κατηγορίες εκτός από τα Οικονομικά είναι κοινόχρηστες από προεπιλογή — απενεργοποιήστε όσες δεν θέλετε να βλέπει ο βοηθός.';
-
-  @override
-  String get settingsAiClearHistory => 'Διαγραφή ιστορικού συνομιλίας';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle =>
-      'Διαγραφή ιστορικού συνομιλίας;';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Αυτό διαγράφει κάθε ερώτηση και απάντηση που είναι αποθηκευμένη σε αυτή τη συσκευή. Η ενέργεια δεν μπορεί να αναιρεθεί.';
-
-  @override
-  String get assistantTitle => 'Βοηθός';
-
-  @override
-  String get assistantEmptyTitle => 'Ρώτησέ με ό,τι θέλεις';
-
-  @override
-  String get assistantEmptyBody =>
-      'Δοκίμασε «Τι πρέπει να κάνω αυτή την εβδομάδα;» ή «Πόσες δόσεις μου απομένουν στο δάνειο της μοτοσικλέτας;»';
-
-  @override
-  String get assistantInputHint => 'Ρώτησε κάτι…';
-
-  @override
-  String get assistantSend => 'Αποστολή';
-
-  @override
-  String get assistantDisabledTitle => 'Ο βοηθός είναι απενεργοποιημένος';
-
-  @override
-  String get assistantDisabledBody =>
-      'Ενεργοποίησέ τον από τις Ρυθμίσεις και επίλεξε έναν πάροχο AI για να ξεκινήσεις τη συνομιλία.';
-
-  @override
-  String get assistantOpenSettings => 'Άνοιγμα Ρυθμίσεων';
-
-  @override
-  String get assistantThinking => 'Σκέφτεται…';
 
   @override
   String get validationRequired => 'Υποχρεωτικό';

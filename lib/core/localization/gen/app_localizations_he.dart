@@ -27,9 +27,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get navSettings => 'הגדרות';
 
   @override
-  String get navAssistant => 'עוזר';
-
-  @override
   String get onboardingTitle1 => 'לעולם אל תשכחו את מה שחשוב';
 
   @override
@@ -468,76 +465,6 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'לא ניתן היה לטעון את הנתונים.';
-
-  @override
-  String get settingsAiSectionTitle => 'עוזר בינה מלאכותית';
-
-  @override
-  String get settingsAiEnable => 'הפעל עוזר בינה מלאכותית';
-
-  @override
-  String get settingsAiProvider => 'ספק בינה מלאכותית';
-
-  @override
-  String get settingsAiModel => 'מודל';
-
-  @override
-  String get settingsAiApiKey => 'מפתח API';
-
-  @override
-  String get settingsAiApiKeyHint => 'הדביקו כאן את מפתח ה-API שלכם';
-
-  @override
-  String get settingsAiApiKeyHelp => 'איפה משיגים מפתח?';
-
-  @override
-  String get settingsAiApiKeySaved => 'מפתח ה-API נשמר';
-
-  @override
-  String get settingsAiAllowedCategories => 'קטגוריות שהעוזר רשאי לקרוא';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'כל הקטגוריות מלבד כספים משותפות כברירת מחדל — כבה את אלה שלא תרצה שהעוזר יראה.';
-
-  @override
-  String get settingsAiClearHistory => 'מחיקת היסטוריית הצ\'אט';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'למחוק את היסטוריית הצ\'אט?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'פעולה זו תמחק את כל השאלות והתשובות השמורות במכשיר זה. לא ניתן לבטל פעולה זו.';
-
-  @override
-  String get assistantTitle => 'עוזר';
-
-  @override
-  String get assistantEmptyTitle => 'שאלו אותי כל דבר';
-
-  @override
-  String get assistantEmptyBody =>
-      'נסו לשאול \"מה עליי לעשות השבוע?\" או \"כמה תשלומים נותרו לי בהלוואת האופנוע?\"';
-
-  @override
-  String get assistantInputHint => 'שאלו משהו…';
-
-  @override
-  String get assistantSend => 'שליחה';
-
-  @override
-  String get assistantDisabledTitle => 'העוזר כבוי';
-
-  @override
-  String get assistantDisabledBody =>
-      'הפעילו אותו בהגדרות ובחרו ספק בינה מלאכותית כדי להתחיל לשוחח.';
-
-  @override
-  String get assistantOpenSettings => 'פתח הגדרות';
-
-  @override
-  String get assistantThinking => 'חושב…';
 
   @override
   String get validationRequired => 'שדה חובה';

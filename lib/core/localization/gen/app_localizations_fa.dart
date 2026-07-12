@@ -27,9 +27,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get navSettings => 'تنظیمات';
 
   @override
-  String get navAssistant => 'دستیار';
-
-  @override
   String get onboardingTitle1 => 'هرگز چیزهای مهم را فراموش نکنید';
 
   @override
@@ -469,77 +466,6 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'بارگذاری اطلاعات ممکن نشد.';
-
-  @override
-  String get settingsAiSectionTitle => 'دستیار هوش مصنوعی';
-
-  @override
-  String get settingsAiEnable => 'فعال‌سازی دستیار هوش مصنوعی';
-
-  @override
-  String get settingsAiProvider => 'ارائه‌دهنده هوش مصنوعی';
-
-  @override
-  String get settingsAiModel => 'مدل';
-
-  @override
-  String get settingsAiApiKey => 'کلید API';
-
-  @override
-  String get settingsAiApiKeyHint => 'کلید API خود را جای‌گذاری کنید';
-
-  @override
-  String get settingsAiApiKeyHelp => 'کلید را از کجا بگیرم؟';
-
-  @override
-  String get settingsAiApiKeySaved => 'کلید API ذخیره شد';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'دسته‌بندی‌هایی که دستیار می‌تواند ببیند';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'همه دسته‌ها به‌جز امور مالی به‌طور پیش‌فرض به اشتراک گذاشته می‌شوند — هرکدام را که نمی‌خواهید دستیار ببیند خاموش کنید.';
-
-  @override
-  String get settingsAiClearHistory => 'پاک کردن تاریخچه گفتگو';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'تاریخچه گفتگو پاک شود؟';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'این کار همه سؤال‌ها و پاسخ‌های ذخیره‌شده روی این دستگاه را حذف می‌کند. این کار قابل بازگشت نیست.';
-
-  @override
-  String get assistantTitle => 'دستیار';
-
-  @override
-  String get assistantEmptyTitle => 'هر چیزی می‌خواهید بپرسید';
-
-  @override
-  String get assistantEmptyBody =>
-      'امتحان کنید: «این هفته چه کارهایی باید انجام دهم؟» یا «چند قسط از وام موتورسیکلتم باقی مانده؟»';
-
-  @override
-  String get assistantInputHint => 'چیزی بپرسید…';
-
-  @override
-  String get assistantSend => 'ارسال';
-
-  @override
-  String get assistantDisabledTitle => 'دستیار غیرفعال است';
-
-  @override
-  String get assistantDisabledBody =>
-      'برای شروع گفتگو، آن را در تنظیمات فعال کنید و یک ارائه‌دهنده هوش مصنوعی انتخاب کنید.';
-
-  @override
-  String get assistantOpenSettings => 'باز کردن تنظیمات';
-
-  @override
-  String get assistantThinking => 'در حال فکر کردن…';
 
   @override
   String get validationRequired => 'الزامی است';

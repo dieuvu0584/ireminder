@@ -27,9 +27,6 @@ class AppLocalizationsSw extends AppLocalizations {
   String get navSettings => 'Mipangilio';
 
   @override
-  String get navAssistant => 'Msaidizi';
-
-  @override
   String get onboardingTitle1 => 'Usisahau tena mambo muhimu';
 
   @override
@@ -469,78 +466,6 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Imeshindwa kupakia data.';
-
-  @override
-  String get settingsAiSectionTitle => 'Msaidizi wa AI';
-
-  @override
-  String get settingsAiEnable => 'Washa Msaidizi wa AI';
-
-  @override
-  String get settingsAiProvider => 'Mtoa huduma wa AI';
-
-  @override
-  String get settingsAiModel => 'Modeli';
-
-  @override
-  String get settingsAiApiKey => 'Ufunguo wa API';
-
-  @override
-  String get settingsAiApiKeyHint => 'Bandika ufunguo wako wa API';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Nitapata wapi ufunguo?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Ufunguo wa API umehifadhiwa';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Jamii ambazo msaidizi anaweza kusoma';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Kategoria zote isipokuwa Fedha zinashirikiwa kwa chaguo-msingi — zima zile usizotaka msaidizi aone.';
-
-  @override
-  String get settingsAiClearHistory => 'Futa historia ya mazungumzo';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle =>
-      'Futa historia ya mazungumzo?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Hii itafuta kila swali na jibu lililohifadhiwa kwenye kifaa hiki. Haiwezi kutenduliwa.';
-
-  @override
-  String get assistantTitle => 'Msaidizi';
-
-  @override
-  String get assistantEmptyTitle => 'Niulize chochote';
-
-  @override
-  String get assistantEmptyBody =>
-      'Jaribu \"Nina nini cha kufanya wiki hii?\" au \"Ni awamu ngapi zimebaki kwenye mkopo wangu wa pikipiki?\"';
-
-  @override
-  String get assistantInputHint => 'Uliza kitu…';
-
-  @override
-  String get assistantSend => 'Tuma';
-
-  @override
-  String get assistantDisabledTitle => 'Msaidizi amezimwa';
-
-  @override
-  String get assistantDisabledBody =>
-      'Iwashe katika Mipangilio na uchague mtoa huduma wa AI ili kuanza mazungumzo.';
-
-  @override
-  String get assistantOpenSettings => 'Fungua Mipangilio';
-
-  @override
-  String get assistantThinking => 'Anafikiri…';
 
   @override
   String get validationRequired => 'Inahitajika';

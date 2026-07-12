@@ -27,9 +27,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get navSettings => 'Mga Setting';
 
   @override
-  String get navAssistant => 'Katulong';
-
-  @override
   String get onboardingTitle1 => 'Huwag nang makalimot sa mahalaga';
 
   @override
@@ -473,77 +470,6 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Hindi ma-load ang datos.';
-
-  @override
-  String get settingsAiSectionTitle => 'AI Assistant';
-
-  @override
-  String get settingsAiEnable => 'I-enable ang AI Assistant';
-
-  @override
-  String get settingsAiProvider => 'AI provider';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'API key';
-
-  @override
-  String get settingsAiApiKeyHint => 'I-paste ang iyong API key';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Saan ako kukuha ng key?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Na-save ang API key';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Mga kategoryang puwedeng basahin ng Katulong';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Lahat ng kategorya maliban sa Pananalapi ay ibinabahagi bilang default — i-off ang mga ayaw mong makita ng katulong.';
-
-  @override
-  String get settingsAiClearHistory => 'I-clear ang chat history';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'I-clear ang chat history?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Buburahin nito ang lahat ng tanong at sagot na naka-save sa device na ito. Hindi na ito maaaring bawiin.';
-
-  @override
-  String get assistantTitle => 'Katulong';
-
-  @override
-  String get assistantEmptyTitle => 'Magtanong ka kahit ano';
-
-  @override
-  String get assistantEmptyBody =>
-      'Subukang magtanong ng \"Ano ang kailangan kong gawin ngayong linggo?\" o \"Ilang hulog na lang ang natitira sa utang ko sa motor?\"';
-
-  @override
-  String get assistantInputHint => 'Magtanong…';
-
-  @override
-  String get assistantSend => 'Ipadala';
-
-  @override
-  String get assistantDisabledTitle => 'Naka-off ang Katulong';
-
-  @override
-  String get assistantDisabledBody =>
-      'I-enable ito sa Settings at pumili ng AI provider para makapag-chat.';
-
-  @override
-  String get assistantOpenSettings => 'Buksan ang Settings';
-
-  @override
-  String get assistantThinking => 'Nag-iisip…';
 
   @override
   String get validationRequired => 'Kailangan';

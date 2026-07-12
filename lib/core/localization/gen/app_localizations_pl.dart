@@ -27,9 +27,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get navSettings => 'Ustawienia';
 
   @override
-  String get navAssistant => 'Asystent';
-
-  @override
   String get onboardingTitle1 => 'Nigdy nie zapomnij o ważnych sprawach';
 
   @override
@@ -471,76 +468,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Nie udało się wczytać danych.';
-
-  @override
-  String get settingsAiSectionTitle => 'Asystent AI';
-
-  @override
-  String get settingsAiEnable => 'Włącz Asystenta AI';
-
-  @override
-  String get settingsAiProvider => 'Dostawca AI';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'Klucz API';
-
-  @override
-  String get settingsAiApiKeyHint => 'Wklej swój klucz API';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Skąd wziąć klucz?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Klucz API zapisany';
-
-  @override
-  String get settingsAiAllowedCategories => 'Kategorie widoczne dla asystenta';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Domyślnie udostępnione są wszystkie kategorie oprócz Finansów — wyłącz te, których asystent nie powinien widzieć.';
-
-  @override
-  String get settingsAiClearHistory => 'Wyczyść historię czatu';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Wyczyścić historię czatu?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Spowoduje to usunięcie wszystkich pytań i odpowiedzi zapisanych na tym urządzeniu. Nie można tego cofnąć.';
-
-  @override
-  String get assistantTitle => 'Asystent';
-
-  @override
-  String get assistantEmptyTitle => 'Zapytaj mnie o cokolwiek';
-
-  @override
-  String get assistantEmptyBody =>
-      'Spróbuj zapytać „Co muszę zrobić w tym tygodniu?” albo „Ile rat zostało do spłaty za motocykl?”';
-
-  @override
-  String get assistantInputHint => 'Zapytaj o coś…';
-
-  @override
-  String get assistantSend => 'Wyślij';
-
-  @override
-  String get assistantDisabledTitle => 'Asystent jest wyłączony';
-
-  @override
-  String get assistantDisabledBody =>
-      'Włącz go w Ustawieniach i wybierz dostawcę AI, aby zacząć rozmowę.';
-
-  @override
-  String get assistantOpenSettings => 'Otwórz Ustawienia';
-
-  @override
-  String get assistantThinking => 'Myślę…';
 
   @override
   String get validationRequired => 'Wymagane';

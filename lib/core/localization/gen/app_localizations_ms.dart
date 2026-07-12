@@ -27,9 +27,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String get navSettings => 'Tetapan';
 
   @override
-  String get navAssistant => 'Pembantu';
-
-  @override
   String get onboardingTitle1 => 'Jangan sekali-kali lupa perkara penting';
 
   @override
@@ -472,77 +469,6 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Gagal memuatkan data.';
-
-  @override
-  String get settingsAiSectionTitle => 'Pembantu AI';
-
-  @override
-  String get settingsAiEnable => 'Dayakan Pembantu AI';
-
-  @override
-  String get settingsAiProvider => 'Penyedia AI';
-
-  @override
-  String get settingsAiModel => 'Model';
-
-  @override
-  String get settingsAiApiKey => 'Kunci API';
-
-  @override
-  String get settingsAiApiKeyHint => 'Tampal kunci API anda';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Di mana saya boleh dapatkan kunci?';
-
-  @override
-  String get settingsAiApiKeySaved => 'Kunci API disimpan';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Kategori yang boleh dibaca oleh pembantu';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Semua kategori kecuali Kewangan dikongsi secara lalai — matikan mana-mana yang anda tidak mahu pembantu lihat.';
-
-  @override
-  String get settingsAiClearHistory => 'Kosongkan sejarah sembang';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Kosongkan sejarah sembang?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Tindakan ini akan memadam setiap soalan dan jawapan yang disimpan pada peranti ini. Tindakan ini tidak boleh dibuat asal.';
-
-  @override
-  String get assistantTitle => 'Pembantu';
-
-  @override
-  String get assistantEmptyTitle => 'Tanya saya apa-apa sahaja';
-
-  @override
-  String get assistantEmptyBody =>
-      'Cuba tanya \"Apakah yang perlu saya lakukan minggu ini?\" atau \"Berapa banyak ansuran yang tinggal untuk pinjaman motosikal saya?\"';
-
-  @override
-  String get assistantInputHint => 'Tanya sesuatu…';
-
-  @override
-  String get assistantSend => 'Hantar';
-
-  @override
-  String get assistantDisabledTitle => 'Pembantu dimatikan';
-
-  @override
-  String get assistantDisabledBody =>
-      'Dayakannya dalam Tetapan dan pilih penyedia AI untuk mula bersembang.';
-
-  @override
-  String get assistantOpenSettings => 'Buka Tetapan';
-
-  @override
-  String get assistantThinking => 'Sedang berfikir…';
 
   @override
   String get validationRequired => 'Diperlukan';

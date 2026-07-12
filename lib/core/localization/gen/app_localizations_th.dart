@@ -27,9 +27,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get navSettings => 'ตั้งค่า';
 
   @override
-  String get navAssistant => 'ผู้ช่วย';
-
-  @override
   String get onboardingTitle1 => 'ไม่มีวันลืมเรื่องสำคัญ';
 
   @override
@@ -471,77 +468,6 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'ไม่สามารถโหลดข้อมูลได้';
-
-  @override
-  String get settingsAiSectionTitle => 'ผู้ช่วย AI';
-
-  @override
-  String get settingsAiEnable => 'เปิดใช้งานผู้ช่วย AI';
-
-  @override
-  String get settingsAiProvider => 'ผู้ให้บริการ AI';
-
-  @override
-  String get settingsAiModel => 'โมเดล';
-
-  @override
-  String get settingsAiApiKey => 'API key';
-
-  @override
-  String get settingsAiApiKeyHint => 'วาง API key ของคุณที่นี่';
-
-  @override
-  String get settingsAiApiKeyHelp => 'จะรับ key ได้จากไหน';
-
-  @override
-  String get settingsAiApiKeySaved => 'บันทึก API key แล้ว';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'หมวดหมู่ที่ผู้ช่วยสามารถเข้าถึงได้';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'ทุกหมวดหมู่ยกเว้นการเงินจะถูกแชร์โดยค่าเริ่มต้น — ปิดหมวดหมู่ที่คุณไม่ต้องการให้ผู้ช่วยเห็น';
-
-  @override
-  String get settingsAiClearHistory => 'ล้างประวัติการสนทนา';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'ล้างประวัติการสนทนาใช่ไหม';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'การดำเนินการนี้จะลบคำถามและคำตอบทั้งหมดที่บันทึกไว้ในเครื่องนี้ ไม่สามารถย้อนกลับได้';
-
-  @override
-  String get assistantTitle => 'ผู้ช่วย';
-
-  @override
-  String get assistantEmptyTitle => 'ถามอะไรก็ได้';
-
-  @override
-  String get assistantEmptyBody =>
-      'ลองถามว่า \"สัปดาห์นี้ฉันต้องทำอะไรบ้าง\" หรือ \"สินเชื่อรถมอเตอร์ไซค์เหลืออีกกี่งวด\"';
-
-  @override
-  String get assistantInputHint => 'พิมพ์คำถามของคุณ…';
-
-  @override
-  String get assistantSend => 'ส่ง';
-
-  @override
-  String get assistantDisabledTitle => 'ผู้ช่วยถูกปิดใช้งานอยู่';
-
-  @override
-  String get assistantDisabledBody =>
-      'เปิดใช้งานในตั้งค่าและเลือกผู้ให้บริการ AI เพื่อเริ่มสนทนา';
-
-  @override
-  String get assistantOpenSettings => 'เปิดตั้งค่า';
-
-  @override
-  String get assistantThinking => 'กำลังคิด…';
 
   @override
   String get validationRequired => 'จำเป็นต้องกรอก';

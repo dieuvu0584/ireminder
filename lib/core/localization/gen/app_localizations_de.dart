@@ -27,9 +27,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get navSettings => 'Einstellungen';
 
   @override
-  String get navAssistant => 'Assistent';
-
-  @override
   String get onboardingTitle1 => 'Wichtiges nie mehr vergessen';
 
   @override
@@ -473,77 +470,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'Daten konnten nicht geladen werden.';
-
-  @override
-  String get settingsAiSectionTitle => 'KI-Assistent';
-
-  @override
-  String get settingsAiEnable => 'KI-Assistent aktivieren';
-
-  @override
-  String get settingsAiProvider => 'KI-Anbieter';
-
-  @override
-  String get settingsAiModel => 'Modell';
-
-  @override
-  String get settingsAiApiKey => 'API-Schlüssel';
-
-  @override
-  String get settingsAiApiKeyHint => 'API-Schlüssel einfügen';
-
-  @override
-  String get settingsAiApiKeyHelp => 'Wo bekomme ich einen Schlüssel?';
-
-  @override
-  String get settingsAiApiKeySaved => 'API-Schlüssel gespeichert';
-
-  @override
-  String get settingsAiAllowedCategories =>
-      'Kategorien, die der Assistent lesen darf';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'Standardmäßig sind alle Kategorien außer Finanzen freigegeben — schalte aus, was der Assistent nicht sehen soll.';
-
-  @override
-  String get settingsAiClearHistory => 'Chatverlauf löschen';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'Chatverlauf löschen?';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'Alle auf diesem Gerät gespeicherten Fragen und Antworten werden gelöscht. Dies kann nicht rückgängig gemacht werden.';
-
-  @override
-  String get assistantTitle => 'Assistent';
-
-  @override
-  String get assistantEmptyTitle => 'Frag mich etwas';
-
-  @override
-  String get assistantEmptyBody =>
-      'Versuche „Was muss ich diese Woche erledigen?“ oder „Wie viele Raten meines Motorradkredits bleiben noch?“';
-
-  @override
-  String get assistantInputHint => 'Etwas fragen…';
-
-  @override
-  String get assistantSend => 'Senden';
-
-  @override
-  String get assistantDisabledTitle => 'Assistent ist ausgeschaltet';
-
-  @override
-  String get assistantDisabledBody =>
-      'Aktiviere ihn in den Einstellungen und wähle einen KI-Anbieter, um zu chatten.';
-
-  @override
-  String get assistantOpenSettings => 'Einstellungen öffnen';
-
-  @override
-  String get assistantThinking => 'Denkt nach…';
 
   @override
   String get validationRequired => 'Erforderlich';

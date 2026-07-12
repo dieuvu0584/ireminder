@@ -27,9 +27,6 @@ class AppLocalizationsUr extends AppLocalizations {
   String get navSettings => 'ترتیبات';
 
   @override
-  String get navAssistant => 'اسسٹنٹ';
-
-  @override
   String get onboardingTitle1 => 'اہم باتیں کبھی نہ بھولیں';
 
   @override
@@ -471,76 +468,6 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get errorLoadFailed => 'ڈیٹا لوڈ نہیں ہو سکا۔';
-
-  @override
-  String get settingsAiSectionTitle => 'اے آئی اسسٹنٹ';
-
-  @override
-  String get settingsAiEnable => 'اے آئی اسسٹنٹ فعال کریں';
-
-  @override
-  String get settingsAiProvider => 'اے آئی فراہم کنندہ';
-
-  @override
-  String get settingsAiModel => 'ماڈل';
-
-  @override
-  String get settingsAiApiKey => 'API کلید';
-
-  @override
-  String get settingsAiApiKeyHint => 'اپنی API کلید پیسٹ کریں';
-
-  @override
-  String get settingsAiApiKeyHelp => 'کلید کہاں سے حاصل کروں؟';
-
-  @override
-  String get settingsAiApiKeySaved => 'API کلید محفوظ ہو گئی';
-
-  @override
-  String get settingsAiAllowedCategories => 'وہ زمرے جنہیں اسسٹنٹ دیکھ سکتا ہے';
-
-  @override
-  String get settingsAiAllowedCategoriesHint =>
-      'مالیات کے علاوہ تمام زمرے پہلے سے شیئر کیے جاتے ہیں — جنہیں آپ اسسٹنٹ کو نہیں دکھانا چاہتے انہیں بند کر دیں۔';
-
-  @override
-  String get settingsAiClearHistory => 'چیٹ کی تاریخ صاف کریں';
-
-  @override
-  String get settingsAiClearHistoryConfirmTitle => 'کیا چیٹ کی تاریخ صاف کریں؟';
-
-  @override
-  String get settingsAiClearHistoryConfirmBody =>
-      'اس سے اس ڈیوائس پر محفوظ ہر سوال اور جواب حذف ہو جائے گا۔ اسے واپس نہیں لایا جا سکتا۔';
-
-  @override
-  String get assistantTitle => 'اسسٹنٹ';
-
-  @override
-  String get assistantEmptyTitle => 'مجھ سے کچھ بھی پوچھیں';
-
-  @override
-  String get assistantEmptyBody =>
-      'آزمائیں \"اس ہفتے مجھے کیا کرنا ہے؟\" یا \"میرے موٹرسائیکل قرض کی کتنی قسطیں باقی ہیں؟\"';
-
-  @override
-  String get assistantInputHint => 'کچھ پوچھیں…';
-
-  @override
-  String get assistantSend => 'بھیجیں';
-
-  @override
-  String get assistantDisabledTitle => 'اسسٹنٹ بند ہے';
-
-  @override
-  String get assistantDisabledBody =>
-      'بات چیت شروع کرنے کے لیے ترتیبات میں جا کر اسے فعال کریں اور ایک اے آئی فراہم کنندہ منتخب کریں۔';
-
-  @override
-  String get assistantOpenSettings => 'ترتیبات کھولیں';
-
-  @override
-  String get assistantThinking => 'سوچ رہا ہے…';
 
   @override
   String get validationRequired => 'درکار ہے';
