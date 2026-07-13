@@ -320,4 +320,37 @@ void main() {
       expect(result, isNull);
     });
   });
+
+  group('occurrencesInMonth', () {
+    test('monthly: returns exactly one occurrence, clamped to the month', () {
+      final result = occurrencesInMonth(
+        const RecurrenceParams(type: RecurrenceType.monthly, day: 31),
+        DateTime(2026, 2, 1), // February, only 28 days
+      );
+      expect(result, [DateTime(2026, 2, 28)]);
+    });
+
+    test('lunar_monthly: every returned date actually has the target '
+        'lunar day', () {
+      final result = occurrencesInMonth(
+        const RecurrenceParams(type: RecurrenceType.lunarMonthly, day: 15),
+        DateTime(2026, 8, 1),
+      );
+      expect(result, isNotEmpty);
+      for (final date in result) {
+        expect(date.year, 2026);
+        expect(date.month, 8);
+        expect(LunarConverter.solarToLunar(date).day, 15);
+      }
+    });
+
+    test('returns an empty list for recurrence types with no monthly '
+        'occurrence', () {
+      final result = occurrencesInMonth(
+        const RecurrenceParams(type: RecurrenceType.yearly, day: 1, month: 1),
+        DateTime(2026, 8, 1),
+      );
+      expect(result, isEmpty);
+    });
+  });
 }

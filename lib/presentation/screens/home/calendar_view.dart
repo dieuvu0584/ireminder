@@ -91,12 +91,15 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
             projected.month,
             projected.day,
           );
-          final currentKey = DateTime(
-            r.nextDueDate.year,
-            r.nextDueDate.month,
-            r.nextDueDate.day,
-          );
-          if (projKey == currentKey) continue;
+          // Skip if this reminder already has an entry on that day —
+          // either it's the one live occurrence buildOccurrencesByDay
+          // already plotted at next_due_date, or a past completion/skip
+          // log landed on the exact same day/month (fully possible for a
+          // fixed yearly date) — either way, adding a second entry here
+          // would show as a duplicate card.
+          if ((byDay[projKey] ?? const []).any((o) => o.reminder.id == r.id)) {
+            continue;
+          }
           final done =
               !r.isActive &&
               (completedLogsAsync.valueOrNull ?? const []).any(
@@ -107,6 +110,48 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
               .add(
                 ReminderOccurrence(r, completed: done, historical: !r.isActive),
               );
+        }
+
+        // Same idea as the yearly/lunar-yearly projection above, but for
+        // monthly/lunar-monthly reminders projected onto whichever month
+        // is currently browsed — the DB only stores the single nearest
+        // upcoming occurrence, so month N+2's occurrence never otherwise
+        // shows up until month N+1's has actually come and gone.
+        for (final r in reminders) {
+          final type = RecurrenceType.fromDbValue(r.recurrenceType);
+          if (r.snoozeUntil != null ||
+              (type != RecurrenceType.monthly &&
+                  type != RecurrenceType.lunarMonthly)) {
+            continue;
+          }
+          final occurrences = occurrencesInMonth(
+            RecurrenceParams(type: type, day: r.recurrenceDay),
+            _visibleMonth,
+          );
+          final done =
+              !r.isActive &&
+              (completedLogsAsync.valueOrNull ?? const []).any(
+                (log) => log.reminderId == r.id,
+              );
+          for (final occurrence in occurrences) {
+            final key = DateTime(
+              occurrence.year,
+              occurrence.month,
+              occurrence.day,
+            );
+            if ((byDay[key] ?? const []).any((o) => o.reminder.id == r.id)) {
+              continue;
+            }
+            byDay
+                .putIfAbsent(key, () => [])
+                .add(
+                  ReminderOccurrence(
+                    r,
+                    completed: done,
+                    historical: !r.isActive,
+                  ),
+                );
+          }
         }
 
         final selectedEntries =

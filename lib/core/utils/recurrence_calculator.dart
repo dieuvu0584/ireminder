@@ -202,3 +202,42 @@ DateTime? occurrenceInYear(RecurrenceParams params, int year) {
       return null;
   }
 }
+
+/// Every occurrence of [params] that falls within the solar month
+/// containing [monthStart] — used to project a monthly/lunar-monthly
+/// reminder onto whichever month the user has browsed the calendar to,
+/// since the DB only stores the single nearest upcoming occurrence. Solar
+/// `monthly` always has exactly one occurrence per calendar month (day
+/// clamped like [calculateNextDueDate] does); `lunarMonthly` can have
+/// zero, one, or two, since lunar months don't line up with solar month
+/// boundaries. Returns an empty list for recurrence types with no
+/// monthly-or-more-often occurrence.
+List<DateTime> occurrencesInMonth(
+  RecurrenceParams params,
+  DateTime monthStart,
+) {
+  switch (params.type) {
+    case RecurrenceType.monthly:
+      final day = params.day!;
+      final clampedDay = day.clamp(
+        1,
+        _daysInMonth(monthStart.year, monthStart.month),
+      );
+      return [DateTime(monthStart.year, monthStart.month, clampedDay)];
+
+    case RecurrenceType.lunarMonthly:
+      final targetLunarDay = params.day!;
+      final daysInMonth = _daysInMonth(monthStart.year, monthStart.month);
+      final result = <DateTime>[];
+      for (var day = 1; day <= daysInMonth; day++) {
+        final date = DateTime(monthStart.year, monthStart.month, day);
+        if (LunarConverter.solarToLunar(date).day == targetLunarDay) {
+          result.add(date);
+        }
+      }
+      return result;
+
+    default:
+      return const [];
+  }
+}
