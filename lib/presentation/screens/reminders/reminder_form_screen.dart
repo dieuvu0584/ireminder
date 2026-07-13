@@ -113,6 +113,14 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
   String get _timeString =>
       '${_time.hour.toString().padLeft(2, '0')}:${_time.minute.toString().padLeft(2, '0')}';
 
+  /// A reminder's start date (solar or lunar-anchor) can't be picked
+  /// further out than Dec 31 of next year — applies to every date picker
+  /// on this form, native and lunar alike.
+  DateTime get _maxStartDate {
+    final year = DateTime.now().year;
+    return DateTime(year + 1, 12, 31);
+  }
+
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     if (_categoryId == null) return;
@@ -376,33 +384,24 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                     // today, without inviting a *new* past date to be picked.
                     final now = DateTime.now();
                     final today = DateTime(now.year, now.month, now.day);
+                    final firstDate = widget.existing == null
+                        ? today
+                        : (_startDate.isBefore(today) ? _startDate : today);
                     if (_isLunar) {
                       final picked = await showLunarDatePicker(
                         context: context,
                         initialDate: _startDate,
+                        firstDate: firstDate,
+                        lastDate: _maxStartDate,
                       );
-                      if (picked == null) return;
-                      // showLunarDatePicker has no built-in date-range
-                      // bound (its other use, the yearly/monthly anchor
-                      // picker, deliberately allows any historical date —
-                      // see its onTap below), so the "no backdating a new
-                      // reminder" rule is enforced here instead, same
-                      // outcome as the solar picker's firstDate above.
-                      final clamped =
-                          widget.existing == null && picked.isBefore(today)
-                          ? today
-                          : picked;
-                      setState(() => _startDate = clamped);
+                      if (picked != null) setState(() => _startDate = picked);
                       return;
                     }
-                    final firstDate = widget.existing == null
-                        ? today
-                        : (_startDate.isBefore(today) ? _startDate : today);
                     final picked = await showDatePicker(
                       context: context,
                       initialDate: _startDate,
                       firstDate: firstDate,
-                      lastDate: DateTime(2100),
+                      lastDate: _maxStartDate,
                     );
                     if (picked != null) setState(() => _startDate = picked);
                   },
@@ -581,6 +580,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                     _recurrenceDay!,
                     null,
                   ),
+                  lastDate: _maxStartDate,
                 );
                 if (picked != null) {
                   final lunar = LunarConverter.solarToLunar(picked);
@@ -639,6 +639,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                     _recurrenceDay!,
                     _recurrenceMonth!,
                   ),
+                  lastDate: _maxStartDate,
                 );
                 if (picked != null) {
                   final lunar = LunarConverter.solarToLunar(picked);

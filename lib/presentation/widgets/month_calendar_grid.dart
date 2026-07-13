@@ -7,8 +7,8 @@ import '../../core/utils/lunar_converter.dart';
 /// present the same browsing UI.
 class MonthCalendarHeader extends StatelessWidget {
   final DateTime month;
-  final VoidCallback onPrev;
-  final VoidCallback onNext;
+  final VoidCallback? onPrev;
+  final VoidCallback? onNext;
 
   const MonthCalendarHeader({
     super.key,
@@ -85,12 +85,21 @@ class MonthCalendarGrid extends StatelessWidget {
   final Widget? Function(BuildContext context, DateTime day)?
   dayDecorationBuilder;
 
+  /// Days outside [firstSelectableDay, lastSelectableDay] (inclusive) are
+  /// shown dimmed and not tappable. Null on either end means unbounded in
+  /// that direction — the Calendar tab passes neither, since browsing
+  /// there has no such limit.
+  final DateTime? firstSelectableDay;
+  final DateTime? lastSelectableDay;
+
   const MonthCalendarGrid({
     super.key,
     required this.month,
     required this.selectedDay,
     required this.onSelectDay,
     this.dayDecorationBuilder,
+    this.firstSelectableDay,
+    this.lastSelectableDay,
   });
 
   @override
@@ -124,10 +133,13 @@ class MonthCalendarGrid extends StatelessWidget {
         final isToday = _isSameDay(day, DateTime.now());
         final isWeekend =
             day.weekday == DateTime.saturday || day.weekday == DateTime.sunday;
+        final isDisabled =
+            (firstSelectableDay != null && day.isBefore(firstSelectableDay!)) ||
+            (lastSelectableDay != null && day.isAfter(lastSelectableDay!));
         final decoration = dayDecorationBuilder?.call(context, day);
 
         return InkWell(
-          onTap: () => onSelectDay(day),
+          onTap: isDisabled ? null : () => onSelectDay(day),
           child: Container(
             margin: const EdgeInsets.all(2),
             decoration: BoxDecoration(
@@ -144,7 +156,9 @@ class MonthCalendarGrid extends StatelessWidget {
               children: [
                 Text(
                   '$dayNum',
-                  style: isWeekend && !isSelected
+                  style: isDisabled
+                      ? TextStyle(color: Theme.of(context).disabledColor)
+                      : isWeekend && !isSelected
                       ? TextStyle(color: Theme.of(context).colorScheme.error)
                       : null,
                 ),

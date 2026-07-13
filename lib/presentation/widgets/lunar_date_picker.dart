@@ -12,17 +12,29 @@ import 'month_calendar_grid.dart';
 Future<DateTime?> showLunarDatePicker({
   required BuildContext context,
   required DateTime initialDate,
+  DateTime? firstDate,
+  DateTime? lastDate,
 }) {
   return showDialog<DateTime>(
     context: context,
-    builder: (context) => _LunarDatePickerDialog(initialDate: initialDate),
+    builder: (context) => _LunarDatePickerDialog(
+      initialDate: initialDate,
+      firstDate: firstDate,
+      lastDate: lastDate,
+    ),
   );
 }
 
 class _LunarDatePickerDialog extends StatefulWidget {
   final DateTime initialDate;
+  final DateTime? firstDate;
+  final DateTime? lastDate;
 
-  const _LunarDatePickerDialog({required this.initialDate});
+  const _LunarDatePickerDialog({
+    required this.initialDate,
+    this.firstDate,
+    this.lastDate,
+  });
 
   @override
   State<_LunarDatePickerDialog> createState() => _LunarDatePickerDialogState();
@@ -37,6 +49,18 @@ class _LunarDatePickerDialogState extends State<_LunarDatePickerDialog> {
     _visibleMonth = DateTime(widget.initialDate.year, widget.initialDate.month);
   }
 
+  bool get _canGoPrev {
+    final first = widget.firstDate;
+    if (first == null) return true;
+    return _visibleMonth.isAfter(DateTime(first.year, first.month));
+  }
+
+  bool get _canGoNext {
+    final last = widget.lastDate;
+    if (last == null) return true;
+    return _visibleMonth.isBefore(DateTime(last.year, last.month));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -49,23 +73,29 @@ class _LunarDatePickerDialogState extends State<_LunarDatePickerDialog> {
             children: [
               MonthCalendarHeader(
                 month: _visibleMonth,
-                onPrev: () => setState(() {
-                  _visibleMonth = DateTime(
-                    _visibleMonth.year,
-                    _visibleMonth.month - 1,
-                  );
-                }),
-                onNext: () => setState(() {
-                  _visibleMonth = DateTime(
-                    _visibleMonth.year,
-                    _visibleMonth.month + 1,
-                  );
-                }),
+                onPrev: _canGoPrev
+                    ? () => setState(() {
+                        _visibleMonth = DateTime(
+                          _visibleMonth.year,
+                          _visibleMonth.month - 1,
+                        );
+                      })
+                    : null,
+                onNext: _canGoNext
+                    ? () => setState(() {
+                        _visibleMonth = DateTime(
+                          _visibleMonth.year,
+                          _visibleMonth.month + 1,
+                        );
+                      })
+                    : null,
               ),
               const WeekdayHeader(),
               MonthCalendarGrid(
                 month: _visibleMonth,
                 selectedDay: widget.initialDate,
+                firstSelectableDay: widget.firstDate,
+                lastSelectableDay: widget.lastDate,
                 // A tap picks and closes in one step, same as the Calendar
                 // tab's own day grid — no separate OK step needed since
                 // there's nothing else to configure in this dialog.
