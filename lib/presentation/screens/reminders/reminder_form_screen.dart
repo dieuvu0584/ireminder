@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
+import '../../../core/utils/lunar_converter.dart';
 import '../../../data/database/app_database.dart';
 import '../../../domain/enums/recurrence_type.dart';
 import '../../providers/category_providers.dart';
@@ -465,39 +466,83 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
             secondary: const Icon(Icons.brightness_2_outlined),
             title: Text(l10n.reminderFieldLunarToggle),
             value: _isLunar,
-            onChanged: (v) => setState(() => _isLunar = v),
+            onChanged: (v) => setState(() {
+              _isLunar = v;
+              // Most people don't know offhand what lunar day/month a given
+              // date falls on — default to today's so the picker below
+              // always opens on a valid value instead of forcing a manual
+              // lookup before it can be used at all.
+              if (v && _recurrenceDay == null && _recurrenceMonth == null) {
+                final today = LunarConverter.solarToLunar(DateTime.now());
+                _recurrenceDay = today.day;
+                _recurrenceMonth = today.month;
+              }
+            }),
           ),
-          Row(
-            children: [
-              Expanded(
-                child: TextFormField(
-                  initialValue: _recurrenceDay?.toString() ?? '',
-                  decoration: InputDecoration(
-                    labelText: _isLunar
-                        ? l10n.reminderFieldLunarDay
-                        : l10n.reminderFieldRecurrenceDay,
-                  ),
-                  keyboardType: TextInputType.number,
-                  onChanged: (v) => _recurrenceDay = int.tryParse(v),
-                  validator: (v) => _validateDayOfMonth(l10n, v),
+          if (_isLunar)
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(l10n.reminderFieldLunarDay),
+              subtitle: Text(
+                l10n.reminderLunarDateLabel(
+                  '$_recurrenceDay/$_recurrenceMonth',
                 ),
               ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: TextFormField(
-                  initialValue: _recurrenceMonth?.toString() ?? '',
-                  decoration: InputDecoration(
-                    labelText: _isLunar
-                        ? l10n.reminderFieldLunarMonth
-                        : l10n.reminderFieldRecurrenceMonth,
+              trailing: const Icon(Icons.calendar_today),
+              onTap: () async {
+                // showDatePicker only understands solar dates, so seed it
+                // with this lunar day/month's nearest solar equivalent
+                // (current year) and convert back on pick — the user picks
+                // from a familiar calendar instead of having to already
+                // know the lunar day/month numbers to type in.
+                final approxSolar = LunarConverter.lunarToSolar(
+                  DateTime.now().year,
+                  _recurrenceMonth!,
+                  _recurrenceDay!,
+                );
+                final picked = await showDatePicker(
+                  context: context,
+                  initialDate: approxSolar,
+                  firstDate: DateTime(1900),
+                  lastDate: DateTime(2100),
+                );
+                if (picked != null) {
+                  final lunar = LunarConverter.solarToLunar(picked);
+                  setState(() {
+                    _recurrenceDay = lunar.day;
+                    _recurrenceMonth = lunar.month;
+                  });
+                }
+              },
+            )
+          else
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    initialValue: _recurrenceDay?.toString() ?? '',
+                    decoration: InputDecoration(
+                      labelText: l10n.reminderFieldRecurrenceDay,
+                    ),
+                    keyboardType: TextInputType.number,
+                    onChanged: (v) => _recurrenceDay = int.tryParse(v),
+                    validator: (v) => _validateDayOfMonth(l10n, v),
                   ),
-                  keyboardType: TextInputType.number,
-                  onChanged: (v) => _recurrenceMonth = int.tryParse(v),
-                  validator: (v) => _validateMonth(l10n, v),
                 ),
-              ),
-            ],
-          ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: TextFormField(
+                    initialValue: _recurrenceMonth?.toString() ?? '',
+                    decoration: InputDecoration(
+                      labelText: l10n.reminderFieldRecurrenceMonth,
+                    ),
+                    keyboardType: TextInputType.number,
+                    onChanged: (v) => _recurrenceMonth = int.tryParse(v),
+                    validator: (v) => _validateMonth(l10n, v),
+                  ),
+                ),
+              ],
+            ),
         ];
       case RecurrenceType.customIntervalDays:
         return [
