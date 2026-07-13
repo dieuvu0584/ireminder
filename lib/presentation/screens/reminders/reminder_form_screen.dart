@@ -8,6 +8,7 @@ import '../../../data/database/app_database.dart';
 import '../../../domain/enums/recurrence_type.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
+import '../../widgets/lunar_date_picker.dart';
 import '../../widgets/save_action_button.dart';
 
 class ReminderFormScreen extends ConsumerStatefulWidget {
@@ -310,34 +311,40 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               const SizedBox(height: 12),
               ..._buildRecurrenceFields(l10n),
               const SizedBox(height: 12),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text(l10n.reminderFieldStartDate),
-                subtitle: Text(
-                  '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
+              // The lunar date picker (built into _buildRecurrenceFields'
+              // yearly case above) already sets both the lunar day/month
+              // anchor *and* _startDate from the same pick — showing this
+              // solar start-date field too would be redundant and let the
+              // two disagree, so it's hidden while lunar is on.
+              if (!_isLunar)
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(l10n.reminderFieldStartDate),
+                  subtitle: Text(
+                    '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
+                  ),
+                  trailing: const Icon(Icons.calendar_today),
+                  onTap: () async {
+                    // New reminders can't be backdated (see initState); an
+                    // existing reminder's start date may already anchor a
+                    // legitimately past day (e.g. a yearly reminder created
+                    // years ago), so editing keeps the wider range to avoid
+                    // an assertion failure if _startDate itself predates
+                    // today, without inviting a *new* past date to be picked.
+                    final now = DateTime.now();
+                    final today = DateTime(now.year, now.month, now.day);
+                    final firstDate = widget.existing == null
+                        ? today
+                        : (_startDate.isBefore(today) ? _startDate : today);
+                    final picked = await showDatePicker(
+                      context: context,
+                      initialDate: _startDate,
+                      firstDate: firstDate,
+                      lastDate: DateTime(2100),
+                    );
+                    if (picked != null) setState(() => _startDate = picked);
+                  },
                 ),
-                trailing: const Icon(Icons.calendar_today),
-                onTap: () async {
-                  // New reminders can't be backdated (see initState); an
-                  // existing reminder's start date may already anchor a
-                  // legitimately past day (e.g. a yearly reminder created
-                  // years ago), so editing keeps the wider range to avoid
-                  // an assertion failure if _startDate itself predates
-                  // today, without inviting a *new* past date to be picked.
-                  final now = DateTime.now();
-                  final today = DateTime(now.year, now.month, now.day);
-                  final firstDate = widget.existing == null
-                      ? today
-                      : (_startDate.isBefore(today) ? _startDate : today);
-                  final picked = await showDatePicker(
-                    context: context,
-                    initialDate: _startDate,
-                    firstDate: firstDate,
-                    lastDate: DateTime(2100),
-                  );
-                  if (picked != null) setState(() => _startDate = picked);
-                },
-              ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 title: Text(l10n.reminderFieldTime),
@@ -490,27 +497,28 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               ),
               trailing: const Icon(Icons.calendar_today),
               onTap: () async {
-                // showDatePicker only understands solar dates, so seed it
-                // with this lunar day/month's nearest solar equivalent
-                // (current year) and convert back on pick — the user picks
-                // from a familiar calendar instead of having to already
-                // know the lunar day/month numbers to type in.
+                // Seed the picker at this lunar day/month's nearest solar
+                // equivalent so it opens already showing roughly the right
+                // spot, rather than always jumping back to today's month.
                 final approxSolar = LunarConverter.lunarToSolar(
                   DateTime.now().year,
                   _recurrenceMonth!,
                   _recurrenceDay!,
                 );
-                final picked = await showDatePicker(
+                final picked = await showLunarDatePicker(
                   context: context,
                   initialDate: approxSolar,
-                  firstDate: DateTime(1900),
-                  lastDate: DateTime(2100),
                 );
                 if (picked != null) {
                   final lunar = LunarConverter.solarToLunar(picked);
                   setState(() {
                     _recurrenceDay = lunar.day;
                     _recurrenceMonth = lunar.month;
+                    // The solar start-date field is hidden while lunar is
+                    // on (see above) but still backs the actual DB row —
+                    // keep it in sync with whatever solar date the lunar
+                    // day/month anchor was just picked from.
+                    _startDate = picked;
                   });
                 }
               },

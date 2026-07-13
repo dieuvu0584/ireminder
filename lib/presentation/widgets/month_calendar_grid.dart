@@ -1,0 +1,179 @@
+import 'package:flutter/material.dart';
+
+import '../../core/utils/lunar_converter.dart';
+
+/// Month navigation header (prev/next chevrons + "Month Year" label) —
+/// shared between the Calendar tab and the lunar date picker so both
+/// present the same browsing UI.
+class MonthCalendarHeader extends StatelessWidget {
+  final DateTime month;
+  final VoidCallback onPrev;
+  final VoidCallback onNext;
+
+  const MonthCalendarHeader({
+    super.key,
+    required this.month,
+    required this.onPrev,
+    required this.onNext,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final label = MaterialLocalizations.of(
+      context,
+    ).formatMonthYear(month).toString();
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(icon: const Icon(Icons.chevron_left), onPressed: onPrev),
+          Text(label, style: Theme.of(context).textTheme.titleMedium),
+          IconButton(icon: const Icon(Icons.chevron_right), onPressed: onNext),
+        ],
+      ),
+    );
+  }
+}
+
+/// Locale-aware Mon..Sun weekday initials (e.g. "T2".."CN" in Vietnamese)
+/// above the day grid, with weekends picked out in the same color used for
+/// weekend day numbers below — shared between the Calendar tab and the
+/// lunar date picker.
+class WeekdayHeader extends StatelessWidget {
+  const WeekdayHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // MaterialLocalizations.narrowWeekdays is Sunday-first (CLDR order);
+    // the grid below is Monday-first, so index 0 here is Sunday and needs
+    // to move to the end.
+    final sundayFirst = MaterialLocalizations.of(context).narrowWeekdays;
+    final mondayFirst = [...sundayFirst.sublist(1), sundayFirst[0]];
+    final weekendColor = Theme.of(context).colorScheme.error;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Row(
+        children: List.generate(7, (i) {
+          final isWeekend = i == 5 || i == 6; // Sat, Sun in Monday-first order
+          return Expanded(
+            child: Center(
+              child: Text(
+                mondayFirst[i],
+                style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                  color: isWeekend ? weekendColor : null,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
+}
+
+/// Solar month grid with each day's lunar day/month shown underneath —
+/// shared between the Calendar tab (which decorates days with reminder
+/// dots via [dayDecorationBuilder]) and the lunar date picker (bare, no
+/// decoration), so both present the same day-cell look.
+class MonthCalendarGrid extends StatelessWidget {
+  final DateTime month;
+  final DateTime? selectedDay;
+  final ValueChanged<DateTime> onSelectDay;
+  final Widget? Function(BuildContext context, DateTime day)?
+  dayDecorationBuilder;
+
+  const MonthCalendarGrid({
+    super.key,
+    required this.month,
+    required this.selectedDay,
+    required this.onSelectDay,
+    this.dayDecorationBuilder,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final firstOfMonth = DateTime(month.year, month.month, 1);
+    final leadingBlanks = firstOfMonth.weekday - 1; // Monday-first grid
+    final daysInMonth = DateTime(month.year, month.month + 1, 0).day;
+    final totalCells = leadingBlanks + daysInMonth;
+    final rows = (totalCells / 7).ceil();
+
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 7,
+        childAspectRatio: 1,
+      ),
+      itemCount: rows * 7,
+      itemBuilder: (context, index) {
+        final dayNum = index - leadingBlanks + 1;
+        if (dayNum < 1 || dayNum > daysInMonth) {
+          return const SizedBox.shrink();
+        }
+        final day = DateTime(month.year, month.month, dayNum);
+        final isSelected =
+            selectedDay != null &&
+            day.year == selectedDay!.year &&
+            day.month == selectedDay!.month &&
+            day.day == selectedDay!.day;
+        final isToday = _isSameDay(day, DateTime.now());
+        final isWeekend =
+            day.weekday == DateTime.saturday || day.weekday == DateTime.sunday;
+        final decoration = dayDecorationBuilder?.call(context, day);
+
+        return InkWell(
+          onTap: () => onSelectDay(day),
+          child: Container(
+            margin: const EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              color: isSelected
+                  ? Theme.of(context).colorScheme.primaryContainer
+                  : null,
+              border: isToday
+                  ? Border.all(color: Theme.of(context).colorScheme.primary)
+                  : null,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '$dayNum',
+                  style: isWeekend && !isSelected
+                      ? TextStyle(color: Theme.of(context).colorScheme.error)
+                      : null,
+                ),
+                Text(
+                  _lunarLabel(day),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    fontSize: 8,
+                    color: Theme.of(context).colorScheme.outline,
+                  ),
+                ),
+                ?decoration,
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  /// Lunar day for [day], shown small under the solar day number so users
+  /// tracking lunar-calendar occasions (giỗ chạp, etc.) don't have to look
+  /// it up elsewhere. Shows "day/month" only on the 1st of the lunar
+  /// month (when the month value is actually new information) and just
+  /// the day number otherwise, matching common Vietnamese calendar apps.
+  String _lunarLabel(DateTime day) {
+    final lunar = LunarConverter.solarToLunar(day);
+    return lunar.day == 1 ? '${lunar.day}/${lunar.month}' : '${lunar.day}';
+  }
+
+  bool _isSameDay(DateTime a, DateTime b) =>
+      a.year == b.year && a.month == b.month && a.day == b.day;
+}
