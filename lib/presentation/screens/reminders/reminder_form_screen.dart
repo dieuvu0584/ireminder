@@ -28,6 +28,15 @@ class ReminderFormScreen extends ConsumerStatefulWidget {
 }
 
 class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
+  /// Recurrence types the lunar toggle applies to: a one-off due date, a
+  /// fixed lunar day repeated every lunar month, or a fixed lunar day+month
+  /// repeated every lunar year.
+  static const _lunarCapableTypes = {
+    RecurrenceType.none,
+    RecurrenceType.monthly,
+    RecurrenceType.yearly,
+  };
+
   final _formKey = GlobalKey<FormState>();
   late final TextEditingController _titleCtrl;
   late final TextEditingController _descCtrl;
@@ -67,11 +76,20 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     }
     if (r != null) {
       final type = RecurrenceType.fromDbValue(r.recurrenceType);
-      if (type == RecurrenceType.lunarYearly) {
-        _recurrenceType = RecurrenceType.yearly;
-        _isLunar = true;
-      } else {
-        _recurrenceType = type;
+      switch (type) {
+        case RecurrenceType.lunarYearly:
+          _recurrenceType = RecurrenceType.yearly;
+          _isLunar = true;
+        case RecurrenceType.lunarMonthly:
+          _recurrenceType = RecurrenceType.monthly;
+          _isLunar = true;
+        default:
+          _recurrenceType = type;
+          // RecurrenceType.none has no dedicated lunar_* variant (its due
+          // date is just its own solar nextDueDate/startDate either way) —
+          // isLunar is the only signal for whether it was picked via the
+          // lunar-annotated date picker.
+          _isLunar = r.isLunar;
       }
       _recurrenceDay = r.recurrenceDay;
       _recurrenceMonth = r.recurrenceMonth;
@@ -100,9 +118,11 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     if (_categoryId == null) return;
     setState(() => _saving = true);
     final actions = ref.read(reminderActionsProvider);
-    final effectiveType = _recurrenceType == RecurrenceType.yearly && _isLunar
-        ? RecurrenceType.lunarYearly
-        : _recurrenceType;
+    final effectiveType = switch (_recurrenceType) {
+      RecurrenceType.yearly when _isLunar => RecurrenceType.lunarYearly,
+      RecurrenceType.monthly when _isLunar => RecurrenceType.lunarMonthly,
+      _ => _recurrenceType,
+    };
     try {
       bool scheduled;
       String? scheduleError;
@@ -118,7 +138,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           recurrenceDay: _recurrenceDay,
           recurrenceMonth: _recurrenceMonth,
           recurrenceWeekday: _recurrenceWeekday,
-          isLunar: effectiveType == RecurrenceType.lunarYearly,
+          isLunar: _isLunar,
           startDate: _startDate,
           reminderTime: _timeString,
           advanceNoticeDays: _advanceNoticeDays,
@@ -140,7 +160,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
             recurrenceDay: drift.Value(_recurrenceDay),
             recurrenceMonth: drift.Value(_recurrenceMonth),
             recurrenceWeekday: drift.Value(_recurrenceWeekday),
-            isLunar: effectiveType == RecurrenceType.lunarYearly,
+            isLunar: _isLunar,
             startDate: _startDate,
             reminderTime: _timeString,
             advanceNoticeDays: _advanceNoticeDays,
@@ -192,6 +212,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         return l10n.recurrenceCustomIntervalDays;
       case RecurrenceType.lunarYearly:
         return l10n.recurrenceLunarYearly;
+      case RecurrenceType.lunarMonthly:
+        // Unreachable via the UI, same as lunarYearly below — see the
+        // Repeat dropdown's `items` filter, which never offers this value
+        // directly (monthly lunar is represented as
+        // RecurrenceType.monthly + _isLunar instead).
+        return l10n.recurrenceMonthly;
     }
   }
 
@@ -293,7 +319,11 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                   labelText: l10n.reminderFieldRecurrence,
                 ),
                 items: RecurrenceType.values
-                    .where((t) => t != RecurrenceType.lunarYearly)
+                    .where(
+                      (t) =>
+                          t != RecurrenceType.lunarYearly &&
+                          t != RecurrenceType.lunarMonthly,
+                    )
                     .map(
                       (t) => DropdownMenuItem(
                         value: t,
@@ -303,7 +333,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                     .toList(),
                 onChanged: (v) => setState(() {
                   _recurrenceType = v!;
-                  if (_recurrenceType != RecurrenceType.yearly) {
+                  // Lunar mode carries over across the three types that
+                  // support it (a fixed lunar day, with or without a fixed
+                  // lunar month) rather than resetting on every switch —
+                  // only reset it for a type that has no lunar concept at
+                  // all.
+                  if (!_lunarCapableTypes.contains(_recurrenceType)) {
                     _isLunar = false;
                   }
                 }),
@@ -311,17 +346,25 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               const SizedBox(height: 12),
               ..._buildRecurrenceFields(l10n),
               const SizedBox(height: 12),
-              // The lunar date picker (built into _buildRecurrenceFields'
-              // yearly case above) already sets both the lunar day/month
-              // anchor *and* _startDate from the same pick — showing this
-              // solar start-date field too would be redundant and let the
-              // two disagree, so it's hidden while lunar is on.
-              if (!_isLunar)
+              // Yearly/monthly have their own dedicated lunar day/month
+              // anchor picker (built into _buildRecurrenceFields above),
+              // which already sets both the anchor *and* _startDate from
+              // the same pick — showing this solar start-date field too
+              // would be redundant and let the two disagree, so it's
+              // hidden for those while lunar is on. RecurrenceType.none has
+              // no separate anchor — its due date *is* _startDate — so this
+              // stays the only date field, just backed by the lunar-
+              // annotated picker instead of the plain solar one.
+              if (_recurrenceType == RecurrenceType.none || !_isLunar)
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text(l10n.reminderFieldStartDate),
                   subtitle: Text(
-                    '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
+                    _isLunar
+                        ? l10n.reminderLunarDateLabel(
+                            LunarConverter.formatDayMonth(_startDate),
+                          )
+                        : '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
                   ),
                   trailing: const Icon(Icons.calendar_today),
                   onTap: () async {
@@ -333,6 +376,25 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                     // today, without inviting a *new* past date to be picked.
                     final now = DateTime.now();
                     final today = DateTime(now.year, now.month, now.day);
+                    if (_isLunar) {
+                      final picked = await showLunarDatePicker(
+                        context: context,
+                        initialDate: _startDate,
+                      );
+                      if (picked == null) return;
+                      // showLunarDatePicker has no built-in date-range
+                      // bound (its other use, the yearly/monthly anchor
+                      // picker, deliberately allows any historical date —
+                      // see its onTap below), so the "no backdating a new
+                      // reminder" rule is enforced here instead, same
+                      // outcome as the solar picker's firstDate above.
+                      final clamped =
+                          widget.existing == null && picked.isBefore(today)
+                          ? today
+                          : picked;
+                      setState(() => _startDate = clamped);
+                      return;
+                    }
                     final firstDate = widget.existing == null
                         ? today
                         : (_startDate.isBefore(today) ? _startDate : today);
@@ -431,9 +493,45 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     return null;
   }
 
+  /// Seeds the lunar picker at roughly the right spot: this lunar day's
+  /// solar date in [lunarMonth] (yearly anchor) or in the current lunar
+  /// month (monthly anchor, [lunarMonth] null). A day that doesn't exist
+  /// in that particular month (e.g. day 30 in a 29-day "small" month)
+  /// would otherwise throw from deep inside the `lunar` package — falls
+  /// back to today's month instead of crashing the picker open.
+  DateTime _approxSolarForLunarAnchor(int lunarDay, int? lunarMonth) {
+    final now = DateTime.now();
+    try {
+      if (lunarMonth != null) {
+        return LunarConverter.lunarToSolar(now.year, lunarMonth, lunarDay);
+      }
+      final nowLunar = LunarConverter.solarToLunar(now);
+      return LunarConverter.lunarToSolar(
+        nowLunar.year,
+        nowLunar.month,
+        lunarDay,
+      );
+    } catch (_) {
+      return now;
+    }
+  }
+
   List<Widget> _buildRecurrenceFields(AppLocalizations l10n) {
     switch (_recurrenceType) {
       case RecurrenceType.none:
+        // No separate recurrence anchor to pick here — the lunar toggle
+        // just switches which picker backs the "Start date" field below
+        // (see its `if (_recurrenceType == RecurrenceType.none || ...)`
+        // condition further down in build()).
+        return [
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.brightness_2_outlined),
+            title: Text(l10n.reminderFieldLunarToggle),
+            value: _isLunar,
+            onChanged: (v) => setState(() => _isLunar = v),
+          ),
+        ];
       case RecurrenceType.daily:
         return const [];
       case RecurrenceType.weekly:
@@ -456,15 +554,53 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         ];
       case RecurrenceType.monthly:
         return [
-          TextFormField(
-            initialValue: _recurrenceDay?.toString() ?? '',
-            decoration: InputDecoration(
-              labelText: l10n.reminderFieldRecurrenceDay,
-            ),
-            keyboardType: TextInputType.number,
-            onChanged: (v) => _recurrenceDay = int.tryParse(v),
-            validator: (v) => _validateDayOfMonth(l10n, v),
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.brightness_2_outlined),
+            title: Text(l10n.reminderFieldLunarToggle),
+            value: _isLunar,
+            onChanged: (v) => setState(() {
+              _isLunar = v;
+              if (v && _recurrenceDay == null) {
+                _recurrenceDay = LunarConverter.solarToLunar(
+                  DateTime.now(),
+                ).day;
+              }
+            }),
           ),
+          if (_isLunar)
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(l10n.reminderFieldLunarDay),
+              subtitle: Text(l10n.reminderLunarDateLabel('$_recurrenceDay')),
+              trailing: const Icon(Icons.calendar_today),
+              onTap: () async {
+                final picked = await showLunarDatePicker(
+                  context: context,
+                  initialDate: _approxSolarForLunarAnchor(
+                    _recurrenceDay!,
+                    null,
+                  ),
+                );
+                if (picked != null) {
+                  final lunar = LunarConverter.solarToLunar(picked);
+                  setState(() {
+                    _recurrenceDay = lunar.day;
+                    _startDate = picked;
+                  });
+                }
+              },
+            )
+          else
+            TextFormField(
+              initialValue: _recurrenceDay?.toString() ?? '',
+              decoration: InputDecoration(
+                labelText: l10n.reminderFieldRecurrenceDay,
+              ),
+              keyboardType: TextInputType.number,
+              onChanged: (v) => _recurrenceDay = int.tryParse(v),
+              validator: (v) => _validateDayOfMonth(l10n, v),
+            ),
         ];
       case RecurrenceType.yearly:
         return [
@@ -497,17 +633,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               ),
               trailing: const Icon(Icons.calendar_today),
               onTap: () async {
-                // Seed the picker at this lunar day/month's nearest solar
-                // equivalent so it opens already showing roughly the right
-                // spot, rather than always jumping back to today's month.
-                final approxSolar = LunarConverter.lunarToSolar(
-                  DateTime.now().year,
-                  _recurrenceMonth!,
-                  _recurrenceDay!,
-                );
                 final picked = await showLunarDatePicker(
                   context: context,
-                  initialDate: approxSolar,
+                  initialDate: _approxSolarForLunarAnchor(
+                    _recurrenceDay!,
+                    _recurrenceMonth!,
+                  ),
                 );
                 if (picked != null) {
                   final lunar = LunarConverter.solarToLunar(picked);
@@ -565,10 +696,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           ),
         ];
       case RecurrenceType.lunarYearly:
-        // Unreachable via the UI: the Repeat dropdown never offers this
-        // value directly (see its `items` filter above) — lunar yearly is
-        // represented as RecurrenceType.yearly + _isLunar instead, so this
-        // case only exists to keep the switch exhaustive over the enum.
+      case RecurrenceType.lunarMonthly:
+        // Unreachable via the UI: the Repeat dropdown never offers these
+        // values directly (see its `items` filter above) — they're
+        // represented as RecurrenceType.yearly/monthly + _isLunar instead,
+        // so these cases only exist to keep the switch exhaustive over the
+        // enum.
         return const [];
     }
   }

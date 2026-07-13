@@ -73,7 +73,37 @@ DateTime calculateNextDueDate(RecurrenceParams params, DateTime fromDate) {
         'Could not resolve next lunar_yearly occurrence for '
         '$lunarMonth/$lunarDay from $from',
       );
+
+    case RecurrenceType.lunarMonthly:
+      return _nextLunarDayOfMonth(params.day!, from, includeFrom: false);
   }
+}
+
+/// Scans forward day-by-day for the next solar date whose lunar
+/// day-of-month matches [targetLunarDay] — a lunar month is always 29 or
+/// 30 days, so within any 3 consecutive lunar months (~90 days) every
+/// day-of-month that occurs at all is guaranteed to show up at least
+/// once. Deliberately a plain scan rather than hand-rolled lunar-month
+/// arithmetic (leap months make that error-prone) — it leans entirely on
+/// [LunarConverter], the same trusted conversion already used everywhere
+/// else. A target day that doesn't exist in the nearest month (e.g. day
+/// 30 in a 29-day "small" month) is simply skipped to the next month
+/// that has it, rather than clamped down like solar `monthly` does.
+DateTime _nextLunarDayOfMonth(
+  int targetLunarDay,
+  DateTime from, {
+  required bool includeFrom,
+}) {
+  for (var offset = includeFrom ? 0 : 1; offset <= 90; offset++) {
+    final candidate = from.add(Duration(days: offset));
+    if (LunarConverter.solarToLunar(candidate).day == targetLunarDay) {
+      return candidate;
+    }
+  }
+  throw StateError(
+    'Could not resolve lunar_monthly occurrence for day $targetLunarDay '
+    'from $from',
+  );
 }
 
 /// Computes the first occurrence on or after [fromDate] — used when a
@@ -141,6 +171,9 @@ DateTime calculateFirstOccurrenceOnOrAfter(
         'Could not resolve first lunar_yearly occurrence for '
         '$lunarMonth/$lunarDay on or after $from',
       );
+
+    case RecurrenceType.lunarMonthly:
+      return _nextLunarDayOfMonth(params.day!, from, includeFrom: true);
   }
 }
 

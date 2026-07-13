@@ -88,8 +88,8 @@ class ReminderRepository {
 
   /// First occurrence for the reminder being created/edited.
   ///
-  /// [RecurrenceType.weekly]/[monthly]/[yearly]/[lunarYearly] carry their
-  /// own day/month/weekday anchor independent of [startDate] (the form
+  /// [RecurrenceType.weekly]/[monthly]/[yearly]/[lunarYearly]/[lunarMonthly]
+  /// carry their own day/month/weekday anchor independent of [startDate] (the form
   /// lets a user set e.g. a lunar day/month with an unrelated start date,
   /// such as "today" from the calendar's "+" prefill) — for those,
   /// [startDate] is only a lower bound, and the actual due date must
@@ -113,6 +113,7 @@ class ReminderRepository {
       case RecurrenceType.monthly:
       case RecurrenceType.yearly:
       case RecurrenceType.lunarYearly:
+      case RecurrenceType.lunarMonthly:
         return calculateFirstOccurrenceOnOrAfter(params, startDate);
     }
   }

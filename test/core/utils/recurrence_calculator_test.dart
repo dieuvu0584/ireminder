@@ -165,6 +165,48 @@ void main() {
     });
   });
 
+  group('lunar_monthly - recurs on a fixed lunar day every lunar month', () {
+    test('next occurrence has the target lunar day and is strictly after '
+        'fromDate', () {
+      const params = RecurrenceParams(
+        type: RecurrenceType.lunarMonthly,
+        day: 15,
+      );
+      final from = DateTime(2026, 7, 13);
+      final result = calculateNextDueDate(params, from);
+      expect(result.isAfter(from), isTrue);
+      expect(LunarConverter.solarToLunar(result).day, 15);
+    });
+
+    test(
+      'consecutive occurrences are roughly a lunar month (29-30 days) apart',
+      () {
+        // Day 1 (mùng một) exists in every lunar month regardless of
+        // whether it's a 29- or 30-day month, unlike day 30.
+        const params = RecurrenceParams(
+          type: RecurrenceType.lunarMonthly,
+          day: 1,
+        );
+        final first = calculateNextDueDate(params, DateTime(2026, 1, 1));
+        final second = calculateNextDueDate(params, first);
+        expect(LunarConverter.solarToLunar(first).day, 1);
+        expect(LunarConverter.solarToLunar(second).day, 1);
+        expect(second.difference(first).inDays, inInclusiveRange(29, 30));
+      },
+    );
+
+    test('calculateFirstOccurrenceOnOrAfter includes fromDate itself when it '
+        'already matches, unlike calculateNextDueDate', () {
+      const params = RecurrenceParams(
+        type: RecurrenceType.lunarMonthly,
+        day: 1,
+      );
+      final lunarDayOne = calculateNextDueDate(params, DateTime(2026, 1, 1));
+      final result = calculateFirstOccurrenceOnOrAfter(params, lunarDayOne);
+      expect(result, lunarDayOne);
+    });
+  });
+
   group('yearly - same-year date still upcoming', () {
     test(
       'uses this year, not next, when the target date has not passed yet',
