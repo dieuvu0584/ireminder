@@ -28,13 +28,18 @@ class ReminderFormScreen extends ConsumerStatefulWidget {
 }
 
 class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
-  /// Recurrence types the lunar toggle applies to: a one-off due date, a
-  /// fixed lunar day repeated every lunar month, or a fixed lunar day+month
-  /// repeated every lunar year.
+  /// Recurrence types the lunar toggle applies to. Yearly/monthly repeat
+  /// on a fixed lunar day(+month), which needs its own anchor field. The
+  /// other two — a one-off due date and "every N days" — have no such
+  /// anchor: "every N days" counts elapsed days regardless of calendar
+  /// system, so lunar mode there (like for a one-off) is purely which
+  /// picker backs the Start date field, not a change to how the next
+  /// occurrence is computed.
   static const _lunarCapableTypes = {
     RecurrenceType.none,
     RecurrenceType.monthly,
     RecurrenceType.yearly,
+    RecurrenceType.customIntervalDays,
   };
 
   final _formKey = GlobalKey<FormState>();
@@ -112,6 +117,13 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
 
   String get _timeString =>
       '${_time.hour.toString().padLeft(2, '0')}:${_time.minute.toString().padLeft(2, '0')}';
+
+  /// True for the two lunar-capable types that carry their own fixed
+  /// lunar day(+month) anchor, separate from _startDate — see the
+  /// comment above the "Start date" field for why those hide it.
+  bool get _hasDedicatedLunarAnchor =>
+      _recurrenceType == RecurrenceType.monthly ||
+      _recurrenceType == RecurrenceType.yearly;
 
   /// A reminder's start date (solar or lunar-anchor) can't be picked
   /// further out than Dec 31 of next year — applies to every date picker
@@ -359,11 +371,11 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               // which already sets both the anchor *and* _startDate from
               // the same pick — showing this solar start-date field too
               // would be redundant and let the two disagree, so it's
-              // hidden for those while lunar is on. RecurrenceType.none has
-              // no separate anchor — its due date *is* _startDate — so this
-              // stays the only date field, just backed by the lunar-
-              // annotated picker instead of the plain solar one.
-              if (_recurrenceType == RecurrenceType.none || !_isLunar)
+              // hidden for those while lunar is on. None/customIntervalDays
+              // have no separate anchor — their due date *is* _startDate —
+              // so this stays the only date field for them, just backed by
+              // the lunar-annotated picker instead of the plain solar one.
+              if (!_hasDedicatedLunarAnchor || !_isLunar)
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text(l10n.reminderFieldStartDate),
@@ -694,6 +706,17 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
             keyboardType: TextInputType.number,
             onChanged: (v) => _intervalDays = int.tryParse(v),
             validator: (v) => _validatePositiveInterval(l10n, v),
+          ),
+          // No separate anchor here (same as RecurrenceType.none) — "every
+          // N days" just counts elapsed days from _startDate regardless of
+          // calendar system, so lunar mode only changes which picker backs
+          // the Start date field below, not the interval math itself.
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.brightness_2_outlined),
+            title: Text(l10n.reminderFieldLunarToggle),
+            value: _isLunar,
+            onChanged: (v) => setState(() => _isLunar = v),
           ),
         ];
       case RecurrenceType.lunarYearly:
