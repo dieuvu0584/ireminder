@@ -201,6 +201,34 @@ class AppLocalizationsHi extends AppLocalizations {
   String get reminderFieldLunarToggle => 'चंद्र कैलेंडर';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'दिन बाहर रखें';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'बहिष्करण प्रकार';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'सप्ताह के दिन के अनुसार';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'सम/विषम दिन';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'महीने का विशिष्ट दिन';
+
+  @override
+  String get dailyExclusionEvenDays => 'सम';
+
+  @override
+  String get dailyExclusionOddDays => 'विषम';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'बाहर रखने वाला दिन';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'सप्ताह में कम से कम एक दिन शेष रहना चाहिए';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (चंद्र)';
   }

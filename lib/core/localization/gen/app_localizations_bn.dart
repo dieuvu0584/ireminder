@@ -201,6 +201,34 @@ class AppLocalizationsBn extends AppLocalizations {
   String get reminderFieldLunarToggle => 'চন্দ্র পঞ্জিকা';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'দিন বাদ দিন';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'বাদ দেওয়ার ধরন';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'সপ্তাহের দিন অনুযায়ী';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'জোড়/বিজোড় দিন';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'মাসের নির্দিষ্ট দিন';
+
+  @override
+  String get dailyExclusionEvenDays => 'জোড়';
+
+  @override
+  String get dailyExclusionOddDays => 'বিজোড়';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'বাদ দেওয়ার দিন';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'সপ্তাহে অন্তত একদিন রাখতে হবে';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (চন্দ্র)';
   }

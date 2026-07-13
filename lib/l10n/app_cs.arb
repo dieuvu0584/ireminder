@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Lunární den",
   "reminderFieldLunarMonth": "Lunární měsíc",
   "reminderFieldLunarToggle": "Lunární kalendář",
+  "reminderFieldDailyExclusionToggle": "Vyloučit dny",
+  "reminderFieldDailyExclusionKind": "Typ vyloučení",
+  "dailyExclusionKindWeekdays": "Podle dne v týdnu",
+  "dailyExclusionKindEvenOdd": "Sudé/liché dny",
+  "dailyExclusionKindSpecificDay": "Konkrétní den v měsíci",
+  "dailyExclusionEvenDays": "Sudé",
+  "dailyExclusionOddDays": "Liché",
+  "reminderFieldDailyExclusionDay": "Den k vyloučení",
+  "validationDailyExclusionWeekdays": "Ponechte alespoň jeden den v týdnu",
   "reminderLunarDateLabel": "{date} (lunární)",
   "@reminderLunarDateLabel": {
     "placeholders": {

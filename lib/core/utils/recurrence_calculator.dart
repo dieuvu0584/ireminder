@@ -1,4 +1,5 @@
 import '../../domain/enums/recurrence_type.dart';
+import '../../domain/models/daily_exclusion.dart';
 import '../../domain/models/recurrence_params.dart';
 import 'lunar_converter.dart';
 
@@ -24,7 +25,9 @@ DateTime calculateNextDueDate(RecurrenceParams params, DateTime fromDate) {
       return from;
 
     case RecurrenceType.daily:
-      return from.add(const Duration(days: 1));
+      final exclusion = params.dailyExclusion;
+      if (exclusion == null) return from.add(const Duration(days: 1));
+      return nextNonExcludedDay(from.add(const Duration(days: 1)), exclusion);
 
     case RecurrenceType.weekly:
       final weekday = params.weekday!;
@@ -106,6 +109,23 @@ DateTime _nextLunarDayOfMonth(
   );
 }
 
+/// Advances from [from] (inclusive) to the first day [exclusion] doesn't
+/// skip — [from] itself if it's already fine. Bounded to a year out as a
+/// safety net — should never actually be hit, since the form requires at
+/// least one non-excluded weekday to remain, even/odd always leaves every
+/// other day open, and a specific day-of-month excludes at most one day
+/// out of any run of 28+. Public because reminder_repository's
+/// first-occurrence logic for `daily` needs it too, on top of whatever
+/// base date its own "already passed" grace-period check produces.
+DateTime nextNonExcludedDay(DateTime from, DailyExclusion exclusion) {
+  var candidate = from;
+  for (var i = 0; i <= 366; i++) {
+    if (!exclusion.excludes(candidate)) return candidate;
+    candidate = candidate.add(const Duration(days: 1));
+  }
+  throw StateError('No non-excluded day found within a year of $from');
+}
+
 /// Computes the first occurrence on or after [fromDate] — used when a
 /// reminder is first created (or its recurrence rule/start date is edited).
 /// [calculateNextDueDate] instead always assumes the previous cycle's
@@ -121,9 +141,13 @@ DateTime calculateFirstOccurrenceOnOrAfter(
 
   switch (params.type) {
     case RecurrenceType.none:
-    case RecurrenceType.daily:
     case RecurrenceType.customIntervalDays:
       return from;
+
+    case RecurrenceType.daily:
+      final exclusion = params.dailyExclusion;
+      if (exclusion == null) return from;
+      return nextNonExcludedDay(from, exclusion);
 
     case RecurrenceType.weekly:
       final weekday = params.weekday!;

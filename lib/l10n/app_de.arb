@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Mondtag",
   "reminderFieldLunarMonth": "Mondmonat",
   "reminderFieldLunarToggle": "Mondkalender",
+  "reminderFieldDailyExclusionToggle": "Tage ausschließen",
+  "reminderFieldDailyExclusionKind": "Ausschlusstyp",
+  "dailyExclusionKindWeekdays": "Nach Wochentag",
+  "dailyExclusionKindEvenOdd": "Gerade/ungerade Tage",
+  "dailyExclusionKindSpecificDay": "Bestimmter Tag im Monat",
+  "dailyExclusionEvenDays": "Gerade",
+  "dailyExclusionOddDays": "Ungerade",
+  "reminderFieldDailyExclusionDay": "Auszuschließender Tag",
+  "validationDailyExclusionWeekdays": "Mindestens ein Wochentag muss bleiben",
   "reminderLunarDateLabel": "{date} (Mondkalender)",
   "@reminderLunarDateLabel": {
     "placeholders": {

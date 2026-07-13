@@ -201,6 +201,34 @@ class AppLocalizationsTh extends AppLocalizations {
   String get reminderFieldLunarToggle => 'ปฏิทินจันทรคติ';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'ยกเว้นวัน';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'ประเภทการยกเว้น';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'ตามวันในสัปดาห์';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'วันคู่/วันคี่';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'วันที่เฉพาะในเดือน';
+
+  @override
+  String get dailyExclusionEvenDays => 'วันคู่';
+
+  @override
+  String get dailyExclusionOddDays => 'วันคี่';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'วันที่ต้องการยกเว้น';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'ต้องเหลืออย่างน้อยหนึ่งวันในสัปดาห์';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (จันทรคติ)';
   }

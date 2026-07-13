@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "قمری دن",
   "reminderFieldLunarMonth": "قمری مہینہ",
   "reminderFieldLunarToggle": "قمری کیلنڈر",
+  "reminderFieldDailyExclusionToggle": "دن خارج کریں",
+  "reminderFieldDailyExclusionKind": "اخراج کی قسم",
+  "dailyExclusionKindWeekdays": "ہفتے کے دن کے مطابق",
+  "dailyExclusionKindEvenOdd": "جفت/طاق دن",
+  "dailyExclusionKindSpecificDay": "مہینے کا مخصوص دن",
+  "dailyExclusionEvenDays": "جفت",
+  "dailyExclusionOddDays": "طاق",
+  "reminderFieldDailyExclusionDay": "خارج کرنے کا دن",
+  "validationDailyExclusionWeekdays": "ہفتے میں کم از کم ایک دن باقی رہنا چاہیے",
   "reminderLunarDateLabel": "{date} (قمری)",
   "@reminderLunarDateLabel": {
     "placeholders": {

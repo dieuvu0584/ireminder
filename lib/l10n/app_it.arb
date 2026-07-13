@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Giorno lunare",
   "reminderFieldLunarMonth": "Mese lunare",
   "reminderFieldLunarToggle": "Calendario lunare",
+  "reminderFieldDailyExclusionToggle": "Escludi giorni",
+  "reminderFieldDailyExclusionKind": "Tipo di esclusione",
+  "dailyExclusionKindWeekdays": "Per giorno della settimana",
+  "dailyExclusionKindEvenOdd": "Giorni pari/dispari",
+  "dailyExclusionKindSpecificDay": "Giorno specifico del mese",
+  "dailyExclusionEvenDays": "Pari",
+  "dailyExclusionOddDays": "Dispari",
+  "reminderFieldDailyExclusionDay": "Giorno da escludere",
+  "validationDailyExclusionWeekdays": "Deve rimanere almeno un giorno della settimana",
   "reminderLunarDateLabel": "{date} (lunare)",
   "@reminderLunarDateLabel": {
     "placeholders": {

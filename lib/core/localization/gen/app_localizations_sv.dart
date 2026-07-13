@@ -201,6 +201,34 @@ class AppLocalizationsSv extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Månkalender';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Uteslut dagar';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Uteslutningstyp';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Efter veckodag';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Jämna/udda dagar';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Viss dag i månaden';
+
+  @override
+  String get dailyExclusionEvenDays => 'Jämn';
+
+  @override
+  String get dailyExclusionOddDays => 'Udda';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Dag att utesluta';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Minst en veckodag måste finnas kvar';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (mån)';
   }

@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Månekalenderdag",
   "reminderFieldLunarMonth": "Månekalendermåned",
   "reminderFieldLunarToggle": "Månekalender",
+  "reminderFieldDailyExclusionToggle": "Ekskluder dager",
+  "reminderFieldDailyExclusionKind": "Ekskluderingstype",
+  "dailyExclusionKindWeekdays": "Etter ukedag",
+  "dailyExclusionKindEvenOdd": "Partall/oddetallsdager",
+  "dailyExclusionKindSpecificDay": "Bestemt dag i måneden",
+  "dailyExclusionEvenDays": "Partall",
+  "dailyExclusionOddDays": "Oddetall",
+  "reminderFieldDailyExclusionDay": "Dag som skal ekskluderes",
+  "validationDailyExclusionWeekdays": "Minst én ukedag må beholdes",
   "reminderLunarDateLabel": "{date} (måne)",
   "@reminderLunarDateLabel": {
     "placeholders": {

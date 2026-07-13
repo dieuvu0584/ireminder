@@ -201,6 +201,34 @@ class AppLocalizationsMr extends AppLocalizations {
   String get reminderFieldLunarToggle => 'चंद्र दिनदर्शिका';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'दिवस वगळा';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'वगळण्याचा प्रकार';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'आठवड्याच्या दिवसानुसार';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'सम/विषम दिवस';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'महिन्यातील विशिष्ट दिवस';
+
+  @override
+  String get dailyExclusionEvenDays => 'सम';
+
+  @override
+  String get dailyExclusionOddDays => 'विषम';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'वगळायचा दिवस';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'आठवड्यात किमान एक दिवस राखणे आवश्यक आहे';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (चंद्र)';
   }

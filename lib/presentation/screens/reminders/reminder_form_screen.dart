@@ -6,6 +6,7 @@ import '../../../core/localization/gen/app_localizations.dart';
 import '../../../core/utils/lunar_converter.dart';
 import '../../../data/database/app_database.dart';
 import '../../../domain/enums/recurrence_type.dart';
+import '../../../domain/models/daily_exclusion.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../widgets/lunar_date_picker.dart';
@@ -53,6 +54,14 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
   int? _recurrenceMonth;
   int? _recurrenceWeekday;
   int? _intervalDays;
+
+  /// Null means no exclusion — daily fires every day, same as before this
+  /// feature existed.
+  DailyExclusionType? _dailyExclusionType;
+  Set<int> _dailyExclusionWeekdays = {};
+  bool _dailyExclusionExcludeEven = true;
+  int? _dailyExclusionDay;
+
   late DateTime _startDate;
   TimeOfDay _time = const TimeOfDay(hour: 9, minute: 0);
   int _advanceNoticeDays = 0;
@@ -100,6 +109,16 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       _recurrenceMonth = r.recurrenceMonth;
       _recurrenceWeekday = r.recurrenceWeekday;
       _intervalDays = r.recurrenceInterval;
+      final exclusion = DailyExclusion.fromDb(
+        r.dailyExclusionType,
+        r.dailyExclusionValue,
+      );
+      if (exclusion != null) {
+        _dailyExclusionType = exclusion.type;
+        _dailyExclusionWeekdays = exclusion.weekdays ?? {};
+        _dailyExclusionExcludeEven = exclusion.excludeEvenDays ?? true;
+        _dailyExclusionDay = exclusion.day;
+      }
       _advanceNoticeDays = r.advanceNoticeDays;
       _advanceNoticeHours = r.advanceNoticeHours;
       _advanceNoticeMinutes = r.advanceNoticeMinutes;
@@ -150,9 +169,46 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     return _startDate.isBefore(today) ? _startDate : today;
   }
 
+  /// Builds the exclusion rule to actually save, from whichever kind is
+  /// currently selected — null if exclusion is off or this isn't a daily
+  /// reminder at all (switching the Repeat dropdown away from Daily
+  /// doesn't clear the picked-out state, so this must gate on the current
+  /// type too, not just whether an exclusion type is set).
+  DailyExclusion? _currentDailyExclusion() {
+    if (_recurrenceType != RecurrenceType.daily) return null;
+    switch (_dailyExclusionType) {
+      case null:
+        return null;
+      case DailyExclusionType.weekdays:
+        return DailyExclusion.weekdays(_dailyExclusionWeekdays);
+      case DailyExclusionType.evenOdd:
+        return DailyExclusion.evenOdd(_dailyExclusionExcludeEven);
+      case DailyExclusionType.specificDay:
+        return _dailyExclusionDay == null
+            ? null
+            : DailyExclusion.specificDay(_dailyExclusionDay!);
+    }
+  }
+
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     if (_categoryId == null) return;
+    if (_recurrenceType == RecurrenceType.daily &&
+        _dailyExclusionType == DailyExclusionType.weekdays &&
+        (_dailyExclusionWeekdays.isEmpty ||
+            _dailyExclusionWeekdays.length >= 7)) {
+      // Not a FormField, so Form.validate() above doesn't catch this —
+      // checked manually instead. Excluding all 7 weekdays would mean
+      // "never fire", and an empty selection is just an incomplete pick.
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            AppLocalizations.of(context).validationDailyExclusionWeekdays,
+          ),
+        ),
+      );
+      return;
+    }
     setState(() => _saving = true);
     final actions = ref.read(reminderActionsProvider);
     final effectiveType = switch (_recurrenceType) {
@@ -160,6 +216,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       RecurrenceType.monthly when _isLunar => RecurrenceType.lunarMonthly,
       _ => _recurrenceType,
     };
+    final dailyExclusion = _currentDailyExclusion();
     try {
       bool scheduled;
       String? scheduleError;
@@ -176,6 +233,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           recurrenceMonth: _recurrenceMonth,
           recurrenceWeekday: _recurrenceWeekday,
           isLunar: _isLunar,
+          dailyExclusion: dailyExclusion,
           startDate: _startDate,
           reminderTime: _timeString,
           advanceNoticeDays: _advanceNoticeDays,
@@ -198,6 +256,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
             recurrenceMonth: drift.Value(_recurrenceMonth),
             recurrenceWeekday: drift.Value(_recurrenceWeekday),
             isLunar: _isLunar,
+            dailyExclusionType: drift.Value(dailyExclusion?.type.dbValue),
+            dailyExclusionValue: drift.Value(dailyExclusion?.dbValue),
             startDate: _startDate,
             reminderTime: _timeString,
             advanceNoticeDays: _advanceNoticeDays,
@@ -284,6 +344,85 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         return l10n.weekdaySaturday;
       default:
         return l10n.weekdaySunday;
+    }
+  }
+
+  String _dailyExclusionKindLabel(
+    AppLocalizations l10n,
+    DailyExclusionType type,
+  ) {
+    switch (type) {
+      case DailyExclusionType.weekdays:
+        return l10n.dailyExclusionKindWeekdays;
+      case DailyExclusionType.evenOdd:
+        return l10n.dailyExclusionKindEvenOdd;
+      case DailyExclusionType.specificDay:
+        return l10n.dailyExclusionKindSpecificDay;
+    }
+  }
+
+  List<Widget> _buildDailyExclusionValueFields(AppLocalizations l10n) {
+    switch (_dailyExclusionType!) {
+      case DailyExclusionType.weekdays:
+        final tooMany = _dailyExclusionWeekdays.length >= 7;
+        return [
+          Wrap(
+            spacing: 8,
+            children: List.generate(7, (i) {
+              final weekday = i + 1;
+              final selected = _dailyExclusionWeekdays.contains(weekday);
+              return FilterChip(
+                label: Text(_weekdayLabel(l10n, weekday)),
+                selected: selected,
+                onSelected: (v) => setState(() {
+                  if (v) {
+                    _dailyExclusionWeekdays.add(weekday);
+                  } else {
+                    _dailyExclusionWeekdays.remove(weekday);
+                  }
+                }),
+              );
+            }),
+          ),
+          if (tooMany)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text(
+                l10n.validationDailyExclusionWeekdays,
+                style: TextStyle(color: Theme.of(context).colorScheme.error),
+              ),
+            ),
+        ];
+      case DailyExclusionType.evenOdd:
+        return [
+          SegmentedButton<bool>(
+            segments: [
+              ButtonSegment(
+                value: true,
+                label: Text(l10n.dailyExclusionEvenDays),
+              ),
+              ButtonSegment(
+                value: false,
+                label: Text(l10n.dailyExclusionOddDays),
+              ),
+            ],
+            selected: {_dailyExclusionExcludeEven},
+            onSelectionChanged: (s) =>
+                setState(() => _dailyExclusionExcludeEven = s.first),
+          ),
+        ];
+      case DailyExclusionType.specificDay:
+        return [
+          TextFormField(
+            initialValue: _dailyExclusionDay?.toString() ?? '',
+            decoration: InputDecoration(
+              labelText: l10n.reminderFieldDailyExclusionDay,
+            ),
+            keyboardType: TextInputType.number,
+            onChanged: (v) => _dailyExclusionDay = int.tryParse(v),
+            validator: (v) => _validateDayOfMonth(l10n, v),
+          ),
+        ];
     }
   }
 
@@ -550,7 +689,36 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           ),
         ];
       case RecurrenceType.daily:
-        return const [];
+        return [
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.event_busy),
+            title: Text(l10n.reminderFieldDailyExclusionToggle),
+            value: _dailyExclusionType != null,
+            onChanged: (v) => setState(() {
+              _dailyExclusionType = v ? DailyExclusionType.weekdays : null;
+            }),
+          ),
+          if (_dailyExclusionType != null) ...[
+            DropdownButtonFormField<DailyExclusionType>(
+              initialValue: _dailyExclusionType,
+              decoration: InputDecoration(
+                labelText: l10n.reminderFieldDailyExclusionKind,
+              ),
+              items: DailyExclusionType.values
+                  .map(
+                    (t) => DropdownMenuItem(
+                      value: t,
+                      child: Text(_dailyExclusionKindLabel(l10n, t)),
+                    ),
+                  )
+                  .toList(),
+              onChanged: (v) => setState(() => _dailyExclusionType = v),
+            ),
+            const SizedBox(height: 12),
+            ..._buildDailyExclusionValueFields(l10n),
+          ],
+        ];
       case RecurrenceType.weekly:
         return [
           DropdownButtonFormField<int>(

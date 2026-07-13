@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Ngày âm lịch",
   "reminderFieldLunarMonth": "Tháng âm lịch",
   "reminderFieldLunarToggle": "Âm lịch",
+  "reminderFieldDailyExclusionToggle": "Loại trừ ngày",
+  "reminderFieldDailyExclusionKind": "Kiểu loại trừ",
+  "dailyExclusionKindWeekdays": "Theo thứ trong tuần",
+  "dailyExclusionKindEvenOdd": "Ngày chẵn/lẻ",
+  "dailyExclusionKindSpecificDay": "Ngày cụ thể trong tháng",
+  "dailyExclusionEvenDays": "Chẵn",
+  "dailyExclusionOddDays": "Lẻ",
+  "reminderFieldDailyExclusionDay": "Ngày cần loại trừ",
+  "validationDailyExclusionWeekdays": "Phải giữ lại ít nhất một ngày trong tuần",
   "reminderLunarDateLabel": "{date} (âm lịch)",
   "@reminderLunarDateLabel": {
     "placeholders": {

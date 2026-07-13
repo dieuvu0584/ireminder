@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "చాంద్రమాన రోజు",
   "reminderFieldLunarMonth": "చాంద్రమాన నెల",
   "reminderFieldLunarToggle": "చాంద్రమాన క్యాలెండర్",
+  "reminderFieldDailyExclusionToggle": "రోజులను మినహాయించండి",
+  "reminderFieldDailyExclusionKind": "మినహాయింపు రకం",
+  "dailyExclusionKindWeekdays": "వార దినం ప్రకారం",
+  "dailyExclusionKindEvenOdd": "సరి/బేసి రోజులు",
+  "dailyExclusionKindSpecificDay": "నెలలో నిర్దిష్ట రోజు",
+  "dailyExclusionEvenDays": "సరి",
+  "dailyExclusionOddDays": "బేసి",
+  "reminderFieldDailyExclusionDay": "మినహాయించాల్సిన రోజు",
+  "validationDailyExclusionWeekdays": "వారంలో కనీసం ఒక రోజు మిగలాలి",
   "reminderLunarDateLabel": "{date} (చాంద్రమాన)",
   "@reminderLunarDateLabel": {
     "placeholders": {

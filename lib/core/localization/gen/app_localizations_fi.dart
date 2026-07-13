@@ -201,6 +201,34 @@ class AppLocalizationsFi extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Kuukalenteri';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Poissuljetut päivät';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Poissulkemistyyppi';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Viikonpäivän mukaan';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Parilliset/parittomat päivät';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Tietty päivä kuukaudesta';
+
+  @override
+  String get dailyExclusionEvenDays => 'Parillinen';
+
+  @override
+  String get dailyExclusionOddDays => 'Pariton';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Poissuljettava päivä';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Vähintään yksi viikonpäivä on jätettävä jäljelle';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (kuu)';
   }

@@ -201,6 +201,34 @@ class AppLocalizationsPl extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Kalendarz księżycowy';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Wyklucz dni';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Typ wykluczenia';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Według dnia tygodnia';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Dni parzyste/nieparzyste';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Konkretny dzień miesiąca';
+
+  @override
+  String get dailyExclusionEvenDays => 'Parzyste';
+
+  @override
+  String get dailyExclusionOddDays => 'Nieparzyste';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Dzień do wykluczenia';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Musi pozostać co najmniej jeden dzień tygodnia';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (księżycowy)';
   }

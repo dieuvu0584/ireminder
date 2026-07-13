@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Kuukalenterin päivä",
   "reminderFieldLunarMonth": "Kuukalenterin kuukausi",
   "reminderFieldLunarToggle": "Kuukalenteri",
+  "reminderFieldDailyExclusionToggle": "Poissuljetut päivät",
+  "reminderFieldDailyExclusionKind": "Poissulkemistyyppi",
+  "dailyExclusionKindWeekdays": "Viikonpäivän mukaan",
+  "dailyExclusionKindEvenOdd": "Parilliset/parittomat päivät",
+  "dailyExclusionKindSpecificDay": "Tietty päivä kuukaudesta",
+  "dailyExclusionEvenDays": "Parillinen",
+  "dailyExclusionOddDays": "Pariton",
+  "reminderFieldDailyExclusionDay": "Poissuljettava päivä",
+  "validationDailyExclusionWeekdays": "Vähintään yksi viikonpäivä on jätettävä jäljelle",
   "reminderLunarDateLabel": "{date} (kuu)",
   "@reminderLunarDateLabel": {
     "placeholders": {

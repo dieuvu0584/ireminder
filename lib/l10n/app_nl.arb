@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Maankalender dag",
   "reminderFieldLunarMonth": "Maankalender maand",
   "reminderFieldLunarToggle": "Maankalender",
+  "reminderFieldDailyExclusionToggle": "Dagen uitsluiten",
+  "reminderFieldDailyExclusionKind": "Type uitsluiting",
+  "dailyExclusionKindWeekdays": "Op weekdag",
+  "dailyExclusionKindEvenOdd": "Even/oneven dagen",
+  "dailyExclusionKindSpecificDay": "Specifieke dag van de maand",
+  "dailyExclusionEvenDays": "Even",
+  "dailyExclusionOddDays": "Oneven",
+  "reminderFieldDailyExclusionDay": "Uit te sluiten dag",
+  "validationDailyExclusionWeekdays": "Er moet minstens één weekdag overblijven",
   "reminderLunarDateLabel": "{date} (maan)",
   "@reminderLunarDateLabel": {
     "placeholders": {

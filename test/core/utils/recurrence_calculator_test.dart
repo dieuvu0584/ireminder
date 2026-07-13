@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ireminder/core/utils/lunar_converter.dart';
 import 'package:ireminder/core/utils/recurrence_calculator.dart';
 import 'package:ireminder/domain/enums/recurrence_type.dart';
+import 'package:ireminder/domain/models/daily_exclusion.dart';
 import 'package:ireminder/domain/models/recurrence_params.dart';
 
 void main() {
@@ -12,6 +13,55 @@ void main() {
         DateTime(2026, 1, 1),
       );
       expect(result, DateTime(2026, 1, 2));
+    });
+
+    test('weekday exclusion: skips excluded days entirely, lands on the '
+        'next non-excluded one', () {
+      // 2026-07-10 is a Friday. Excluding Sat/Sun should jump to Monday.
+      final params = RecurrenceParams(
+        type: RecurrenceType.daily,
+        dailyExclusion: DailyExclusion.weekdays({6, 7}),
+      );
+      final result = calculateNextDueDate(params, DateTime(2026, 7, 10));
+      expect(result, DateTime(2026, 7, 13)); // Monday
+      expect(result.weekday, DateTime.monday);
+    });
+
+    test('even/odd exclusion: excluding even days always lands on an odd '
+        'day-of-month', () {
+      final params = RecurrenceParams(
+        type: RecurrenceType.daily,
+        dailyExclusion: const DailyExclusion.evenOdd(true),
+      );
+      // From an odd day (excludeEven doesn't touch odd days), next day is
+      // even and excluded, so it should skip to the day after.
+      final result = calculateNextDueDate(params, DateTime(2026, 7, 9));
+      expect(result, DateTime(2026, 7, 11));
+      expect(result.day.isOdd, isTrue);
+    });
+
+    test('specific-day exclusion: skips that day-of-month, lands the day '
+        'after', () {
+      final params = RecurrenceParams(
+        type: RecurrenceType.daily,
+        dailyExclusion: const DailyExclusion.specificDay(15),
+      );
+      final result = calculateNextDueDate(params, DateTime(2026, 7, 14));
+      expect(result, DateTime(2026, 7, 16)); // skips the 15th
+    });
+
+    test('calculateFirstOccurrenceOnOrAfter rolls forward if fromDate '
+        'itself is excluded', () {
+      // 2026-07-11 is a Saturday.
+      final params = RecurrenceParams(
+        type: RecurrenceType.daily,
+        dailyExclusion: DailyExclusion.weekdays({6, 7}),
+      );
+      final result = calculateFirstOccurrenceOnOrAfter(
+        params,
+        DateTime(2026, 7, 11),
+      );
+      expect(result, DateTime(2026, 7, 13)); // next Monday
     });
   });
 

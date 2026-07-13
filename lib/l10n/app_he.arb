@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "יום בלוח הירחי",
   "reminderFieldLunarMonth": "חודש בלוח הירחי",
   "reminderFieldLunarToggle": "לוח שנה ירחי",
+  "reminderFieldDailyExclusionToggle": "החרגת ימים",
+  "reminderFieldDailyExclusionKind": "סוג ההחרגה",
+  "dailyExclusionKindWeekdays": "לפי יום בשבוע",
+  "dailyExclusionKindEvenOdd": "ימים זוגיים/אי-זוגיים",
+  "dailyExclusionKindSpecificDay": "יום מסוים בחודש",
+  "dailyExclusionEvenDays": "זוגי",
+  "dailyExclusionOddDays": "אי-זוגי",
+  "reminderFieldDailyExclusionDay": "יום להחרגה",
+  "validationDailyExclusionWeekdays": "חובה להשאיר לפחות יום אחד בשבוע",
   "reminderLunarDateLabel": "{date} (ירחי)",
   "@reminderLunarDateLabel": {
     "placeholders": {

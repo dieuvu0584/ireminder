@@ -199,6 +199,33 @@ class AppLocalizationsJa extends AppLocalizations {
   String get reminderFieldLunarToggle => '旧暦';
 
   @override
+  String get reminderFieldDailyExclusionToggle => '曜日を除外';
+
+  @override
+  String get reminderFieldDailyExclusionKind => '除外タイプ';
+
+  @override
+  String get dailyExclusionKindWeekdays => '曜日ごと';
+
+  @override
+  String get dailyExclusionKindEvenOdd => '偶数/奇数日';
+
+  @override
+  String get dailyExclusionKindSpecificDay => '月の特定の日';
+
+  @override
+  String get dailyExclusionEvenDays => '偶数';
+
+  @override
+  String get dailyExclusionOddDays => '奇数';
+
+  @override
+  String get reminderFieldDailyExclusionDay => '除外する日';
+
+  @override
+  String get validationDailyExclusionWeekdays => '少なくとも1つの曜日を残してください';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date（旧暦）';
   }

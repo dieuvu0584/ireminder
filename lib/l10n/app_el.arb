@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Σεληνιακή ημέρα",
   "reminderFieldLunarMonth": "Σεληνιακός μήνας",
   "reminderFieldLunarToggle": "Σεληνιακό ημερολόγιο",
+  "reminderFieldDailyExclusionToggle": "Εξαίρεση ημερών",
+  "reminderFieldDailyExclusionKind": "Τύπος εξαίρεσης",
+  "dailyExclusionKindWeekdays": "Κατά ημέρα εβδομάδας",
+  "dailyExclusionKindEvenOdd": "Ζυγές/μονές ημέρες",
+  "dailyExclusionKindSpecificDay": "Συγκεκριμένη ημέρα του μήνα",
+  "dailyExclusionEvenDays": "Ζυγή",
+  "dailyExclusionOddDays": "Μονή",
+  "reminderFieldDailyExclusionDay": "Ημέρα προς εξαίρεση",
+  "validationDailyExclusionWeekdays": "Πρέπει να παραμείνει τουλάχιστον μία ημέρα της εβδομάδας",
   "reminderLunarDateLabel": "{date} (σεληνιακό)",
   "@reminderLunarDateLabel": {
     "placeholders": {

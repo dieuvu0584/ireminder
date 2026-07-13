@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "ચંદ્ર તારીખ",
   "reminderFieldLunarMonth": "ચંદ્ર મહિનો",
   "reminderFieldLunarToggle": "ચંદ્ર કેલેન્ડર",
+  "reminderFieldDailyExclusionToggle": "દિવસો બાકાત કરો",
+  "reminderFieldDailyExclusionKind": "બાકાત પ્રકાર",
+  "dailyExclusionKindWeekdays": "અઠવાડિયાના દિવસ મુજબ",
+  "dailyExclusionKindEvenOdd": "બેકી/એકી દિવસો",
+  "dailyExclusionKindSpecificDay": "મહિનાનો ચોક્કસ દિવસ",
+  "dailyExclusionEvenDays": "બેકી",
+  "dailyExclusionOddDays": "એકી",
+  "reminderFieldDailyExclusionDay": "બાકાત કરવાનો દિવસ",
+  "validationDailyExclusionWeekdays": "અઠવાડિયામાં ઓછામાં ઓછો એક દિવસ રાખવો જરૂરી",
   "reminderLunarDateLabel": "{date} (ચંદ્ર)",
   "@reminderLunarDateLabel": {
     "placeholders": {

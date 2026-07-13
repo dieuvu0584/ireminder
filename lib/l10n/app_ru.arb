@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Лунный день",
   "reminderFieldLunarMonth": "Лунный месяц",
   "reminderFieldLunarToggle": "Лунный календарь",
+  "reminderFieldDailyExclusionToggle": "Исключить дни",
+  "reminderFieldDailyExclusionKind": "Тип исключения",
+  "dailyExclusionKindWeekdays": "По дню недели",
+  "dailyExclusionKindEvenOdd": "Чётные/нечётные дни",
+  "dailyExclusionKindSpecificDay": "Конкретный день месяца",
+  "dailyExclusionEvenDays": "Чётные",
+  "dailyExclusionOddDays": "Нечётные",
+  "reminderFieldDailyExclusionDay": "День для исключения",
+  "validationDailyExclusionWeekdays": "Должен остаться хотя бы один день недели",
   "reminderLunarDateLabel": "{date} (лунный)",
   "@reminderLunarDateLabel": {
     "placeholders": {

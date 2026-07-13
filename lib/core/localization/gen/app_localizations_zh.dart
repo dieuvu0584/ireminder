@@ -197,6 +197,33 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reminderFieldLunarToggle => '农历';
 
   @override
+  String get reminderFieldDailyExclusionToggle => '排除日期';
+
+  @override
+  String get reminderFieldDailyExclusionKind => '排除类型';
+
+  @override
+  String get dailyExclusionKindWeekdays => '按星期几';
+
+  @override
+  String get dailyExclusionKindEvenOdd => '单双日';
+
+  @override
+  String get dailyExclusionKindSpecificDay => '每月特定日期';
+
+  @override
+  String get dailyExclusionEvenDays => '双日';
+
+  @override
+  String get dailyExclusionOddDays => '单日';
+
+  @override
+  String get reminderFieldDailyExclusionDay => '要排除的日期';
+
+  @override
+  String get validationDailyExclusionWeekdays => '每周至少保留一天';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date（农历）';
   }

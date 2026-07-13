@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Місячний день",
   "reminderFieldLunarMonth": "Місячний місяць",
   "reminderFieldLunarToggle": "Місячний календар",
+  "reminderFieldDailyExclusionToggle": "Виключити дні",
+  "reminderFieldDailyExclusionKind": "Тип виключення",
+  "dailyExclusionKindWeekdays": "За днем тижня",
+  "dailyExclusionKindEvenOdd": "Парні/непарні дні",
+  "dailyExclusionKindSpecificDay": "Конкретний день місяця",
+  "dailyExclusionEvenDays": "Парні",
+  "dailyExclusionOddDays": "Непарні",
+  "reminderFieldDailyExclusionDay": "День для виключення",
+  "validationDailyExclusionWeekdays": "Має залишитися принаймні один день тижня",
   "reminderLunarDateLabel": "{date} (місячний)",
   "@reminderLunarDateLabel": {
     "placeholders": {

@@ -59,7 +59,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -91,6 +91,10 @@ class AppDatabase extends _$AppDatabase {
       if (from >= 2 && from < 5) {
         await m.deleteTable('ai_settings');
         await m.deleteTable('ai_chat_history');
+      }
+      if (from < 6) {
+        await m.addColumn(reminders, reminders.dailyExclusionType);
+        await m.addColumn(reminders, reminders.dailyExclusionValue);
       }
     },
   );

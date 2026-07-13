@@ -201,6 +201,34 @@ class AppLocalizationsRo extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Calendar lunar';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Excludere zile';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Tip de excludere';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'După ziua săptămânii';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Zile pare/impare';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Zi specifică din lună';
+
+  @override
+  String get dailyExclusionEvenDays => 'Pară';
+
+  @override
+  String get dailyExclusionOddDays => 'Impară';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Ziua de exclus';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Trebuie să rămână cel puțin o zi a săptămânii';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunar)';
   }

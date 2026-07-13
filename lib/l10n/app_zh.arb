@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "农历日",
   "reminderFieldLunarMonth": "农历月",
   "reminderFieldLunarToggle": "农历",
+  "reminderFieldDailyExclusionToggle": "排除日期",
+  "reminderFieldDailyExclusionKind": "排除类型",
+  "dailyExclusionKindWeekdays": "按星期几",
+  "dailyExclusionKindEvenOdd": "单双日",
+  "dailyExclusionKindSpecificDay": "每月特定日期",
+  "dailyExclusionEvenDays": "双日",
+  "dailyExclusionOddDays": "单日",
+  "reminderFieldDailyExclusionDay": "要排除的日期",
+  "validationDailyExclusionWeekdays": "每周至少保留一天",
   "reminderLunarDateLabel": "{date}（农历）",
   "@reminderLunarDateLabel": {
     "placeholders": {

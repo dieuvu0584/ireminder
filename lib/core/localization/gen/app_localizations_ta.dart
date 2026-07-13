@@ -201,6 +201,34 @@ class AppLocalizationsTa extends AppLocalizations {
   String get reminderFieldLunarToggle => 'சந்திர நாட்காட்டி';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'நாட்களை விலக்கு';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'விலக்கு வகை';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'வார நாள் அடிப்படையில்';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'இரட்டை/ஒற்றை நாட்கள்';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'மாதத்தின் குறிப்பிட்ட நாள்';
+
+  @override
+  String get dailyExclusionEvenDays => 'இரட்டை';
+
+  @override
+  String get dailyExclusionOddDays => 'ஒற்றை';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'விலக்க வேண்டிய நாள்';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'வாரத்தில் குறைந்தது ஒரு நாளாவது இருக்க வேண்டும்';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (சந்திரன்)';
   }

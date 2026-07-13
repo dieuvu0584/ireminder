@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Siku ya kalenda ya mwezi",
   "reminderFieldLunarMonth": "Mwezi wa kalenda ya mwezi",
   "reminderFieldLunarToggle": "Kalenda ya mwezi",
+  "reminderFieldDailyExclusionToggle": "Ondoa siku",
+  "reminderFieldDailyExclusionKind": "Aina ya kuondoa",
+  "dailyExclusionKindWeekdays": "Kwa siku ya wiki",
+  "dailyExclusionKindEvenOdd": "Siku za namba sawa/isiyo sawa",
+  "dailyExclusionKindSpecificDay": "Siku maalum ya mwezi",
+  "dailyExclusionEvenDays": "Sawa",
+  "dailyExclusionOddDays": "Isiyo sawa",
+  "reminderFieldDailyExclusionDay": "Siku ya kuondoa",
+  "validationDailyExclusionWeekdays": "Angalau siku moja ya wiki lazima ibaki",
   "reminderLunarDateLabel": "{date} (mwezi)",
   "@reminderLunarDateLabel": {
     "placeholders": {

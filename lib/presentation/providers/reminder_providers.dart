@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/database/app_database.dart';
 import '../../domain/enums/recurrence_type.dart';
+import '../../domain/models/daily_exclusion.dart';
 import 'notification_providers.dart';
 import 'repository_providers.dart';
 
@@ -59,6 +60,7 @@ class ReminderActions {
     int? recurrenceMonth,
     int? recurrenceWeekday,
     bool isLunar = false,
+    DailyExclusion? dailyExclusion,
     required DateTime startDate,
     required String reminderTime,
     int advanceNoticeDays = 0,
@@ -77,6 +79,7 @@ class ReminderActions {
           recurrenceMonth: recurrenceMonth,
           recurrenceWeekday: recurrenceWeekday,
           isLunar: isLunar,
+          dailyExclusion: dailyExclusion,
           startDate: startDate,
           reminderTime: reminderTime,
           advanceNoticeDays: advanceNoticeDays,

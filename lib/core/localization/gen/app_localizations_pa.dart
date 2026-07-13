@@ -201,6 +201,34 @@ class AppLocalizationsPa extends AppLocalizations {
   String get reminderFieldLunarToggle => 'ਚੰਦਰ ਕੈਲੰਡਰ';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'ਦਿਨ ਬਾਹਰ ਰੱਖੋ';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'ਬਾਹਰ ਰੱਖਣ ਦੀ ਕਿਸਮ';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'ਹਫ਼ਤੇ ਦੇ ਦਿਨ ਅਨੁਸਾਰ';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'ਜਿਸਤ/ਟਾਂਕ ਦਿਨ';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'ਮਹੀਨੇ ਦਾ ਖਾਸ ਦਿਨ';
+
+  @override
+  String get dailyExclusionEvenDays => 'ਜਿਸਤ';
+
+  @override
+  String get dailyExclusionOddDays => 'ਟਾਂਕ';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'ਬਾਹਰ ਰੱਖਣ ਵਾਲਾ ਦਿਨ';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'ਹਫ਼ਤੇ ਵਿੱਚ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਦਿਨ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (ਚੰਦਰ)';
   }

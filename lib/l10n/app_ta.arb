@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "சந்திர தேதி",
   "reminderFieldLunarMonth": "சந்திர மாதம்",
   "reminderFieldLunarToggle": "சந்திர நாட்காட்டி",
+  "reminderFieldDailyExclusionToggle": "நாட்களை விலக்கு",
+  "reminderFieldDailyExclusionKind": "விலக்கு வகை",
+  "dailyExclusionKindWeekdays": "வார நாள் அடிப்படையில்",
+  "dailyExclusionKindEvenOdd": "இரட்டை/ஒற்றை நாட்கள்",
+  "dailyExclusionKindSpecificDay": "மாதத்தின் குறிப்பிட்ட நாள்",
+  "dailyExclusionEvenDays": "இரட்டை",
+  "dailyExclusionOddDays": "ஒற்றை",
+  "reminderFieldDailyExclusionDay": "விலக்க வேண்டிய நாள்",
+  "validationDailyExclusionWeekdays": "வாரத்தில் குறைந்தது ஒரு நாளாவது இருக்க வேண்டும்",
   "reminderLunarDateLabel": "{date} (சந்திரன்)",
   "@reminderLunarDateLabel": {
     "placeholders": {

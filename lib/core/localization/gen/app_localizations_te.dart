@@ -201,6 +201,33 @@ class AppLocalizationsTe extends AppLocalizations {
   String get reminderFieldLunarToggle => 'చాంద్రమాన క్యాలెండర్';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'రోజులను మినహాయించండి';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'మినహాయింపు రకం';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'వార దినం ప్రకారం';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'సరి/బేసి రోజులు';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'నెలలో నిర్దిష్ట రోజు';
+
+  @override
+  String get dailyExclusionEvenDays => 'సరి';
+
+  @override
+  String get dailyExclusionOddDays => 'బేసి';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'మినహాయించాల్సిన రోజు';
+
+  @override
+  String get validationDailyExclusionWeekdays => 'వారంలో కనీసం ఒక రోజు మిగలాలి';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (చాంద్రమాన)';
   }

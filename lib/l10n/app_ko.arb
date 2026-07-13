@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "음력 날짜",
   "reminderFieldLunarMonth": "음력 월",
   "reminderFieldLunarToggle": "음력",
+  "reminderFieldDailyExclusionToggle": "요일 제외",
+  "reminderFieldDailyExclusionKind": "제외 유형",
+  "dailyExclusionKindWeekdays": "요일별",
+  "dailyExclusionKindEvenOdd": "짝수/홀수 날짜",
+  "dailyExclusionKindSpecificDay": "매월 특정 날짜",
+  "dailyExclusionEvenDays": "짝수",
+  "dailyExclusionOddDays": "홀수",
+  "reminderFieldDailyExclusionDay": "제외할 날짜",
+  "validationDailyExclusionWeekdays": "최소 하루의 요일은 남겨야 합니다",
   "reminderLunarDateLabel": "{date} (음력)",
   "@reminderLunarDateLabel": {
     "placeholders": {

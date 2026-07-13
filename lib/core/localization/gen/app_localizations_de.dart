@@ -201,6 +201,34 @@ class AppLocalizationsDe extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Mondkalender';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Tage ausschließen';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Ausschlusstyp';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Nach Wochentag';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Gerade/ungerade Tage';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Bestimmter Tag im Monat';
+
+  @override
+  String get dailyExclusionEvenDays => 'Gerade';
+
+  @override
+  String get dailyExclusionOddDays => 'Ungerade';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Auszuschließender Tag';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Mindestens ein Wochentag muss bleiben';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (Mondkalender)';
   }

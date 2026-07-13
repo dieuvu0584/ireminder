@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "चंद्र दिनांक",
   "reminderFieldLunarMonth": "चंद्र महिना",
   "reminderFieldLunarToggle": "चंद्र दिनदर्शिका",
+  "reminderFieldDailyExclusionToggle": "दिवस वगळा",
+  "reminderFieldDailyExclusionKind": "वगळण्याचा प्रकार",
+  "dailyExclusionKindWeekdays": "आठवड्याच्या दिवसानुसार",
+  "dailyExclusionKindEvenOdd": "सम/विषम दिवस",
+  "dailyExclusionKindSpecificDay": "महिन्यातील विशिष्ट दिवस",
+  "dailyExclusionEvenDays": "सम",
+  "dailyExclusionOddDays": "विषम",
+  "reminderFieldDailyExclusionDay": "वगळायचा दिवस",
+  "validationDailyExclusionWeekdays": "आठवड्यात किमान एक दिवस राखणे आवश्यक आहे",
   "reminderLunarDateLabel": "{date} (चंद्र)",
   "@reminderLunarDateLabel": {
     "placeholders": {

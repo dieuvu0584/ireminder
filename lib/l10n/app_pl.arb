@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Dzień księżycowy",
   "reminderFieldLunarMonth": "Miesiąc księżycowy",
   "reminderFieldLunarToggle": "Kalendarz księżycowy",
+  "reminderFieldDailyExclusionToggle": "Wyklucz dni",
+  "reminderFieldDailyExclusionKind": "Typ wykluczenia",
+  "dailyExclusionKindWeekdays": "Według dnia tygodnia",
+  "dailyExclusionKindEvenOdd": "Dni parzyste/nieparzyste",
+  "dailyExclusionKindSpecificDay": "Konkretny dzień miesiąca",
+  "dailyExclusionEvenDays": "Parzyste",
+  "dailyExclusionOddDays": "Nieparzyste",
+  "reminderFieldDailyExclusionDay": "Dzień do wykluczenia",
+  "validationDailyExclusionWeekdays": "Musi pozostać co najmniej jeden dzień tygodnia",
   "reminderLunarDateLabel": "{date} (księżycowy)",
   "@reminderLunarDateLabel": {
     "placeholders": {

@@ -544,6 +544,60 @@ abstract class AppLocalizations {
   /// **'Lunar calendar'**
   String get reminderFieldLunarToggle;
 
+  /// No description provided for @reminderFieldDailyExclusionToggle.
+  ///
+  /// In en, this message translates to:
+  /// **'Exclude days'**
+  String get reminderFieldDailyExclusionToggle;
+
+  /// No description provided for @reminderFieldDailyExclusionKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Exclusion type'**
+  String get reminderFieldDailyExclusionKind;
+
+  /// No description provided for @dailyExclusionKindWeekdays.
+  ///
+  /// In en, this message translates to:
+  /// **'By day of week'**
+  String get dailyExclusionKindWeekdays;
+
+  /// No description provided for @dailyExclusionKindEvenOdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Even/odd days'**
+  String get dailyExclusionKindEvenOdd;
+
+  /// No description provided for @dailyExclusionKindSpecificDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Specific day of month'**
+  String get dailyExclusionKindSpecificDay;
+
+  /// No description provided for @dailyExclusionEvenDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Even'**
+  String get dailyExclusionEvenDays;
+
+  /// No description provided for @dailyExclusionOddDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Odd'**
+  String get dailyExclusionOddDays;
+
+  /// No description provided for @reminderFieldDailyExclusionDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day to exclude'**
+  String get reminderFieldDailyExclusionDay;
+
+  /// No description provided for @validationDailyExclusionWeekdays.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep at least one day of the week'**
+  String get validationDailyExclusionWeekdays;
+
   /// No description provided for @reminderLunarDateLabel.
   ///
   /// In en, this message translates to:

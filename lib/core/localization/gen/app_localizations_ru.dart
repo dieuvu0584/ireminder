@@ -201,6 +201,34 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Лунный календарь';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Исключить дни';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Тип исключения';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'По дню недели';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Чётные/нечётные дни';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Конкретный день месяца';
+
+  @override
+  String get dailyExclusionEvenDays => 'Чётные';
+
+  @override
+  String get dailyExclusionOddDays => 'Нечётные';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'День для исключения';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Должен остаться хотя бы один день недели';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (лунный)';
   }

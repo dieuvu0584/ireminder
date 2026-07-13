@@ -15,6 +15,16 @@ class Reminders extends Table {
   IntColumn get recurrenceWeekday => integer().nullable()();
   BoolColumn get isLunar => boolean().withDefault(const Constant(false))();
 
+  /// Daily-only: skips certain days throughout the recurrence instead of
+  /// firing every single day. Null means no exclusion (the common case).
+  /// weekdays | even_odd | specific_day
+  TextColumn get dailyExclusionType => text().nullable()();
+
+  /// Encoding depends on dailyExclusionType: comma-separated weekday
+  /// numbers (1=Mon..7=Sun) for `weekdays`, "even"/"odd" for `even_odd`,
+  /// or the day-of-month number for `specific_day`. See DailyExclusion.
+  TextColumn get dailyExclusionValue => text().nullable()();
+
   DateTimeColumn get startDate => dateTime()();
   DateTimeColumn get nextDueDate => dateTime()();
   TextColumn get reminderTime => text()(); // "HH:mm"

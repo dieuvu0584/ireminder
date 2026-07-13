@@ -201,6 +201,34 @@ class AppLocalizationsUr extends AppLocalizations {
   String get reminderFieldLunarToggle => 'قمری کیلنڈر';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'دن خارج کریں';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'اخراج کی قسم';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'ہفتے کے دن کے مطابق';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'جفت/طاق دن';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'مہینے کا مخصوص دن';
+
+  @override
+  String get dailyExclusionEvenDays => 'جفت';
+
+  @override
+  String get dailyExclusionOddDays => 'طاق';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'خارج کرنے کا دن';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'ہفتے میں کم از کم ایک دن باقی رہنا چاہیے';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (قمری)';
   }

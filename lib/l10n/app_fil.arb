@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Araw sa lunar calendar",
   "reminderFieldLunarMonth": "Buwan sa lunar calendar",
   "reminderFieldLunarToggle": "Kalendaryong lunar",
+  "reminderFieldDailyExclusionToggle": "Ibukod ang mga araw",
+  "reminderFieldDailyExclusionKind": "Uri ng pagbubukod",
+  "dailyExclusionKindWeekdays": "Ayon sa araw ng linggo",
+  "dailyExclusionKindEvenOdd": "Even/odd na araw",
+  "dailyExclusionKindSpecificDay": "Tiyak na araw ng buwan",
+  "dailyExclusionEvenDays": "Even",
+  "dailyExclusionOddDays": "Odd",
+  "reminderFieldDailyExclusionDay": "Araw na ibubukod",
+  "validationDailyExclusionWeekdays": "Dapat mag-iwan ng kahit isang araw ng linggo",
   "reminderLunarDateLabel": "{date} (lunar)",
   "@reminderLunarDateLabel": {
     "placeholders": {

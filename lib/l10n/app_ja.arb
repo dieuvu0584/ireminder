@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "旧暦の日",
   "reminderFieldLunarMonth": "旧暦の月",
   "reminderFieldLunarToggle": "旧暦",
+  "reminderFieldDailyExclusionToggle": "曜日を除外",
+  "reminderFieldDailyExclusionKind": "除外タイプ",
+  "dailyExclusionKindWeekdays": "曜日ごと",
+  "dailyExclusionKindEvenOdd": "偶数/奇数日",
+  "dailyExclusionKindSpecificDay": "月の特定の日",
+  "dailyExclusionEvenDays": "偶数",
+  "dailyExclusionOddDays": "奇数",
+  "reminderFieldDailyExclusionDay": "除外する日",
+  "validationDailyExclusionWeekdays": "少なくとも1つの曜日を残してください",
   "reminderLunarDateLabel": "{date}（旧暦）",
   "@reminderLunarDateLabel": {
     "placeholders": {

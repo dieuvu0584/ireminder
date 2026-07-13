@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Ay takviminde gün",
   "reminderFieldLunarMonth": "Ay takviminde ay",
   "reminderFieldLunarToggle": "Ay takvimi",
+  "reminderFieldDailyExclusionToggle": "Günleri hariç tut",
+  "reminderFieldDailyExclusionKind": "Hariç tutma türü",
+  "dailyExclusionKindWeekdays": "Haftanın gününe göre",
+  "dailyExclusionKindEvenOdd": "Çift/tek günler",
+  "dailyExclusionKindSpecificDay": "Ayın belirli günü",
+  "dailyExclusionEvenDays": "Çift",
+  "dailyExclusionOddDays": "Tek",
+  "reminderFieldDailyExclusionDay": "Hariç tutulacak gün",
+  "validationDailyExclusionWeekdays": "Haftanın en az bir günü kalmalı",
   "reminderLunarDateLabel": "{date} (ay takvimi)",
   "@reminderLunarDateLabel": {
     "placeholders": {

@@ -201,6 +201,34 @@ class AppLocalizationsSw extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Kalenda ya mwezi';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Ondoa siku';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Aina ya kuondoa';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Kwa siku ya wiki';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Siku za namba sawa/isiyo sawa';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Siku maalum ya mwezi';
+
+  @override
+  String get dailyExclusionEvenDays => 'Sawa';
+
+  @override
+  String get dailyExclusionOddDays => 'Isiyo sawa';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Siku ya kuondoa';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Angalau siku moja ya wiki lazima ibaki';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (mwezi)';
   }

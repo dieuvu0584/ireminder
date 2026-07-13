@@ -199,6 +199,33 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reminderFieldLunarToggle => '음력';
 
   @override
+  String get reminderFieldDailyExclusionToggle => '요일 제외';
+
+  @override
+  String get reminderFieldDailyExclusionKind => '제외 유형';
+
+  @override
+  String get dailyExclusionKindWeekdays => '요일별';
+
+  @override
+  String get dailyExclusionKindEvenOdd => '짝수/홀수 날짜';
+
+  @override
+  String get dailyExclusionKindSpecificDay => '매월 특정 날짜';
+
+  @override
+  String get dailyExclusionEvenDays => '짝수';
+
+  @override
+  String get dailyExclusionOddDays => '홀수';
+
+  @override
+  String get reminderFieldDailyExclusionDay => '제외할 날짜';
+
+  @override
+  String get validationDailyExclusionWeekdays => '최소 하루의 요일은 남겨야 합니다';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (음력)';
   }

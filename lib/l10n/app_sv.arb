@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Dag i månkalendern",
   "reminderFieldLunarMonth": "Månad i månkalendern",
   "reminderFieldLunarToggle": "Månkalender",
+  "reminderFieldDailyExclusionToggle": "Uteslut dagar",
+  "reminderFieldDailyExclusionKind": "Uteslutningstyp",
+  "dailyExclusionKindWeekdays": "Efter veckodag",
+  "dailyExclusionKindEvenOdd": "Jämna/udda dagar",
+  "dailyExclusionKindSpecificDay": "Viss dag i månaden",
+  "dailyExclusionEvenDays": "Jämn",
+  "dailyExclusionOddDays": "Udda",
+  "reminderFieldDailyExclusionDay": "Dag att utesluta",
+  "validationDailyExclusionWeekdays": "Minst en veckodag måste finnas kvar",
   "reminderLunarDateLabel": "{date} (mån)",
   "@reminderLunarDateLabel": {
     "placeholders": {

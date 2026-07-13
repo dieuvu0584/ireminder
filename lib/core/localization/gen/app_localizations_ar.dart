@@ -200,6 +200,34 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reminderFieldLunarToggle => 'التقويم القمري';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'استبعاد الأيام';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'نوع الاستبعاد';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'حسب يوم الأسبوع';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'الأيام الزوجية/الفردية';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'يوم محدد في الشهر';
+
+  @override
+  String get dailyExclusionEvenDays => 'زوجي';
+
+  @override
+  String get dailyExclusionOddDays => 'فردي';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'اليوم المراد استبعاده';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'يجب ترك يوم واحد على الأقل في الأسبوع';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (قمري)';
   }

@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "روز قمری",
   "reminderFieldLunarMonth": "ماه قمری",
   "reminderFieldLunarToggle": "تقویم قمری",
+  "reminderFieldDailyExclusionToggle": "حذف روزها",
+  "reminderFieldDailyExclusionKind": "نوع حذف",
+  "dailyExclusionKindWeekdays": "بر اساس روز هفته",
+  "dailyExclusionKindEvenOdd": "روزهای زوج/فرد",
+  "dailyExclusionKindSpecificDay": "روز مشخص در ماه",
+  "dailyExclusionEvenDays": "زوج",
+  "dailyExclusionOddDays": "فرد",
+  "reminderFieldDailyExclusionDay": "روز مورد حذف",
+  "validationDailyExclusionWeekdays": "باید حداقل یک روز هفته باقی بماند",
   "reminderLunarDateLabel": "{date} (قمری)",
   "@reminderLunarDateLabel": {
     "placeholders": {

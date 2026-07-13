@@ -4,6 +4,7 @@ import '../../core/utils/lunar_converter.dart';
 import '../../core/utils/recurrence_calculator.dart';
 import '../../domain/enums/recurrence_type.dart';
 import '../../domain/enums/loan_frequency.dart' show ReminderLogAction;
+import '../../domain/models/daily_exclusion.dart';
 import '../../domain/models/recurrence_params.dart';
 import '../database/app_database.dart';
 
@@ -83,6 +84,10 @@ class ReminderRepository {
       day: r.recurrenceDay,
       month: r.recurrenceMonth,
       weekday: r.recurrenceWeekday,
+      dailyExclusion: DailyExclusion.fromDb(
+        r.dailyExclusionType,
+        r.dailyExclusionValue,
+      ),
     );
   }
 
@@ -97,11 +102,13 @@ class ReminderRepository {
   ///
   /// [RecurrenceType.none]/[daily]/[customIntervalDays] have no such
   /// anchor: their first occurrence is [startDate] itself unless it
-  /// already passed, in which case roll forward once.
+  /// already passed, in which case roll forward once. [daily] additionally
+  /// has to respect its own exclusion rule (if any) on top of that — the
+  /// "already passed" check alone doesn't know that e.g. [startDate]
+  /// itself might be a Saturday excluded by the reminder's own rule.
   DateTime _firstOccurrence(RecurrenceParams params, DateTime startDate) {
     switch (params.type) {
       case RecurrenceType.none:
-      case RecurrenceType.daily:
       case RecurrenceType.customIntervalDays:
         final alreadyPassed = startDate.isBefore(
           DateTime.now().subtract(const Duration(days: 1)),
@@ -109,6 +116,15 @@ class ReminderRepository {
         return alreadyPassed
             ? calculateNextDueDate(params, startDate)
             : startDate;
+      case RecurrenceType.daily:
+        final alreadyPassed = startDate.isBefore(
+          DateTime.now().subtract(const Duration(days: 1)),
+        );
+        final base = alreadyPassed
+            ? calculateNextDueDate(params, startDate)
+            : startDate;
+        final exclusion = params.dailyExclusion;
+        return exclusion == null ? base : nextNonExcludedDay(base, exclusion);
       case RecurrenceType.weekly:
       case RecurrenceType.monthly:
       case RecurrenceType.yearly:
@@ -128,6 +144,7 @@ class ReminderRepository {
     int? recurrenceMonth,
     int? recurrenceWeekday,
     bool isLunar = false,
+    DailyExclusion? dailyExclusion,
     required DateTime startDate,
     required String reminderTime,
     int advanceNoticeDays = 0,
@@ -141,6 +158,7 @@ class ReminderRepository {
       day: recurrenceDay,
       month: recurrenceMonth,
       weekday: recurrenceWeekday,
+      dailyExclusion: dailyExclusion,
     );
     final nextDue = _firstOccurrence(params, startDate);
 
@@ -157,6 +175,8 @@ class ReminderRepository {
             recurrenceMonth: Value(recurrenceMonth),
             recurrenceWeekday: Value(recurrenceWeekday),
             isLunar: Value(isLunar),
+            dailyExclusionType: Value(dailyExclusion?.type.dbValue),
+            dailyExclusionValue: Value(dailyExclusion?.dbValue),
             startDate: startDate,
             nextDueDate: nextDue,
             reminderTime: reminderTime,
@@ -185,6 +205,8 @@ class ReminderRepository {
         existing.recurrenceDay != reminder.recurrenceDay ||
         existing.recurrenceMonth != reminder.recurrenceMonth ||
         existing.recurrenceWeekday != reminder.recurrenceWeekday ||
+        existing.dailyExclusionType != reminder.dailyExclusionType ||
+        existing.dailyExclusionValue != reminder.dailyExclusionValue ||
         existing.startDate != reminder.startDate;
 
     final toSave = recurrenceChanged

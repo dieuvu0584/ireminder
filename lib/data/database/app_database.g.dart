@@ -570,6 +570,28 @@ class $RemindersTable extends Reminders
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _dailyExclusionTypeMeta =
+      const VerificationMeta('dailyExclusionType');
+  @override
+  late final GeneratedColumn<String> dailyExclusionType =
+      GeneratedColumn<String>(
+        'daily_exclusion_type',
+        aliasedName,
+        true,
+        type: DriftSqlType.string,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _dailyExclusionValueMeta =
+      const VerificationMeta('dailyExclusionValue');
+  @override
+  late final GeneratedColumn<String> dailyExclusionValue =
+      GeneratedColumn<String>(
+        'daily_exclusion_value',
+        aliasedName,
+        true,
+        type: DriftSqlType.string,
+        requiredDuringInsert: false,
+      );
   static const VerificationMeta _startDateMeta = const VerificationMeta(
     'startDate',
   );
@@ -697,6 +719,8 @@ class $RemindersTable extends Reminders
     recurrenceMonth,
     recurrenceWeekday,
     isLunar,
+    dailyExclusionType,
+    dailyExclusionValue,
     startDate,
     nextDueDate,
     reminderTime,
@@ -799,6 +823,24 @@ class $RemindersTable extends Reminders
       context.handle(
         _isLunarMeta,
         isLunar.isAcceptableOrUnknown(data['is_lunar']!, _isLunarMeta),
+      );
+    }
+    if (data.containsKey('daily_exclusion_type')) {
+      context.handle(
+        _dailyExclusionTypeMeta,
+        dailyExclusionType.isAcceptableOrUnknown(
+          data['daily_exclusion_type']!,
+          _dailyExclusionTypeMeta,
+        ),
+      );
+    }
+    if (data.containsKey('daily_exclusion_value')) {
+      context.handle(
+        _dailyExclusionValueMeta,
+        dailyExclusionValue.isAcceptableOrUnknown(
+          data['daily_exclusion_value']!,
+          _dailyExclusionValueMeta,
+        ),
       );
     }
     if (data.containsKey('start_date')) {
@@ -938,6 +980,14 @@ class $RemindersTable extends Reminders
         DriftSqlType.bool,
         data['${effectivePrefix}is_lunar'],
       )!,
+      dailyExclusionType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}daily_exclusion_type'],
+      ),
+      dailyExclusionValue: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}daily_exclusion_value'],
+      ),
       startDate: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}start_date'],
@@ -1000,6 +1050,16 @@ class Reminder extends DataClass implements Insertable<Reminder> {
   final int? recurrenceMonth;
   final int? recurrenceWeekday;
   final bool isLunar;
+
+  /// Daily-only: skips certain days throughout the recurrence instead of
+  /// firing every single day. Null means no exclusion (the common case).
+  /// weekdays | even_odd | specific_day
+  final String? dailyExclusionType;
+
+  /// Encoding depends on dailyExclusionType: comma-separated weekday
+  /// numbers (1=Mon..7=Sun) for `weekdays`, "even"/"odd" for `even_odd`,
+  /// or the day-of-month number for `specific_day`. See DailyExclusion.
+  final String? dailyExclusionValue;
   final DateTime startDate;
   final DateTime nextDueDate;
   final String reminderTime;
@@ -1021,6 +1081,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     this.recurrenceMonth,
     this.recurrenceWeekday,
     required this.isLunar,
+    this.dailyExclusionType,
+    this.dailyExclusionValue,
     required this.startDate,
     required this.nextDueDate,
     required this.reminderTime,
@@ -1055,6 +1117,12 @@ class Reminder extends DataClass implements Insertable<Reminder> {
       map['recurrence_weekday'] = Variable<int>(recurrenceWeekday);
     }
     map['is_lunar'] = Variable<bool>(isLunar);
+    if (!nullToAbsent || dailyExclusionType != null) {
+      map['daily_exclusion_type'] = Variable<String>(dailyExclusionType);
+    }
+    if (!nullToAbsent || dailyExclusionValue != null) {
+      map['daily_exclusion_value'] = Variable<String>(dailyExclusionValue);
+    }
     map['start_date'] = Variable<DateTime>(startDate);
     map['next_due_date'] = Variable<DateTime>(nextDueDate);
     map['reminder_time'] = Variable<String>(reminderTime);
@@ -1092,6 +1160,12 @@ class Reminder extends DataClass implements Insertable<Reminder> {
           ? const Value.absent()
           : Value(recurrenceWeekday),
       isLunar: Value(isLunar),
+      dailyExclusionType: dailyExclusionType == null && nullToAbsent
+          ? const Value.absent()
+          : Value(dailyExclusionType),
+      dailyExclusionValue: dailyExclusionValue == null && nullToAbsent
+          ? const Value.absent()
+          : Value(dailyExclusionValue),
       startDate: Value(startDate),
       nextDueDate: Value(nextDueDate),
       reminderTime: Value(reminderTime),
@@ -1123,6 +1197,12 @@ class Reminder extends DataClass implements Insertable<Reminder> {
       recurrenceMonth: serializer.fromJson<int?>(json['recurrenceMonth']),
       recurrenceWeekday: serializer.fromJson<int?>(json['recurrenceWeekday']),
       isLunar: serializer.fromJson<bool>(json['isLunar']),
+      dailyExclusionType: serializer.fromJson<String?>(
+        json['dailyExclusionType'],
+      ),
+      dailyExclusionValue: serializer.fromJson<String?>(
+        json['dailyExclusionValue'],
+      ),
       startDate: serializer.fromJson<DateTime>(json['startDate']),
       nextDueDate: serializer.fromJson<DateTime>(json['nextDueDate']),
       reminderTime: serializer.fromJson<String>(json['reminderTime']),
@@ -1151,6 +1231,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
       'recurrenceMonth': serializer.toJson<int?>(recurrenceMonth),
       'recurrenceWeekday': serializer.toJson<int?>(recurrenceWeekday),
       'isLunar': serializer.toJson<bool>(isLunar),
+      'dailyExclusionType': serializer.toJson<String?>(dailyExclusionType),
+      'dailyExclusionValue': serializer.toJson<String?>(dailyExclusionValue),
       'startDate': serializer.toJson<DateTime>(startDate),
       'nextDueDate': serializer.toJson<DateTime>(nextDueDate),
       'reminderTime': serializer.toJson<String>(reminderTime),
@@ -1175,6 +1257,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     Value<int?> recurrenceMonth = const Value.absent(),
     Value<int?> recurrenceWeekday = const Value.absent(),
     bool? isLunar,
+    Value<String?> dailyExclusionType = const Value.absent(),
+    Value<String?> dailyExclusionValue = const Value.absent(),
     DateTime? startDate,
     DateTime? nextDueDate,
     String? reminderTime,
@@ -1204,6 +1288,12 @@ class Reminder extends DataClass implements Insertable<Reminder> {
         ? recurrenceWeekday.value
         : this.recurrenceWeekday,
     isLunar: isLunar ?? this.isLunar,
+    dailyExclusionType: dailyExclusionType.present
+        ? dailyExclusionType.value
+        : this.dailyExclusionType,
+    dailyExclusionValue: dailyExclusionValue.present
+        ? dailyExclusionValue.value
+        : this.dailyExclusionValue,
     startDate: startDate ?? this.startDate,
     nextDueDate: nextDueDate ?? this.nextDueDate,
     reminderTime: reminderTime ?? this.reminderTime,
@@ -1241,6 +1331,12 @@ class Reminder extends DataClass implements Insertable<Reminder> {
           ? data.recurrenceWeekday.value
           : this.recurrenceWeekday,
       isLunar: data.isLunar.present ? data.isLunar.value : this.isLunar,
+      dailyExclusionType: data.dailyExclusionType.present
+          ? data.dailyExclusionType.value
+          : this.dailyExclusionType,
+      dailyExclusionValue: data.dailyExclusionValue.present
+          ? data.dailyExclusionValue.value
+          : this.dailyExclusionValue,
       startDate: data.startDate.present ? data.startDate.value : this.startDate,
       nextDueDate: data.nextDueDate.present
           ? data.nextDueDate.value
@@ -1279,6 +1375,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
           ..write('recurrenceMonth: $recurrenceMonth, ')
           ..write('recurrenceWeekday: $recurrenceWeekday, ')
           ..write('isLunar: $isLunar, ')
+          ..write('dailyExclusionType: $dailyExclusionType, ')
+          ..write('dailyExclusionValue: $dailyExclusionValue, ')
           ..write('startDate: $startDate, ')
           ..write('nextDueDate: $nextDueDate, ')
           ..write('reminderTime: $reminderTime, ')
@@ -1294,7 +1392,7 @@ class Reminder extends DataClass implements Insertable<Reminder> {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     id,
     title,
     description,
@@ -1305,6 +1403,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     recurrenceMonth,
     recurrenceWeekday,
     isLunar,
+    dailyExclusionType,
+    dailyExclusionValue,
     startDate,
     nextDueDate,
     reminderTime,
@@ -1315,7 +1415,7 @@ class Reminder extends DataClass implements Insertable<Reminder> {
     snoozeUntil,
     createdAt,
     updatedAt,
-  );
+  ]);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -1330,6 +1430,8 @@ class Reminder extends DataClass implements Insertable<Reminder> {
           other.recurrenceMonth == this.recurrenceMonth &&
           other.recurrenceWeekday == this.recurrenceWeekday &&
           other.isLunar == this.isLunar &&
+          other.dailyExclusionType == this.dailyExclusionType &&
+          other.dailyExclusionValue == this.dailyExclusionValue &&
           other.startDate == this.startDate &&
           other.nextDueDate == this.nextDueDate &&
           other.reminderTime == this.reminderTime &&
@@ -1353,6 +1455,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
   final Value<int?> recurrenceMonth;
   final Value<int?> recurrenceWeekday;
   final Value<bool> isLunar;
+  final Value<String?> dailyExclusionType;
+  final Value<String?> dailyExclusionValue;
   final Value<DateTime> startDate;
   final Value<DateTime> nextDueDate;
   final Value<String> reminderTime;
@@ -1374,6 +1478,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     this.recurrenceMonth = const Value.absent(),
     this.recurrenceWeekday = const Value.absent(),
     this.isLunar = const Value.absent(),
+    this.dailyExclusionType = const Value.absent(),
+    this.dailyExclusionValue = const Value.absent(),
     this.startDate = const Value.absent(),
     this.nextDueDate = const Value.absent(),
     this.reminderTime = const Value.absent(),
@@ -1396,6 +1502,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     this.recurrenceMonth = const Value.absent(),
     this.recurrenceWeekday = const Value.absent(),
     this.isLunar = const Value.absent(),
+    this.dailyExclusionType = const Value.absent(),
+    this.dailyExclusionValue = const Value.absent(),
     required DateTime startDate,
     required DateTime nextDueDate,
     required String reminderTime,
@@ -1425,6 +1533,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     Expression<int>? recurrenceMonth,
     Expression<int>? recurrenceWeekday,
     Expression<bool>? isLunar,
+    Expression<String>? dailyExclusionType,
+    Expression<String>? dailyExclusionValue,
     Expression<DateTime>? startDate,
     Expression<DateTime>? nextDueDate,
     Expression<String>? reminderTime,
@@ -1447,6 +1557,10 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
       if (recurrenceMonth != null) 'recurrence_month': recurrenceMonth,
       if (recurrenceWeekday != null) 'recurrence_weekday': recurrenceWeekday,
       if (isLunar != null) 'is_lunar': isLunar,
+      if (dailyExclusionType != null)
+        'daily_exclusion_type': dailyExclusionType,
+      if (dailyExclusionValue != null)
+        'daily_exclusion_value': dailyExclusionValue,
       if (startDate != null) 'start_date': startDate,
       if (nextDueDate != null) 'next_due_date': nextDueDate,
       if (reminderTime != null) 'reminder_time': reminderTime,
@@ -1473,6 +1587,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     Value<int?>? recurrenceMonth,
     Value<int?>? recurrenceWeekday,
     Value<bool>? isLunar,
+    Value<String?>? dailyExclusionType,
+    Value<String?>? dailyExclusionValue,
     Value<DateTime>? startDate,
     Value<DateTime>? nextDueDate,
     Value<String>? reminderTime,
@@ -1495,6 +1611,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
       recurrenceMonth: recurrenceMonth ?? this.recurrenceMonth,
       recurrenceWeekday: recurrenceWeekday ?? this.recurrenceWeekday,
       isLunar: isLunar ?? this.isLunar,
+      dailyExclusionType: dailyExclusionType ?? this.dailyExclusionType,
+      dailyExclusionValue: dailyExclusionValue ?? this.dailyExclusionValue,
       startDate: startDate ?? this.startDate,
       nextDueDate: nextDueDate ?? this.nextDueDate,
       reminderTime: reminderTime ?? this.reminderTime,
@@ -1540,6 +1658,14 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
     }
     if (isLunar.present) {
       map['is_lunar'] = Variable<bool>(isLunar.value);
+    }
+    if (dailyExclusionType.present) {
+      map['daily_exclusion_type'] = Variable<String>(dailyExclusionType.value);
+    }
+    if (dailyExclusionValue.present) {
+      map['daily_exclusion_value'] = Variable<String>(
+        dailyExclusionValue.value,
+      );
     }
     if (startDate.present) {
       map['start_date'] = Variable<DateTime>(startDate.value);
@@ -1587,6 +1713,8 @@ class RemindersCompanion extends UpdateCompanion<Reminder> {
           ..write('recurrenceMonth: $recurrenceMonth, ')
           ..write('recurrenceWeekday: $recurrenceWeekday, ')
           ..write('isLunar: $isLunar, ')
+          ..write('dailyExclusionType: $dailyExclusionType, ')
+          ..write('dailyExclusionValue: $dailyExclusionValue, ')
           ..write('startDate: $startDate, ')
           ..write('nextDueDate: $nextDueDate, ')
           ..write('reminderTime: $reminderTime, ')
@@ -4448,6 +4576,8 @@ typedef $$RemindersTableCreateCompanionBuilder =
       Value<int?> recurrenceMonth,
       Value<int?> recurrenceWeekday,
       Value<bool> isLunar,
+      Value<String?> dailyExclusionType,
+      Value<String?> dailyExclusionValue,
       required DateTime startDate,
       required DateTime nextDueDate,
       required String reminderTime,
@@ -4471,6 +4601,8 @@ typedef $$RemindersTableUpdateCompanionBuilder =
       Value<int?> recurrenceMonth,
       Value<int?> recurrenceWeekday,
       Value<bool> isLunar,
+      Value<String?> dailyExclusionType,
+      Value<String?> dailyExclusionValue,
       Value<DateTime> startDate,
       Value<DateTime> nextDueDate,
       Value<String> reminderTime,
@@ -4579,6 +4711,16 @@ class $$RemindersTableFilterComposer
 
   ColumnFilters<bool> get isLunar => $composableBuilder(
     column: $table.isLunar,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get dailyExclusionType => $composableBuilder(
+    column: $table.dailyExclusionType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get dailyExclusionValue => $composableBuilder(
+    column: $table.dailyExclusionValue,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -4735,6 +4877,16 @@ class $$RemindersTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get dailyExclusionType => $composableBuilder(
+    column: $table.dailyExclusionType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get dailyExclusionValue => $composableBuilder(
+    column: $table.dailyExclusionValue,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get startDate => $composableBuilder(
     column: $table.startDate,
     builder: (column) => ColumnOrderings(column),
@@ -4856,6 +5008,16 @@ class $$RemindersTableAnnotationComposer
 
   GeneratedColumn<bool> get isLunar =>
       $composableBuilder(column: $table.isLunar, builder: (column) => column);
+
+  GeneratedColumn<String> get dailyExclusionType => $composableBuilder(
+    column: $table.dailyExclusionType,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get dailyExclusionValue => $composableBuilder(
+    column: $table.dailyExclusionValue,
+    builder: (column) => column,
+  );
 
   GeneratedColumn<DateTime> get startDate =>
       $composableBuilder(column: $table.startDate, builder: (column) => column);
@@ -4986,6 +5148,8 @@ class $$RemindersTableTableManager
                 Value<int?> recurrenceMonth = const Value.absent(),
                 Value<int?> recurrenceWeekday = const Value.absent(),
                 Value<bool> isLunar = const Value.absent(),
+                Value<String?> dailyExclusionType = const Value.absent(),
+                Value<String?> dailyExclusionValue = const Value.absent(),
                 Value<DateTime> startDate = const Value.absent(),
                 Value<DateTime> nextDueDate = const Value.absent(),
                 Value<String> reminderTime = const Value.absent(),
@@ -5007,6 +5171,8 @@ class $$RemindersTableTableManager
                 recurrenceMonth: recurrenceMonth,
                 recurrenceWeekday: recurrenceWeekday,
                 isLunar: isLunar,
+                dailyExclusionType: dailyExclusionType,
+                dailyExclusionValue: dailyExclusionValue,
                 startDate: startDate,
                 nextDueDate: nextDueDate,
                 reminderTime: reminderTime,
@@ -5030,6 +5196,8 @@ class $$RemindersTableTableManager
                 Value<int?> recurrenceMonth = const Value.absent(),
                 Value<int?> recurrenceWeekday = const Value.absent(),
                 Value<bool> isLunar = const Value.absent(),
+                Value<String?> dailyExclusionType = const Value.absent(),
+                Value<String?> dailyExclusionValue = const Value.absent(),
                 required DateTime startDate,
                 required DateTime nextDueDate,
                 required String reminderTime,
@@ -5051,6 +5219,8 @@ class $$RemindersTableTableManager
                 recurrenceMonth: recurrenceMonth,
                 recurrenceWeekday: recurrenceWeekday,
                 isLunar: isLunar,
+                dailyExclusionType: dailyExclusionType,
+                dailyExclusionValue: dailyExclusionValue,
                 startDate: startDate,
                 nextDueDate: nextDueDate,
                 reminderTime: reminderTime,

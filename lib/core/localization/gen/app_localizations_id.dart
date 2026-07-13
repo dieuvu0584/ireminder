@@ -201,6 +201,34 @@ class AppLocalizationsId extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Kalender lunar';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Kecualikan hari';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Jenis pengecualian';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Berdasarkan hari dalam seminggu';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Hari genap/ganjil';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Hari tertentu dalam sebulan';
+
+  @override
+  String get dailyExclusionEvenDays => 'Genap';
+
+  @override
+  String get dailyExclusionOddDays => 'Ganjil';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Hari yang dikecualikan';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Harus menyisakan minimal satu hari dalam seminggu';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunar)';
   }

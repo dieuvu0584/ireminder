@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "اليوم القمري",
   "reminderFieldLunarMonth": "الشهر القمري",
   "reminderFieldLunarToggle": "التقويم القمري",
+  "reminderFieldDailyExclusionToggle": "استبعاد الأيام",
+  "reminderFieldDailyExclusionKind": "نوع الاستبعاد",
+  "dailyExclusionKindWeekdays": "حسب يوم الأسبوع",
+  "dailyExclusionKindEvenOdd": "الأيام الزوجية/الفردية",
+  "dailyExclusionKindSpecificDay": "يوم محدد في الشهر",
+  "dailyExclusionEvenDays": "زوجي",
+  "dailyExclusionOddDays": "فردي",
+  "reminderFieldDailyExclusionDay": "اليوم المراد استبعاده",
+  "validationDailyExclusionWeekdays": "يجب ترك يوم واحد على الأقل في الأسبوع",
   "reminderLunarDateLabel": "{date} (قمري)",
   "@reminderLunarDateLabel": {
     "placeholders": {

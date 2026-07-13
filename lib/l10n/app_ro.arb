@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Ziua lunară",
   "reminderFieldLunarMonth": "Luna lunară",
   "reminderFieldLunarToggle": "Calendar lunar",
+  "reminderFieldDailyExclusionToggle": "Excludere zile",
+  "reminderFieldDailyExclusionKind": "Tip de excludere",
+  "dailyExclusionKindWeekdays": "După ziua săptămânii",
+  "dailyExclusionKindEvenOdd": "Zile pare/impare",
+  "dailyExclusionKindSpecificDay": "Zi specifică din lună",
+  "dailyExclusionEvenDays": "Pară",
+  "dailyExclusionOddDays": "Impară",
+  "reminderFieldDailyExclusionDay": "Ziua de exclus",
+  "validationDailyExclusionWeekdays": "Trebuie să rămână cel puțin o zi a săptămânii",
   "reminderLunarDateLabel": "{date} (lunar)",
   "@reminderLunarDateLabel": {
     "placeholders": {

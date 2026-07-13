@@ -201,6 +201,34 @@ class AppLocalizationsTr extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Ay takvimi';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Günleri hariç tut';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Hariç tutma türü';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Haftanın gününe göre';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Çift/tek günler';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Ayın belirli günü';
+
+  @override
+  String get dailyExclusionEvenDays => 'Çift';
+
+  @override
+  String get dailyExclusionOddDays => 'Tek';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Hariç tutulacak gün';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Haftanın en az bir günü kalmalı';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (ay takvimi)';
   }

@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "วันตามจันทรคติ",
   "reminderFieldLunarMonth": "เดือนตามจันทรคติ",
   "reminderFieldLunarToggle": "ปฏิทินจันทรคติ",
+  "reminderFieldDailyExclusionToggle": "ยกเว้นวัน",
+  "reminderFieldDailyExclusionKind": "ประเภทการยกเว้น",
+  "dailyExclusionKindWeekdays": "ตามวันในสัปดาห์",
+  "dailyExclusionKindEvenOdd": "วันคู่/วันคี่",
+  "dailyExclusionKindSpecificDay": "วันที่เฉพาะในเดือน",
+  "dailyExclusionEvenDays": "วันคู่",
+  "dailyExclusionOddDays": "วันคี่",
+  "reminderFieldDailyExclusionDay": "วันที่ต้องการยกเว้น",
+  "validationDailyExclusionWeekdays": "ต้องเหลืออย่างน้อยหนึ่งวันในสัปดาห์",
   "reminderLunarDateLabel": "{date} (จันทรคติ)",
   "@reminderLunarDateLabel": {
     "placeholders": {

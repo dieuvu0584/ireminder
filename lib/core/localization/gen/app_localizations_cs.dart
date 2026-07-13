@@ -201,6 +201,34 @@ class AppLocalizationsCs extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Lunární kalendář';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Vyloučit dny';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Typ vyloučení';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Podle dne v týdnu';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Sudé/liché dny';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Konkrétní den v měsíci';
+
+  @override
+  String get dailyExclusionEvenDays => 'Sudé';
+
+  @override
+  String get dailyExclusionOddDays => 'Liché';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Den k vyloučení';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Ponechte alespoň jeden den v týdnu';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunární)';
   }

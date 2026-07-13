@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Holdnaptári nap",
   "reminderFieldLunarMonth": "Holdnaptári hónap",
   "reminderFieldLunarToggle": "Holdnaptár",
+  "reminderFieldDailyExclusionToggle": "Napok kizárása",
+  "reminderFieldDailyExclusionKind": "Kizárás típusa",
+  "dailyExclusionKindWeekdays": "Hét napja szerint",
+  "dailyExclusionKindEvenOdd": "Páros/páratlan napok",
+  "dailyExclusionKindSpecificDay": "A hónap adott napja",
+  "dailyExclusionEvenDays": "Páros",
+  "dailyExclusionOddDays": "Páratlan",
+  "reminderFieldDailyExclusionDay": "Kizárandó nap",
+  "validationDailyExclusionWeekdays": "Legalább egy hétköznapnak maradnia kell",
   "reminderLunarDateLabel": "{date} (hold)",
   "@reminderLunarDateLabel": {
     "placeholders": {

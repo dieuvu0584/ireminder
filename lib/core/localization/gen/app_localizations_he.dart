@@ -201,6 +201,34 @@ class AppLocalizationsHe extends AppLocalizations {
   String get reminderFieldLunarToggle => 'לוח שנה ירחי';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'החרגת ימים';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'סוג ההחרגה';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'לפי יום בשבוע';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'ימים זוגיים/אי-זוגיים';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'יום מסוים בחודש';
+
+  @override
+  String get dailyExclusionEvenDays => 'זוגי';
+
+  @override
+  String get dailyExclusionOddDays => 'אי-זוגי';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'יום להחרגה';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'חובה להשאיר לפחות יום אחד בשבוע';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (ירחי)';
   }

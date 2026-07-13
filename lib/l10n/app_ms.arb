@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "Hari kalendar bulan",
   "reminderFieldLunarMonth": "Bulan kalendar bulan",
   "reminderFieldLunarToggle": "Kalendar lunar",
+  "reminderFieldDailyExclusionToggle": "Kecualikan hari",
+  "reminderFieldDailyExclusionKind": "Jenis pengecualian",
+  "dailyExclusionKindWeekdays": "Mengikut hari dalam minggu",
+  "dailyExclusionKindEvenOdd": "Hari genap/ganjil",
+  "dailyExclusionKindSpecificDay": "Hari tertentu dalam bulan",
+  "dailyExclusionEvenDays": "Genap",
+  "dailyExclusionOddDays": "Ganjil",
+  "reminderFieldDailyExclusionDay": "Hari untuk dikecualikan",
+  "validationDailyExclusionWeekdays": "Perlu tinggalkan sekurang-kurangnya satu hari dalam minggu",
   "reminderLunarDateLabel": "{date} (lunar)",
   "@reminderLunarDateLabel": {
     "placeholders": {

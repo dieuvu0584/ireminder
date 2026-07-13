@@ -201,6 +201,34 @@ class AppLocalizationsVi extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Âm lịch';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Loại trừ ngày';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Kiểu loại trừ';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Theo thứ trong tuần';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Ngày chẵn/lẻ';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Ngày cụ thể trong tháng';
+
+  @override
+  String get dailyExclusionEvenDays => 'Chẵn';
+
+  @override
+  String get dailyExclusionOddDays => 'Lẻ';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Ngày cần loại trừ';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Phải giữ lại ít nhất một ngày trong tuần';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (âm lịch)';
   }

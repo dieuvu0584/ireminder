@@ -201,6 +201,34 @@ class AppLocalizationsFa extends AppLocalizations {
   String get reminderFieldLunarToggle => 'تقویم قمری';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'حذف روزها';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'نوع حذف';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'بر اساس روز هفته';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'روزهای زوج/فرد';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'روز مشخص در ماه';
+
+  @override
+  String get dailyExclusionEvenDays => 'زوج';
+
+  @override
+  String get dailyExclusionOddDays => 'فرد';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'روز مورد حذف';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'باید حداقل یک روز هفته باقی بماند';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (قمری)';
   }

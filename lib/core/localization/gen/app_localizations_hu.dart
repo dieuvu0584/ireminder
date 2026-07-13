@@ -201,6 +201,34 @@ class AppLocalizationsHu extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Holdnaptár';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Napok kizárása';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Kizárás típusa';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Hét napja szerint';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Páros/páratlan napok';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'A hónap adott napja';
+
+  @override
+  String get dailyExclusionEvenDays => 'Páros';
+
+  @override
+  String get dailyExclusionOddDays => 'Páratlan';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Kizárandó nap';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Legalább egy hétköznapnak maradnia kell';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (hold)';
   }

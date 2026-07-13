@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "চান্দ্র দিন",
   "reminderFieldLunarMonth": "চান্দ্র মাস",
   "reminderFieldLunarToggle": "চন্দ্র পঞ্জিকা",
+  "reminderFieldDailyExclusionToggle": "দিন বাদ দিন",
+  "reminderFieldDailyExclusionKind": "বাদ দেওয়ার ধরন",
+  "dailyExclusionKindWeekdays": "সপ্তাহের দিন অনুযায়ী",
+  "dailyExclusionKindEvenOdd": "জোড়/বিজোড় দিন",
+  "dailyExclusionKindSpecificDay": "মাসের নির্দিষ্ট দিন",
+  "dailyExclusionEvenDays": "জোড়",
+  "dailyExclusionOddDays": "বিজোড়",
+  "reminderFieldDailyExclusionDay": "বাদ দেওয়ার দিন",
+  "validationDailyExclusionWeekdays": "সপ্তাহে অন্তত একদিন রাখতে হবে",
   "reminderLunarDateLabel": "{date} (চন্দ্র)",
   "@reminderLunarDateLabel": {
     "placeholders": {

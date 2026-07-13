@@ -201,6 +201,34 @@ class AppLocalizationsUk extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Місячний календар';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Виключити дні';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Тип виключення';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'За днем тижня';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Парні/непарні дні';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Конкретний день місяця';
+
+  @override
+  String get dailyExclusionEvenDays => 'Парні';
+
+  @override
+  String get dailyExclusionOddDays => 'Непарні';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'День для виключення';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Має залишитися принаймні один день тижня';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (місячний)';
   }

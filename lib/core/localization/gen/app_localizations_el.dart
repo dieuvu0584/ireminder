@@ -201,6 +201,34 @@ class AppLocalizationsEl extends AppLocalizations {
   String get reminderFieldLunarToggle => 'Σεληνιακό ημερολόγιο';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'Εξαίρεση ημερών';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'Τύπος εξαίρεσης';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'Κατά ημέρα εβδομάδας';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'Ζυγές/μονές ημέρες';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'Συγκεκριμένη ημέρα του μήνα';
+
+  @override
+  String get dailyExclusionEvenDays => 'Ζυγή';
+
+  @override
+  String get dailyExclusionOddDays => 'Μονή';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'Ημέρα προς εξαίρεση';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'Πρέπει να παραμείνει τουλάχιστον μία ημέρα της εβδομάδας';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (σεληνιακό)';
   }

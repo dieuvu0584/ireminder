@@ -62,6 +62,15 @@
   "reminderFieldLunarDay": "ਚੰਦਰ ਦਿਨ",
   "reminderFieldLunarMonth": "ਚੰਦਰ ਮਹੀਨਾ",
   "reminderFieldLunarToggle": "ਚੰਦਰ ਕੈਲੰਡਰ",
+  "reminderFieldDailyExclusionToggle": "ਦਿਨ ਬਾਹਰ ਰੱਖੋ",
+  "reminderFieldDailyExclusionKind": "ਬਾਹਰ ਰੱਖਣ ਦੀ ਕਿਸਮ",
+  "dailyExclusionKindWeekdays": "ਹਫ਼ਤੇ ਦੇ ਦਿਨ ਅਨੁਸਾਰ",
+  "dailyExclusionKindEvenOdd": "ਜਿਸਤ/ਟਾਂਕ ਦਿਨ",
+  "dailyExclusionKindSpecificDay": "ਮਹੀਨੇ ਦਾ ਖਾਸ ਦਿਨ",
+  "dailyExclusionEvenDays": "ਜਿਸਤ",
+  "dailyExclusionOddDays": "ਟਾਂਕ",
+  "reminderFieldDailyExclusionDay": "ਬਾਹਰ ਰੱਖਣ ਵਾਲਾ ਦਿਨ",
+  "validationDailyExclusionWeekdays": "ਹਫ਼ਤੇ ਵਿੱਚ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਦਿਨ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ",
   "reminderLunarDateLabel": "{date} (ਚੰਦਰ)",
   "@reminderLunarDateLabel": {
     "placeholders": {

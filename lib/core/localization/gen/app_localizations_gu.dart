@@ -201,6 +201,34 @@ class AppLocalizationsGu extends AppLocalizations {
   String get reminderFieldLunarToggle => 'ચંદ્ર કેલેન્ડર';
 
   @override
+  String get reminderFieldDailyExclusionToggle => 'દિવસો બાકાત કરો';
+
+  @override
+  String get reminderFieldDailyExclusionKind => 'બાકાત પ્રકાર';
+
+  @override
+  String get dailyExclusionKindWeekdays => 'અઠવાડિયાના દિવસ મુજબ';
+
+  @override
+  String get dailyExclusionKindEvenOdd => 'બેકી/એકી દિવસો';
+
+  @override
+  String get dailyExclusionKindSpecificDay => 'મહિનાનો ચોક્કસ દિવસ';
+
+  @override
+  String get dailyExclusionEvenDays => 'બેકી';
+
+  @override
+  String get dailyExclusionOddDays => 'એકી';
+
+  @override
+  String get reminderFieldDailyExclusionDay => 'બાકાત કરવાનો દિવસ';
+
+  @override
+  String get validationDailyExclusionWeekdays =>
+      'અઠવાડિયામાં ઓછામાં ઓછો એક દિવસ રાખવો જરૂરી';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (ચંદ્ર)';
   }
