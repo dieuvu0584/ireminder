@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
+import '../../../core/utils/lunar_converter.dart';
 import '../../../domain/enums/loan_frequency.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/loan_providers.dart';
 import '../../widgets/currency_input_formatter.dart';
+import '../../widgets/lunar_date_picker.dart';
 import '../../widgets/save_action_button.dart';
 
 class LoanFormScreen extends ConsumerStatefulWidget {
@@ -28,6 +30,12 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
   int? _categoryId;
   LoanFrequency _frequency = LoanFrequency.monthly;
   DateTime _startDate = DateTime.now();
+  // Purely a picker-UI convenience, unlike reminders' lunar mode — a loan
+  // has no recurring lunar-day concept to anchor, so this only decides
+  // which picker the Start date field opens (with lunar day labels or
+  // without); the stored startDate is the same plain solar date either
+  // way.
+  bool _isLunar = false;
   bool _saving = false;
 
   @override
@@ -215,19 +223,47 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
                 ),
               ],
               const SizedBox(height: 12),
+              SwitchListTile(
+                contentPadding: EdgeInsets.zero,
+                secondary: const Icon(Icons.brightness_2_outlined),
+                title: Text(l10n.reminderFieldLunarToggle),
+                value: _isLunar,
+                onChanged: (v) => setState(() => _isLunar = v),
+              ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 title: Text(l10n.loanFieldStartDate),
                 subtitle: Text(
-                  '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
+                  _isLunar
+                      ? l10n.reminderLunarDateLabel(
+                          LunarConverter.formatDayMonth(_startDate),
+                        )
+                      : '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
                 ),
                 trailing: const Icon(Icons.calendar_today),
                 onTap: () async {
+                  // No edit flow for loans (this screen is create-only), so
+                  // unlike the reminder form there's no existing-date
+                  // exception to account for — always today at the low
+                  // end. Same Dec 31 of next year cap as reminders.
+                  final now = DateTime.now();
+                  final today = DateTime(now.year, now.month, now.day);
+                  final lastDate = DateTime(now.year + 1, 12, 31);
+                  if (_isLunar) {
+                    final picked = await showLunarDatePicker(
+                      context: context,
+                      initialDate: _startDate,
+                      firstDate: today,
+                      lastDate: lastDate,
+                    );
+                    if (picked != null) setState(() => _startDate = picked);
+                    return;
+                  }
                   final picked = await showDatePicker(
                     context: context,
                     initialDate: _startDate,
-                    firstDate: DateTime(2000),
-                    lastDate: DateTime(2100),
+                    firstDate: today,
+                    lastDate: lastDate,
                   );
                   if (picked != null) setState(() => _startDate = picked);
                 },
