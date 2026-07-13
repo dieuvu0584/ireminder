@@ -46,6 +46,17 @@
 
         <!-- flutter_local_notifications: redeliver taps/actions to the app,
              and re-arm any exact alarms that survive a device reboot. -->
+        <!-- Handles action buttons declared with showsUserInterface: false
+             (our Done/Snooze/Mark paid buttons) — the plugin targets this
+             receiver with an explicit PendingIntent.getBroadcast() call, so
+             without it declared here Android has nowhere to deliver the
+             broadcast: the tap silently no-ops (no crash, no log) instead
+             of ever reaching Dart code. This was missing, which is why
+             those buttons appeared to do nothing regardless of how the
+             Dart-side handler was instrumented. -->
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver" />
         <receiver
             android:exported="false"
             android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
