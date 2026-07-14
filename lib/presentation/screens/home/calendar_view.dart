@@ -6,6 +6,7 @@ import '../../../core/utils/recurrence_calculator.dart';
 import '../../../core/utils/reminder_occurrence_builder.dart';
 import '../../../data/database/app_database.dart';
 import '../../../domain/enums/recurrence_type.dart';
+import '../../../domain/models/daily_exclusion.dart';
 import '../../../domain/models/recurrence_params.dart';
 import '../../../domain/models/reminder_occurrence.dart';
 import '../../providers/calendar_providers.dart';
@@ -127,6 +128,58 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
           final occurrences = occurrencesInMonth(
             RecurrenceParams(type: type, day: r.recurrenceDay),
             _visibleMonth,
+          );
+          final done =
+              !r.isActive &&
+              (completedLogsAsync.valueOrNull ?? const []).any(
+                (log) => log.reminderId == r.id,
+              );
+          for (final occurrence in occurrences) {
+            final key = DateTime(
+              occurrence.year,
+              occurrence.month,
+              occurrence.day,
+            );
+            if ((byDay[key] ?? const []).any((o) => o.reminder.id == r.id)) {
+              continue;
+            }
+            byDay
+                .putIfAbsent(key, () => [])
+                .add(
+                  ReminderOccurrence(
+                    r,
+                    completed: done,
+                    historical: !r.isActive,
+                  ),
+                );
+          }
+        }
+
+        // Same idea again, but for daily/weekly/every-N-days reminders —
+        // these can fire more than once within the browsed month, and
+        // unlike monthly/yearly's fixed day-of-month/month anchor, their
+        // series is only pinned by a startDate lower bound, so they need
+        // occurrencesInMonthFrom rather than occurrencesInMonth.
+        for (final r in reminders) {
+          final type = RecurrenceType.fromDbValue(r.recurrenceType);
+          if (r.snoozeUntil != null ||
+              (type != RecurrenceType.daily &&
+                  type != RecurrenceType.weekly &&
+                  type != RecurrenceType.customIntervalDays)) {
+            continue;
+          }
+          final occurrences = occurrencesInMonthFrom(
+            RecurrenceParams(
+              type: type,
+              intervalDays: r.recurrenceInterval,
+              weekday: r.recurrenceWeekday,
+              dailyExclusion: DailyExclusion.fromDb(
+                r.dailyExclusionType,
+                r.dailyExclusionValue,
+              ),
+            ),
+            _visibleMonth,
+            r.startDate,
           );
           final done =
               !r.isActive &&

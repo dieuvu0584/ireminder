@@ -266,6 +266,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get recurrenceLunarYearly => '毎年（旧暦）';
 
   @override
+  String get recurrenceLunarMonthly => '毎月（旧暦）';
+
+  @override
   String get weekdayMonday => '月曜日';
 
   @override
@@ -605,4 +608,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => '誕生日';
+
+  @override
+  String get defaultCategoryFood => '食事';
 }

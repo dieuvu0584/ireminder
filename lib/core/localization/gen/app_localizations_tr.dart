@@ -269,6 +269,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get recurrenceLunarYearly => 'Yıllık (ay takvimi)';
 
   @override
+  String get recurrenceLunarMonthly => 'Aylık (ay takvimi)';
+
+  @override
   String get weekdayMonday => 'Pazartesi';
 
   @override
@@ -613,4 +616,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Doğum Günleri';
+
+  @override
+  String get defaultCategoryFood => 'Yemek';
 }

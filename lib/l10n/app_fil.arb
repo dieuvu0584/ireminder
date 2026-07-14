@@ -90,6 +90,7 @@
   "recurrenceYearly": "Taunan",
   "recurrenceCustomIntervalDays": "Bawat N araw",
   "recurrenceLunarYearly": "Taunan (lunar calendar)",
+  "recurrenceLunarMonthly": "Buwanan (lunar calendar)",
   "weekdayMonday": "Lunes",
   "weekdayTuesday": "Martes",
   "weekdayWednesday": "Miyerkules",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Pamilya",
   "defaultCategoryOutdoorEvents": "Paglalakbay at mga kaganapan",
   "defaultCategoryHealth": "Kalusugan",
-  "defaultCategoryBirthday": "Kaarawan"
+  "defaultCategoryBirthday": "Kaarawan",
+  "defaultCategoryFood": "Pagkain"
 }

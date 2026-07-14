@@ -269,6 +269,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get recurrenceLunarYearly => 'Vuosittain (kuukalenteri)';
 
   @override
+  String get recurrenceLunarMonthly => 'Kuukausittain (kuukalenteri)';
+
+  @override
   String get weekdayMonday => 'Maanantai';
 
   @override
@@ -615,4 +618,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Syntymäpäivät';
+
+  @override
+  String get defaultCategoryFood => 'Ruoka';
 }

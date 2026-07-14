@@ -90,6 +90,7 @@
   "recurrenceYearly": "Kila mwaka",
   "recurrenceCustomIntervalDays": "Kila siku N",
   "recurrenceLunarYearly": "Kila mwaka (kalenda ya mwezi)",
+  "recurrenceLunarMonthly": "Kila mwezi (kalenda ya mwezi)",
   "weekdayMonday": "Jumatatu",
   "weekdayTuesday": "Jumanne",
   "weekdayWednesday": "Jumatano",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Familia",
   "defaultCategoryOutdoorEvents": "Matembezi na matukio",
   "defaultCategoryHealth": "Afya",
-  "defaultCategoryBirthday": "Siku za Kuzaliwa"
+  "defaultCategoryBirthday": "Siku za Kuzaliwa",
+  "defaultCategoryFood": "Chakula"
 }

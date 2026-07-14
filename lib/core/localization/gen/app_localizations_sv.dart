@@ -269,6 +269,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get recurrenceLunarYearly => 'Årligen (månkalender)';
 
   @override
+  String get recurrenceLunarMonthly => 'Varje månad (månkalender)';
+
+  @override
   String get weekdayMonday => 'Måndag';
 
   @override
@@ -615,4 +618,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Födelsedagar';
+
+  @override
+  String get defaultCategoryFood => 'Mat';
 }

@@ -90,6 +90,7 @@
   "recurrenceYearly": "Ročně",
   "recurrenceCustomIntervalDays": "Každých N dní",
   "recurrenceLunarYearly": "Ročně (lunární kalendář)",
+  "recurrenceLunarMonthly": "Měsíčně (lunární kalendář)",
   "weekdayMonday": "Pondělí",
   "weekdayTuesday": "Úterý",
   "weekdayWednesday": "Středa",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Rodina",
   "defaultCategoryOutdoorEvents": "Výlety a akce",
   "defaultCategoryHealth": "Zdraví",
-  "defaultCategoryBirthday": "Narozeniny"
+  "defaultCategoryBirthday": "Narozeniny",
+  "defaultCategoryFood": "Jídlo"
 }

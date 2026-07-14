@@ -90,6 +90,7 @@
   "recurrenceYearly": "বার্ষিক",
   "recurrenceCustomIntervalDays": "প্রতি N দিনে",
   "recurrenceLunarYearly": "বার্ষিক (চান্দ্র ক্যালেন্ডার)",
+  "recurrenceLunarMonthly": "মাসিক (চান্দ্র ক্যালেন্ডার)",
   "weekdayMonday": "সোমবার",
   "weekdayTuesday": "মঙ্গলবার",
   "weekdayWednesday": "বুধবার",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "পরিবার",
   "defaultCategoryOutdoorEvents": "ভ্রমণ ও অনুষ্ঠান",
   "defaultCategoryHealth": "স্বাস্থ্য",
-  "defaultCategoryBirthday": "জন্মদিন"
+  "defaultCategoryBirthday": "জন্মদিন",
+  "defaultCategoryFood": "খাবার"
 }

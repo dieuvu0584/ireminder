@@ -270,6 +270,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get recurrenceLunarYearly => 'Ετήσια (σεληνιακό ημερολόγιο)';
 
   @override
+  String get recurrenceLunarMonthly => 'Μηνιαία (σεληνιακό ημερολόγιο)';
+
+  @override
   String get weekdayMonday => 'Δευτέρα';
 
   @override
@@ -618,4 +621,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Γενέθλια';
+
+  @override
+  String get defaultCategoryFood => 'Φαγητό';
 }

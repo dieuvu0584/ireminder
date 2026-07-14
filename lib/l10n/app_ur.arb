@@ -90,6 +90,7 @@
   "recurrenceYearly": "سالانہ",
   "recurrenceCustomIntervalDays": "ہر N دن بعد",
   "recurrenceLunarYearly": "سالانہ (قمری کیلنڈر)",
+  "recurrenceLunarMonthly": "ماہانہ (قمری کیلنڈر)",
   "weekdayMonday": "پیر",
   "weekdayTuesday": "منگل",
   "weekdayWednesday": "بدھ",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "خاندان",
   "defaultCategoryOutdoorEvents": "سیر و تقریبات",
   "defaultCategoryHealth": "صحت",
-  "defaultCategoryBirthday": "سالگرہ"
+  "defaultCategoryBirthday": "سالگرہ",
+  "defaultCategoryFood": "کھانا"
 }

@@ -269,6 +269,9 @@ class AppLocalizationsUr extends AppLocalizations {
   String get recurrenceLunarYearly => 'سالانہ (قمری کیلنڈر)';
 
   @override
+  String get recurrenceLunarMonthly => 'ماہانہ (قمری کیلنڈر)';
+
+  @override
   String get weekdayMonday => 'پیر';
 
   @override
@@ -614,4 +617,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'سالگرہ';
+
+  @override
+  String get defaultCategoryFood => 'کھانا';
 }

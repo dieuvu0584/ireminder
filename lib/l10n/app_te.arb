@@ -90,6 +90,7 @@
   "recurrenceYearly": "ప్రతి సంవత్సరం",
   "recurrenceCustomIntervalDays": "ప్రతి N రోజులకు",
   "recurrenceLunarYearly": "ప్రతి సంవత్సరం (చాంద్రమాన క్యాలెండర్)",
+  "recurrenceLunarMonthly": "ప్రతి నెల (చాంద్రమాన క్యాలెండర్)",
   "weekdayMonday": "సోమవారం",
   "weekdayTuesday": "మంగళవారం",
   "weekdayWednesday": "బుధవారం",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "కుటుంబం",
   "defaultCategoryOutdoorEvents": "విహారయాత్రలు & కార్యక్రమాలు",
   "defaultCategoryHealth": "ఆరోగ్యం",
-  "defaultCategoryBirthday": "పుట్టినరోజులు"
+  "defaultCategoryBirthday": "పుట్టినరోజులు",
+  "defaultCategoryFood": "ఆహారం"
 }

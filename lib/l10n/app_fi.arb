@@ -90,6 +90,7 @@
   "recurrenceYearly": "Vuosittain",
   "recurrenceCustomIntervalDays": "Joka N. päivä",
   "recurrenceLunarYearly": "Vuosittain (kuukalenteri)",
+  "recurrenceLunarMonthly": "Kuukausittain (kuukalenteri)",
   "weekdayMonday": "Maanantai",
   "weekdayTuesday": "Tiistai",
   "weekdayWednesday": "Keskiviikko",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Perhe",
   "defaultCategoryOutdoorEvents": "Retket ja tapahtumat",
   "defaultCategoryHealth": "Terveys",
-  "defaultCategoryBirthday": "Syntymäpäivät"
+  "defaultCategoryBirthday": "Syntymäpäivät",
+  "defaultCategoryFood": "Ruoka"
 }

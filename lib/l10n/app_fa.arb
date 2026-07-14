@@ -90,6 +90,7 @@
   "recurrenceYearly": "سالانه",
   "recurrenceCustomIntervalDays": "هر N روز",
   "recurrenceLunarYearly": "سالانه (تقویم قمری)",
+  "recurrenceLunarMonthly": "ماهانه (تقویم قمری)",
   "weekdayMonday": "دوشنبه",
   "weekdayTuesday": "سه‌شنبه",
   "weekdayWednesday": "چهارشنبه",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "خانواده",
   "defaultCategoryOutdoorEvents": "گردش‌ها و رویدادها",
   "defaultCategoryHealth": "سلامتی",
-  "defaultCategoryBirthday": "تولدها"
+  "defaultCategoryBirthday": "تولدها",
+  "defaultCategoryFood": "غذا"
 }

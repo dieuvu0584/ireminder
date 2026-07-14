@@ -90,6 +90,7 @@
   "recurrenceYearly": "毎年",
   "recurrenceCustomIntervalDays": "N日ごと",
   "recurrenceLunarYearly": "毎年（旧暦）",
+  "recurrenceLunarMonthly": "毎月（旧暦）",
   "weekdayMonday": "月曜日",
   "weekdayTuesday": "火曜日",
   "weekdayWednesday": "水曜日",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "家族",
   "defaultCategoryOutdoorEvents": "おでかけとイベント",
   "defaultCategoryHealth": "健康",
-  "defaultCategoryBirthday": "誕生日"
+  "defaultCategoryBirthday": "誕生日",
+  "defaultCategoryFood": "食事"
 }

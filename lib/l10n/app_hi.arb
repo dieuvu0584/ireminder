@@ -90,6 +90,7 @@
   "recurrenceYearly": "वार्षिक",
   "recurrenceCustomIntervalDays": "हर N दिन में",
   "recurrenceLunarYearly": "वार्षिक (चंद्र कैलेंडर)",
+  "recurrenceLunarMonthly": "मासिक (चंद्र कैलेंडर)",
   "weekdayMonday": "सोमवार",
   "weekdayTuesday": "मंगलवार",
   "weekdayWednesday": "बुधवार",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "परिवार",
   "defaultCategoryOutdoorEvents": "आउटिंग और आयोजन",
   "defaultCategoryHealth": "स्वास्थ्य",
-  "defaultCategoryBirthday": "जन्मदिन"
+  "defaultCategoryBirthday": "जन्मदिन",
+  "defaultCategoryFood": "भोजन"
 }

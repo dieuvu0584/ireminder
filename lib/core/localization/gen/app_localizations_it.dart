@@ -269,6 +269,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get recurrenceLunarYearly => 'Annuale (calendario lunare)';
 
   @override
+  String get recurrenceLunarMonthly => 'Mensile (calendario lunare)';
+
+  @override
   String get weekdayMonday => 'Lunedì';
 
   @override
@@ -616,4 +619,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Compleanni';
+
+  @override
+  String get defaultCategoryFood => 'Cibo';
 }

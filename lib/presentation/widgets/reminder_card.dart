@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../core/localization/gen/app_localizations.dart';
 import '../../core/utils/date_formatter.dart';
 import '../../core/utils/lunar_converter.dart';
+import '../../core/utils/recurrence_label.dart';
 import '../../data/database/app_database.dart';
+import '../../domain/enums/recurrence_type.dart';
 import 'color_picker.dart';
 import 'icon_catalog.dart';
 
@@ -91,8 +93,10 @@ class ReminderCard extends StatelessWidget {
             Text(
               occurrenceDate != null
                   ? '${DateFormatter.formatDate(occurrenceDate!, Localizations.localeOf(context).toString())} · '
-                        '${reminder.reminderTime} · ${category?.name ?? ''}'
-                  : '${reminder.reminderTime} · ${category?.name ?? ''}',
+                        '${reminder.reminderTime} · ${category?.name ?? ''} · '
+                        '${recurrenceTypeLabel(l10n, RecurrenceType.fromDbValue(reminder.recurrenceType))}'
+                  : '${reminder.reminderTime} · ${category?.name ?? ''} · '
+                        '${recurrenceTypeLabel(l10n, RecurrenceType.fromDbValue(reminder.recurrenceType))}',
             ),
             if (reminder.isLunar)
               Row(

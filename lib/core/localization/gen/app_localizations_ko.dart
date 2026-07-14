@@ -266,6 +266,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get recurrenceLunarYearly => '매년 (음력)';
 
   @override
+  String get recurrenceLunarMonthly => '매월 (음력)';
+
+  @override
   String get weekdayMonday => '월요일';
 
   @override
@@ -605,4 +608,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => '생일';
+
+  @override
+  String get defaultCategoryFood => '식사';
 }

@@ -90,6 +90,7 @@
   "recurrenceYearly": "Årlig",
   "recurrenceCustomIntervalDays": "Hver N. dag",
   "recurrenceLunarYearly": "Årlig (månekalender)",
+  "recurrenceLunarMonthly": "Månedlig (månekalender)",
   "weekdayMonday": "Mandag",
   "weekdayTuesday": "Tirsdag",
   "weekdayWednesday": "Onsdag",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Familie",
   "defaultCategoryOutdoorEvents": "Utflukter og arrangementer",
   "defaultCategoryHealth": "Helse",
-  "defaultCategoryBirthday": "Bursdager"
+  "defaultCategoryBirthday": "Bursdager",
+  "defaultCategoryFood": "Mat"
 }

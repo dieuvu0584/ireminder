@@ -90,6 +90,7 @@
   "recurrenceYearly": "Anual",
   "recurrenceCustomIntervalDays": "La fiecare N zile",
   "recurrenceLunarYearly": "Anual (calendar lunar)",
+  "recurrenceLunarMonthly": "Lunar (calendar lunar)",
   "weekdayMonday": "Luni",
   "weekdayTuesday": "Marți",
   "weekdayWednesday": "Miercuri",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Familie",
   "defaultCategoryOutdoorEvents": "Ieșiri și evenimente",
   "defaultCategoryHealth": "Sănătate",
-  "defaultCategoryBirthday": "Zile de naștere"
+  "defaultCategoryBirthday": "Zile de naștere",
+  "defaultCategoryFood": "Mâncare"
 }

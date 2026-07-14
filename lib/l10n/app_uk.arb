@@ -90,6 +90,7 @@
   "recurrenceYearly": "Щороку",
   "recurrenceCustomIntervalDays": "Кожні N днів",
   "recurrenceLunarYearly": "Щороку (за місячним календарем)",
+  "recurrenceLunarMonthly": "Щомісяця (за місячним календарем)",
   "weekdayMonday": "Понеділок",
   "weekdayTuesday": "Вівторок",
   "weekdayWednesday": "Середа",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Сім'я",
   "defaultCategoryOutdoorEvents": "Прогулянки та події",
   "defaultCategoryHealth": "Здоров'я",
-  "defaultCategoryBirthday": "Дні народження"
+  "defaultCategoryBirthday": "Дні народження",
+  "defaultCategoryFood": "Харчування"
 }

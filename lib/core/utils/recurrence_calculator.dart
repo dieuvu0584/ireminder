@@ -265,3 +265,71 @@ List<DateTime> occurrencesInMonth(
       return const [];
   }
 }
+
+/// Every occurrence of [params] that falls within the solar month
+/// containing [monthStart], for the recurrence types that can fire more
+/// than once a month and whose series has a fixed [startDate] anchor
+/// (daily, weekly, every-N-days) — unlike [occurrencesInMonth]'s
+/// monthly/lunar-monthly types, these need a lower bound since their
+/// occurrences aren't pinned to a single day-of-month. Used to project
+/// them onto whichever month the user has browsed the calendar to, since
+/// the DB only stores the single nearest upcoming occurrence. Returns an
+/// empty list for recurrence types not covered by this projection (they're
+/// handled by [occurrenceInYear] or [occurrencesInMonth] instead).
+List<DateTime> occurrencesInMonthFrom(
+  RecurrenceParams params,
+  DateTime monthStart,
+  DateTime startDate,
+) {
+  final start = _dateOnly(startDate);
+  final firstOfMonth = DateTime(monthStart.year, monthStart.month, 1);
+  final lastOfMonth = DateTime(
+    monthStart.year,
+    monthStart.month,
+    _daysInMonth(monthStart.year, monthStart.month),
+  );
+  if (lastOfMonth.isBefore(start)) return const [];
+
+  switch (params.type) {
+    case RecurrenceType.daily:
+      final exclusion = params.dailyExclusion;
+      final result = <DateTime>[];
+      var d = start.isAfter(firstOfMonth) ? start : firstOfMonth;
+      while (!d.isAfter(lastOfMonth)) {
+        if (exclusion == null || !exclusion.excludes(d)) result.add(d);
+        d = d.add(const Duration(days: 1));
+      }
+      return result;
+
+    case RecurrenceType.weekly:
+      final weekday = params.weekday!;
+      final searchStart = start.isAfter(firstOfMonth) ? start : firstOfMonth;
+      final diff = (weekday - searchStart.weekday) % 7;
+      var d = searchStart.add(Duration(days: diff));
+      final result = <DateTime>[];
+      while (!d.isAfter(lastOfMonth)) {
+        result.add(d);
+        d = d.add(const Duration(days: 7));
+      }
+      return result;
+
+    case RecurrenceType.customIntervalDays:
+      final interval = params.intervalDays!;
+      if (interval <= 0) return const [];
+      var d = start;
+      if (d.isBefore(firstOfMonth)) {
+        final daysShort = firstOfMonth.difference(start).inDays;
+        final steps = (daysShort / interval).ceil();
+        d = start.add(Duration(days: steps * interval));
+      }
+      final result = <DateTime>[];
+      while (!d.isAfter(lastOfMonth)) {
+        result.add(d);
+        d = d.add(Duration(days: interval));
+      }
+      return result;
+
+    default:
+      return const [];
+  }
+}

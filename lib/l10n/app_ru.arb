@@ -90,6 +90,7 @@
   "recurrenceYearly": "Ежегодно",
   "recurrenceCustomIntervalDays": "Каждые N дней",
   "recurrenceLunarYearly": "Ежегодно (по лунному календарю)",
+  "recurrenceLunarMonthly": "Ежемесячно (по лунному календарю)",
   "weekdayMonday": "Понедельник",
   "weekdayTuesday": "Вторник",
   "weekdayWednesday": "Среда",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Семья",
   "defaultCategoryOutdoorEvents": "Прогулки и мероприятия",
   "defaultCategoryHealth": "Здоровье",
-  "defaultCategoryBirthday": "Дни рождения"
+  "defaultCategoryBirthday": "Дни рождения",
+  "defaultCategoryFood": "Питание"
 }

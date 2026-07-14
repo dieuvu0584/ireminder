@@ -269,6 +269,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get recurrenceLunarYearly => 'Ročně (lunární kalendář)';
 
   @override
+  String get recurrenceLunarMonthly => 'Měsíčně (lunární kalendář)';
+
+  @override
   String get weekdayMonday => 'Pondělí';
 
   @override
@@ -615,4 +618,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Narozeniny';
+
+  @override
+  String get defaultCategoryFood => 'Jídlo';
 }

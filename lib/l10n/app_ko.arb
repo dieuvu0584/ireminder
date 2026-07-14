@@ -90,6 +90,7 @@
   "recurrenceYearly": "매년",
   "recurrenceCustomIntervalDays": "N일마다",
   "recurrenceLunarYearly": "매년 (음력)",
+  "recurrenceLunarMonthly": "매월 (음력)",
   "weekdayMonday": "월요일",
   "weekdayTuesday": "화요일",
   "weekdayWednesday": "수요일",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "가족",
   "defaultCategoryOutdoorEvents": "나들이와 행사",
   "defaultCategoryHealth": "건강",
-  "defaultCategoryBirthday": "생일"
+  "defaultCategoryBirthday": "생일",
+  "defaultCategoryFood": "식사"
 }

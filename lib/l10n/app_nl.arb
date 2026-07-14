@@ -90,6 +90,7 @@
   "recurrenceYearly": "Jaarlijks",
   "recurrenceCustomIntervalDays": "Elke N dagen",
   "recurrenceLunarYearly": "Jaarlijks (maankalender)",
+  "recurrenceLunarMonthly": "Maandelijks (maankalender)",
   "weekdayMonday": "Maandag",
   "weekdayTuesday": "Dinsdag",
   "weekdayWednesday": "Woensdag",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Familie",
   "defaultCategoryOutdoorEvents": "Uitjes en evenementen",
   "defaultCategoryHealth": "Gezondheid",
-  "defaultCategoryBirthday": "Verjaardagen"
+  "defaultCategoryBirthday": "Verjaardagen",
+  "defaultCategoryFood": "Eten"
 }

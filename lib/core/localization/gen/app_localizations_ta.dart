@@ -270,6 +270,9 @@ class AppLocalizationsTa extends AppLocalizations {
   String get recurrenceLunarYearly => 'ஆண்டுதோறும் (சந்திர நாட்காட்டி)';
 
   @override
+  String get recurrenceLunarMonthly => 'மாதந்தோறும் (சந்திர நாட்காட்டி)';
+
+  @override
   String get weekdayMonday => 'திங்கள்';
 
   @override
@@ -618,4 +621,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'பிறந்தநாட்கள்';
+
+  @override
+  String get defaultCategoryFood => 'உணவு';
 }

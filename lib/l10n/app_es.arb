@@ -90,6 +90,7 @@
   "recurrenceYearly": "Anual",
   "recurrenceCustomIntervalDays": "Cada N días",
   "recurrenceLunarYearly": "Anual (calendario lunar)",
+  "recurrenceLunarMonthly": "Mensual (calendario lunar)",
   "weekdayMonday": "Lunes",
   "weekdayTuesday": "Martes",
   "weekdayWednesday": "Miércoles",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Familia",
   "defaultCategoryOutdoorEvents": "Salidas y eventos",
   "defaultCategoryHealth": "Salud",
-  "defaultCategoryBirthday": "Cumpleaños"
+  "defaultCategoryBirthday": "Cumpleaños",
+  "defaultCategoryFood": "Comida"
 }

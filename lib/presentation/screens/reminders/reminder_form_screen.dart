@@ -124,6 +124,17 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         final day = _recurrenceDay!.clamp(1, maxDay);
         _startDate = DateTime(_startDate.year, _startDate.month, day);
       }
+      if (_recurrenceType == RecurrenceType.yearly &&
+          !_isLunar &&
+          _recurrenceDay != null &&
+          _recurrenceMonth != null) {
+        // Same reasoning as the monthly block above, but yearly also
+        // carries its own month — align both onto _startDate.
+        final month = _recurrenceMonth!.clamp(1, 12);
+        final maxDay = DateTime(_startDate.year, month + 1, 0).day;
+        final day = _recurrenceDay!.clamp(1, maxDay);
+        _startDate = DateTime(_startDate.year, month, day);
+      }
       final exclusion = DailyExclusion.fromDb(
         r.dailyExclusionType,
         r.dailyExclusionValue,
@@ -159,14 +170,6 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
 
   String get _timeString =>
       '${_time.hour.toString().padLeft(2, '0')}:${_time.minute.toString().padLeft(2, '0')}';
-
-  /// True for yearly, the one lunar-capable type that carries its own
-  /// fixed lunar day+month anchor, separate from _startDate — see the
-  /// comment above the "Start date" field for why it hides it. Monthly
-  /// doesn't need one: its single day-of-month number is just
-  /// _startDate.day (or the picked lunar day), no separate month
-  /// component to track the way yearly's day+month pair needs.
-  bool get _hasDedicatedLunarAnchor => _recurrenceType == RecurrenceType.yearly;
 
   /// A reminder's start date (solar or lunar-anchor) can't be picked
   /// further out than Dec 31 of next year — applies to every date picker
@@ -498,22 +501,6 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           child: ListView(
             padding: const EdgeInsets.all(16),
             children: [
-              TextFormField(
-                controller: _titleCtrl,
-                decoration: InputDecoration(labelText: l10n.reminderFieldTitle),
-                validator: (v) => (v == null || v.trim().isEmpty)
-                    ? l10n.reminderFieldTitleRequired
-                    : null,
-              ),
-              const SizedBox(height: 12),
-              TextFormField(
-                controller: _descCtrl,
-                decoration: InputDecoration(
-                  labelText: l10n.reminderFieldDescription,
-                ),
-                maxLines: 3,
-              ),
-              const SizedBox(height: 12),
               categoriesAsync.when(
                 data: (categories) => DropdownButtonFormField<int>(
                   initialValue: _categoryId,
@@ -534,6 +521,22 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                 ),
                 loading: () => const LinearProgressIndicator(),
                 error: (e, st) => Text(l10n.errorLoadFailed),
+              ),
+              const SizedBox(height: 12),
+              TextFormField(
+                controller: _titleCtrl,
+                decoration: InputDecoration(labelText: l10n.reminderFieldTitle),
+                validator: (v) => (v == null || v.trim().isEmpty)
+                    ? l10n.reminderFieldTitleRequired
+                    : null,
+              ),
+              const SizedBox(height: 12),
+              TextFormField(
+                controller: _descCtrl,
+                decoration: InputDecoration(
+                  labelText: l10n.reminderFieldDescription,
+                ),
+                maxLines: 3,
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<RecurrenceType>(
@@ -569,63 +572,57 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               const SizedBox(height: 12),
               ..._buildRecurrenceFields(l10n),
               const SizedBox(height: 12),
-              // Yearly has its own dedicated lunar day/month anchor picker
-              // (built into _buildRecurrenceFields above), which already
-              // sets both the anchor *and* _startDate from the same pick —
-              // showing this solar start-date field too would be redundant
-              // and let the two disagree, so it's hidden while lunar is
-              // on. None/customIntervalDays/monthly have no separate
-              // anchor field — monthly's day-of-month comes straight from
-              // whatever gets picked here (see onTap below) — so this
-              // stays the only date field for them, just backed by the
-              // lunar-annotated picker instead of the plain solar one.
-              if (!_hasDedicatedLunarAnchor || !_isLunar)
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(l10n.reminderFieldStartDate),
-                  subtitle: Text(
-                    _isLunar
-                        ? l10n.reminderLunarDateLabel(
-                            LunarConverter.formatDayMonth(_startDate),
-                          )
-                        : '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
-                  ),
-                  trailing: const Icon(Icons.calendar_today),
-                  onTap: () async {
-                    if (_isLunar) {
-                      final picked = await showLunarDatePicker(
-                        context: context,
-                        initialDate: _startDate,
-                        firstDate: _startDateFirstBound,
-                        lastDate: _maxStartDate,
-                      );
-                      if (picked != null) {
-                        setState(() {
-                          _startDate = picked;
-                          // Only meaningful for RecurrenceType.monthly, but
-                          // harmless to keep in sync for every other type
-                          // here too (unused by them either way).
-                          _recurrenceDay = LunarConverter.solarToLunar(
-                            picked,
-                          ).day;
-                        });
-                      }
-                      return;
-                    }
-                    final picked = await showDatePicker(
+              // A single shared date field for every recurrence type — none
+              // of them keep a separate anchor UI anymore. Monthly reads
+              // just the day-of-month component; yearly reads day+month;
+              // none/customIntervalDays/daily/weekly ignore both (kept in
+              // sync here anyway, harmless since unused). The lunar toggle
+              // only changes which picker backs it (native vs
+              // lunar-annotated), not what gets derived from the result.
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(l10n.reminderFieldStartDate),
+                subtitle: Text(
+                  _isLunar
+                      ? l10n.reminderLunarDateLabel(
+                          LunarConverter.formatDayMonth(_startDate),
+                        )
+                      : '${_startDate.year}-${_startDate.month.toString().padLeft(2, '0')}-${_startDate.day.toString().padLeft(2, '0')}',
+                ),
+                trailing: const Icon(Icons.calendar_today),
+                onTap: () async {
+                  if (_isLunar) {
+                    final picked = await showLunarDatePicker(
                       context: context,
                       initialDate: _startDate,
                       firstDate: _startDateFirstBound,
                       lastDate: _maxStartDate,
                     );
                     if (picked != null) {
+                      final lunar = LunarConverter.solarToLunar(picked);
                       setState(() {
                         _startDate = picked;
-                        _recurrenceDay = picked.day;
+                        _recurrenceDay = lunar.day;
+                        _recurrenceMonth = lunar.month;
                       });
                     }
-                  },
-                ),
+                    return;
+                  }
+                  final picked = await showDatePicker(
+                    context: context,
+                    initialDate: _startDate,
+                    firstDate: _startDateFirstBound,
+                    lastDate: _maxStartDate,
+                  );
+                  if (picked != null) {
+                    setState(() {
+                      _startDate = picked;
+                      _recurrenceDay = picked.day;
+                      _recurrenceMonth = picked.month;
+                    });
+                  }
+                },
+              ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 title: Text(l10n.reminderFieldTime),
@@ -694,45 +691,10 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     );
   }
 
-  String? _validateDayOfMonth(AppLocalizations l10n, String? v) {
-    final n = int.tryParse(v ?? '');
-    if (n == null || n < 1 || n > 31) return l10n.validationDayOfMonth;
-    return null;
-  }
-
-  String? _validateMonth(AppLocalizations l10n, String? v) {
-    final n = int.tryParse(v ?? '');
-    if (n == null || n < 1 || n > 12) return l10n.validationMonth;
-    return null;
-  }
-
   String? _validatePositiveInterval(AppLocalizations l10n, String? v) {
     final n = int.tryParse(v ?? '');
     if (n == null || n < 1) return l10n.validationPositiveInteger;
     return null;
-  }
-
-  /// Seeds the lunar picker at roughly the right spot: this lunar day's
-  /// solar date in [lunarMonth] (yearly anchor) or in the current lunar
-  /// month (monthly anchor, [lunarMonth] null). A day that doesn't exist
-  /// in that particular month (e.g. day 30 in a 29-day "small" month)
-  /// would otherwise throw from deep inside the `lunar` package — falls
-  /// back to today's month instead of crashing the picker open.
-  DateTime _approxSolarForLunarAnchor(int lunarDay, int? lunarMonth) {
-    final now = DateTime.now();
-    try {
-      if (lunarMonth != null) {
-        return LunarConverter.lunarToSolar(now.year, lunarMonth, lunarDay);
-      }
-      final nowLunar = LunarConverter.solarToLunar(now);
-      return LunarConverter.lunarToSolar(
-        nowLunar.year,
-        nowLunar.month,
-        lunarDay,
-      );
-    } catch (_) {
-      return now;
-    }
   }
 
   List<Widget> _buildRecurrenceFields(AppLocalizations l10n) {
@@ -815,95 +777,18 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           ),
         ];
       case RecurrenceType.yearly:
+        // No separate day+month fields here either (see monthly above) —
+        // both come straight from _startDate (solar month+day, or the
+        // picked lunar day+month), kept in sync by the shared "Start date"
+        // field's onTap below.
         return [
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             secondary: const Icon(Icons.brightness_2_outlined),
             title: Text(l10n.reminderFieldLunarToggle),
             value: _isLunar,
-            onChanged: (v) => setState(() {
-              _isLunar = v;
-              // Most people don't know offhand what lunar day/month a given
-              // date falls on — default to today's so the picker below
-              // always opens on a valid value instead of forcing a manual
-              // lookup before it can be used at all. Keyed on
-              // _recurrenceMonth alone (not "both null") — _recurrenceDay
-              // gets reused by monthly too (its own day-of-month, unrelated
-              // to a lunar year anchor), so it can easily already hold a
-              // stale value left over from switching the Repeat dropdown
-              // away from Monthly; _recurrenceMonth is the only field
-              // exclusively yearly's, so its nullness is what actually
-              // signals "no yearly anchor picked yet" reliably. Always
-              // resets both together as a matched pair.
-              if (v && _recurrenceMonth == null) {
-                final today = LunarConverter.solarToLunar(DateTime.now());
-                _recurrenceDay = today.day;
-                _recurrenceMonth = today.month;
-              }
-            }),
+            onChanged: (v) => setState(() => _isLunar = v),
           ),
-          if (_isLunar)
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(l10n.reminderFieldLunarDay),
-              subtitle: Text(
-                l10n.reminderLunarDateLabel(
-                  '$_recurrenceDay/$_recurrenceMonth',
-                ),
-              ),
-              trailing: const Icon(Icons.calendar_today),
-              onTap: () async {
-                final picked = await showLunarDatePicker(
-                  context: context,
-                  initialDate: _approxSolarForLunarAnchor(
-                    _recurrenceDay!,
-                    _recurrenceMonth!,
-                  ),
-                  firstDate: _startDateFirstBound,
-                  lastDate: _maxStartDate,
-                );
-                if (picked != null) {
-                  final lunar = LunarConverter.solarToLunar(picked);
-                  setState(() {
-                    _recurrenceDay = lunar.day;
-                    _recurrenceMonth = lunar.month;
-                    // The solar start-date field is hidden while lunar is
-                    // on (see above) but still backs the actual DB row —
-                    // keep it in sync with whatever solar date the lunar
-                    // day/month anchor was just picked from.
-                    _startDate = picked;
-                  });
-                }
-              },
-            )
-          else
-            Row(
-              children: [
-                Expanded(
-                  child: TextFormField(
-                    initialValue: _recurrenceDay?.toString() ?? '',
-                    decoration: InputDecoration(
-                      labelText: l10n.reminderFieldRecurrenceDay,
-                    ),
-                    keyboardType: TextInputType.number,
-                    onChanged: (v) => _recurrenceDay = int.tryParse(v),
-                    validator: (v) => _validateDayOfMonth(l10n, v),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: TextFormField(
-                    initialValue: _recurrenceMonth?.toString() ?? '',
-                    decoration: InputDecoration(
-                      labelText: l10n.reminderFieldRecurrenceMonth,
-                    ),
-                    keyboardType: TextInputType.number,
-                    onChanged: (v) => _recurrenceMonth = int.tryParse(v),
-                    validator: (v) => _validateMonth(l10n, v),
-                  ),
-                ),
-              ],
-            ),
         ];
       case RecurrenceType.customIntervalDays:
         return [

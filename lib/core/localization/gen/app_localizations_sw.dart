@@ -269,6 +269,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get recurrenceLunarYearly => 'Kila mwaka (kalenda ya mwezi)';
 
   @override
+  String get recurrenceLunarMonthly => 'Kila mwezi (kalenda ya mwezi)';
+
+  @override
   String get weekdayMonday => 'Jumatatu';
 
   @override
@@ -612,4 +615,7 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Siku za Kuzaliwa';
+
+  @override
+  String get defaultCategoryFood => 'Chakula';
 }

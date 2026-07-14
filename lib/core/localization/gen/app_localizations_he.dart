@@ -269,6 +269,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get recurrenceLunarYearly => 'שנתי (לוח ירחי)';
 
   @override
+  String get recurrenceLunarMonthly => 'חודשי (לוח ירחי)';
+
+  @override
   String get weekdayMonday => 'יום שני';
 
   @override
@@ -611,4 +614,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'ימי הולדת';
+
+  @override
+  String get defaultCategoryFood => 'אוכל';
 }

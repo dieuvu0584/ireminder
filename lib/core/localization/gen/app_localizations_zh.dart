@@ -262,6 +262,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get recurrenceLunarYearly => '每年(农历)';
 
   @override
+  String get recurrenceLunarMonthly => '每月(农历)';
+
+  @override
   String get weekdayMonday => '星期一';
 
   @override
@@ -600,4 +603,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => '生日';
+
+  @override
+  String get defaultCategoryFood => '饮食';
 }

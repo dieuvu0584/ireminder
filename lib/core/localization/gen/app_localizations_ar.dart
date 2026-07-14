@@ -268,6 +268,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get recurrenceLunarYearly => 'سنويًا (تقويم قمري)';
 
   @override
+  String get recurrenceLunarMonthly => 'شهريًا (تقويم قمري)';
+
+  @override
   String get weekdayMonday => 'الاثنين';
 
   @override
@@ -612,4 +615,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'أعياد الميلاد';
+
+  @override
+  String get defaultCategoryFood => 'الطعام';
 }

@@ -269,6 +269,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get recurrenceLunarYearly => 'Évente (holdnaptár szerint)';
 
   @override
+  String get recurrenceLunarMonthly => 'Havonta (holdnaptár szerint)';
+
+  @override
   String get weekdayMonday => 'Hétfő';
 
   @override
@@ -618,4 +621,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Születésnapok';
+
+  @override
+  String get defaultCategoryFood => 'Étkezés';
 }

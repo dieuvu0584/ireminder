@@ -269,6 +269,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get recurrenceLunarYearly => 'Hàng năm (âm lịch)';
 
   @override
+  String get recurrenceLunarMonthly => 'Hàng tháng (âm lịch)';
+
+  @override
   String get weekdayMonday => 'Thứ Hai';
 
   @override
@@ -613,4 +616,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Sinh nhật';
+
+  @override
+  String get defaultCategoryFood => 'Ăn uống';
 }

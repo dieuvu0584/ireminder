@@ -413,4 +413,92 @@ void main() {
       expect(result, isEmpty);
     });
   });
+
+  group('occurrencesInMonthFrom', () {
+    test('daily: every day of the month is included when startDate '
+        'predates it', () {
+      final result = occurrencesInMonthFrom(
+        const RecurrenceParams(type: RecurrenceType.daily),
+        DateTime(2026, 8, 1),
+        DateTime(2026, 1, 1),
+      );
+      expect(result, hasLength(31));
+      expect(result.first, DateTime(2026, 8, 1));
+      expect(result.last, DateTime(2026, 8, 31));
+    });
+
+    test('daily: only includes days on/after startDate when it falls '
+        'inside the browsed month', () {
+      final result = occurrencesInMonthFrom(
+        const RecurrenceParams(type: RecurrenceType.daily),
+        DateTime(2026, 8, 1),
+        DateTime(2026, 8, 20),
+      );
+      expect(result, hasLength(12));
+      expect(result.first, DateTime(2026, 8, 20));
+      expect(result.last, DateTime(2026, 8, 31));
+    });
+
+    test('daily: applies the exclusion within the projected month', () {
+      final result = occurrencesInMonthFrom(
+        RecurrenceParams(
+          type: RecurrenceType.daily,
+          dailyExclusion: DailyExclusion.weekdays({6, 7}),
+        ),
+        DateTime(2026, 8, 1),
+        DateTime(2026, 1, 1),
+      );
+      expect(result.every((d) => d.weekday != 6 && d.weekday != 7), isTrue);
+    });
+
+    test('weekly: lands on every matching weekday within the month', () {
+      final result = occurrencesInMonthFrom(
+        const RecurrenceParams(type: RecurrenceType.weekly, weekday: 1),
+        DateTime(2026, 8, 1),
+        DateTime(2026, 1, 1),
+      );
+      expect(result, isNotEmpty);
+      for (final date in result) {
+        expect(date.weekday, DateTime.monday);
+        expect(date.month, 8);
+      }
+    });
+
+    test('customIntervalDays: projects occurrences that fall within the '
+        'month even when startDate is in a much earlier month', () {
+      final result = occurrencesInMonthFrom(
+        const RecurrenceParams(
+          type: RecurrenceType.customIntervalDays,
+          intervalDays: 10,
+        ),
+        DateTime(2026, 8, 1),
+        DateTime(2026, 1, 1),
+      );
+      for (final date in result) {
+        expect(date.difference(DateTime(2026, 1, 1)).inDays % 10, 0);
+        expect(date.month, 8);
+      }
+      expect(result, isNotEmpty);
+    });
+
+    test('returns an empty list once startDate is after the browsed '
+        'month', () {
+      final result = occurrencesInMonthFrom(
+        const RecurrenceParams(type: RecurrenceType.daily),
+        DateTime(2026, 8, 1),
+        DateTime(2026, 9, 1),
+      );
+      expect(result, isEmpty);
+    });
+
+    test('returns an empty list for recurrence types not covered by this '
+        'projection', () {
+      final result = occurrencesInMonthFrom(
+        const RecurrenceParams(type: RecurrenceType.monthly, day: 15),
+        DateTime(2026, 8, 1),
+        DateTime(2026, 1, 1),
+      );
+      expect(result, isEmpty);
+    });
+  });
 }

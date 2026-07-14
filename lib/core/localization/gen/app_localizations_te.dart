@@ -268,6 +268,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get recurrenceLunarYearly => 'ప్రతి సంవత్సరం (చాంద్రమాన క్యాలెండర్)';
 
   @override
+  String get recurrenceLunarMonthly => 'ప్రతి నెల (చాంద్రమాన క్యాలెండర్)';
+
+  @override
   String get weekdayMonday => 'సోమవారం';
 
   @override
@@ -615,4 +618,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'పుట్టినరోజులు';
+
+  @override
+  String get defaultCategoryFood => 'ఆహారం';
 }

@@ -90,6 +90,7 @@
   "recurrenceYearly": "שנתי",
   "recurrenceCustomIntervalDays": "כל N ימים",
   "recurrenceLunarYearly": "שנתי (לוח ירחי)",
+  "recurrenceLunarMonthly": "חודשי (לוח ירחי)",
   "weekdayMonday": "יום שני",
   "weekdayTuesday": "יום שלישי",
   "weekdayWednesday": "יום רביעי",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "משפחה",
   "defaultCategoryOutdoorEvents": "טיולים ואירועים",
   "defaultCategoryHealth": "בריאות",
-  "defaultCategoryBirthday": "ימי הולדת"
+  "defaultCategoryBirthday": "ימי הולדת",
+  "defaultCategoryFood": "אוכל"
 }

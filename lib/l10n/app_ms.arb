@@ -90,6 +90,7 @@
   "recurrenceYearly": "Tahunan",
   "recurrenceCustomIntervalDays": "Setiap N hari",
   "recurrenceLunarYearly": "Tahunan (kalendar bulan)",
+  "recurrenceLunarMonthly": "Bulanan (kalendar bulan)",
   "weekdayMonday": "Isnin",
   "weekdayTuesday": "Selasa",
   "weekdayWednesday": "Rabu",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Keluarga",
   "defaultCategoryOutdoorEvents": "Percutian & acara",
   "defaultCategoryHealth": "Kesihatan",
-  "defaultCategoryBirthday": "Hari Jadi"
+  "defaultCategoryBirthday": "Hari Jadi",
+  "defaultCategoryFood": "Makanan"
 }

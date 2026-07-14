@@ -90,6 +90,7 @@
   "recurrenceYearly": "每年",
   "recurrenceCustomIntervalDays": "每 N 天",
   "recurrenceLunarYearly": "每年(农历)",
+  "recurrenceLunarMonthly": "每月(农历)",
   "weekdayMonday": "星期一",
   "weekdayTuesday": "星期二",
   "weekdayWednesday": "星期三",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "家庭",
   "defaultCategoryOutdoorEvents": "出游与活动",
   "defaultCategoryHealth": "健康",
-  "defaultCategoryBirthday": "生日"
+  "defaultCategoryBirthday": "生日",
+  "defaultCategoryFood": "饮食"
 }

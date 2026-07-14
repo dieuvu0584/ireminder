@@ -269,6 +269,9 @@ class AppLocalizationsBn extends AppLocalizations {
   String get recurrenceLunarYearly => 'বার্ষিক (চান্দ্র ক্যালেন্ডার)';
 
   @override
+  String get recurrenceLunarMonthly => 'মাসিক (চান্দ্র ক্যালেন্ডার)';
+
+  @override
   String get weekdayMonday => 'সোমবার';
 
   @override
@@ -612,4 +615,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'জন্মদিন';
+
+  @override
+  String get defaultCategoryFood => 'খাবার';
 }

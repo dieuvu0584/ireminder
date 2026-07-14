@@ -269,6 +269,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get recurrenceLunarYearly => 'Щороку (за місячним календарем)';
 
   @override
+  String get recurrenceLunarMonthly => 'Щомісяця (за місячним календарем)';
+
+  @override
   String get weekdayMonday => 'Понеділок';
 
   @override
@@ -613,4 +616,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Дні народження';
+
+  @override
+  String get defaultCategoryFood => 'Харчування';
 }

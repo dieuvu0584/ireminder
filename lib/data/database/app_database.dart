@@ -23,15 +23,16 @@ part 'app_database.g.dart';
 /// carries the parts that don't need translating.
 const List<(String Function(AppLocalizations), String icon, String color)>
 kDefaultCategories = [
-  (_nameHomeAppliances, 'home_repair_service', '#3B82F6'),
-  (_nameVehicles, 'directions_car', '#F97316'),
-  (_nameFamilyEvents, 'self_improvement', '#8B5CF6'),
-  (_nameFinance, 'payments', '#10B981'),
-  (_nameWork, 'work', '#6366F1'),
-  (_nameFamily, 'favorite', '#EC4899'),
-  (_nameOutdoorEvents, 'hiking', '#F59E0B'),
   (_nameHealth, 'favorite', '#22C55E'),
   (_nameBirthday, 'cake', '#F43F5E'),
+  (_nameFood, 'restaurant', '#14B8A6'),
+  (_nameFamilyEvents, 'self_improvement', '#8B5CF6'),
+  (_nameFamily, 'favorite', '#EC4899'),
+  (_nameOutdoorEvents, 'hiking', '#F59E0B'),
+  (_nameHomeAppliances, 'home_repair_service', '#3B82F6'),
+  (_nameFinance, 'payments', '#10B981'),
+  (_nameVehicles, 'directions_car', '#F97316'),
+  (_nameWork, 'work', '#6366F1'),
 ];
 
 String _nameHomeAppliances(AppLocalizations l) =>
@@ -44,6 +45,7 @@ String _nameFamily(AppLocalizations l) => l.defaultCategoryFamily;
 String _nameOutdoorEvents(AppLocalizations l) => l.defaultCategoryOutdoorEvents;
 String _nameHealth(AppLocalizations l) => l.defaultCategoryHealth;
 String _nameBirthday(AppLocalizations l) => l.defaultCategoryBirthday;
+String _nameFood(AppLocalizations l) => l.defaultCategoryFood;
 
 @DriftDatabase(
   tables: [

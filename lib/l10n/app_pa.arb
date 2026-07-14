@@ -90,6 +90,7 @@
   "recurrenceYearly": "ਸਾਲਾਨਾ",
   "recurrenceCustomIntervalDays": "ਹਰ N ਦਿਨਾਂ ਬਾਅਦ",
   "recurrenceLunarYearly": "ਸਾਲਾਨਾ (ਚੰਦਰ ਕੈਲੰਡਰ)",
+  "recurrenceLunarMonthly": "ਮਹੀਨਾਵਾਰੀ (ਚੰਦਰ ਕੈਲੰਡਰ)",
   "weekdayMonday": "ਸੋਮਵਾਰ",
   "weekdayTuesday": "ਮੰਗਲਵਾਰ",
   "weekdayWednesday": "ਬੁੱਧਵਾਰ",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "ਪਰਿਵਾਰ",
   "defaultCategoryOutdoorEvents": "ਸੈਰ ਅਤੇ ਸਮਾਗਮ",
   "defaultCategoryHealth": "ਸਿਹਤ",
-  "defaultCategoryBirthday": "ਜਨਮਦਿਨ"
+  "defaultCategoryBirthday": "ਜਨਮਦਿਨ",
+  "defaultCategoryFood": "ਭੋਜਨ"
 }

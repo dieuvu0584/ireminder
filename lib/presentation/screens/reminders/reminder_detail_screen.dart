@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../../core/utils/date_formatter.dart';
 import '../../../core/utils/lunar_converter.dart';
+import '../../../core/utils/recurrence_label.dart';
 import '../../../data/database/app_database.dart';
+import '../../../domain/enums/recurrence_type.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../providers/settings_providers.dart';
@@ -174,6 +176,16 @@ class ReminderDetailScreen extends ConsumerWidget {
                 ],
               ),
               Text(DateFormatter.formatTime(current.reminderTime, locale)),
+              const SizedBox(height: 4),
+              Text(
+                recurrenceTypeLabel(
+                  l10n,
+                  RecurrenceType.fromDbValue(current.recurrenceType),
+                ),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+              ),
               const Spacer(),
               if (_isTriggered(current))
                 Row(

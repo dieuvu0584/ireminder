@@ -670,6 +670,12 @@ abstract class AppLocalizations {
   /// **'Yearly (lunar calendar)'**
   String get recurrenceLunarYearly;
 
+  /// No description provided for @recurrenceLunarMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly (lunar calendar)'**
+  String get recurrenceLunarMonthly;
+
   /// No description provided for @weekdayMonday.
   ///
   /// In en, this message translates to:
@@ -1317,6 +1323,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Birthdays'**
   String get defaultCategoryBirthday;
+
+  /// No description provided for @defaultCategoryFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Food'**
+  String get defaultCategoryFood;
 }
 
 class _AppLocalizationsDelegate

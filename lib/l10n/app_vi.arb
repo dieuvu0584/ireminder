@@ -90,6 +90,7 @@
   "recurrenceYearly": "Hàng năm",
   "recurrenceCustomIntervalDays": "Mỗi N ngày",
   "recurrenceLunarYearly": "Hàng năm (âm lịch)",
+  "recurrenceLunarMonthly": "Hàng tháng (âm lịch)",
   "weekdayMonday": "Thứ Hai",
   "weekdayTuesday": "Thứ Ba",
   "weekdayWednesday": "Thứ Tư",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Gia đình nhỏ",
   "defaultCategoryOutdoorEvents": "Dã ngoại & sự kiện",
   "defaultCategoryHealth": "Sức khỏe",
-  "defaultCategoryBirthday": "Sinh nhật"
+  "defaultCategoryBirthday": "Sinh nhật",
+  "defaultCategoryFood": "Ăn uống"
 }

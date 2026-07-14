@@ -90,6 +90,7 @@
   "recurrenceYearly": "Évente",
   "recurrenceCustomIntervalDays": "Minden N. napon",
   "recurrenceLunarYearly": "Évente (holdnaptár szerint)",
+  "recurrenceLunarMonthly": "Havonta (holdnaptár szerint)",
   "weekdayMonday": "Hétfő",
   "weekdayTuesday": "Kedd",
   "weekdayWednesday": "Szerda",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Család",
   "defaultCategoryOutdoorEvents": "Kirándulások és események",
   "defaultCategoryHealth": "Egészség",
-  "defaultCategoryBirthday": "Születésnapok"
+  "defaultCategoryBirthday": "Születésnapok",
+  "defaultCategoryFood": "Étkezés"
 }

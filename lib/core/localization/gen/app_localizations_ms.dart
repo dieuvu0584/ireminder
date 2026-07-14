@@ -270,6 +270,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get recurrenceLunarYearly => 'Tahunan (kalendar bulan)';
 
   @override
+  String get recurrenceLunarMonthly => 'Bulanan (kalendar bulan)';
+
+  @override
   String get weekdayMonday => 'Isnin';
 
   @override
@@ -617,4 +620,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get defaultCategoryBirthday => 'Hari Jadi';
+
+  @override
+  String get defaultCategoryFood => 'Makanan';
 }

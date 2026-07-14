@@ -90,6 +90,7 @@
   "recurrenceYearly": "Yıllık",
   "recurrenceCustomIntervalDays": "Her N günde bir",
   "recurrenceLunarYearly": "Yıllık (ay takvimi)",
+  "recurrenceLunarMonthly": "Aylık (ay takvimi)",
   "weekdayMonday": "Pazartesi",
   "weekdayTuesday": "Salı",
   "weekdayWednesday": "Çarşamba",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Aile",
   "defaultCategoryOutdoorEvents": "Geziler ve etkinlikler",
   "defaultCategoryHealth": "Sağlık",
-  "defaultCategoryBirthday": "Doğum Günleri"
+  "defaultCategoryBirthday": "Doğum Günleri",
+  "defaultCategoryFood": "Yemek"
 }

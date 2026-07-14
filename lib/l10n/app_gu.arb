@@ -90,6 +90,7 @@
   "recurrenceYearly": "દર વર્ષે",
   "recurrenceCustomIntervalDays": "દર N દિવસે",
   "recurrenceLunarYearly": "દર વર્ષે (ચંદ્ર કૅલેન્ડર)",
+  "recurrenceLunarMonthly": "દર મહિને (ચંદ્ર કૅલેન્ડર)",
   "weekdayMonday": "સોમવાર",
   "weekdayTuesday": "મંગળવાર",
   "weekdayWednesday": "બુધવાર",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "પરિવાર",
   "defaultCategoryOutdoorEvents": "પ્રવાસ અને પ્રસંગો",
   "defaultCategoryHealth": "આરોગ્ય",
-  "defaultCategoryBirthday": "જન્મદિવસો"
+  "defaultCategoryBirthday": "જન્મદિવસો",
+  "defaultCategoryFood": "ખોરાક"
 }

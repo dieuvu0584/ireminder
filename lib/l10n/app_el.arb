@@ -90,6 +90,7 @@
   "recurrenceYearly": "Ετήσια",
   "recurrenceCustomIntervalDays": "Κάθε N ημέρες",
   "recurrenceLunarYearly": "Ετήσια (σεληνιακό ημερολόγιο)",
+  "recurrenceLunarMonthly": "Μηνιαία (σεληνιακό ημερολόγιο)",
   "weekdayMonday": "Δευτέρα",
   "weekdayTuesday": "Τρίτη",
   "weekdayWednesday": "Τετάρτη",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "Οικογένεια",
   "defaultCategoryOutdoorEvents": "Εκδρομές & εκδηλώσεις",
   "defaultCategoryHealth": "Υγεία",
-  "defaultCategoryBirthday": "Γενέθλια"
+  "defaultCategoryBirthday": "Γενέθλια",
+  "defaultCategoryFood": "Φαγητό"
 }

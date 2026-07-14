@@ -90,6 +90,7 @@
   "recurrenceYearly": "ஆண்டுதோறும்",
   "recurrenceCustomIntervalDays": "ஒவ்வொரு N நாட்களுக்கும்",
   "recurrenceLunarYearly": "ஆண்டுதோறும் (சந்திர நாட்காட்டி)",
+  "recurrenceLunarMonthly": "மாதந்தோறும் (சந்திர நாட்காட்டி)",
   "weekdayMonday": "திங்கள்",
   "weekdayTuesday": "செவ்வாய்",
   "weekdayWednesday": "புதன்",
@@ -249,5 +250,6 @@
   "defaultCategoryFamily": "குடும்பம்",
   "defaultCategoryOutdoorEvents": "உல்லாசப் பயணங்கள் & நிகழ்வுகள்",
   "defaultCategoryHealth": "ஆரோக்கியம்",
-  "defaultCategoryBirthday": "பிறந்தநாட்கள்"
+  "defaultCategoryBirthday": "பிறந்தநாட்கள்",
+  "defaultCategoryFood": "உணவு"
 }
