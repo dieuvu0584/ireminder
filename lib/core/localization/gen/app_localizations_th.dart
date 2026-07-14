@@ -229,6 +229,10 @@ class AppLocalizationsTh extends AppLocalizations {
       'ต้องเหลืออย่างน้อยหนึ่งวันในสัปดาห์';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'รูปแบบไม่ถูกต้อง ใช้เครื่องหมายจุลภาคและขีดกลาง เช่น 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (จันทรคติ)';
   }
@@ -333,6 +337,15 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'ทุกสองสัปดาห์';
+
+  @override
+  String get loanFrequencyQuarterly => 'รายไตรมาส';
+
+  @override
+  String get loanFrequencySemiAnnually => 'ทุก 6 เดือน';
+
+  @override
+  String get loanFrequencyYearly => 'รายปี';
 
   @override
   String loanProgress(int paid, int total) {

@@ -10,6 +10,17 @@ import '../../widgets/currency_input_formatter.dart';
 import '../../widgets/lunar_date_picker.dart';
 import '../../widgets/save_action_button.dart';
 
+/// Every frequency generateInstallments() steps forward by whole months
+/// for (as opposed to weekly/biweekly's flat day counts) — these are the
+/// ones a fixed "due day of month" actually applies to.
+bool _isMonthBasedFrequency(LoanFrequency frequency) => switch (frequency) {
+  LoanFrequency.monthly ||
+  LoanFrequency.quarterly ||
+  LoanFrequency.semiAnnually ||
+  LoanFrequency.yearly => true,
+  LoanFrequency.weekly || LoanFrequency.biweekly => false,
+};
+
 class LoanFormScreen extends ConsumerStatefulWidget {
   const LoanFormScreen({super.key});
 
@@ -65,7 +76,7 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
             ),
             totalInstallments: int.parse(_totalInstallmentsCtrl.text),
             frequency: _frequency,
-            dueDayOfMonth: _frequency == LoanFrequency.monthly
+            dueDayOfMonth: _isMonthBasedFrequency(_frequency)
                 ? int.tryParse(_dueDayCtrl.text)
                 : null,
             startDate: _startDate,
@@ -202,10 +213,22 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
                     value: LoanFrequency.biweekly,
                     child: Text(l10n.loanFrequencyBiweekly),
                   ),
+                  DropdownMenuItem(
+                    value: LoanFrequency.quarterly,
+                    child: Text(l10n.loanFrequencyQuarterly),
+                  ),
+                  DropdownMenuItem(
+                    value: LoanFrequency.semiAnnually,
+                    child: Text(l10n.loanFrequencySemiAnnually),
+                  ),
+                  DropdownMenuItem(
+                    value: LoanFrequency.yearly,
+                    child: Text(l10n.loanFrequencyYearly),
+                  ),
                 ],
                 onChanged: (v) => setState(() => _frequency = v!),
               ),
-              if (_frequency == LoanFrequency.monthly) ...[
+              if (_isMonthBasedFrequency(_frequency)) ...[
                 const SizedBox(height: 12),
                 TextFormField(
                   controller: _dueDayCtrl,

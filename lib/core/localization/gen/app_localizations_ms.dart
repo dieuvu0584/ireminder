@@ -229,6 +229,10 @@ class AppLocalizationsMs extends AppLocalizations {
       'Perlu tinggalkan sekurang-kurangnya satu hari dalam minggu';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Format tidak sah. Gunakan koma dan sengkang, cth. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunar)';
   }
@@ -334,6 +338,15 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Dua mingguan';
+
+  @override
+  String get loanFrequencyQuarterly => 'Suku tahunan';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Setiap 6 bulan';
+
+  @override
+  String get loanFrequencyYearly => 'Tahunan';
 
   @override
   String loanProgress(int paid, int total) {

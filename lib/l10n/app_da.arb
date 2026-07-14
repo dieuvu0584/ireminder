@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Ulige",
   "reminderFieldDailyExclusionDay": "Dag der skal udelades",
   "validationDailyExclusionWeekdays": "Behold mindst én ugedag",
+  "validationDailyExclusionSpecificDay": "Ugyldigt format. Brug kommaer og bindestreger, f.eks. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (måne)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Månedligt",
   "loanFrequencyWeekly": "Ugentligt",
   "loanFrequencyBiweekly": "Hver 14. dag",
+  "loanFrequencyQuarterly": "Kvartalsvis",
+  "loanFrequencySemiAnnually": "Hver 6. måned",
+  "loanFrequencyYearly": "Årligt",
   "loanProgress": "{paid} / {total} betalt",
   "@loanProgress": {
     "placeholders": {

@@ -60,7 +60,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
   DailyExclusionType? _dailyExclusionType;
   Set<int> _dailyExclusionWeekdays = {};
   bool _dailyExclusionExcludeEven = true;
-  int? _dailyExclusionDay;
+  Set<int>? _dailyExclusionDays;
+  late final TextEditingController _dailyExclusionDaysCtrl;
 
   late DateTime _startDate;
   TimeOfDay _time = const TimeOfDay(hour: 9, minute: 0);
@@ -109,6 +110,20 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       _recurrenceMonth = r.recurrenceMonth;
       _recurrenceWeekday = r.recurrenceWeekday;
       _intervalDays = r.recurrenceInterval;
+      if (_recurrenceType == RecurrenceType.monthly &&
+          !_isLunar &&
+          _recurrenceDay != null) {
+        // The Start date field displays/derives _startDate directly now
+        // (see its onTap) — for a non-lunar monthly reminder saved before
+        // that (or from anywhere recurrenceDay and startDate.day could
+        // otherwise disagree), align startDate's day-of-month to the
+        // actually-active recurrenceDay so what's shown matches what's
+        // really scheduled, without waiting for the user to touch the
+        // field.
+        final maxDay = DateTime(_startDate.year, _startDate.month + 1, 0).day;
+        final day = _recurrenceDay!.clamp(1, maxDay);
+        _startDate = DateTime(_startDate.year, _startDate.month, day);
+      }
       final exclusion = DailyExclusion.fromDb(
         r.dailyExclusionType,
         r.dailyExclusionValue,
@@ -117,7 +132,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
         _dailyExclusionType = exclusion.type;
         _dailyExclusionWeekdays = exclusion.weekdays ?? {};
         _dailyExclusionExcludeEven = exclusion.excludeEvenDays ?? true;
-        _dailyExclusionDay = exclusion.day;
+        _dailyExclusionDays = exclusion.days;
       }
       _advanceNoticeDays = r.advanceNoticeDays;
       _advanceNoticeHours = r.advanceNoticeHours;
@@ -125,24 +140,33 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       final parts = r.reminderTime.split(':');
       _time = TimeOfDay(hour: int.parse(parts[0]), minute: int.parse(parts[1]));
     }
+    // Re-derived from _dailyExclusionDays (canonical form) rather than
+    // whatever the user originally typed — see formatDaysCompact.
+    _dailyExclusionDaysCtrl = TextEditingController(
+      text: _dailyExclusionDays == null
+          ? ''
+          : DailyExclusion.formatDaysCompact(_dailyExclusionDays!),
+    );
   }
 
   @override
   void dispose() {
     _titleCtrl.dispose();
     _descCtrl.dispose();
+    _dailyExclusionDaysCtrl.dispose();
     super.dispose();
   }
 
   String get _timeString =>
       '${_time.hour.toString().padLeft(2, '0')}:${_time.minute.toString().padLeft(2, '0')}';
 
-  /// True for the two lunar-capable types that carry their own fixed
-  /// lunar day(+month) anchor, separate from _startDate — see the
-  /// comment above the "Start date" field for why those hide it.
-  bool get _hasDedicatedLunarAnchor =>
-      _recurrenceType == RecurrenceType.monthly ||
-      _recurrenceType == RecurrenceType.yearly;
+  /// True for yearly, the one lunar-capable type that carries its own
+  /// fixed lunar day+month anchor, separate from _startDate — see the
+  /// comment above the "Start date" field for why it hides it. Monthly
+  /// doesn't need one: its single day-of-month number is just
+  /// _startDate.day (or the picked lunar day), no separate month
+  /// component to track the way yearly's day+month pair needs.
+  bool get _hasDedicatedLunarAnchor => _recurrenceType == RecurrenceType.yearly;
 
   /// A reminder's start date (solar or lunar-anchor) can't be picked
   /// further out than Dec 31 of next year — applies to every date picker
@@ -184,9 +208,9 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       case DailyExclusionType.evenOdd:
         return DailyExclusion.evenOdd(_dailyExclusionExcludeEven);
       case DailyExclusionType.specificDay:
-        return _dailyExclusionDay == null
+        return (_dailyExclusionDays == null || _dailyExclusionDays!.isEmpty)
             ? null
-            : DailyExclusion.specificDay(_dailyExclusionDay!);
+            : DailyExclusion.specificDay(_dailyExclusionDays!);
     }
   }
 
@@ -361,6 +385,16 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     }
   }
 
+  /// Locale-aware Mon..Sun single/double-letter abbreviations (e.g. "T2" in
+  /// Vietnamese, matching the Calendar tab's weekday header) — the full
+  /// weekday names used elsewhere on this form (the weekly dropdown, the
+  /// lunar toggle's own labels) don't fit seven across on one line here.
+  String _shortWeekdayLabel(int weekday) {
+    final sundayFirst = MaterialLocalizations.of(context).narrowWeekdays;
+    final mondayFirst = [...sundayFirst.sublist(1), sundayFirst[0]];
+    return mondayFirst[weekday - 1];
+  }
+
   List<Widget> _buildDailyExclusionValueFields(AppLocalizations l10n) {
     switch (_dailyExclusionType!) {
       case DailyExclusionType.weekdays:
@@ -372,7 +406,7 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               final weekday = i + 1;
               final selected = _dailyExclusionWeekdays.contains(weekday);
               return FilterChip(
-                label: Text(_weekdayLabel(l10n, weekday)),
+                label: Text(_shortWeekdayLabel(weekday)),
                 selected: selected,
                 onSelected: (v) => setState(() {
                   if (v) {
@@ -414,13 +448,26 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
       case DailyExclusionType.specificDay:
         return [
           TextFormField(
-            initialValue: _dailyExclusionDay?.toString() ?? '',
+            controller: _dailyExclusionDaysCtrl,
             decoration: InputDecoration(
               labelText: l10n.reminderFieldDailyExclusionDay,
+              hintText: '1,3,5-7',
             ),
-            keyboardType: TextInputType.number,
-            onChanged: (v) => _dailyExclusionDay = int.tryParse(v),
-            validator: (v) => _validateDayOfMonth(l10n, v),
+            onChanged: (v) {
+              try {
+                _dailyExclusionDays = DailyExclusion.parseDaysCompact(v);
+              } on InvalidDaysCompactFormat {
+                _dailyExclusionDays = null;
+              }
+            },
+            validator: (v) {
+              try {
+                DailyExclusion.parseDaysCompact(v ?? '');
+                return null;
+              } on InvalidDaysCompactFormat {
+                return l10n.validationDailyExclusionSpecificDay;
+              }
+            },
           ),
         ];
     }
@@ -522,15 +569,16 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               const SizedBox(height: 12),
               ..._buildRecurrenceFields(l10n),
               const SizedBox(height: 12),
-              // Yearly/monthly have their own dedicated lunar day/month
-              // anchor picker (built into _buildRecurrenceFields above),
-              // which already sets both the anchor *and* _startDate from
-              // the same pick — showing this solar start-date field too
-              // would be redundant and let the two disagree, so it's
-              // hidden for those while lunar is on. None/customIntervalDays
-              // have no separate anchor — their due date *is* _startDate —
-              // so this stays the only date field for them, just backed by
-              // the lunar-annotated picker instead of the plain solar one.
+              // Yearly has its own dedicated lunar day/month anchor picker
+              // (built into _buildRecurrenceFields above), which already
+              // sets both the anchor *and* _startDate from the same pick —
+              // showing this solar start-date field too would be redundant
+              // and let the two disagree, so it's hidden while lunar is
+              // on. None/customIntervalDays/monthly have no separate
+              // anchor field — monthly's day-of-month comes straight from
+              // whatever gets picked here (see onTap below) — so this
+              // stays the only date field for them, just backed by the
+              // lunar-annotated picker instead of the plain solar one.
               if (!_hasDedicatedLunarAnchor || !_isLunar)
                 ListTile(
                   contentPadding: EdgeInsets.zero,
@@ -551,7 +599,17 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                         firstDate: _startDateFirstBound,
                         lastDate: _maxStartDate,
                       );
-                      if (picked != null) setState(() => _startDate = picked);
+                      if (picked != null) {
+                        setState(() {
+                          _startDate = picked;
+                          // Only meaningful for RecurrenceType.monthly, but
+                          // harmless to keep in sync for every other type
+                          // here too (unused by them either way).
+                          _recurrenceDay = LunarConverter.solarToLunar(
+                            picked,
+                          ).day;
+                        });
+                      }
                       return;
                     }
                     final picked = await showDatePicker(
@@ -560,7 +618,12 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
                       firstDate: _startDateFirstBound,
                       lastDate: _maxStartDate,
                     );
-                    if (picked != null) setState(() => _startDate = picked);
+                    if (picked != null) {
+                      setState(() {
+                        _startDate = picked;
+                        _recurrenceDay = picked.day;
+                      });
+                    }
                   },
                 ),
               ListTile(
@@ -738,56 +801,18 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           ),
         ];
       case RecurrenceType.monthly:
+        // No separate day field here — its day-of-month comes straight
+        // from _startDate (kept in sync by the shared "Start date" field's
+        // onTap below, both the solar and lunar branches), same pattern as
+        // RecurrenceType.none.
         return [
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             secondary: const Icon(Icons.brightness_2_outlined),
             title: Text(l10n.reminderFieldLunarToggle),
             value: _isLunar,
-            onChanged: (v) => setState(() {
-              _isLunar = v;
-              if (v && _recurrenceDay == null) {
-                _recurrenceDay = LunarConverter.solarToLunar(
-                  DateTime.now(),
-                ).day;
-              }
-            }),
+            onChanged: (v) => setState(() => _isLunar = v),
           ),
-          if (_isLunar)
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(l10n.reminderFieldLunarDay),
-              subtitle: Text(l10n.reminderLunarDateLabel('$_recurrenceDay')),
-              trailing: const Icon(Icons.calendar_today),
-              onTap: () async {
-                final picked = await showLunarDatePicker(
-                  context: context,
-                  initialDate: _approxSolarForLunarAnchor(
-                    _recurrenceDay!,
-                    null,
-                  ),
-                  firstDate: _startDateFirstBound,
-                  lastDate: _maxStartDate,
-                );
-                if (picked != null) {
-                  final lunar = LunarConverter.solarToLunar(picked);
-                  setState(() {
-                    _recurrenceDay = lunar.day;
-                    _startDate = picked;
-                  });
-                }
-              },
-            )
-          else
-            TextFormField(
-              initialValue: _recurrenceDay?.toString() ?? '',
-              decoration: InputDecoration(
-                labelText: l10n.reminderFieldRecurrenceDay,
-              ),
-              keyboardType: TextInputType.number,
-              onChanged: (v) => _recurrenceDay = int.tryParse(v),
-              validator: (v) => _validateDayOfMonth(l10n, v),
-            ),
         ];
       case RecurrenceType.yearly:
         return [
@@ -801,8 +826,16 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
               // Most people don't know offhand what lunar day/month a given
               // date falls on — default to today's so the picker below
               // always opens on a valid value instead of forcing a manual
-              // lookup before it can be used at all.
-              if (v && _recurrenceDay == null && _recurrenceMonth == null) {
+              // lookup before it can be used at all. Keyed on
+              // _recurrenceMonth alone (not "both null") — _recurrenceDay
+              // gets reused by monthly too (its own day-of-month, unrelated
+              // to a lunar year anchor), so it can easily already hold a
+              // stale value left over from switching the Repeat dropdown
+              // away from Monthly; _recurrenceMonth is the only field
+              // exclusively yearly's, so its nullness is what actually
+              // signals "no yearly anchor picked yet" reliably. Always
+              // resets both together as a matched pair.
+              if (v && _recurrenceMonth == null) {
                 final today = LunarConverter.solarToLunar(DateTime.now());
                 _recurrenceDay = today.day;
                 _recurrenceMonth = today.month;

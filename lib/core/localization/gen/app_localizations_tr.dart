@@ -229,6 +229,10 @@ class AppLocalizationsTr extends AppLocalizations {
       'Haftanın en az bir günü kalmalı';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Geçersiz format. Virgül ve tire kullanın, örn. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (ay takvimi)';
   }
@@ -332,6 +336,15 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'İki haftada bir';
+
+  @override
+  String get loanFrequencyQuarterly => 'Üç aylık';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Her 6 ayda bir';
+
+  @override
+  String get loanFrequencyYearly => 'Yıllık';
 
   @override
   String loanProgress(int paid, int total) {

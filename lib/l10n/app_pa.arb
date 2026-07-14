@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "ਟਾਂਕ",
   "reminderFieldDailyExclusionDay": "ਬਾਹਰ ਰੱਖਣ ਵਾਲਾ ਦਿਨ",
   "validationDailyExclusionWeekdays": "ਹਫ਼ਤੇ ਵਿੱਚ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਦਿਨ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ",
+  "validationDailyExclusionSpecificDay": "ਗਲਤ ਫਾਰਮੈਟ। ਕਾਮੇ ਅਤੇ ਡੈਸ਼ ਵਰਤੋ, ਜਿਵੇਂ: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (ਚੰਦਰ)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "ਮਹੀਨਾਵਾਰੀ",
   "loanFrequencyWeekly": "ਹਫ਼ਤਾਵਾਰੀ",
   "loanFrequencyBiweekly": "ਹਰ ਦੋ ਹਫ਼ਤਿਆਂ ਬਾਅਦ",
+  "loanFrequencyQuarterly": "ਤਿਮਾਹੀ",
+  "loanFrequencySemiAnnually": "ਹਰ 6 ਮਹੀਨੇ",
+  "loanFrequencyYearly": "ਸਾਲਾਨਾ",
   "loanProgress": "{paid} / {total} ਅਦਾ ਕੀਤੀਆਂ",
   "@loanProgress": {
     "placeholders": {

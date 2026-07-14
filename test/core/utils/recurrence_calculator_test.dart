@@ -44,10 +44,20 @@ void main() {
         'after', () {
       final params = RecurrenceParams(
         type: RecurrenceType.daily,
-        dailyExclusion: const DailyExclusion.specificDay(15),
+        dailyExclusion: const DailyExclusion.specificDay({15}),
       );
       final result = calculateNextDueDate(params, DateTime(2026, 7, 14));
       expect(result, DateTime(2026, 7, 16)); // skips the 15th
+    });
+
+    test('specific-day exclusion: skips a whole run of consecutive '
+        'excluded days', () {
+      final params = RecurrenceParams(
+        type: RecurrenceType.daily,
+        dailyExclusion: const DailyExclusion.specificDay({15, 16, 17}),
+      );
+      final result = calculateNextDueDate(params, DateTime(2026, 7, 14));
+      expect(result, DateTime(2026, 7, 18));
     });
 
     test('calculateFirstOccurrenceOnOrAfter rolls forward if fromDate '

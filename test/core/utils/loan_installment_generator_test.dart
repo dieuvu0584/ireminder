@@ -55,10 +55,7 @@ void main() {
         frequency: LoanFrequency.weekly,
       );
       for (var i = 1; i < drafts.length; i++) {
-        expect(
-          drafts[i].dueDate.difference(drafts[i - 1].dueDate).inDays,
-          7,
-        );
+        expect(drafts[i].dueDate.difference(drafts[i - 1].dueDate).inDays, 7);
       }
     });
 
@@ -70,11 +67,52 @@ void main() {
         frequency: LoanFrequency.biweekly,
       );
       for (var i = 1; i < drafts.length; i++) {
-        expect(
-          drafts[i].dueDate.difference(drafts[i - 1].dueDate).inDays,
-          14,
-        );
+        expect(drafts[i].dueDate.difference(drafts[i - 1].dueDate).inDays, 14);
       }
+    });
+
+    test('quarterly: due dates 3 months apart, clamped like monthly', () {
+      final drafts = generateInstallments(
+        startDate: DateTime(2026, 1, 31),
+        totalInstallments: 4,
+        installmentAmount: 100,
+        frequency: LoanFrequency.quarterly,
+        dueDayOfMonth: 31,
+      );
+      expect(drafts.map((d) => d.dueDate), [
+        DateTime(2026, 1, 31),
+        DateTime(2026, 4, 30), // clamped
+        DateTime(2026, 7, 31),
+        DateTime(2026, 10, 31),
+      ]);
+    });
+
+    test('semiAnnually: due dates 6 months apart', () {
+      final drafts = generateInstallments(
+        startDate: DateTime(2026, 3, 10),
+        totalInstallments: 3,
+        installmentAmount: 100,
+        frequency: LoanFrequency.semiAnnually,
+      );
+      expect(drafts.map((d) => d.dueDate), [
+        DateTime(2026, 3, 10),
+        DateTime(2026, 9, 10),
+        DateTime(2027, 3, 10),
+      ]);
+    });
+
+    test('yearly: due dates 12 months apart, rolling the year over', () {
+      final drafts = generateInstallments(
+        startDate: DateTime(2026, 11, 10),
+        totalInstallments: 3,
+        installmentAmount: 100,
+        frequency: LoanFrequency.yearly,
+      );
+      expect(drafts.map((d) => d.dueDate), [
+        DateTime(2026, 11, 10),
+        DateTime(2027, 11, 10),
+        DateTime(2028, 11, 10),
+      ]);
     });
 
     test('installment numbers are sequential starting at 1', () {

@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "طاق",
   "reminderFieldDailyExclusionDay": "خارج کرنے کا دن",
   "validationDailyExclusionWeekdays": "ہفتے میں کم از کم ایک دن باقی رہنا چاہیے",
+  "validationDailyExclusionSpecificDay": "غلط فارمیٹ۔ کوما اور ڈیش استعمال کریں، مثلاً: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (قمری)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "ماہانہ",
   "loanFrequencyWeekly": "ہفتہ وار",
   "loanFrequencyBiweekly": "ہر دو ہفتے بعد",
+  "loanFrequencyQuarterly": "سہ ماہی",
+  "loanFrequencySemiAnnually": "ہر 6 ماہ بعد",
+  "loanFrequencyYearly": "سالانہ",
   "loanProgress": "{paid} / {total} قسطیں ادا شدہ",
   "@loanProgress": {
     "placeholders": {

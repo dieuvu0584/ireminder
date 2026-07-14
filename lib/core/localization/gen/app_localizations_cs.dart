@@ -229,6 +229,10 @@ class AppLocalizationsCs extends AppLocalizations {
       'Ponechte alespoň jeden den v týdnu';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Neplatný formát. Použijte čárky a pomlčky, např. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunární)';
   }
@@ -333,6 +337,15 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Jednou za dva týdny';
+
+  @override
+  String get loanFrequencyQuarterly => 'Čtvrtletně';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Každých 6 měsíců';
+
+  @override
+  String get loanFrequencyYearly => 'Ročně';
 
   @override
   String loanProgress(int paid, int total) {

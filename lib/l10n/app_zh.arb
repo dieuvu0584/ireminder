@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "单日",
   "reminderFieldDailyExclusionDay": "要排除的日期",
   "validationDailyExclusionWeekdays": "每周至少保留一天",
+  "validationDailyExclusionSpecificDay": "格式无效。请使用逗号和短横线，例如：1,3,5-7",
   "reminderLunarDateLabel": "{date}（农历）",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "每月",
   "loanFrequencyWeekly": "每周",
   "loanFrequencyBiweekly": "每两周",
+  "loanFrequencyQuarterly": "每季度",
+  "loanFrequencySemiAnnually": "每6个月",
+  "loanFrequencyYearly": "每年",
   "loanProgress": "已还 {paid} / {total} 期",
   "@loanProgress": {
     "placeholders": {

@@ -230,6 +230,10 @@ class AppLocalizationsFil extends AppLocalizations {
       'Dapat mag-iwan ng kahit isang araw ng linggo';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Di-wastong format. Gumamit ng kuwit at gitling, hal. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunar)';
   }
@@ -334,6 +338,15 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Tuwing ikalawang linggo';
+
+  @override
+  String get loanFrequencyQuarterly => 'Bawat quarter';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Bawat 6 buwan';
+
+  @override
+  String get loanFrequencyYearly => 'Taunan';
 
   @override
   String loanProgress(int paid, int total) {

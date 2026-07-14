@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Tek",
   "reminderFieldDailyExclusionDay": "Hariç tutulacak gün",
   "validationDailyExclusionWeekdays": "Haftanın en az bir günü kalmalı",
+  "validationDailyExclusionSpecificDay": "Geçersiz format. Virgül ve tire kullanın, örn. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (ay takvimi)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Aylık",
   "loanFrequencyWeekly": "Haftalık",
   "loanFrequencyBiweekly": "İki haftada bir",
+  "loanFrequencyQuarterly": "Üç aylık",
+  "loanFrequencySemiAnnually": "Her 6 ayda bir",
+  "loanFrequencyYearly": "Yıllık",
   "loanProgress": "{paid} / {total} ödendi",
   "@loanProgress": {
     "placeholders": {

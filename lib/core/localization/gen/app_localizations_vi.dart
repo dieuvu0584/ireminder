@@ -229,6 +229,10 @@ class AppLocalizationsVi extends AppLocalizations {
       'Phải giữ lại ít nhất một ngày trong tuần';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Định dạng không hợp lệ. Dùng dấu phẩy và gạch ngang, vd: 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (âm lịch)';
   }
@@ -332,6 +336,15 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Hai tuần một lần';
+
+  @override
+  String get loanFrequencyQuarterly => 'Hàng quý';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Hàng 6 tháng';
+
+  @override
+  String get loanFrequencyYearly => 'Hàng năm';
 
   @override
   String loanProgress(int paid, int total) {

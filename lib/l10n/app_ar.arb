@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "فردي",
   "reminderFieldDailyExclusionDay": "اليوم المراد استبعاده",
   "validationDailyExclusionWeekdays": "يجب ترك يوم واحد على الأقل في الأسبوع",
+  "validationDailyExclusionSpecificDay": "تنسيق غير صالح. استخدم الفواصل والشرطات، مثل: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (قمري)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "شهريًا",
   "loanFrequencyWeekly": "أسبوعيًا",
   "loanFrequencyBiweekly": "كل أسبوعين",
+  "loanFrequencyQuarterly": "ربع سنوي",
+  "loanFrequencySemiAnnually": "كل 6 أشهر",
+  "loanFrequencyYearly": "سنوي",
   "loanProgress": "تم دفع {paid} من {total}",
   "@loanProgress": {
     "placeholders": {

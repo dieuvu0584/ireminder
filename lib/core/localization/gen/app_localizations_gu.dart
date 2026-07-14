@@ -229,6 +229,10 @@ class AppLocalizationsGu extends AppLocalizations {
       'અઠવાડિયામાં ઓછામાં ઓછો એક દિવસ રાખવો જરૂરી';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'અમાન્ય ફોર્મેટ. અલ્પવિરામ અને હાઇફનનો ઉપયોગ કરો, દા.ત. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (ચંદ્ર)';
   }
@@ -333,6 +337,15 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'દર બે અઠવાડિયે';
+
+  @override
+  String get loanFrequencyQuarterly => 'ત્રિમાસિક';
+
+  @override
+  String get loanFrequencySemiAnnually => 'દર 6 મહિને';
+
+  @override
+  String get loanFrequencyYearly => 'વાર્ષિક';
 
   @override
   String loanProgress(int paid, int total) {

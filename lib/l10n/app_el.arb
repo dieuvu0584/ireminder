@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Μονή",
   "reminderFieldDailyExclusionDay": "Ημέρα προς εξαίρεση",
   "validationDailyExclusionWeekdays": "Πρέπει να παραμείνει τουλάχιστον μία ημέρα της εβδομάδας",
+  "validationDailyExclusionSpecificDay": "Μη έγκυρη μορφή. Χρησιμοποιήστε κόμματα και παύλες, π.χ. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (σεληνιακό)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Μηνιαία",
   "loanFrequencyWeekly": "Εβδομαδιαία",
   "loanFrequencyBiweekly": "Ανά δεκαπενθήμερο",
+  "loanFrequencyQuarterly": "Τριμηνιαία",
+  "loanFrequencySemiAnnually": "Κάθε 6 μήνες",
+  "loanFrequencyYearly": "Ετησίως",
   "loanProgress": "{paid} / {total} πληρωμένες",
   "@loanProgress": {
     "placeholders": {

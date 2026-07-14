@@ -229,6 +229,10 @@ class AppLocalizationsSw extends AppLocalizations {
       'Angalau siku moja ya wiki lazima ibaki';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Muundo batili. Tumia koma na mistari, mfano: 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (mwezi)';
   }
@@ -332,6 +336,15 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Kila baada ya wiki mbili';
+
+  @override
+  String get loanFrequencyQuarterly => 'Kila robo mwaka';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Kila miezi 6';
+
+  @override
+  String get loanFrequencyYearly => 'Kila mwaka';
 
   @override
   String loanProgress(int paid, int total) {

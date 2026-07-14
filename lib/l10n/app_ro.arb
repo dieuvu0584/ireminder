@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Impară",
   "reminderFieldDailyExclusionDay": "Ziua de exclus",
   "validationDailyExclusionWeekdays": "Trebuie să rămână cel puțin o zi a săptămânii",
+  "validationDailyExclusionSpecificDay": "Format invalid. Folosiți virgule și liniuțe, ex. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (lunar)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Lunar",
   "loanFrequencyWeekly": "Săptămânal",
   "loanFrequencyBiweekly": "La două săptămâni",
+  "loanFrequencyQuarterly": "Trimestrial",
+  "loanFrequencySemiAnnually": "La fiecare 6 luni",
+  "loanFrequencyYearly": "Anual",
   "loanProgress": "{paid} / {total} plătite",
   "@loanProgress": {
     "placeholders": {

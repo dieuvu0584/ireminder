@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Lẻ",
   "reminderFieldDailyExclusionDay": "Ngày cần loại trừ",
   "validationDailyExclusionWeekdays": "Phải giữ lại ít nhất một ngày trong tuần",
+  "validationDailyExclusionSpecificDay": "Định dạng không hợp lệ. Dùng dấu phẩy và gạch ngang, vd: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (âm lịch)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Hàng tháng",
   "loanFrequencyWeekly": "Hàng tuần",
   "loanFrequencyBiweekly": "Hai tuần một lần",
+  "loanFrequencyQuarterly": "Hàng quý",
+  "loanFrequencySemiAnnually": "Hàng 6 tháng",
+  "loanFrequencyYearly": "Hàng năm",
   "loanProgress": "Đã trả {paid} / {total} kỳ",
   "@loanProgress": {
     "placeholders": {

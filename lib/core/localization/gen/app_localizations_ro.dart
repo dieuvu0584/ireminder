@@ -229,6 +229,10 @@ class AppLocalizationsRo extends AppLocalizations {
       'Trebuie să rămână cel puțin o zi a săptămânii';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Format invalid. Folosiți virgule și liniuțe, ex. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunar)';
   }
@@ -334,6 +338,15 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'La două săptămâni';
+
+  @override
+  String get loanFrequencyQuarterly => 'Trimestrial';
+
+  @override
+  String get loanFrequencySemiAnnually => 'La fiecare 6 luni';
+
+  @override
+  String get loanFrequencyYearly => 'Anual';
 
   @override
   String loanProgress(int paid, int total) {

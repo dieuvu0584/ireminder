@@ -598,6 +598,12 @@ abstract class AppLocalizations {
   /// **'Keep at least one day of the week'**
   String get validationDailyExclusionWeekdays;
 
+  /// No description provided for @validationDailyExclusionSpecificDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid format. Use commas and dashes, e.g. 1,3,5-7'**
+  String get validationDailyExclusionSpecificDay;
+
   /// No description provided for @reminderLunarDateLabel.
   ///
   /// In en, this message translates to:
@@ -801,6 +807,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Biweekly'**
   String get loanFrequencyBiweekly;
+
+  /// No description provided for @loanFrequencyQuarterly.
+  ///
+  /// In en, this message translates to:
+  /// **'Quarterly'**
+  String get loanFrequencyQuarterly;
+
+  /// No description provided for @loanFrequencySemiAnnually.
+  ///
+  /// In en, this message translates to:
+  /// **'Every 6 months'**
+  String get loanFrequencySemiAnnually;
+
+  /// No description provided for @loanFrequencyYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly'**
+  String get loanFrequencyYearly;
 
   /// No description provided for @loanProgress.
   ///

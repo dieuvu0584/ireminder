@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Isiyo sawa",
   "reminderFieldDailyExclusionDay": "Siku ya kuondoa",
   "validationDailyExclusionWeekdays": "Angalau siku moja ya wiki lazima ibaki",
+  "validationDailyExclusionSpecificDay": "Muundo batili. Tumia koma na mistari, mfano: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (mwezi)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Kila mwezi",
   "loanFrequencyWeekly": "Kila wiki",
   "loanFrequencyBiweekly": "Kila baada ya wiki mbili",
+  "loanFrequencyQuarterly": "Kila robo mwaka",
+  "loanFrequencySemiAnnually": "Kila miezi 6",
+  "loanFrequencyYearly": "Kila mwaka",
   "loanProgress": "{paid} / {total} zimelipwa",
   "@loanProgress": {
     "placeholders": {

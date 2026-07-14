@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Pariton",
   "reminderFieldDailyExclusionDay": "Poissuljettava päivä",
   "validationDailyExclusionWeekdays": "Vähintään yksi viikonpäivä on jätettävä jäljelle",
+  "validationDailyExclusionSpecificDay": "Virheellinen muoto. Käytä pilkkuja ja viivoja, esim. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (kuu)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Kuukausittain",
   "loanFrequencyWeekly": "Viikoittain",
   "loanFrequencyBiweekly": "Joka toinen viikko",
+  "loanFrequencyQuarterly": "Neljännesvuosittain",
+  "loanFrequencySemiAnnually": "Joka 6. kuukausi",
+  "loanFrequencyYearly": "Vuosittain",
   "loanProgress": "{paid} / {total} maksettu",
   "@loanProgress": {
     "placeholders": {

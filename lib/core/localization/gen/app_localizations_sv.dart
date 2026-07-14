@@ -229,6 +229,10 @@ class AppLocalizationsSv extends AppLocalizations {
       'Minst en veckodag måste finnas kvar';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Ogiltigt format. Använd kommatecken och bindestreck, t.ex. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (mån)';
   }
@@ -333,6 +337,15 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Varannan vecka';
+
+  @override
+  String get loanFrequencyQuarterly => 'Kvartalsvis';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Var 6:e månad';
+
+  @override
+  String get loanFrequencyYearly => 'Årligen';
 
   @override
   String loanProgress(int paid, int total) {

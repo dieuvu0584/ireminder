@@ -228,6 +228,10 @@ class AppLocalizationsTe extends AppLocalizations {
   String get validationDailyExclusionWeekdays => 'వారంలో కనీసం ఒక రోజు మిగలాలి';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'చెల్లని ఫార్మాట్. కామాలు మరియు డాష్‌లు ఉపయోగించండి, ఉదా. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (చాంద్రమాన)';
   }
@@ -332,6 +336,15 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'ప్రతి రెండు వారాలకు';
+
+  @override
+  String get loanFrequencyQuarterly => 'త్రైమాసికం';
+
+  @override
+  String get loanFrequencySemiAnnually => 'ప్రతి 6 నెలలకు';
+
+  @override
+  String get loanFrequencyYearly => 'వార్షికం';
 
   @override
   String loanProgress(int paid, int total) {

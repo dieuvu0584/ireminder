@@ -229,6 +229,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'Deve restar pelo menos um dia da semana';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Formato inválido. Use vírgulas e hífens, ex. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunar)';
   }
@@ -333,6 +337,15 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Quinzenal';
+
+  @override
+  String get loanFrequencyQuarterly => 'Trimestral';
+
+  @override
+  String get loanFrequencySemiAnnually => 'A cada 6 meses';
+
+  @override
+  String get loanFrequencyYearly => 'Anual';
 
   @override
   String loanProgress(int paid, int total) {

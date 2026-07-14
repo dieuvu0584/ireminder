@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Páratlan",
   "reminderFieldDailyExclusionDay": "Kizárandó nap",
   "validationDailyExclusionWeekdays": "Legalább egy hétköznapnak maradnia kell",
+  "validationDailyExclusionSpecificDay": "Érvénytelen formátum. Használjon vesszőt és kötőjelet, pl. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (hold)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Havonta",
   "loanFrequencyWeekly": "Hetente",
   "loanFrequencyBiweekly": "Kéthetente",
+  "loanFrequencyQuarterly": "Negyedévente",
+  "loanFrequencySemiAnnually": "6 havonta",
+  "loanFrequencyYearly": "Évente",
   "loanProgress": "{paid} / {total} részlet kifizetve",
   "@loanProgress": {
     "placeholders": {

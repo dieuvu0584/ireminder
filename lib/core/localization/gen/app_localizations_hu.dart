@@ -229,6 +229,10 @@ class AppLocalizationsHu extends AppLocalizations {
       'Legalább egy hétköznapnak maradnia kell';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Érvénytelen formátum. Használjon vesszőt és kötőjelet, pl. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (hold)';
   }
@@ -333,6 +337,15 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Kéthetente';
+
+  @override
+  String get loanFrequencyQuarterly => 'Negyedévente';
+
+  @override
+  String get loanFrequencySemiAnnually => '6 havonta';
+
+  @override
+  String get loanFrequencyYearly => 'Évente';
 
   @override
   String loanProgress(int paid, int total) {

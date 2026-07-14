@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Ganjil",
   "reminderFieldDailyExclusionDay": "Hari yang dikecualikan",
   "validationDailyExclusionWeekdays": "Harus menyisakan minimal satu hari dalam seminggu",
+  "validationDailyExclusionSpecificDay": "Format tidak valid. Gunakan koma dan tanda hubung, mis. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (lunar)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Bulanan",
   "loanFrequencyWeekly": "Mingguan",
   "loanFrequencyBiweekly": "Dua minggu sekali",
+  "loanFrequencyQuarterly": "Triwulanan",
+  "loanFrequencySemiAnnually": "Setiap 6 bulan",
+  "loanFrequencyYearly": "Tahunan",
   "loanProgress": "{paid} / {total} lunas",
   "@loanProgress": {
     "placeholders": {

@@ -224,6 +224,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get validationDailyExclusionWeekdays => '每周至少保留一天';
 
   @override
+  String get validationDailyExclusionSpecificDay => '格式无效。请使用逗号和短横线，例如：1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date（农历）';
   }
@@ -326,6 +329,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => '每两周';
+
+  @override
+  String get loanFrequencyQuarterly => '每季度';
+
+  @override
+  String get loanFrequencySemiAnnually => '每6个月';
+
+  @override
+  String get loanFrequencyYearly => '每年';
 
   @override
   String loanProgress(int paid, int total) {

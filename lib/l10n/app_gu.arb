@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "એકી",
   "reminderFieldDailyExclusionDay": "બાકાત કરવાનો દિવસ",
   "validationDailyExclusionWeekdays": "અઠવાડિયામાં ઓછામાં ઓછો એક દિવસ રાખવો જરૂરી",
+  "validationDailyExclusionSpecificDay": "અમાન્ય ફોર્મેટ. અલ્પવિરામ અને હાઇફનનો ઉપયોગ કરો, દા.ત. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (ચંદ્ર)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "દર મહિને",
   "loanFrequencyWeekly": "દર અઠવાડિયે",
   "loanFrequencyBiweekly": "દર બે અઠવાડિયે",
+  "loanFrequencyQuarterly": "ત્રિમાસિક",
+  "loanFrequencySemiAnnually": "દર 6 મહિને",
+  "loanFrequencyYearly": "વાર્ષિક",
   "loanProgress": "{paid} / {total} ચૂકવ્યા",
   "@loanProgress": {
     "placeholders": {

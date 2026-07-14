@@ -229,6 +229,10 @@ class AppLocalizationsTa extends AppLocalizations {
       'வாரத்தில் குறைந்தது ஒரு நாளாவது இருக்க வேண்டும்';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'தவறான வடிவம். கமா மற்றும் கோடுகளைப் பயன்படுத்தவும், எ.கா. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (சந்திரன்)';
   }
@@ -334,6 +338,15 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'இரு வாரத்திற்கு ஒருமுறை';
+
+  @override
+  String get loanFrequencyQuarterly => 'காலாண்டு';
+
+  @override
+  String get loanFrequencySemiAnnually => 'ஒவ்வொரு 6 மாதங்களுக்கும்';
+
+  @override
+  String get loanFrequencyYearly => 'ஆண்டுதோறும்';
 
   @override
   String loanProgress(int paid, int total) {

@@ -229,6 +229,10 @@ class AppLocalizationsFi extends AppLocalizations {
       'Vähintään yksi viikonpäivä on jätettävä jäljelle';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Virheellinen muoto. Käytä pilkkuja ja viivoja, esim. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (kuu)';
   }
@@ -333,6 +337,15 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Joka toinen viikko';
+
+  @override
+  String get loanFrequencyQuarterly => 'Neljännesvuosittain';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Joka 6. kuukausi';
+
+  @override
+  String get loanFrequencyYearly => 'Vuosittain';
 
   @override
   String loanProgress(int paid, int total) {

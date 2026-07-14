@@ -1,13 +1,19 @@
 enum LoanFrequency {
   monthly,
   weekly,
-  biweekly;
+  biweekly,
+  quarterly,
+  semiAnnually,
+  yearly;
 
   String get dbValue => switch (this) {
-        LoanFrequency.monthly => 'monthly',
-        LoanFrequency.weekly => 'weekly',
-        LoanFrequency.biweekly => 'biweekly',
-      };
+    LoanFrequency.monthly => 'monthly',
+    LoanFrequency.weekly => 'weekly',
+    LoanFrequency.biweekly => 'biweekly',
+    LoanFrequency.quarterly => 'quarterly',
+    LoanFrequency.semiAnnually => 'semi_annually',
+    LoanFrequency.yearly => 'yearly',
+  };
 
   static LoanFrequency fromDbValue(String value) {
     return LoanFrequency.values.firstWhere(
@@ -23,10 +29,10 @@ enum InstallmentStatus {
   overdue;
 
   String get dbValue => switch (this) {
-        InstallmentStatus.pending => 'pending',
-        InstallmentStatus.paid => 'paid',
-        InstallmentStatus.overdue => 'overdue',
-      };
+    InstallmentStatus.pending => 'pending',
+    InstallmentStatus.paid => 'paid',
+    InstallmentStatus.overdue => 'overdue',
+  };
 
   static InstallmentStatus fromDbValue(String value) {
     return InstallmentStatus.values.firstWhere(
@@ -42,10 +48,10 @@ enum ReminderLogAction {
   skipped;
 
   String get dbValue => switch (this) {
-        ReminderLogAction.completed => 'completed',
-        ReminderLogAction.snoozed => 'snoozed',
-        ReminderLogAction.skipped => 'skipped',
-      };
+    ReminderLogAction.completed => 'completed',
+    ReminderLogAction.snoozed => 'snoozed',
+    ReminderLogAction.skipped => 'skipped',
+  };
 
   static ReminderLogAction fromDbValue(String value) {
     return ReminderLogAction.values.firstWhere(

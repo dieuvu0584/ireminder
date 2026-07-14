@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Oneven",
   "reminderFieldDailyExclusionDay": "Uit te sluiten dag",
   "validationDailyExclusionWeekdays": "Er moet minstens één weekdag overblijven",
+  "validationDailyExclusionSpecificDay": "Ongeldige indeling. Gebruik komma's en streepjes, bijv. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (maan)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Maandelijks",
   "loanFrequencyWeekly": "Wekelijks",
   "loanFrequencyBiweekly": "Tweewekelijks",
+  "loanFrequencyQuarterly": "Elk kwartaal",
+  "loanFrequencySemiAnnually": "Elke 6 maanden",
+  "loanFrequencyYearly": "Jaarlijks",
   "loanProgress": "{paid} / {total} betaald",
   "@loanProgress": {
     "placeholders": {

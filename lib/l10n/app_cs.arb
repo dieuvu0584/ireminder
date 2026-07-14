@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Liché",
   "reminderFieldDailyExclusionDay": "Den k vyloučení",
   "validationDailyExclusionWeekdays": "Ponechte alespoň jeden den v týdnu",
+  "validationDailyExclusionSpecificDay": "Neplatný formát. Použijte čárky a pomlčky, např. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (lunární)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Měsíčně",
   "loanFrequencyWeekly": "Týdně",
   "loanFrequencyBiweekly": "Jednou za dva týdny",
+  "loanFrequencyQuarterly": "Čtvrtletně",
+  "loanFrequencySemiAnnually": "Každých 6 měsíců",
+  "loanFrequencyYearly": "Ročně",
   "loanProgress": "Zaplaceno {paid} / {total}",
   "@loanProgress": {
     "placeholders": {

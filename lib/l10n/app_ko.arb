@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "홀수",
   "reminderFieldDailyExclusionDay": "제외할 날짜",
   "validationDailyExclusionWeekdays": "최소 하루의 요일은 남겨야 합니다",
+  "validationDailyExclusionSpecificDay": "잘못된 형식입니다. 쉼표와 하이픈을 사용하세요. 예: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (음력)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "매월",
   "loanFrequencyWeekly": "매주",
   "loanFrequencyBiweekly": "격주",
+  "loanFrequencyQuarterly": "분기별",
+  "loanFrequencySemiAnnually": "6개월마다",
+  "loanFrequencyYearly": "매년",
   "loanProgress": "{total}회 중 {paid}회 납부",
   "@loanProgress": {
     "placeholders": {

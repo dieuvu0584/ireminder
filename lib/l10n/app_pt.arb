@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Ímpar",
   "reminderFieldDailyExclusionDay": "Dia a excluir",
   "validationDailyExclusionWeekdays": "Deve restar pelo menos um dia da semana",
+  "validationDailyExclusionSpecificDay": "Formato inválido. Use vírgulas e hífens, ex. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (lunar)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Mensal",
   "loanFrequencyWeekly": "Semanal",
   "loanFrequencyBiweekly": "Quinzenal",
+  "loanFrequencyQuarterly": "Trimestral",
+  "loanFrequencySemiAnnually": "A cada 6 meses",
+  "loanFrequencyYearly": "Anual",
   "loanProgress": "{paid} / {total} pagas",
   "@loanProgress": {
     "placeholders": {

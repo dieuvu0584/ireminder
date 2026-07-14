@@ -229,6 +229,10 @@ class AppLocalizationsEl extends AppLocalizations {
       'Πρέπει να παραμείνει τουλάχιστον μία ημέρα της εβδομάδας';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Μη έγκυρη μορφή. Χρησιμοποιήστε κόμματα και παύλες, π.χ. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (σεληνιακό)';
   }
@@ -333,6 +337,15 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Ανά δεκαπενθήμερο';
+
+  @override
+  String get loanFrequencyQuarterly => 'Τριμηνιαία';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Κάθε 6 μήνες';
+
+  @override
+  String get loanFrequencyYearly => 'Ετησίως';
 
   @override
   String loanProgress(int paid, int total) {

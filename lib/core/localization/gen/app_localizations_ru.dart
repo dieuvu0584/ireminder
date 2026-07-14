@@ -229,6 +229,10 @@ class AppLocalizationsRu extends AppLocalizations {
       'Должен остаться хотя бы один день недели';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Неверный формат. Используйте запятые и дефисы, напр. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (лунный)';
   }
@@ -332,6 +336,15 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Раз в две недели';
+
+  @override
+  String get loanFrequencyQuarterly => 'Ежеквартально';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Каждые 6 месяцев';
+
+  @override
+  String get loanFrequencyYearly => 'Ежегодно';
 
   @override
   String loanProgress(int paid, int total) {

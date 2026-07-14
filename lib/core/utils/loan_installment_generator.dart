@@ -13,8 +13,9 @@ class InstallmentDraft {
 }
 
 int _daysInMonth(int year, int month) {
-  final firstOfNextMonth =
-      month == 12 ? DateTime(year + 1, 1, 1) : DateTime(year, month + 1, 1);
+  final firstOfNextMonth = month == 12
+      ? DateTime(year + 1, 1, 1)
+      : DateTime(year, month + 1, 1);
   return firstOfNextMonth.subtract(const Duration(days: 1)).day;
 }
 
@@ -41,9 +42,18 @@ List<InstallmentDraft> generateInstallments({
         dueDate = start.add(Duration(days: 14 * n));
         break;
       case LoanFrequency.monthly:
+      case LoanFrequency.quarterly:
+      case LoanFrequency.semiAnnually:
+      case LoanFrequency.yearly:
+        final monthStep = switch (frequency) {
+          LoanFrequency.quarterly => 3,
+          LoanFrequency.semiAnnually => 6,
+          LoanFrequency.yearly => 12,
+          _ => 1,
+        };
         final day = dueDayOfMonth ?? start.day;
         var year = start.year;
-        var month = start.month + n;
+        var month = start.month + n * monthStep;
         year += (month - 1) ~/ 12;
         month = ((month - 1) % 12) + 1;
         final clampedDay = day.clamp(1, _daysInMonth(year, month));

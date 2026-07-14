@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "বিজোড়",
   "reminderFieldDailyExclusionDay": "বাদ দেওয়ার দিন",
   "validationDailyExclusionWeekdays": "সপ্তাহে অন্তত একদিন রাখতে হবে",
+  "validationDailyExclusionSpecificDay": "অবৈধ ফরম্যাট। কমা ও ড্যাশ ব্যবহার করুন, যেমন: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (চন্দ্র)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "মাসিক",
   "loanFrequencyWeekly": "সাপ্তাহিক",
   "loanFrequencyBiweekly": "দ্বি-সাপ্তাহিক",
+  "loanFrequencyQuarterly": "ত্রৈমাসিক",
+  "loanFrequencySemiAnnually": "প্রতি ৬ মাসে",
+  "loanFrequencyYearly": "বার্ষিক",
   "loanProgress": "{paid} / {total} কিস্তি পরিশোধিত",
   "@loanProgress": {
     "placeholders": {

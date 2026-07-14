@@ -229,6 +229,10 @@ class AppLocalizationsHe extends AppLocalizations {
       'חובה להשאיר לפחות יום אחד בשבוע';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'פורמט לא תקין. השתמשו בפסיקים ומקפים, למשל: 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (ירחי)';
   }
@@ -332,6 +336,15 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'דו-שבועי';
+
+  @override
+  String get loanFrequencyQuarterly => 'רבעוני';
+
+  @override
+  String get loanFrequencySemiAnnually => 'כל 6 חודשים';
+
+  @override
+  String get loanFrequencyYearly => 'שנתי';
 
   @override
   String loanProgress(int paid, int total) {

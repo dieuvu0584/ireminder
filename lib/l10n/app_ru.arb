@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "Нечётные",
   "reminderFieldDailyExclusionDay": "День для исключения",
   "validationDailyExclusionWeekdays": "Должен остаться хотя бы один день недели",
+  "validationDailyExclusionSpecificDay": "Неверный формат. Используйте запятые и дефисы, напр. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (лунный)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "Ежемесячно",
   "loanFrequencyWeekly": "Еженедельно",
   "loanFrequencyBiweekly": "Раз в две недели",
+  "loanFrequencyQuarterly": "Ежеквартально",
+  "loanFrequencySemiAnnually": "Каждые 6 месяцев",
+  "loanFrequencyYearly": "Ежегодно",
   "loanProgress": "Оплачено {paid} из {total}",
   "@loanProgress": {
     "placeholders": {

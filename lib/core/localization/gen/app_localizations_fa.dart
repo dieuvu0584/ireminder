@@ -229,6 +229,10 @@ class AppLocalizationsFa extends AppLocalizations {
       'باید حداقل یک روز هفته باقی بماند';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'قالب نامعتبر است. از کاما و خط تیره استفاده کنید، مثل: 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (قمری)';
   }
@@ -332,6 +336,15 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'هر دو هفته';
+
+  @override
+  String get loanFrequencyQuarterly => 'فصلی';
+
+  @override
+  String get loanFrequencySemiAnnually => 'هر ۶ ماه';
+
+  @override
+  String get loanFrequencyYearly => 'سالانه';
 
   @override
   String loanProgress(int paid, int total) {

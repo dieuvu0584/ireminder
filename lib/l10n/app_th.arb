@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "วันคี่",
   "reminderFieldDailyExclusionDay": "วันที่ต้องการยกเว้น",
   "validationDailyExclusionWeekdays": "ต้องเหลืออย่างน้อยหนึ่งวันในสัปดาห์",
+  "validationDailyExclusionSpecificDay": "รูปแบบไม่ถูกต้อง ใช้เครื่องหมายจุลภาคและขีดกลาง เช่น 1,3,5-7",
   "reminderLunarDateLabel": "{date} (จันทรคติ)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "รายเดือน",
   "loanFrequencyWeekly": "รายสัปดาห์",
   "loanFrequencyBiweekly": "ทุกสองสัปดาห์",
+  "loanFrequencyQuarterly": "รายไตรมาส",
+  "loanFrequencySemiAnnually": "ทุก 6 เดือน",
+  "loanFrequencyYearly": "รายปี",
   "loanProgress": "ชำระแล้ว {paid} / {total} งวด",
   "@loanProgress": {
     "placeholders": {

@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "विषम",
   "reminderFieldDailyExclusionDay": "वगळायचा दिवस",
   "validationDailyExclusionWeekdays": "आठवड्यात किमान एक दिवस राखणे आवश्यक आहे",
+  "validationDailyExclusionSpecificDay": "अवैध स्वरूप. स्वल्पविराम आणि डॅश वापरा, उदा. 1,3,5-7",
   "reminderLunarDateLabel": "{date} (चंद्र)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "दर महिन्याला",
   "loanFrequencyWeekly": "दर आठवड्याला",
   "loanFrequencyBiweekly": "दर दोन आठवड्यांनी",
+  "loanFrequencyQuarterly": "त्रैमासिक",
+  "loanFrequencySemiAnnually": "दर 6 महिन्यांनी",
+  "loanFrequencyYearly": "वार्षिक",
   "loanProgress": "{paid} / {total} भरले",
   "@loanProgress": {
     "placeholders": {

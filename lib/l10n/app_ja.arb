@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "奇数",
   "reminderFieldDailyExclusionDay": "除外する日",
   "validationDailyExclusionWeekdays": "少なくとも1つの曜日を残してください",
+  "validationDailyExclusionSpecificDay": "形式が無効です。カンマとハイフンを使用してください。例: 1,3,5-7",
   "reminderLunarDateLabel": "{date}（旧暦）",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "毎月",
   "loanFrequencyWeekly": "毎週",
   "loanFrequencyBiweekly": "隔週",
+  "loanFrequencyQuarterly": "四半期ごと",
+  "loanFrequencySemiAnnually": "6か月ごと",
+  "loanFrequencyYearly": "毎年",
   "loanProgress": "{paid} / {total} 回 支払い済み",
   "@loanProgress": {
     "placeholders": {

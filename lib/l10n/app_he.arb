@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "אי-זוגי",
   "reminderFieldDailyExclusionDay": "יום להחרגה",
   "validationDailyExclusionWeekdays": "חובה להשאיר לפחות יום אחד בשבוע",
+  "validationDailyExclusionSpecificDay": "פורמט לא תקין. השתמשו בפסיקים ומקפים, למשל: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (ירחי)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "חודשי",
   "loanFrequencyWeekly": "שבועי",
   "loanFrequencyBiweekly": "דו-שבועי",
+  "loanFrequencyQuarterly": "רבעוני",
+  "loanFrequencySemiAnnually": "כל 6 חודשים",
+  "loanFrequencyYearly": "שנתי",
   "loanProgress": "שולמו {paid} מתוך {total}",
   "@loanProgress": {
     "placeholders": {

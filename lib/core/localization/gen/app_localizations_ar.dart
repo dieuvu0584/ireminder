@@ -228,6 +228,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'يجب ترك يوم واحد على الأقل في الأسبوع';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'تنسيق غير صالح. استخدم الفواصل والشرطات، مثل: 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (قمري)';
   }
@@ -331,6 +335,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'كل أسبوعين';
+
+  @override
+  String get loanFrequencyQuarterly => 'ربع سنوي';
+
+  @override
+  String get loanFrequencySemiAnnually => 'كل 6 أشهر';
+
+  @override
+  String get loanFrequencyYearly => 'سنوي';
 
   @override
   String loanProgress(int paid, int total) {

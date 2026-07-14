@@ -226,6 +226,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get validationDailyExclusionWeekdays => '최소 하루의 요일은 남겨야 합니다';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      '잘못된 형식입니다. 쉼표와 하이픈을 사용하세요. 예: 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (음력)';
   }
@@ -329,6 +333,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => '격주';
+
+  @override
+  String get loanFrequencyQuarterly => '분기별';
+
+  @override
+  String get loanFrequencySemiAnnually => '6개월마다';
+
+  @override
+  String get loanFrequencyYearly => '매년';
 
   @override
   String loanProgress(int paid, int total) {

@@ -226,6 +226,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get validationDailyExclusionWeekdays => '少なくとも1つの曜日を残してください';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      '形式が無効です。カンマとハイフンを使用してください。例: 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date（旧暦）';
   }
@@ -329,6 +333,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => '隔週';
+
+  @override
+  String get loanFrequencyQuarterly => '四半期ごと';
+
+  @override
+  String get loanFrequencySemiAnnually => '6か月ごと';
+
+  @override
+  String get loanFrequencyYearly => '毎年';
 
   @override
   String loanProgress(int paid, int total) {

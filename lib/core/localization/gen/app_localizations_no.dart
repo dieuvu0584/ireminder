@@ -228,6 +228,10 @@ class AppLocalizationsNo extends AppLocalizations {
   String get validationDailyExclusionWeekdays => 'Minst én ukedag må beholdes';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Ugyldig format. Bruk komma og bindestrek, f.eks. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (måne)';
   }
@@ -331,6 +335,15 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Hver 14. dag';
+
+  @override
+  String get loanFrequencyQuarterly => 'Kvartalsvis';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Hver 6. måned';
+
+  @override
+  String get loanFrequencyYearly => 'Årlig';
 
   @override
   String loanProgress(int paid, int total) {

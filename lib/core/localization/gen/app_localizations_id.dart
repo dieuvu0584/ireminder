@@ -229,6 +229,10 @@ class AppLocalizationsId extends AppLocalizations {
       'Harus menyisakan minimal satu hari dalam seminggu';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Format tidak valid. Gunakan koma dan tanda hubung, mis. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (lunar)';
   }
@@ -334,6 +338,15 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Dua minggu sekali';
+
+  @override
+  String get loanFrequencyQuarterly => 'Triwulanan';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Setiap 6 bulan';
+
+  @override
+  String get loanFrequencyYearly => 'Tahunan';
 
   @override
   String loanProgress(int paid, int total) {

@@ -229,6 +229,10 @@ class AppLocalizationsNl extends AppLocalizations {
       'Er moet minstens één weekdag overblijven';
 
   @override
+  String get validationDailyExclusionSpecificDay =>
+      'Ongeldige indeling. Gebruik komma\'s en streepjes, bijv. 1,3,5-7';
+
+  @override
   String reminderLunarDateLabel(String date) {
     return '$date (maan)';
   }
@@ -334,6 +338,15 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get loanFrequencyBiweekly => 'Tweewekelijks';
+
+  @override
+  String get loanFrequencyQuarterly => 'Elk kwartaal';
+
+  @override
+  String get loanFrequencySemiAnnually => 'Elke 6 maanden';
+
+  @override
+  String get loanFrequencyYearly => 'Jaarlijks';
 
   @override
   String loanProgress(int paid, int total) {

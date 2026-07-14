@@ -71,6 +71,7 @@
   "dailyExclusionOddDays": "فرد",
   "reminderFieldDailyExclusionDay": "روز مورد حذف",
   "validationDailyExclusionWeekdays": "باید حداقل یک روز هفته باقی بماند",
+  "validationDailyExclusionSpecificDay": "قالب نامعتبر است. از کاما و خط تیره استفاده کنید، مثل: 1,3,5-7",
   "reminderLunarDateLabel": "{date} (قمری)",
   "@reminderLunarDateLabel": {
     "placeholders": {
@@ -112,6 +113,9 @@
   "loanFrequencyMonthly": "ماهانه",
   "loanFrequencyWeekly": "هفتگی",
   "loanFrequencyBiweekly": "هر دو هفته",
+  "loanFrequencyQuarterly": "فصلی",
+  "loanFrequencySemiAnnually": "هر ۶ ماه",
+  "loanFrequencyYearly": "سالانه",
   "loanProgress": "{paid} از {total} قسط پرداخت شده",
   "@loanProgress": {
     "placeholders": {
