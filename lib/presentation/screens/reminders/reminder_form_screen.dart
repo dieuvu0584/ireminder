@@ -196,6 +196,32 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
     return _startDate.isBefore(today) ? _startDate : today;
   }
 
+  /// The day-of-month actually submitted for monthly/yearly, always
+  /// re-derived from _startDate rather than trusting _recurrenceDay —
+  /// which is only ever written by the shared "Start date" field's onTap,
+  /// so it stays null (and would otherwise crash the null-check in
+  /// RecurrenceParams) if the user picks Monthly/Yearly from the Repeat
+  /// dropdown without ever tapping that field.
+  int? get _effectiveRecurrenceDay {
+    if (_recurrenceType == RecurrenceType.monthly ||
+        _recurrenceType == RecurrenceType.yearly) {
+      return _isLunar
+          ? LunarConverter.solarToLunar(_startDate).day
+          : _startDate.day;
+    }
+    return _recurrenceDay;
+  }
+
+  /// Same reasoning as [_effectiveRecurrenceDay], for yearly's month.
+  int? get _effectiveRecurrenceMonth {
+    if (_recurrenceType == RecurrenceType.yearly) {
+      return _isLunar
+          ? LunarConverter.solarToLunar(_startDate).month
+          : _startDate.month;
+    }
+    return _recurrenceMonth;
+  }
+
   /// Builds the exclusion rule to actually save, from whichever kind is
   /// currently selected — null if exclusion is off or this isn't a daily
   /// reminder at all (switching the Repeat dropdown away from Daily
@@ -256,8 +282,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
           categoryId: _categoryId!,
           recurrenceType: effectiveType,
           recurrenceInterval: _intervalDays,
-          recurrenceDay: _recurrenceDay,
-          recurrenceMonth: _recurrenceMonth,
+          recurrenceDay: _effectiveRecurrenceDay,
+          recurrenceMonth: _effectiveRecurrenceMonth,
           recurrenceWeekday: _recurrenceWeekday,
           isLunar: _isLunar,
           dailyExclusion: dailyExclusion,
@@ -279,8 +305,8 @@ class _ReminderFormScreenState extends ConsumerState<ReminderFormScreen> {
             categoryId: _categoryId!,
             recurrenceType: effectiveType.dbValue,
             recurrenceInterval: drift.Value(_intervalDays),
-            recurrenceDay: drift.Value(_recurrenceDay),
-            recurrenceMonth: drift.Value(_recurrenceMonth),
+            recurrenceDay: drift.Value(_effectiveRecurrenceDay),
+            recurrenceMonth: drift.Value(_effectiveRecurrenceMonth),
             recurrenceWeekday: drift.Value(_recurrenceWeekday),
             isLunar: _isLunar,
             dailyExclusionType: drift.Value(dailyExclusion?.type.dbValue),
