@@ -42,13 +42,22 @@ jobs:
       - name: Build release APK (unsigned)
         run: flutter build apk --release
 
+      # continue-on-error: these are a secondary, ephemeral copy for
+      # browsing from the GitHub UI — the actual delivery path is the git
+      # push below, which doesn't depend on them at all. Without this, a
+      # transient account-wide Artifact storage quota hit (unrelated to
+      # this build) fails the step and, by GitHub Actions' default
+      # if-no-condition behavior, skips every step after it — silently
+      # dropping the real APK delivery along with it.
       - uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: ireminder-debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
           retention-days: 30
 
       - uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: ireminder-release-apk-unsigned
           path: build/app/outputs/flutter-apk/app-release.apk
