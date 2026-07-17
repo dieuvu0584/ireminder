@@ -1,0 +1,38 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:ireminder/data/services/notification_service.dart';
+
+void main() {
+  group('NotificationIdSpace', () {
+    test('forReminder/forInstallment round-trip through payloadForId', () {
+      expect(
+        NotificationIdSpace.payloadForId(NotificationIdSpace.forReminder(5)),
+        'reminder:5',
+      );
+      expect(
+        NotificationIdSpace.payloadForId(
+          NotificationIdSpace.forInstallment(42),
+        ),
+        'installment:42',
+      );
+    });
+
+    test('payloadForId returns null for the test/debug sentinel ids', () {
+      expect(
+        NotificationIdSpace.payloadForId(
+          NotificationIdSpace.testNotificationId,
+        ),
+        isNull,
+      );
+      expect(
+        NotificationIdSpace.payloadForId(
+          NotificationIdSpace.debugNotificationId,
+        ),
+        isNull,
+      );
+    });
+
+    test('payloadForId returns null for a null id', () {
+      expect(NotificationIdSpace.payloadForId(null), isNull);
+    });
+  });
+}

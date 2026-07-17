@@ -26,6 +26,22 @@ class NotificationIdSpace {
   static int forReminder(int reminderId) => reminderBase + reminderId;
   static int forInstallment(int installmentId) =>
       installmentBase + installmentId;
+
+  /// Reconstructs the `"reminder:<id>"` / `"installment:<id>"` payload
+  /// string straight from the notification's own [id] — used as a
+  /// fallback when [NotificationResponse.payload] comes back null/empty
+  /// for an action-button tap (observed on at least one real device: the
+  /// plugin's ActionBroadcastReceiver doesn't reliably carry the original
+  /// payload extra through to the broadcast it fires). The notification id
+  /// itself is intrinsic to how Android identifies/cancels it, so unlike
+  /// payload it's never droppable — safe to lean on entirely.
+  static String? payloadForId(int? id) {
+    if (id == null || id >= testNotificationId) return null;
+    if (id >= installmentBase) {
+      return 'installment:${id - installmentBase}';
+    }
+    return 'reminder:${id - reminderBase}';
+  }
 }
 
 typedef NotificationActionCallback =
@@ -163,7 +179,7 @@ class NotificationService {
   }
 
   void _handleResponse(NotificationResponse response) {
-    onAction?.call(response.actionId ?? 'tap', response.payload);
+    onAction?.call(response.actionId ?? 'tap', _payloadOf(response));
   }
 
   @pragma('vm:entry-point')
@@ -175,8 +191,20 @@ class NotificationService {
     // async itself (the plugin calls it synchronously).
     handleBackgroundNotificationAction(
       response.actionId ?? 'tap',
-      response.payload,
+      _payloadOf(response),
     );
+  }
+
+  /// See [NotificationIdSpace.payloadForId] — response.payload is trusted
+  /// first (it's still the source of truth for a plain body tap), falling
+  /// back to reconstructing it from response.id only when payload comes
+  /// back null/empty, which is what an action-button tap has been
+  /// observed to do on at least one real device.
+  static String? _payloadOf(NotificationResponse response) {
+    if (response.payload != null && response.payload!.isNotEmpty) {
+      return response.payload;
+    }
+    return NotificationIdSpace.payloadForId(response.id);
   }
 
   Future<bool> requestPermissions() async {
