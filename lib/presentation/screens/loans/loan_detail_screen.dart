@@ -75,7 +75,11 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
                     installment.dueDate.isBefore(todayOnly);
                 final isPaid = installment.status == 'paid';
                 return CheckboxListTile(
-                  value: _selected.contains(installment.id),
+                  // A paid installment's box must show checked+green on its
+                  // own — _selected is only ever a staging set for the
+                  // batch-pay action below and never holds a paid id (it's
+                  // cleared right after markPaid succeeds).
+                  value: isPaid || _selected.contains(installment.id),
                   onChanged: isPaid
                       ? null
                       : (checked) {
@@ -87,6 +91,14 @@ class _LoanDetailScreenState extends ConsumerState<LoanDetailScreen> {
                             }
                           });
                         },
+                  // Checkbox.fillColor/checkColor aren't state-dimmed the
+                  // way the surrounding disabled ListTile text is, so a
+                  // paid (disabled) box still renders fully green+checked
+                  // instead of Flutter's default grayed-out disabled look.
+                  fillColor: isPaid
+                      ? WidgetStateProperty.all(Colors.green)
+                      : null,
+                  checkColor: isPaid ? Colors.white : null,
                   title: Text(
                     l10n.loanInstallmentNumber(installment.installmentNumber),
                   ),
