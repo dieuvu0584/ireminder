@@ -1,4 +1,7 @@
 name: Build APK
+# Empty commits don't trigger this workflow (paths-ignore needs at least
+# one changed file to evaluate), so a real file touch is needed to
+# re-trigger a build with no code changes.
 
 on:
   push:
