@@ -27,6 +27,10 @@ class CalendarView extends ConsumerStatefulWidget {
 
 class _CalendarViewState extends ConsumerState<CalendarView> {
   late DateTime _visibleMonth;
+  // Swiped-up state: hides the weekday row + day grid, leaving just the
+  // month/year header bar, so the selected day's reminder list below gets
+  // more room. Tapping the header title (see onTitleTap below) undoes it.
+  bool _collapsed = false;
 
   @override
   void initState() {
@@ -235,15 +239,49 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                   _visibleMonth.month + 1,
                 );
               }),
+              // Only wired while collapsed — tapping the title is how the
+              // grid comes back, per the same request that put swipe-up on
+              // collapsing it.
+              onTitleTap: _collapsed
+                  ? () => setState(() => _collapsed = false)
+                  : null,
             ),
-            const WeekdayHeader(),
-            MonthCalendarGrid(
-              month: _visibleMonth,
-              selectedDay: selectedDay,
-              dayDecorationBuilder: (context, day) =>
-                  _dayDots(context, byDay[day] ?? const []),
-              onSelectDay: (d) =>
-                  ref.read(selectedCalendarDayProvider.notifier).state = d,
+            // AnimatedSize gives the collapse/expand its animation for
+            // free — swiping up on the grid area sets _collapsed, which
+            // swaps the child for SizedBox.shrink() and lets AnimatedSize
+            // tween the height change instead of snapping instantly.
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onVerticalDragEnd: (details) {
+                final velocity = details.primaryVelocity ?? 0;
+                if (!_collapsed && velocity < -200) {
+                  setState(() => _collapsed = true);
+                }
+              },
+              child: AnimatedSize(
+                duration: const Duration(milliseconds: 250),
+                curve: Curves.easeInOut,
+                child: _collapsed
+                    ? const SizedBox(width: double.infinity)
+                    : Column(
+                        children: [
+                          const WeekdayHeader(),
+                          MonthCalendarGrid(
+                            month: _visibleMonth,
+                            selectedDay: selectedDay,
+                            dayDecorationBuilder: (context, day) =>
+                                _dayDots(context, byDay[day] ?? const []),
+                            onSelectDay: (d) =>
+                                ref
+                                        .read(
+                                          selectedCalendarDayProvider.notifier,
+                                        )
+                                        .state =
+                                    d,
+                          ),
+                        ],
+                      ),
+              ),
             ),
             const Divider(height: 1),
             Expanded(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
+import '../../providers/calendar_providers.dart';
 import '../categories/category_manager_screen.dart';
 import '../loans/loan_form_screen.dart';
 import '../loans/loan_list_screen.dart';
@@ -43,14 +44,24 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
       ),
     );
+    // Shared with the Calendar tab's day grid, so creating a reminder or
+    // loan while a specific day is selected there starts from that day —
+    // defaults to today when nothing's been selected yet (the provider's
+    // own initial value), matching the "otherwise default to today" half
+    // of the same request.
+    final selectedDay = ref.read(selectedCalendarDayProvider);
     if (choice == 'reminder' && context.mounted) {
-      Navigator.of(
-        context,
-      ).push(MaterialPageRoute(builder: (_) => const ReminderFormScreen()));
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => ReminderFormScreen(initialStartDate: selectedDay),
+        ),
+      );
     } else if (choice == 'loan' && context.mounted) {
-      Navigator.of(
-        context,
-      ).push(MaterialPageRoute(builder: (_) => const LoanFormScreen()));
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => LoanFormScreen(initialStartDate: selectedDay),
+        ),
+      );
     }
   }
 

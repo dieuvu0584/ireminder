@@ -10,11 +10,18 @@ class MonthCalendarHeader extends StatelessWidget {
   final VoidCallback? onPrev;
   final VoidCallback? onNext;
 
+  /// Optional tap target on the "Month Year" label only (not the whole
+  /// row, so it never competes with the prev/next chevrons) — the
+  /// Calendar tab uses this to re-expand a collapsed calendar; null
+  /// elsewhere (e.g. the lunar date picker) leaves the label inert.
+  final VoidCallback? onTitleTap;
+
   const MonthCalendarHeader({
     super.key,
     required this.month,
     required this.onPrev,
     required this.onNext,
+    this.onTitleTap,
   });
 
   @override
@@ -22,13 +29,26 @@ class MonthCalendarHeader extends StatelessWidget {
     final label = MaterialLocalizations.of(
       context,
     ).formatMonthYear(month).toString();
+    final title = Text(label, style: Theme.of(context).textTheme.titleMedium);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(icon: const Icon(Icons.chevron_left), onPressed: onPrev),
-          Text(label, style: Theme.of(context).textTheme.titleMedium),
+          onTitleTap == null
+              ? title
+              : InkWell(
+                  borderRadius: BorderRadius.circular(8),
+                  onTap: onTitleTap,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 4,
+                    ),
+                    child: title,
+                  ),
+                ),
           IconButton(icon: const Icon(Icons.chevron_right), onPressed: onNext),
         ],
       ),

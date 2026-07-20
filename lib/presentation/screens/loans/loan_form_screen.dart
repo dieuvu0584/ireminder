@@ -22,7 +22,13 @@ bool _isMonthBasedFrequency(LoanFrequency frequency) => switch (frequency) {
 };
 
 class LoanFormScreen extends ConsumerStatefulWidget {
-  const LoanFormScreen({super.key});
+  /// Prefills the Start date field — e.g. the day currently selected on
+  /// the Calendar tab, so creating a loan while browsing a specific day
+  /// there starts from that day instead of always defaulting to today.
+  /// Null (or a past day) falls back to today.
+  final DateTime? initialStartDate;
+
+  const LoanFormScreen({super.key, this.initialStartDate});
 
   @override
   ConsumerState<LoanFormScreen> createState() => _LoanFormScreenState();
@@ -40,7 +46,7 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
 
   int? _categoryId;
   LoanFrequency _frequency = LoanFrequency.monthly;
-  DateTime _startDate = DateTime.now();
+  late DateTime _startDate;
   // Purely a picker-UI convenience, unlike reminders' lunar mode — a loan
   // has no recurring lunar-day concept to anchor, so this only decides
   // which picker the Start date field opens (with lunar day labels or
@@ -48,6 +54,15 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
   // way.
   bool _isLunar = false;
   bool _saving = false;
+
+  @override
+  void initState() {
+    super.initState();
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final requested = widget.initialStartDate ?? today;
+    _startDate = requested.isBefore(today) ? today : requested;
+  }
 
   @override
   void dispose() {
