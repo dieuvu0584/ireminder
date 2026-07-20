@@ -359,11 +359,6 @@ class AppLocalizationsUr extends AppLocalizations {
   String get loanMarkPaid => 'ادا شدہ کے طور پر نشان زد کریں';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count قسطوں کو ادا شدہ کے طور پر نشان زد کریں';
-  }
-
-  @override
   String get loanStatusPending => 'زیر التوا';
 
   @override

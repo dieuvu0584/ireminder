@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Oznacz jako spłacone",
-  "loanMarkPaidBatch": "Oznacz {count} rat jako spłacone",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Oczekująca",
   "loanStatusPaid": "Spłacona",
   "loanStatusOverdue": "Zaległa",

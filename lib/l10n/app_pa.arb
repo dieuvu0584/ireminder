@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "ਅਦਾ ਕੀਤੀ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਓ",
-  "loanMarkPaidBatch": "{count} ਕਿਸ਼ਤਾਂ ਨੂੰ ਅਦਾ ਕੀਤੀਆਂ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਓ",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "ਬਕਾਇਆ",
   "loanStatusPaid": "ਅਦਾ ਕੀਤੀ",
   "loanStatusOverdue": "ਮਿਆਦ ਖਤਮ",

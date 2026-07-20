@@ -17,14 +17,15 @@ class LoanRepository {
   }
 
   Future<Loan?> getById(int id) {
-    return (_db.select(_db.loans)..where((l) => l.id.equals(id)))
-        .getSingleOrNull();
+    return (_db.select(
+      _db.loans,
+    )..where((l) => l.id.equals(id))).getSingleOrNull();
   }
 
   Future<LoanInstallment?> getInstallmentById(int installmentId) {
-    return (_db.select(_db.loanInstallments)
-          ..where((i) => i.id.equals(installmentId)))
-        .getSingleOrNull();
+    return (_db.select(
+      _db.loanInstallments,
+    )..where((i) => i.id.equals(installmentId))).getSingleOrNull();
   }
 
   Stream<List<LoanInstallment>> watchInstallments(int loanId) {
@@ -32,6 +33,37 @@ class LoanRepository {
           ..where((i) => i.loanId.equals(loanId))
           ..orderBy([(i) => OrderingTerm.asc(i.installmentNumber)]))
         .watch();
+  }
+
+  /// Every pending installment across every active loan, joined with its
+  /// loan (for name/category display) — used to fold installment due
+  /// dates into the Calendar/Task List tabs alongside reminders, since a
+  /// payment coming due is also "something to be reminded about on a
+  /// date." Paid/overdue-but-since-deleted-loan installments are excluded
+  /// since neither is still something to act on.
+  Stream<List<(LoanInstallment, Loan)>> watchPendingInstallmentsWithLoan() {
+    final query =
+        _db.select(_db.loanInstallments).join([
+            innerJoin(
+              _db.loans,
+              _db.loans.id.equalsExp(_db.loanInstallments.loanId),
+            ),
+          ])
+          ..where(
+            _db.loanInstallments.status.equals(
+                  InstallmentStatus.pending.dbValue,
+                ) &
+                _db.loans.isActive.equals(true),
+          )
+          ..orderBy([OrderingTerm.asc(_db.loanInstallments.dueDate)]);
+    return query.watch().map(
+      (rows) => rows
+          .map(
+            (row) =>
+                (row.readTable(_db.loanInstallments), row.readTable(_db.loans)),
+          )
+          .toList(),
+    );
   }
 
   /// Creates a loan and immediately generates all of its installments.
@@ -57,7 +89,9 @@ class LoanRepository {
     final endDate = drafts.last.dueDate;
 
     return _db.transaction(() async {
-      final loanId = await _db.into(_db.loans).insert(
+      final loanId = await _db
+          .into(_db.loans)
+          .insert(
             LoansCompanion.insert(
               name: name,
               categoryId: Value(categoryId),
@@ -102,12 +136,12 @@ class LoanRepository {
   }) async {
     await _db.transaction(() async {
       for (final id in installmentIds) {
-        final installment = await (_db.select(_db.loanInstallments)
-              ..where((i) => i.id.equals(id)))
-            .getSingle();
-        await (_db.update(_db.loanInstallments)
-              ..where((i) => i.id.equals(id)))
-            .write(
+        final installment = await (_db.select(
+          _db.loanInstallments,
+        )..where((i) => i.id.equals(id))).getSingle();
+        await (_db.update(
+          _db.loanInstallments,
+        )..where((i) => i.id.equals(id))).write(
           LoanInstallmentsCompanion(
             status: Value(InstallmentStatus.paid.dbValue),
             paidDate: Value(paidDate),
@@ -116,18 +150,21 @@ class LoanRepository {
         );
       }
 
-      final paidCount = await (_db.selectOnly(_db.loanInstallments)
-            ..addColumns([_db.loanInstallments.id.count()])
-            ..where(_db.loanInstallments.loanId.equals(loanId) &
-                _db.loanInstallments.status.equals(
-                  InstallmentStatus.paid.dbValue,
-                )))
-          .map((row) => row.read(_db.loanInstallments.id.count()) ?? 0)
-          .getSingle();
-
-      final loan =
-          await (_db.select(_db.loans)..where((l) => l.id.equals(loanId)))
+      final paidCount =
+          await (_db.selectOnly(_db.loanInstallments)
+                ..addColumns([_db.loanInstallments.id.count()])
+                ..where(
+                  _db.loanInstallments.loanId.equals(loanId) &
+                      _db.loanInstallments.status.equals(
+                        InstallmentStatus.paid.dbValue,
+                      ),
+                ))
+              .map((row) => row.read(_db.loanInstallments.id.count()) ?? 0)
               .getSingle();
+
+      final loan = await (_db.select(
+        _db.loans,
+      )..where((l) => l.id.equals(loanId))).getSingle();
 
       await (_db.update(_db.loans)..where((l) => l.id.equals(loanId))).write(
         LoansCompanion(
@@ -143,11 +180,12 @@ class LoanRepository {
   Future<List<LoanInstallment>> getOverdueInstallments(int loanId) async {
     final today = DateTime.now();
     final todayOnly = DateTime(today.year, today.month, today.day);
-    return (_db.select(_db.loanInstallments)
-          ..where((i) =>
+    return (_db.select(_db.loanInstallments)..where(
+          (i) =>
               i.loanId.equals(loanId) &
               i.status.equals(InstallmentStatus.pending.dbValue) &
-              i.dueDate.isSmallerThanValue(todayOnly)))
+              i.dueDate.isSmallerThanValue(todayOnly),
+        ))
         .get();
   }
 
@@ -157,9 +195,9 @@ class LoanRepository {
   /// so leaving it to the FK constraint alone orphans every installment row.
   Future<void> delete(int loanId) {
     return _db.transaction(() async {
-      await (_db.delete(_db.loanInstallments)
-            ..where((i) => i.loanId.equals(loanId)))
-          .go();
+      await (_db.delete(
+        _db.loanInstallments,
+      )..where((i) => i.loanId.equals(loanId))).go();
       await (_db.delete(_db.loans)..where((l) => l.id.equals(loanId))).go();
     });
   }

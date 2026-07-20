@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "标记为已还",
-  "loanMarkPaidBatch": "标记 {count} 期为已还",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "待还款",
   "loanStatusPaid": "已还款",
   "loanStatusOverdue": "已逾期",

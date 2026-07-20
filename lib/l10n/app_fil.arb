@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Markahang bayad na",
-  "loanMarkPaidBatch": "Markahang bayad na ang {count} hulog",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Nakabinbin",
   "loanStatusPaid": "Bayad na",
   "loanStatusOverdue": "Overdue",

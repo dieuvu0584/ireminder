@@ -358,11 +358,6 @@ class AppLocalizationsTe extends AppLocalizations {
   String get loanMarkPaid => 'చెల్లించినట్లు గుర్తించు';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count వాయిదాలను చెల్లించినట్లు గుర్తించు';
-  }
-
-  @override
   String get loanStatusPending => 'పెండింగ్‌లో ఉంది';
 
   @override

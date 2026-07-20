@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Markera som betald",
-  "loanMarkPaidBatch": "Markera {count} avbetalningar som betalda",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Väntande",
   "loanStatusPaid": "Betald",
   "loanStatusOverdue": "Försenad",

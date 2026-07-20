@@ -358,11 +358,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loanMarkPaid => 'Mark as paid';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Mark $count installments as paid';
-  }
-
-  @override
   String get loanStatusPending => 'Pending';
 
   @override

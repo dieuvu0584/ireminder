@@ -355,11 +355,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get loanMarkPaid => '支払い済みにする';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count回分を支払い済みにする';
-  }
-
-  @override
   String get loanStatusPending => '未払い';
 
   @override

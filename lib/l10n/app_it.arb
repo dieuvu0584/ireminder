@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Segna come pagata",
-  "loanMarkPaidBatch": "Segna {count} rate come pagate",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "In attesa",
   "loanStatusPaid": "Pagata",
   "loanStatusOverdue": "Scaduta",

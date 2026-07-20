@@ -360,11 +360,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get loanMarkPaid => 'Markahang bayad na';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Markahang bayad na ang $count hulog';
-  }
-
-  @override
   String get loanStatusPending => 'Nakabinbin';
 
   @override

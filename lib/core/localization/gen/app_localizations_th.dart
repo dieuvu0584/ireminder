@@ -359,11 +359,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get loanMarkPaid => 'ทำเครื่องหมายว่าชำระแล้ว';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'ทำเครื่องหมาย $count งวดว่าชำระแล้ว';
-  }
-
-  @override
   String get loanStatusPending => 'รอชำระ';
 
   @override

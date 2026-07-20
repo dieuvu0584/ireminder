@@ -357,11 +357,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get loanMarkPaid => 'تحديد كمدفوع';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'تحديد $count قسطًا كمدفوعة';
-  }
-
-  @override
   String get loanStatusPending => 'قيد الانتظار';
 
   @override

@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Ödendi olarak işaretle",
-  "loanMarkPaidBatch": "{count} taksiti ödendi olarak işaretle",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Beklemede",
   "loanStatusPaid": "Ödendi",
   "loanStatusOverdue": "Gecikti",

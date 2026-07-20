@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "ચૂકવેલ તરીકે ચિહ્નિત કરો",
-  "loanMarkPaidBatch": "{count} હપ્તાને ચૂકવેલ તરીકે ચિહ્નિત કરો",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "બાકી",
   "loanStatusPaid": "ચૂકવેલ",
   "loanStatusOverdue": "મુદત વીતી ગયેલ",

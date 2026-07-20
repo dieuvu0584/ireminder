@@ -359,11 +359,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get loanMarkPaid => 'Merkitse maksetuksi';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Merkitse $count erää maksetuksi';
-  }
-
-  @override
   String get loanStatusPending => 'Odottaa';
 
   @override

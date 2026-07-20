@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "చెల్లించినట్లు గుర్తించు",
-  "loanMarkPaidBatch": "{count} వాయిదాలను చెల్లించినట్లు గుర్తించు",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "పెండింగ్‌లో ఉంది",
   "loanStatusPaid": "చెల్లించారు",
   "loanStatusOverdue": "గడువు మించింది",

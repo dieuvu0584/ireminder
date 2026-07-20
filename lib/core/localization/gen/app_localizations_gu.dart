@@ -359,11 +359,6 @@ class AppLocalizationsGu extends AppLocalizations {
   String get loanMarkPaid => 'ચૂકવેલ તરીકે ચિહ્નિત કરો';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count હપ્તાને ચૂકવેલ તરીકે ચિહ્નિત કરો';
-  }
-
-  @override
   String get loanStatusPending => 'બાકી';
 
   @override

@@ -358,11 +358,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get loanMarkPaid => 'Ödendi olarak işaretle';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count taksiti ödendi olarak işaretle';
-  }
-
-  @override
   String get loanStatusPending => 'Beklemede';
 
   @override

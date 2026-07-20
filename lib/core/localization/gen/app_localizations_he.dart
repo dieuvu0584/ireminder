@@ -358,11 +358,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get loanMarkPaid => 'סמן כשולם';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'סמן $count תשלומים כשולמו';
-  }
-
-  @override
   String get loanStatusPending => 'ממתין';
 
   @override

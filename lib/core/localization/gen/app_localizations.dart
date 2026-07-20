@@ -844,12 +844,6 @@ abstract class AppLocalizations {
   /// **'Mark as paid'**
   String get loanMarkPaid;
 
-  /// No description provided for @loanMarkPaidBatch.
-  ///
-  /// In en, this message translates to:
-  /// **'Mark {count} installments as paid'**
-  String loanMarkPaidBatch(int count);
-
   /// No description provided for @loanStatusPending.
   ///
   /// In en, this message translates to:

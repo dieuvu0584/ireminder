@@ -11,8 +11,18 @@ final activeLoansStreamProvider = StreamProvider<List<Loan>>((ref) {
 
 final loanInstallmentsStreamProvider =
     StreamProvider.family<List<LoanInstallment>, int>((ref, loanId) {
-  return ref.watch(loanRepositoryProvider).watchInstallments(loanId);
-});
+      return ref.watch(loanRepositoryProvider).watchInstallments(loanId);
+    });
+
+/// Every pending installment across every active loan, joined with its
+/// loan — feeds the Calendar/Task List tabs so installment due dates show
+/// up alongside reminders.
+final pendingInstallmentsWithLoanStreamProvider =
+    StreamProvider<List<(LoanInstallment, Loan)>>((ref) {
+      return ref
+          .watch(loanRepositoryProvider)
+          .watchPendingInstallmentsWithLoan();
+    });
 
 final loanActionsProvider = Provider<LoanActions>((ref) {
   return LoanActions(ref);
@@ -34,7 +44,9 @@ class LoanActions {
     int reminderAdvanceDays = 3,
     String? notes,
   }) async {
-    final loanId = await _ref.read(loanRepositoryProvider).create(
+    final loanId = await _ref
+        .read(loanRepositoryProvider)
+        .create(
           name: name,
           categoryId: categoryId,
           totalAmount: totalAmount,
@@ -55,7 +67,9 @@ class LoanActions {
     required List<int> installmentIds,
     required DateTime paidDate,
   }) async {
-    await _ref.read(loanRepositoryProvider).markPaid(
+    await _ref
+        .read(loanRepositoryProvider)
+        .markPaid(
           loanId: loanId,
           installmentIds: installmentIds,
           paidDate: paidDate,
@@ -67,8 +81,10 @@ class LoanActions {
   }
 
   Future<void> delete(int loanId) async {
-    final installments =
-        await _ref.read(loanRepositoryProvider).watchInstallments(loanId).first;
+    final installments = await _ref
+        .read(loanRepositoryProvider)
+        .watchInstallments(loanId)
+        .first;
     final scheduler = _ref.read(alarmSchedulerServiceProvider);
     for (final installment in installments) {
       await scheduler.cancelForInstallment(installment.id);
@@ -80,8 +96,10 @@ class LoanActions {
     final loan = await _ref.read(loanRepositoryProvider).getById(loanId);
     if (loan == null) return;
     final settings = await _ref.read(settingsRepositoryProvider).get();
-    final installments =
-        await _ref.read(loanRepositoryProvider).watchInstallments(loanId).first;
+    final installments = await _ref
+        .read(loanRepositoryProvider)
+        .watchInstallments(loanId)
+        .first;
     final scheduler = _ref.read(alarmSchedulerServiceProvider);
     for (final installment in installments) {
       await scheduler.scheduleForInstallment(

@@ -359,11 +359,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get loanMarkPaid => 'Marcar como pagada';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Marcar $count cuotas como pagadas';
-  }
-
-  @override
   String get loanStatusPending => 'Pendiente';
 
   @override

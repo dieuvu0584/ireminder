@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "भुगतान हुआ चिह्नित करें",
-  "loanMarkPaidBatch": "{count} किस्तें भुगतान हुई चिह्नित करें",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "बाकी",
   "loanStatusPaid": "भुगतान हो गया",
   "loanStatusOverdue": "समय निकल गया",

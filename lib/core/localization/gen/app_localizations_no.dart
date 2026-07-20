@@ -357,11 +357,6 @@ class AppLocalizationsNo extends AppLocalizations {
   String get loanMarkPaid => 'Merk som betalt';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Merk $count avdrag som betalt';
-  }
-
-  @override
   String get loanStatusPending => 'Venter';
 
   @override

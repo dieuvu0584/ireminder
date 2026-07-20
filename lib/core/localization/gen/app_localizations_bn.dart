@@ -358,11 +358,6 @@ class AppLocalizationsBn extends AppLocalizations {
   String get loanMarkPaid => 'পরিশোধিত হিসেবে চিহ্নিত করুন';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$countটি কিস্তি পরিশোধিত হিসেবে চিহ্নিত করুন';
-  }
-
-  @override
   String get loanStatusPending => 'বাকি আছে';
 
   @override

@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "পরিশোধিত হিসেবে চিহ্নিত করুন",
-  "loanMarkPaidBatch": "{count}টি কিস্তি পরিশোধিত হিসেবে চিহ্নিত করুন",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "বাকি আছে",
   "loanStatusPaid": "পরিশোধিত",
   "loanStatusOverdue": "মেয়াদোত্তীর্ণ",

@@ -359,11 +359,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get loanMarkPaid => 'Megjelölés kifizetettként';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count részlet megjelölése kifizetettként';
-  }
-
-  @override
   String get loanStatusPending => 'Függőben';
 
   @override

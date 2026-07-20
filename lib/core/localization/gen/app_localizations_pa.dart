@@ -359,11 +359,6 @@ class AppLocalizationsPa extends AppLocalizations {
   String get loanMarkPaid => 'ਅਦਾ ਕੀਤੀ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਓ';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count ਕਿਸ਼ਤਾਂ ਨੂੰ ਅਦਾ ਕੀਤੀਆਂ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਓ';
-  }
-
-  @override
   String get loanStatusPending => 'ਬਕਾਇਆ';
 
   @override

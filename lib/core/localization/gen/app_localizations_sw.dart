@@ -358,11 +358,6 @@ class AppLocalizationsSw extends AppLocalizations {
   String get loanMarkPaid => 'Weka alama kuwa imelipwa';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Weka alama kwa awamu $count kuwa zimelipwa';
-  }
-
-  @override
   String get loanStatusPending => 'Inasubiri';
 
   @override

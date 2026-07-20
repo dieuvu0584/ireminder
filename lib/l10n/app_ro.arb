@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Marchează ca plătită",
-  "loanMarkPaidBatch": "Marchează {count} rate ca plătite",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "În așteptare",
   "loanStatusPaid": "Plătită",
   "loanStatusOverdue": "Restantă",

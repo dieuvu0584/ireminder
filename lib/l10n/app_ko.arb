@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "납부 완료로 표시",
-  "loanMarkPaidBatch": "{count}회를 납부 완료로 표시",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "대기 중",
   "loanStatusPaid": "납부 완료",
   "loanStatusOverdue": "연체",

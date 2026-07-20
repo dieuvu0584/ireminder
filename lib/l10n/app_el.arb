@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Σήμανση ως πληρωμένη",
-  "loanMarkPaidBatch": "Σήμανση {count} δόσεων ως πληρωμένων",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Εκκρεμεί",
   "loanStatusPaid": "Πληρωμένη",
   "loanStatusOverdue": "Ληξιπρόθεσμη",

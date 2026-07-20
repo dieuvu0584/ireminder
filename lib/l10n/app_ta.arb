@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "செலுத்தியதாக குறி",
-  "loanMarkPaidBatch": "{count} தவணைகளை செலுத்தியதாக குறி",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "நிலுவையில்",
   "loanStatusPaid": "செலுத்தப்பட்டது",
   "loanStatusOverdue": "தவறிய தேதி",

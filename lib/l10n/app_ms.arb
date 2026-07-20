@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Tandakan sebagai dibayar",
-  "loanMarkPaidBatch": "Tandakan {count} ansuran sebagai dibayar",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Belum tiba tempoh",
   "loanStatusPaid": "Telah dibayar",
   "loanStatusOverdue": "Tertunggak",

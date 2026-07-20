@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Tandai sudah dibayar",
-  "loanMarkPaidBatch": "Tandai {count} cicilan sudah dibayar",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Belum jatuh tempo",
   "loanStatusPaid": "Lunas",
   "loanStatusOverdue": "Terlambat",

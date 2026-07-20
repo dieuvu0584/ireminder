@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "ادا شدہ کے طور پر نشان زد کریں",
-  "loanMarkPaidBatch": "{count} قسطوں کو ادا شدہ کے طور پر نشان زد کریں",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "زیر التوا",
   "loanStatusPaid": "ادا شدہ",
   "loanStatusOverdue": "مقررہ وقت گزر چکا",

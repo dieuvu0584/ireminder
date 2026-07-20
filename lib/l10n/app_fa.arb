@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "علامت‌گذاری به‌عنوان پرداخت‌شده",
-  "loanMarkPaidBatch": "علامت‌گذاری {count} قسط به‌عنوان پرداخت‌شده",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "در انتظار",
   "loanStatusPaid": "پرداخت‌شده",
   "loanStatusOverdue": "عقب‌افتاده",

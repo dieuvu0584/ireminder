@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Megjelölés kifizetettként",
-  "loanMarkPaidBatch": "{count} részlet megjelölése kifizetettként",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Függőben",
   "loanStatusPaid": "Kifizetve",
   "loanStatusOverdue": "Lejárt",

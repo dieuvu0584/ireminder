@@ -2,33 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
+import '../../../core/utils/reminder_due_time.dart';
 import '../../../core/utils/reminder_occurrence_builder.dart';
 import '../../../data/database/app_database.dart';
+import '../../../domain/models/agenda_entry.dart';
 import '../../../domain/models/reminder_occurrence.dart';
 import '../../providers/category_providers.dart';
+import '../../providers/loan_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../providers/settings_providers.dart';
 import '../../widgets/guarded_action.dart';
+import '../../widgets/installment_card.dart';
 import '../../widgets/reminder_card.dart';
+import '../loans/loan_detail_screen.dart';
 import '../reminders/reminder_detail_screen.dart';
-
-/// The moment a reminder is actually due. snoozeUntil already carries a
-/// precise date+time (set from `DateTime.now().add(...)`), so it's used
-/// as-is; nextDueDate is date-only, so it needs combining with the
-/// separately-stored reminderTime ("HH:mm") — otherwise reminders due the
-/// same day would tie on an arbitrary row order instead of sorting by
-/// time-of-day.
-DateTime _effectiveDueDateTime(Reminder r) {
-  if (r.snoozeUntil != null) return r.snoozeUntil!;
-  final parts = r.reminderTime.split(':');
-  return DateTime(
-    r.nextDueDate.year,
-    r.nextDueDate.month,
-    r.nextDueDate.day,
-    int.parse(parts[0]),
-    int.parse(parts[1]),
-  );
-}
 
 class TimelineView extends ConsumerWidget {
   const TimelineView({super.key});
@@ -47,6 +34,12 @@ class TimelineView extends ConsumerWidget {
     final completedLogsAsync = ref.watch(completedReminderLogsStreamProvider);
     final skippedLogsAsync = ref.watch(skippedReminderLogsStreamProvider);
     final categoriesAsync = ref.watch(categoriesStreamProvider);
+    // Installments are also "something to be reminded about on a date",
+    // so they're folded into the same sections as reminders instead of
+    // living in a separate loans-only view.
+    final installmentsAsync = ref.watch(
+      pendingInstallmentsWithLoanStreamProvider,
+    );
     final snoozeMinutes =
         ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
         60;
@@ -55,14 +48,16 @@ class TimelineView extends ConsumerWidget {
       data: (activeReminders) {
         final categories = categoriesAsync.valueOrNull ?? const <Category>[];
         final byId = {for (final c in categories) c.id: c};
+        final installments = installmentsAsync.valueOrNull ?? const [];
 
         final now = DateTime.now();
         final today = DateTime(now.year, now.month, now.day);
         final endOfWeek = today.add(Duration(days: 7 - today.weekday));
 
-        final overdue = <Reminder>[];
-        final thisWeek = <Reminder>[];
-        final upcoming = <Reminder>[];
+        final overdue = <AgendaEntry>[];
+        final thisWeek = <AgendaEntry>[];
+        final upcoming = <AgendaEntry>[];
+        final todayEntries = <AgendaEntry>[];
 
         for (final r in activeReminders) {
           final due = r.snoozeUntil != null
@@ -77,47 +72,74 @@ class TimelineView extends ConsumerWidget {
                   r.nextDueDate.day,
                 );
           if (due.isBefore(today)) {
-            overdue.add(r);
+            overdue.add(
+              ReminderAgendaEntry(
+                ReminderOccurrence(r, completed: false, historical: false),
+                effectiveReminderDueDateTime(r),
+              ),
+            );
           } else if (due.isAtSameMomentAs(today)) {
             continue; // covered by the Today section below instead
           } else if (!due.isAfter(endOfWeek)) {
-            thisWeek.add(r);
+            thisWeek.add(
+              ReminderAgendaEntry(
+                ReminderOccurrence(r, completed: false, historical: false),
+                effectiveReminderDueDateTime(r),
+              ),
+            );
           } else {
-            upcoming.add(r);
+            upcoming.add(
+              ReminderAgendaEntry(
+                ReminderOccurrence(r, completed: false, historical: false),
+                effectiveReminderDueDateTime(r),
+              ),
+            );
           }
         }
 
-        // Ascending by due date+time within each section — the DB query
-        // backing activeReminders/allReminders only orders by the date
-        // part (next_due_date), so two reminders due the same day would
-        // otherwise tie-break on arbitrary row order instead of by their
-        // actual reminder time.
-        overdue.sort(
-          (a, b) =>
-              _effectiveDueDateTime(a).compareTo(_effectiveDueDateTime(b)),
-        );
-        thisWeek.sort(
-          (a, b) =>
-              _effectiveDueDateTime(a).compareTo(_effectiveDueDateTime(b)),
-        );
-        upcoming.sort(
-          (a, b) =>
-              _effectiveDueDateTime(a).compareTo(_effectiveDueDateTime(b)),
-        );
+        for (final (installment, loan) in installments) {
+          final dueDay = DateTime(
+            installment.dueDate.year,
+            installment.dueDate.month,
+            installment.dueDate.day,
+          );
+          final entry = InstallmentAgendaEntry(installment, loan);
+          if (dueDay.isBefore(today)) {
+            overdue.add(entry);
+          } else if (dueDay.isAtSameMomentAs(today)) {
+            todayEntries.add(entry);
+          } else if (!dueDay.isAfter(endOfWeek)) {
+            thisWeek.add(entry);
+          } else {
+            upcoming.add(entry);
+          }
+        }
 
-        final todayEntries =
-            (buildOccurrencesByDay(
-                      reminders: allRemindersAsync.valueOrNull ?? const [],
-                      completedLogs: completedLogsAsync.valueOrNull ?? const [],
-                      skippedLogs: skippedLogsAsync.valueOrNull ?? const [],
-                    )[today] ??
-                    const <ReminderOccurrence>[])
-                .toList()
-              ..sort(
-                (a, b) => _effectiveDueDateTime(
-                  a.reminder,
-                ).compareTo(_effectiveDueDateTime(b.reminder)),
-              );
+        final todayOccurrences =
+            buildOccurrencesByDay(
+              reminders: allRemindersAsync.valueOrNull ?? const [],
+              completedLogs: completedLogsAsync.valueOrNull ?? const [],
+              skippedLogs: skippedLogsAsync.valueOrNull ?? const [],
+            )[today] ??
+            const <ReminderOccurrence>[];
+        for (final occurrence in todayOccurrences) {
+          todayEntries.add(
+            ReminderAgendaEntry(
+              occurrence,
+              effectiveReminderDueDateTime(occurrence.reminder),
+            ),
+          );
+        }
+
+        // Ascending by due date+time within each section — the DB
+        // queries backing activeReminders/allReminders/installments only
+        // order by the date part, so entries due the same day would
+        // otherwise tie-break on arbitrary row order.
+        int byDueAt(AgendaEntry a, AgendaEntry b) => a.dueAt.compareTo(b.dueAt);
+        overdue.sort(byDueAt);
+        thisWeek.sort(byDueAt);
+        upcoming.sort(byDueAt);
+        todayEntries.sort(byDueAt);
 
         if (overdue.isEmpty &&
             thisWeek.isEmpty &&
@@ -132,7 +154,7 @@ class TimelineView extends ConsumerWidget {
             if (overdue.isNotEmpty)
               _Section(
                 title: l10n.homeSectionOverdue,
-                reminders: overdue,
+                entries: overdue,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
                 today: today,
@@ -140,7 +162,7 @@ class TimelineView extends ConsumerWidget {
             if (thisWeek.isNotEmpty)
               _Section(
                 title: l10n.homeSectionThisWeek,
-                reminders: thisWeek,
+                entries: thisWeek,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
                 today: today,
@@ -148,18 +170,19 @@ class TimelineView extends ConsumerWidget {
             if (upcoming.isNotEmpty)
               _Section(
                 title: l10n.homeSectionUpcoming,
-                reminders: upcoming,
+                entries: upcoming,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
                 today: today,
               ),
             if (todayEntries.isNotEmpty)
-              _TodaySection(
+              _Section(
                 title: l10n.homeSectionToday,
                 entries: todayEntries,
-                today: today,
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
+                today: today,
+                isToday: true,
               ),
           ],
         );
@@ -170,85 +193,26 @@ class TimelineView extends ConsumerWidget {
   }
 }
 
+/// Renders a mix of reminders and installments, sorted together. Every
+/// section except Today only ever contains still-actionable entries; the
+/// Today section (see [isToday]) can also contain historical (already
+/// completed/skipped today) reminder occurrences, so its rows use
+/// [ReminderCard.allowToggle] to stay correctable same-day.
 class _Section extends ConsumerWidget {
   final String title;
-  final List<Reminder> reminders;
+  final List<AgendaEntry> entries;
   final Map<int, Category> byId;
   final int snoozeMinutes;
   final DateTime today;
+  final bool isToday;
 
   const _Section({
     required this.title,
-    required this.reminders,
-    required this.byId,
-    required this.snoozeMinutes,
-    required this.today,
-  });
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
-          child: Text(title, style: Theme.of(context).textTheme.titleMedium),
-        ),
-        ...reminders.map((r) {
-          final due = r.snoozeUntil ?? r.nextDueDate;
-          final dueDay = DateTime(due.year, due.month, due.day);
-          // A reminder whose due day hasn't arrived yet can't be completed
-          // from here — see ReminderCard.completionLocked. Overdue entries
-          // (dueDay before today) stay completable as before.
-          final completionLocked = dueDay.isAfter(today);
-          return ReminderCard(
-            reminder: r,
-            category: byId[r.categoryId],
-            occurrenceDate: r.snoozeUntil ?? r.nextDueDate,
-            completionLocked: completionLocked,
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => ReminderDetailScreen(reminder: r),
-              ),
-            ),
-            onComplete: () => runGuarded(
-              context,
-              () => ref.read(reminderActionsProvider).complete(r.id),
-            ),
-            onSnooze: () => runGuarded(
-              context,
-              () => ref
-                  .read(reminderActionsProvider)
-                  .snooze(
-                    r.id,
-                    DateTime.now().add(Duration(minutes: snoozeMinutes)),
-                  ),
-            ),
-          );
-        }),
-      ],
-    );
-  }
-}
-
-/// Every reminder that touches today — done, skipped, or still pending —
-/// unlike [_Section], which only ever lists still-actionable reminders.
-/// Each row shows the date too, since a completed/skipped entry here is
-/// a historical record (see ReminderCard's `historical`) rather than
-/// today's own live state.
-class _TodaySection extends ConsumerWidget {
-  final String title;
-  final List<ReminderOccurrence> entries;
-  final DateTime today;
-  final Map<int, Category> byId;
-  final int snoozeMinutes;
-
-  const _TodaySection({
-    required this.title,
     required this.entries,
-    required this.today,
     required this.byId,
     required this.snoozeMinutes,
+    required this.today,
+    this.isToday = false,
   });
 
   @override
@@ -260,49 +224,75 @@ class _TodaySection extends ConsumerWidget {
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
           child: Text(title, style: Theme.of(context).textTheme.titleMedium),
         ),
-        ...entries.map(
-          (entry) => ReminderCard(
-            key: ValueKey(
-              'today_${entry.reminder.id}_${entry.completed}_'
-              '${entry.historical}',
-            ),
-            reminder: entry.reminder,
-            category: byId[entry.reminder.categoryId],
-            completed: entry.completed,
-            historical: entry.historical,
-            occurrenceDate: today,
-            // Today's own entries stay correctable same-day — a skip
-            // never lands on today (autoSkipOverdue only ever fires for
-            // days strictly before today), so the only historical state
-            // reachable here is "completed today", and toggling it back
-            // just undoes that.
-            allowToggle: true,
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => ReminderDetailScreen(reminder: entry.reminder),
-              ),
-            ),
-            onComplete: () => runGuarded(
-              context,
-              () => entry.completed
-                  ? ref
-                        .read(reminderActionsProvider)
-                        .uncomplete(entry.reminder.id)
-                  : ref
-                        .read(reminderActionsProvider)
-                        .complete(entry.reminder.id),
-            ),
-            onSnooze: () => runGuarded(
-              context,
-              () => ref
-                  .read(reminderActionsProvider)
-                  .snooze(
-                    entry.reminder.id,
-                    DateTime.now().add(Duration(minutes: snoozeMinutes)),
+        ...entries.map((entry) {
+          switch (entry) {
+            case ReminderAgendaEntry(:final occurrence):
+              final r = occurrence.reminder;
+              final due = r.snoozeUntil ?? r.nextDueDate;
+              final dueDay = DateTime(due.year, due.month, due.day);
+              // A reminder whose due day hasn't arrived yet can't be
+              // completed from here — see ReminderCard.completionLocked.
+              final completionLocked = dueDay.isAfter(today);
+              return ReminderCard(
+                key: ValueKey(
+                  'reminder_${r.id}_${occurrence.completed}_'
+                  '${occurrence.historical}',
+                ),
+                reminder: r,
+                category: byId[r.categoryId],
+                completed: occurrence.completed,
+                historical: occurrence.historical,
+                occurrenceDate: isToday ? today : due,
+                allowToggle: isToday,
+                completionLocked: completionLocked,
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => ReminderDetailScreen(reminder: r),
                   ),
-            ),
-          ),
-        ),
+                ),
+                onComplete: () => runGuarded(
+                  context,
+                  () => occurrence.completed
+                      ? ref.read(reminderActionsProvider).uncomplete(r.id)
+                      : ref.read(reminderActionsProvider).complete(r.id),
+                ),
+                onSnooze: () => runGuarded(
+                  context,
+                  () => ref
+                      .read(reminderActionsProvider)
+                      .snooze(
+                        r.id,
+                        DateTime.now().add(Duration(minutes: snoozeMinutes)),
+                      ),
+                ),
+              );
+            case InstallmentAgendaEntry(:final installment, :final loan):
+              return InstallmentCard(
+                key: ValueKey('installment_${installment.id}'),
+                installment: installment,
+                loan: loan,
+                category: loan.categoryId == null
+                    ? null
+                    : byId[loan.categoryId],
+                isOverdue: installment.dueDate.isBefore(today),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => LoanDetailScreen(loan: loan),
+                  ),
+                ),
+                onMarkPaid: () => runGuarded(
+                  context,
+                  () => ref
+                      .read(loanActionsProvider)
+                      .markPaid(
+                        loanId: loan.id,
+                        installmentIds: [installment.id],
+                        paidDate: DateTime.now(),
+                      ),
+                ),
+              );
+          }
+        }),
       ],
     );
   }

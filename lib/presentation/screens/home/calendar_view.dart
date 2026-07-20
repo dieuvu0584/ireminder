@@ -3,18 +3,23 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../../core/utils/recurrence_calculator.dart';
+import '../../../core/utils/reminder_due_time.dart';
 import '../../../core/utils/reminder_occurrence_builder.dart';
 import '../../../data/database/app_database.dart';
 import '../../../domain/enums/recurrence_type.dart';
+import '../../../domain/models/agenda_entry.dart';
 import '../../../domain/models/daily_exclusion.dart';
 import '../../../domain/models/recurrence_params.dart';
 import '../../../domain/models/reminder_occurrence.dart';
 import '../../providers/calendar_providers.dart';
 import '../../providers/category_providers.dart';
+import '../../providers/loan_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../providers/settings_providers.dart';
 import '../../widgets/guarded_action.dart';
+import '../../widgets/installment_card.dart';
 import '../../widgets/month_calendar_grid.dart';
+import '../loans/loan_detail_screen.dart';
 import '../reminders/reminder_detail_screen.dart';
 import '../../widgets/reminder_card.dart';
 
@@ -49,6 +54,14 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     final completedLogsAsync = ref.watch(completedReminderLogsStreamProvider);
     final skippedLogsAsync = ref.watch(skippedReminderLogsStreamProvider);
     final categoriesAsync = ref.watch(categoriesStreamProvider);
+    // Installments are also "something to be reminded about on a date",
+    // so they're plotted on the grid and listed under their due day
+    // alongside reminders instead of only ever living in the Loans tab.
+    // Unlike reminders they're one-off fixed dates generated up front at
+    // loan creation, so no recurrence projection is needed here.
+    final installmentsAsync = ref.watch(
+      pendingInstallmentsWithLoanStreamProvider,
+    );
     // Shared with HomeScreen's "+" FAB, so creating a reminder while
     // browsing a different day here pre-fills that day as the reminder's
     // start date instead of always defaulting to today.
@@ -67,6 +80,17 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
           completedLogs: completedLogsAsync.valueOrNull ?? const [],
           skippedLogs: skippedLogsAsync.valueOrNull ?? const [],
         );
+
+        final installmentsByDay = <DateTime, List<(LoanInstallment, Loan)>>{};
+        for (final pair in installmentsAsync.valueOrNull ?? const []) {
+          final (installment, _) = pair;
+          final key = DateTime(
+            installment.dueDate.year,
+            installment.dueDate.month,
+            installment.dueDate.day,
+          );
+          installmentsByDay.putIfAbsent(key, () => []).add(pair);
+        }
 
         // The DB only stores the single nearest upcoming occurrence, so
         // browsing to a different year would otherwise show nothing for a
@@ -211,8 +235,17 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
           }
         }
 
-        final selectedEntries =
-            byDay[selectedDay] ?? const <ReminderOccurrence>[];
+        final selectedEntries = <AgendaEntry>[
+          ...(byDay[selectedDay] ?? const <ReminderOccurrence>[]).map(
+            (o) => ReminderAgendaEntry(
+              o,
+              effectiveReminderDueDateTime(o.reminder),
+            ),
+          ),
+          ...(installmentsByDay[selectedDay] ?? const []).map(
+            (pair) => InstallmentAgendaEntry(pair.$1, pair.$2),
+          ),
+        ]..sort((a, b) => a.dueAt.compareTo(b.dueAt));
         final now = DateTime.now();
         final today = DateTime(now.year, now.month, now.day);
         final isSelectedDayToday =
@@ -269,8 +302,11 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                           MonthCalendarGrid(
                             month: _visibleMonth,
                             selectedDay: selectedDay,
-                            dayDecorationBuilder: (context, day) =>
-                                _dayDots(context, byDay[day] ?? const []),
+                            dayDecorationBuilder: (context, day) => _dayDots(
+                              context,
+                              byDay[day] ?? const [],
+                              installmentsByDay[day] ?? const [],
+                            ),
                             onSelectDay: (d) =>
                                 ref
                                         .read(
@@ -293,17 +329,19 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                       ),
                     )
                   : ListView(
-                      children: selectedEntries
-                          .map(
-                            (entry) => ReminderCard(
+                      children: selectedEntries.map((entry) {
+                        switch (entry) {
+                          case ReminderAgendaEntry(:final occurrence):
+                            return ReminderCard(
                               key: ValueKey(
-                                'cal_${entry.reminder.id}_${entry.completed}_'
-                                '${entry.historical}',
+                                'cal_${occurrence.reminder.id}_'
+                                '${occurrence.completed}_'
+                                '${occurrence.historical}',
                               ),
-                              reminder: entry.reminder,
-                              category: byId[entry.reminder.categoryId],
-                              completed: entry.completed,
-                              historical: entry.historical,
+                              reminder: occurrence.reminder,
+                              category: byId[occurrence.reminder.categoryId],
+                              completed: occurrence.completed,
+                              historical: occurrence.historical,
                               occurrenceDate: selectedDay,
                               // Only today's own entries are correctable
                               // same-day — a genuinely past day's history
@@ -314,34 +352,64 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (_) => ReminderDetailScreen(
-                                    reminder: entry.reminder,
+                                    reminder: occurrence.reminder,
                                   ),
                                 ),
                               ),
                               onComplete: () => runGuarded(
                                 context,
-                                () => entry.completed
+                                () => occurrence.completed
                                     ? ref
                                           .read(reminderActionsProvider)
-                                          .uncomplete(entry.reminder.id)
+                                          .uncomplete(occurrence.reminder.id)
                                     : ref
                                           .read(reminderActionsProvider)
-                                          .complete(entry.reminder.id),
+                                          .complete(occurrence.reminder.id),
                               ),
                               onSnooze: () => runGuarded(
                                 context,
                                 () => ref
                                     .read(reminderActionsProvider)
                                     .snooze(
-                                      entry.reminder.id,
+                                      occurrence.reminder.id,
                                       DateTime.now().add(
                                         Duration(minutes: snoozeMinutes),
                                       ),
                                     ),
                               ),
-                            ),
-                          )
-                          .toList(),
+                            );
+                          case InstallmentAgendaEntry(
+                            :final installment,
+                            :final loan,
+                          ):
+                            return InstallmentCard(
+                              key: ValueKey(
+                                'cal_installment_${installment.id}',
+                              ),
+                              installment: installment,
+                              loan: loan,
+                              category: loan.categoryId == null
+                                  ? null
+                                  : byId[loan.categoryId],
+                              isOverdue: installment.dueDate.isBefore(today),
+                              onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => LoanDetailScreen(loan: loan),
+                                ),
+                              ),
+                              onMarkPaid: () => runGuarded(
+                                context,
+                                () => ref
+                                    .read(loanActionsProvider)
+                                    .markPaid(
+                                      loanId: loan.id,
+                                      installmentIds: [installment.id],
+                                      paidDate: DateTime.now(),
+                                    ),
+                              ),
+                            );
+                        }
+                      }).toList(),
                     ),
             ),
           ],
@@ -356,31 +424,40 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
   /// still due and actionable, green once done, gray once auto-skipped
   /// past its day — instead of the category color, so a glance at the
   /// month grid shows what needs attention without opening the day.
-  Widget? _dayDots(BuildContext context, List<ReminderOccurrence> entries) {
-    if (entries.isEmpty) return null;
+  /// Pending installments due that day count as "still due" (orange),
+  /// same as an actionable reminder — see [installments].
+  Widget? _dayDots(
+    BuildContext context,
+    List<ReminderOccurrence> reminders,
+    List<(LoanInstallment, Loan)> installments,
+  ) {
+    final total = reminders.length + installments.length;
+    if (total == 0) return null;
     Color dotColor(ReminderOccurrence entry) {
       if (entry.completed) return Colors.green;
       if (entry.historical) return Theme.of(context).colorScheme.outline;
       return Colors.orange;
     }
 
+    final colors = [
+      ...reminders.map(dotColor),
+      ...installments.map((_) => Colors.orange),
+    ];
+
     return Wrap(
       spacing: 2,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        ...entries.take(3).map((entry) {
+        ...colors.take(3).map((color) {
           return Container(
             width: 5,
             height: 5,
-            decoration: BoxDecoration(
-              color: dotColor(entry),
-              shape: BoxShape.circle,
-            ),
+            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
           );
         }),
-        if (entries.length > 3)
+        if (total > 3)
           Text(
-            '+${entries.length - 3}',
+            '+${total - 3}',
             style: Theme.of(
               context,
             ).textTheme.labelSmall?.copyWith(fontSize: 8),

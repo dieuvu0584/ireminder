@@ -359,11 +359,6 @@ class AppLocalizationsMr extends AppLocalizations {
   String get loanMarkPaid => 'भरलं म्हणून चिन्हांकित करा';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count हप्ते भरले म्हणून चिन्हांकित करा';
-  }
-
-  @override
   String get loanStatusPending => 'प्रलंबित';
 
   @override

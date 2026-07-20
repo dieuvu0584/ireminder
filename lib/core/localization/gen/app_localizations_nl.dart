@@ -360,11 +360,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get loanMarkPaid => 'Markeren als betaald';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count termijnen markeren als betaald';
-  }
-
-  @override
   String get loanStatusPending => 'In afwachting';
 
   @override

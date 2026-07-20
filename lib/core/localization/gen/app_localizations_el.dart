@@ -359,11 +359,6 @@ class AppLocalizationsEl extends AppLocalizations {
   String get loanMarkPaid => 'Σήμανση ως πληρωμένη';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Σήμανση $count δόσεων ως πληρωμένων';
-  }
-
-  @override
   String get loanStatusPending => 'Εκκρεμεί';
 
   @override

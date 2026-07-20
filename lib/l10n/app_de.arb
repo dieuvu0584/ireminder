@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Als bezahlt markieren",
-  "loanMarkPaidBatch": "{count} Raten als bezahlt markieren",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Ausstehend",
   "loanStatusPaid": "Bezahlt",
   "loanStatusOverdue": "Überfällig",

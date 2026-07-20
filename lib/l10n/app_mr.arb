@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "भरलं म्हणून चिन्हांकित करा",
-  "loanMarkPaidBatch": "{count} हप्ते भरले म्हणून चिन्हांकित करा",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "प्रलंबित",
   "loanStatusPaid": "भरलं",
   "loanStatusOverdue": "मुदत उलटलेली",

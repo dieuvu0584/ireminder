@@ -360,11 +360,6 @@ class AppLocalizationsRo extends AppLocalizations {
   String get loanMarkPaid => 'Marchează ca plătită';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Marchează $count rate ca plătite';
-  }
-
-  @override
   String get loanStatusPending => 'În așteptare';
 
   @override

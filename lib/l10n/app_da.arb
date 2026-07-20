@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Marker som betalt",
-  "loanMarkPaidBatch": "Marker {count} afdrag som betalt",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Afventer",
   "loanStatusPaid": "Betalt",
   "loanStatusOverdue": "Forfalden",

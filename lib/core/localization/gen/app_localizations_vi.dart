@@ -358,11 +358,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get loanMarkPaid => 'Đánh dấu đã trả';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Đánh dấu $count kỳ đã trả';
-  }
-
-  @override
   String get loanStatusPending => 'Chưa đến hạn';
 
   @override

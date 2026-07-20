@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "تحديد كمدفوع",
-  "loanMarkPaidBatch": "تحديد {count} قسطًا كمدفوعة",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "قيد الانتظار",
   "loanStatusPaid": "مدفوع",
   "loanStatusOverdue": "متأخر",

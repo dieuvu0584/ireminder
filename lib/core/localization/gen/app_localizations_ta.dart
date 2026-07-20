@@ -360,11 +360,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get loanMarkPaid => 'செலுத்தியதாக குறி';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count தவணைகளை செலுத்தியதாக குறி';
-  }
-
-  @override
   String get loanStatusPending => 'நிலுவையில்';
 
   @override

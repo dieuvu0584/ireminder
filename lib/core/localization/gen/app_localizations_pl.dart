@@ -358,11 +358,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get loanMarkPaid => 'Oznacz jako spłacone';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Oznacz $count rat jako spłacone';
-  }
-
-  @override
   String get loanStatusPending => 'Oczekująca';
 
   @override

@@ -359,11 +359,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get loanMarkPaid => 'Označit jako zaplacené';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Označit $count splátek jako zaplacené';
-  }
-
-  @override
   String get loanStatusPending => 'Čeká na úhradu';
 
   @override

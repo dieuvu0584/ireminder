@@ -360,11 +360,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String get loanMarkPaid => 'Tandakan sebagai dibayar';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Tandakan $count ansuran sebagai dibayar';
-  }
-
-  @override
   String get loanStatusPending => 'Belum tiba tempoh';
 
   @override

@@ -360,11 +360,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get loanMarkPaid => 'Tandai sudah dibayar';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Tandai $count cicilan sudah dibayar';
-  }
-
-  @override
   String get loanStatusPending => 'Belum jatuh tempo';
 
   @override

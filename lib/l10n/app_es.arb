@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Marcar como pagada",
-  "loanMarkPaidBatch": "Marcar {count} cuotas como pagadas",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Pendiente",
   "loanStatusPaid": "Pagada",
   "loanStatusOverdue": "Atrasada",

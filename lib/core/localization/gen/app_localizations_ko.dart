@@ -355,11 +355,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get loanMarkPaid => '납부 완료로 표시';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '$count회를 납부 완료로 표시';
-  }
-
-  @override
   String get loanStatusPending => '대기 중';
 
   @override

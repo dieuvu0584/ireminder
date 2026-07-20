@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "סמן כשולם",
-  "loanMarkPaidBatch": "סמן {count} תשלומים כשולמו",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "ממתין",
   "loanStatusPaid": "שולם",
   "loanStatusOverdue": "באיחור",

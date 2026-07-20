@@ -358,11 +358,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get loanMarkPaid => 'Позначити як сплачено';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Позначити $count платежів як сплачені';
-  }
-
-  @override
   String get loanStatusPending => 'Очікується';
 
   @override

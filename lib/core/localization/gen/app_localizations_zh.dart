@@ -351,11 +351,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get loanMarkPaid => '标记为已还';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return '标记 $count 期为已还';
-  }
-
-  @override
   String get loanStatusPending => '待还款';
 
   @override

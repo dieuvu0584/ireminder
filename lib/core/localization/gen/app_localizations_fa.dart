@@ -358,11 +358,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get loanMarkPaid => 'علامت‌گذاری به‌عنوان پرداخت‌شده';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'علامت‌گذاری $count قسط به‌عنوان پرداخت‌شده';
-  }
-
-  @override
   String get loanStatusPending => 'در انتظار';
 
   @override

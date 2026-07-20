@@ -359,11 +359,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get loanMarkPaid => 'Markera som betald';
 
   @override
-  String loanMarkPaidBatch(int count) {
-    return 'Markera $count avbetalningar som betalda';
-  }
-
-  @override
   String get loanStatusPending => 'Väntande';
 
   @override

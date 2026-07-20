@@ -129,14 +129,6 @@
     }
   },
   "loanMarkPaid": "Позначити як сплачено",
-  "loanMarkPaidBatch": "Позначити {count} платежів як сплачені",
-  "@loanMarkPaidBatch": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "loanStatusPending": "Очікується",
   "loanStatusPaid": "Сплачено",
   "loanStatusOverdue": "Прострочено",
