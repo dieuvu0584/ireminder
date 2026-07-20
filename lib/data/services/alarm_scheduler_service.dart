@@ -85,8 +85,6 @@ class AlarmSchedulerService {
           fireAt: DateTime.now().add(const Duration(seconds: 5)),
           title: reminder.title,
           body: reminder.description ?? '',
-          doneActionLabel: prefs.l10n.actionDone,
-          snoozeActionLabel: prefs.l10n.actionSnooze,
           soundEnabled: prefs.sound,
           vibrationEnabled: prefs.vibration,
         );
@@ -98,8 +96,6 @@ class AlarmSchedulerService {
         fireAt: fireAt,
         title: reminder.title,
         body: reminder.description ?? '',
-        doneActionLabel: prefs.l10n.actionDone,
-        snoozeActionLabel: prefs.l10n.actionSnooze,
         soundEnabled: prefs.sound,
         vibrationEnabled: prefs.vibration,
       );

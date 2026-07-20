@@ -9,8 +9,6 @@ import 'background_notification_handler.dart';
 /// Notification actions ids, kept stable so payload parsing on tap/action
 /// stays backward compatible across app updates.
 class NotificationActionIds {
-  static const reminderDone = 'reminder_done';
-  static const reminderSnooze = 'reminder_snooze';
   static const installmentPaid = 'installment_paid';
 }
 
@@ -21,7 +19,6 @@ class NotificationIdSpace {
   static const int reminderBase = 0;
   static const int installmentBase = 1000000;
   static const int testNotificationId = 2000000;
-  static const int debugNotificationId = 3000000;
 
   static int forReminder(int reminderId) => reminderBase + reminderId;
   static int forInstallment(int installmentId) =>
@@ -287,13 +284,16 @@ class NotificationService {
     );
   }
 
+  // No action buttons (Done/Snooze) — they turned out unreliable on at
+  // least one real device (OS/plugin dropped the action tap entirely on
+  // some builds). Tapping the notification body now just opens the
+  // reminder's detail screen instead, where Done/Snooze already exist as
+  // regular in-app buttons.
   Future<void> scheduleReminder({
     required int reminderId,
     required DateTime fireAt,
     required String title,
     required String body,
-    required String doneActionLabel,
-    required String snoozeActionLabel,
     bool soundEnabled = true,
     bool vibrationEnabled = true,
   }) async {
@@ -317,18 +317,6 @@ class NotificationService {
           priority: Priority.high,
           playSound: soundEnabled,
           enableVibration: vibrationEnabled,
-          actions: [
-            AndroidNotificationAction(
-              NotificationActionIds.reminderDone,
-              doneActionLabel,
-              showsUserInterface: false,
-            ),
-            AndroidNotificationAction(
-              NotificationActionIds.reminderSnooze,
-              snoozeActionLabel,
-              showsUserInterface: false,
-            ),
-          ],
         ),
       ),
       uiLocalNotificationDateInterpretation:
@@ -380,31 +368,6 @@ class NotificationService {
           UILocalNotificationDateInterpretation.absoluteTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       payload: 'installment:$installmentId',
-    );
-  }
-
-  /// TEMPORARY diagnostic: fires an immediate, unscheduled notification so
-  /// a real device can show us whether/where the Done/Snooze action
-  /// pipeline actually runs, since a background isolate's crash is
-  /// otherwise completely invisible (no logcat access, no crash report —
-  /// nothing). Safe to call from either the foreground or a background
-  /// isolate, and safe even if the app was never `init()`-ed in this
-  /// isolate, since `.show()` creates its channel on demand.
-  /// TODO: remove once the "Done/Snooze does nothing" report is resolved.
-  Future<void> showDebugNotification(String message) async {
-    await _plugin.show(
-      NotificationIdSpace.debugNotificationId,
-      'iReminder debug',
-      message,
-      const NotificationDetails(
-        android: AndroidNotificationDetails(
-          'debug_channel',
-          'Debug',
-          channelDescription: 'Temporary diagnostic notifications',
-          importance: Importance.high,
-          priority: Priority.high,
-        ),
-      ),
     );
   }
 

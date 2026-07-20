@@ -16,16 +16,10 @@ void main() {
       );
     });
 
-    test('payloadForId returns null for the test/debug sentinel ids', () {
+    test('payloadForId returns null for the test-notification sentinel id', () {
       expect(
         NotificationIdSpace.payloadForId(
           NotificationIdSpace.testNotificationId,
-        ),
-        isNull,
-      );
-      expect(
-        NotificationIdSpace.payloadForId(
-          NotificationIdSpace.debugNotificationId,
         ),
         isNull,
       );

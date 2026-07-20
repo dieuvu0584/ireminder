@@ -8,58 +8,50 @@ import 'core/theme/app_theme.dart';
 import 'data/services/notification_service.dart';
 import 'presentation/providers/loan_providers.dart';
 import 'presentation/providers/notification_providers.dart';
-import 'presentation/providers/reminder_providers.dart';
 import 'presentation/providers/repository_providers.dart';
 import 'presentation/providers/settings_providers.dart';
 import 'presentation/screens/home/home_screen.dart';
 import 'presentation/screens/onboarding/onboarding_screen.dart';
 import 'presentation/screens/onboarding/permission_check_screen.dart';
+import 'presentation/screens/reminders/reminder_detail_screen.dart';
+
+/// Lets the notification-tap handler below push a route without a
+/// BuildContext of its own — it runs from a plugin callback, outside the
+/// widget tree.
+final navigatorKey = GlobalKey<NavigatorState>();
 
 final appBootstrapProvider = FutureProvider<void>((ref) async {
   final notificationService = ref.read(notificationServiceProvider);
   notificationService.onAction = (actionId, payload) async {
-    // TEMPORARY: confirms the foreground handler is the one actually
-    // receiving the tap (as opposed to the background isolate handler in
-    // background_notification_handler.dart, or neither). TODO: remove
-    // once the "Done/Snooze does nothing" report is resolved.
-    await notificationService.showDebugNotification(
-      'foreground handler entered: action=$actionId payload=$payload',
-    );
-
     if (payload == null) return;
     final parts = payload.split(':');
     if (parts.length != 2) return;
     final id = int.tryParse(parts[1]);
     if (id == null) return;
 
-    // Tapping an action button does not auto-dismiss the notification
-    // (unlike tapping the body, which respects autoCancel) — dismiss it
-    // explicitly, and do so before any DB work below so the visible
-    // "did my tap register" feedback never waits on it.
-    if (actionId == NotificationActionIds.reminderSnooze ||
-        actionId == NotificationActionIds.reminderDone) {
-      await notificationService.cancelReminder(id);
-    } else if (actionId == NotificationActionIds.installmentPaid) {
+    if (actionId == NotificationActionIds.installmentPaid) {
+      // Tapping an action button does not auto-dismiss the notification
+      // (unlike tapping the body, which respects autoCancel) — dismiss it
+      // explicitly, and do so before any DB work below so the visible
+      // "did my tap register" feedback never waits on it.
       await notificationService.cancelInstallment(id);
     }
 
     try {
       if (parts[0] == 'reminder') {
-        if (actionId == NotificationActionIds.reminderSnooze) {
-          final settings = await ref.read(settingsRepositoryProvider).get();
-          await ref
-              .read(reminderActionsProvider)
-              .snooze(
-                id,
-                DateTime.now().add(
-                  Duration(minutes: settings.snoozeDurationMinutes),
-                ),
-              );
-        } else if (actionId == NotificationActionIds.reminderDone) {
-          await ref.read(reminderActionsProvider).complete(id);
+        // Reminders have no action buttons anymore (Done/Snooze turned
+        // out unreliable on at least one real device) — every tap here is
+        // a plain tap on the notification body, so just open the
+        // reminder's detail screen, where Done/Snooze already exist as
+        // regular in-app buttons.
+        final reminder = await ref.read(reminderRepositoryProvider).getById(id);
+        if (reminder != null) {
+          navigatorKey.currentState?.push(
+            MaterialPageRoute(
+              builder: (_) => ReminderDetailScreen(reminder: reminder),
+            ),
+          );
         }
-        // Otherwise this is a plain tap on the notification body (opening
-        // the app), not an action button — nothing to do here.
       } else if (parts[0] == 'installment' &&
           actionId == NotificationActionIds.installmentPaid) {
         final installment = await ref
@@ -75,13 +67,8 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
               );
         }
       }
-      await notificationService.showDebugNotification(
-        'foreground handler finished OK for $actionId',
-      );
     } catch (e) {
-      await notificationService.showDebugNotification(
-        'foreground handler ERROR: $e',
-      );
+      debugPrint('appBootstrap: notification tap handler failed: $e');
     }
   };
   // Notification setup and alarm scheduling touch the OS (permissions,
@@ -168,6 +155,7 @@ class IReminderApp extends ConsumerWidget {
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
         return MaterialApp(
+          navigatorKey: navigatorKey,
           title: 'iReminder',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.light(lightDynamic),
