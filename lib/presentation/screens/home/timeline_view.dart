@@ -12,6 +12,24 @@ import '../../widgets/guarded_action.dart';
 import '../../widgets/reminder_card.dart';
 import '../reminders/reminder_detail_screen.dart';
 
+/// The moment a reminder is actually due. snoozeUntil already carries a
+/// precise date+time (set from `DateTime.now().add(...)`), so it's used
+/// as-is; nextDueDate is date-only, so it needs combining with the
+/// separately-stored reminderTime ("HH:mm") — otherwise reminders due the
+/// same day would tie on an arbitrary row order instead of sorting by
+/// time-of-day.
+DateTime _effectiveDueDateTime(Reminder r) {
+  if (r.snoozeUntil != null) return r.snoozeUntil!;
+  final parts = r.reminderTime.split(':');
+  return DateTime(
+    r.nextDueDate.year,
+    r.nextDueDate.month,
+    r.nextDueDate.day,
+    int.parse(parts[0]),
+    int.parse(parts[1]),
+  );
+}
+
 class TimelineView extends ConsumerWidget {
   const TimelineView({super.key});
 
@@ -69,13 +87,37 @@ class TimelineView extends ConsumerWidget {
           }
         }
 
+        // Ascending by due date+time within each section — the DB query
+        // backing activeReminders/allReminders only orders by the date
+        // part (next_due_date), so two reminders due the same day would
+        // otherwise tie-break on arbitrary row order instead of by their
+        // actual reminder time.
+        overdue.sort(
+          (a, b) =>
+              _effectiveDueDateTime(a).compareTo(_effectiveDueDateTime(b)),
+        );
+        thisWeek.sort(
+          (a, b) =>
+              _effectiveDueDateTime(a).compareTo(_effectiveDueDateTime(b)),
+        );
+        upcoming.sort(
+          (a, b) =>
+              _effectiveDueDateTime(a).compareTo(_effectiveDueDateTime(b)),
+        );
+
         final todayEntries =
-            buildOccurrencesByDay(
-              reminders: allRemindersAsync.valueOrNull ?? const [],
-              completedLogs: completedLogsAsync.valueOrNull ?? const [],
-              skippedLogs: skippedLogsAsync.valueOrNull ?? const [],
-            )[today] ??
-            const <ReminderOccurrence>[];
+            (buildOccurrencesByDay(
+                      reminders: allRemindersAsync.valueOrNull ?? const [],
+                      completedLogs: completedLogsAsync.valueOrNull ?? const [],
+                      skippedLogs: skippedLogsAsync.valueOrNull ?? const [],
+                    )[today] ??
+                    const <ReminderOccurrence>[])
+                .toList()
+              ..sort(
+                (a, b) => _effectiveDueDateTime(
+                  a.reminder,
+                ).compareTo(_effectiveDueDateTime(b.reminder)),
+              );
 
         if (overdue.isEmpty &&
             thisWeek.isEmpty &&
