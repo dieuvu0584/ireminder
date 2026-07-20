@@ -1,9 +1,4 @@
 name: Build APK
-# Empty commits don't trigger this workflow (paths-ignore needs at least
-# one changed file to evaluate), so a real file touch is needed to
-# re-trigger a build with no code changes.
-# Re-checking here whether the account's Artifact storage quota (hit on
-# 2026-07-17) has cleared yet — GitHub recalculates it every 6-12h.
 
 on:
   push:
