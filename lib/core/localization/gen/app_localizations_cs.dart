@@ -12,7 +12,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'Dnes';
+  String get navToday => 'Seznam úkolů';
 
   @override
   String get navCalendar => 'Kalendář';

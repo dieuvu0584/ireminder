@@ -12,7 +12,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'Сегодня';
+  String get navToday => 'Список задач';
 
   @override
   String get navCalendar => 'Календарь';

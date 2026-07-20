@@ -12,7 +12,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'امروز';
+  String get navToday => 'فهرست کارها';
 
   @override
   String get navCalendar => 'تقویم';

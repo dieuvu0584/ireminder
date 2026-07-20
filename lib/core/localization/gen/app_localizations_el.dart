@@ -12,7 +12,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'Σήμερα';
+  String get navToday => 'Λίστα εργασιών';
 
   @override
   String get navCalendar => 'Ημερολόγιο';

@@ -12,7 +12,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => '오늘';
+  String get navToday => '할 일 목록';
 
   @override
   String get navCalendar => '캘린더';

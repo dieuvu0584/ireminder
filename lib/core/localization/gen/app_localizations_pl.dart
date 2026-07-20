@@ -12,7 +12,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'Dziś';
+  String get navToday => 'Lista zadań';
 
   @override
   String get navCalendar => 'Kalendarz';

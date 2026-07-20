@@ -12,7 +12,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'Hôm nay';
+  String get navToday => 'Danh sách việc';
 
   @override
   String get navCalendar => 'Lịch';

@@ -12,7 +12,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'ఈరోజు';
+  String get navToday => 'పనుల జాబితా';
 
   @override
   String get navCalendar => 'క్యాలెండర్';

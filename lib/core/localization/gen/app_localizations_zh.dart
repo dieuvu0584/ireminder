@@ -12,7 +12,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => '今天';
+  String get navToday => '任务列表';
 
   @override
   String get navCalendar => '日历';

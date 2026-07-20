@@ -12,7 +12,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'આજે';
+  String get navToday => 'કાર્ય સૂચિ';
 
   @override
   String get navCalendar => 'કૅલેન્ડર';

@@ -12,7 +12,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'Ma';
+  String get navToday => 'Feladatlista';
 
   @override
   String get navCalendar => 'Naptár';

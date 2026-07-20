@@ -12,7 +12,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get appTitle => 'iReminder';
 
   @override
-  String get navToday => 'Bugün';
+  String get navToday => 'Görev Listesi';
 
   @override
   String get navCalendar => 'Takvim';

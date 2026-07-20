@@ -181,7 +181,7 @@ abstract class AppLocalizations {
   /// No description provided for @navToday.
   ///
   /// In en, this message translates to:
-  /// **'Today'**
+  /// **'Task List'**
   String get navToday;
 
   /// No description provided for @navCalendar.
