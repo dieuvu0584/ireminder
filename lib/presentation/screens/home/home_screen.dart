@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../providers/calendar_providers.dart';
-import '../categories/category_manager_screen.dart';
 import '../loans/loan_form_screen.dart';
 import '../loans/loan_list_screen.dart';
 import '../reminders/reminder_form_screen.dart';
@@ -94,7 +93,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
       ),
       const LoanListScreen(),
-      const CategoryManagerScreen(),
       const SettingsScreen(),
     ];
 
@@ -112,11 +110,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         icon: const Icon(Icons.payments_outlined),
         selectedIcon: const Icon(Icons.payments),
         label: l10n.navLoans,
-      ),
-      NavigationDestination(
-        icon: const Icon(Icons.category_outlined),
-        selectedIcon: const Icon(Icons.category),
-        label: l10n.navCategories,
       ),
       NavigationDestination(
         icon: const Icon(Icons.settings_outlined),

@@ -10,6 +10,7 @@ import '../../providers/backup_providers.dart';
 import '../../providers/notification_providers.dart';
 import '../../providers/settings_providers.dart';
 import '../../widgets/permission_checklist.dart';
+import '../categories/category_manager_screen.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -105,6 +106,16 @@ class SettingsScreen extends ConsumerWidget {
                   await actions.setThemeMode(selected);
                 }
               },
+            ),
+            ListTile(
+              leading: const Icon(Icons.category_outlined),
+              title: Text(l10n.navCategories),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const CategoryManagerScreen(),
+                ),
+              ),
             ),
             const Divider(),
             const _PermissionsSection(),
