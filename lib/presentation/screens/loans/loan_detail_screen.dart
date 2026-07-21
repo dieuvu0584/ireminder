@@ -67,44 +67,7 @@ class LoanDetailScreen extends ConsumerWidget {
                     installment.status == 'pending' &&
                     installment.dueDate.isBefore(todayOnly);
                 final isPaid = installment.status == 'paid';
-                return CheckboxListTile(
-                  // Ticking the box marks it paid immediately — no
-                  // separate confirm step. A staged "select several, then
-                  // confirm" flow here made the checkbox itself look like
-                  // it didn't do anything, since nothing was actually
-                  // saved until a second tap on a FAB that only appeared
-                  // once something was selected.
-                  value: isPaid,
-                  onChanged: isPaid
-                      ? null
-                      : (checked) async {
-                          if (checked != true) return;
-                          final messenger = ScaffoldMessenger.of(context);
-                          try {
-                            await ref
-                                .read(loanActionsProvider)
-                                .markPaid(
-                                  loanId: loan.id,
-                                  installmentIds: [installment.id],
-                                  paidDate: DateTime.now(),
-                                );
-                            messenger.showSnackBar(
-                              SnackBar(content: Text(l10n.loanMarkPaidSuccess)),
-                            );
-                          } catch (_) {
-                            messenger.showSnackBar(
-                              SnackBar(content: Text(l10n.errorGeneric)),
-                            );
-                          }
-                        },
-                  // Checkbox.fillColor/checkColor aren't state-dimmed the
-                  // way the surrounding disabled ListTile text is, so a
-                  // paid (disabled) box still renders fully green+checked
-                  // instead of Flutter's default grayed-out disabled look.
-                  fillColor: isPaid
-                      ? WidgetStateProperty.all(Colors.green)
-                      : null,
-                  checkColor: isPaid ? Colors.white : null,
+                return ListTile(
                   title: Text(
                     l10n.loanInstallmentNumber(installment.installmentNumber),
                   ),
@@ -112,7 +75,7 @@ class LoanDetailScreen extends ConsumerWidget {
                     '${DateFormatter.formatDate(installment.dueDate, locale)} · '
                     '${DateFormatter.formatCurrency(installment.amount, locale)}',
                   ),
-                  secondary: Chip(
+                  leading: Chip(
                     label: Text(
                       isPaid
                           ? l10n.loanStatusPaid
@@ -125,6 +88,52 @@ class LoanDetailScreen extends ConsumerWidget {
                         : isOverdue
                         ? Colors.red.withValues(alpha: 0.15)
                         : null,
+                  ),
+                  // Same round check icon + orange/green/red scheme as
+                  // ReminderCard's trailing check and InstallmentCard
+                  // (used for installments on the Calendar/Task List
+                  // tabs), so an installment's "done" control looks like
+                  // the same kind of thing everywhere it appears instead
+                  // of a differently-shaped checkbox here specifically.
+                  trailing: IconButton(
+                    icon: Icon(
+                      isPaid ? Icons.check_circle : Icons.check_circle_outline,
+                      color: isPaid
+                          ? Colors.green
+                          : isOverdue
+                          ? Theme.of(context).colorScheme.error
+                          : Colors.orange,
+                    ),
+                    onPressed: isPaid
+                        ? null
+                        : () async {
+                            // Tapping marks it paid immediately — no
+                            // separate confirm step. A staged "select
+                            // several, then confirm" flow here made the
+                            // control look like it didn't do anything,
+                            // since nothing was actually saved until a
+                            // second tap on a FAB that only appeared once
+                            // something was selected.
+                            final messenger = ScaffoldMessenger.of(context);
+                            try {
+                              await ref
+                                  .read(loanActionsProvider)
+                                  .markPaid(
+                                    loanId: loan.id,
+                                    installmentIds: [installment.id],
+                                    paidDate: DateTime.now(),
+                                  );
+                              messenger.showSnackBar(
+                                SnackBar(
+                                  content: Text(l10n.loanMarkPaidSuccess),
+                                ),
+                              );
+                            } catch (_) {
+                              messenger.showSnackBar(
+                                SnackBar(content: Text(l10n.errorGeneric)),
+                              );
+                            }
+                          },
                   ),
                 );
               },
