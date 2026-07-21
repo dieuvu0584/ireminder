@@ -2231,6 +2231,17 @@ class $LoansTable extends Loans with TableInfo<$LoansTable, Loan> {
     requiredDuringInsert: false,
     defaultValue: const Constant(3),
   );
+  static const VerificationMeta _reminderTimeMeta = const VerificationMeta(
+    'reminderTime',
+  );
+  @override
+  late final GeneratedColumn<String> reminderTime = GeneratedColumn<String>(
+    'reminder_time',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   static const VerificationMeta _isActiveMeta = const VerificationMeta(
     'isActive',
   );
@@ -2280,6 +2291,7 @@ class $LoansTable extends Loans with TableInfo<$LoansTable, Loan> {
     startDate,
     endDate,
     reminderAdvanceDays,
+    reminderTime,
     isActive,
     notes,
     createdAt,
@@ -2393,6 +2405,15 @@ class $LoansTable extends Loans with TableInfo<$LoansTable, Loan> {
         ),
       );
     }
+    if (data.containsKey('reminder_time')) {
+      context.handle(
+        _reminderTimeMeta,
+        reminderTime.isAcceptableOrUnknown(
+          data['reminder_time']!,
+          _reminderTimeMeta,
+        ),
+      );
+    }
     if (data.containsKey('is_active')) {
       context.handle(
         _isActiveMeta,
@@ -2470,6 +2491,10 @@ class $LoansTable extends Loans with TableInfo<$LoansTable, Loan> {
         DriftSqlType.int,
         data['${effectivePrefix}reminder_advance_days'],
       )!,
+      reminderTime: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}reminder_time'],
+      ),
       isActive: attachedDatabase.typeMapping.read(
         DriftSqlType.bool,
         data['${effectivePrefix}is_active'],
@@ -2506,6 +2531,12 @@ class Loan extends DataClass implements Insertable<Loan> {
   final DateTime startDate;
   final DateTime? endDate;
   final int reminderAdvanceDays;
+
+  /// "HH:mm" — the time of day installment notifications fire at, picked
+  /// per-loan at creation. Null on loans created before this existed,
+  /// which fall back to the app-wide default reminder time instead (see
+  /// AlarmSchedulerService.scheduleForInstallment).
+  final String? reminderTime;
   final bool isActive;
   final String? notes;
   final DateTime createdAt;
@@ -2522,6 +2553,7 @@ class Loan extends DataClass implements Insertable<Loan> {
     required this.startDate,
     this.endDate,
     required this.reminderAdvanceDays,
+    this.reminderTime,
     required this.isActive,
     this.notes,
     required this.createdAt,
@@ -2549,6 +2581,9 @@ class Loan extends DataClass implements Insertable<Loan> {
       map['end_date'] = Variable<DateTime>(endDate);
     }
     map['reminder_advance_days'] = Variable<int>(reminderAdvanceDays);
+    if (!nullToAbsent || reminderTime != null) {
+      map['reminder_time'] = Variable<String>(reminderTime);
+    }
     map['is_active'] = Variable<bool>(isActive);
     if (!nullToAbsent || notes != null) {
       map['notes'] = Variable<String>(notes);
@@ -2579,6 +2614,9 @@ class Loan extends DataClass implements Insertable<Loan> {
           ? const Value.absent()
           : Value(endDate),
       reminderAdvanceDays: Value(reminderAdvanceDays),
+      reminderTime: reminderTime == null && nullToAbsent
+          ? const Value.absent()
+          : Value(reminderTime),
       isActive: Value(isActive),
       notes: notes == null && nullToAbsent
           ? const Value.absent()
@@ -2607,6 +2645,7 @@ class Loan extends DataClass implements Insertable<Loan> {
       reminderAdvanceDays: serializer.fromJson<int>(
         json['reminderAdvanceDays'],
       ),
+      reminderTime: serializer.fromJson<String?>(json['reminderTime']),
       isActive: serializer.fromJson<bool>(json['isActive']),
       notes: serializer.fromJson<String?>(json['notes']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
@@ -2628,6 +2667,7 @@ class Loan extends DataClass implements Insertable<Loan> {
       'startDate': serializer.toJson<DateTime>(startDate),
       'endDate': serializer.toJson<DateTime?>(endDate),
       'reminderAdvanceDays': serializer.toJson<int>(reminderAdvanceDays),
+      'reminderTime': serializer.toJson<String?>(reminderTime),
       'isActive': serializer.toJson<bool>(isActive),
       'notes': serializer.toJson<String?>(notes),
       'createdAt': serializer.toJson<DateTime>(createdAt),
@@ -2647,6 +2687,7 @@ class Loan extends DataClass implements Insertable<Loan> {
     DateTime? startDate,
     Value<DateTime?> endDate = const Value.absent(),
     int? reminderAdvanceDays,
+    Value<String?> reminderTime = const Value.absent(),
     bool? isActive,
     Value<String?> notes = const Value.absent(),
     DateTime? createdAt,
@@ -2665,6 +2706,7 @@ class Loan extends DataClass implements Insertable<Loan> {
     startDate: startDate ?? this.startDate,
     endDate: endDate.present ? endDate.value : this.endDate,
     reminderAdvanceDays: reminderAdvanceDays ?? this.reminderAdvanceDays,
+    reminderTime: reminderTime.present ? reminderTime.value : this.reminderTime,
     isActive: isActive ?? this.isActive,
     notes: notes.present ? notes.value : this.notes,
     createdAt: createdAt ?? this.createdAt,
@@ -2697,6 +2739,9 @@ class Loan extends DataClass implements Insertable<Loan> {
       reminderAdvanceDays: data.reminderAdvanceDays.present
           ? data.reminderAdvanceDays.value
           : this.reminderAdvanceDays,
+      reminderTime: data.reminderTime.present
+          ? data.reminderTime.value
+          : this.reminderTime,
       isActive: data.isActive.present ? data.isActive.value : this.isActive,
       notes: data.notes.present ? data.notes.value : this.notes,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
@@ -2718,6 +2763,7 @@ class Loan extends DataClass implements Insertable<Loan> {
           ..write('startDate: $startDate, ')
           ..write('endDate: $endDate, ')
           ..write('reminderAdvanceDays: $reminderAdvanceDays, ')
+          ..write('reminderTime: $reminderTime, ')
           ..write('isActive: $isActive, ')
           ..write('notes: $notes, ')
           ..write('createdAt: $createdAt')
@@ -2739,6 +2785,7 @@ class Loan extends DataClass implements Insertable<Loan> {
     startDate,
     endDate,
     reminderAdvanceDays,
+    reminderTime,
     isActive,
     notes,
     createdAt,
@@ -2759,6 +2806,7 @@ class Loan extends DataClass implements Insertable<Loan> {
           other.startDate == this.startDate &&
           other.endDate == this.endDate &&
           other.reminderAdvanceDays == this.reminderAdvanceDays &&
+          other.reminderTime == this.reminderTime &&
           other.isActive == this.isActive &&
           other.notes == this.notes &&
           other.createdAt == this.createdAt);
@@ -2777,6 +2825,7 @@ class LoansCompanion extends UpdateCompanion<Loan> {
   final Value<DateTime> startDate;
   final Value<DateTime?> endDate;
   final Value<int> reminderAdvanceDays;
+  final Value<String?> reminderTime;
   final Value<bool> isActive;
   final Value<String?> notes;
   final Value<DateTime> createdAt;
@@ -2793,6 +2842,7 @@ class LoansCompanion extends UpdateCompanion<Loan> {
     this.startDate = const Value.absent(),
     this.endDate = const Value.absent(),
     this.reminderAdvanceDays = const Value.absent(),
+    this.reminderTime = const Value.absent(),
     this.isActive = const Value.absent(),
     this.notes = const Value.absent(),
     this.createdAt = const Value.absent(),
@@ -2810,6 +2860,7 @@ class LoansCompanion extends UpdateCompanion<Loan> {
     required DateTime startDate,
     this.endDate = const Value.absent(),
     this.reminderAdvanceDays = const Value.absent(),
+    this.reminderTime = const Value.absent(),
     this.isActive = const Value.absent(),
     this.notes = const Value.absent(),
     required DateTime createdAt,
@@ -2832,6 +2883,7 @@ class LoansCompanion extends UpdateCompanion<Loan> {
     Expression<DateTime>? startDate,
     Expression<DateTime>? endDate,
     Expression<int>? reminderAdvanceDays,
+    Expression<String>? reminderTime,
     Expression<bool>? isActive,
     Expression<String>? notes,
     Expression<DateTime>? createdAt,
@@ -2850,6 +2902,7 @@ class LoansCompanion extends UpdateCompanion<Loan> {
       if (endDate != null) 'end_date': endDate,
       if (reminderAdvanceDays != null)
         'reminder_advance_days': reminderAdvanceDays,
+      if (reminderTime != null) 'reminder_time': reminderTime,
       if (isActive != null) 'is_active': isActive,
       if (notes != null) 'notes': notes,
       if (createdAt != null) 'created_at': createdAt,
@@ -2869,6 +2922,7 @@ class LoansCompanion extends UpdateCompanion<Loan> {
     Value<DateTime>? startDate,
     Value<DateTime?>? endDate,
     Value<int>? reminderAdvanceDays,
+    Value<String?>? reminderTime,
     Value<bool>? isActive,
     Value<String?>? notes,
     Value<DateTime>? createdAt,
@@ -2886,6 +2940,7 @@ class LoansCompanion extends UpdateCompanion<Loan> {
       startDate: startDate ?? this.startDate,
       endDate: endDate ?? this.endDate,
       reminderAdvanceDays: reminderAdvanceDays ?? this.reminderAdvanceDays,
+      reminderTime: reminderTime ?? this.reminderTime,
       isActive: isActive ?? this.isActive,
       notes: notes ?? this.notes,
       createdAt: createdAt ?? this.createdAt,
@@ -2931,6 +2986,9 @@ class LoansCompanion extends UpdateCompanion<Loan> {
     if (reminderAdvanceDays.present) {
       map['reminder_advance_days'] = Variable<int>(reminderAdvanceDays.value);
     }
+    if (reminderTime.present) {
+      map['reminder_time'] = Variable<String>(reminderTime.value);
+    }
     if (isActive.present) {
       map['is_active'] = Variable<bool>(isActive.value);
     }
@@ -2958,6 +3016,7 @@ class LoansCompanion extends UpdateCompanion<Loan> {
           ..write('startDate: $startDate, ')
           ..write('endDate: $endDate, ')
           ..write('reminderAdvanceDays: $reminderAdvanceDays, ')
+          ..write('reminderTime: $reminderTime, ')
           ..write('isActive: $isActive, ')
           ..write('notes: $notes, ')
           ..write('createdAt: $createdAt')
@@ -5653,6 +5712,7 @@ typedef $$LoansTableCreateCompanionBuilder =
       required DateTime startDate,
       Value<DateTime?> endDate,
       Value<int> reminderAdvanceDays,
+      Value<String?> reminderTime,
       Value<bool> isActive,
       Value<String?> notes,
       required DateTime createdAt,
@@ -5671,6 +5731,7 @@ typedef $$LoansTableUpdateCompanionBuilder =
       Value<DateTime> startDate,
       Value<DateTime?> endDate,
       Value<int> reminderAdvanceDays,
+      Value<String?> reminderTime,
       Value<bool> isActive,
       Value<String?> notes,
       Value<DateTime> createdAt,
@@ -5778,6 +5839,11 @@ class $$LoansTableFilterComposer extends Composer<_$AppDatabase, $LoansTable> {
 
   ColumnFilters<int> get reminderAdvanceDays => $composableBuilder(
     column: $table.reminderAdvanceDays,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get reminderTime => $composableBuilder(
+    column: $table.reminderTime,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -5909,6 +5975,11 @@ class $$LoansTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get reminderTime => $composableBuilder(
+    column: $table.reminderTime,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<bool> get isActive => $composableBuilder(
     column: $table.isActive,
     builder: (column) => ColumnOrderings(column),
@@ -5999,6 +6070,11 @@ class $$LoansTableAnnotationComposer
 
   GeneratedColumn<int> get reminderAdvanceDays => $composableBuilder(
     column: $table.reminderAdvanceDays,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get reminderTime => $composableBuilder(
+    column: $table.reminderTime,
     builder: (column) => column,
   );
 
@@ -6100,6 +6176,7 @@ class $$LoansTableTableManager
                 Value<DateTime> startDate = const Value.absent(),
                 Value<DateTime?> endDate = const Value.absent(),
                 Value<int> reminderAdvanceDays = const Value.absent(),
+                Value<String?> reminderTime = const Value.absent(),
                 Value<bool> isActive = const Value.absent(),
                 Value<String?> notes = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
@@ -6116,6 +6193,7 @@ class $$LoansTableTableManager
                 startDate: startDate,
                 endDate: endDate,
                 reminderAdvanceDays: reminderAdvanceDays,
+                reminderTime: reminderTime,
                 isActive: isActive,
                 notes: notes,
                 createdAt: createdAt,
@@ -6134,6 +6212,7 @@ class $$LoansTableTableManager
                 required DateTime startDate,
                 Value<DateTime?> endDate = const Value.absent(),
                 Value<int> reminderAdvanceDays = const Value.absent(),
+                Value<String?> reminderTime = const Value.absent(),
                 Value<bool> isActive = const Value.absent(),
                 Value<String?> notes = const Value.absent(),
                 required DateTime createdAt,
@@ -6150,6 +6229,7 @@ class $$LoansTableTableManager
                 startDate: startDate,
                 endDate: endDate,
                 reminderAdvanceDays: reminderAdvanceDays,
+                reminderTime: reminderTime,
                 isActive: isActive,
                 notes: notes,
                 createdAt: createdAt,

@@ -38,7 +38,7 @@ class TimelineView extends ConsumerWidget {
     // so they're folded into the same sections as reminders instead of
     // living in a separate loans-only view.
     final installmentsAsync = ref.watch(
-      pendingInstallmentsWithLoanStreamProvider,
+      unpaidInstallmentsWithLoanStreamProvider,
     );
     final snoozeMinutes =
         ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
@@ -131,11 +131,11 @@ class TimelineView extends ConsumerWidget {
           );
         }
 
-        // Ascending by due date+time within each section — the DB
+        // Descending by due date+time within each section — the DB
         // queries backing activeReminders/allReminders/installments only
         // order by the date part, so entries due the same day would
         // otherwise tie-break on arbitrary row order.
-        int byDueAt(AgendaEntry a, AgendaEntry b) => a.dueAt.compareTo(b.dueAt);
+        int byDueAt(AgendaEntry a, AgendaEntry b) => b.dueAt.compareTo(a.dueAt);
         overdue.sort(byDueAt);
         thisWeek.sort(byDueAt);
         upcoming.sort(byDueAt);
@@ -274,7 +274,6 @@ class _Section extends ConsumerWidget {
                 category: loan.categoryId == null
                     ? null
                     : byId[loan.categoryId],
-                isOverdue: installment.dueDate.isBefore(today),
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => LoanDetailScreen(loan: loan),

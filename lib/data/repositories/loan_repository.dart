@@ -35,13 +35,14 @@ class LoanRepository {
         .watch();
   }
 
-  /// Every pending installment across every active loan, joined with its
-  /// loan (for name/category display) — used to fold installment due
-  /// dates into the Calendar/Task List tabs alongside reminders, since a
-  /// payment coming due is also "something to be reminded about on a
-  /// date." Paid/overdue-but-since-deleted-loan installments are excluded
-  /// since neither is still something to act on.
-  Stream<List<(LoanInstallment, Loan)>> watchPendingInstallmentsWithLoan() {
+  /// Every pending or overdue (but not yet paid) installment across every
+  /// active loan, joined with its loan (for name/category display) — used
+  /// to fold installment due dates into the Calendar/Task List tabs
+  /// alongside reminders, since a payment coming due is also "something
+  /// to be reminded about on a date." Overdue ones stay in this feed
+  /// (locked, grayed out in the UI) rather than disappearing, matching
+  /// how an auto-skipped reminder still shows on the day it was missed.
+  Stream<List<(LoanInstallment, Loan)>> watchUnpaidInstallmentsWithLoan() {
     final query =
         _db.select(_db.loanInstallments).join([
             innerJoin(
@@ -50,9 +51,10 @@ class LoanRepository {
             ),
           ])
           ..where(
-            _db.loanInstallments.status.equals(
+            _db.loanInstallments.status.isIn([
                   InstallmentStatus.pending.dbValue,
-                ) &
+                  InstallmentStatus.overdue.dbValue,
+                ]) &
                 _db.loans.isActive.equals(true),
           )
           ..orderBy([OrderingTerm.asc(_db.loanInstallments.dueDate)]);
@@ -66,6 +68,27 @@ class LoanRepository {
     );
   }
 
+  /// Transitions any installment whose due date has fully passed while
+  /// still 'pending' to 'overdue' — mirrors ReminderRepository's
+  /// autoSkipOverdue, run once at app start rather than computed live, so
+  /// the UI can trust the stored status instead of re-deriving it (and so
+  /// it can lock a missed installment the same way a skipped reminder
+  /// gets locked, instead of leaving it perpetually tappable).
+  Future<void> autoMarkOverdueInstallments() async {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    await (_db.update(_db.loanInstallments)..where(
+          (i) =>
+              i.status.equals(InstallmentStatus.pending.dbValue) &
+              i.dueDate.isSmallerThanValue(today),
+        ))
+        .write(
+          LoanInstallmentsCompanion(
+            status: Value(InstallmentStatus.overdue.dbValue),
+          ),
+        );
+  }
+
   /// Creates a loan and immediately generates all of its installments.
   Future<int> create({
     required String name,
@@ -77,6 +100,7 @@ class LoanRepository {
     int? dueDayOfMonth,
     required DateTime startDate,
     int reminderAdvanceDays = 3,
+    String? reminderTime,
     String? notes,
   }) async {
     final drafts = generateInstallments(
@@ -103,6 +127,7 @@ class LoanRepository {
               startDate: startDate,
               endDate: Value(endDate),
               reminderAdvanceDays: Value(reminderAdvanceDays),
+              reminderTime: Value(reminderTime),
               notes: Value(notes),
               createdAt: DateTime.now(),
             ),

@@ -47,6 +47,7 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
   int? _categoryId;
   LoanFrequency _frequency = LoanFrequency.monthly;
   late DateTime _startDate;
+  TimeOfDay _time = const TimeOfDay(hour: 9, minute: 0);
   // Purely a picker-UI convenience, unlike reminders' lunar mode — a loan
   // has no recurring lunar-day concept to anchor, so this only decides
   // which picker the Start date field opens (with lunar day labels or
@@ -96,6 +97,9 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
                 : null,
             startDate: _startDate,
             reminderAdvanceDays: int.tryParse(_reminderAdvanceCtrl.text) ?? 3,
+            reminderTime:
+                '${_time.hour.toString().padLeft(2, '0')}:'
+                '${_time.minute.toString().padLeft(2, '0')}',
             notes: _notesCtrl.text.trim().isEmpty
                 ? null
                 : _notesCtrl.text.trim(),
@@ -304,6 +308,22 @@ class _LoanFormScreenState extends ConsumerState<LoanFormScreen> {
                     lastDate: lastDate,
                   );
                   if (picked != null) setState(() => _startDate = picked);
+                },
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(l10n.reminderFieldTime),
+                subtitle: Text(
+                  '${_time.hour.toString().padLeft(2, '0')}:'
+                  '${_time.minute.toString().padLeft(2, '0')}',
+                ),
+                trailing: const Icon(Icons.access_time),
+                onTap: () async {
+                  final picked = await showTimePicker(
+                    context: context,
+                    initialTime: _time,
+                  );
+                  if (picked != null) setState(() => _time = picked);
                 },
               ),
               const SizedBox(height: 12),

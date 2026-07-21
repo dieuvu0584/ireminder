@@ -140,7 +140,7 @@ void main() {
     },
   );
 
-  test('watchPendingInstallmentsWithLoan excludes paid installments and '
+  test('watchUnpaidInstallmentsWithLoan excludes paid installments and '
       'installments of inactive loans', () async {
     final loanId = await loans.create(
       name: 'Agenda loan',
@@ -151,7 +151,7 @@ void main() {
     );
     final installments = await loans.watchInstallments(loanId).first;
 
-    final beforePaying = await loans.watchPendingInstallmentsWithLoan().first;
+    final beforePaying = await loans.watchUnpaidInstallmentsWithLoan().first;
     expect(beforePaying.where((p) => p.$1.loanId == loanId), hasLength(2));
 
     // Paying off every installment deactivates the loan (see markPaid),
@@ -164,7 +164,41 @@ void main() {
       paidDate: DateTime(2026, 1, 1),
     );
 
-    final afterPaying = await loans.watchPendingInstallmentsWithLoan().first;
+    final afterPaying = await loans.watchUnpaidInstallmentsWithLoan().first;
     expect(afterPaying.where((p) => p.$1.loanId == loanId), isEmpty);
+  });
+
+  test('autoMarkOverdueInstallments transitions only past-due pending '
+      'installments, leaving paid and future ones alone', () async {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final loanId = await loans.create(
+      name: 'Overdue transition loan',
+      installmentAmount: 100,
+      totalInstallments: 3,
+      frequency: LoanFrequency.weekly,
+      // Weekly steps land the 3 installments at day 0, 7, 14 from
+      // startDate — starting 10 days ago puts #1 in the past (should
+      // become overdue), #2 today (should stay pending — not yet
+      // "fully passed"), and #3 in the future (stays pending too).
+      startDate: today.subtract(const Duration(days: 10)),
+    );
+    final installments = await loans.watchInstallments(loanId).first;
+    await loans.markPaid(
+      loanId: loanId,
+      installmentIds: [installments[0].id],
+      paidDate: today,
+    );
+    final paidId = installments[0].id;
+    final stillPastDueId = installments[1].id; // day -3, unpaid
+    final futureId = installments[2].id; // day +4, unpaid
+
+    await loans.autoMarkOverdueInstallments();
+
+    final refreshed = await loans.watchInstallments(loanId).first;
+    final byId = {for (final i in refreshed) i.id: i};
+    expect(byId[paidId]!.status, InstallmentStatus.paid.dbValue);
+    expect(byId[stillPastDueId]!.status, InstallmentStatus.overdue.dbValue);
+    expect(byId[futureId]!.status, InstallmentStatus.pending.dbValue);
   });
 }

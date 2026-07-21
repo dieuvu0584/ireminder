@@ -133,7 +133,10 @@ class AlarmSchedulerService {
       final fireDate = installment.dueDate.subtract(
         Duration(days: loan.reminderAdvanceDays),
       );
-      final fireAt = _combine(fireDate, defaultReminderTime);
+      final fireAt = _combine(
+        fireDate,
+        loan.reminderTime ?? defaultReminderTime,
+      );
       if (fireAt.isBefore(DateTime.now())) return;
       final prefs = await _notificationPrefs();
 

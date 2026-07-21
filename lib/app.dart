@@ -138,6 +138,15 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
   }
 
   try {
+    // Same idea as autoSkipOverdue, for loan installments — once a due
+    // date passes without being paid, it locks in as overdue instead of
+    // staying tappable forever.
+    await ref.read(loanRepositoryProvider).autoMarkOverdueInstallments();
+  } catch (e) {
+    debugPrint('appBootstrap: autoMarkOverdueInstallments failed: $e');
+  }
+
+  try {
     await ref.read(alarmSchedulerServiceProvider).rescheduleAllFromDatabase();
   } catch (e) {
     debugPrint('appBootstrap: rescheduleAllFromDatabase failed: $e');

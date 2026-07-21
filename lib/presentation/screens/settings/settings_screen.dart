@@ -108,7 +108,6 @@ class SettingsScreen extends ConsumerWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.category_outlined),
               title: Text(l10n.navCategories),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => Navigator.of(context).push(

@@ -6,6 +6,7 @@ import '../../../core/utils/recurrence_calculator.dart';
 import '../../../core/utils/reminder_due_time.dart';
 import '../../../core/utils/reminder_occurrence_builder.dart';
 import '../../../data/database/app_database.dart';
+import '../../../domain/enums/loan_frequency.dart';
 import '../../../domain/enums/recurrence_type.dart';
 import '../../../domain/models/agenda_entry.dart';
 import '../../../domain/models/daily_exclusion.dart';
@@ -60,7 +61,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     // Unlike reminders they're one-off fixed dates generated up front at
     // loan creation, so no recurrence projection is needed here.
     final installmentsAsync = ref.watch(
-      pendingInstallmentsWithLoanStreamProvider,
+      unpaidInstallmentsWithLoanStreamProvider,
     );
     // Shared with HomeScreen's "+" FAB, so creating a reminder while
     // browsing a different day here pre-fills that day as the reminder's
@@ -391,7 +392,6 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                               category: loan.categoryId == null
                                   ? null
                                   : byId[loan.categoryId],
-                              isOverdue: installment.dueDate.isBefore(today),
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (_) => LoanDetailScreen(loan: loan),
@@ -441,7 +441,14 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
 
     final colors = [
       ...reminders.map(dotColor),
-      ...installments.map((_) => Colors.orange),
+      ...installments.map((pair) {
+        final status = pair.$1.status;
+        if (status == InstallmentStatus.paid.dbValue) return Colors.green;
+        if (status == InstallmentStatus.overdue.dbValue) {
+          return Theme.of(context).colorScheme.outline;
+        }
+        return Colors.orange;
+      }),
     ];
 
     return Wrap(

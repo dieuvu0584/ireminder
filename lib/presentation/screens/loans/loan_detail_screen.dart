@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/localization/gen/app_localizations.dart';
 import '../../../core/utils/date_formatter.dart';
 import '../../../data/database/app_database.dart';
+import '../../../domain/enums/loan_frequency.dart';
 import '../../providers/loan_providers.dart';
 
 class LoanDetailScreen extends ConsumerWidget {
@@ -18,8 +19,6 @@ class LoanDetailScreen extends ConsumerWidget {
     final installmentsAsync = ref.watch(
       loanInstallmentsStreamProvider(loan.id),
     );
-    final today = DateTime.now();
-    final todayOnly = DateTime(today.year, today.month, today.day);
 
     return Scaffold(
       appBar: AppBar(
@@ -63,10 +62,15 @@ class LoanDetailScreen extends ConsumerWidget {
               itemCount: installments.length,
               itemBuilder: (context, index) {
                 final installment = installments[index];
+                final isPaid =
+                    installment.status == InstallmentStatus.paid.dbValue;
+                // Set once by LoanRepository.autoMarkOverdueInstallments
+                // at app start, not computed live here — once overdue, an
+                // installment locks the same way an auto-skipped reminder
+                // does, rather than staying tappable indefinitely.
                 final isOverdue =
-                    installment.status == 'pending' &&
-                    installment.dueDate.isBefore(todayOnly);
-                final isPaid = installment.status == 'paid';
+                    installment.status == InstallmentStatus.overdue.dbValue;
+                final locked = isPaid || isOverdue;
                 return ListTile(
                   title: Text(
                     l10n.loanInstallmentNumber(installment.installmentNumber),
@@ -85,11 +89,9 @@ class LoanDetailScreen extends ConsumerWidget {
                     ),
                     backgroundColor: isPaid
                         ? Colors.green.withValues(alpha: 0.15)
-                        : isOverdue
-                        ? Colors.red.withValues(alpha: 0.15)
                         : null,
                   ),
-                  // Same round check icon + orange/green/red scheme as
+                  // Same round check icon + orange/green/gray scheme as
                   // ReminderCard's trailing check and InstallmentCard
                   // (used for installments on the Calendar/Task List
                   // tabs), so an installment's "done" control looks like
@@ -97,14 +99,14 @@ class LoanDetailScreen extends ConsumerWidget {
                   // of a differently-shaped checkbox here specifically.
                   trailing: IconButton(
                     icon: Icon(
-                      isPaid ? Icons.check_circle : Icons.check_circle_outline,
+                      locked ? Icons.check_circle : Icons.check_circle_outline,
                       color: isPaid
                           ? Colors.green
                           : isOverdue
-                          ? Theme.of(context).colorScheme.error
+                          ? Theme.of(context).colorScheme.outline
                           : Colors.orange,
                     ),
-                    onPressed: isPaid
+                    onPressed: locked
                         ? null
                         : () async {
                             // Tapping marks it paid immediately — no

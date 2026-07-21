@@ -14,14 +14,14 @@ final loanInstallmentsStreamProvider =
       return ref.watch(loanRepositoryProvider).watchInstallments(loanId);
     });
 
-/// Every pending installment across every active loan, joined with its
-/// loan — feeds the Calendar/Task List tabs so installment due dates show
-/// up alongside reminders.
-final pendingInstallmentsWithLoanStreamProvider =
+/// Every pending or overdue installment across every active loan, joined
+/// with its loan — feeds the Calendar/Task List tabs so installment due
+/// dates show up alongside reminders.
+final unpaidInstallmentsWithLoanStreamProvider =
     StreamProvider<List<(LoanInstallment, Loan)>>((ref) {
       return ref
           .watch(loanRepositoryProvider)
-          .watchPendingInstallmentsWithLoan();
+          .watchUnpaidInstallmentsWithLoan();
     });
 
 final loanActionsProvider = Provider<LoanActions>((ref) {
@@ -42,6 +42,7 @@ class LoanActions {
     int? dueDayOfMonth,
     required DateTime startDate,
     int reminderAdvanceDays = 3,
+    String? reminderTime,
     String? notes,
   }) async {
     final loanId = await _ref
@@ -56,6 +57,7 @@ class LoanActions {
           dueDayOfMonth: dueDayOfMonth,
           startDate: startDate,
           reminderAdvanceDays: reminderAdvanceDays,
+          reminderTime: reminderTime,
           notes: notes,
         );
     await _scheduleAllForLoan(loanId);
