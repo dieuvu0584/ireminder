@@ -586,13 +586,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get snoozeDuration120Min => '2 giờ';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Nhà cửa & thiết bị';
+  String get defaultCategoryHomeAppliances => 'Nhà cửa';
 
   @override
   String get defaultCategoryVehicles => 'Xe cộ';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Giỗ chạp & gia đình';
+  String get defaultCategoryFamilyEvents => 'Giỗ chạp';
 
   @override
   String get defaultCategoryFinance => 'Tài chính';
@@ -601,10 +601,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get defaultCategoryWork => 'Công việc';
 
   @override
-  String get defaultCategoryFamily => 'Gia đình nhỏ';
+  String get defaultCategoryFamily => 'Gia đình';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Dã ngoại & sự kiện';
+  String get defaultCategoryOutdoorEvents => 'Sự kiện';
 
   @override
   String get defaultCategoryHealth => 'Sức khỏe';

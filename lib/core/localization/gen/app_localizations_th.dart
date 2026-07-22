@@ -588,13 +588,13 @@ class AppLocalizationsTh extends AppLocalizations {
   String get snoozeDuration120Min => '2 ชั่วโมง';
 
   @override
-  String get defaultCategoryHomeAppliances => 'บ้านและเครื่องใช้ไฟฟ้า';
+  String get defaultCategoryHomeAppliances => 'บ้าน';
 
   @override
   String get defaultCategoryVehicles => 'ยานพาหนะ';
 
   @override
-  String get defaultCategoryFamilyEvents => 'วันครบรอบและครอบครัว';
+  String get defaultCategoryFamilyEvents => 'วันครบรอบ';
 
   @override
   String get defaultCategoryFinance => 'การเงิน';
@@ -606,7 +606,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get defaultCategoryFamily => 'ครอบครัว';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'เที่ยวและกิจกรรม';
+  String get defaultCategoryOutdoorEvents => 'กิจกรรม';
 
   @override
   String get defaultCategoryHealth => 'สุขภาพ';

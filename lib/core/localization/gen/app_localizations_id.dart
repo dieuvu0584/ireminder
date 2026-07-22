@@ -591,13 +591,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get snoozeDuration120Min => '2 jam';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Rumah & peralatan';
+  String get defaultCategoryHomeAppliances => 'Rumah';
 
   @override
   String get defaultCategoryVehicles => 'Kendaraan';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Peringatan & keluarga';
+  String get defaultCategoryFamilyEvents => 'Peringatan';
 
   @override
   String get defaultCategoryFinance => 'Keuangan';
@@ -609,7 +609,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get defaultCategoryFamily => 'Keluarga';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Jalan-jalan & acara';
+  String get defaultCategoryOutdoorEvents => 'Acara';
 
   @override
   String get defaultCategoryHealth => 'Kesehatan';

@@ -591,13 +591,13 @@ class AppLocalizationsEl extends AppLocalizations {
   String get snoozeDuration120Min => '2 ώρες';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Σπίτι & συσκευές';
+  String get defaultCategoryHomeAppliances => 'Σπίτι';
 
   @override
   String get defaultCategoryVehicles => 'Οχήματα';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Επέτειοι & οικογένεια';
+  String get defaultCategoryFamilyEvents => 'Επέτειοι';
 
   @override
   String get defaultCategoryFinance => 'Οικονομικά';
@@ -609,7 +609,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get defaultCategoryFamily => 'Οικογένεια';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Εκδρομές & εκδηλώσεις';
+  String get defaultCategoryOutdoorEvents => 'Εκδηλώσεις';
 
   @override
   String get defaultCategoryHealth => 'Υγεία';

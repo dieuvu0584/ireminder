@@ -585,13 +585,13 @@ class AppLocalizationsSw extends AppLocalizations {
   String get snoozeDuration120Min => 'Saa 2';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Nyumba na vifaa';
+  String get defaultCategoryHomeAppliances => 'Nyumba';
 
   @override
   String get defaultCategoryVehicles => 'Magari';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Kumbukumbu na familia';
+  String get defaultCategoryFamilyEvents => 'Kumbukumbu';
 
   @override
   String get defaultCategoryFinance => 'Fedha';
@@ -603,7 +603,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get defaultCategoryFamily => 'Familia';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Matembezi na matukio';
+  String get defaultCategoryOutdoorEvents => 'Matukio';
 
   @override
   String get defaultCategoryHealth => 'Afya';

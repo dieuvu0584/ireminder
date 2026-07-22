@@ -588,13 +588,13 @@ class AppLocalizationsCs extends AppLocalizations {
   String get snoozeDuration120Min => '2 hodiny';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Domácnost a spotřebiče';
+  String get defaultCategoryHomeAppliances => 'Domácnost';
 
   @override
   String get defaultCategoryVehicles => 'Vozidla';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Výročí a rodina';
+  String get defaultCategoryFamilyEvents => 'Výročí';
 
   @override
   String get defaultCategoryFinance => 'Finance';
@@ -606,7 +606,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get defaultCategoryFamily => 'Rodina';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Výlety a akce';
+  String get defaultCategoryOutdoorEvents => 'Akce';
 
   @override
   String get defaultCategoryHealth => 'Zdraví';

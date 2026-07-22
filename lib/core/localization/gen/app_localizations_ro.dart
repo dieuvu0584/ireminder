@@ -591,13 +591,13 @@ class AppLocalizationsRo extends AppLocalizations {
   String get snoozeDuration120Min => '2 ore';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Casă și electrocasnice';
+  String get defaultCategoryHomeAppliances => 'Casă';
 
   @override
   String get defaultCategoryVehicles => 'Vehicule';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Aniversări și familie';
+  String get defaultCategoryFamilyEvents => 'Aniversări';
 
   @override
   String get defaultCategoryFinance => 'Finanțe';
@@ -609,7 +609,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get defaultCategoryFamily => 'Familie';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Ieșiri și evenimente';
+  String get defaultCategoryOutdoorEvents => 'Evenimente';
 
   @override
   String get defaultCategoryHealth => 'Sănătate';

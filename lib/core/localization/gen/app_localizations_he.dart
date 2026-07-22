@@ -584,13 +584,13 @@ class AppLocalizationsHe extends AppLocalizations {
   String get snoozeDuration120Min => 'שעתיים';
 
   @override
-  String get defaultCategoryHomeAppliances => 'בית ומכשירים';
+  String get defaultCategoryHomeAppliances => 'בית';
 
   @override
   String get defaultCategoryVehicles => 'כלי רכב';
 
   @override
-  String get defaultCategoryFamilyEvents => 'ימי שנה ומשפחה';
+  String get defaultCategoryFamilyEvents => 'ימי שנה';
 
   @override
   String get defaultCategoryFinance => 'כספים';
@@ -602,7 +602,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get defaultCategoryFamily => 'משפחה';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'טיולים ואירועים';
+  String get defaultCategoryOutdoorEvents => 'אירועים';
 
   @override
   String get defaultCategoryHealth => 'בריאות';

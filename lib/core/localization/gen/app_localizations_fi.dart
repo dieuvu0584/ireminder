@@ -588,13 +588,13 @@ class AppLocalizationsFi extends AppLocalizations {
   String get snoozeDuration120Min => '2 tuntia';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Koti ja laitteet';
+  String get defaultCategoryHomeAppliances => 'Koti';
 
   @override
   String get defaultCategoryVehicles => 'Ajoneuvot';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Merkkipäivät ja perhe';
+  String get defaultCategoryFamilyEvents => 'Merkkipäivät';
 
   @override
   String get defaultCategoryFinance => 'Talous';
@@ -606,7 +606,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get defaultCategoryFamily => 'Perhe';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Retket ja tapahtumat';
+  String get defaultCategoryOutdoorEvents => 'Tapahtumat';
 
   @override
   String get defaultCategoryHealth => 'Terveys';

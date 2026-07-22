@@ -591,13 +591,13 @@ class AppLocalizationsHu extends AppLocalizations {
   String get snoozeDuration120Min => '2 óra';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Otthon és készülékek';
+  String get defaultCategoryHomeAppliances => 'Otthon';
 
   @override
   String get defaultCategoryVehicles => 'Járművek';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Évfordulók és család';
+  String get defaultCategoryFamilyEvents => 'Évfordulók';
 
   @override
   String get defaultCategoryFinance => 'Pénzügyek';
@@ -609,7 +609,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get defaultCategoryFamily => 'Család';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Kirándulások és események';
+  String get defaultCategoryOutdoorEvents => 'Események';
 
   @override
   String get defaultCategoryHealth => 'Egészség';

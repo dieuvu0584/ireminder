@@ -588,13 +588,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get snoozeDuration120Min => '2 timmar';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Hem och apparater';
+  String get defaultCategoryHomeAppliances => 'Hem';
 
   @override
   String get defaultCategoryVehicles => 'Fordon';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Årsdagar och familj';
+  String get defaultCategoryFamilyEvents => 'Årsdagar';
 
   @override
   String get defaultCategoryFinance => 'Ekonomi';
@@ -606,7 +606,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get defaultCategoryFamily => 'Familj';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Utflykter och event';
+  String get defaultCategoryOutdoorEvents => 'Event';
 
   @override
   String get defaultCategoryHealth => 'Hälsa';

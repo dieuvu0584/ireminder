@@ -573,13 +573,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get snoozeDuration120Min => '2 小时';
 
   @override
-  String get defaultCategoryHomeAppliances => '家居与电器';
+  String get defaultCategoryHomeAppliances => '家居';
 
   @override
   String get defaultCategoryVehicles => '车辆';
 
   @override
-  String get defaultCategoryFamilyEvents => '纪念日与家庭';
+  String get defaultCategoryFamilyEvents => '纪念日';
 
   @override
   String get defaultCategoryFinance => '财务';
@@ -591,7 +591,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get defaultCategoryFamily => '家庭';
 
   @override
-  String get defaultCategoryOutdoorEvents => '出游与活动';
+  String get defaultCategoryOutdoorEvents => '活动';
 
   @override
   String get defaultCategoryHealth => '健康';

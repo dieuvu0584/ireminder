@@ -1267,7 +1267,7 @@ abstract class AppLocalizations {
   /// No description provided for @defaultCategoryHomeAppliances.
   ///
   /// In en, this message translates to:
-  /// **'Home & Appliances'**
+  /// **'Home'**
   String get defaultCategoryHomeAppliances;
 
   /// No description provided for @defaultCategoryVehicles.
@@ -1279,7 +1279,7 @@ abstract class AppLocalizations {
   /// No description provided for @defaultCategoryFamilyEvents.
   ///
   /// In en, this message translates to:
-  /// **'Anniversaries & Family'**
+  /// **'Anniversaries'**
   String get defaultCategoryFamilyEvents;
 
   /// No description provided for @defaultCategoryFinance.
@@ -1303,7 +1303,7 @@ abstract class AppLocalizations {
   /// No description provided for @defaultCategoryOutdoorEvents.
   ///
   /// In en, this message translates to:
-  /// **'Outings & Events'**
+  /// **'Events'**
   String get defaultCategoryOutdoorEvents;
 
   /// No description provided for @defaultCategoryHealth.

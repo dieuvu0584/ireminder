@@ -588,13 +588,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get snoozeDuration120Min => '2 часа';
 
   @override
-  String get defaultCategoryHomeAppliances => 'Дом и техника';
+  String get defaultCategoryHomeAppliances => 'Дом';
 
   @override
   String get defaultCategoryVehicles => 'Транспорт';
 
   @override
-  String get defaultCategoryFamilyEvents => 'Годовщины и семья';
+  String get defaultCategoryFamilyEvents => 'Годовщины';
 
   @override
   String get defaultCategoryFinance => 'Финансы';
@@ -606,7 +606,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get defaultCategoryFamily => 'Семья';
 
   @override
-  String get defaultCategoryOutdoorEvents => 'Прогулки и мероприятия';
+  String get defaultCategoryOutdoorEvents => 'Мероприятия';
 
   @override
   String get defaultCategoryHealth => 'Здоровье';
