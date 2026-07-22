@@ -68,22 +68,39 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          bottom: TabBar(
-            tabs: [Tab(text: l10n.navToday), Tab(text: l10n.navCalendar)],
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.settings_outlined),
-              tooltip: l10n.navSettings,
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const SettingsScreen()),
+        // No AppBar here on purpose — an AppBar's actions sit in their own
+        // toolbar row above the "bottom" widget, which left a whole empty
+        // strip over the tabs just to hold one icon. Putting the settings
+        // button directly in this Row keeps it level with the tabs.
+        body: SafeArea(
+          bottom: false,
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: TabBar(
+                      tabs: [
+                        Tab(text: l10n.navToday),
+                        Tab(text: l10n.navCalendar),
+                      ],
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.settings_outlined),
+                    tooltip: l10n.navSettings,
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const SettingsScreen()),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
+              const Expanded(
+                child: TabBarView(children: [TimelineView(), CalendarView()]),
+              ),
+            ],
+          ),
         ),
-        body: const TabBarView(children: [TimelineView(), CalendarView()]),
         floatingActionButton: FloatingActionButton(
           onPressed: () => _showAddSheet(context),
           child: const Icon(Icons.add),
