@@ -25,6 +25,18 @@ class MonthCalendarHeader extends StatelessWidget {
   /// which has no "selected day" concept of its own.
   final DateTime? selectedDay;
 
+  /// Extra widget pinned to the far right edge of the row, past the
+  /// "next month" chevron — the Calendar screen uses this for its
+  /// settings entry point, now that there's no separate tab bar row left
+  /// to put it in. Null everywhere else (e.g. the lunar date picker).
+  final Widget? trailing;
+
+  /// Tints the whole header bar — the Calendar screen uses the app's own
+  /// brand color here so the header reads as "the app", not just another
+  /// gray toolbar; null (the lunar date picker) stays unstyled.
+  final Color? backgroundColor;
+  final Color? foregroundColor;
+
   const MonthCalendarHeader({
     super.key,
     required this.month,
@@ -32,6 +44,9 @@ class MonthCalendarHeader extends StatelessWidget {
     required this.onNext,
     this.onTitleTap,
     this.selectedDay,
+    this.trailing,
+    this.backgroundColor,
+    this.foregroundColor,
   });
 
   @override
@@ -44,27 +59,43 @@ class MonthCalendarHeader extends StatelessWidget {
     final label = showSelectedDay
         ? localizations.formatFullDate(selectedDay!)
         : localizations.formatMonthYear(month).toString();
-    final title = Text(label, style: Theme.of(context).textTheme.titleMedium);
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+    final title = Text(
+      label,
+      style: Theme.of(
+        context,
+      ).textTheme.titleMedium?.copyWith(color: foregroundColor),
+    );
+    return Container(
+      color: backgroundColor,
+      padding: const EdgeInsets.symmetric(horizontal: 4),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(icon: const Icon(Icons.chevron_left), onPressed: onPrev),
-          onTitleTap == null
-              ? title
-              : InkWell(
-                  borderRadius: BorderRadius.circular(8),
-                  onTap: onTitleTap,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 4,
+          IconButton(
+            icon: Icon(Icons.chevron_left, color: foregroundColor),
+            onPressed: onPrev,
+          ),
+          Expanded(
+            child: Center(
+              child: onTitleTap == null
+                  ? title
+                  : InkWell(
+                      borderRadius: BorderRadius.circular(8),
+                      onTap: onTitleTap,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
+                        child: title,
+                      ),
                     ),
-                    child: title,
-                  ),
-                ),
-          IconButton(icon: const Icon(Icons.chevron_right), onPressed: onNext),
+            ),
+          ),
+          IconButton(
+            icon: Icon(Icons.chevron_right, color: foregroundColor),
+            onPressed: onNext,
+          ),
+          ?trailing,
         ],
       ),
     );

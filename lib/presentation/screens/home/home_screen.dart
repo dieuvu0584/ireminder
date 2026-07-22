@@ -5,9 +5,7 @@ import '../../../core/localization/gen/app_localizations.dart';
 import '../../providers/calendar_providers.dart';
 import '../loans/loan_form_screen.dart';
 import '../reminders/reminder_form_screen.dart';
-import '../settings/settings_screen.dart';
 import 'calendar_view.dart';
-import 'timeline_view.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -40,7 +38,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
       ),
     );
-    // Shared with the Calendar tab's day grid, so creating a reminder or
+    // Shared with the Calendar screen's day grid, so creating a reminder or
     // loan while a specific day is selected there starts from that day —
     // defaults to today when nothing's been selected yet (the provider's
     // own initial value), matching the "otherwise default to today" half
@@ -63,48 +61,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        // No AppBar here on purpose — an AppBar's actions sit in their own
-        // toolbar row above the "bottom" widget, which left a whole empty
-        // strip over the tabs just to hold one icon. Putting the settings
-        // button directly in this Row keeps it level with the tabs.
-        body: SafeArea(
-          bottom: false,
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: TabBar(
-                      tabs: [
-                        Tab(text: l10n.navToday),
-                        Tab(text: l10n.navCalendar),
-                      ],
-                    ),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.settings_outlined),
-                    tooltip: l10n.navSettings,
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const SettingsScreen()),
-                    ),
-                  ),
-                ],
-              ),
-              const Expanded(
-                child: TabBarView(children: [TimelineView(), CalendarView()]),
-              ),
-            ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => _showAddSheet(context),
-          child: const Icon(Icons.add),
-        ),
+    // The Today/Calendar tabs are gone — Calendar is the only screen now,
+    // so it owns the whole body (including its own header row, which is
+    // where the settings entry point lives — see CalendarView).
+    return Scaffold(
+      body: const SafeArea(bottom: false, child: CalendarView()),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _showAddSheet(context),
+        child: const Icon(Icons.add),
       ),
     );
   }

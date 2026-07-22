@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/gen/app_localizations.dart';
+import '../../../core/theme/app_theme.dart';
 import '../../../core/utils/recurrence_calculator.dart';
 import '../../../core/utils/reminder_due_time.dart';
 import '../../../core/utils/reminder_occurrence_builder.dart';
@@ -23,6 +26,7 @@ import '../../widgets/month_calendar_grid.dart';
 import '../loans/loan_detail_screen.dart';
 import '../reminders/reminder_detail_screen.dart';
 import '../../widgets/reminder_card.dart';
+import '../settings/settings_screen.dart';
 
 class CalendarView extends ConsumerStatefulWidget {
   const CalendarView({super.key});
@@ -38,11 +42,33 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
   // more room. Tapping the header title (see onTitleTap below) undoes it.
   bool _collapsed = false;
 
+  // Auto-collapses the grid a few seconds after it's shown, on the
+  // assumption most visits are "check today/this month" rather than
+  // "browse the grid" — a manual swipe-up (see the drag handler below)
+  // collapses immediately and cancels this, and re-expanding via the
+  // header title restarts it so the same grace period applies again.
+  static const _autoCollapseDelay = Duration(seconds: 3);
+  Timer? _collapseTimer;
+
   @override
   void initState() {
     super.initState();
     final now = DateTime.now();
     _visibleMonth = DateTime(now.year, now.month);
+    _startCollapseTimer();
+  }
+
+  @override
+  void dispose() {
+    _collapseTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startCollapseTimer() {
+    _collapseTimer?.cancel();
+    _collapseTimer = Timer(_autoCollapseDelay, () {
+      if (mounted && !_collapsed) setState(() => _collapsed = true);
+    });
   }
 
   @override
@@ -63,9 +89,10 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     final installmentsAsync = ref.watch(
       unpaidInstallmentsWithLoanStreamProvider,
     );
-    // Shared with HomeScreen's "+" FAB, so creating a reminder while
-    // browsing a different day here pre-fills that day as the reminder's
-    // start date instead of always defaulting to today.
+    // Null means no specific day is picked — the list below then shows
+    // the whole visible month instead of a single day. Shared with
+    // HomeScreen's "+" FAB, so creating a reminder while browsing a
+    // specific day here pre-fills that day as the reminder's start date.
     final selectedDay = ref.watch(selectedCalendarDayProvider);
     final snoozeMinutes =
         ref.watch(settingsStreamProvider).valueOrNull?.snoozeDurationMinutes ??
@@ -236,32 +263,19 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
           }
         }
 
-        final selectedEntries = <AgendaEntry>[
-          ...(byDay[selectedDay] ?? const <ReminderOccurrence>[]).map(
-            (o) => ReminderAgendaEntry(
-              o,
-              effectiveReminderDueDateTime(o.reminder),
-            ),
-          ),
-          ...(installmentsByDay[selectedDay] ?? const []).map(
-            (pair) => InstallmentAgendaEntry(pair.$1, pair.$2),
-          ),
-        ]..sort((a, b) => a.dueAt.compareTo(b.dueAt));
+        final displayEntries = selectedDay != null
+            ? _entriesForDay(selectedDay, byDay, installmentsByDay)
+            : _entriesForMonth(_visibleMonth, byDay, installmentsByDay);
         final now = DateTime.now();
         final today = DateTime(now.year, now.month, now.day);
-        final isSelectedDayToday =
-            selectedDay.year == now.year &&
-            selectedDay.month == now.month &&
-            selectedDay.day == now.day;
-        // A day that hasn't arrived yet can't have its entries completed
-        // from here — see ReminderCard.completionLocked.
-        final isSelectedDayFuture = selectedDay.isAfter(today);
 
         return Column(
           children: [
             MonthCalendarHeader(
               month: _visibleMonth,
               selectedDay: selectedDay,
+              backgroundColor: kFallbackSeedColor,
+              foregroundColor: Colors.white,
               onPrev: () => setState(() {
                 _visibleMonth = DateTime(
                   _visibleMonth.year,
@@ -278,8 +292,19 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
               // grid comes back, per the same request that put swipe-up on
               // collapsing it.
               onTitleTap: _collapsed
-                  ? () => setState(() => _collapsed = false)
+                  ? () => setState(() {
+                      _collapsed = false;
+                      _startCollapseTimer();
+                    })
                   : null,
+              trailing: IconButton(
+                icon: const Icon(Icons.menu),
+                color: Colors.white,
+                tooltip: l10n.navSettings,
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const SettingsScreen()),
+                ),
+              ),
             ),
             // AnimatedSize gives the collapse/expand its animation for
             // free — swiping up on the grid area sets _collapsed, which
@@ -290,6 +315,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
               onVerticalDragEnd: (details) {
                 final velocity = details.primaryVelocity ?? 0;
                 if (!_collapsed && velocity < -200) {
+                  _collapseTimer?.cancel();
                   setState(() => _collapsed = true);
                 }
               },
@@ -309,13 +335,18 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                               byDay[day] ?? const [],
                               installmentsByDay[day] ?? const [],
                             ),
-                            onSelectDay: (d) =>
-                                ref
-                                        .read(
-                                          selectedCalendarDayProvider.notifier,
-                                        )
-                                        .state =
-                                    d,
+                            // Tapping the already-selected day again clears
+                            // the selection, dropping back to the whole
+                            // month's list instead of staying stuck on one
+                            // day with no way back except paging months.
+                            onSelectDay: (d) {
+                              final notifier = ref.read(
+                                selectedCalendarDayProvider.notifier,
+                              );
+                              notifier.state = _isSameDay(notifier.state, d)
+                                  ? null
+                                  : d;
+                            },
                           ),
                         ],
                       ),
@@ -323,7 +354,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
             ),
             const Divider(height: 1),
             Expanded(
-              child: selectedEntries.isEmpty
+              child: displayEntries.isEmpty
                   ? Center(
                       child: Text(
                         l10n.homeEmptyTitle,
@@ -331,86 +362,17 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                       ),
                     )
                   : ListView(
-                      children: selectedEntries.map((entry) {
-                        switch (entry) {
-                          case ReminderAgendaEntry(:final occurrence):
-                            return ReminderCard(
-                              key: ValueKey(
-                                'cal_${occurrence.reminder.id}_'
-                                '${occurrence.completed}_'
-                                '${occurrence.historical}',
-                              ),
-                              reminder: occurrence.reminder,
-                              category: byId[occurrence.reminder.categoryId],
-                              completed: occurrence.completed,
-                              historical: occurrence.historical,
-                              occurrenceDate: selectedDay,
-                              // Only today's own entries are correctable
-                              // same-day — a genuinely past day's history
-                              // stays locked, since there's no "undo" for
-                              // something several cycles behind by now.
-                              allowToggle: isSelectedDayToday,
-                              completionLocked: isSelectedDayFuture,
-                              onTap: () => Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => ReminderDetailScreen(
-                                    reminder: occurrence.reminder,
-                                  ),
-                                ),
-                              ),
-                              onComplete: () => runGuarded(
-                                context,
-                                () => occurrence.completed
-                                    ? ref
-                                          .read(reminderActionsProvider)
-                                          .uncomplete(occurrence.reminder.id)
-                                    : ref
-                                          .read(reminderActionsProvider)
-                                          .complete(occurrence.reminder.id),
-                              ),
-                              onSnooze: () => runGuarded(
-                                context,
-                                () => ref
-                                    .read(reminderActionsProvider)
-                                    .snooze(
-                                      occurrence.reminder.id,
-                                      DateTime.now().add(
-                                        Duration(minutes: snoozeMinutes),
-                                      ),
-                                    ),
-                              ),
-                            );
-                          case InstallmentAgendaEntry(
-                            :final installment,
-                            :final loan,
-                          ):
-                            return InstallmentCard(
-                              key: ValueKey(
-                                'cal_installment_${installment.id}',
-                              ),
-                              installment: installment,
-                              loan: loan,
-                              category: loan.categoryId == null
-                                  ? null
-                                  : byId[loan.categoryId],
-                              onTap: () => Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => LoanDetailScreen(loan: loan),
-                                ),
-                              ),
-                              onMarkPaid: () => runGuarded(
-                                context,
-                                () => ref
-                                    .read(loanActionsProvider)
-                                    .markPaid(
-                                      loanId: loan.id,
-                                      installmentIds: [installment.id],
-                                      paidDate: DateTime.now(),
-                                    ),
-                              ),
-                            );
-                        }
-                      }).toList(),
+                      children: displayEntries
+                          .map(
+                            (entry) => _entryCard(
+                              context,
+                              entry,
+                              byId,
+                              today,
+                              snoozeMinutes,
+                            ),
+                          )
+                          .toList(),
                     ),
             ),
           ],
@@ -420,6 +382,124 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
       error: (e, st) => Center(child: Text(l10n.errorLoadFailed)),
     );
   }
+
+  List<AgendaEntry> _entriesForDay(
+    DateTime day,
+    Map<DateTime, List<ReminderOccurrence>> byDay,
+    Map<DateTime, List<(LoanInstallment, Loan)>> installmentsByDay,
+  ) {
+    return <AgendaEntry>[
+      ...(byDay[day] ?? const <ReminderOccurrence>[]).map(
+        (o) => ReminderAgendaEntry(o, effectiveReminderDueDateTime(o.reminder)),
+      ),
+      ...(installmentsByDay[day] ?? const []).map(
+        (pair) => InstallmentAgendaEntry(pair.$1, pair.$2),
+      ),
+    ]..sort((a, b) => a.dueAt.compareTo(b.dueAt));
+  }
+
+  List<AgendaEntry> _entriesForMonth(
+    DateTime month,
+    Map<DateTime, List<ReminderOccurrence>> byDay,
+    Map<DateTime, List<(LoanInstallment, Loan)>> installmentsByDay,
+  ) {
+    bool inMonth(DateTime d) => d.year == month.year && d.month == month.month;
+    final entries = <AgendaEntry>[
+      for (final e in byDay.entries)
+        if (inMonth(e.key))
+          for (final o in e.value)
+            ReminderAgendaEntry(o, effectiveReminderDueDateTime(o.reminder)),
+      for (final e in installmentsByDay.entries)
+        if (inMonth(e.key))
+          for (final pair in e.value) InstallmentAgendaEntry(pair.$1, pair.$2),
+    ];
+    entries.sort((a, b) => a.dueAt.compareTo(b.dueAt));
+    return entries;
+  }
+
+  /// Builds the card for one entry, deriving its own today/future-ness
+  /// from its own due day — needed now that the month-wide list mixes
+  /// entries from many different days, unlike the single selected-day
+  /// list where every row shared the same day.
+  Widget _entryCard(
+    BuildContext context,
+    AgendaEntry entry,
+    Map<int, Category> byId,
+    DateTime today,
+    int snoozeMinutes,
+  ) {
+    final dueDay = DateTime(
+      entry.dueAt.year,
+      entry.dueAt.month,
+      entry.dueAt.day,
+    );
+    final isEntryToday = _isSameDay(dueDay, today);
+    final isEntryFuture = dueDay.isAfter(today);
+
+    switch (entry) {
+      case ReminderAgendaEntry(:final occurrence):
+        final r = occurrence.reminder;
+        return ReminderCard(
+          key: ValueKey(
+            'cal_${r.id}_${occurrence.completed}_${occurrence.historical}_'
+            '${dueDay.millisecondsSinceEpoch}',
+          ),
+          reminder: r,
+          category: byId[r.categoryId],
+          completed: occurrence.completed,
+          historical: occurrence.historical,
+          occurrenceDate: dueDay,
+          // Only today's own entries are correctable same-day — a
+          // genuinely past day's history stays locked, since there's no
+          // "undo" for something several cycles behind by now.
+          allowToggle: isEntryToday,
+          completionLocked: isEntryFuture,
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => ReminderDetailScreen(reminder: r),
+            ),
+          ),
+          onComplete: () => runGuarded(
+            context,
+            () => occurrence.completed
+                ? ref.read(reminderActionsProvider).uncomplete(r.id)
+                : ref.read(reminderActionsProvider).complete(r.id),
+          ),
+          onSnooze: () => runGuarded(
+            context,
+            () => ref
+                .read(reminderActionsProvider)
+                .snooze(
+                  r.id,
+                  DateTime.now().add(Duration(minutes: snoozeMinutes)),
+                ),
+          ),
+        );
+      case InstallmentAgendaEntry(:final installment, :final loan):
+        return InstallmentCard(
+          key: ValueKey('cal_installment_${installment.id}'),
+          installment: installment,
+          loan: loan,
+          category: loan.categoryId == null ? null : byId[loan.categoryId],
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => LoanDetailScreen(loan: loan)),
+          ),
+          onMarkPaid: () => runGuarded(
+            context,
+            () => ref
+                .read(loanActionsProvider)
+                .markPaid(
+                  loanId: loan.id,
+                  installmentIds: [installment.id],
+                  paidDate: DateTime.now(),
+                ),
+          ),
+        );
+    }
+  }
+
+  bool _isSameDay(DateTime? a, DateTime b) =>
+      a != null && a.year == b.year && a.month == b.month && a.day == b.day;
 
   /// Same 3-color scheme as ReminderCard's trailing check — orange while
   /// still due and actionable, green once done, gray once auto-skipped

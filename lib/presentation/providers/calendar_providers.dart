@@ -1,14 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-DateTime _today() {
-  final now = DateTime.now();
-  return DateTime(now.year, now.month, now.day);
-}
-
-/// The day currently selected in the Calendar sub-tab. Defaults to today,
-/// so behavior is unchanged unless the user has actually picked a
-/// different day — read by HomeScreen's "+" FAB so creating a reminder
-/// while browsing a different day pre-fills that day as the reminder's
-/// start date instead of always defaulting to today regardless of what's
-/// on screen.
-final selectedCalendarDayProvider = StateProvider<DateTime>((ref) => _today());
+/// The day currently selected on the Calendar screen. Null means "no
+/// specific day picked" — the Calendar shows the whole visible month's
+/// entries in that state instead of a single day's, switching to just
+/// that day's entries once the user taps one (tapping the same day again
+/// clears it back to null). Also read by HomeScreen's "+" FAB, so creating
+/// a reminder while a day is selected pre-fills it as the start date; both
+/// reminder/loan forms already fall back to today when this is null.
+final selectedCalendarDayProvider = StateProvider<DateTime?>((ref) => null);
