@@ -159,6 +159,15 @@ class TimelineView extends ConsumerWidget {
                 snoozeMinutes: snoozeMinutes,
                 today: today,
               ),
+            if (todayEntries.isNotEmpty)
+              _Section(
+                title: l10n.homeSectionToday,
+                entries: todayEntries,
+                byId: byId,
+                snoozeMinutes: snoozeMinutes,
+                today: today,
+                isToday: true,
+              ),
             if (thisWeek.isNotEmpty)
               _Section(
                 title: l10n.homeSectionThisWeek,
@@ -174,15 +183,6 @@ class TimelineView extends ConsumerWidget {
                 byId: byId,
                 snoozeMinutes: snoozeMinutes,
                 today: today,
-              ),
-            if (todayEntries.isNotEmpty)
-              _Section(
-                title: l10n.homeSectionToday,
-                entries: todayEntries,
-                byId: byId,
-                snoozeMinutes: snoozeMinutes,
-                today: today,
-                isToday: true,
               ),
           ],
         );
