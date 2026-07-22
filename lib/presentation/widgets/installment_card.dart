@@ -60,6 +60,8 @@ class InstallmentCard extends StatelessWidget {
         ),
         title: Text(loan.name, overflow: TextOverflow.ellipsis),
         subtitle: Text(
+          '${DateFormatter.formatDate(installment.dueDate, locale)}'
+          '${loan.reminderTime != null ? ' · ${loan.reminderTime}' : ''} · '
           '${l10n.loanInstallmentNumber(installment.installmentNumber)} · '
           '${DateFormatter.formatCurrency(installment.amount, locale)}'
           '${_isPaid

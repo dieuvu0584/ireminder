@@ -261,6 +261,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
           children: [
             MonthCalendarHeader(
               month: _visibleMonth,
+              selectedDay: selectedDay,
               onPrev: () => setState(() {
                 _visibleMonth = DateTime(
                   _visibleMonth.year,

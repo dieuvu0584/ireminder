@@ -16,19 +16,34 @@ class MonthCalendarHeader extends StatelessWidget {
   /// elsewhere (e.g. the lunar date picker) leaves the label inert.
   final VoidCallback? onTitleTap;
 
+  /// When given and it falls within [month], the label shows this full
+  /// date (e.g. "Wednesday, July 22, 2026") instead of just "Month Year"
+  /// — lets the Calendar tab surface which day is actually selected, not
+  /// just which month is being browsed. Null (or a day outside [month],
+  /// which happens after paging months without picking a new day) falls
+  /// back to the plain month/year label; unused by the lunar date picker,
+  /// which has no "selected day" concept of its own.
+  final DateTime? selectedDay;
+
   const MonthCalendarHeader({
     super.key,
     required this.month,
     required this.onPrev,
     required this.onNext,
     this.onTitleTap,
+    this.selectedDay,
   });
 
   @override
   Widget build(BuildContext context) {
-    final label = MaterialLocalizations.of(
-      context,
-    ).formatMonthYear(month).toString();
+    final localizations = MaterialLocalizations.of(context);
+    final showSelectedDay =
+        selectedDay != null &&
+        selectedDay!.year == month.year &&
+        selectedDay!.month == month.month;
+    final label = showSelectedDay
+        ? localizations.formatFullDate(selectedDay!)
+        : localizations.formatMonthYear(month).toString();
     final title = Text(label, style: Theme.of(context).textTheme.titleMedium);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),

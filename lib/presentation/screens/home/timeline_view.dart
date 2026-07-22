@@ -131,11 +131,11 @@ class TimelineView extends ConsumerWidget {
           );
         }
 
-        // Descending by due date+time within each section — the DB
+        // Ascending by due date+time within each section — the DB
         // queries backing activeReminders/allReminders/installments only
         // order by the date part, so entries due the same day would
         // otherwise tie-break on arbitrary row order.
-        int byDueAt(AgendaEntry a, AgendaEntry b) => b.dueAt.compareTo(a.dueAt);
+        int byDueAt(AgendaEntry a, AgendaEntry b) => a.dueAt.compareTo(b.dueAt);
         overdue.sort(byDueAt);
         thisWeek.sort(byDueAt);
         upcoming.sort(byDueAt);
