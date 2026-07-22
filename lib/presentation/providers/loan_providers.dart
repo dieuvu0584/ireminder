@@ -5,10 +5,6 @@ import '../../domain/enums/loan_frequency.dart';
 import 'notification_providers.dart';
 import 'repository_providers.dart';
 
-final activeLoansStreamProvider = StreamProvider<List<Loan>>((ref) {
-  return ref.watch(loanRepositoryProvider).watchActive();
-});
-
 final loanInstallmentsStreamProvider =
     StreamProvider.family<List<LoanInstallment>, int>((ref, loanId) {
       return ref.watch(loanRepositoryProvider).watchInstallments(loanId);

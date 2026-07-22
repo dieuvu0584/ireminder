@@ -17,8 +17,6 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  int _tabIndex = 0;
-
   Future<void> _showAddSheet(BuildContext context) async {
     final l10n = AppLocalizations.of(context);
     final choice = await showModalBottomSheet<String>(
@@ -67,62 +65,29 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
 
-    final tabs = <Widget>[
-      // Unlike the other tabs, this one has no Scaffold/AppBar of its own
-      // to provide top status-bar inset, so without an explicit SafeArea
-      // its TabBar renders directly under (and gets visually overlapped
-      // by) the system status bar icons/clock.
-      SafeArea(
-        bottom: false,
-        child: DefaultTabController(
-          length: 2,
-          child: Column(
-            children: [
-              TabBar(
-                tabs: [
-                  Tab(text: l10n.navToday),
-                  Tab(text: l10n.navCalendar),
-                ],
-              ),
-              const Expanded(
-                child: TabBarView(children: [TimelineView(), CalendarView()]),
-              ),
-            ],
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          bottom: TabBar(
+            tabs: [Tab(text: l10n.navToday), Tab(text: l10n.navCalendar)],
           ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.settings_outlined),
+              tooltip: l10n.navSettings,
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const SettingsScreen()),
+              ),
+            ),
+          ],
         ),
-      ),
-      const SettingsScreen(),
-    ];
-
-    if (_tabIndex >= tabs.length) {
-      _tabIndex = tabs.length - 1;
-    }
-
-    final destinations = <NavigationDestination>[
-      NavigationDestination(
-        icon: const Icon(Icons.today_outlined),
-        selectedIcon: const Icon(Icons.today),
-        label: l10n.navToday,
-      ),
-      NavigationDestination(
-        icon: const Icon(Icons.settings_outlined),
-        selectedIcon: const Icon(Icons.settings),
-        label: l10n.navSettings,
-      ),
-    ];
-
-    return Scaffold(
-      body: IndexedStack(index: _tabIndex, children: tabs),
-      floatingActionButton: _tabIndex == 0
-          ? FloatingActionButton(
-              onPressed: () => _showAddSheet(context),
-              child: const Icon(Icons.add),
-            )
-          : null,
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _tabIndex,
-        onDestinationSelected: (i) => setState(() => _tabIndex = i),
-        destinations: destinations,
+        body: const TabBarView(children: [TimelineView(), CalendarView()]),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => _showAddSheet(context),
+          child: const Icon(Icons.add),
+        ),
       ),
     );
   }

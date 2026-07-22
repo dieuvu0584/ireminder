@@ -11,7 +11,6 @@ import '../../providers/notification_providers.dart';
 import '../../providers/settings_providers.dart';
 import '../../widgets/permission_checklist.dart';
 import '../categories/category_manager_screen.dart';
-import '../loans/loan_list_screen.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -115,13 +114,6 @@ class SettingsScreen extends ConsumerWidget {
                 MaterialPageRoute(
                   builder: (_) => const CategoryManagerScreen(),
                 ),
-              ),
-            ),
-            ListTile(
-              title: Text(l10n.navLoans),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const LoanListScreen()),
               ),
             ),
             const Divider(),
