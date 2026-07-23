@@ -4,9 +4,19 @@ import 'package:flutter/material.dart';
 /// (wallpaper-based) support.
 const Color kFallbackSeedColor = Color(0xFF3B82F6);
 
+/// The same diagonal navy-to-cyan gradient as the app's own launcher icon
+/// background — used on the Calendar header so it reads as "the app"
+/// rather than a flat, unrelated accent color.
+const Gradient kAppIconGradient = LinearGradient(
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  colors: [Color(0xFF0B1F49), Color(0xFF21A8E6)],
+);
+
 class AppTheme {
   static ThemeData light(ColorScheme? dynamicScheme) {
-    final scheme = dynamicScheme ??
+    final scheme =
+        dynamicScheme ??
         ColorScheme.fromSeed(
           seedColor: kFallbackSeedColor,
           brightness: Brightness.light,
@@ -27,7 +37,8 @@ class AppTheme {
   }
 
   static ThemeData dark(ColorScheme? dynamicScheme) {
-    final scheme = dynamicScheme ??
+    final scheme =
+        dynamicScheme ??
         ColorScheme.fromSeed(
           seedColor: kFallbackSeedColor,
           brightness: Brightness.dark,

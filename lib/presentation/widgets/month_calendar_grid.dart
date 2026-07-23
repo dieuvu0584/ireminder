@@ -32,9 +32,11 @@ class MonthCalendarHeader extends StatelessWidget {
   final Widget? trailing;
 
   /// Tints the whole header bar — the Calendar screen uses the app's own
-  /// brand color here so the header reads as "the app", not just another
-  /// gray toolbar; null (the lunar date picker) stays unstyled.
+  /// brand color/gradient here so the header reads as "the app", not just
+  /// another gray toolbar; null (the lunar date picker) stays unstyled.
+  /// [gradient], when given, takes precedence over [backgroundColor].
   final Color? backgroundColor;
+  final Gradient? gradient;
   final Color? foregroundColor;
 
   const MonthCalendarHeader({
@@ -46,6 +48,7 @@ class MonthCalendarHeader extends StatelessWidget {
     this.selectedDay,
     this.trailing,
     this.backgroundColor,
+    this.gradient,
     this.foregroundColor,
   });
 
@@ -66,7 +69,10 @@ class MonthCalendarHeader extends StatelessWidget {
       ).textTheme.titleMedium?.copyWith(color: foregroundColor),
     );
     return Container(
-      color: backgroundColor,
+      decoration: BoxDecoration(
+        color: gradient == null ? backgroundColor : null,
+        gradient: gradient,
+      ),
       padding: const EdgeInsets.symmetric(horizontal: 4),
       child: Row(
         children: [

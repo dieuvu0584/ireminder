@@ -227,7 +227,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
             MonthCalendarHeader(
               month: _visibleMonth,
               selectedDay: selectedDay,
-              backgroundColor: kFallbackSeedColor,
+              gradient: kAppIconGradient,
               foregroundColor: Colors.white,
               onPrev: () => setState(() {
                 _visibleMonth = DateTime(
