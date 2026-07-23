@@ -133,7 +133,7 @@ class WeekdayHeader extends StatelessWidget {
             child: Center(
               child: Text(
                 mondayFirst[i],
-                style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: isWeekend ? weekendColor : null,
                   fontWeight: FontWeight.bold,
                 ),
