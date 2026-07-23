@@ -21,6 +21,14 @@ import '../reminders/reminder_detail_screen.dart';
 import '../../widgets/reminder_card.dart';
 import '../settings/settings_screen.dart';
 
+/// A reminder occurrence paired with the specific day it's plotted on —
+/// [ReminderOccurrence] alone doesn't carry that, since the same
+/// [Reminder] row gets projected onto several different days when it
+/// recurs (see buildOccurrencesByDay and the yearly/monthly/daily
+/// projection loops below), all sharing one underlying DB row whose own
+/// nextDueDate/snoozeUntil reflects only its single nearest occurrence.
+typedef _DayOccurrence = ({DateTime day, ReminderOccurrence occurrence});
+
 class CalendarView extends ConsumerStatefulWidget {
   const CalendarView({super.key});
 
@@ -324,48 +332,55 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     );
   }
 
-  List<ReminderOccurrence> _occurrencesForDay(
+  List<_DayOccurrence> _occurrencesForDay(
     DateTime day,
     Map<DateTime, List<ReminderOccurrence>> byDay,
   ) {
-    return [...byDay[day] ?? const <ReminderOccurrence>[]]..sort(
-      (a, b) => effectiveReminderDueDateTime(
-        a.reminder,
-      ).compareTo(effectiveReminderDueDateTime(b.reminder)),
+    final entries = (byDay[day] ?? const <ReminderOccurrence>[])
+        .map((o) => (day: day, occurrence: o))
+        .toList();
+    entries.sort(
+      (a, b) => dueDateTimeForDay(
+        a.occurrence.reminder,
+        a.day,
+      ).compareTo(dueDateTimeForDay(b.occurrence.reminder, b.day)),
     );
+    return entries;
   }
 
-  List<ReminderOccurrence> _occurrencesForMonth(
+  List<_DayOccurrence> _occurrencesForMonth(
     DateTime month,
     Map<DateTime, List<ReminderOccurrence>> byDay,
   ) {
     bool inMonth(DateTime d) => d.year == month.year && d.month == month.month;
-    final occurrences = <ReminderOccurrence>[
+    final entries = <_DayOccurrence>[
       for (final e in byDay.entries)
-        if (inMonth(e.key)) ...e.value,
+        if (inMonth(e.key))
+          for (final o in e.value) (day: e.key, occurrence: o),
     ];
-    occurrences.sort(
-      (a, b) => effectiveReminderDueDateTime(
-        a.reminder,
-      ).compareTo(effectiveReminderDueDateTime(b.reminder)),
+    entries.sort(
+      (a, b) => dueDateTimeForDay(
+        a.occurrence.reminder,
+        a.day,
+      ).compareTo(dueDateTimeForDay(b.occurrence.reminder, b.day)),
     );
-    return occurrences;
+    return entries;
   }
 
   /// Builds the card for one occurrence, deriving its own today/future-ness
-  /// from its own due day — needed now that the month-wide list mixes
-  /// entries from many different days, unlike the single selected-day
-  /// list where every row shared the same day.
+  /// from its own due day (see [_DayOccurrence]) — needed now that the
+  /// month-wide list mixes entries from many different days, unlike the
+  /// single selected-day list where every row shared the same day.
   Widget _entryCard(
     BuildContext context,
-    ReminderOccurrence occurrence,
+    _DayOccurrence entry,
     Map<int, Category> byId,
     DateTime today,
     int snoozeMinutes,
   ) {
+    final occurrence = entry.occurrence;
     final r = occurrence.reminder;
-    final due = effectiveReminderDueDateTime(r);
-    final dueDay = DateTime(due.year, due.month, due.day);
+    final dueDay = entry.day;
     final isEntryToday = _isSameDay(dueDay, today);
     final isEntryFuture = dueDay.isAfter(today);
 
