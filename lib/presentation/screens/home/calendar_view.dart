@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -32,38 +30,17 @@ class CalendarView extends ConsumerStatefulWidget {
 
 class _CalendarViewState extends ConsumerState<CalendarView> {
   late DateTime _visibleMonth;
-  // Swiped-up state: hides the weekday row + day grid, leaving just the
-  // month/year header bar, so the selected day's reminder list below gets
-  // more room. Tapping the header title (see onTitleTap below) undoes it.
+  // Collapsed state: hides the weekday row + day grid, leaving just the
+  // month/year header bar, so the day/month list below gets more room.
+  // Toggled by tapping the header title (see onTitleTap below) or by
+  // swiping up on the grid itself.
   bool _collapsed = false;
-
-  // Auto-collapses the grid a few seconds after it's shown, on the
-  // assumption most visits are "check today/this month" rather than
-  // "browse the grid" — a manual swipe-up (see the drag handler below)
-  // collapses immediately and cancels this, and re-expanding via the
-  // header title restarts it so the same grace period applies again.
-  static const _autoCollapseDelay = Duration(seconds: 3);
-  Timer? _collapseTimer;
 
   @override
   void initState() {
     super.initState();
     final now = DateTime.now();
     _visibleMonth = DateTime(now.year, now.month);
-    _startCollapseTimer();
-  }
-
-  @override
-  void dispose() {
-    _collapseTimer?.cancel();
-    super.dispose();
-  }
-
-  void _startCollapseTimer() {
-    _collapseTimer?.cancel();
-    _collapseTimer = Timer(_autoCollapseDelay, () {
-      if (mounted && !_collapsed) setState(() => _collapsed = true);
-    });
   }
 
   @override
@@ -264,15 +241,7 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
                   _visibleMonth.month + 1,
                 );
               }),
-              // Only wired while collapsed — tapping the title is how the
-              // grid comes back, per the same request that put swipe-up on
-              // collapsing it.
-              onTitleTap: _collapsed
-                  ? () => setState(() {
-                      _collapsed = false;
-                      _startCollapseTimer();
-                    })
-                  : null,
+              onTitleTap: () => setState(() => _collapsed = !_collapsed),
               trailing: IconButton(
                 icon: const Icon(Icons.menu),
                 color: Colors.white,
@@ -291,7 +260,6 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
               onVerticalDragEnd: (details) {
                 final velocity = details.primaryVelocity ?? 0;
                 if (!_collapsed && velocity < -200) {
-                  _collapseTimer?.cancel();
                   setState(() => _collapsed = true);
                 }
               },
