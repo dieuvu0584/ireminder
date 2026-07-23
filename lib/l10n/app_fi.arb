@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Tehtävälista",
   "navCalendar": "Kalenteri",
-  "navLoans": "Lainat",
   "navCategories": "Kategoriat",
   "navSettings": "Asetukset",
   "onboardingTitle1": "Älä koskaan unohda tärkeitä asioita",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Tällä viikolla",
   "homeSectionUpcoming": "Tulossa",
   "homeEmptyTitle": "Ei vielä mitään",
-  "homeEmptyBody": "Napauta + lisätäksesi ensimmäisen muistutuksen tai osamaksulainan.",
+  "homeEmptyBody": "Napauta + lisätäksesi ensimmäisen muistutuksen.",
   "fabAddReminder": "Muistutus",
-  "fabAddLoan": "Osamaksulaina",
   "actionDone": "Valmis",
   "actionSnooze": "Torkku",
   "actionEdit": "Muokkaa",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Perjantai",
   "weekdaySaturday": "Lauantai",
   "weekdaySunday": "Sunnuntai",
-  "loanListTitle": "Lainat ja osamaksut",
-  "loanFormTitleNew": "Uusi osamaksulaina",
-  "loanFormTitleEdit": "Muokkaa lainaa",
-  "loanFieldName": "Nimi",
-  "loanFieldCategory": "Kategoria",
-  "loanFieldTotalAmount": "Kokonaissumma (valinnainen)",
-  "loanFieldInstallmentAmount": "Summa per erä",
-  "loanFieldTotalInstallments": "Erien määrä",
-  "loanFieldFrequency": "Toistumistiheys",
-  "loanFieldDueDayOfMonth": "Eräpäivä kuukaudessa",
-  "loanFieldStartDate": "Aloituspäivä",
-  "loanFieldReminderAdvanceDays": "Muistuta N päivää ennen eräpäivää",
-  "loanFieldNotes": "Muistiinpanot (valinnainen)",
-  "loanFrequencyMonthly": "Kuukausittain",
-  "loanFrequencyWeekly": "Viikoittain",
-  "loanFrequencyBiweekly": "Joka toinen viikko",
-  "loanFrequencyQuarterly": "Neljännesvuosittain",
-  "loanFrequencySemiAnnually": "Joka 6. kuukausi",
-  "loanFrequencyYearly": "Vuosittain",
-  "loanProgress": "{paid} / {total} maksettu",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Merkitse maksetuksi",
-  "loanStatusPending": "Odottaa",
-  "loanStatusPaid": "Maksettu",
-  "loanStatusOverdue": "Myöhässä",
-  "loanInstallmentNumber": "Erä #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Poistetaanko tämä laina?",
-  "loanDeleteConfirmBody": "Kaikki {count} erää poistetaan myös.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategoriat",
   "categoryFormTitleNew": "Uusi kategoria",
   "categoryFormTitleEdit": "Muokkaa kategoriaa",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Ei myönnetty — muistutukset eivät ehkä tule ajallaan",
   "settingsPermissionsGrantAction": "Myönnä",
   "settingsPermissionsOpenSettingsAction": "Avaa asetukset",
-  "loanMarkPaidSuccess": "Merkitty maksetuksi",
   "settingsNotificationPrefsTitle": "Ääni ja tärinä",
   "settingsNotificationSound": "Ilmoitusääni",
   "settingsNotificationVibration": "Tärinä",

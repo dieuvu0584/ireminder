@@ -18,9 +18,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get navCalendar => 'カレンダー';
 
   @override
-  String get navLoans => '分割払い';
-
-  @override
   String get navCategories => 'カテゴリ';
 
   @override
@@ -94,13 +91,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get homeEmptyTitle => 'まだ何もありません';
 
   @override
-  String get homeEmptyBody => '＋をタップして、最初のリマインダーや分割払いを追加しましょう。';
+  String get homeEmptyBody => '＋をタップして、最初のリマインダーを追加しましょう。';
 
   @override
   String get fabAddReminder => 'リマインダー';
-
-  @override
-  String get fabAddLoan => '分割払い';
 
   @override
   String get actionDone => '完了';
@@ -290,93 +284,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get weekdaySunday => '日曜日';
 
   @override
-  String get loanListTitle => 'ローン・分割払い';
-
-  @override
-  String get loanFormTitleNew => '新しい分割払い';
-
-  @override
-  String get loanFormTitleEdit => '分割払いを編集';
-
-  @override
-  String get loanFieldName => '名前';
-
-  @override
-  String get loanFieldCategory => 'カテゴリ';
-
-  @override
-  String get loanFieldTotalAmount => '合計金額（任意）';
-
-  @override
-  String get loanFieldInstallmentAmount => '1回あたりの支払額';
-
-  @override
-  String get loanFieldTotalInstallments => '支払い回数';
-
-  @override
-  String get loanFieldFrequency => '頻度';
-
-  @override
-  String get loanFieldDueDayOfMonth => '毎月の支払日';
-
-  @override
-  String get loanFieldStartDate => '開始日';
-
-  @override
-  String get loanFieldReminderAdvanceDays => '支払期限のN日前に通知';
-
-  @override
-  String get loanFieldNotes => 'メモ（任意）';
-
-  @override
-  String get loanFrequencyMonthly => '毎月';
-
-  @override
-  String get loanFrequencyWeekly => '毎週';
-
-  @override
-  String get loanFrequencyBiweekly => '隔週';
-
-  @override
-  String get loanFrequencyQuarterly => '四半期ごと';
-
-  @override
-  String get loanFrequencySemiAnnually => '6か月ごと';
-
-  @override
-  String get loanFrequencyYearly => '毎年';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total 回 支払い済み';
-  }
-
-  @override
-  String get loanMarkPaid => '支払い済みにする';
-
-  @override
-  String get loanStatusPending => '未払い';
-
-  @override
-  String get loanStatusPaid => '支払い済み';
-
-  @override
-  String get loanStatusOverdue => '延滞';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return '第$number回';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'この分割払いを削除しますか？';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return '$count回分の支払いもすべて削除されます。';
-  }
-
-  @override
   String get categoryManagerTitle => 'カテゴリ';
 
   @override
@@ -543,9 +450,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => '設定を開く';
-
-  @override
-  String get loanMarkPaidSuccess => '支払い済みにしました';
 
   @override
   String get settingsNotificationPrefsTitle => 'サウンドとバイブレーション';

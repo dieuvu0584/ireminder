@@ -1,8 +1,5 @@
-import 'package:drift/drift.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart' show Locale;
 
-import '../../core/localization/gen/app_localizations.dart';
 import '../database/app_database.dart';
 import 'notification_service.dart';
 
@@ -17,10 +14,9 @@ DateTime _combine(DateTime date, String hhmm) {
   );
 }
 
-/// Bridges reminders/loan_installments (the source of truth in Drift) to
-/// [NotificationService] (the OS-level scheduling mechanism). Always
-/// cancels before scheduling so a reminder/installment never ends up with
-/// two live notifications.
+/// Bridges reminders (the source of truth in Drift) to [NotificationService]
+/// (the OS-level scheduling mechanism). Always cancels before scheduling so
+/// a reminder never ends up with two live notifications.
 ///
 /// Scheduling is best-effort: the OS can refuse an exact alarm (missing
 /// permission, OEM restrictions, ...) for reasons entirely outside this
@@ -34,18 +30,11 @@ class AlarmSchedulerService {
 
   AlarmSchedulerService(this._db, this._notifications);
 
-  /// Notification action button labels ("Done"/"Snooze"/"Mark paid") must
-  /// be resolved here rather than left hardcoded — this runs outside any
-  /// widget tree (background isolates included), so there's no
-  /// BuildContext to pull AppLocalizations.of(context) from the way every
-  /// other piece of UI text in the app does.
-  Future<({bool sound, bool vibration, AppLocalizations l10n})>
-  _notificationPrefs() async {
+  Future<({bool sound, bool vibration})> _notificationPrefs() async {
     final settings = await (_db.select(_db.appSettings)).getSingle();
     return (
       sound: settings.notificationSoundEnabled,
       vibration: settings.notificationVibrationEnabled,
-      l10n: lookupAppLocalizations(Locale(settings.locale ?? 'en')),
     );
   }
 
@@ -120,54 +109,6 @@ class AlarmSchedulerService {
     }
   }
 
-  Future<void> scheduleForInstallment(
-    LoanInstallment installment,
-    Loan loan,
-    String defaultReminderTime,
-  ) async {
-    try {
-      if (installment.status != 'pending') {
-        await _notifications.cancelInstallment(installment.id);
-        return;
-      }
-      final fireDate = installment.dueDate.subtract(
-        Duration(days: loan.reminderAdvanceDays),
-      );
-      final fireAt = _combine(
-        fireDate,
-        loan.reminderTime ?? defaultReminderTime,
-      );
-      if (fireAt.isBefore(DateTime.now())) return;
-      final prefs = await _notificationPrefs();
-
-      await _notifications.scheduleInstallment(
-        installmentId: installment.id,
-        fireAt: fireAt,
-        title: 'Installment #${installment.installmentNumber} due',
-        body: '${loan.name} — ${installment.amount}',
-        markPaidActionLabel: prefs.l10n.loanMarkPaid,
-        soundEnabled: prefs.sound,
-        vibrationEnabled: prefs.vibration,
-      );
-    } catch (e) {
-      debugPrint(
-        'AlarmSchedulerService: failed to schedule installment '
-        '${installment.id}: $e',
-      );
-    }
-  }
-
-  Future<void> cancelForInstallment(int installmentId) async {
-    try {
-      await _notifications.cancelInstallment(installmentId);
-    } catch (e) {
-      debugPrint(
-        'AlarmSchedulerService: failed to cancel installment '
-        '$installmentId: $e',
-      );
-    }
-  }
-
   /// Re-derives every active alarm straight from the DB. Called on app
   /// start (and should also run after boot via the platform boot
   /// receiver) so scheduled notifications never drift from what's
@@ -178,25 +119,6 @@ class AlarmSchedulerService {
     )..where((r) => r.isActive.equals(true))).get();
     for (final reminder in reminders) {
       await scheduleForReminder(reminder);
-    }
-
-    final settings = await (_db.select(_db.appSettings)).getSingle();
-    final activeLoans = await (_db.select(
-      _db.loans,
-    )..where((l) => l.isActive.equals(true))).get();
-    for (final loan in activeLoans) {
-      final pending =
-          await (_db.select(_db.loanInstallments)..where(
-                (i) => i.loanId.equals(loan.id) & i.status.equals('pending'),
-              ))
-              .get();
-      for (final installment in pending) {
-        await scheduleForInstallment(
-          installment,
-          loan,
-          settings.defaultReminderTime,
-        );
-      }
     }
   }
 }

@@ -18,9 +18,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get navCalendar => 'Lịch';
 
   @override
-  String get navLoans => 'Trả góp';
-
-  @override
   String get navCategories => 'Danh mục';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get homeEmptyTitle => 'Chưa có việc nào';
 
   @override
-  String get homeEmptyBody =>
-      'Nhấn + để thêm nhắc việc hoặc khoản trả góp đầu tiên.';
+  String get homeEmptyBody => 'Nhấn + để thêm nhắc việc đầu tiên.';
 
   @override
   String get fabAddReminder => 'Nhắc việc';
-
-  @override
-  String get fabAddLoan => 'Khoản trả góp';
 
   @override
   String get actionDone => 'Đã xong';
@@ -293,93 +286,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get weekdaySunday => 'Chủ Nhật';
 
   @override
-  String get loanListTitle => 'Khoản trả góp / trả nợ';
-
-  @override
-  String get loanFormTitleNew => 'Khoản trả góp mới';
-
-  @override
-  String get loanFormTitleEdit => 'Sửa khoản trả góp';
-
-  @override
-  String get loanFieldName => 'Tên khoản vay';
-
-  @override
-  String get loanFieldCategory => 'Danh mục';
-
-  @override
-  String get loanFieldTotalAmount => 'Tổng nợ gốc (không bắt buộc)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Số tiền mỗi kỳ';
-
-  @override
-  String get loanFieldTotalInstallments => 'Số kỳ trả';
-
-  @override
-  String get loanFieldFrequency => 'Tần suất';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Ngày đến hạn trong tháng';
-
-  @override
-  String get loanFieldStartDate => 'Ngày bắt đầu';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'Nhắc trước N ngày';
-
-  @override
-  String get loanFieldNotes => 'Ghi chú (không bắt buộc)';
-
-  @override
-  String get loanFrequencyMonthly => 'Hàng tháng';
-
-  @override
-  String get loanFrequencyWeekly => 'Hàng tuần';
-
-  @override
-  String get loanFrequencyBiweekly => 'Hai tuần một lần';
-
-  @override
-  String get loanFrequencyQuarterly => 'Hàng quý';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Hàng 6 tháng';
-
-  @override
-  String get loanFrequencyYearly => 'Hàng năm';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return 'Đã trả $paid / $total kỳ';
-  }
-
-  @override
-  String get loanMarkPaid => 'Đánh dấu đã trả';
-
-  @override
-  String get loanStatusPending => 'Chưa đến hạn';
-
-  @override
-  String get loanStatusPaid => 'Đã trả';
-
-  @override
-  String get loanStatusOverdue => 'Quá hạn';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Kỳ #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Xóa khoản trả góp này?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Toàn bộ $count kỳ trả cũng sẽ bị xóa.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Quản lý danh mục';
 
   @override
@@ -551,9 +457,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Mở cài đặt';
-
-  @override
-  String get loanMarkPaidSuccess => 'Đã đánh dấu là đã trả';
 
   @override
   String get settingsNotificationPrefsTitle => 'Âm thanh & rung';

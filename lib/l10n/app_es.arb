@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Lista de tareas",
   "navCalendar": "Calendario",
-  "navLoans": "Cuotas",
   "navCategories": "Categorías",
   "navSettings": "Ajustes",
   "onboardingTitle1": "Nunca olvides lo importante",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Esta semana",
   "homeSectionUpcoming": "Próximamente",
   "homeEmptyTitle": "Todavía no hay nada aquí",
-  "homeEmptyBody": "Toca + para agregar tu primer recordatorio o plan de cuotas.",
+  "homeEmptyBody": "Toca + para agregar tu primer recordatorio.",
   "fabAddReminder": "Recordatorio",
-  "fabAddLoan": "Plan de cuotas",
   "actionDone": "Hecho",
   "actionSnooze": "Posponer",
   "actionEdit": "Editar",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Viernes",
   "weekdaySaturday": "Sábado",
   "weekdaySunday": "Domingo",
-  "loanListTitle": "Cuotas y préstamos",
-  "loanFormTitleNew": "Nuevo plan de cuotas",
-  "loanFormTitleEdit": "Editar plan de cuotas",
-  "loanFieldName": "Nombre",
-  "loanFieldCategory": "Categoría",
-  "loanFieldTotalAmount": "Monto total (opcional)",
-  "loanFieldInstallmentAmount": "Monto por cuota",
-  "loanFieldTotalInstallments": "Número de cuotas",
-  "loanFieldFrequency": "Frecuencia",
-  "loanFieldDueDayOfMonth": "Día de vencimiento del mes",
-  "loanFieldStartDate": "Fecha de inicio",
-  "loanFieldReminderAdvanceDays": "Avisar N días antes del vencimiento",
-  "loanFieldNotes": "Notas (opcional)",
-  "loanFrequencyMonthly": "Mensual",
-  "loanFrequencyWeekly": "Semanal",
-  "loanFrequencyBiweekly": "Quincenal",
-  "loanFrequencyQuarterly": "Trimestral",
-  "loanFrequencySemiAnnually": "Cada 6 meses",
-  "loanFrequencyYearly": "Anual",
-  "loanProgress": "{paid} / {total} cuotas pagadas",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Marcar como pagada",
-  "loanStatusPending": "Pendiente",
-  "loanStatusPaid": "Pagada",
-  "loanStatusOverdue": "Atrasada",
-  "loanInstallmentNumber": "Cuota n.º {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "¿Eliminar este plan de cuotas?",
-  "loanDeleteConfirmBody": "Las {count} cuotas también se eliminarán.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Categorías",
   "categoryFormTitleNew": "Nueva categoría",
   "categoryFormTitleEdit": "Editar categoría",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "No concedido — los recordatorios podrían no sonar a tiempo",
   "settingsPermissionsGrantAction": "Conceder",
   "settingsPermissionsOpenSettingsAction": "Abrir ajustes",
-  "loanMarkPaidSuccess": "Marcado como pagado",
   "settingsNotificationPrefsTitle": "Sonido y vibración",
   "settingsNotificationSound": "Sonido de notificación",
   "settingsNotificationVibration": "Vibración",

@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "רשימת משימות",
   "navCalendar": "לוח שנה",
-  "navLoans": "הלוואות",
   "navCategories": "קטגוריות",
   "navSettings": "הגדרות",
   "onboardingTitle1": "לעולם אל תשכחו את מה שחשוב",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "השבוע",
   "homeSectionUpcoming": "בקרוב",
   "homeEmptyTitle": "עדיין אין כאן כלום",
-  "homeEmptyBody": "הקישו על + כדי להוסיף את התזכורת או הלוואת התשלומים הראשונה שלכם.",
+  "homeEmptyBody": "הקישו על + כדי להוסיף את התזכורת הראשונה שלכם.",
   "fabAddReminder": "תזכורת",
-  "fabAddLoan": "הלוואת תשלומים",
   "actionDone": "בוצע",
   "actionSnooze": "דחייה",
   "actionEdit": "עריכה",
@@ -98,57 +96,6 @@
   "weekdayFriday": "יום שישי",
   "weekdaySaturday": "שבת",
   "weekdaySunday": "יום ראשון",
-  "loanListTitle": "הלוואות ותשלומים",
-  "loanFormTitleNew": "הלוואת תשלומים חדשה",
-  "loanFormTitleEdit": "עריכת הלוואה",
-  "loanFieldName": "שם",
-  "loanFieldCategory": "קטגוריה",
-  "loanFieldTotalAmount": "סכום כולל (לא חובה)",
-  "loanFieldInstallmentAmount": "סכום לכל תשלום",
-  "loanFieldTotalInstallments": "מספר תשלומים",
-  "loanFieldFrequency": "תדירות",
-  "loanFieldDueDayOfMonth": "יום פירעון בחודש",
-  "loanFieldStartDate": "תאריך התחלה",
-  "loanFieldReminderAdvanceDays": "הזכר N ימים לפני התשלום",
-  "loanFieldNotes": "הערות (לא חובה)",
-  "loanFrequencyMonthly": "חודשי",
-  "loanFrequencyWeekly": "שבועי",
-  "loanFrequencyBiweekly": "דו-שבועי",
-  "loanFrequencyQuarterly": "רבעוני",
-  "loanFrequencySemiAnnually": "כל 6 חודשים",
-  "loanFrequencyYearly": "שנתי",
-  "loanProgress": "שולמו {paid} מתוך {total}",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "סמן כשולם",
-  "loanStatusPending": "ממתין",
-  "loanStatusPaid": "שולם",
-  "loanStatusOverdue": "באיחור",
-  "loanInstallmentNumber": "תשלום מס' {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "למחוק את ההלוואה הזו?",
-  "loanDeleteConfirmBody": "כל {count} התשלומים יימחקו גם הם.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "קטגוריות",
   "categoryFormTitleNew": "קטגוריה חדשה",
   "categoryFormTitleEdit": "עריכת קטגוריה",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "לא אושרה — ייתכן שהתזכורות לא יופיעו בזמן",
   "settingsPermissionsGrantAction": "אשר",
   "settingsPermissionsOpenSettingsAction": "פתח הגדרות",
-  "loanMarkPaidSuccess": "סומן כשולם",
   "settingsNotificationPrefsTitle": "צליל ורטט",
   "settingsNotificationSound": "צליל התראה",
   "settingsNotificationVibration": "רטט",

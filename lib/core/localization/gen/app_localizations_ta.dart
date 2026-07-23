@@ -18,9 +18,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get navCalendar => 'நாட்காட்டி';
 
   @override
-  String get navLoans => 'கடன்கள்';
-
-  @override
   String get navCategories => 'வகைகள்';
 
   @override
@@ -96,13 +93,10 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'உங்கள் முதல் நினைவூட்டல் அல்லது தவணைக் கடனைச் சேர்க்க + ஐத் தட்டவும்.';
+      'உங்கள் முதல் நினைவூட்டலைச் சேர்க்க + ஐத் தட்டவும்.';
 
   @override
   String get fabAddReminder => 'நினைவூட்டல்';
-
-  @override
-  String get fabAddLoan => 'தவணைக் கடன்';
 
   @override
   String get actionDone => 'முடிந்தது';
@@ -294,94 +288,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get weekdaySunday => 'ஞாயிறு';
 
   @override
-  String get loanListTitle => 'கடன்கள் & தவணைகள்';
-
-  @override
-  String get loanFormTitleNew => 'புதிய தவணைக் கடன்';
-
-  @override
-  String get loanFormTitleEdit => 'கடனைத் திருத்து';
-
-  @override
-  String get loanFieldName => 'பெயர்';
-
-  @override
-  String get loanFieldCategory => 'வகை';
-
-  @override
-  String get loanFieldTotalAmount => 'மொத்த தொகை (விருப்பத்திற்குரியது)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'ஒரு தவணைக்கான தொகை';
-
-  @override
-  String get loanFieldTotalInstallments => 'தவணைகளின் எண்ணிக்கை';
-
-  @override
-  String get loanFieldFrequency => 'அதிர்வெண்';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'மாதத்தில் செலுத்த வேண்டிய தேதி';
-
-  @override
-  String get loanFieldStartDate => 'தொடக்க தேதி';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'செலுத்த வேண்டிய தேதிக்கு N நாட்கள் முன் நினைவூட்டு';
-
-  @override
-  String get loanFieldNotes => 'குறிப்புகள் (விருப்பத்திற்குரியது)';
-
-  @override
-  String get loanFrequencyMonthly => 'மாதந்தோறும்';
-
-  @override
-  String get loanFrequencyWeekly => 'வாரந்தோறும்';
-
-  @override
-  String get loanFrequencyBiweekly => 'இரு வாரத்திற்கு ஒருமுறை';
-
-  @override
-  String get loanFrequencyQuarterly => 'காலாண்டு';
-
-  @override
-  String get loanFrequencySemiAnnually => 'ஒவ்வொரு 6 மாதங்களுக்கும்';
-
-  @override
-  String get loanFrequencyYearly => 'ஆண்டுதோறும்';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total செலுத்தப்பட்டது';
-  }
-
-  @override
-  String get loanMarkPaid => 'செலுத்தியதாக குறி';
-
-  @override
-  String get loanStatusPending => 'நிலுவையில்';
-
-  @override
-  String get loanStatusPaid => 'செலுத்தப்பட்டது';
-
-  @override
-  String get loanStatusOverdue => 'தவறிய தேதி';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'தவணை #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'இந்தக் கடனை நீக்கவா?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'அனைத்து $count தவணைகளும் நீக்கப்படும்.';
-  }
-
-  @override
   String get categoryManagerTitle => 'வகைகள்';
 
   @override
@@ -556,9 +462,6 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'அமைப்புகளைத் திற';
-
-  @override
-  String get loanMarkPaidSuccess => 'செலுத்தியதாக குறிக்கப்பட்டது';
 
   @override
   String get settingsNotificationPrefsTitle => 'ஒலி & அதிர்வு';

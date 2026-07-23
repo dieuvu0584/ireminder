@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "قائمة المهام",
   "navCalendar": "التقويم",
-  "navLoans": "الأقساط",
   "navCategories": "الفئات",
   "navSettings": "الإعدادات",
   "onboardingTitle1": "لا تنسَ أبدًا ما يهمك",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "هذا الأسبوع",
   "homeSectionUpcoming": "قادم",
   "homeEmptyTitle": "لا يوجد شيء هنا بعد",
-  "homeEmptyBody": "اضغط على + لإضافة أول تذكير أو قسط لديك.",
+  "homeEmptyBody": "اضغط على + لإضافة أول تذكير لديك.",
   "fabAddReminder": "تذكير",
-  "fabAddLoan": "قسط",
   "actionDone": "تم",
   "actionSnooze": "تأجيل",
   "actionEdit": "تعديل",
@@ -98,57 +96,6 @@
   "weekdayFriday": "الجمعة",
   "weekdaySaturday": "السبت",
   "weekdaySunday": "الأحد",
-  "loanListTitle": "القروض والأقساط",
-  "loanFormTitleNew": "قسط جديد",
-  "loanFormTitleEdit": "تعديل القسط",
-  "loanFieldName": "الاسم",
-  "loanFieldCategory": "الفئة",
-  "loanFieldTotalAmount": "المبلغ الإجمالي (اختياري)",
-  "loanFieldInstallmentAmount": "مبلغ كل قسط",
-  "loanFieldTotalInstallments": "عدد الأقساط",
-  "loanFieldFrequency": "التكرار",
-  "loanFieldDueDayOfMonth": "يوم الاستحقاق من الشهر",
-  "loanFieldStartDate": "تاريخ البدء",
-  "loanFieldReminderAdvanceDays": "التذكير قبل N يوم من الاستحقاق",
-  "loanFieldNotes": "ملاحظات (اختياري)",
-  "loanFrequencyMonthly": "شهريًا",
-  "loanFrequencyWeekly": "أسبوعيًا",
-  "loanFrequencyBiweekly": "كل أسبوعين",
-  "loanFrequencyQuarterly": "ربع سنوي",
-  "loanFrequencySemiAnnually": "كل 6 أشهر",
-  "loanFrequencyYearly": "سنوي",
-  "loanProgress": "تم دفع {paid} من {total}",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "تحديد كمدفوع",
-  "loanStatusPending": "قيد الانتظار",
-  "loanStatusPaid": "مدفوع",
-  "loanStatusOverdue": "متأخر",
-  "loanInstallmentNumber": "القسط رقم {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "هل تريد حذف هذا القسط؟",
-  "loanDeleteConfirmBody": "سيتم حذف جميع الأقساط الـ {count} أيضًا.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "الفئات",
   "categoryFormTitleNew": "فئة جديدة",
   "categoryFormTitleEdit": "تعديل الفئة",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "غير ممنوح — قد لا تصل التذكيرات في وقتها",
   "settingsPermissionsGrantAction": "منح الإذن",
   "settingsPermissionsOpenSettingsAction": "فتح الإعدادات",
-  "loanMarkPaidSuccess": "تم التحديد كمدفوع",
   "settingsNotificationPrefsTitle": "الصوت والاهتزاز",
   "settingsNotificationSound": "صوت الإشعار",
   "settingsNotificationVibration": "الاهتزاز",

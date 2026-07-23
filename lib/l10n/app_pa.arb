@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "ਕਾਰਜ ਸੂਚੀ",
   "navCalendar": "ਕੈਲੰਡਰ",
-  "navLoans": "ਕਰਜ਼ੇ",
   "navCategories": "ਸ਼੍ਰੇਣੀਆਂ",
   "navSettings": "ਸੈਟਿੰਗਾਂ",
   "onboardingTitle1": "ਜ਼ਰੂਰੀ ਗੱਲਾਂ ਕਦੇ ਨਾ ਭੁੱਲੋ",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "ਇਸ ਹਫ਼ਤੇ",
   "homeSectionUpcoming": "ਆਉਣ ਵਾਲੇ",
   "homeEmptyTitle": "ਇੱਥੇ ਅਜੇ ਕੁਝ ਨਹੀਂ",
-  "homeEmptyBody": "ਆਪਣੀ ਪਹਿਲੀ ਰਿਮਾਈਂਡਰ ਜਾਂ ਕਿਸ਼ਤ ਵਾਲਾ ਕਰਜ਼ਾ ਜੋੜਨ ਲਈ + ਨੂੰ ਟੈਪ ਕਰੋ।",
+  "homeEmptyBody": "ਆਪਣੀ ਪਹਿਲੀ ਰਿਮਾਈਂਡਰ ਜੋੜਨ ਲਈ + ਨੂੰ ਟੈਪ ਕਰੋ।",
   "fabAddReminder": "ਰਿਮਾਈਂਡਰ",
-  "fabAddLoan": "ਕਿਸ਼ਤ ਵਾਲਾ ਕਰਜ਼ਾ",
   "actionDone": "ਹੋ ਗਿਆ",
   "actionSnooze": "ਸਨੂਜ਼",
   "actionEdit": "ਸੋਧੋ",
@@ -98,57 +96,6 @@
   "weekdayFriday": "ਸ਼ੁੱਕਰਵਾਰ",
   "weekdaySaturday": "ਸ਼ਨੀਵਾਰ",
   "weekdaySunday": "ਐਤਵਾਰ",
-  "loanListTitle": "ਕਰਜ਼ੇ ਅਤੇ ਕਿਸ਼ਤਾਂ",
-  "loanFormTitleNew": "ਨਵਾਂ ਕਿਸ਼ਤ ਵਾਲਾ ਕਰਜ਼ਾ",
-  "loanFormTitleEdit": "ਕਰਜ਼ਾ ਸੋਧੋ",
-  "loanFieldName": "ਨਾਮ",
-  "loanFieldCategory": "ਸ਼੍ਰੇਣੀ",
-  "loanFieldTotalAmount": "ਕੁੱਲ ਰਕਮ (ਵਿਕਲਪਿਕ)",
-  "loanFieldInstallmentAmount": "ਪ੍ਰਤੀ ਕਿਸ਼ਤ ਰਕਮ",
-  "loanFieldTotalInstallments": "ਕਿਸ਼ਤਾਂ ਦੀ ਗਿਣਤੀ",
-  "loanFieldFrequency": "ਵਾਰਵਾਰਤਾ",
-  "loanFieldDueDayOfMonth": "ਮਹੀਨੇ ਦਾ ਬਕਾਇਆ ਦਿਨ",
-  "loanFieldStartDate": "ਸ਼ੁਰੂ ਹੋਣ ਦੀ ਮਿਤੀ",
-  "loanFieldReminderAdvanceDays": "ਬਕਾਇਆ ਮਿਤੀ ਤੋਂ N ਦਿਨ ਪਹਿਲਾਂ ਯਾਦ ਕਰਾਓ",
-  "loanFieldNotes": "ਨੋਟਸ (ਵਿਕਲਪਿਕ)",
-  "loanFrequencyMonthly": "ਮਹੀਨਾਵਾਰੀ",
-  "loanFrequencyWeekly": "ਹਫ਼ਤਾਵਾਰੀ",
-  "loanFrequencyBiweekly": "ਹਰ ਦੋ ਹਫ਼ਤਿਆਂ ਬਾਅਦ",
-  "loanFrequencyQuarterly": "ਤਿਮਾਹੀ",
-  "loanFrequencySemiAnnually": "ਹਰ 6 ਮਹੀਨੇ",
-  "loanFrequencyYearly": "ਸਾਲਾਨਾ",
-  "loanProgress": "{paid} / {total} ਅਦਾ ਕੀਤੀਆਂ",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "ਅਦਾ ਕੀਤੀ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਓ",
-  "loanStatusPending": "ਬਕਾਇਆ",
-  "loanStatusPaid": "ਅਦਾ ਕੀਤੀ",
-  "loanStatusOverdue": "ਮਿਆਦ ਖਤਮ",
-  "loanInstallmentNumber": "ਕਿਸ਼ਤ #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "ਇਹ ਕਰਜ਼ਾ ਮਿਟਾਉਣਾ ਹੈ?",
-  "loanDeleteConfirmBody": "ਸਾਰੀਆਂ {count} ਕਿਸ਼ਤਾਂ ਵੀ ਹਟਾ ਦਿੱਤੀਆਂ ਜਾਣਗੀਆਂ।",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "ਸ਼੍ਰੇਣੀਆਂ",
   "categoryFormTitleNew": "ਨਵੀਂ ਸ਼੍ਰੇਣੀ",
   "categoryFormTitleEdit": "ਸ਼੍ਰੇਣੀ ਸੋਧੋ",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "ਨਹੀਂ ਦਿੱਤੀ ਗਈ — ਰਿਮਾਈਂਡਰ ਸਮੇਂ ਸਿਰ ਨਹੀਂ ਆ ਸਕਦੇ",
   "settingsPermissionsGrantAction": "ਇਜਾਜ਼ਤ ਦਿਓ",
   "settingsPermissionsOpenSettingsAction": "ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ",
-  "loanMarkPaidSuccess": "ਅਦਾ ਕੀਤੀ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਇਆ ਗਿਆ",
   "settingsNotificationPrefsTitle": "ਆਵਾਜ਼ ਅਤੇ ਵਾਈਬ੍ਰੇਸ਼ਨ",
   "settingsNotificationSound": "ਸੂਚਨਾ ਆਵਾਜ਼",
   "settingsNotificationVibration": "ਵਾਈਬ੍ਰੇਸ਼ਨ",

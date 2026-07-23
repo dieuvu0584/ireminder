@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Feladatlista",
   "navCalendar": "Naptár",
-  "navLoans": "Részletek",
   "navCategories": "Kategóriák",
   "navSettings": "Beállítások",
   "onboardingTitle1": "Soha ne felejtsd el, ami fontos",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Ezen a héten",
   "homeSectionUpcoming": "Közelgő",
   "homeEmptyTitle": "Még nincs itt semmi",
-  "homeEmptyBody": "Koppints a + gombra az első emlékeztető vagy részletfizetés hozzáadásához.",
+  "homeEmptyBody": "Koppints a + gombra az első emlékeztető hozzáadásához.",
   "fabAddReminder": "Emlékeztető",
-  "fabAddLoan": "Részletfizetés",
   "actionDone": "Kész",
   "actionSnooze": "Szundi",
   "actionEdit": "Szerkesztés",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Péntek",
   "weekdaySaturday": "Szombat",
   "weekdaySunday": "Vasárnap",
-  "loanListTitle": "Hitelek és részletfizetések",
-  "loanFormTitleNew": "Új részletfizetés",
-  "loanFormTitleEdit": "Hitel szerkesztése",
-  "loanFieldName": "Név",
-  "loanFieldCategory": "Kategória",
-  "loanFieldTotalAmount": "Teljes összeg (opcionális)",
-  "loanFieldInstallmentAmount": "Részlet összege",
-  "loanFieldTotalInstallments": "Részletek száma",
-  "loanFieldFrequency": "Gyakoriság",
-  "loanFieldDueDayOfMonth": "Esedékesség napja a hónapban",
-  "loanFieldStartDate": "Kezdő dátum",
-  "loanFieldReminderAdvanceDays": "Emlékeztetés N nappal a fizetési határidő előtt",
-  "loanFieldNotes": "Megjegyzések (opcionális)",
-  "loanFrequencyMonthly": "Havonta",
-  "loanFrequencyWeekly": "Hetente",
-  "loanFrequencyBiweekly": "Kéthetente",
-  "loanFrequencyQuarterly": "Negyedévente",
-  "loanFrequencySemiAnnually": "6 havonta",
-  "loanFrequencyYearly": "Évente",
-  "loanProgress": "{paid} / {total} részlet kifizetve",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Megjelölés kifizetettként",
-  "loanStatusPending": "Függőben",
-  "loanStatusPaid": "Kifizetve",
-  "loanStatusOverdue": "Lejárt",
-  "loanInstallmentNumber": "{number}. részlet",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Törlöd ezt a hitelt?",
-  "loanDeleteConfirmBody": "Mind a(z) {count} részlet is törlésre kerül.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategóriák",
   "categoryFormTitleNew": "Új kategória",
   "categoryFormTitleEdit": "Kategória szerkesztése",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Nincs megadva — előfordulhat, hogy az emlékeztetők nem időben jelennek meg",
   "settingsPermissionsGrantAction": "Engedélyezés",
   "settingsPermissionsOpenSettingsAction": "Beállítások megnyitása",
-  "loanMarkPaidSuccess": "Kifizetettként megjelölve",
   "settingsNotificationPrefsTitle": "Hang és rezgés",
   "settingsNotificationSound": "Értesítési hang",
   "settingsNotificationVibration": "Rezgés",

@@ -18,9 +18,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get navCalendar => 'Calendrier';
 
   @override
-  String get navLoans => 'Échéances';
-
-  @override
   String get navCategories => 'Catégories';
 
   @override
@@ -96,13 +93,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'Appuyez sur + pour ajouter votre premier rappel ou échéancier.';
+      'Appuyez sur + pour ajouter votre premier rappel.';
 
   @override
   String get fabAddReminder => 'Rappel';
-
-  @override
-  String get fabAddLoan => 'Échéancier';
 
   @override
   String get actionDone => 'Terminé';
@@ -293,94 +287,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get weekdaySunday => 'Dimanche';
 
   @override
-  String get loanListTitle => 'Échéances & emprunts';
-
-  @override
-  String get loanFormTitleNew => 'Nouvel échéancier';
-
-  @override
-  String get loanFormTitleEdit => 'Modifier l\'échéancier';
-
-  @override
-  String get loanFieldName => 'Nom';
-
-  @override
-  String get loanFieldCategory => 'Catégorie';
-
-  @override
-  String get loanFieldTotalAmount => 'Montant total (facultatif)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Montant par échéance';
-
-  @override
-  String get loanFieldTotalInstallments => 'Nombre d\'échéances';
-
-  @override
-  String get loanFieldFrequency => 'Fréquence';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Jour d\'échéance du mois';
-
-  @override
-  String get loanFieldStartDate => 'Date de début';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'Rappeler N jours avant l\'échéance';
-
-  @override
-  String get loanFieldNotes => 'Notes (facultatif)';
-
-  @override
-  String get loanFrequencyMonthly => 'Mensuelle';
-
-  @override
-  String get loanFrequencyWeekly => 'Hebdomadaire';
-
-  @override
-  String get loanFrequencyBiweekly => 'Toutes les deux semaines';
-
-  @override
-  String get loanFrequencyQuarterly => 'Trimestriel';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Tous les 6 mois';
-
-  @override
-  String get loanFrequencyYearly => 'Annuel';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total échéances payées';
-  }
-
-  @override
-  String get loanMarkPaid => 'Marquer comme payé';
-
-  @override
-  String get loanStatusPending => 'En attente';
-
-  @override
-  String get loanStatusPaid => 'Payé';
-
-  @override
-  String get loanStatusOverdue => 'En retard';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Échéance n° $number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Supprimer cet échéancier ?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Les $count échéances seront également supprimées.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Catégories';
 
   @override
@@ -555,9 +461,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Ouvrir les réglages';
-
-  @override
-  String get loanMarkPaidSuccess => 'Marqué comme payé';
 
   @override
   String get settingsNotificationPrefsTitle => 'Son et vibration';

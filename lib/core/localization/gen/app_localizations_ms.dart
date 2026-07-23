@@ -18,9 +18,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String get navCalendar => 'Kalendar';
 
   @override
-  String get navLoans => 'Pinjaman';
-
-  @override
   String get navCategories => 'Kategori';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsMs extends AppLocalizations {
   String get homeEmptyTitle => 'Belum ada apa-apa di sini';
 
   @override
-  String get homeEmptyBody =>
-      'Ketik + untuk menambah peringatan atau pinjaman ansuran pertama anda.';
+  String get homeEmptyBody => 'Ketik + untuk menambah peringatan pertama anda.';
 
   @override
   String get fabAddReminder => 'Peringatan';
-
-  @override
-  String get fabAddLoan => 'Pinjaman ansuran';
 
   @override
   String get actionDone => 'Selesai';
@@ -294,94 +287,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String get weekdaySunday => 'Ahad';
 
   @override
-  String get loanListTitle => 'Pinjaman & ansuran';
-
-  @override
-  String get loanFormTitleNew => 'Pinjaman ansuran baharu';
-
-  @override
-  String get loanFormTitleEdit => 'Sunting pinjaman';
-
-  @override
-  String get loanFieldName => 'Nama';
-
-  @override
-  String get loanFieldCategory => 'Kategori';
-
-  @override
-  String get loanFieldTotalAmount => 'Jumlah keseluruhan (pilihan)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Jumlah setiap ansuran';
-
-  @override
-  String get loanFieldTotalInstallments => 'Bilangan ansuran';
-
-  @override
-  String get loanFieldFrequency => 'Kekerapan';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Hari tamat tempoh dalam bulan';
-
-  @override
-  String get loanFieldStartDate => 'Tarikh mula';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'Ingatkan N hari sebelum tamat tempoh';
-
-  @override
-  String get loanFieldNotes => 'Nota (pilihan)';
-
-  @override
-  String get loanFrequencyMonthly => 'Bulanan';
-
-  @override
-  String get loanFrequencyWeekly => 'Mingguan';
-
-  @override
-  String get loanFrequencyBiweekly => 'Dua mingguan';
-
-  @override
-  String get loanFrequencyQuarterly => 'Suku tahunan';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Setiap 6 bulan';
-
-  @override
-  String get loanFrequencyYearly => 'Tahunan';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total telah dibayar';
-  }
-
-  @override
-  String get loanMarkPaid => 'Tandakan sebagai dibayar';
-
-  @override
-  String get loanStatusPending => 'Belum tiba tempoh';
-
-  @override
-  String get loanStatusPaid => 'Telah dibayar';
-
-  @override
-  String get loanStatusOverdue => 'Tertunggak';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Ansuran #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Padam pinjaman ini?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Kesemua $count ansuran juga akan dialih keluar.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Kategori';
 
   @override
@@ -555,9 +460,6 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Buka tetapan';
-
-  @override
-  String get loanMarkPaidSuccess => 'Ditandakan sebagai dibayar';
 
   @override
   String get settingsNotificationPrefsTitle => 'Bunyi & getaran';

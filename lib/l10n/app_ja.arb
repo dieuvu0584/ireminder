@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "タスクリスト",
   "navCalendar": "カレンダー",
-  "navLoans": "分割払い",
   "navCategories": "カテゴリ",
   "navSettings": "設定",
   "onboardingTitle1": "大事なことを忘れない",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "今週",
   "homeSectionUpcoming": "今後の予定",
   "homeEmptyTitle": "まだ何もありません",
-  "homeEmptyBody": "＋をタップして、最初のリマインダーや分割払いを追加しましょう。",
+  "homeEmptyBody": "＋をタップして、最初のリマインダーを追加しましょう。",
   "fabAddReminder": "リマインダー",
-  "fabAddLoan": "分割払い",
   "actionDone": "完了",
   "actionSnooze": "あとで通知",
   "actionEdit": "編集",
@@ -98,57 +96,6 @@
   "weekdayFriday": "金曜日",
   "weekdaySaturday": "土曜日",
   "weekdaySunday": "日曜日",
-  "loanListTitle": "ローン・分割払い",
-  "loanFormTitleNew": "新しい分割払い",
-  "loanFormTitleEdit": "分割払いを編集",
-  "loanFieldName": "名前",
-  "loanFieldCategory": "カテゴリ",
-  "loanFieldTotalAmount": "合計金額（任意）",
-  "loanFieldInstallmentAmount": "1回あたりの支払額",
-  "loanFieldTotalInstallments": "支払い回数",
-  "loanFieldFrequency": "頻度",
-  "loanFieldDueDayOfMonth": "毎月の支払日",
-  "loanFieldStartDate": "開始日",
-  "loanFieldReminderAdvanceDays": "支払期限のN日前に通知",
-  "loanFieldNotes": "メモ（任意）",
-  "loanFrequencyMonthly": "毎月",
-  "loanFrequencyWeekly": "毎週",
-  "loanFrequencyBiweekly": "隔週",
-  "loanFrequencyQuarterly": "四半期ごと",
-  "loanFrequencySemiAnnually": "6か月ごと",
-  "loanFrequencyYearly": "毎年",
-  "loanProgress": "{paid} / {total} 回 支払い済み",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "支払い済みにする",
-  "loanStatusPending": "未払い",
-  "loanStatusPaid": "支払い済み",
-  "loanStatusOverdue": "延滞",
-  "loanInstallmentNumber": "第{number}回",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "この分割払いを削除しますか？",
-  "loanDeleteConfirmBody": "{count}回分の支払いもすべて削除されます。",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "カテゴリ",
   "categoryFormTitleNew": "新しいカテゴリ",
   "categoryFormTitleEdit": "カテゴリを編集",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "未許可 — リマインダーが時間通りに届かない場合があります",
   "settingsPermissionsGrantAction": "許可する",
   "settingsPermissionsOpenSettingsAction": "設定を開く",
-  "loanMarkPaidSuccess": "支払い済みにしました",
   "settingsNotificationPrefsTitle": "サウンドとバイブレーション",
   "settingsNotificationSound": "通知音",
   "settingsNotificationVibration": "バイブレーション",

@@ -4,39 +4,22 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest_all.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
-import 'background_notification_handler.dart';
-
-/// Notification actions ids, kept stable so payload parsing on tap/action
-/// stays backward compatible across app updates.
-class NotificationActionIds {
-  static const installmentPaid = 'installment_paid';
-}
-
-/// Notification id ranges keep reminder / installment notification ids from
-/// colliding, so cancel(reminderId) never accidentally cancels an
-/// installment notification and vice-versa.
+/// Reminder notification ids, kept in their own range below
+/// [testNotificationId] so a future addition never collides with it.
 class NotificationIdSpace {
   static const int reminderBase = 0;
-  static const int installmentBase = 1000000;
   static const int testNotificationId = 2000000;
 
   static int forReminder(int reminderId) => reminderBase + reminderId;
-  static int forInstallment(int installmentId) =>
-      installmentBase + installmentId;
 
-  /// Reconstructs the `"reminder:<id>"` / `"installment:<id>"` payload
-  /// string straight from the notification's own [id] — used as a
-  /// fallback when [NotificationResponse.payload] comes back null/empty
-  /// for an action-button tap (observed on at least one real device: the
-  /// plugin's ActionBroadcastReceiver doesn't reliably carry the original
-  /// payload extra through to the broadcast it fires). The notification id
+  /// Reconstructs the `"reminder:<id>"` payload string straight from the
+  /// notification's own [id] — used as a fallback when
+  /// [NotificationResponse.payload] comes back null/empty (observed on at
+  /// least one real device for action-button taps). The notification id
   /// itself is intrinsic to how Android identifies/cancels it, so unlike
   /// payload it's never droppable — safe to lean on entirely.
   static String? payloadForId(int? id) {
     if (id == null || id >= testNotificationId) return null;
-    if (id >= installmentBase) {
-      return 'installment:${id - installmentBase}';
-    }
     return 'reminder:${id - reminderBase}';
   }
 }
@@ -63,7 +46,6 @@ class NotificationService {
   // fix that specific channel. Bumping the id abandons whatever state the
   // old one is stuck in and starts clean.
   static const _reminderChannelBase = 'reminders_channel_v2';
-  static const _loanChannelBase = 'loan_installments_channel_v2';
 
   /// Android locks a channel's sound/vibration behavior in at creation
   /// time — once a NotificationChannel exists, the app can't change its
@@ -122,7 +104,6 @@ class NotificationService {
     await _plugin.initialize(
       initSettings,
       onDidReceiveNotificationResponse: _handleResponse,
-      onDidReceiveBackgroundNotificationResponse: _backgroundHandler,
     );
 
     final androidPlugin = _plugin
@@ -136,15 +117,6 @@ class NotificationService {
             _reminderChannelBase,
             'Reminders',
             'Recurring and one-off reminder notifications',
-            sound: sound,
-            vibration: vibration,
-          ),
-        );
-        await androidPlugin?.createNotificationChannel(
-          _channel(
-            _loanChannelBase,
-            'Loan installments',
-            'Loan / installment due date notifications',
             sound: sound,
             vibration: vibration,
           ),
@@ -179,24 +151,10 @@ class NotificationService {
     onAction?.call(response.actionId ?? 'tap', _payloadOf(response));
   }
 
-  @pragma('vm:entry-point')
-  static void _backgroundHandler(NotificationResponse response) {
-    // A background isolate spawned fresh by the OS shares no runtime
-    // state with the main isolate, so this can't reach anything set up
-    // in app.dart — handleBackgroundNotificationAction opens its own DB
-    // connection instead. Fire-and-forget: this static callback can't be
-    // async itself (the plugin calls it synchronously).
-    handleBackgroundNotificationAction(
-      response.actionId ?? 'tap',
-      _payloadOf(response),
-    );
-  }
-
   /// See [NotificationIdSpace.payloadForId] — response.payload is trusted
   /// first (it's still the source of truth for a plain body tap), falling
-  /// back to reconstructing it from response.id only when payload comes
-  /// back null/empty, which is what an action-button tap has been
-  /// observed to do on at least one real device.
+  /// back to reconstructing it from response.id only when it comes back
+  /// null/empty.
   static String? _payloadOf(NotificationResponse response) {
     if (response.payload != null && response.payload!.isNotEmpty) {
       return response.payload;
@@ -326,57 +284,8 @@ class NotificationService {
     );
   }
 
-  Future<void> scheduleInstallment({
-    required int installmentId,
-    required DateTime fireAt,
-    required String title,
-    required String body,
-    required String markPaidActionLabel,
-    bool soundEnabled = true,
-    bool vibrationEnabled = true,
-  }) async {
-    final id = NotificationIdSpace.forInstallment(installmentId);
-    await cancelInstallment(installmentId);
-    await _plugin.zonedSchedule(
-      id,
-      title,
-      body,
-      tz.TZDateTime.from(fireAt, tz.local),
-      NotificationDetails(
-        android: AndroidNotificationDetails(
-          _channelId(
-            _loanChannelBase,
-            sound: soundEnabled,
-            vibration: vibrationEnabled,
-          ),
-          'Loan installments',
-          channelDescription: 'Loan / installment due date notifications',
-          importance: Importance.high,
-          priority: Priority.high,
-          playSound: soundEnabled,
-          enableVibration: vibrationEnabled,
-          actions: [
-            AndroidNotificationAction(
-              NotificationActionIds.installmentPaid,
-              markPaidActionLabel,
-              showsUserInterface: false,
-            ),
-          ],
-        ),
-      ),
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
-      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-      payload: 'installment:$installmentId',
-    );
-  }
-
   Future<void> cancelReminder(int reminderId) {
     return _plugin.cancel(NotificationIdSpace.forReminder(reminderId));
-  }
-
-  Future<void> cancelInstallment(int installmentId) {
-    return _plugin.cancel(NotificationIdSpace.forInstallment(installmentId));
   }
 
   Future<void> cancelAll() => _plugin.cancelAll();

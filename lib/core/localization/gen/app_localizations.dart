@@ -190,12 +190,6 @@ abstract class AppLocalizations {
   /// **'Calendar'**
   String get navCalendar;
 
-  /// No description provided for @navLoans.
-  ///
-  /// In en, this message translates to:
-  /// **'Loans'**
-  String get navLoans;
-
   /// No description provided for @navCategories.
   ///
   /// In en, this message translates to:
@@ -337,7 +331,7 @@ abstract class AppLocalizations {
   /// No description provided for @homeEmptyBody.
   ///
   /// In en, this message translates to:
-  /// **'Tap + to add your first reminder or installment loan.'**
+  /// **'Tap + to add your first reminder.'**
   String get homeEmptyBody;
 
   /// No description provided for @fabAddReminder.
@@ -345,12 +339,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reminder'**
   String get fabAddReminder;
-
-  /// No description provided for @fabAddLoan.
-  ///
-  /// In en, this message translates to:
-  /// **'Installment loan'**
-  String get fabAddLoan;
 
   /// No description provided for @actionDone.
   ///
@@ -718,168 +706,6 @@ abstract class AppLocalizations {
   /// **'Sunday'**
   String get weekdaySunday;
 
-  /// No description provided for @loanListTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Loans & installments'**
-  String get loanListTitle;
-
-  /// No description provided for @loanFormTitleNew.
-  ///
-  /// In en, this message translates to:
-  /// **'New installment loan'**
-  String get loanFormTitleNew;
-
-  /// No description provided for @loanFormTitleEdit.
-  ///
-  /// In en, this message translates to:
-  /// **'Edit loan'**
-  String get loanFormTitleEdit;
-
-  /// No description provided for @loanFieldName.
-  ///
-  /// In en, this message translates to:
-  /// **'Name'**
-  String get loanFieldName;
-
-  /// No description provided for @loanFieldCategory.
-  ///
-  /// In en, this message translates to:
-  /// **'Category'**
-  String get loanFieldCategory;
-
-  /// No description provided for @loanFieldTotalAmount.
-  ///
-  /// In en, this message translates to:
-  /// **'Total amount (optional)'**
-  String get loanFieldTotalAmount;
-
-  /// No description provided for @loanFieldInstallmentAmount.
-  ///
-  /// In en, this message translates to:
-  /// **'Amount per installment'**
-  String get loanFieldInstallmentAmount;
-
-  /// No description provided for @loanFieldTotalInstallments.
-  ///
-  /// In en, this message translates to:
-  /// **'Number of installments'**
-  String get loanFieldTotalInstallments;
-
-  /// No description provided for @loanFieldFrequency.
-  ///
-  /// In en, this message translates to:
-  /// **'Frequency'**
-  String get loanFieldFrequency;
-
-  /// No description provided for @loanFieldDueDayOfMonth.
-  ///
-  /// In en, this message translates to:
-  /// **'Due day of month'**
-  String get loanFieldDueDayOfMonth;
-
-  /// No description provided for @loanFieldStartDate.
-  ///
-  /// In en, this message translates to:
-  /// **'Start date'**
-  String get loanFieldStartDate;
-
-  /// No description provided for @loanFieldReminderAdvanceDays.
-  ///
-  /// In en, this message translates to:
-  /// **'Remind N days before due'**
-  String get loanFieldReminderAdvanceDays;
-
-  /// No description provided for @loanFieldNotes.
-  ///
-  /// In en, this message translates to:
-  /// **'Notes (optional)'**
-  String get loanFieldNotes;
-
-  /// No description provided for @loanFrequencyMonthly.
-  ///
-  /// In en, this message translates to:
-  /// **'Monthly'**
-  String get loanFrequencyMonthly;
-
-  /// No description provided for @loanFrequencyWeekly.
-  ///
-  /// In en, this message translates to:
-  /// **'Weekly'**
-  String get loanFrequencyWeekly;
-
-  /// No description provided for @loanFrequencyBiweekly.
-  ///
-  /// In en, this message translates to:
-  /// **'Biweekly'**
-  String get loanFrequencyBiweekly;
-
-  /// No description provided for @loanFrequencyQuarterly.
-  ///
-  /// In en, this message translates to:
-  /// **'Quarterly'**
-  String get loanFrequencyQuarterly;
-
-  /// No description provided for @loanFrequencySemiAnnually.
-  ///
-  /// In en, this message translates to:
-  /// **'Every 6 months'**
-  String get loanFrequencySemiAnnually;
-
-  /// No description provided for @loanFrequencyYearly.
-  ///
-  /// In en, this message translates to:
-  /// **'Yearly'**
-  String get loanFrequencyYearly;
-
-  /// No description provided for @loanProgress.
-  ///
-  /// In en, this message translates to:
-  /// **'{paid} / {total} paid'**
-  String loanProgress(int paid, int total);
-
-  /// No description provided for @loanMarkPaid.
-  ///
-  /// In en, this message translates to:
-  /// **'Mark as paid'**
-  String get loanMarkPaid;
-
-  /// No description provided for @loanStatusPending.
-  ///
-  /// In en, this message translates to:
-  /// **'Pending'**
-  String get loanStatusPending;
-
-  /// No description provided for @loanStatusPaid.
-  ///
-  /// In en, this message translates to:
-  /// **'Paid'**
-  String get loanStatusPaid;
-
-  /// No description provided for @loanStatusOverdue.
-  ///
-  /// In en, this message translates to:
-  /// **'Overdue'**
-  String get loanStatusOverdue;
-
-  /// No description provided for @loanInstallmentNumber.
-  ///
-  /// In en, this message translates to:
-  /// **'Installment #{number}'**
-  String loanInstallmentNumber(int number);
-
-  /// No description provided for @loanDeleteConfirmTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Delete this loan?'**
-  String get loanDeleteConfirmTitle;
-
-  /// No description provided for @loanDeleteConfirmBody.
-  ///
-  /// In en, this message translates to:
-  /// **'All {count} installments will be removed too.'**
-  String loanDeleteConfirmBody(int count);
-
   /// No description provided for @categoryManagerTitle.
   ///
   /// In en, this message translates to:
@@ -1197,12 +1023,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open settings'**
   String get settingsPermissionsOpenSettingsAction;
-
-  /// No description provided for @loanMarkPaidSuccess.
-  ///
-  /// In en, this message translates to:
-  /// **'Marked as paid'**
-  String get loanMarkPaidSuccess;
 
   /// No description provided for @settingsNotificationPrefsTitle.
   ///

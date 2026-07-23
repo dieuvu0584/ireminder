@@ -18,9 +18,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get navCalendar => 'التقويم';
 
   @override
-  String get navLoans => 'الأقساط';
-
-  @override
   String get navCategories => 'الفئات';
 
   @override
@@ -95,13 +92,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeEmptyTitle => 'لا يوجد شيء هنا بعد';
 
   @override
-  String get homeEmptyBody => 'اضغط على + لإضافة أول تذكير أو قسط لديك.';
+  String get homeEmptyBody => 'اضغط على + لإضافة أول تذكير لديك.';
 
   @override
   String get fabAddReminder => 'تذكير';
-
-  @override
-  String get fabAddLoan => 'قسط';
 
   @override
   String get actionDone => 'تم';
@@ -292,93 +286,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get weekdaySunday => 'الأحد';
 
   @override
-  String get loanListTitle => 'القروض والأقساط';
-
-  @override
-  String get loanFormTitleNew => 'قسط جديد';
-
-  @override
-  String get loanFormTitleEdit => 'تعديل القسط';
-
-  @override
-  String get loanFieldName => 'الاسم';
-
-  @override
-  String get loanFieldCategory => 'الفئة';
-
-  @override
-  String get loanFieldTotalAmount => 'المبلغ الإجمالي (اختياري)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'مبلغ كل قسط';
-
-  @override
-  String get loanFieldTotalInstallments => 'عدد الأقساط';
-
-  @override
-  String get loanFieldFrequency => 'التكرار';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'يوم الاستحقاق من الشهر';
-
-  @override
-  String get loanFieldStartDate => 'تاريخ البدء';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'التذكير قبل N يوم من الاستحقاق';
-
-  @override
-  String get loanFieldNotes => 'ملاحظات (اختياري)';
-
-  @override
-  String get loanFrequencyMonthly => 'شهريًا';
-
-  @override
-  String get loanFrequencyWeekly => 'أسبوعيًا';
-
-  @override
-  String get loanFrequencyBiweekly => 'كل أسبوعين';
-
-  @override
-  String get loanFrequencyQuarterly => 'ربع سنوي';
-
-  @override
-  String get loanFrequencySemiAnnually => 'كل 6 أشهر';
-
-  @override
-  String get loanFrequencyYearly => 'سنوي';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return 'تم دفع $paid من $total';
-  }
-
-  @override
-  String get loanMarkPaid => 'تحديد كمدفوع';
-
-  @override
-  String get loanStatusPending => 'قيد الانتظار';
-
-  @override
-  String get loanStatusPaid => 'مدفوع';
-
-  @override
-  String get loanStatusOverdue => 'متأخر';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'القسط رقم $number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'هل تريد حذف هذا القسط؟';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'سيتم حذف جميع الأقساط الـ $count أيضًا.';
-  }
-
-  @override
   String get categoryManagerTitle => 'الفئات';
 
   @override
@@ -550,9 +457,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'فتح الإعدادات';
-
-  @override
-  String get loanMarkPaidSuccess => 'تم التحديد كمدفوع';
 
   @override
   String get settingsNotificationPrefsTitle => 'الصوت والاهتزاز';

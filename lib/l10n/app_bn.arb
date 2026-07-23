@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "কাজের তালিকা",
   "navCalendar": "ক্যালেন্ডার",
-  "navLoans": "ঋণ",
   "navCategories": "বিভাগ",
   "navSettings": "সেটিংস",
   "onboardingTitle1": "গুরুত্বপূর্ণ কিছু আর কখনো ভুলবেন না",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "এই সপ্তাহে",
   "homeSectionUpcoming": "আসন্ন",
   "homeEmptyTitle": "এখানে এখনো কিছু নেই",
-  "homeEmptyBody": "আপনার প্রথম রিমাইন্ডার বা কিস্তির ঋণ যোগ করতে + বাটনে ট্যাপ করুন।",
+  "homeEmptyBody": "আপনার প্রথম রিমাইন্ডার যোগ করতে + বাটনে ট্যাপ করুন।",
   "fabAddReminder": "রিমাইন্ডার",
-  "fabAddLoan": "কিস্তির ঋণ",
   "actionDone": "সম্পন্ন",
   "actionSnooze": "স্নুজ",
   "actionEdit": "সম্পাদনা",
@@ -98,57 +96,6 @@
   "weekdayFriday": "শুক্রবার",
   "weekdaySaturday": "শনিবার",
   "weekdaySunday": "রবিবার",
-  "loanListTitle": "ঋণ ও কিস্তি",
-  "loanFormTitleNew": "নতুন কিস্তির ঋণ",
-  "loanFormTitleEdit": "ঋণ সম্পাদনা করুন",
-  "loanFieldName": "নাম",
-  "loanFieldCategory": "বিভাগ",
-  "loanFieldTotalAmount": "মোট পরিমাণ (ঐচ্ছিক)",
-  "loanFieldInstallmentAmount": "প্রতি কিস্তির পরিমাণ",
-  "loanFieldTotalInstallments": "মোট কিস্তির সংখ্যা",
-  "loanFieldFrequency": "পুনরাবৃত্তির হার",
-  "loanFieldDueDayOfMonth": "মাসের কততম দিনে পরিশোধ্য",
-  "loanFieldStartDate": "শুরুর তারিখ",
-  "loanFieldReminderAdvanceDays": "পরিশোধের N দিন আগে জানান",
-  "loanFieldNotes": "নোট (ঐচ্ছিক)",
-  "loanFrequencyMonthly": "মাসিক",
-  "loanFrequencyWeekly": "সাপ্তাহিক",
-  "loanFrequencyBiweekly": "দ্বি-সাপ্তাহিক",
-  "loanFrequencyQuarterly": "ত্রৈমাসিক",
-  "loanFrequencySemiAnnually": "প্রতি ৬ মাসে",
-  "loanFrequencyYearly": "বার্ষিক",
-  "loanProgress": "{paid} / {total} কিস্তি পরিশোধিত",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "পরিশোধিত হিসেবে চিহ্নিত করুন",
-  "loanStatusPending": "বাকি আছে",
-  "loanStatusPaid": "পরিশোধিত",
-  "loanStatusOverdue": "মেয়াদোত্তীর্ণ",
-  "loanInstallmentNumber": "কিস্তি #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "এই ঋণটি মুছবেন?",
-  "loanDeleteConfirmBody": "সবগুলো {count}টি কিস্তিও মুছে যাবে।",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "বিভাগসমূহ",
   "categoryFormTitleNew": "নতুন বিভাগ",
   "categoryFormTitleEdit": "বিভাগ সম্পাদনা করুন",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "অনুমোদিত নয় — রিমাইন্ডার সময়মতো নাও আসতে পারে",
   "settingsPermissionsGrantAction": "অনুমতি দিন",
   "settingsPermissionsOpenSettingsAction": "সেটিংস খুলুন",
-  "loanMarkPaidSuccess": "পরিশোধিত হিসেবে চিহ্নিত হয়েছে",
   "settingsNotificationPrefsTitle": "শব্দ ও কম্পন",
   "settingsNotificationSound": "বিজ্ঞপ্তির শব্দ",
   "settingsNotificationVibration": "কম্পন",

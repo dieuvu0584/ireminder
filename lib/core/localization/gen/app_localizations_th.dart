@@ -18,9 +18,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get navCalendar => 'ปฏิทิน';
 
   @override
-  String get navLoans => 'ผ่อนชำระ';
-
-  @override
   String get navCategories => 'หมวดหมู่';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsTh extends AppLocalizations {
   String get homeEmptyTitle => 'ยังไม่มีรายการ';
 
   @override
-  String get homeEmptyBody =>
-      'แตะ + เพื่อเพิ่มรายการแจ้งเตือนหรือสินเชื่อผ่อนชำระรายการแรกของคุณ';
+  String get homeEmptyBody => 'แตะ + เพื่อเพิ่มรายการแจ้งเตือนแรกของคุณ';
 
   @override
   String get fabAddReminder => 'การแจ้งเตือน';
-
-  @override
-  String get fabAddLoan => 'สินเชื่อผ่อนชำระ';
 
   @override
   String get actionDone => 'เสร็จสิ้น';
@@ -293,94 +286,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get weekdaySunday => 'วันอาทิตย์';
 
   @override
-  String get loanListTitle => 'สินเชื่อและผ่อนชำระ';
-
-  @override
-  String get loanFormTitleNew => 'สินเชื่อผ่อนชำระใหม่';
-
-  @override
-  String get loanFormTitleEdit => 'แก้ไขสินเชื่อ';
-
-  @override
-  String get loanFieldName => 'ชื่อ';
-
-  @override
-  String get loanFieldCategory => 'หมวดหมู่';
-
-  @override
-  String get loanFieldTotalAmount => 'จำนวนเงินทั้งหมด (ไม่บังคับ)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'จำนวนเงินต่องวด';
-
-  @override
-  String get loanFieldTotalInstallments => 'จำนวนงวดทั้งหมด';
-
-  @override
-  String get loanFieldFrequency => 'ความถี่';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'วันครบกำหนดในแต่ละเดือน';
-
-  @override
-  String get loanFieldStartDate => 'วันที่เริ่มต้น';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'แจ้งเตือนล่วงหน้า N วันก่อนครบกำหนด';
-
-  @override
-  String get loanFieldNotes => 'หมายเหตุ (ไม่บังคับ)';
-
-  @override
-  String get loanFrequencyMonthly => 'รายเดือน';
-
-  @override
-  String get loanFrequencyWeekly => 'รายสัปดาห์';
-
-  @override
-  String get loanFrequencyBiweekly => 'ทุกสองสัปดาห์';
-
-  @override
-  String get loanFrequencyQuarterly => 'รายไตรมาส';
-
-  @override
-  String get loanFrequencySemiAnnually => 'ทุก 6 เดือน';
-
-  @override
-  String get loanFrequencyYearly => 'รายปี';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return 'ชำระแล้ว $paid / $total งวด';
-  }
-
-  @override
-  String get loanMarkPaid => 'ทำเครื่องหมายว่าชำระแล้ว';
-
-  @override
-  String get loanStatusPending => 'รอชำระ';
-
-  @override
-  String get loanStatusPaid => 'ชำระแล้ว';
-
-  @override
-  String get loanStatusOverdue => 'เลยกำหนด';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'งวดที่ #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'ลบสินเชื่อนี้ใช่ไหม';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'งวดทั้งหมด $count งวดจะถูกลบไปด้วย';
-  }
-
-  @override
   String get categoryManagerTitle => 'หมวดหมู่';
 
   @override
@@ -553,9 +458,6 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'เปิดการตั้งค่า';
-
-  @override
-  String get loanMarkPaidSuccess => 'ทำเครื่องหมายว่าชำระแล้ว';
 
   @override
   String get settingsNotificationPrefsTitle => 'เสียงและการสั่น';

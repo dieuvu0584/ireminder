@@ -18,9 +18,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navCalendar => 'Calendar';
 
   @override
-  String get navLoans => 'Loans';
-
-  @override
   String get navCategories => 'Categories';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeEmptyTitle => 'Nothing here yet';
 
   @override
-  String get homeEmptyBody =>
-      'Tap + to add your first reminder or installment loan.';
+  String get homeEmptyBody => 'Tap + to add your first reminder.';
 
   @override
   String get fabAddReminder => 'Reminder';
-
-  @override
-  String get fabAddLoan => 'Installment loan';
 
   @override
   String get actionDone => 'Done';
@@ -293,93 +286,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get weekdaySunday => 'Sunday';
 
   @override
-  String get loanListTitle => 'Loans & installments';
-
-  @override
-  String get loanFormTitleNew => 'New installment loan';
-
-  @override
-  String get loanFormTitleEdit => 'Edit loan';
-
-  @override
-  String get loanFieldName => 'Name';
-
-  @override
-  String get loanFieldCategory => 'Category';
-
-  @override
-  String get loanFieldTotalAmount => 'Total amount (optional)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Amount per installment';
-
-  @override
-  String get loanFieldTotalInstallments => 'Number of installments';
-
-  @override
-  String get loanFieldFrequency => 'Frequency';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Due day of month';
-
-  @override
-  String get loanFieldStartDate => 'Start date';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'Remind N days before due';
-
-  @override
-  String get loanFieldNotes => 'Notes (optional)';
-
-  @override
-  String get loanFrequencyMonthly => 'Monthly';
-
-  @override
-  String get loanFrequencyWeekly => 'Weekly';
-
-  @override
-  String get loanFrequencyBiweekly => 'Biweekly';
-
-  @override
-  String get loanFrequencyQuarterly => 'Quarterly';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Every 6 months';
-
-  @override
-  String get loanFrequencyYearly => 'Yearly';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total paid';
-  }
-
-  @override
-  String get loanMarkPaid => 'Mark as paid';
-
-  @override
-  String get loanStatusPending => 'Pending';
-
-  @override
-  String get loanStatusPaid => 'Paid';
-
-  @override
-  String get loanStatusOverdue => 'Overdue';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Installment #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Delete this loan?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'All $count installments will be removed too.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Categories';
 
   @override
@@ -552,9 +458,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Open settings';
-
-  @override
-  String get loanMarkPaidSuccess => 'Marked as paid';
 
   @override
   String get settingsNotificationPrefsTitle => 'Sound & vibration';

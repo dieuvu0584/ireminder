@@ -18,9 +18,6 @@ class AppLocalizationsEl extends AppLocalizations {
   String get navCalendar => 'Ημερολόγιο';
 
   @override
-  String get navLoans => 'Δόσεις';
-
-  @override
   String get navCategories => 'Κατηγορίες';
 
   @override
@@ -96,13 +93,10 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'Πάτησε το + για να προσθέσεις την πρώτη σου υπενθύμιση ή δόση.';
+      'Πάτησε το + για να προσθέσεις την πρώτη σου υπενθύμιση.';
 
   @override
   String get fabAddReminder => 'Υπενθύμιση';
-
-  @override
-  String get fabAddLoan => 'Δόση δανείου';
 
   @override
   String get actionDone => 'Ολοκληρώθηκε';
@@ -294,93 +288,6 @@ class AppLocalizationsEl extends AppLocalizations {
   String get weekdaySunday => 'Κυριακή';
 
   @override
-  String get loanListTitle => 'Δάνεια & δόσεις';
-
-  @override
-  String get loanFormTitleNew => 'Νέο δάνειο με δόσεις';
-
-  @override
-  String get loanFormTitleEdit => 'Επεξεργασία δανείου';
-
-  @override
-  String get loanFieldName => 'Όνομα';
-
-  @override
-  String get loanFieldCategory => 'Κατηγορία';
-
-  @override
-  String get loanFieldTotalAmount => 'Συνολικό ποσό (προαιρετικό)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Ποσό ανά δόση';
-
-  @override
-  String get loanFieldTotalInstallments => 'Αριθμός δόσεων';
-
-  @override
-  String get loanFieldFrequency => 'Συχνότητα';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Ημέρα λήξης στον μήνα';
-
-  @override
-  String get loanFieldStartDate => 'Ημερομηνία έναρξης';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'Υπενθύμιση N ημέρες πριν τη λήξη';
-
-  @override
-  String get loanFieldNotes => 'Σημειώσεις (προαιρετικό)';
-
-  @override
-  String get loanFrequencyMonthly => 'Μηνιαία';
-
-  @override
-  String get loanFrequencyWeekly => 'Εβδομαδιαία';
-
-  @override
-  String get loanFrequencyBiweekly => 'Ανά δεκαπενθήμερο';
-
-  @override
-  String get loanFrequencyQuarterly => 'Τριμηνιαία';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Κάθε 6 μήνες';
-
-  @override
-  String get loanFrequencyYearly => 'Ετησίως';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total πληρωμένες';
-  }
-
-  @override
-  String get loanMarkPaid => 'Σήμανση ως πληρωμένη';
-
-  @override
-  String get loanStatusPending => 'Εκκρεμεί';
-
-  @override
-  String get loanStatusPaid => 'Πληρωμένη';
-
-  @override
-  String get loanStatusOverdue => 'Ληξιπρόθεσμη';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Δόση #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Διαγραφή αυτού του δανείου;';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Θα διαγραφούν και οι $count δόσεις.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Κατηγορίες';
 
   @override
@@ -556,9 +463,6 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Άνοιγμα ρυθμίσεων';
-
-  @override
-  String get loanMarkPaidSuccess => 'Σημειώθηκε ως πληρωμένη';
 
   @override
   String get settingsNotificationPrefsTitle => 'Ήχος & δόνηση';

@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Görev Listesi",
   "navCalendar": "Takvim",
-  "navLoans": "Taksitler",
   "navCategories": "Kategoriler",
   "navSettings": "Ayarlar",
   "onboardingTitle1": "Önemli olanı asla unutmayın",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Bu hafta",
   "homeSectionUpcoming": "Yaklaşan",
   "homeEmptyTitle": "Henüz bir şey yok",
-  "homeEmptyBody": "İlk hatırlatıcınızı veya taksitli ödemenizi eklemek için + simgesine dokunun.",
+  "homeEmptyBody": "İlk hatırlatıcınızı eklemek için + simgesine dokunun.",
   "fabAddReminder": "Hatırlatıcı",
-  "fabAddLoan": "Taksitli ödeme",
   "actionDone": "Tamamlandı",
   "actionSnooze": "Ertele",
   "actionEdit": "Düzenle",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Cuma",
   "weekdaySaturday": "Cumartesi",
   "weekdaySunday": "Pazar",
-  "loanListTitle": "Taksitler ve krediler",
-  "loanFormTitleNew": "Yeni taksitli ödeme",
-  "loanFormTitleEdit": "Taksitli ödemeyi düzenle",
-  "loanFieldName": "Ad",
-  "loanFieldCategory": "Kategori",
-  "loanFieldTotalAmount": "Toplam tutar (isteğe bağlı)",
-  "loanFieldInstallmentAmount": "Taksit tutarı",
-  "loanFieldTotalInstallments": "Taksit sayısı",
-  "loanFieldFrequency": "Sıklık",
-  "loanFieldDueDayOfMonth": "Ayın vade günü",
-  "loanFieldStartDate": "Başlangıç tarihi",
-  "loanFieldReminderAdvanceDays": "Vadeden N gün önce hatırlat",
-  "loanFieldNotes": "Notlar (isteğe bağlı)",
-  "loanFrequencyMonthly": "Aylık",
-  "loanFrequencyWeekly": "Haftalık",
-  "loanFrequencyBiweekly": "İki haftada bir",
-  "loanFrequencyQuarterly": "Üç aylık",
-  "loanFrequencySemiAnnually": "Her 6 ayda bir",
-  "loanFrequencyYearly": "Yıllık",
-  "loanProgress": "{paid} / {total} ödendi",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Ödendi olarak işaretle",
-  "loanStatusPending": "Beklemede",
-  "loanStatusPaid": "Ödendi",
-  "loanStatusOverdue": "Gecikti",
-  "loanInstallmentNumber": "{number}. taksit",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Bu taksitli ödeme silinsin mi?",
-  "loanDeleteConfirmBody": "{count} taksitin tamamı da silinecek.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategoriler",
   "categoryFormTitleNew": "Yeni kategori",
   "categoryFormTitleEdit": "Kategoriyi düzenle",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Verilmedi — hatırlatıcılar zamanında çalışmayabilir",
   "settingsPermissionsGrantAction": "İzin ver",
   "settingsPermissionsOpenSettingsAction": "Ayarları aç",
-  "loanMarkPaidSuccess": "Ödendi olarak işaretlendi",
   "settingsNotificationPrefsTitle": "Ses ve titreşim",
   "settingsNotificationSound": "Bildirim sesi",
   "settingsNotificationVibration": "Titreşim",

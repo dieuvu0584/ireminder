@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Список задач",
   "navCalendar": "Календарь",
-  "navLoans": "Кредиты",
   "navCategories": "Категории",
   "navSettings": "Настройки",
   "onboardingTitle1": "Никогда не забывайте важное",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "На этой неделе",
   "homeSectionUpcoming": "Предстоящие",
   "homeEmptyTitle": "Пока здесь пусто",
-  "homeEmptyBody": "Нажмите +, чтобы добавить первое напоминание или кредит с рассрочкой.",
+  "homeEmptyBody": "Нажмите +, чтобы добавить первое напоминание.",
   "fabAddReminder": "Напоминание",
-  "fabAddLoan": "Кредит с рассрочкой",
   "actionDone": "Готово",
   "actionSnooze": "Отложить",
   "actionEdit": "Изменить",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Пятница",
   "weekdaySaturday": "Суббота",
   "weekdaySunday": "Воскресенье",
-  "loanListTitle": "Кредиты и рассрочки",
-  "loanFormTitleNew": "Новый кредит с рассрочкой",
-  "loanFormTitleEdit": "Изменить кредит",
-  "loanFieldName": "Название",
-  "loanFieldCategory": "Категория",
-  "loanFieldTotalAmount": "Общая сумма (необязательно)",
-  "loanFieldInstallmentAmount": "Сумма одного платежа",
-  "loanFieldTotalInstallments": "Количество платежей",
-  "loanFieldFrequency": "Периодичность",
-  "loanFieldDueDayOfMonth": "День платежа в месяце",
-  "loanFieldStartDate": "Дата начала",
-  "loanFieldReminderAdvanceDays": "Напомнить за N дней до платежа",
-  "loanFieldNotes": "Заметки (необязательно)",
-  "loanFrequencyMonthly": "Ежемесячно",
-  "loanFrequencyWeekly": "Еженедельно",
-  "loanFrequencyBiweekly": "Раз в две недели",
-  "loanFrequencyQuarterly": "Ежеквартально",
-  "loanFrequencySemiAnnually": "Каждые 6 месяцев",
-  "loanFrequencyYearly": "Ежегодно",
-  "loanProgress": "Оплачено {paid} из {total}",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Отметить как оплачено",
-  "loanStatusPending": "Ожидается",
-  "loanStatusPaid": "Оплачено",
-  "loanStatusOverdue": "Просрочено",
-  "loanInstallmentNumber": "Платёж №{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Удалить этот кредит?",
-  "loanDeleteConfirmBody": "Все {count} платежей также будут удалены.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Категории",
   "categoryFormTitleNew": "Новая категория",
   "categoryFormTitleEdit": "Изменить категорию",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Не предоставлено — напоминания могут приходить не вовремя",
   "settingsPermissionsGrantAction": "Предоставить",
   "settingsPermissionsOpenSettingsAction": "Открыть настройки",
-  "loanMarkPaidSuccess": "Отмечено как оплачено",
   "settingsNotificationPrefsTitle": "Звук и вибрация",
   "settingsNotificationSound": "Звук уведомления",
   "settingsNotificationVibration": "Вибрация",

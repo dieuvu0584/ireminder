@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "કાર્ય સૂચિ",
   "navCalendar": "કૅલેન્ડર",
-  "navLoans": "લોન",
   "navCategories": "શ્રેણીઓ",
   "navSettings": "સેટિંગ્સ",
   "onboardingTitle1": "મહત્વનું ક્યારેય ના ભૂલો",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "આ અઠવાડિયે",
   "homeSectionUpcoming": "આગામી",
   "homeEmptyTitle": "અહીં હજુ કંઈ નથી",
-  "homeEmptyBody": "તમારું પહેલું રિમાઇન્ડર અથવા હપ્તાની લોન ઉમેરવા માટે + પર ટૅપ કરો.",
+  "homeEmptyBody": "તમારું પહેલું રિમાઇન્ડર ઉમેરવા માટે + પર ટૅપ કરો.",
   "fabAddReminder": "રિમાઇન્ડર",
-  "fabAddLoan": "હપ્તાની લોન",
   "actionDone": "થઈ ગયું",
   "actionSnooze": "સ્નૂઝ",
   "actionEdit": "સંપાદિત કરો",
@@ -98,57 +96,6 @@
   "weekdayFriday": "શુક્રવાર",
   "weekdaySaturday": "શનિવાર",
   "weekdaySunday": "રવિવાર",
-  "loanListTitle": "લોન અને હપ્તા",
-  "loanFormTitleNew": "નવી હપ્તાની લોન",
-  "loanFormTitleEdit": "લોન સંપાદિત કરો",
-  "loanFieldName": "નામ",
-  "loanFieldCategory": "શ્રેણી",
-  "loanFieldTotalAmount": "કુલ રકમ (વૈકલ્પિક)",
-  "loanFieldInstallmentAmount": "પ્રતિ હપ્તાની રકમ",
-  "loanFieldTotalInstallments": "હપ્તાની સંખ્યા",
-  "loanFieldFrequency": "આવૃત્તિ",
-  "loanFieldDueDayOfMonth": "મહિનાનો બાકી દિવસ",
-  "loanFieldStartDate": "શરૂઆતની તારીખ",
-  "loanFieldReminderAdvanceDays": "બાકી તારીખના N દિવસ પહેલાં યાદ કરાવો",
-  "loanFieldNotes": "નોંધ (વૈકલ્પિક)",
-  "loanFrequencyMonthly": "દર મહિને",
-  "loanFrequencyWeekly": "દર અઠવાડિયે",
-  "loanFrequencyBiweekly": "દર બે અઠવાડિયે",
-  "loanFrequencyQuarterly": "ત્રિમાસિક",
-  "loanFrequencySemiAnnually": "દર 6 મહિને",
-  "loanFrequencyYearly": "વાર્ષિક",
-  "loanProgress": "{paid} / {total} ચૂકવ્યા",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "ચૂકવેલ તરીકે ચિહ્નિત કરો",
-  "loanStatusPending": "બાકી",
-  "loanStatusPaid": "ચૂકવેલ",
-  "loanStatusOverdue": "મુદત વીતી ગયેલ",
-  "loanInstallmentNumber": "હપ્તો #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "આ લોન કાઢી નાખવી છે?",
-  "loanDeleteConfirmBody": "બધા {count} હપ્તા પણ દૂર થઈ જશે.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "શ્રેણીઓ",
   "categoryFormTitleNew": "નવી શ્રેણી",
   "categoryFormTitleEdit": "શ્રેણી સંપાદિત કરો",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "મંજૂર નથી — રિમાઇન્ડર સમયસર ન પણ આવે",
   "settingsPermissionsGrantAction": "મંજૂરી આપો",
   "settingsPermissionsOpenSettingsAction": "સેટિંગ્સ ખોલો",
-  "loanMarkPaidSuccess": "ચૂકવેલ તરીકે ચિહ્નિત કર્યું",
   "settingsNotificationPrefsTitle": "અવાજ અને વાઇબ્રેશન",
   "settingsNotificationSound": "સૂચના અવાજ",
   "settingsNotificationVibration": "વાઇબ્રેશન",

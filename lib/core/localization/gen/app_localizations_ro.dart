@@ -18,9 +18,6 @@ class AppLocalizationsRo extends AppLocalizations {
   String get navCalendar => 'Calendar';
 
   @override
-  String get navLoans => 'Rate';
-
-  @override
   String get navCategories => 'Categorii';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsRo extends AppLocalizations {
   String get homeEmptyTitle => 'Încă nimic aici';
 
   @override
-  String get homeEmptyBody =>
-      'Apasă + pentru a adăuga primul memento sau prima rată.';
+  String get homeEmptyBody => 'Apasă + pentru a adăuga primul memento.';
 
   @override
   String get fabAddReminder => 'Memento';
-
-  @override
-  String get fabAddLoan => 'Rată';
 
   @override
   String get actionDone => 'Gata';
@@ -294,94 +287,6 @@ class AppLocalizationsRo extends AppLocalizations {
   String get weekdaySunday => 'Duminică';
 
   @override
-  String get loanListTitle => 'Rate și împrumuturi';
-
-  @override
-  String get loanFormTitleNew => 'Rată nouă';
-
-  @override
-  String get loanFormTitleEdit => 'Editează rata';
-
-  @override
-  String get loanFieldName => 'Nume';
-
-  @override
-  String get loanFieldCategory => 'Categorie';
-
-  @override
-  String get loanFieldTotalAmount => 'Sumă totală (opțional)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Sumă pe rată';
-
-  @override
-  String get loanFieldTotalInstallments => 'Număr de rate';
-
-  @override
-  String get loanFieldFrequency => 'Frecvență';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Ziua scadentă din lună';
-
-  @override
-  String get loanFieldStartDate => 'Data de start';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'Amintește cu N zile înainte de scadență';
-
-  @override
-  String get loanFieldNotes => 'Note (opțional)';
-
-  @override
-  String get loanFrequencyMonthly => 'Lunar';
-
-  @override
-  String get loanFrequencyWeekly => 'Săptămânal';
-
-  @override
-  String get loanFrequencyBiweekly => 'La două săptămâni';
-
-  @override
-  String get loanFrequencyQuarterly => 'Trimestrial';
-
-  @override
-  String get loanFrequencySemiAnnually => 'La fiecare 6 luni';
-
-  @override
-  String get loanFrequencyYearly => 'Anual';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total plătite';
-  }
-
-  @override
-  String get loanMarkPaid => 'Marchează ca plătită';
-
-  @override
-  String get loanStatusPending => 'În așteptare';
-
-  @override
-  String get loanStatusPaid => 'Plătită';
-
-  @override
-  String get loanStatusOverdue => 'Restantă';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Rata #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Ștergi această rată?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Toate cele $count rate vor fi eliminate și ele.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Categorii';
 
   @override
@@ -556,9 +461,6 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Deschide setările';
-
-  @override
-  String get loanMarkPaidSuccess => 'Marcat ca plătit';
 
   @override
   String get settingsNotificationPrefsTitle => 'Sunet și vibrații';

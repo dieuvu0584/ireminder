@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "कार्य यादी",
   "navCalendar": "दिनदर्शिका",
-  "navLoans": "कर्ज",
   "navCategories": "श्रेणी",
   "navSettings": "सेटिंग्ज",
   "onboardingTitle1": "महत्त्वाचं कधीच विसरू नका",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "या आठवड्यात",
   "homeSectionUpcoming": "आगामी",
   "homeEmptyTitle": "इथे अजून काही नाही",
-  "homeEmptyBody": "तुमची पहिली रिमाइंडर किंवा हप्त्याचं कर्ज जोडण्यासाठी + दाबा.",
+  "homeEmptyBody": "तुमची पहिली रिमाइंडर जोडण्यासाठी + दाबा.",
   "fabAddReminder": "रिमाइंडर",
-  "fabAddLoan": "हप्त्याचं कर्ज",
   "actionDone": "पूर्ण",
   "actionSnooze": "स्नूझ करा",
   "actionEdit": "संपादित करा",
@@ -98,57 +96,6 @@
   "weekdayFriday": "शुक्रवार",
   "weekdaySaturday": "शनिवार",
   "weekdaySunday": "रविवार",
-  "loanListTitle": "कर्ज आणि हप्ते",
-  "loanFormTitleNew": "नवीन हप्त्याचं कर्ज",
-  "loanFormTitleEdit": "कर्ज संपादित करा",
-  "loanFieldName": "नाव",
-  "loanFieldCategory": "श्रेणी",
-  "loanFieldTotalAmount": "एकूण रक्कम (ऐच्छिक)",
-  "loanFieldInstallmentAmount": "प्रति हप्ता रक्कम",
-  "loanFieldTotalInstallments": "हप्त्यांची संख्या",
-  "loanFieldFrequency": "वारंवारता",
-  "loanFieldDueDayOfMonth": "महिन्यातील देय दिवस",
-  "loanFieldStartDate": "सुरुवातीची तारीख",
-  "loanFieldReminderAdvanceDays": "देय तारखेच्या N दिवस आधी आठवण करा",
-  "loanFieldNotes": "टिपा (ऐच्छिक)",
-  "loanFrequencyMonthly": "दर महिन्याला",
-  "loanFrequencyWeekly": "दर आठवड्याला",
-  "loanFrequencyBiweekly": "दर दोन आठवड्यांनी",
-  "loanFrequencyQuarterly": "त्रैमासिक",
-  "loanFrequencySemiAnnually": "दर 6 महिन्यांनी",
-  "loanFrequencyYearly": "वार्षिक",
-  "loanProgress": "{paid} / {total} भरले",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "भरलं म्हणून चिन्हांकित करा",
-  "loanStatusPending": "प्रलंबित",
-  "loanStatusPaid": "भरलं",
-  "loanStatusOverdue": "मुदत उलटलेली",
-  "loanInstallmentNumber": "हप्ता #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "हे कर्ज हटवायचं?",
-  "loanDeleteConfirmBody": "सर्व {count} हप्तेही काढून टाकले जातील.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "श्रेणी",
   "categoryFormTitleNew": "नवीन श्रेणी",
   "categoryFormTitleEdit": "श्रेणी संपादित करा",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "मंजूर नाही — रिमाइंडर वेळेवर येणार नाहीत",
   "settingsPermissionsGrantAction": "मंजूर करा",
   "settingsPermissionsOpenSettingsAction": "सेटिंग्ज उघडा",
-  "loanMarkPaidSuccess": "भरलं म्हणून चिन्हांकित केलं",
   "settingsNotificationPrefsTitle": "आवाज आणि व्हायब्रेशन",
   "settingsNotificationSound": "सूचना आवाज",
   "settingsNotificationVibration": "व्हायब्रेशन",

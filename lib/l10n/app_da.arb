@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Opgaveliste",
   "navCalendar": "Kalender",
-  "navLoans": "Lån",
   "navCategories": "Kategorier",
   "navSettings": "Indstillinger",
   "onboardingTitle1": "Glem aldrig det, der betyder noget",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Denne uge",
   "homeSectionUpcoming": "Kommende",
   "homeEmptyTitle": "Her er tomt endnu",
-  "homeEmptyBody": "Tryk på + for at tilføje din første påmindelse eller dit første afdragslån.",
+  "homeEmptyBody": "Tryk på + for at tilføje din første påmindelse.",
   "fabAddReminder": "Påmindelse",
-  "fabAddLoan": "Afdragslån",
   "actionDone": "Udført",
   "actionSnooze": "Udsæt",
   "actionEdit": "Rediger",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Fredag",
   "weekdaySaturday": "Lørdag",
   "weekdaySunday": "Søndag",
-  "loanListTitle": "Lån & afdrag",
-  "loanFormTitleNew": "Nyt afdragslån",
-  "loanFormTitleEdit": "Rediger lån",
-  "loanFieldName": "Navn",
-  "loanFieldCategory": "Kategori",
-  "loanFieldTotalAmount": "Samlet beløb (valgfrit)",
-  "loanFieldInstallmentAmount": "Beløb pr. afdrag",
-  "loanFieldTotalInstallments": "Antal afdrag",
-  "loanFieldFrequency": "Hyppighed",
-  "loanFieldDueDayOfMonth": "Forfaldsdag i måneden",
-  "loanFieldStartDate": "Startdato",
-  "loanFieldReminderAdvanceDays": "Påmind N dage før forfald",
-  "loanFieldNotes": "Noter (valgfrit)",
-  "loanFrequencyMonthly": "Månedligt",
-  "loanFrequencyWeekly": "Ugentligt",
-  "loanFrequencyBiweekly": "Hver 14. dag",
-  "loanFrequencyQuarterly": "Kvartalsvis",
-  "loanFrequencySemiAnnually": "Hver 6. måned",
-  "loanFrequencyYearly": "Årligt",
-  "loanProgress": "{paid} / {total} betalt",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Marker som betalt",
-  "loanStatusPending": "Afventer",
-  "loanStatusPaid": "Betalt",
-  "loanStatusOverdue": "Forfalden",
-  "loanInstallmentNumber": "Afdrag #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Slet dette lån?",
-  "loanDeleteConfirmBody": "Alle {count} afdrag bliver også fjernet.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategorier",
   "categoryFormTitleNew": "Ny kategori",
   "categoryFormTitleEdit": "Rediger kategori",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Ikke givet — påmindelser kan udeblive",
   "settingsPermissionsGrantAction": "Giv tilladelse",
   "settingsPermissionsOpenSettingsAction": "Åbn indstillinger",
-  "loanMarkPaidSuccess": "Markeret som betalt",
   "settingsNotificationPrefsTitle": "Lyd og vibration",
   "settingsNotificationSound": "Notifikationslyd",
   "settingsNotificationVibration": "Vibration",

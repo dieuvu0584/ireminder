@@ -18,9 +18,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get navCalendar => 'Календар';
 
   @override
-  String get navLoans => 'Кредити';
-
-  @override
   String get navCategories => 'Категорії';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get homeEmptyTitle => 'Тут поки що нічого немає';
 
   @override
-  String get homeEmptyBody =>
-      'Натисніть +, щоб додати перше нагадування або кредит на виплату.';
+  String get homeEmptyBody => 'Натисніть +, щоб додати перше нагадування.';
 
   @override
   String get fabAddReminder => 'Нагадування';
-
-  @override
-  String get fabAddLoan => 'Кредит на виплату';
 
   @override
   String get actionDone => 'Готово';
@@ -293,93 +286,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get weekdaySunday => 'Неділя';
 
   @override
-  String get loanListTitle => 'Кредити та виплати';
-
-  @override
-  String get loanFormTitleNew => 'Новий кредит на виплату';
-
-  @override
-  String get loanFormTitleEdit => 'Редагувати кредит';
-
-  @override
-  String get loanFieldName => 'Назва';
-
-  @override
-  String get loanFieldCategory => 'Категорія';
-
-  @override
-  String get loanFieldTotalAmount => 'Загальна сума (необов\'язково)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Сума одного платежу';
-
-  @override
-  String get loanFieldTotalInstallments => 'Кількість платежів';
-
-  @override
-  String get loanFieldFrequency => 'Періодичність';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'День місяця для оплати';
-
-  @override
-  String get loanFieldStartDate => 'Дата початку';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'Нагадати за N днів до сплати';
-
-  @override
-  String get loanFieldNotes => 'Нотатки (необов\'язково)';
-
-  @override
-  String get loanFrequencyMonthly => 'Щомісяця';
-
-  @override
-  String get loanFrequencyWeekly => 'Щотижня';
-
-  @override
-  String get loanFrequencyBiweekly => 'Раз на два тижні';
-
-  @override
-  String get loanFrequencyQuarterly => 'Щоквартально';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Кожні 6 місяців';
-
-  @override
-  String get loanFrequencyYearly => 'Щорічно';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return 'Сплачено $paid / $total';
-  }
-
-  @override
-  String get loanMarkPaid => 'Позначити як сплачено';
-
-  @override
-  String get loanStatusPending => 'Очікується';
-
-  @override
-  String get loanStatusPaid => 'Сплачено';
-
-  @override
-  String get loanStatusOverdue => 'Прострочено';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Платіж №$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Видалити цей кредит?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Усі $count платежів також буде видалено.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Категорії';
 
   @override
@@ -551,9 +457,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Відкрити налаштування';
-
-  @override
-  String get loanMarkPaidSuccess => 'Позначено як сплачено';
 
   @override
   String get settingsNotificationPrefsTitle => 'Звук і вібрація';

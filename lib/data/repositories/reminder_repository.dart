@@ -3,7 +3,7 @@ import 'package:drift/drift.dart';
 import '../../core/utils/lunar_converter.dart';
 import '../../core/utils/recurrence_calculator.dart';
 import '../../domain/enums/recurrence_type.dart';
-import '../../domain/enums/loan_frequency.dart' show ReminderLogAction;
+import '../../domain/enums/reminder_log_action.dart';
 import '../../domain/models/daily_exclusion.dart';
 import '../../domain/models/recurrence_params.dart';
 import '../database/app_database.dart';

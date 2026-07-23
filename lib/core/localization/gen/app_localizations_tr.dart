@@ -18,9 +18,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get navCalendar => 'Takvim';
 
   @override
-  String get navLoans => 'Taksitler';
-
-  @override
   String get navCategories => 'Kategoriler';
 
   @override
@@ -96,13 +93,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'İlk hatırlatıcınızı veya taksitli ödemenizi eklemek için + simgesine dokunun.';
+      'İlk hatırlatıcınızı eklemek için + simgesine dokunun.';
 
   @override
   String get fabAddReminder => 'Hatırlatıcı';
-
-  @override
-  String get fabAddLoan => 'Taksitli ödeme';
 
   @override
   String get actionDone => 'Tamamlandı';
@@ -293,93 +287,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get weekdaySunday => 'Pazar';
 
   @override
-  String get loanListTitle => 'Taksitler ve krediler';
-
-  @override
-  String get loanFormTitleNew => 'Yeni taksitli ödeme';
-
-  @override
-  String get loanFormTitleEdit => 'Taksitli ödemeyi düzenle';
-
-  @override
-  String get loanFieldName => 'Ad';
-
-  @override
-  String get loanFieldCategory => 'Kategori';
-
-  @override
-  String get loanFieldTotalAmount => 'Toplam tutar (isteğe bağlı)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Taksit tutarı';
-
-  @override
-  String get loanFieldTotalInstallments => 'Taksit sayısı';
-
-  @override
-  String get loanFieldFrequency => 'Sıklık';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Ayın vade günü';
-
-  @override
-  String get loanFieldStartDate => 'Başlangıç tarihi';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'Vadeden N gün önce hatırlat';
-
-  @override
-  String get loanFieldNotes => 'Notlar (isteğe bağlı)';
-
-  @override
-  String get loanFrequencyMonthly => 'Aylık';
-
-  @override
-  String get loanFrequencyWeekly => 'Haftalık';
-
-  @override
-  String get loanFrequencyBiweekly => 'İki haftada bir';
-
-  @override
-  String get loanFrequencyQuarterly => 'Üç aylık';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Her 6 ayda bir';
-
-  @override
-  String get loanFrequencyYearly => 'Yıllık';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total ödendi';
-  }
-
-  @override
-  String get loanMarkPaid => 'Ödendi olarak işaretle';
-
-  @override
-  String get loanStatusPending => 'Beklemede';
-
-  @override
-  String get loanStatusPaid => 'Ödendi';
-
-  @override
-  String get loanStatusOverdue => 'Gecikti';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return '$number. taksit';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Bu taksitli ödeme silinsin mi?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return '$count taksitin tamamı da silinecek.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Kategoriler';
 
   @override
@@ -551,9 +458,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Ayarları aç';
-
-  @override
-  String get loanMarkPaidSuccess => 'Ödendi olarak işaretlendi';
 
   @override
   String get settingsNotificationPrefsTitle => 'Ses ve titreşim';

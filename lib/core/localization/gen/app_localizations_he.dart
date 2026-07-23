@@ -18,9 +18,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get navCalendar => 'לוח שנה';
 
   @override
-  String get navLoans => 'הלוואות';
-
-  @override
   String get navCategories => 'קטגוריות';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get homeEmptyTitle => 'עדיין אין כאן כלום';
 
   @override
-  String get homeEmptyBody =>
-      'הקישו על + כדי להוסיף את התזכורת או הלוואת התשלומים הראשונה שלכם.';
+  String get homeEmptyBody => 'הקישו על + כדי להוסיף את התזכורת הראשונה שלכם.';
 
   @override
   String get fabAddReminder => 'תזכורת';
-
-  @override
-  String get fabAddLoan => 'הלוואת תשלומים';
 
   @override
   String get actionDone => 'בוצע';
@@ -293,93 +286,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get weekdaySunday => 'יום ראשון';
 
   @override
-  String get loanListTitle => 'הלוואות ותשלומים';
-
-  @override
-  String get loanFormTitleNew => 'הלוואת תשלומים חדשה';
-
-  @override
-  String get loanFormTitleEdit => 'עריכת הלוואה';
-
-  @override
-  String get loanFieldName => 'שם';
-
-  @override
-  String get loanFieldCategory => 'קטגוריה';
-
-  @override
-  String get loanFieldTotalAmount => 'סכום כולל (לא חובה)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'סכום לכל תשלום';
-
-  @override
-  String get loanFieldTotalInstallments => 'מספר תשלומים';
-
-  @override
-  String get loanFieldFrequency => 'תדירות';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'יום פירעון בחודש';
-
-  @override
-  String get loanFieldStartDate => 'תאריך התחלה';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'הזכר N ימים לפני התשלום';
-
-  @override
-  String get loanFieldNotes => 'הערות (לא חובה)';
-
-  @override
-  String get loanFrequencyMonthly => 'חודשי';
-
-  @override
-  String get loanFrequencyWeekly => 'שבועי';
-
-  @override
-  String get loanFrequencyBiweekly => 'דו-שבועי';
-
-  @override
-  String get loanFrequencyQuarterly => 'רבעוני';
-
-  @override
-  String get loanFrequencySemiAnnually => 'כל 6 חודשים';
-
-  @override
-  String get loanFrequencyYearly => 'שנתי';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return 'שולמו $paid מתוך $total';
-  }
-
-  @override
-  String get loanMarkPaid => 'סמן כשולם';
-
-  @override
-  String get loanStatusPending => 'ממתין';
-
-  @override
-  String get loanStatusPaid => 'שולם';
-
-  @override
-  String get loanStatusOverdue => 'באיחור';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'תשלום מס\' $number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'למחוק את ההלוואה הזו?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'כל $count התשלומים יימחקו גם הם.';
-  }
-
-  @override
   String get categoryManagerTitle => 'קטגוריות';
 
   @override
@@ -549,9 +455,6 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'פתח הגדרות';
-
-  @override
-  String get loanMarkPaidSuccess => 'סומן כשולם';
 
   @override
   String get settingsNotificationPrefsTitle => 'צליל ורטט';

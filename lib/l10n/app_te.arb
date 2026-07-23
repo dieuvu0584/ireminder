@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "పనుల జాబితా",
   "navCalendar": "క్యాలెండర్",
-  "navLoans": "రుణాలు",
   "navCategories": "వర్గాలు",
   "navSettings": "సెట్టింగ్‌లు",
   "onboardingTitle1": "ముఖ్యమైనవి ఎప్పుడూ మర్చిపోకండి",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "ఈ వారం",
   "homeSectionUpcoming": "రాబోయేవి",
   "homeEmptyTitle": "ఇక్కడ ఇంకా ఏమీ లేదు",
-  "homeEmptyBody": "మీ మొదటి రిమైండర్ లేదా వాయిదా రుణాన్ని జోడించడానికి + నొక్కండి.",
+  "homeEmptyBody": "మీ మొదటి రిమైండర్‌ను జోడించడానికి + నొక్కండి.",
   "fabAddReminder": "రిమైండర్",
-  "fabAddLoan": "వాయిదా రుణం",
   "actionDone": "పూర్తయింది",
   "actionSnooze": "స్నూజ్",
   "actionEdit": "సవరించు",
@@ -98,57 +96,6 @@
   "weekdayFriday": "శుక్రవారం",
   "weekdaySaturday": "శనివారం",
   "weekdaySunday": "ఆదివారం",
-  "loanListTitle": "రుణాలు & వాయిదాలు",
-  "loanFormTitleNew": "కొత్త వాయిదా రుణం",
-  "loanFormTitleEdit": "రుణాన్ని సవరించండి",
-  "loanFieldName": "పేరు",
-  "loanFieldCategory": "వర్గం",
-  "loanFieldTotalAmount": "మొత్తం మొత్తం (ఐచ్ఛికం)",
-  "loanFieldInstallmentAmount": "ఒక్కో వాయిదాకు మొత్తం",
-  "loanFieldTotalInstallments": "వాయిదాల సంఖ్య",
-  "loanFieldFrequency": "ఫ్రీక్వెన్సీ",
-  "loanFieldDueDayOfMonth": "నెలలో గడువు రోజు",
-  "loanFieldStartDate": "ప్రారంభ తేదీ",
-  "loanFieldReminderAdvanceDays": "గడువుకు N రోజుల ముందు గుర్తు చేయి",
-  "loanFieldNotes": "గమనికలు (ఐచ్ఛికం)",
-  "loanFrequencyMonthly": "ప్రతి నెల",
-  "loanFrequencyWeekly": "ప్రతి వారం",
-  "loanFrequencyBiweekly": "ప్రతి రెండు వారాలకు",
-  "loanFrequencyQuarterly": "త్రైమాసికం",
-  "loanFrequencySemiAnnually": "ప్రతి 6 నెలలకు",
-  "loanFrequencyYearly": "వార్షికం",
-  "loanProgress": "{paid} / {total} చెల్లించారు",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "చెల్లించినట్లు గుర్తించు",
-  "loanStatusPending": "పెండింగ్‌లో ఉంది",
-  "loanStatusPaid": "చెల్లించారు",
-  "loanStatusOverdue": "గడువు మించింది",
-  "loanInstallmentNumber": "వాయిదా #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "ఈ రుణాన్ని తొలగించాలా?",
-  "loanDeleteConfirmBody": "అన్ని {count} వాయిదాలు కూడా తొలగించబడతాయి.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "వర్గాలు",
   "categoryFormTitleNew": "కొత్త వర్గం",
   "categoryFormTitleEdit": "వర్గాన్ని సవరించండి",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "మంజూరు కాలేదు — రిమైండర్‌లు సమయానికి రాకపోవచ్చు",
   "settingsPermissionsGrantAction": "మంజూరు చేయి",
   "settingsPermissionsOpenSettingsAction": "సెట్టింగ్‌లను తెరవండి",
-  "loanMarkPaidSuccess": "చెల్లించినట్లు గుర్తించారు",
   "settingsNotificationPrefsTitle": "శబ్దం & వైబ్రేషన్",
   "settingsNotificationSound": "నోటిఫికేషన్ శబ్దం",
   "settingsNotificationVibration": "వైబ్రేషన్",

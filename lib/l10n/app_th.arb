@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "รายการงาน",
   "navCalendar": "ปฏิทิน",
-  "navLoans": "ผ่อนชำระ",
   "navCategories": "หมวดหมู่",
   "navSettings": "ตั้งค่า",
   "onboardingTitle1": "ไม่มีวันลืมเรื่องสำคัญ",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "สัปดาห์นี้",
   "homeSectionUpcoming": "กำลังจะถึง",
   "homeEmptyTitle": "ยังไม่มีรายการ",
-  "homeEmptyBody": "แตะ + เพื่อเพิ่มรายการแจ้งเตือนหรือสินเชื่อผ่อนชำระรายการแรกของคุณ",
+  "homeEmptyBody": "แตะ + เพื่อเพิ่มรายการแจ้งเตือนแรกของคุณ",
   "fabAddReminder": "การแจ้งเตือน",
-  "fabAddLoan": "สินเชื่อผ่อนชำระ",
   "actionDone": "เสร็จสิ้น",
   "actionSnooze": "เลื่อนแจ้งเตือน",
   "actionEdit": "แก้ไข",
@@ -98,57 +96,6 @@
   "weekdayFriday": "วันศุกร์",
   "weekdaySaturday": "วันเสาร์",
   "weekdaySunday": "วันอาทิตย์",
-  "loanListTitle": "สินเชื่อและผ่อนชำระ",
-  "loanFormTitleNew": "สินเชื่อผ่อนชำระใหม่",
-  "loanFormTitleEdit": "แก้ไขสินเชื่อ",
-  "loanFieldName": "ชื่อ",
-  "loanFieldCategory": "หมวดหมู่",
-  "loanFieldTotalAmount": "จำนวนเงินทั้งหมด (ไม่บังคับ)",
-  "loanFieldInstallmentAmount": "จำนวนเงินต่องวด",
-  "loanFieldTotalInstallments": "จำนวนงวดทั้งหมด",
-  "loanFieldFrequency": "ความถี่",
-  "loanFieldDueDayOfMonth": "วันครบกำหนดในแต่ละเดือน",
-  "loanFieldStartDate": "วันที่เริ่มต้น",
-  "loanFieldReminderAdvanceDays": "แจ้งเตือนล่วงหน้า N วันก่อนครบกำหนด",
-  "loanFieldNotes": "หมายเหตุ (ไม่บังคับ)",
-  "loanFrequencyMonthly": "รายเดือน",
-  "loanFrequencyWeekly": "รายสัปดาห์",
-  "loanFrequencyBiweekly": "ทุกสองสัปดาห์",
-  "loanFrequencyQuarterly": "รายไตรมาส",
-  "loanFrequencySemiAnnually": "ทุก 6 เดือน",
-  "loanFrequencyYearly": "รายปี",
-  "loanProgress": "ชำระแล้ว {paid} / {total} งวด",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "ทำเครื่องหมายว่าชำระแล้ว",
-  "loanStatusPending": "รอชำระ",
-  "loanStatusPaid": "ชำระแล้ว",
-  "loanStatusOverdue": "เลยกำหนด",
-  "loanInstallmentNumber": "งวดที่ #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "ลบสินเชื่อนี้ใช่ไหม",
-  "loanDeleteConfirmBody": "งวดทั้งหมด {count} งวดจะถูกลบไปด้วย",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "หมวดหมู่",
   "categoryFormTitleNew": "หมวดหมู่ใหม่",
   "categoryFormTitleEdit": "แก้ไขหมวดหมู่",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "ยังไม่ได้รับอนุญาต — การแจ้งเตือนอาจไม่มาตรงเวลา",
   "settingsPermissionsGrantAction": "อนุญาต",
   "settingsPermissionsOpenSettingsAction": "เปิดการตั้งค่า",
-  "loanMarkPaidSuccess": "ทำเครื่องหมายว่าชำระแล้ว",
   "settingsNotificationPrefsTitle": "เสียงและการสั่น",
   "settingsNotificationSound": "เสียงแจ้งเตือน",
   "settingsNotificationVibration": "การสั่น",

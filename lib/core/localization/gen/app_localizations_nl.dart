@@ -18,9 +18,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get navCalendar => 'Kalender';
 
   @override
-  String get navLoans => 'Afbetalingen';
-
-  @override
   String get navCategories => 'Categorieën';
 
   @override
@@ -96,13 +93,10 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'Tik op + om je eerste herinnering of afbetalingsplan toe te voegen.';
+      'Tik op + om je eerste herinnering toe te voegen.';
 
   @override
   String get fabAddReminder => 'Herinnering';
-
-  @override
-  String get fabAddLoan => 'Afbetalingsplan';
 
   @override
   String get actionDone => 'Klaar';
@@ -294,94 +288,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get weekdaySunday => 'Zondag';
 
   @override
-  String get loanListTitle => 'Leningen & afbetalingen';
-
-  @override
-  String get loanFormTitleNew => 'Nieuw afbetalingsplan';
-
-  @override
-  String get loanFormTitleEdit => 'Afbetalingsplan bewerken';
-
-  @override
-  String get loanFieldName => 'Naam';
-
-  @override
-  String get loanFieldCategory => 'Categorie';
-
-  @override
-  String get loanFieldTotalAmount => 'Totaalbedrag (optioneel)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Bedrag per termijn';
-
-  @override
-  String get loanFieldTotalInstallments => 'Aantal termijnen';
-
-  @override
-  String get loanFieldFrequency => 'Frequentie';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Vervaldag van de maand';
-
-  @override
-  String get loanFieldStartDate => 'Startdatum';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'Herinner N dagen voor de vervaldatum';
-
-  @override
-  String get loanFieldNotes => 'Notities (optioneel)';
-
-  @override
-  String get loanFrequencyMonthly => 'Maandelijks';
-
-  @override
-  String get loanFrequencyWeekly => 'Wekelijks';
-
-  @override
-  String get loanFrequencyBiweekly => 'Tweewekelijks';
-
-  @override
-  String get loanFrequencyQuarterly => 'Elk kwartaal';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Elke 6 maanden';
-
-  @override
-  String get loanFrequencyYearly => 'Jaarlijks';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total betaald';
-  }
-
-  @override
-  String get loanMarkPaid => 'Markeren als betaald';
-
-  @override
-  String get loanStatusPending => 'In afwachting';
-
-  @override
-  String get loanStatusPaid => 'Betaald';
-
-  @override
-  String get loanStatusOverdue => 'Verlopen';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Termijn #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Dit afbetalingsplan verwijderen?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Alle $count termijnen worden ook verwijderd.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Categorieën';
 
   @override
@@ -556,9 +462,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Instellingen openen';
-
-  @override
-  String get loanMarkPaidSuccess => 'Gemarkeerd als betaald';
 
   @override
   String get settingsNotificationPrefsTitle => 'Geluid en trilling';

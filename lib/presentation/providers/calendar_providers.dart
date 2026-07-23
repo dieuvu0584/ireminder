@@ -5,6 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 /// entries in that state instead of a single day's, switching to just
 /// that day's entries once the user taps one (tapping the same day again
 /// clears it back to null). Also read by HomeScreen's "+" FAB, so creating
-/// a reminder while a day is selected pre-fills it as the start date; both
-/// reminder/loan forms already fall back to today when this is null.
+/// a reminder while a day is selected pre-fills it as the start date; the
+/// reminder form already falls back to today when this is null.
 final selectedCalendarDayProvider = StateProvider<DateTime?>((ref) => null);

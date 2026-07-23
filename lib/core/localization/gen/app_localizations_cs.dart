@@ -18,9 +18,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get navCalendar => 'Kalendář';
 
   @override
-  String get navLoans => 'Splátky';
-
-  @override
   String get navCategories => 'Kategorie';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get homeEmptyTitle => 'Zatím tu nic není';
 
   @override
-  String get homeEmptyBody =>
-      'Klepnutím na + přidáte první připomínku nebo splátkový úvěr.';
+  String get homeEmptyBody => 'Klepnutím na + přidáte první připomínku.';
 
   @override
   String get fabAddReminder => 'Připomínka';
-
-  @override
-  String get fabAddLoan => 'Splátkový úvěr';
 
   @override
   String get actionDone => 'Hotovo';
@@ -293,94 +286,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get weekdaySunday => 'Neděle';
 
   @override
-  String get loanListTitle => 'Úvěry a splátky';
-
-  @override
-  String get loanFormTitleNew => 'Nový splátkový úvěr';
-
-  @override
-  String get loanFormTitleEdit => 'Upravit úvěr';
-
-  @override
-  String get loanFieldName => 'Název';
-
-  @override
-  String get loanFieldCategory => 'Kategorie';
-
-  @override
-  String get loanFieldTotalAmount => 'Celková částka (nepovinné)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Částka splátky';
-
-  @override
-  String get loanFieldTotalInstallments => 'Počet splátek';
-
-  @override
-  String get loanFieldFrequency => 'Frekvence';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Den splatnosti v měsíci';
-
-  @override
-  String get loanFieldStartDate => 'Datum zahájení';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'Připomenout N dní před splatností';
-
-  @override
-  String get loanFieldNotes => 'Poznámky (nepovinné)';
-
-  @override
-  String get loanFrequencyMonthly => 'Měsíčně';
-
-  @override
-  String get loanFrequencyWeekly => 'Týdně';
-
-  @override
-  String get loanFrequencyBiweekly => 'Jednou za dva týdny';
-
-  @override
-  String get loanFrequencyQuarterly => 'Čtvrtletně';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Každých 6 měsíců';
-
-  @override
-  String get loanFrequencyYearly => 'Ročně';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return 'Zaplaceno $paid / $total';
-  }
-
-  @override
-  String get loanMarkPaid => 'Označit jako zaplacené';
-
-  @override
-  String get loanStatusPending => 'Čeká na úhradu';
-
-  @override
-  String get loanStatusPaid => 'Zaplaceno';
-
-  @override
-  String get loanStatusOverdue => 'Po splatnosti';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Splátka č. $number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Smazat tento úvěr?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Odstraní se také všech $count splátek.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Kategorie';
 
   @override
@@ -553,9 +458,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Otevřít nastavení';
-
-  @override
-  String get loanMarkPaidSuccess => 'Označeno jako zaplaceno';
 
   @override
   String get settingsNotificationPrefsTitle => 'Zvuk a vibrace';

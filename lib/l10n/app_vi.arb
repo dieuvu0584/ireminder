@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Danh sách việc",
   "navCalendar": "Lịch",
-  "navLoans": "Trả góp",
   "navCategories": "Danh mục",
   "navSettings": "Cài đặt",
   "onboardingTitle1": "Không bao giờ quên việc quan trọng",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Tuần này",
   "homeSectionUpcoming": "Sắp tới",
   "homeEmptyTitle": "Chưa có việc nào",
-  "homeEmptyBody": "Nhấn + để thêm nhắc việc hoặc khoản trả góp đầu tiên.",
+  "homeEmptyBody": "Nhấn + để thêm nhắc việc đầu tiên.",
   "fabAddReminder": "Nhắc việc",
-  "fabAddLoan": "Khoản trả góp",
   "actionDone": "Đã xong",
   "actionSnooze": "Nhắc lại sau",
   "actionEdit": "Sửa",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Thứ Sáu",
   "weekdaySaturday": "Thứ Bảy",
   "weekdaySunday": "Chủ Nhật",
-  "loanListTitle": "Khoản trả góp / trả nợ",
-  "loanFormTitleNew": "Khoản trả góp mới",
-  "loanFormTitleEdit": "Sửa khoản trả góp",
-  "loanFieldName": "Tên khoản vay",
-  "loanFieldCategory": "Danh mục",
-  "loanFieldTotalAmount": "Tổng nợ gốc (không bắt buộc)",
-  "loanFieldInstallmentAmount": "Số tiền mỗi kỳ",
-  "loanFieldTotalInstallments": "Số kỳ trả",
-  "loanFieldFrequency": "Tần suất",
-  "loanFieldDueDayOfMonth": "Ngày đến hạn trong tháng",
-  "loanFieldStartDate": "Ngày bắt đầu",
-  "loanFieldReminderAdvanceDays": "Nhắc trước N ngày",
-  "loanFieldNotes": "Ghi chú (không bắt buộc)",
-  "loanFrequencyMonthly": "Hàng tháng",
-  "loanFrequencyWeekly": "Hàng tuần",
-  "loanFrequencyBiweekly": "Hai tuần một lần",
-  "loanFrequencyQuarterly": "Hàng quý",
-  "loanFrequencySemiAnnually": "Hàng 6 tháng",
-  "loanFrequencyYearly": "Hàng năm",
-  "loanProgress": "Đã trả {paid} / {total} kỳ",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Đánh dấu đã trả",
-  "loanStatusPending": "Chưa đến hạn",
-  "loanStatusPaid": "Đã trả",
-  "loanStatusOverdue": "Quá hạn",
-  "loanInstallmentNumber": "Kỳ #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Xóa khoản trả góp này?",
-  "loanDeleteConfirmBody": "Toàn bộ {count} kỳ trả cũng sẽ bị xóa.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Quản lý danh mục",
   "categoryFormTitleNew": "Danh mục mới",
   "categoryFormTitleEdit": "Sửa danh mục",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Chưa được cấp — nhắc nhở có thể không hiện đúng giờ",
   "settingsPermissionsGrantAction": "Cấp quyền",
   "settingsPermissionsOpenSettingsAction": "Mở cài đặt",
-  "loanMarkPaidSuccess": "Đã đánh dấu là đã trả",
   "settingsNotificationPrefsTitle": "Âm thanh & rung",
   "settingsNotificationSound": "Âm thanh thông báo",
   "settingsNotificationVibration": "Rung",

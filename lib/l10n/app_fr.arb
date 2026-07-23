@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Liste des tâches",
   "navCalendar": "Calendrier",
-  "navLoans": "Échéances",
   "navCategories": "Catégories",
   "navSettings": "Paramètres",
   "onboardingTitle1": "N'oubliez plus jamais l'essentiel",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Cette semaine",
   "homeSectionUpcoming": "À venir",
   "homeEmptyTitle": "Rien pour l'instant",
-  "homeEmptyBody": "Appuyez sur + pour ajouter votre premier rappel ou échéancier.",
+  "homeEmptyBody": "Appuyez sur + pour ajouter votre premier rappel.",
   "fabAddReminder": "Rappel",
-  "fabAddLoan": "Échéancier",
   "actionDone": "Terminé",
   "actionSnooze": "Reporter",
   "actionEdit": "Modifier",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Vendredi",
   "weekdaySaturday": "Samedi",
   "weekdaySunday": "Dimanche",
-  "loanListTitle": "Échéances & emprunts",
-  "loanFormTitleNew": "Nouvel échéancier",
-  "loanFormTitleEdit": "Modifier l'échéancier",
-  "loanFieldName": "Nom",
-  "loanFieldCategory": "Catégorie",
-  "loanFieldTotalAmount": "Montant total (facultatif)",
-  "loanFieldInstallmentAmount": "Montant par échéance",
-  "loanFieldTotalInstallments": "Nombre d'échéances",
-  "loanFieldFrequency": "Fréquence",
-  "loanFieldDueDayOfMonth": "Jour d'échéance du mois",
-  "loanFieldStartDate": "Date de début",
-  "loanFieldReminderAdvanceDays": "Rappeler N jours avant l'échéance",
-  "loanFieldNotes": "Notes (facultatif)",
-  "loanFrequencyMonthly": "Mensuelle",
-  "loanFrequencyWeekly": "Hebdomadaire",
-  "loanFrequencyBiweekly": "Toutes les deux semaines",
-  "loanFrequencyQuarterly": "Trimestriel",
-  "loanFrequencySemiAnnually": "Tous les 6 mois",
-  "loanFrequencyYearly": "Annuel",
-  "loanProgress": "{paid} / {total} échéances payées",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Marquer comme payé",
-  "loanStatusPending": "En attente",
-  "loanStatusPaid": "Payé",
-  "loanStatusOverdue": "En retard",
-  "loanInstallmentNumber": "Échéance n° {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Supprimer cet échéancier ?",
-  "loanDeleteConfirmBody": "Les {count} échéances seront également supprimées.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Catégories",
   "categoryFormTitleNew": "Nouvelle catégorie",
   "categoryFormTitleEdit": "Modifier la catégorie",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Non accordée — les rappels risquent de ne pas sonner à l'heure",
   "settingsPermissionsGrantAction": "Autoriser",
   "settingsPermissionsOpenSettingsAction": "Ouvrir les réglages",
-  "loanMarkPaidSuccess": "Marqué comme payé",
   "settingsNotificationPrefsTitle": "Son et vibration",
   "settingsNotificationSound": "Son de notification",
   "settingsNotificationVibration": "Vibration",

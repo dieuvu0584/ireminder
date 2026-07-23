@@ -18,9 +18,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get navCalendar => 'Naptár';
 
   @override
-  String get navLoans => 'Részletek';
-
-  @override
   String get navCategories => 'Kategóriák';
 
   @override
@@ -96,13 +93,10 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'Koppints a + gombra az első emlékeztető vagy részletfizetés hozzáadásához.';
+      'Koppints a + gombra az első emlékeztető hozzáadásához.';
 
   @override
   String get fabAddReminder => 'Emlékeztető';
-
-  @override
-  String get fabAddLoan => 'Részletfizetés';
 
   @override
   String get actionDone => 'Kész';
@@ -293,94 +287,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get weekdaySunday => 'Vasárnap';
 
   @override
-  String get loanListTitle => 'Hitelek és részletfizetések';
-
-  @override
-  String get loanFormTitleNew => 'Új részletfizetés';
-
-  @override
-  String get loanFormTitleEdit => 'Hitel szerkesztése';
-
-  @override
-  String get loanFieldName => 'Név';
-
-  @override
-  String get loanFieldCategory => 'Kategória';
-
-  @override
-  String get loanFieldTotalAmount => 'Teljes összeg (opcionális)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Részlet összege';
-
-  @override
-  String get loanFieldTotalInstallments => 'Részletek száma';
-
-  @override
-  String get loanFieldFrequency => 'Gyakoriság';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Esedékesség napja a hónapban';
-
-  @override
-  String get loanFieldStartDate => 'Kezdő dátum';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'Emlékeztetés N nappal a fizetési határidő előtt';
-
-  @override
-  String get loanFieldNotes => 'Megjegyzések (opcionális)';
-
-  @override
-  String get loanFrequencyMonthly => 'Havonta';
-
-  @override
-  String get loanFrequencyWeekly => 'Hetente';
-
-  @override
-  String get loanFrequencyBiweekly => 'Kéthetente';
-
-  @override
-  String get loanFrequencyQuarterly => 'Negyedévente';
-
-  @override
-  String get loanFrequencySemiAnnually => '6 havonta';
-
-  @override
-  String get loanFrequencyYearly => 'Évente';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total részlet kifizetve';
-  }
-
-  @override
-  String get loanMarkPaid => 'Megjelölés kifizetettként';
-
-  @override
-  String get loanStatusPending => 'Függőben';
-
-  @override
-  String get loanStatusPaid => 'Kifizetve';
-
-  @override
-  String get loanStatusOverdue => 'Lejárt';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return '$number. részlet';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Törlöd ezt a hitelt?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Mind a(z) $count részlet is törlésre kerül.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Kategóriák';
 
   @override
@@ -556,9 +462,6 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Beállítások megnyitása';
-
-  @override
-  String get loanMarkPaidSuccess => 'Kifizetettként megjelölve';
 
   @override
   String get settingsNotificationPrefsTitle => 'Hang és rezgés';

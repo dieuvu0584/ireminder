@@ -18,9 +18,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get navCalendar => '日历';
 
   @override
-  String get navLoans => '分期';
-
-  @override
   String get navCategories => '分类';
 
   @override
@@ -92,13 +89,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get homeEmptyTitle => '暂无提醒事项';
 
   @override
-  String get homeEmptyBody => '点击 + 添加你的第一个提醒或分期付款。';
+  String get homeEmptyBody => '点击 + 添加你的第一个提醒。';
 
   @override
   String get fabAddReminder => '提醒事项';
-
-  @override
-  String get fabAddLoan => '分期付款';
 
   @override
   String get actionDone => '完成';
@@ -286,93 +280,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get weekdaySunday => '星期日';
 
   @override
-  String get loanListTitle => '分期付款 / 借贷';
-
-  @override
-  String get loanFormTitleNew => '新建分期付款';
-
-  @override
-  String get loanFormTitleEdit => '编辑分期付款';
-
-  @override
-  String get loanFieldName => '名称';
-
-  @override
-  String get loanFieldCategory => '分类';
-
-  @override
-  String get loanFieldTotalAmount => '总金额(可选)';
-
-  @override
-  String get loanFieldInstallmentAmount => '每期金额';
-
-  @override
-  String get loanFieldTotalInstallments => '总期数';
-
-  @override
-  String get loanFieldFrequency => '还款频率';
-
-  @override
-  String get loanFieldDueDayOfMonth => '每月到期日';
-
-  @override
-  String get loanFieldStartDate => '开始日期';
-
-  @override
-  String get loanFieldReminderAdvanceDays => '提前 N 天提醒';
-
-  @override
-  String get loanFieldNotes => '备注(可选)';
-
-  @override
-  String get loanFrequencyMonthly => '每月';
-
-  @override
-  String get loanFrequencyWeekly => '每周';
-
-  @override
-  String get loanFrequencyBiweekly => '每两周';
-
-  @override
-  String get loanFrequencyQuarterly => '每季度';
-
-  @override
-  String get loanFrequencySemiAnnually => '每6个月';
-
-  @override
-  String get loanFrequencyYearly => '每年';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '已还 $paid / $total 期';
-  }
-
-  @override
-  String get loanMarkPaid => '标记为已还';
-
-  @override
-  String get loanStatusPending => '待还款';
-
-  @override
-  String get loanStatusPaid => '已还款';
-
-  @override
-  String get loanStatusOverdue => '已逾期';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return '第 $number 期';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => '删除此分期付款?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return '全部 $count 期也将一并删除。';
-  }
-
-  @override
   String get categoryManagerTitle => '分类管理';
 
   @override
@@ -538,9 +445,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => '打开设置';
-
-  @override
-  String get loanMarkPaidSuccess => '已标记为已付款';
 
   @override
   String get settingsNotificationPrefsTitle => '声音与振动';

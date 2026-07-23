@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Listă de sarcini",
   "navCalendar": "Calendar",
-  "navLoans": "Rate",
   "navCategories": "Categorii",
   "navSettings": "Setări",
   "onboardingTitle1": "Nu mai uita ce contează",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Săptămâna aceasta",
   "homeSectionUpcoming": "Viitoare",
   "homeEmptyTitle": "Încă nimic aici",
-  "homeEmptyBody": "Apasă + pentru a adăuga primul memento sau prima rată.",
+  "homeEmptyBody": "Apasă + pentru a adăuga primul memento.",
   "fabAddReminder": "Memento",
-  "fabAddLoan": "Rată",
   "actionDone": "Gata",
   "actionSnooze": "Amână",
   "actionEdit": "Editează",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Vineri",
   "weekdaySaturday": "Sâmbătă",
   "weekdaySunday": "Duminică",
-  "loanListTitle": "Rate și împrumuturi",
-  "loanFormTitleNew": "Rată nouă",
-  "loanFormTitleEdit": "Editează rata",
-  "loanFieldName": "Nume",
-  "loanFieldCategory": "Categorie",
-  "loanFieldTotalAmount": "Sumă totală (opțional)",
-  "loanFieldInstallmentAmount": "Sumă pe rată",
-  "loanFieldTotalInstallments": "Număr de rate",
-  "loanFieldFrequency": "Frecvență",
-  "loanFieldDueDayOfMonth": "Ziua scadentă din lună",
-  "loanFieldStartDate": "Data de start",
-  "loanFieldReminderAdvanceDays": "Amintește cu N zile înainte de scadență",
-  "loanFieldNotes": "Note (opțional)",
-  "loanFrequencyMonthly": "Lunar",
-  "loanFrequencyWeekly": "Săptămânal",
-  "loanFrequencyBiweekly": "La două săptămâni",
-  "loanFrequencyQuarterly": "Trimestrial",
-  "loanFrequencySemiAnnually": "La fiecare 6 luni",
-  "loanFrequencyYearly": "Anual",
-  "loanProgress": "{paid} / {total} plătite",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Marchează ca plătită",
-  "loanStatusPending": "În așteptare",
-  "loanStatusPaid": "Plătită",
-  "loanStatusOverdue": "Restantă",
-  "loanInstallmentNumber": "Rata #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Ștergi această rată?",
-  "loanDeleteConfirmBody": "Toate cele {count} rate vor fi eliminate și ele.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Categorii",
   "categoryFormTitleNew": "Categorie nouă",
   "categoryFormTitleEdit": "Editează categoria",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Neacordată — mementourile ar putea să nu apară la timp",
   "settingsPermissionsGrantAction": "Acordă",
   "settingsPermissionsOpenSettingsAction": "Deschide setările",
-  "loanMarkPaidSuccess": "Marcat ca plătit",
   "settingsNotificationPrefsTitle": "Sunet și vibrații",
   "settingsNotificationSound": "Sunet notificare",
   "settingsNotificationVibration": "Vibrații",

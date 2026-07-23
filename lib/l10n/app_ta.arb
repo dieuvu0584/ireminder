@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "பணிகள் பட்டியல்",
   "navCalendar": "நாட்காட்டி",
-  "navLoans": "கடன்கள்",
   "navCategories": "வகைகள்",
   "navSettings": "அமைப்புகள்",
   "onboardingTitle1": "முக்கியமானதை மறவாதீர்கள்",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "இந்த வாரம்",
   "homeSectionUpcoming": "வரவிருக்கும்",
   "homeEmptyTitle": "இதுவரை எதுவும் இல்லை",
-  "homeEmptyBody": "உங்கள் முதல் நினைவூட்டல் அல்லது தவணைக் கடனைச் சேர்க்க + ஐத் தட்டவும்.",
+  "homeEmptyBody": "உங்கள் முதல் நினைவூட்டலைச் சேர்க்க + ஐத் தட்டவும்.",
   "fabAddReminder": "நினைவூட்டல்",
-  "fabAddLoan": "தவணைக் கடன்",
   "actionDone": "முடிந்தது",
   "actionSnooze": "பிற்படுத்து",
   "actionEdit": "திருத்து",
@@ -98,57 +96,6 @@
   "weekdayFriday": "வெள்ளி",
   "weekdaySaturday": "சனி",
   "weekdaySunday": "ஞாயிறு",
-  "loanListTitle": "கடன்கள் & தவணைகள்",
-  "loanFormTitleNew": "புதிய தவணைக் கடன்",
-  "loanFormTitleEdit": "கடனைத் திருத்து",
-  "loanFieldName": "பெயர்",
-  "loanFieldCategory": "வகை",
-  "loanFieldTotalAmount": "மொத்த தொகை (விருப்பத்திற்குரியது)",
-  "loanFieldInstallmentAmount": "ஒரு தவணைக்கான தொகை",
-  "loanFieldTotalInstallments": "தவணைகளின் எண்ணிக்கை",
-  "loanFieldFrequency": "அதிர்வெண்",
-  "loanFieldDueDayOfMonth": "மாதத்தில் செலுத்த வேண்டிய தேதி",
-  "loanFieldStartDate": "தொடக்க தேதி",
-  "loanFieldReminderAdvanceDays": "செலுத்த வேண்டிய தேதிக்கு N நாட்கள் முன் நினைவூட்டு",
-  "loanFieldNotes": "குறிப்புகள் (விருப்பத்திற்குரியது)",
-  "loanFrequencyMonthly": "மாதந்தோறும்",
-  "loanFrequencyWeekly": "வாரந்தோறும்",
-  "loanFrequencyBiweekly": "இரு வாரத்திற்கு ஒருமுறை",
-  "loanFrequencyQuarterly": "காலாண்டு",
-  "loanFrequencySemiAnnually": "ஒவ்வொரு 6 மாதங்களுக்கும்",
-  "loanFrequencyYearly": "ஆண்டுதோறும்",
-  "loanProgress": "{paid} / {total} செலுத்தப்பட்டது",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "செலுத்தியதாக குறி",
-  "loanStatusPending": "நிலுவையில்",
-  "loanStatusPaid": "செலுத்தப்பட்டது",
-  "loanStatusOverdue": "தவறிய தேதி",
-  "loanInstallmentNumber": "தவணை #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "இந்தக் கடனை நீக்கவா?",
-  "loanDeleteConfirmBody": "அனைத்து {count} தவணைகளும் நீக்கப்படும்.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "வகைகள்",
   "categoryFormTitleNew": "புதிய வகை",
   "categoryFormTitleEdit": "வகையைத் திருத்து",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "வழங்கப்படவில்லை — நினைவூட்டல்கள் சரியான நேரத்தில் வராமல் போகலாம்",
   "settingsPermissionsGrantAction": "வழங்கு",
   "settingsPermissionsOpenSettingsAction": "அமைப்புகளைத் திற",
-  "loanMarkPaidSuccess": "செலுத்தியதாக குறிக்கப்பட்டது",
   "settingsNotificationPrefsTitle": "ஒலி & அதிர்வு",
   "settingsNotificationSound": "அறிவிப்பு ஒலி",
   "settingsNotificationVibration": "அதிர்வு",

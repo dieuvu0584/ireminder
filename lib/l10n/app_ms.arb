@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Senarai Tugasan",
   "navCalendar": "Kalendar",
-  "navLoans": "Pinjaman",
   "navCategories": "Kategori",
   "navSettings": "Tetapan",
   "onboardingTitle1": "Jangan sekali-kali lupa perkara penting",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Minggu Ini",
   "homeSectionUpcoming": "Akan Datang",
   "homeEmptyTitle": "Belum ada apa-apa di sini",
-  "homeEmptyBody": "Ketik + untuk menambah peringatan atau pinjaman ansuran pertama anda.",
+  "homeEmptyBody": "Ketik + untuk menambah peringatan pertama anda.",
   "fabAddReminder": "Peringatan",
-  "fabAddLoan": "Pinjaman ansuran",
   "actionDone": "Selesai",
   "actionSnooze": "Tangguh",
   "actionEdit": "Sunting",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Jumaat",
   "weekdaySaturday": "Sabtu",
   "weekdaySunday": "Ahad",
-  "loanListTitle": "Pinjaman & ansuran",
-  "loanFormTitleNew": "Pinjaman ansuran baharu",
-  "loanFormTitleEdit": "Sunting pinjaman",
-  "loanFieldName": "Nama",
-  "loanFieldCategory": "Kategori",
-  "loanFieldTotalAmount": "Jumlah keseluruhan (pilihan)",
-  "loanFieldInstallmentAmount": "Jumlah setiap ansuran",
-  "loanFieldTotalInstallments": "Bilangan ansuran",
-  "loanFieldFrequency": "Kekerapan",
-  "loanFieldDueDayOfMonth": "Hari tamat tempoh dalam bulan",
-  "loanFieldStartDate": "Tarikh mula",
-  "loanFieldReminderAdvanceDays": "Ingatkan N hari sebelum tamat tempoh",
-  "loanFieldNotes": "Nota (pilihan)",
-  "loanFrequencyMonthly": "Bulanan",
-  "loanFrequencyWeekly": "Mingguan",
-  "loanFrequencyBiweekly": "Dua mingguan",
-  "loanFrequencyQuarterly": "Suku tahunan",
-  "loanFrequencySemiAnnually": "Setiap 6 bulan",
-  "loanFrequencyYearly": "Tahunan",
-  "loanProgress": "{paid} / {total} telah dibayar",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Tandakan sebagai dibayar",
-  "loanStatusPending": "Belum tiba tempoh",
-  "loanStatusPaid": "Telah dibayar",
-  "loanStatusOverdue": "Tertunggak",
-  "loanInstallmentNumber": "Ansuran #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Padam pinjaman ini?",
-  "loanDeleteConfirmBody": "Kesemua {count} ansuran juga akan dialih keluar.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategori",
   "categoryFormTitleNew": "Kategori baharu",
   "categoryFormTitleEdit": "Sunting kategori",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Tidak diberikan — peringatan mungkin tidak muncul tepat pada masanya",
   "settingsPermissionsGrantAction": "Berikan kebenaran",
   "settingsPermissionsOpenSettingsAction": "Buka tetapan",
-  "loanMarkPaidSuccess": "Ditandakan sebagai dibayar",
   "settingsNotificationPrefsTitle": "Bunyi & getaran",
   "settingsNotificationSound": "Bunyi pemberitahuan",
   "settingsNotificationVibration": "Getaran",

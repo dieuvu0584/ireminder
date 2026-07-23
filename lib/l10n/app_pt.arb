@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Lista de tarefas",
   "navCalendar": "Calendário",
-  "navLoans": "Empréstimos",
   "navCategories": "Categorias",
   "navSettings": "Ajustes",
   "onboardingTitle1": "Nunca mais esqueça o que importa",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Esta semana",
   "homeSectionUpcoming": "Em breve",
   "homeEmptyTitle": "Nada por aqui ainda",
-  "homeEmptyBody": "Toque em + para adicionar seu primeiro lembrete ou empréstimo parcelado.",
+  "homeEmptyBody": "Toque em + para adicionar seu primeiro lembrete.",
   "fabAddReminder": "Lembrete",
-  "fabAddLoan": "Empréstimo parcelado",
   "actionDone": "Concluído",
   "actionSnooze": "Adiar",
   "actionEdit": "Editar",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Sexta-feira",
   "weekdaySaturday": "Sábado",
   "weekdaySunday": "Domingo",
-  "loanListTitle": "Empréstimos e parcelamentos",
-  "loanFormTitleNew": "Novo empréstimo parcelado",
-  "loanFormTitleEdit": "Editar empréstimo",
-  "loanFieldName": "Nome",
-  "loanFieldCategory": "Categoria",
-  "loanFieldTotalAmount": "Valor total (opcional)",
-  "loanFieldInstallmentAmount": "Valor da parcela",
-  "loanFieldTotalInstallments": "Número de parcelas",
-  "loanFieldFrequency": "Frequência",
-  "loanFieldDueDayOfMonth": "Dia de vencimento no mês",
-  "loanFieldStartDate": "Data de início",
-  "loanFieldReminderAdvanceDays": "Avisar N dias antes do vencimento",
-  "loanFieldNotes": "Notas (opcional)",
-  "loanFrequencyMonthly": "Mensal",
-  "loanFrequencyWeekly": "Semanal",
-  "loanFrequencyBiweekly": "Quinzenal",
-  "loanFrequencyQuarterly": "Trimestral",
-  "loanFrequencySemiAnnually": "A cada 6 meses",
-  "loanFrequencyYearly": "Anual",
-  "loanProgress": "{paid} / {total} pagas",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Marcar como pago",
-  "loanStatusPending": "Pendente",
-  "loanStatusPaid": "Pago",
-  "loanStatusOverdue": "Atrasado",
-  "loanInstallmentNumber": "Parcela nº {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Excluir este empréstimo?",
-  "loanDeleteConfirmBody": "As {count} parcelas também serão removidas.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Categorias",
   "categoryFormTitleNew": "Nova categoria",
   "categoryFormTitleEdit": "Editar categoria",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Não concedida — os lembretes podem não disparar na hora certa",
   "settingsPermissionsGrantAction": "Conceder",
   "settingsPermissionsOpenSettingsAction": "Abrir ajustes",
-  "loanMarkPaidSuccess": "Marcado como pago",
   "settingsNotificationPrefsTitle": "Som e vibração",
   "settingsNotificationSound": "Som de notificação",
   "settingsNotificationVibration": "Vibração",

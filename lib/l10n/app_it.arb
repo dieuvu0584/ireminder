@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Elenco attività",
   "navCalendar": "Calendario",
-  "navLoans": "Rate",
   "navCategories": "Categorie",
   "navSettings": "Impostazioni",
   "onboardingTitle1": "Non dimenticare mai ciò che conta",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Questa settimana",
   "homeSectionUpcoming": "Prossimi",
   "homeEmptyTitle": "Ancora nulla qui",
-  "homeEmptyBody": "Tocca + per aggiungere il tuo primo promemoria o piano rateale.",
+  "homeEmptyBody": "Tocca + per aggiungere il tuo primo promemoria.",
   "fabAddReminder": "Promemoria",
-  "fabAddLoan": "Piano rateale",
   "actionDone": "Fatto",
   "actionSnooze": "Rimanda",
   "actionEdit": "Modifica",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Venerdì",
   "weekdaySaturday": "Sabato",
   "weekdaySunday": "Domenica",
-  "loanListTitle": "Rate e finanziamenti",
-  "loanFormTitleNew": "Nuovo piano rateale",
-  "loanFormTitleEdit": "Modifica piano rateale",
-  "loanFieldName": "Nome",
-  "loanFieldCategory": "Categoria",
-  "loanFieldTotalAmount": "Importo totale (facoltativo)",
-  "loanFieldInstallmentAmount": "Importo per rata",
-  "loanFieldTotalInstallments": "Numero di rate",
-  "loanFieldFrequency": "Frequenza",
-  "loanFieldDueDayOfMonth": "Giorno di scadenza del mese",
-  "loanFieldStartDate": "Data di inizio",
-  "loanFieldReminderAdvanceDays": "Ricorda N giorni prima della scadenza",
-  "loanFieldNotes": "Note (facoltative)",
-  "loanFrequencyMonthly": "Mensile",
-  "loanFrequencyWeekly": "Settimanale",
-  "loanFrequencyBiweekly": "Bisettimanale",
-  "loanFrequencyQuarterly": "Trimestrale",
-  "loanFrequencySemiAnnually": "Ogni 6 mesi",
-  "loanFrequencyYearly": "Annuale",
-  "loanProgress": "{paid} / {total} pagate",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Segna come pagata",
-  "loanStatusPending": "In attesa",
-  "loanStatusPaid": "Pagata",
-  "loanStatusOverdue": "Scaduta",
-  "loanInstallmentNumber": "Rata n. {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Eliminare questo piano rateale?",
-  "loanDeleteConfirmBody": "Anche tutte le {count} rate verranno rimosse.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Categorie",
   "categoryFormTitleNew": "Nuova categoria",
   "categoryFormTitleEdit": "Modifica categoria",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Non concesso — i promemoria potrebbero non arrivare in orario",
   "settingsPermissionsGrantAction": "Concedi",
   "settingsPermissionsOpenSettingsAction": "Apri impostazioni",
-  "loanMarkPaidSuccess": "Segnata come pagata",
   "settingsNotificationPrefsTitle": "Suono e vibrazione",
   "settingsNotificationSound": "Suono di notifica",
   "settingsNotificationVibration": "Vibrazione",

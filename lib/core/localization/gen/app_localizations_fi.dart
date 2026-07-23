@@ -18,9 +18,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get navCalendar => 'Kalenteri';
 
   @override
-  String get navLoans => 'Lainat';
-
-  @override
   String get navCategories => 'Kategoriat';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get homeEmptyTitle => 'Ei vielä mitään';
 
   @override
-  String get homeEmptyBody =>
-      'Napauta + lisätäksesi ensimmäisen muistutuksen tai osamaksulainan.';
+  String get homeEmptyBody => 'Napauta + lisätäksesi ensimmäisen muistutuksen.';
 
   @override
   String get fabAddReminder => 'Muistutus';
-
-  @override
-  String get fabAddLoan => 'Osamaksulaina';
 
   @override
   String get actionDone => 'Valmis';
@@ -293,94 +286,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get weekdaySunday => 'Sunnuntai';
 
   @override
-  String get loanListTitle => 'Lainat ja osamaksut';
-
-  @override
-  String get loanFormTitleNew => 'Uusi osamaksulaina';
-
-  @override
-  String get loanFormTitleEdit => 'Muokkaa lainaa';
-
-  @override
-  String get loanFieldName => 'Nimi';
-
-  @override
-  String get loanFieldCategory => 'Kategoria';
-
-  @override
-  String get loanFieldTotalAmount => 'Kokonaissumma (valinnainen)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Summa per erä';
-
-  @override
-  String get loanFieldTotalInstallments => 'Erien määrä';
-
-  @override
-  String get loanFieldFrequency => 'Toistumistiheys';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Eräpäivä kuukaudessa';
-
-  @override
-  String get loanFieldStartDate => 'Aloituspäivä';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'Muistuta N päivää ennen eräpäivää';
-
-  @override
-  String get loanFieldNotes => 'Muistiinpanot (valinnainen)';
-
-  @override
-  String get loanFrequencyMonthly => 'Kuukausittain';
-
-  @override
-  String get loanFrequencyWeekly => 'Viikoittain';
-
-  @override
-  String get loanFrequencyBiweekly => 'Joka toinen viikko';
-
-  @override
-  String get loanFrequencyQuarterly => 'Neljännesvuosittain';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Joka 6. kuukausi';
-
-  @override
-  String get loanFrequencyYearly => 'Vuosittain';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total maksettu';
-  }
-
-  @override
-  String get loanMarkPaid => 'Merkitse maksetuksi';
-
-  @override
-  String get loanStatusPending => 'Odottaa';
-
-  @override
-  String get loanStatusPaid => 'Maksettu';
-
-  @override
-  String get loanStatusOverdue => 'Myöhässä';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Erä #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Poistetaanko tämä laina?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Kaikki $count erää poistetaan myös.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Kategoriat';
 
   @override
@@ -553,9 +458,6 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Avaa asetukset';
-
-  @override
-  String get loanMarkPaidSuccess => 'Merkitty maksetuksi';
 
   @override
   String get settingsNotificationPrefsTitle => 'Ääni ja tärinä';

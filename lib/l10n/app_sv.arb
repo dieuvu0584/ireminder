@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Uppgiftslista",
   "navCalendar": "Kalender",
-  "navLoans": "Avbetalningar",
   "navCategories": "Kategorier",
   "navSettings": "Inställningar",
   "onboardingTitle1": "Glöm aldrig det som spelar roll",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Denna vecka",
   "homeSectionUpcoming": "Kommande",
   "homeEmptyTitle": "Inget här än",
-  "homeEmptyBody": "Tryck på + för att lägga till din första påminnelse eller avbetalning.",
+  "homeEmptyBody": "Tryck på + för att lägga till din första påminnelse.",
   "fabAddReminder": "Påminnelse",
-  "fabAddLoan": "Avbetalningslån",
   "actionDone": "Klar",
   "actionSnooze": "Snooza",
   "actionEdit": "Redigera",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Fredag",
   "weekdaySaturday": "Lördag",
   "weekdaySunday": "Söndag",
-  "loanListTitle": "Lån och avbetalningar",
-  "loanFormTitleNew": "Nytt avbetalningslån",
-  "loanFormTitleEdit": "Redigera lån",
-  "loanFieldName": "Namn",
-  "loanFieldCategory": "Kategori",
-  "loanFieldTotalAmount": "Totalt belopp (valfritt)",
-  "loanFieldInstallmentAmount": "Belopp per avbetalning",
-  "loanFieldTotalInstallments": "Antal avbetalningar",
-  "loanFieldFrequency": "Frekvens",
-  "loanFieldDueDayOfMonth": "Förfallodag i månaden",
-  "loanFieldStartDate": "Startdatum",
-  "loanFieldReminderAdvanceDays": "Påminn N dagar innan förfallodagen",
-  "loanFieldNotes": "Anteckningar (valfritt)",
-  "loanFrequencyMonthly": "Varje månad",
-  "loanFrequencyWeekly": "Varje vecka",
-  "loanFrequencyBiweekly": "Varannan vecka",
-  "loanFrequencyQuarterly": "Kvartalsvis",
-  "loanFrequencySemiAnnually": "Var 6:e månad",
-  "loanFrequencyYearly": "Årligen",
-  "loanProgress": "{paid} / {total} betalda",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Markera som betald",
-  "loanStatusPending": "Väntande",
-  "loanStatusPaid": "Betald",
-  "loanStatusOverdue": "Försenad",
-  "loanInstallmentNumber": "Avbetalning nr {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Ta bort detta lån?",
-  "loanDeleteConfirmBody": "Alla {count} avbetalningar tas också bort.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategorier",
   "categoryFormTitleNew": "Ny kategori",
   "categoryFormTitleEdit": "Redigera kategori",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Inte beviljat — påminnelser kanske inte utlöses i tid",
   "settingsPermissionsGrantAction": "Bevilja",
   "settingsPermissionsOpenSettingsAction": "Öppna inställningar",
-  "loanMarkPaidSuccess": "Markerad som betald",
   "settingsNotificationPrefsTitle": "Ljud och vibration",
   "settingsNotificationSound": "Aviseringsljud",
   "settingsNotificationVibration": "Vibration",

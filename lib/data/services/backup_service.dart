@@ -68,8 +68,6 @@ class BackupService {
     final categories = await _db.select(_db.categories).get();
     final reminders = await _db.select(_db.reminders).get();
     final reminderLogs = await _db.select(_db.reminderLogs).get();
-    final loans = await _db.select(_db.loans).get();
-    final loanInstallments = await _db.select(_db.loanInstallments).get();
     final settings = await _db.select(_db.appSettings).getSingle();
 
     return {
@@ -78,8 +76,6 @@ class BackupService {
       'categories': categories.map((c) => c.toJson()).toList(),
       'reminders': reminders.map((r) => r.toJson()).toList(),
       'reminderLogs': reminderLogs.map((r) => r.toJson()).toList(),
-      'loans': loans.map((l) => l.toJson()).toList(),
-      'loanInstallments': loanInstallments.map((i) => i.toJson()).toList(),
       'appSettings': settings.toJson(),
     };
   }
@@ -97,9 +93,7 @@ class BackupService {
 
   Future<void> _restoreFromPayload(Map<String, dynamic> json) async {
     await _db.transaction(() async {
-      await _db.delete(_db.loanInstallments).go();
       await _db.delete(_db.reminderLogs).go();
-      await _db.delete(_db.loans).go();
       await _db.delete(_db.reminders).go();
       await _db.delete(_db.categories).go();
 
@@ -127,22 +121,6 @@ class BackupService {
               mode: drift.InsertMode.insertOrReplace,
             );
       }
-      for (final row in (json['loans'] as List)) {
-        await _db
-            .into(_db.loans)
-            .insert(
-              Loan.fromJson(row as Map<String, dynamic>),
-              mode: drift.InsertMode.insertOrReplace,
-            );
-      }
-      for (final row in (json['loanInstallments'] as List)) {
-        await _db
-            .into(_db.loanInstallments)
-            .insert(
-              LoanInstallment.fromJson(row as Map<String, dynamic>),
-              mode: drift.InsertMode.insertOrReplace,
-            );
-      }
       if (json['appSettings'] != null) {
         final settings = AppSetting.fromJson(
           json['appSettings'] as Map<String, dynamic>,
@@ -151,9 +129,10 @@ class BackupService {
             .into(_db.appSettings)
             .insert(settings, mode: drift.InsertMode.insertOrReplace);
       }
-      // 'aiSettings'/'aiChatHistory' keys from a backup made before the AI
-      // assistant was removed are simply ignored — those tables no longer
-      // exist, and there's nothing to restore them into.
+      // 'aiSettings'/'aiChatHistory' (AI assistant) and 'loans'/
+      // 'loanInstallments' (loan/installment tracking) keys from a backup
+      // made before either feature was removed are simply ignored — those
+      // tables no longer exist, and there's nothing to restore them into.
     });
   }
 }

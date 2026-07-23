@@ -18,9 +18,6 @@ class AppLocalizationsSw extends AppLocalizations {
   String get navCalendar => 'Kalenda';
 
   @override
-  String get navLoans => 'Mikopo';
-
-  @override
   String get navCategories => 'Jamii';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsSw extends AppLocalizations {
   String get homeEmptyTitle => 'Bado hakuna kitu hapa';
 
   @override
-  String get homeEmptyBody =>
-      'Gusa + kuongeza kikumbusho chako cha kwanza au mkopo wa awamu.';
+  String get homeEmptyBody => 'Gusa + kuongeza kikumbusho chako cha kwanza.';
 
   @override
   String get fabAddReminder => 'Kikumbusho';
-
-  @override
-  String get fabAddLoan => 'Mkopo wa awamu';
 
   @override
   String get actionDone => 'Imekamilika';
@@ -293,93 +286,6 @@ class AppLocalizationsSw extends AppLocalizations {
   String get weekdaySunday => 'Jumapili';
 
   @override
-  String get loanListTitle => 'Mikopo na awamu';
-
-  @override
-  String get loanFormTitleNew => 'Mkopo mpya wa awamu';
-
-  @override
-  String get loanFormTitleEdit => 'Hariri mkopo';
-
-  @override
-  String get loanFieldName => 'Jina';
-
-  @override
-  String get loanFieldCategory => 'Jamii';
-
-  @override
-  String get loanFieldTotalAmount => 'Kiasi cha jumla (hiari)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Kiasi kwa kila awamu';
-
-  @override
-  String get loanFieldTotalInstallments => 'Idadi ya awamu';
-
-  @override
-  String get loanFieldFrequency => 'Marudio';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Siku ya malipo kwa mwezi';
-
-  @override
-  String get loanFieldStartDate => 'Tarehe ya kuanza';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'Kumbusha siku N kabla ya malipo';
-
-  @override
-  String get loanFieldNotes => 'Vidokezo (hiari)';
-
-  @override
-  String get loanFrequencyMonthly => 'Kila mwezi';
-
-  @override
-  String get loanFrequencyWeekly => 'Kila wiki';
-
-  @override
-  String get loanFrequencyBiweekly => 'Kila baada ya wiki mbili';
-
-  @override
-  String get loanFrequencyQuarterly => 'Kila robo mwaka';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Kila miezi 6';
-
-  @override
-  String get loanFrequencyYearly => 'Kila mwaka';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total zimelipwa';
-  }
-
-  @override
-  String get loanMarkPaid => 'Weka alama kuwa imelipwa';
-
-  @override
-  String get loanStatusPending => 'Inasubiri';
-
-  @override
-  String get loanStatusPaid => 'Imelipwa';
-
-  @override
-  String get loanStatusOverdue => 'Imechelewa';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Awamu #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Futa mkopo huu?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Awamu zote $count pia zitaondolewa.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Jamii';
 
   @override
@@ -550,9 +456,6 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Fungua mipangilio';
-
-  @override
-  String get loanMarkPaidSuccess => 'Imewekwa alama kuwa imelipwa';
 
   @override
   String get settingsNotificationPrefsTitle => 'Sauti na mtetemo';

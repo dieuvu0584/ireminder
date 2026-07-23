@@ -3,16 +3,10 @@ import 'package:ireminder/data/services/notification_service.dart';
 
 void main() {
   group('NotificationIdSpace', () {
-    test('forReminder/forInstallment round-trip through payloadForId', () {
+    test('forReminder round-trips through payloadForId', () {
       expect(
         NotificationIdSpace.payloadForId(NotificationIdSpace.forReminder(5)),
         'reminder:5',
-      );
-      expect(
-        NotificationIdSpace.payloadForId(
-          NotificationIdSpace.forInstallment(42),
-        ),
-        'installment:42',
       );
     });
 

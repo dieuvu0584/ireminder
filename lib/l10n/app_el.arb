@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Λίστα εργασιών",
   "navCalendar": "Ημερολόγιο",
-  "navLoans": "Δόσεις",
   "navCategories": "Κατηγορίες",
   "navSettings": "Ρυθμίσεις",
   "onboardingTitle1": "Μην ξεχνάς ό,τι έχει σημασία",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Αυτή την εβδομάδα",
   "homeSectionUpcoming": "Προσεχώς",
   "homeEmptyTitle": "Δεν υπάρχει τίποτα εδώ ακόμα",
-  "homeEmptyBody": "Πάτησε το + για να προσθέσεις την πρώτη σου υπενθύμιση ή δόση.",
+  "homeEmptyBody": "Πάτησε το + για να προσθέσεις την πρώτη σου υπενθύμιση.",
   "fabAddReminder": "Υπενθύμιση",
-  "fabAddLoan": "Δόση δανείου",
   "actionDone": "Ολοκληρώθηκε",
   "actionSnooze": "Αναβολή",
   "actionEdit": "Επεξεργασία",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Παρασκευή",
   "weekdaySaturday": "Σάββατο",
   "weekdaySunday": "Κυριακή",
-  "loanListTitle": "Δάνεια & δόσεις",
-  "loanFormTitleNew": "Νέο δάνειο με δόσεις",
-  "loanFormTitleEdit": "Επεξεργασία δανείου",
-  "loanFieldName": "Όνομα",
-  "loanFieldCategory": "Κατηγορία",
-  "loanFieldTotalAmount": "Συνολικό ποσό (προαιρετικό)",
-  "loanFieldInstallmentAmount": "Ποσό ανά δόση",
-  "loanFieldTotalInstallments": "Αριθμός δόσεων",
-  "loanFieldFrequency": "Συχνότητα",
-  "loanFieldDueDayOfMonth": "Ημέρα λήξης στον μήνα",
-  "loanFieldStartDate": "Ημερομηνία έναρξης",
-  "loanFieldReminderAdvanceDays": "Υπενθύμιση N ημέρες πριν τη λήξη",
-  "loanFieldNotes": "Σημειώσεις (προαιρετικό)",
-  "loanFrequencyMonthly": "Μηνιαία",
-  "loanFrequencyWeekly": "Εβδομαδιαία",
-  "loanFrequencyBiweekly": "Ανά δεκαπενθήμερο",
-  "loanFrequencyQuarterly": "Τριμηνιαία",
-  "loanFrequencySemiAnnually": "Κάθε 6 μήνες",
-  "loanFrequencyYearly": "Ετησίως",
-  "loanProgress": "{paid} / {total} πληρωμένες",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Σήμανση ως πληρωμένη",
-  "loanStatusPending": "Εκκρεμεί",
-  "loanStatusPaid": "Πληρωμένη",
-  "loanStatusOverdue": "Ληξιπρόθεσμη",
-  "loanInstallmentNumber": "Δόση #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Διαγραφή αυτού του δανείου;",
-  "loanDeleteConfirmBody": "Θα διαγραφούν και οι {count} δόσεις.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Κατηγορίες",
   "categoryFormTitleNew": "Νέα κατηγορία",
   "categoryFormTitleEdit": "Επεξεργασία κατηγορίας",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Δεν έχει παραχωρηθεί — οι υπενθυμίσεις ενδέχεται να μην εμφανίζονται στην ώρα τους",
   "settingsPermissionsGrantAction": "Παραχώρηση",
   "settingsPermissionsOpenSettingsAction": "Άνοιγμα ρυθμίσεων",
-  "loanMarkPaidSuccess": "Σημειώθηκε ως πληρωμένη",
   "settingsNotificationPrefsTitle": "Ήχος & δόνηση",
   "settingsNotificationSound": "Ήχος ειδοποίησης",
   "settingsNotificationVibration": "Δόνηση",

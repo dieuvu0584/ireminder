@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Listahan ng Gawain",
   "navCalendar": "Kalendaryo",
-  "navLoans": "Utang",
   "navCategories": "Mga Kategorya",
   "navSettings": "Mga Setting",
   "onboardingTitle1": "Huwag nang makalimot sa mahalaga",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Ngayong linggo",
   "homeSectionUpcoming": "Paparating",
   "homeEmptyTitle": "Wala pang laman dito",
-  "homeEmptyBody": "Pindutin ang + para idagdag ang una mong paalala o utang na hulugan.",
+  "homeEmptyBody": "Pindutin ang + para idagdag ang una mong paalala.",
   "fabAddReminder": "Paalala",
-  "fabAddLoan": "Utang na hulugan",
   "actionDone": "Tapos na",
   "actionSnooze": "I-snooze",
   "actionEdit": "I-edit",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Biyernes",
   "weekdaySaturday": "Sabado",
   "weekdaySunday": "Linggo",
-  "loanListTitle": "Mga utang at hulugan",
-  "loanFormTitleNew": "Bagong utang na hulugan",
-  "loanFormTitleEdit": "I-edit ang utang",
-  "loanFieldName": "Pangalan",
-  "loanFieldCategory": "Kategorya",
-  "loanFieldTotalAmount": "Kabuuang halaga (opsyonal)",
-  "loanFieldInstallmentAmount": "Halaga bawat hulog",
-  "loanFieldTotalInstallments": "Bilang ng hulog",
-  "loanFieldFrequency": "Dalas",
-  "loanFieldDueDayOfMonth": "Araw ng deadline sa buwan",
-  "loanFieldStartDate": "Petsa ng simula",
-  "loanFieldReminderAdvanceDays": "Paalalahanan N araw bago ang deadline",
-  "loanFieldNotes": "Mga tala (opsyonal)",
-  "loanFrequencyMonthly": "Buwanan",
-  "loanFrequencyWeekly": "Lingguhan",
-  "loanFrequencyBiweekly": "Tuwing ikalawang linggo",
-  "loanFrequencyQuarterly": "Bawat quarter",
-  "loanFrequencySemiAnnually": "Bawat 6 buwan",
-  "loanFrequencyYearly": "Taunan",
-  "loanProgress": "{paid} / {total} nabayaran na",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Markahang bayad na",
-  "loanStatusPending": "Nakabinbin",
-  "loanStatusPaid": "Bayad na",
-  "loanStatusOverdue": "Overdue",
-  "loanInstallmentNumber": "Hulog #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Tanggalin ang utang na ito?",
-  "loanDeleteConfirmBody": "Matatanggal din ang lahat ng {count} hulog.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Mga Kategorya",
   "categoryFormTitleNew": "Bagong kategorya",
   "categoryFormTitleEdit": "I-edit ang kategorya",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Hindi pa naipagkakaloob — maaaring hindi tumunog ang mga paalala sa tamang oras",
   "settingsPermissionsGrantAction": "Ipagkaloob",
   "settingsPermissionsOpenSettingsAction": "Buksan ang settings",
-  "loanMarkPaidSuccess": "Namarkahang bayad na",
   "settingsNotificationPrefsTitle": "Tunog at pag-vibrate",
   "settingsNotificationSound": "Tunog ng abiso",
   "settingsNotificationVibration": "Pag-vibrate",

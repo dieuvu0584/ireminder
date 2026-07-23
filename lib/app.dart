@@ -5,8 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/localization/gen/app_localizations.dart';
 import 'core/localization/supported_locales.dart';
 import 'core/theme/app_theme.dart';
-import 'data/services/notification_service.dart';
-import 'presentation/providers/loan_providers.dart';
 import 'presentation/providers/notification_providers.dart';
 import 'presentation/providers/repository_providers.dart';
 import 'presentation/providers/settings_providers.dart';
@@ -22,50 +20,25 @@ final navigatorKey = GlobalKey<NavigatorState>();
 
 final appBootstrapProvider = FutureProvider<void>((ref) async {
   final notificationService = ref.read(notificationServiceProvider);
+  // Reminders have no action buttons (Done/Snooze turned out unreliable on
+  // at least one real device) — every tap here is a plain tap on the
+  // notification body, so just open the reminder's detail screen, where
+  // Done/Snooze already exist as regular in-app buttons.
   notificationService.onAction = (actionId, payload) async {
     if (payload == null) return;
     final parts = payload.split(':');
-    if (parts.length != 2) return;
+    if (parts.length != 2 || parts[0] != 'reminder') return;
     final id = int.tryParse(parts[1]);
     if (id == null) return;
 
-    if (actionId == NotificationActionIds.installmentPaid) {
-      // Tapping an action button does not auto-dismiss the notification
-      // (unlike tapping the body, which respects autoCancel) — dismiss it
-      // explicitly, and do so before any DB work below so the visible
-      // "did my tap register" feedback never waits on it.
-      await notificationService.cancelInstallment(id);
-    }
-
     try {
-      if (parts[0] == 'reminder') {
-        // Reminders have no action buttons anymore (Done/Snooze turned
-        // out unreliable on at least one real device) — every tap here is
-        // a plain tap on the notification body, so just open the
-        // reminder's detail screen, where Done/Snooze already exist as
-        // regular in-app buttons.
-        final reminder = await ref.read(reminderRepositoryProvider).getById(id);
-        if (reminder != null) {
-          navigatorKey.currentState?.push(
-            MaterialPageRoute(
-              builder: (_) => ReminderDetailScreen(reminder: reminder),
-            ),
-          );
-        }
-      } else if (parts[0] == 'installment' &&
-          actionId == NotificationActionIds.installmentPaid) {
-        final installment = await ref
-            .read(loanRepositoryProvider)
-            .getInstallmentById(id);
-        if (installment != null) {
-          await ref
-              .read(loanActionsProvider)
-              .markPaid(
-                loanId: installment.loanId,
-                installmentIds: [installment.id],
-                paidDate: DateTime.now(),
-              );
-        }
+      final reminder = await ref.read(reminderRepositoryProvider).getById(id);
+      if (reminder != null) {
+        navigatorKey.currentState?.push(
+          MaterialPageRoute(
+            builder: (_) => ReminderDetailScreen(reminder: reminder),
+          ),
+        );
       }
     } catch (e) {
       debugPrint('appBootstrap: notification tap handler failed: $e');
@@ -135,15 +108,6 @@ final appBootstrapProvider = FutureProvider<void>((ref) async {
     await ref.read(reminderRepositoryProvider).autoSkipOverdue();
   } catch (e) {
     debugPrint('appBootstrap: autoSkipOverdue failed: $e');
-  }
-
-  try {
-    // Same idea as autoSkipOverdue, for loan installments — once a due
-    // date passes without being paid, it locks in as overdue instead of
-    // staying tappable forever.
-    await ref.read(loanRepositoryProvider).autoMarkOverdueInstallments();
-  } catch (e) {
-    debugPrint('appBootstrap: autoMarkOverdueInstallments failed: $e');
   }
 
   try {

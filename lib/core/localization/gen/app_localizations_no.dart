@@ -18,9 +18,6 @@ class AppLocalizationsNo extends AppLocalizations {
   String get navCalendar => 'Kalender';
 
   @override
-  String get navLoans => 'Lån';
-
-  @override
   String get navCategories => 'Kategorier';
 
   @override
@@ -96,13 +93,10 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'Trykk på + for å legge til din første påminnelse eller ditt første nedbetalingslån.';
+      'Trykk på + for å legge til din første påminnelse.';
 
   @override
   String get fabAddReminder => 'Påminnelse';
-
-  @override
-  String get fabAddLoan => 'Nedbetalingslån';
 
   @override
   String get actionDone => 'Utført';
@@ -292,93 +286,6 @@ class AppLocalizationsNo extends AppLocalizations {
   String get weekdaySunday => 'Søndag';
 
   @override
-  String get loanListTitle => 'Lån og nedbetalinger';
-
-  @override
-  String get loanFormTitleNew => 'Nytt nedbetalingslån';
-
-  @override
-  String get loanFormTitleEdit => 'Rediger lån';
-
-  @override
-  String get loanFieldName => 'Navn';
-
-  @override
-  String get loanFieldCategory => 'Kategori';
-
-  @override
-  String get loanFieldTotalAmount => 'Totalbeløp (valgfritt)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Beløp per avdrag';
-
-  @override
-  String get loanFieldTotalInstallments => 'Antall avdrag';
-
-  @override
-  String get loanFieldFrequency => 'Frekvens';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Forfallsdag i måneden';
-
-  @override
-  String get loanFieldStartDate => 'Startdato';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'Varsle N dager før forfall';
-
-  @override
-  String get loanFieldNotes => 'Notater (valgfritt)';
-
-  @override
-  String get loanFrequencyMonthly => 'Månedlig';
-
-  @override
-  String get loanFrequencyWeekly => 'Ukentlig';
-
-  @override
-  String get loanFrequencyBiweekly => 'Hver 14. dag';
-
-  @override
-  String get loanFrequencyQuarterly => 'Kvartalsvis';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Hver 6. måned';
-
-  @override
-  String get loanFrequencyYearly => 'Årlig';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total betalt';
-  }
-
-  @override
-  String get loanMarkPaid => 'Merk som betalt';
-
-  @override
-  String get loanStatusPending => 'Venter';
-
-  @override
-  String get loanStatusPaid => 'Betalt';
-
-  @override
-  String get loanStatusOverdue => 'Forfalt';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Avdrag #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Slette dette lånet?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Alle $count avdrag fjernes også.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Kategorier';
 
   @override
@@ -551,9 +458,6 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Åpne innstillinger';
-
-  @override
-  String get loanMarkPaidSuccess => 'Merket som betalt';
 
   @override
   String get settingsNotificationPrefsTitle => 'Lyd og vibrasjon';

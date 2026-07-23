@@ -18,9 +18,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get navCalendar => 'تقویم';
 
   @override
-  String get navLoans => 'وام‌ها';
-
-  @override
   String get navCategories => 'دسته‌بندی‌ها';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get homeEmptyTitle => 'هنوز چیزی اینجا نیست';
 
   @override
-  String get homeEmptyBody =>
-      'برای افزودن اولین یادآور یا وام قسطی خود، روی + ضربه بزنید.';
+  String get homeEmptyBody => 'برای افزودن اولین یادآور خود، روی + ضربه بزنید.';
 
   @override
   String get fabAddReminder => 'یادآور';
-
-  @override
-  String get fabAddLoan => 'وام قسطی';
 
   @override
   String get actionDone => 'انجام شد';
@@ -293,93 +286,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get weekdaySunday => 'یکشنبه';
 
   @override
-  String get loanListTitle => 'وام‌ها و اقساط';
-
-  @override
-  String get loanFormTitleNew => 'وام قسطی جدید';
-
-  @override
-  String get loanFormTitleEdit => 'ویرایش وام';
-
-  @override
-  String get loanFieldName => 'نام';
-
-  @override
-  String get loanFieldCategory => 'دسته‌بندی';
-
-  @override
-  String get loanFieldTotalAmount => 'مبلغ کل (اختیاری)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'مبلغ هر قسط';
-
-  @override
-  String get loanFieldTotalInstallments => 'تعداد اقساط';
-
-  @override
-  String get loanFieldFrequency => 'تناوب';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'روز سررسید در ماه';
-
-  @override
-  String get loanFieldStartDate => 'تاریخ شروع';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'N روز قبل از سررسید یادآوری کن';
-
-  @override
-  String get loanFieldNotes => 'یادداشت (اختیاری)';
-
-  @override
-  String get loanFrequencyMonthly => 'ماهانه';
-
-  @override
-  String get loanFrequencyWeekly => 'هفتگی';
-
-  @override
-  String get loanFrequencyBiweekly => 'هر دو هفته';
-
-  @override
-  String get loanFrequencyQuarterly => 'فصلی';
-
-  @override
-  String get loanFrequencySemiAnnually => 'هر ۶ ماه';
-
-  @override
-  String get loanFrequencyYearly => 'سالانه';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid از $total قسط پرداخت شده';
-  }
-
-  @override
-  String get loanMarkPaid => 'علامت‌گذاری به‌عنوان پرداخت‌شده';
-
-  @override
-  String get loanStatusPending => 'در انتظار';
-
-  @override
-  String get loanStatusPaid => 'پرداخت‌شده';
-
-  @override
-  String get loanStatusOverdue => 'عقب‌افتاده';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'قسط #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'این وام حذف شود؟';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'تمام $count قسط نیز حذف خواهند شد.';
-  }
-
-  @override
   String get categoryManagerTitle => 'دسته‌بندی‌ها';
 
   @override
@@ -550,9 +456,6 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'باز کردن تنظیمات';
-
-  @override
-  String get loanMarkPaidSuccess => 'به‌عنوان پرداخت‌شده علامت‌گذاری شد';
 
   @override
   String get settingsNotificationPrefsTitle => 'صدا و لرزش';

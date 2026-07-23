@@ -18,9 +18,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get navCalendar => '캘린더';
 
   @override
-  String get navLoans => '할부';
-
-  @override
   String get navCategories => '카테고리';
 
   @override
@@ -94,13 +91,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get homeEmptyTitle => '아직 아무것도 없어요';
 
   @override
-  String get homeEmptyBody => '＋를 눌러 첫 리마인더나 할부를 추가해 보세요.';
+  String get homeEmptyBody => '＋를 눌러 첫 리마인더를 추가해 보세요.';
 
   @override
   String get fabAddReminder => '리마인더';
-
-  @override
-  String get fabAddLoan => '할부';
 
   @override
   String get actionDone => '완료';
@@ -290,93 +284,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get weekdaySunday => '일요일';
 
   @override
-  String get loanListTitle => '대출 및 할부';
-
-  @override
-  String get loanFormTitleNew => '새 할부';
-
-  @override
-  String get loanFormTitleEdit => '할부 수정';
-
-  @override
-  String get loanFieldName => '이름';
-
-  @override
-  String get loanFieldCategory => '카테고리';
-
-  @override
-  String get loanFieldTotalAmount => '총액 (선택 사항)';
-
-  @override
-  String get loanFieldInstallmentAmount => '회당 납부액';
-
-  @override
-  String get loanFieldTotalInstallments => '총 납부 횟수';
-
-  @override
-  String get loanFieldFrequency => '납부 주기';
-
-  @override
-  String get loanFieldDueDayOfMonth => '매월 납부일';
-
-  @override
-  String get loanFieldStartDate => '시작일';
-
-  @override
-  String get loanFieldReminderAdvanceDays => '납부일 N일 전에 알림';
-
-  @override
-  String get loanFieldNotes => '메모 (선택 사항)';
-
-  @override
-  String get loanFrequencyMonthly => '매월';
-
-  @override
-  String get loanFrequencyWeekly => '매주';
-
-  @override
-  String get loanFrequencyBiweekly => '격주';
-
-  @override
-  String get loanFrequencyQuarterly => '분기별';
-
-  @override
-  String get loanFrequencySemiAnnually => '6개월마다';
-
-  @override
-  String get loanFrequencyYearly => '매년';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$total회 중 $paid회 납부';
-  }
-
-  @override
-  String get loanMarkPaid => '납부 완료로 표시';
-
-  @override
-  String get loanStatusPending => '대기 중';
-
-  @override
-  String get loanStatusPaid => '납부 완료';
-
-  @override
-  String get loanStatusOverdue => '연체';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return '$number회차';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => '이 할부를 삭제할까요?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return '전체 $count회 납부 내역도 함께 삭제됩니다.';
-  }
-
-  @override
   String get categoryManagerTitle => '카테고리';
 
   @override
@@ -543,9 +450,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => '설정 열기';
-
-  @override
-  String get loanMarkPaidSuccess => '납부 완료로 표시했어요';
 
   @override
   String get settingsNotificationPrefsTitle => '소리 및 진동';

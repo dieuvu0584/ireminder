@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Aufgabenliste",
   "navCalendar": "Kalender",
-  "navLoans": "Raten",
   "navCategories": "Kategorien",
   "navSettings": "Einstellungen",
   "onboardingTitle1": "Wichtiges nie mehr vergessen",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Diese Woche",
   "homeSectionUpcoming": "Demnächst",
   "homeEmptyTitle": "Noch nichts hier",
-  "homeEmptyBody": "Tippe auf +, um deine erste Erinnerung oder Ratenzahlung hinzuzufügen.",
+  "homeEmptyBody": "Tippe auf +, um deine erste Erinnerung hinzuzufügen.",
   "fabAddReminder": "Erinnerung",
-  "fabAddLoan": "Ratenzahlung",
   "actionDone": "Erledigt",
   "actionSnooze": "Später erinnern",
   "actionEdit": "Bearbeiten",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Freitag",
   "weekdaySaturday": "Samstag",
   "weekdaySunday": "Sonntag",
-  "loanListTitle": "Raten & Kredite",
-  "loanFormTitleNew": "Neue Ratenzahlung",
-  "loanFormTitleEdit": "Ratenzahlung bearbeiten",
-  "loanFieldName": "Name",
-  "loanFieldCategory": "Kategorie",
-  "loanFieldTotalAmount": "Gesamtbetrag (optional)",
-  "loanFieldInstallmentAmount": "Betrag pro Rate",
-  "loanFieldTotalInstallments": "Anzahl der Raten",
-  "loanFieldFrequency": "Häufigkeit",
-  "loanFieldDueDayOfMonth": "Fälligkeitstag im Monat",
-  "loanFieldStartDate": "Startdatum",
-  "loanFieldReminderAdvanceDays": "N Tage vor Fälligkeit erinnern",
-  "loanFieldNotes": "Notizen (optional)",
-  "loanFrequencyMonthly": "Monatlich",
-  "loanFrequencyWeekly": "Wöchentlich",
-  "loanFrequencyBiweekly": "Alle zwei Wochen",
-  "loanFrequencyQuarterly": "Vierteljährlich",
-  "loanFrequencySemiAnnually": "Alle 6 Monate",
-  "loanFrequencyYearly": "Jährlich",
-  "loanProgress": "{paid} / {total} Raten bezahlt",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Als bezahlt markieren",
-  "loanStatusPending": "Ausstehend",
-  "loanStatusPaid": "Bezahlt",
-  "loanStatusOverdue": "Überfällig",
-  "loanInstallmentNumber": "Rate Nr. {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Diese Ratenzahlung löschen?",
-  "loanDeleteConfirmBody": "Alle {count} Raten werden ebenfalls gelöscht.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategorien",
   "categoryFormTitleNew": "Neue Kategorie",
   "categoryFormTitleEdit": "Kategorie bearbeiten",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Nicht erteilt — Erinnerungen werden möglicherweise nicht pünktlich angezeigt",
   "settingsPermissionsGrantAction": "Erteilen",
   "settingsPermissionsOpenSettingsAction": "Einstellungen öffnen",
-  "loanMarkPaidSuccess": "Als bezahlt markiert",
   "settingsNotificationPrefsTitle": "Ton & Vibration",
   "settingsNotificationSound": "Benachrichtigungston",
   "settingsNotificationVibration": "Vibration",

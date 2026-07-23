@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "کاموں کی فہرست",
   "navCalendar": "کیلنڈر",
-  "navLoans": "قرضے",
   "navCategories": "زمرہ جات",
   "navSettings": "ترتیبات",
   "onboardingTitle1": "اہم باتیں کبھی نہ بھولیں",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "اس ہفتے",
   "homeSectionUpcoming": "آنے والے",
   "homeEmptyTitle": "ابھی یہاں کچھ نہیں",
-  "homeEmptyBody": "اپنی پہلی یاد دہانی یا قسطوں والا قرض شامل کرنے کے لیے + پر تھپتھپائیں۔",
+  "homeEmptyBody": "اپنی پہلی یاد دہانی شامل کرنے کے لیے + پر تھپتھپائیں۔",
   "fabAddReminder": "یاد دہانی",
-  "fabAddLoan": "قسطوں کا قرض",
   "actionDone": "مکمل",
   "actionSnooze": "کچھ دیر بعد یاد دلائیں",
   "actionEdit": "ترمیم کریں",
@@ -98,57 +96,6 @@
   "weekdayFriday": "جمعہ",
   "weekdaySaturday": "ہفتہ",
   "weekdaySunday": "اتوار",
-  "loanListTitle": "قرضے اور قسطیں",
-  "loanFormTitleNew": "نیا قسطوں کا قرض",
-  "loanFormTitleEdit": "قرض میں ترمیم کریں",
-  "loanFieldName": "نام",
-  "loanFieldCategory": "زمرہ",
-  "loanFieldTotalAmount": "کل رقم (اختیاری)",
-  "loanFieldInstallmentAmount": "ہر قسط کی رقم",
-  "loanFieldTotalInstallments": "قسطوں کی تعداد",
-  "loanFieldFrequency": "تعدد",
-  "loanFieldDueDayOfMonth": "مہینے میں واجب الادا دن",
-  "loanFieldStartDate": "آغاز کی تاریخ",
-  "loanFieldReminderAdvanceDays": "واجب الادا سے N دن پہلے یاد دلائیں",
-  "loanFieldNotes": "نوٹس (اختیاری)",
-  "loanFrequencyMonthly": "ماہانہ",
-  "loanFrequencyWeekly": "ہفتہ وار",
-  "loanFrequencyBiweekly": "ہر دو ہفتے بعد",
-  "loanFrequencyQuarterly": "سہ ماہی",
-  "loanFrequencySemiAnnually": "ہر 6 ماہ بعد",
-  "loanFrequencyYearly": "سالانہ",
-  "loanProgress": "{paid} / {total} قسطیں ادا شدہ",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "ادا شدہ کے طور پر نشان زد کریں",
-  "loanStatusPending": "زیر التوا",
-  "loanStatusPaid": "ادا شدہ",
-  "loanStatusOverdue": "مقررہ وقت گزر چکا",
-  "loanInstallmentNumber": "قسط #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "کیا یہ قرض حذف کر دیں؟",
-  "loanDeleteConfirmBody": "تمام {count} قسطیں بھی حذف ہو جائیں گی۔",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "زمرہ جات",
   "categoryFormTitleNew": "نیا زمرہ",
   "categoryFormTitleEdit": "زمرے میں ترمیم کریں",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "نہیں دی گئی — یاد دہانیاں وقت پر نہ آ سکیں",
   "settingsPermissionsGrantAction": "اجازت دیں",
   "settingsPermissionsOpenSettingsAction": "ترتیبات کھولیں",
-  "loanMarkPaidSuccess": "ادا شدہ کے طور پر نشان زد کر دیا گیا",
   "settingsNotificationPrefsTitle": "آواز اور وائبریشن",
   "settingsNotificationSound": "اطلاع کی آواز",
   "settingsNotificationVibration": "وائبریشن",

@@ -18,9 +18,6 @@ class AppLocalizationsGu extends AppLocalizations {
   String get navCalendar => 'કૅલેન્ડર';
 
   @override
-  String get navLoans => 'લોન';
-
-  @override
   String get navCategories => 'શ્રેણીઓ';
 
   @override
@@ -96,13 +93,10 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'તમારું પહેલું રિમાઇન્ડર અથવા હપ્તાની લોન ઉમેરવા માટે + પર ટૅપ કરો.';
+      'તમારું પહેલું રિમાઇન્ડર ઉમેરવા માટે + પર ટૅપ કરો.';
 
   @override
   String get fabAddReminder => 'રિમાઇન્ડર';
-
-  @override
-  String get fabAddLoan => 'હપ્તાની લોન';
 
   @override
   String get actionDone => 'થઈ ગયું';
@@ -293,94 +287,6 @@ class AppLocalizationsGu extends AppLocalizations {
   String get weekdaySunday => 'રવિવાર';
 
   @override
-  String get loanListTitle => 'લોન અને હપ્તા';
-
-  @override
-  String get loanFormTitleNew => 'નવી હપ્તાની લોન';
-
-  @override
-  String get loanFormTitleEdit => 'લોન સંપાદિત કરો';
-
-  @override
-  String get loanFieldName => 'નામ';
-
-  @override
-  String get loanFieldCategory => 'શ્રેણી';
-
-  @override
-  String get loanFieldTotalAmount => 'કુલ રકમ (વૈકલ્પિક)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'પ્રતિ હપ્તાની રકમ';
-
-  @override
-  String get loanFieldTotalInstallments => 'હપ્તાની સંખ્યા';
-
-  @override
-  String get loanFieldFrequency => 'આવૃત્તિ';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'મહિનાનો બાકી દિવસ';
-
-  @override
-  String get loanFieldStartDate => 'શરૂઆતની તારીખ';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'બાકી તારીખના N દિવસ પહેલાં યાદ કરાવો';
-
-  @override
-  String get loanFieldNotes => 'નોંધ (વૈકલ્પિક)';
-
-  @override
-  String get loanFrequencyMonthly => 'દર મહિને';
-
-  @override
-  String get loanFrequencyWeekly => 'દર અઠવાડિયે';
-
-  @override
-  String get loanFrequencyBiweekly => 'દર બે અઠવાડિયે';
-
-  @override
-  String get loanFrequencyQuarterly => 'ત્રિમાસિક';
-
-  @override
-  String get loanFrequencySemiAnnually => 'દર 6 મહિને';
-
-  @override
-  String get loanFrequencyYearly => 'વાર્ષિક';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total ચૂકવ્યા';
-  }
-
-  @override
-  String get loanMarkPaid => 'ચૂકવેલ તરીકે ચિહ્નિત કરો';
-
-  @override
-  String get loanStatusPending => 'બાકી';
-
-  @override
-  String get loanStatusPaid => 'ચૂકવેલ';
-
-  @override
-  String get loanStatusOverdue => 'મુદત વીતી ગયેલ';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'હપ્તો #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'આ લોન કાઢી નાખવી છે?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'બધા $count હપ્તા પણ દૂર થઈ જશે.';
-  }
-
-  @override
   String get categoryManagerTitle => 'શ્રેણીઓ';
 
   @override
@@ -551,9 +457,6 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'સેટિંગ્સ ખોલો';
-
-  @override
-  String get loanMarkPaidSuccess => 'ચૂકવેલ તરીકે ચિહ્નિત કર્યું';
 
   @override
   String get settingsNotificationPrefsTitle => 'અવાજ અને વાઇબ્રેશન';

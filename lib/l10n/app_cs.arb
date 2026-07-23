@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Seznam úkolů",
   "navCalendar": "Kalendář",
-  "navLoans": "Splátky",
   "navCategories": "Kategorie",
   "navSettings": "Nastavení",
   "onboardingTitle1": "Nezapomeňte na to, co je důležité",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Tento týden",
   "homeSectionUpcoming": "Nadcházející",
   "homeEmptyTitle": "Zatím tu nic není",
-  "homeEmptyBody": "Klepnutím na + přidáte první připomínku nebo splátkový úvěr.",
+  "homeEmptyBody": "Klepnutím na + přidáte první připomínku.",
   "fabAddReminder": "Připomínka",
-  "fabAddLoan": "Splátkový úvěr",
   "actionDone": "Hotovo",
   "actionSnooze": "Odložit",
   "actionEdit": "Upravit",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Pátek",
   "weekdaySaturday": "Sobota",
   "weekdaySunday": "Neděle",
-  "loanListTitle": "Úvěry a splátky",
-  "loanFormTitleNew": "Nový splátkový úvěr",
-  "loanFormTitleEdit": "Upravit úvěr",
-  "loanFieldName": "Název",
-  "loanFieldCategory": "Kategorie",
-  "loanFieldTotalAmount": "Celková částka (nepovinné)",
-  "loanFieldInstallmentAmount": "Částka splátky",
-  "loanFieldTotalInstallments": "Počet splátek",
-  "loanFieldFrequency": "Frekvence",
-  "loanFieldDueDayOfMonth": "Den splatnosti v měsíci",
-  "loanFieldStartDate": "Datum zahájení",
-  "loanFieldReminderAdvanceDays": "Připomenout N dní před splatností",
-  "loanFieldNotes": "Poznámky (nepovinné)",
-  "loanFrequencyMonthly": "Měsíčně",
-  "loanFrequencyWeekly": "Týdně",
-  "loanFrequencyBiweekly": "Jednou za dva týdny",
-  "loanFrequencyQuarterly": "Čtvrtletně",
-  "loanFrequencySemiAnnually": "Každých 6 měsíců",
-  "loanFrequencyYearly": "Ročně",
-  "loanProgress": "Zaplaceno {paid} / {total}",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Označit jako zaplacené",
-  "loanStatusPending": "Čeká na úhradu",
-  "loanStatusPaid": "Zaplaceno",
-  "loanStatusOverdue": "Po splatnosti",
-  "loanInstallmentNumber": "Splátka č. {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Smazat tento úvěr?",
-  "loanDeleteConfirmBody": "Odstraní se také všech {count} splátek.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategorie",
   "categoryFormTitleNew": "Nová kategorie",
   "categoryFormTitleEdit": "Upravit kategorii",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Neuděleno — připomínky se nemusí spustit včas",
   "settingsPermissionsGrantAction": "Udělit",
   "settingsPermissionsOpenSettingsAction": "Otevřít nastavení",
-  "loanMarkPaidSuccess": "Označeno jako zaplaceno",
   "settingsNotificationPrefsTitle": "Zvuk a vibrace",
   "settingsNotificationSound": "Zvuk oznámení",
   "settingsNotificationVibration": "Vibrace",

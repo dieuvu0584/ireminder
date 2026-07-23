@@ -18,9 +18,6 @@ class AppLocalizationsTe extends AppLocalizations {
   String get navCalendar => 'క్యాలెండర్';
 
   @override
-  String get navLoans => 'రుణాలు';
-
-  @override
   String get navCategories => 'వర్గాలు';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsTe extends AppLocalizations {
   String get homeEmptyTitle => 'ఇక్కడ ఇంకా ఏమీ లేదు';
 
   @override
-  String get homeEmptyBody =>
-      'మీ మొదటి రిమైండర్ లేదా వాయిదా రుణాన్ని జోడించడానికి + నొక్కండి.';
+  String get homeEmptyBody => 'మీ మొదటి రిమైండర్‌ను జోడించడానికి + నొక్కండి.';
 
   @override
   String get fabAddReminder => 'రిమైండర్';
-
-  @override
-  String get fabAddLoan => 'వాయిదా రుణం';
 
   @override
   String get actionDone => 'పూర్తయింది';
@@ -292,94 +285,6 @@ class AppLocalizationsTe extends AppLocalizations {
   String get weekdaySunday => 'ఆదివారం';
 
   @override
-  String get loanListTitle => 'రుణాలు & వాయిదాలు';
-
-  @override
-  String get loanFormTitleNew => 'కొత్త వాయిదా రుణం';
-
-  @override
-  String get loanFormTitleEdit => 'రుణాన్ని సవరించండి';
-
-  @override
-  String get loanFieldName => 'పేరు';
-
-  @override
-  String get loanFieldCategory => 'వర్గం';
-
-  @override
-  String get loanFieldTotalAmount => 'మొత్తం మొత్తం (ఐచ్ఛికం)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'ఒక్కో వాయిదాకు మొత్తం';
-
-  @override
-  String get loanFieldTotalInstallments => 'వాయిదాల సంఖ్య';
-
-  @override
-  String get loanFieldFrequency => 'ఫ్రీక్వెన్సీ';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'నెలలో గడువు రోజు';
-
-  @override
-  String get loanFieldStartDate => 'ప్రారంభ తేదీ';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'గడువుకు N రోజుల ముందు గుర్తు చేయి';
-
-  @override
-  String get loanFieldNotes => 'గమనికలు (ఐచ్ఛికం)';
-
-  @override
-  String get loanFrequencyMonthly => 'ప్రతి నెల';
-
-  @override
-  String get loanFrequencyWeekly => 'ప్రతి వారం';
-
-  @override
-  String get loanFrequencyBiweekly => 'ప్రతి రెండు వారాలకు';
-
-  @override
-  String get loanFrequencyQuarterly => 'త్రైమాసికం';
-
-  @override
-  String get loanFrequencySemiAnnually => 'ప్రతి 6 నెలలకు';
-
-  @override
-  String get loanFrequencyYearly => 'వార్షికం';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total చెల్లించారు';
-  }
-
-  @override
-  String get loanMarkPaid => 'చెల్లించినట్లు గుర్తించు';
-
-  @override
-  String get loanStatusPending => 'పెండింగ్‌లో ఉంది';
-
-  @override
-  String get loanStatusPaid => 'చెల్లించారు';
-
-  @override
-  String get loanStatusOverdue => 'గడువు మించింది';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'వాయిదా #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'ఈ రుణాన్ని తొలగించాలా?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'అన్ని $count వాయిదాలు కూడా తొలగించబడతాయి.';
-  }
-
-  @override
   String get categoryManagerTitle => 'వర్గాలు';
 
   @override
@@ -553,9 +458,6 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'సెట్టింగ్‌లను తెరవండి';
-
-  @override
-  String get loanMarkPaidSuccess => 'చెల్లించినట్లు గుర్తించారు';
 
   @override
   String get settingsNotificationPrefsTitle => 'శబ్దం & వైబ్రేషన్';

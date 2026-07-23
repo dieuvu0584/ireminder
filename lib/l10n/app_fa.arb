@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "فهرست کارها",
   "navCalendar": "تقویم",
-  "navLoans": "وام‌ها",
   "navCategories": "دسته‌بندی‌ها",
   "navSettings": "تنظیمات",
   "onboardingTitle1": "هرگز چیزهای مهم را فراموش نکنید",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "این هفته",
   "homeSectionUpcoming": "پیش‌رو",
   "homeEmptyTitle": "هنوز چیزی اینجا نیست",
-  "homeEmptyBody": "برای افزودن اولین یادآور یا وام قسطی خود، روی + ضربه بزنید.",
+  "homeEmptyBody": "برای افزودن اولین یادآور خود، روی + ضربه بزنید.",
   "fabAddReminder": "یادآور",
-  "fabAddLoan": "وام قسطی",
   "actionDone": "انجام شد",
   "actionSnooze": "به تعویق انداختن",
   "actionEdit": "ویرایش",
@@ -98,57 +96,6 @@
   "weekdayFriday": "جمعه",
   "weekdaySaturday": "شنبه",
   "weekdaySunday": "یکشنبه",
-  "loanListTitle": "وام‌ها و اقساط",
-  "loanFormTitleNew": "وام قسطی جدید",
-  "loanFormTitleEdit": "ویرایش وام",
-  "loanFieldName": "نام",
-  "loanFieldCategory": "دسته‌بندی",
-  "loanFieldTotalAmount": "مبلغ کل (اختیاری)",
-  "loanFieldInstallmentAmount": "مبلغ هر قسط",
-  "loanFieldTotalInstallments": "تعداد اقساط",
-  "loanFieldFrequency": "تناوب",
-  "loanFieldDueDayOfMonth": "روز سررسید در ماه",
-  "loanFieldStartDate": "تاریخ شروع",
-  "loanFieldReminderAdvanceDays": "N روز قبل از سررسید یادآوری کن",
-  "loanFieldNotes": "یادداشت (اختیاری)",
-  "loanFrequencyMonthly": "ماهانه",
-  "loanFrequencyWeekly": "هفتگی",
-  "loanFrequencyBiweekly": "هر دو هفته",
-  "loanFrequencyQuarterly": "فصلی",
-  "loanFrequencySemiAnnually": "هر ۶ ماه",
-  "loanFrequencyYearly": "سالانه",
-  "loanProgress": "{paid} از {total} قسط پرداخت شده",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "علامت‌گذاری به‌عنوان پرداخت‌شده",
-  "loanStatusPending": "در انتظار",
-  "loanStatusPaid": "پرداخت‌شده",
-  "loanStatusOverdue": "عقب‌افتاده",
-  "loanInstallmentNumber": "قسط #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "این وام حذف شود؟",
-  "loanDeleteConfirmBody": "تمام {count} قسط نیز حذف خواهند شد.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "دسته‌بندی‌ها",
   "categoryFormTitleNew": "دسته‌بندی جدید",
   "categoryFormTitleEdit": "ویرایش دسته‌بندی",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "اعطا نشده — ممکن است یادآورها به‌موقع فعال نشوند",
   "settingsPermissionsGrantAction": "اعطای مجوز",
   "settingsPermissionsOpenSettingsAction": "باز کردن تنظیمات",
-  "loanMarkPaidSuccess": "به‌عنوان پرداخت‌شده علامت‌گذاری شد",
   "settingsNotificationPrefsTitle": "صدا و لرزش",
   "settingsNotificationSound": "صدای اعلان",
   "settingsNotificationVibration": "لرزش",

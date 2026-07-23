@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Takenlijst",
   "navCalendar": "Kalender",
-  "navLoans": "Afbetalingen",
   "navCategories": "Categorieën",
   "navSettings": "Instellingen",
   "onboardingTitle1": "Vergeet nooit meer wat belangrijk is",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Deze week",
   "homeSectionUpcoming": "Binnenkort",
   "homeEmptyTitle": "Hier staat nog niets",
-  "homeEmptyBody": "Tik op + om je eerste herinnering of afbetalingsplan toe te voegen.",
+  "homeEmptyBody": "Tik op + om je eerste herinnering toe te voegen.",
   "fabAddReminder": "Herinnering",
-  "fabAddLoan": "Afbetalingsplan",
   "actionDone": "Klaar",
   "actionSnooze": "Uitstellen",
   "actionEdit": "Bewerken",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Vrijdag",
   "weekdaySaturday": "Zaterdag",
   "weekdaySunday": "Zondag",
-  "loanListTitle": "Leningen & afbetalingen",
-  "loanFormTitleNew": "Nieuw afbetalingsplan",
-  "loanFormTitleEdit": "Afbetalingsplan bewerken",
-  "loanFieldName": "Naam",
-  "loanFieldCategory": "Categorie",
-  "loanFieldTotalAmount": "Totaalbedrag (optioneel)",
-  "loanFieldInstallmentAmount": "Bedrag per termijn",
-  "loanFieldTotalInstallments": "Aantal termijnen",
-  "loanFieldFrequency": "Frequentie",
-  "loanFieldDueDayOfMonth": "Vervaldag van de maand",
-  "loanFieldStartDate": "Startdatum",
-  "loanFieldReminderAdvanceDays": "Herinner N dagen voor de vervaldatum",
-  "loanFieldNotes": "Notities (optioneel)",
-  "loanFrequencyMonthly": "Maandelijks",
-  "loanFrequencyWeekly": "Wekelijks",
-  "loanFrequencyBiweekly": "Tweewekelijks",
-  "loanFrequencyQuarterly": "Elk kwartaal",
-  "loanFrequencySemiAnnually": "Elke 6 maanden",
-  "loanFrequencyYearly": "Jaarlijks",
-  "loanProgress": "{paid} / {total} betaald",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Markeren als betaald",
-  "loanStatusPending": "In afwachting",
-  "loanStatusPaid": "Betaald",
-  "loanStatusOverdue": "Verlopen",
-  "loanInstallmentNumber": "Termijn #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Dit afbetalingsplan verwijderen?",
-  "loanDeleteConfirmBody": "Alle {count} termijnen worden ook verwijderd.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Categorieën",
   "categoryFormTitleNew": "Nieuwe categorie",
   "categoryFormTitleEdit": "Categorie bewerken",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Niet verleend — herinneringen komen mogelijk niet op tijd binnen",
   "settingsPermissionsGrantAction": "Toestaan",
   "settingsPermissionsOpenSettingsAction": "Instellingen openen",
-  "loanMarkPaidSuccess": "Gemarkeerd als betaald",
   "settingsNotificationPrefsTitle": "Geluid en trilling",
   "settingsNotificationSound": "Meldingsgeluid",
   "settingsNotificationVibration": "Trillen",

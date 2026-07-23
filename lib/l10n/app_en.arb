@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Task List",
   "navCalendar": "Calendar",
-  "navLoans": "Loans",
   "navCategories": "Categories",
   "navSettings": "Settings",
   "onboardingTitle1": "Never forget what matters",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "This week",
   "homeSectionUpcoming": "Upcoming",
   "homeEmptyTitle": "Nothing here yet",
-  "homeEmptyBody": "Tap + to add your first reminder or installment loan.",
+  "homeEmptyBody": "Tap + to add your first reminder.",
   "fabAddReminder": "Reminder",
-  "fabAddLoan": "Installment loan",
   "actionDone": "Done",
   "actionSnooze": "Snooze",
   "actionEdit": "Edit",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Friday",
   "weekdaySaturday": "Saturday",
   "weekdaySunday": "Sunday",
-  "loanListTitle": "Loans & installments",
-  "loanFormTitleNew": "New installment loan",
-  "loanFormTitleEdit": "Edit loan",
-  "loanFieldName": "Name",
-  "loanFieldCategory": "Category",
-  "loanFieldTotalAmount": "Total amount (optional)",
-  "loanFieldInstallmentAmount": "Amount per installment",
-  "loanFieldTotalInstallments": "Number of installments",
-  "loanFieldFrequency": "Frequency",
-  "loanFieldDueDayOfMonth": "Due day of month",
-  "loanFieldStartDate": "Start date",
-  "loanFieldReminderAdvanceDays": "Remind N days before due",
-  "loanFieldNotes": "Notes (optional)",
-  "loanFrequencyMonthly": "Monthly",
-  "loanFrequencyWeekly": "Weekly",
-  "loanFrequencyBiweekly": "Biweekly",
-  "loanFrequencyQuarterly": "Quarterly",
-  "loanFrequencySemiAnnually": "Every 6 months",
-  "loanFrequencyYearly": "Yearly",
-  "loanProgress": "{paid} / {total} paid",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Mark as paid",
-  "loanStatusPending": "Pending",
-  "loanStatusPaid": "Paid",
-  "loanStatusOverdue": "Overdue",
-  "loanInstallmentNumber": "Installment #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Delete this loan?",
-  "loanDeleteConfirmBody": "All {count} installments will be removed too.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Categories",
   "categoryFormTitleNew": "New category",
   "categoryFormTitleEdit": "Edit category",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Not granted — reminders may not fire on time",
   "settingsPermissionsGrantAction": "Grant",
   "settingsPermissionsOpenSettingsAction": "Open settings",
-  "loanMarkPaidSuccess": "Marked as paid",
   "settingsNotificationPrefsTitle": "Sound & vibration",
   "settingsNotificationSound": "Notification sound",
   "settingsNotificationVibration": "Vibration",

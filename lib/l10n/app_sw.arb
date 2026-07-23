@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Orodha ya Kazi",
   "navCalendar": "Kalenda",
-  "navLoans": "Mikopo",
   "navCategories": "Jamii",
   "navSettings": "Mipangilio",
   "onboardingTitle1": "Usisahau tena mambo muhimu",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Wiki hii",
   "homeSectionUpcoming": "Zinazokuja",
   "homeEmptyTitle": "Bado hakuna kitu hapa",
-  "homeEmptyBody": "Gusa + kuongeza kikumbusho chako cha kwanza au mkopo wa awamu.",
+  "homeEmptyBody": "Gusa + kuongeza kikumbusho chako cha kwanza.",
   "fabAddReminder": "Kikumbusho",
-  "fabAddLoan": "Mkopo wa awamu",
   "actionDone": "Imekamilika",
   "actionSnooze": "Ahirisha",
   "actionEdit": "Hariri",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Ijumaa",
   "weekdaySaturday": "Jumamosi",
   "weekdaySunday": "Jumapili",
-  "loanListTitle": "Mikopo na awamu",
-  "loanFormTitleNew": "Mkopo mpya wa awamu",
-  "loanFormTitleEdit": "Hariri mkopo",
-  "loanFieldName": "Jina",
-  "loanFieldCategory": "Jamii",
-  "loanFieldTotalAmount": "Kiasi cha jumla (hiari)",
-  "loanFieldInstallmentAmount": "Kiasi kwa kila awamu",
-  "loanFieldTotalInstallments": "Idadi ya awamu",
-  "loanFieldFrequency": "Marudio",
-  "loanFieldDueDayOfMonth": "Siku ya malipo kwa mwezi",
-  "loanFieldStartDate": "Tarehe ya kuanza",
-  "loanFieldReminderAdvanceDays": "Kumbusha siku N kabla ya malipo",
-  "loanFieldNotes": "Vidokezo (hiari)",
-  "loanFrequencyMonthly": "Kila mwezi",
-  "loanFrequencyWeekly": "Kila wiki",
-  "loanFrequencyBiweekly": "Kila baada ya wiki mbili",
-  "loanFrequencyQuarterly": "Kila robo mwaka",
-  "loanFrequencySemiAnnually": "Kila miezi 6",
-  "loanFrequencyYearly": "Kila mwaka",
-  "loanProgress": "{paid} / {total} zimelipwa",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Weka alama kuwa imelipwa",
-  "loanStatusPending": "Inasubiri",
-  "loanStatusPaid": "Imelipwa",
-  "loanStatusOverdue": "Imechelewa",
-  "loanInstallmentNumber": "Awamu #{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Futa mkopo huu?",
-  "loanDeleteConfirmBody": "Awamu zote {count} pia zitaondolewa.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Jamii",
   "categoryFormTitleNew": "Jamii mpya",
   "categoryFormTitleEdit": "Hariri jamii",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Haijaruhusiwa — vikumbusho vinaweza visifike kwa wakati",
   "settingsPermissionsGrantAction": "Ruhusu",
   "settingsPermissionsOpenSettingsAction": "Fungua mipangilio",
-  "loanMarkPaidSuccess": "Imewekwa alama kuwa imelipwa",
   "settingsNotificationPrefsTitle": "Sauti na mtetemo",
   "settingsNotificationSound": "Sauti ya arifa",
   "settingsNotificationVibration": "Mtetemo",

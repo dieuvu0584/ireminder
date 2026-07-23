@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Список завдань",
   "navCalendar": "Календар",
-  "navLoans": "Кредити",
   "navCategories": "Категорії",
   "navSettings": "Налаштування",
   "onboardingTitle1": "Ніколи не забувайте важливе",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "Цього тижня",
   "homeSectionUpcoming": "Найближчим часом",
   "homeEmptyTitle": "Тут поки що нічого немає",
-  "homeEmptyBody": "Натисніть +, щоб додати перше нагадування або кредит на виплату.",
+  "homeEmptyBody": "Натисніть +, щоб додати перше нагадування.",
   "fabAddReminder": "Нагадування",
-  "fabAddLoan": "Кредит на виплату",
   "actionDone": "Готово",
   "actionSnooze": "Відкласти",
   "actionEdit": "Редагувати",
@@ -98,57 +96,6 @@
   "weekdayFriday": "П'ятниця",
   "weekdaySaturday": "Субота",
   "weekdaySunday": "Неділя",
-  "loanListTitle": "Кредити та виплати",
-  "loanFormTitleNew": "Новий кредит на виплату",
-  "loanFormTitleEdit": "Редагувати кредит",
-  "loanFieldName": "Назва",
-  "loanFieldCategory": "Категорія",
-  "loanFieldTotalAmount": "Загальна сума (необов'язково)",
-  "loanFieldInstallmentAmount": "Сума одного платежу",
-  "loanFieldTotalInstallments": "Кількість платежів",
-  "loanFieldFrequency": "Періодичність",
-  "loanFieldDueDayOfMonth": "День місяця для оплати",
-  "loanFieldStartDate": "Дата початку",
-  "loanFieldReminderAdvanceDays": "Нагадати за N днів до сплати",
-  "loanFieldNotes": "Нотатки (необов'язково)",
-  "loanFrequencyMonthly": "Щомісяця",
-  "loanFrequencyWeekly": "Щотижня",
-  "loanFrequencyBiweekly": "Раз на два тижні",
-  "loanFrequencyQuarterly": "Щоквартально",
-  "loanFrequencySemiAnnually": "Кожні 6 місяців",
-  "loanFrequencyYearly": "Щорічно",
-  "loanProgress": "Сплачено {paid} / {total}",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Позначити як сплачено",
-  "loanStatusPending": "Очікується",
-  "loanStatusPaid": "Сплачено",
-  "loanStatusOverdue": "Прострочено",
-  "loanInstallmentNumber": "Платіж №{number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Видалити цей кредит?",
-  "loanDeleteConfirmBody": "Усі {count} платежів також буде видалено.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Категорії",
   "categoryFormTitleNew": "Нова категорія",
   "categoryFormTitleEdit": "Редагувати категорію",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Не надано — нагадування можуть не спрацювати вчасно",
   "settingsPermissionsGrantAction": "Надати",
   "settingsPermissionsOpenSettingsAction": "Відкрити налаштування",
-  "loanMarkPaidSuccess": "Позначено як сплачено",
   "settingsNotificationPrefsTitle": "Звук і вібрація",
   "settingsNotificationSound": "Звук сповіщення",
   "settingsNotificationVibration": "Вібрація",

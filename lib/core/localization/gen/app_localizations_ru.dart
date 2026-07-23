@@ -18,9 +18,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get navCalendar => 'Календарь';
 
   @override
-  String get navLoans => 'Кредиты';
-
-  @override
   String get navCategories => 'Категории';
 
   @override
@@ -95,14 +92,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get homeEmptyTitle => 'Пока здесь пусто';
 
   @override
-  String get homeEmptyBody =>
-      'Нажмите +, чтобы добавить первое напоминание или кредит с рассрочкой.';
+  String get homeEmptyBody => 'Нажмите +, чтобы добавить первое напоминание.';
 
   @override
   String get fabAddReminder => 'Напоминание';
-
-  @override
-  String get fabAddLoan => 'Кредит с рассрочкой';
 
   @override
   String get actionDone => 'Готово';
@@ -293,93 +286,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get weekdaySunday => 'Воскресенье';
 
   @override
-  String get loanListTitle => 'Кредиты и рассрочки';
-
-  @override
-  String get loanFormTitleNew => 'Новый кредит с рассрочкой';
-
-  @override
-  String get loanFormTitleEdit => 'Изменить кредит';
-
-  @override
-  String get loanFieldName => 'Название';
-
-  @override
-  String get loanFieldCategory => 'Категория';
-
-  @override
-  String get loanFieldTotalAmount => 'Общая сумма (необязательно)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Сумма одного платежа';
-
-  @override
-  String get loanFieldTotalInstallments => 'Количество платежей';
-
-  @override
-  String get loanFieldFrequency => 'Периодичность';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'День платежа в месяце';
-
-  @override
-  String get loanFieldStartDate => 'Дата начала';
-
-  @override
-  String get loanFieldReminderAdvanceDays => 'Напомнить за N дней до платежа';
-
-  @override
-  String get loanFieldNotes => 'Заметки (необязательно)';
-
-  @override
-  String get loanFrequencyMonthly => 'Ежемесячно';
-
-  @override
-  String get loanFrequencyWeekly => 'Еженедельно';
-
-  @override
-  String get loanFrequencyBiweekly => 'Раз в две недели';
-
-  @override
-  String get loanFrequencyQuarterly => 'Ежеквартально';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Каждые 6 месяцев';
-
-  @override
-  String get loanFrequencyYearly => 'Ежегодно';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return 'Оплачено $paid из $total';
-  }
-
-  @override
-  String get loanMarkPaid => 'Отметить как оплачено';
-
-  @override
-  String get loanStatusPending => 'Ожидается';
-
-  @override
-  String get loanStatusPaid => 'Оплачено';
-
-  @override
-  String get loanStatusOverdue => 'Просрочено';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Платёж №$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Удалить этот кредит?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Все $count платежей также будут удалены.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Категории';
 
   @override
@@ -553,9 +459,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Открыть настройки';
-
-  @override
-  String get loanMarkPaidSuccess => 'Отмечено как оплачено';
 
   @override
   String get settingsNotificationPrefsTitle => 'Звук и вибрация';

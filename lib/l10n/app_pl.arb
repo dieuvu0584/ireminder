@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "Lista zadań",
   "navCalendar": "Kalendarz",
-  "navLoans": "Raty",
   "navCategories": "Kategorie",
   "navSettings": "Ustawienia",
   "onboardingTitle1": "Nigdy nie zapomnij o ważnych sprawach",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "W tym tygodniu",
   "homeSectionUpcoming": "Nadchodzące",
   "homeEmptyTitle": "Nic tu jeszcze nie ma",
-  "homeEmptyBody": "Stuknij +, aby dodać pierwsze przypomnienie lub ratę.",
+  "homeEmptyBody": "Stuknij +, aby dodać pierwsze przypomnienie.",
   "fabAddReminder": "Przypomnienie",
-  "fabAddLoan": "Rata",
   "actionDone": "Gotowe",
   "actionSnooze": "Przełóż",
   "actionEdit": "Edytuj",
@@ -98,57 +96,6 @@
   "weekdayFriday": "Piątek",
   "weekdaySaturday": "Sobota",
   "weekdaySunday": "Niedziela",
-  "loanListTitle": "Raty i pożyczki",
-  "loanFormTitleNew": "Nowa rata",
-  "loanFormTitleEdit": "Edytuj ratę",
-  "loanFieldName": "Nazwa",
-  "loanFieldCategory": "Kategoria",
-  "loanFieldTotalAmount": "Kwota całkowita (opcjonalnie)",
-  "loanFieldInstallmentAmount": "Kwota jednej raty",
-  "loanFieldTotalInstallments": "Liczba rat",
-  "loanFieldFrequency": "Częstotliwość",
-  "loanFieldDueDayOfMonth": "Dzień płatności w miesiącu",
-  "loanFieldStartDate": "Data rozpoczęcia",
-  "loanFieldReminderAdvanceDays": "Przypomnij N dni przed terminem",
-  "loanFieldNotes": "Notatki (opcjonalnie)",
-  "loanFrequencyMonthly": "Co miesiąc",
-  "loanFrequencyWeekly": "Co tydzień",
-  "loanFrequencyBiweekly": "Co dwa tygodnie",
-  "loanFrequencyQuarterly": "Kwartalnie",
-  "loanFrequencySemiAnnually": "Co 6 miesięcy",
-  "loanFrequencyYearly": "Rocznie",
-  "loanProgress": "Spłacono {paid} / {total}",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "Oznacz jako spłacone",
-  "loanStatusPending": "Oczekująca",
-  "loanStatusPaid": "Spłacona",
-  "loanStatusOverdue": "Zaległa",
-  "loanInstallmentNumber": "Rata nr {number}",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "Usunąć tę ratę?",
-  "loanDeleteConfirmBody": "Wszystkie {count} rat zostaną również usunięte.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "Kategorie",
   "categoryFormTitleNew": "Nowa kategoria",
   "categoryFormTitleEdit": "Edytuj kategorię",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "Brak zgody — przypomnienia mogą nie pojawiać się na czas",
   "settingsPermissionsGrantAction": "Przyznaj",
   "settingsPermissionsOpenSettingsAction": "Otwórz ustawienia",
-  "loanMarkPaidSuccess": "Oznaczono jako spłacone",
   "settingsNotificationPrefsTitle": "Dźwięk i wibracje",
   "settingsNotificationSound": "Dźwięk powiadomienia",
   "settingsNotificationVibration": "Wibracje",

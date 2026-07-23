@@ -3,7 +3,6 @@
   "appTitle": "iReminder",
   "navToday": "할 일 목록",
   "navCalendar": "캘린더",
-  "navLoans": "할부",
   "navCategories": "카테고리",
   "navSettings": "설정",
   "onboardingTitle1": "중요한 일을 절대 잊지 마세요",
@@ -27,9 +26,8 @@
   "homeSectionThisWeek": "이번 주",
   "homeSectionUpcoming": "예정",
   "homeEmptyTitle": "아직 아무것도 없어요",
-  "homeEmptyBody": "＋를 눌러 첫 리마인더나 할부를 추가해 보세요.",
+  "homeEmptyBody": "＋를 눌러 첫 리마인더를 추가해 보세요.",
   "fabAddReminder": "리마인더",
-  "fabAddLoan": "할부",
   "actionDone": "완료",
   "actionSnooze": "다시 알림",
   "actionEdit": "수정",
@@ -98,57 +96,6 @@
   "weekdayFriday": "금요일",
   "weekdaySaturday": "토요일",
   "weekdaySunday": "일요일",
-  "loanListTitle": "대출 및 할부",
-  "loanFormTitleNew": "새 할부",
-  "loanFormTitleEdit": "할부 수정",
-  "loanFieldName": "이름",
-  "loanFieldCategory": "카테고리",
-  "loanFieldTotalAmount": "총액 (선택 사항)",
-  "loanFieldInstallmentAmount": "회당 납부액",
-  "loanFieldTotalInstallments": "총 납부 횟수",
-  "loanFieldFrequency": "납부 주기",
-  "loanFieldDueDayOfMonth": "매월 납부일",
-  "loanFieldStartDate": "시작일",
-  "loanFieldReminderAdvanceDays": "납부일 N일 전에 알림",
-  "loanFieldNotes": "메모 (선택 사항)",
-  "loanFrequencyMonthly": "매월",
-  "loanFrequencyWeekly": "매주",
-  "loanFrequencyBiweekly": "격주",
-  "loanFrequencyQuarterly": "분기별",
-  "loanFrequencySemiAnnually": "6개월마다",
-  "loanFrequencyYearly": "매년",
-  "loanProgress": "{total}회 중 {paid}회 납부",
-  "@loanProgress": {
-    "placeholders": {
-      "paid": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "loanMarkPaid": "납부 완료로 표시",
-  "loanStatusPending": "대기 중",
-  "loanStatusPaid": "납부 완료",
-  "loanStatusOverdue": "연체",
-  "loanInstallmentNumber": "{number}회차",
-  "@loanInstallmentNumber": {
-    "placeholders": {
-      "number": {
-        "type": "int"
-      }
-    }
-  },
-  "loanDeleteConfirmTitle": "이 할부를 삭제할까요?",
-  "loanDeleteConfirmBody": "전체 {count}회 납부 내역도 함께 삭제됩니다.",
-  "@loanDeleteConfirmBody": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "categoryManagerTitle": "카테고리",
   "categoryFormTitleNew": "새 카테고리",
   "categoryFormTitleEdit": "카테고리 수정",
@@ -223,7 +170,6 @@
   "settingsPermissionsDenied": "허용되지 않음 — 리마인더가 제때 울리지 않을 수 있어요",
   "settingsPermissionsGrantAction": "허용",
   "settingsPermissionsOpenSettingsAction": "설정 열기",
-  "loanMarkPaidSuccess": "납부 완료로 표시했어요",
   "settingsNotificationPrefsTitle": "소리 및 진동",
   "settingsNotificationSound": "알림 소리",
   "settingsNotificationVibration": "진동",

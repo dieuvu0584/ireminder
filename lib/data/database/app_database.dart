@@ -11,8 +11,6 @@ import '../../core/localization/supported_locales.dart';
 import 'tables/categories_table.dart';
 import 'tables/reminders_table.dart';
 import 'tables/reminder_logs_table.dart';
-import 'tables/loans_table.dart';
-import 'tables/loan_installments_table.dart';
 import 'tables/app_settings_table.dart';
 
 part 'app_database.g.dart';
@@ -47,21 +45,12 @@ String _nameHealth(AppLocalizations l) => l.defaultCategoryHealth;
 String _nameBirthday(AppLocalizations l) => l.defaultCategoryBirthday;
 String _nameFood(AppLocalizations l) => l.defaultCategoryFood;
 
-@DriftDatabase(
-  tables: [
-    Categories,
-    Reminders,
-    ReminderLogs,
-    Loans,
-    LoanInstallments,
-    AppSettings,
-  ],
-)
+@DriftDatabase(tables: [Categories, Reminders, ReminderLogs, AppSettings])
 class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 7;
+  int get schemaVersion => 8;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -98,8 +87,14 @@ class AppDatabase extends _$AppDatabase {
         await m.addColumn(reminders, reminders.dailyExclusionType);
         await m.addColumn(reminders, reminders.dailyExclusionValue);
       }
-      if (from < 7) {
-        await m.addColumn(loans, loans.reminderTime);
+      // Loans/installments (the "trả góp" feature) were removed outright —
+      // the user's bank/creditor already reminds them, so the app doing it
+      // too was redundant. Drop the tables rather than leaving them
+      // orphaned; `from < 7`'s reminderTime column add is moot once the
+      // table it targeted no longer exists in the schema at all.
+      if (from < 8) {
+        await m.deleteTable('loan_installments');
+        await m.deleteTable('loans');
       }
     },
   );

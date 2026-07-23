@@ -18,9 +18,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get navCalendar => 'Kalendaryo';
 
   @override
-  String get navLoans => 'Utang';
-
-  @override
   String get navCategories => 'Mga Kategorya';
 
   @override
@@ -97,13 +94,10 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get homeEmptyBody =>
-      'Pindutin ang + para idagdag ang una mong paalala o utang na hulugan.';
+      'Pindutin ang + para idagdag ang una mong paalala.';
 
   @override
   String get fabAddReminder => 'Paalala';
-
-  @override
-  String get fabAddLoan => 'Utang na hulugan';
 
   @override
   String get actionDone => 'Tapos na';
@@ -294,94 +288,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get weekdaySunday => 'Linggo';
 
   @override
-  String get loanListTitle => 'Mga utang at hulugan';
-
-  @override
-  String get loanFormTitleNew => 'Bagong utang na hulugan';
-
-  @override
-  String get loanFormTitleEdit => 'I-edit ang utang';
-
-  @override
-  String get loanFieldName => 'Pangalan';
-
-  @override
-  String get loanFieldCategory => 'Kategorya';
-
-  @override
-  String get loanFieldTotalAmount => 'Kabuuang halaga (opsyonal)';
-
-  @override
-  String get loanFieldInstallmentAmount => 'Halaga bawat hulog';
-
-  @override
-  String get loanFieldTotalInstallments => 'Bilang ng hulog';
-
-  @override
-  String get loanFieldFrequency => 'Dalas';
-
-  @override
-  String get loanFieldDueDayOfMonth => 'Araw ng deadline sa buwan';
-
-  @override
-  String get loanFieldStartDate => 'Petsa ng simula';
-
-  @override
-  String get loanFieldReminderAdvanceDays =>
-      'Paalalahanan N araw bago ang deadline';
-
-  @override
-  String get loanFieldNotes => 'Mga tala (opsyonal)';
-
-  @override
-  String get loanFrequencyMonthly => 'Buwanan';
-
-  @override
-  String get loanFrequencyWeekly => 'Lingguhan';
-
-  @override
-  String get loanFrequencyBiweekly => 'Tuwing ikalawang linggo';
-
-  @override
-  String get loanFrequencyQuarterly => 'Bawat quarter';
-
-  @override
-  String get loanFrequencySemiAnnually => 'Bawat 6 buwan';
-
-  @override
-  String get loanFrequencyYearly => 'Taunan';
-
-  @override
-  String loanProgress(int paid, int total) {
-    return '$paid / $total nabayaran na';
-  }
-
-  @override
-  String get loanMarkPaid => 'Markahang bayad na';
-
-  @override
-  String get loanStatusPending => 'Nakabinbin';
-
-  @override
-  String get loanStatusPaid => 'Bayad na';
-
-  @override
-  String get loanStatusOverdue => 'Overdue';
-
-  @override
-  String loanInstallmentNumber(int number) {
-    return 'Hulog #$number';
-  }
-
-  @override
-  String get loanDeleteConfirmTitle => 'Tanggalin ang utang na ito?';
-
-  @override
-  String loanDeleteConfirmBody(int count) {
-    return 'Matatanggal din ang lahat ng $count hulog.';
-  }
-
-  @override
   String get categoryManagerTitle => 'Mga Kategorya';
 
   @override
@@ -557,9 +463,6 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get settingsPermissionsOpenSettingsAction => 'Buksan ang settings';
-
-  @override
-  String get loanMarkPaidSuccess => 'Namarkahang bayad na';
 
   @override
   String get settingsNotificationPrefsTitle => 'Tunog at pag-vibrate';
