@@ -200,6 +200,52 @@ class LoanRepository {
     });
   }
 
+  /// Reverts a paid installment back to pending, undoing [markPaid]. The
+  /// caller only offers this while the due date hasn't passed yet (see
+  /// InstallmentCard/LoanDetailScreen's lock logic — once it has, paid or
+  /// not, it's locked the same way an overdue one is), so this always
+  /// resets straight to 'pending' rather than needing to reconstruct
+  /// whatever status came before.
+  Future<void> markUnpaid({
+    required int loanId,
+    required int installmentId,
+  }) async {
+    await _db.transaction(() async {
+      await (_db.update(
+        _db.loanInstallments,
+      )..where((i) => i.id.equals(installmentId))).write(
+        LoanInstallmentsCompanion(
+          status: Value(InstallmentStatus.pending.dbValue),
+          paidDate: const Value(null),
+          paidAmount: const Value(null),
+        ),
+      );
+
+      final paidCount =
+          await (_db.selectOnly(_db.loanInstallments)
+                ..addColumns([_db.loanInstallments.id.count()])
+                ..where(
+                  _db.loanInstallments.loanId.equals(loanId) &
+                      _db.loanInstallments.status.equals(
+                        InstallmentStatus.paid.dbValue,
+                      ),
+                ))
+              .map((row) => row.read(_db.loanInstallments.id.count()) ?? 0)
+              .getSingle();
+
+      final loan = await (_db.select(
+        _db.loans,
+      )..where((l) => l.id.equals(loanId))).getSingle();
+
+      await (_db.update(_db.loans)..where((l) => l.id.equals(loanId))).write(
+        LoansCompanion(
+          paidInstallments: Value(paidCount),
+          isActive: Value(paidCount < loan.totalInstallments),
+        ),
+      );
+    });
+  }
+
   /// Runtime overdue check: any pending installment whose due date has
   /// passed is reported as overdue. Computed on read, no cronjob needed.
   Future<List<LoanInstallment>> getOverdueInstallments(int loanId) async {

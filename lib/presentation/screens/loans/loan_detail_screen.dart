@@ -6,6 +6,7 @@ import '../../../core/utils/date_formatter.dart';
 import '../../../data/database/app_database.dart';
 import '../../../domain/enums/loan_frequency.dart';
 import '../../providers/loan_providers.dart';
+import '../../widgets/guarded_action.dart';
 
 class LoanDetailScreen extends ConsumerWidget {
   final Loan loan;
@@ -70,7 +71,20 @@ class LoanDetailScreen extends ConsumerWidget {
                 // does, rather than staying tappable indefinitely.
                 final isOverdue =
                     installment.status == InstallmentStatus.overdue.dbValue;
-                final locked = isPaid || isOverdue;
+                // Locked once its due date has actually passed — not just
+                // whenever it's paid, so a payment logged early (before
+                // the due date) can still be undone right up until then,
+                // the same way a reminder completed ahead of its due day
+                // can be un-completed. Once the due date passes, paid or
+                // not, it's locked — matching the overdue case.
+                final now = DateTime.now();
+                final today = DateTime(now.year, now.month, now.day);
+                final dueDay = DateTime(
+                  installment.dueDate.year,
+                  installment.dueDate.month,
+                  installment.dueDate.day,
+                );
+                final locked = dueDay.isBefore(today);
                 return ListTile(
                   title: Text(
                     l10n.loanInstallmentNumber(installment.installmentNumber),
@@ -108,34 +122,34 @@ class LoanDetailScreen extends ConsumerWidget {
                     ),
                     onPressed: locked
                         ? null
-                        : () async {
-                            // Tapping marks it paid immediately — no
-                            // separate confirm step. A staged "select
-                            // several, then confirm" flow here made the
-                            // control look like it didn't do anything,
-                            // since nothing was actually saved until a
-                            // second tap on a FAB that only appeared once
-                            // something was selected.
-                            final messenger = ScaffoldMessenger.of(context);
-                            try {
-                              await ref
-                                  .read(loanActionsProvider)
-                                  .markPaid(
-                                    loanId: loan.id,
-                                    installmentIds: [installment.id],
-                                    paidDate: DateTime.now(),
-                                  );
-                              messenger.showSnackBar(
-                                SnackBar(
-                                  content: Text(l10n.loanMarkPaidSuccess),
-                                ),
-                              );
-                            } catch (_) {
-                              messenger.showSnackBar(
-                                SnackBar(content: Text(l10n.errorGeneric)),
-                              );
-                            }
-                          },
+                        // Tapping toggles immediately — no separate
+                        // confirm step, and no confirm needed to undo it
+                        // either while it's still unlocked. A staged
+                        // "select several, then confirm" flow here made
+                        // the control look like it didn't do anything,
+                        // since nothing was actually saved until a second
+                        // tap on a FAB that only appeared once something
+                        // was selected.
+                        : () => runGuarded(
+                            context,
+                            () => isPaid
+                                ? ref
+                                      .read(loanActionsProvider)
+                                      .markUnpaid(
+                                        loanId: loan.id,
+                                        installmentId: installment.id,
+                                      )
+                                : ref
+                                      .read(loanActionsProvider)
+                                      .markPaid(
+                                        loanId: loan.id,
+                                        installmentIds: [installment.id],
+                                        paidDate: DateTime.now(),
+                                      ),
+                            successMessage: isPaid
+                                ? null
+                                : l10n.loanMarkPaidSuccess,
+                          ),
                   ),
                 );
               },

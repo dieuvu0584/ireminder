@@ -78,6 +78,31 @@ class LoanActions {
     }
   }
 
+  Future<void> markUnpaid({
+    required int loanId,
+    required int installmentId,
+  }) async {
+    await _ref
+        .read(loanRepositoryProvider)
+        .markUnpaid(loanId: loanId, installmentId: installmentId);
+    // markPaid cancelled this installment's notification, so undoing it
+    // needs to restore that alarm — mirrors _scheduleAllForLoan, just for
+    // the one installment instead of every one on the loan.
+    final loan = await _ref.read(loanRepositoryProvider).getById(loanId);
+    final installment = await _ref
+        .read(loanRepositoryProvider)
+        .getInstallmentById(installmentId);
+    if (loan == null || installment == null) return;
+    final settings = await _ref.read(settingsRepositoryProvider).get();
+    await _ref
+        .read(alarmSchedulerServiceProvider)
+        .scheduleForInstallment(
+          installment,
+          loan,
+          settings.defaultReminderTime,
+        );
+  }
+
   Future<void> delete(int loanId) async {
     final installments = await _ref
         .read(loanRepositoryProvider)

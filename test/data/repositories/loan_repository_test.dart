@@ -62,6 +62,39 @@ void main() {
     },
   );
 
+  test('markUnpaid reverts a paid installment back to pending and undoes the '
+      'loan-level paid count / reactivation', () async {
+    final loanId = await loans.create(
+      name: 'Undo loan',
+      installmentAmount: 100,
+      totalInstallments: 2,
+      frequency: LoanFrequency.weekly,
+      startDate: DateTime(2026, 1, 1),
+    );
+    final installments = await loans.watchInstallments(loanId).first;
+
+    await loans.markPaid(
+      loanId: loanId,
+      installmentIds: [installments[0].id, installments[1].id],
+      paidDate: DateTime(2026, 1, 1),
+    );
+    var loan = await loans.getById(loanId);
+    expect(loan!.paidInstallments, 2);
+    expect(loan.isActive, isFalse);
+
+    await loans.markUnpaid(loanId: loanId, installmentId: installments[1].id);
+    loan = await loans.getById(loanId);
+    expect(loan!.paidInstallments, 1);
+    expect(loan.isActive, isTrue);
+
+    final reverted = (await loans.watchInstallments(loanId).first).firstWhere(
+      (i) => i.id == installments[1].id,
+    );
+    expect(reverted.status, InstallmentStatus.pending.dbValue);
+    expect(reverted.paidDate, isNull);
+    expect(reverted.paidAmount, isNull);
+  });
+
   test(
     'markPaid supports batch pay-ahead of multiple installments at once',
     () async {
