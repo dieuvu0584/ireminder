@@ -69,6 +69,7 @@ class ReminderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final locale = Localizations.localeOf(context).toString();
     final color = category != null
         ? parseHexColor(category!.color)
         : Colors.grey;
@@ -90,13 +91,18 @@ class ReminderCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
+            // Date+time on their own line, category+frequency on another —
+            // rather than one long "date · time · category · frequency"
+            // string, which wrapped mid-phrase on longer category/frequency
+            // labels and looked ragged.
             Text(
               occurrenceDate != null
-                  ? '${DateFormatter.formatDate(occurrenceDate!, Localizations.localeOf(context).toString())} · '
-                        '${reminder.reminderTime} · ${category?.name ?? ''} · '
-                        '${recurrenceTypeLabel(l10n, RecurrenceType.fromDbValue(reminder.recurrenceType))}'
-                  : '${reminder.reminderTime} · ${category?.name ?? ''} · '
-                        '${recurrenceTypeLabel(l10n, RecurrenceType.fromDbValue(reminder.recurrenceType))}',
+                  ? '${DateFormatter.formatDate(occurrenceDate!, locale)} · ${reminder.reminderTime}'
+                  : reminder.reminderTime,
+            ),
+            Text(
+              '${category?.name ?? ''} · '
+              '${recurrenceTypeLabel(l10n, RecurrenceType.fromDbValue(reminder.recurrenceType))}',
             ),
             if (reminder.isLunar)
               Row(
