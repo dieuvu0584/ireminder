@@ -10,6 +10,8 @@ import '../../../domain/enums/recurrence_type.dart';
 import '../../providers/category_providers.dart';
 import '../../providers/reminder_providers.dart';
 import '../../providers/settings_providers.dart';
+import '../../widgets/color_picker.dart';
+import '../../widgets/icon_catalog.dart';
 import 'reminder_form_screen.dart';
 
 class ReminderDetailScreen extends ConsumerWidget {
@@ -125,110 +127,223 @@ class ReminderDetailScreen extends ConsumerWidget {
         ],
       ),
       body: SafeArea(
-        // Without this, the Done/Snooze row (pushed to the bottom via the
-        // Spacer below) renders flush against the very edge of the screen
-        // and gets overlapped by the system navigation bar on devices that
-        // use on-screen nav buttons instead of gesture navigation.
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (current.description != null &&
-                  current.description!.isNotEmpty) ...[
-                Text(current.description!),
-                const SizedBox(height: 16),
-              ],
-              categoriesAsync.when(
-                data: (categories) {
-                  final cat = categories
-                      .where((c) => c.id == current.categoryId)
-                      .firstOrNull;
-                  return Text(cat?.name ?? '');
-                },
-                loading: () => const SizedBox.shrink(),
-                error: (e, st) => const SizedBox.shrink(),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  Text(
-                    DateFormatter.formatDate(current.nextDueDate, locale),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  if (current.isLunar) ...[
-                    const SizedBox(width: 8),
-                    Icon(
-                      Icons.brightness_2_outlined,
-                      size: 16,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                    const SizedBox(width: 2),
-                    Text(
-                      l10n.reminderLunarDateLabel(
-                        LunarConverter.formatDayMonth(current.nextDueDate),
-                      ),
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.secondary,
-                      ),
-                    ),
-                  ],
-                ],
-              ),
-              Text(DateFormatter.formatTime(current.reminderTime, locale)),
-              const SizedBox(height: 4),
-              Text(
-                recurrenceTypeLabel(
-                  l10n,
-                  RecurrenceType.fromDbValue(current.recurrenceType),
-                ),
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.outline,
-                ),
-              ),
-              const Spacer(),
-              if (_isTriggered(current))
-                Row(
-                  children: [
-                    Expanded(
-                      child: FilledButton.icon(
-                        icon: const Icon(Icons.check),
-                        label: Text(l10n.actionDone),
-                        onPressed: () => _runGuarded(
-                          context,
-                          ref,
-                          () => ref
-                              .read(reminderActionsProvider)
-                              .complete(current.id),
+        child: categoriesAsync.when(
+          data: (categories) {
+            final category = categories
+                .where((c) => c.id == current.categoryId)
+                .firstOrNull;
+            final color = category != null
+                ? parseHexColor(category.color)
+                : Theme.of(context).colorScheme.primary;
+            return Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.fromLTRB(24, 32, 24, 16),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 40,
+                          backgroundColor: color.withValues(alpha: 0.15),
+                          child: Icon(
+                            category != null
+                                ? resolveCategoryIcon(category.icon)
+                                : Icons.notifications,
+                            size: 40,
+                            color: color,
+                          ),
                         ),
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: OutlinedButton.icon(
-                        icon: const Icon(Icons.snooze),
-                        label: Text(
-                          l10n.actionSnooze,
-                          overflow: TextOverflow.ellipsis,
+                        const SizedBox(height: 16),
+                        Text(
+                          current.title,
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.headlineSmall
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
-                        onPressed: () => _runGuarded(
-                          context,
-                          ref,
-                          () => ref
-                              .read(reminderActionsProvider)
-                              .snooze(
-                                current.id,
-                                DateTime.now().add(
-                                  Duration(minutes: snoozeMinutes),
-                                ),
+                        if (category != null) ...[
+                          const SizedBox(height: 8),
+                          Chip(
+                            label: Text(category.name),
+                            backgroundColor: color.withValues(alpha: 0.15),
+                            labelStyle: TextStyle(
+                              color: color,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            side: BorderSide.none,
+                          ),
+                        ],
+                        const SizedBox(height: 24),
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 20,
+                            horizontal: 16,
+                          ),
+                          decoration: BoxDecoration(
+                            color: color.withValues(alpha: 0.08),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.event, size: 22, color: color),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    DateFormatter.formatDate(
+                                      current.nextDueDate,
+                                      locale,
+                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleLarge
+                                        ?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: color,
+                                        ),
+                                  ),
+                                ],
                               ),
+                              const SizedBox(height: 8),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.access_time,
+                                    size: 18,
+                                    color: Theme.of(
+                                      context,
+                                    ).colorScheme.onSurfaceVariant,
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Text(
+                                    DateFormatter.formatTime(
+                                      current.reminderTime,
+                                      locale,
+                                    ),
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleMedium,
+                                  ),
+                                ],
+                              ),
+                              if (current.isLunar) ...[
+                                const SizedBox(height: 8),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.brightness_2_outlined,
+                                      size: 16,
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.secondary,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      l10n.reminderLunarDateLabel(
+                                        LunarConverter.formatDayMonth(
+                                          current.nextDueDate,
+                                        ),
+                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium
+                                          ?.copyWith(
+                                            color: Theme.of(
+                                              context,
+                                            ).colorScheme.secondary,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ],
+                          ),
                         ),
-                      ),
+                        const SizedBox(height: 16),
+                        Chip(
+                          avatar: const Icon(Icons.repeat, size: 18),
+                          label: Text(
+                            recurrenceTypeLabel(
+                              l10n,
+                              RecurrenceType.fromDbValue(
+                                current.recurrenceType,
+                              ),
+                            ),
+                          ),
+                        ),
+                        if (current.description != null &&
+                            current.description!.isNotEmpty) ...[
+                          const SizedBox(height: 24),
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.surfaceContainerHighest,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Text(
+                              current.description!,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ),
+                        ],
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-            ],
-          ),
+                if (_isTriggered(current))
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: FilledButton.icon(
+                            icon: const Icon(Icons.check),
+                            label: Text(l10n.actionDone),
+                            onPressed: () => _runGuarded(
+                              context,
+                              ref,
+                              () => ref
+                                  .read(reminderActionsProvider)
+                                  .complete(current.id),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: OutlinedButton.icon(
+                            icon: const Icon(Icons.snooze),
+                            label: Text(
+                              l10n.actionSnooze,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            onPressed: () => _runGuarded(
+                              context,
+                              ref,
+                              () => ref
+                                  .read(reminderActionsProvider)
+                                  .snooze(
+                                    current.id,
+                                    DateTime.now().add(
+                                      Duration(minutes: snoozeMinutes),
+                                    ),
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
+            );
+          },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, st) => Center(child: Text(l10n.errorLoadFailed)),
         ),
       ),
     );
